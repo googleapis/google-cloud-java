@@ -77,7 +77,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The resource name of the entryGroup, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
    * <pre>
    * Required. The resource name of the entryGroup, of the form:
    * projects/{project_number}/locations/{location_id}
-   * where `location_id` refers to a GCP region.
+   * where `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -699,7 +699,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the entryGroup, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -726,7 +726,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the entryGroup, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -753,7 +753,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the entryGroup, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -779,7 +779,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the entryGroup, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -801,7 +801,7 @@ public final class CreateEntryGroupRequest extends com.google.protobuf.Generated
      * <pre>
      * Required. The resource name of the entryGroup, of the form:
      * projects/{project_number}/locations/{location_id}
-     * where `location_id` refers to a GCP region.
+     * where `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>

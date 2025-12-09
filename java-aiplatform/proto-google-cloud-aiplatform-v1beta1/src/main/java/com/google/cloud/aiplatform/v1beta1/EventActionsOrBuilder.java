@@ -151,22 +151,6 @@ public interface EventActionsOrBuilder
    *
    *
    * <pre>
-   * Deprecated. If set, the event transfers to the specified agent.
-   * </pre>
-   *
-   * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
-   *
-   * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/session.proto;l=176
-   * @return The transferToAgent.
-   */
-  @java.lang.Deprecated
-  boolean getTransferToAgent();
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. The agent is escalating to a higher level agent.
    * </pre>
    *

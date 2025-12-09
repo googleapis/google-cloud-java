@@ -28,7 +28,60 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return Whether the effectiveInstanceMetadata field is set.
+   */
+  boolean hasEffectiveInstanceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return The effectiveInstanceMetadata.
+   */
+  com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+      getEffectiveInstanceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project,
+   * zonal instance settings, and instance-level predefined metadata keys to
+   * provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder
+      getEffectiveInstanceMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -41,7 +94,9 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -54,7 +109,9 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+   * [Output Only] The precise location of your instance within the zone's data
+   * center, including the block, sub-block, and host. The field is formatted as
+   * follows: blockId/subBlockId/hostId.
    * </pre>
    *
    * <code>optional string physical_host = 464370704;</code>
@@ -67,7 +124,9 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -82,7 +141,9 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -97,7 +158,9 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
+   * [Output Only] A series of fields containing the global name of the Compute
+   * Engine cluster, as well as the ID of the block, sub-block, and host on
+   * which the running instance is located.
    * </pre>
    *
    * <code>
@@ -106,6 +169,51 @@ public interface ResourceStatusOrBuilder
    */
   com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyOrBuilder
       getPhysicalHostTopologyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   *
+   * @return Whether the reservationConsumptionInfo field is set.
+   */
+  boolean hasReservationConsumptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   *
+   * @return The reservationConsumptionInfo.
+   */
+  com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo
+      getReservationConsumptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Reservation information that the instance is consuming from.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusReservationConsumptionInfo reservation_consumption_info = 201056997;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusReservationConsumptionInfoOrBuilder
+      getReservationConsumptionInfoOrBuilder();
 
   /**
    * <code>optional .google.cloud.compute.v1.ResourceStatusScheduling scheduling = 386688404;</code>

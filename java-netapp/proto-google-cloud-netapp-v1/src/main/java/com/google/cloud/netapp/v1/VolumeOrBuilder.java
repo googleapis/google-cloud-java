@@ -1211,7 +1211,8 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
-   * Output only. Size of the volume cold tier data in GiB.
+   * Output only. Size of the volume cold tier data rounded down to the nearest
+   * GiB.
    * </pre>
    *
    * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1263,4 +1264,31 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.netapp.v1.HybridReplicationParametersOrBuilder
       getHybridReplicationParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Throughput of the volume (in MiB/s)
+   * </pre>
+   *
+   * <code>double throughput_mibps = 41 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The throughputMibps.
+   */
+  double getThroughputMibps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total hot tier data rounded down to the nearest GiB used by
+   * the Volume. This field is only used for flex Service Level
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_used_gib = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hotTierSizeUsedGib.
+   */
+  long getHotTierSizeUsedGib();
 }

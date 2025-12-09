@@ -37,6 +37,8 @@ import com.google.cloud.compute.v1.ListInstancesInstanceGroupsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.RemoveInstancesInstanceGroupRequest;
 import com.google.cloud.compute.v1.SetNamedPortsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -123,6 +125,11 @@ public abstract class InstanceGroupsStub implements BackgroundResource {
 
   public UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable() {
     throw new UnsupportedOperationException("Not implemented: setNamedPortsCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

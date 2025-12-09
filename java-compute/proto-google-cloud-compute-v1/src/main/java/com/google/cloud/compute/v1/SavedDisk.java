@@ -253,7 +253,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedDisk.StorageBytesStatus}
@@ -461,7 +465,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -477,7 +482,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -501,7 +507,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+   * [Output Only] Type of the resource. Always compute#savedDisk
+   * for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -597,7 +604,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine image.
+   * [Output Only] Size of the individual disk snapshot used by this machine
+   * image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -613,7 +621,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine image.
+   * [Output Only] Size of the individual disk snapshot used by this machine
+   * image.
    * </pre>
    *
    * <code>optional int64 storage_bytes = 424631719;</code>
@@ -634,7 +643,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -651,7 +664,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -676,7 +693,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * [Output Only] An indicator whether storageBytes is in a
+   * stable state or it is being adjusted as a result of shared storage
+   * reallocation. This status can either be UPDATING, meaning
+   * the size of the snapshot is being updated, or UP_TO_DATE,
+   * meaning the size of the snapshot is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -1302,7 +1323,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1317,7 +1339,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1340,7 +1363,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1363,7 +1387,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1385,7 +1410,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1403,7 +1429,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk for attached disks.
+     * [Output Only] Type of the resource. Always compute#savedDisk
+     * for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1554,7 +1581,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine image.
+     * [Output Only] Size of the individual disk snapshot used by this machine
+     * image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1570,7 +1598,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine image.
+     * [Output Only] Size of the individual disk snapshot used by this machine
+     * image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1586,7 +1615,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine image.
+     * [Output Only] Size of the individual disk snapshot used by this machine
+     * image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1606,7 +1636,8 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine image.
+     * [Output Only] Size of the individual disk snapshot used by this machine
+     * image.
      * </pre>
      *
      * <code>optional int64 storage_bytes = 424631719;</code>
@@ -1626,7 +1657,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -1642,7 +1677,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -1666,7 +1705,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -1690,7 +1733,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -1713,7 +1760,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -1732,7 +1783,11 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * [Output Only] An indicator whether storageBytes is in a
+     * stable state or it is being adjusted as a result of shared storage
+     * reallocation. This status can either be UPDATING, meaning
+     * the size of the snapshot is being updated, or UP_TO_DATE,
+     * meaning the size of the snapshot is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *

@@ -11044,6 +11044,51 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfigOrBuilder
         getBearerTokenConfigOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     *
+     * @return Whether the serviceAccountAuthConfig field is set.
+     */
+    boolean hasServiceAccountAuthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     *
+     * @return The serviceAccountAuthConfig.
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+        getServiceAccountAuthConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfigOrBuilder
+        getServiceAccountAuthConfigOrBuilder();
+
     com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.AuthConfigCase getAuthConfigCase();
   }
 
@@ -11321,6 +11366,40 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForApiKey.
+       */
+      java.lang.String getSecretVersionForApiKey();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForApiKey.
+       */
+      com.google.protobuf.ByteString getSecretVersionForApiKeyBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. Key location in the request.
        * </pre>
        *
@@ -11372,6 +11451,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       private ApiKeyConfig() {
         keyName_ = "";
         apiKey_ = "";
+        secretVersionForApiKey_ = "";
         requestLocation_ = 0;
       }
 
@@ -11509,6 +11589,67 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_API_KEY_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForApiKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForApiKey.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForApiKey() {
+        java.lang.Object ref = secretVersionForApiKey_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForApiKey_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the API key. If this field is set, the `api_key` field will be ignored.
+       * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForApiKey.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForApiKeyBytes() {
+        java.lang.Object ref = secretVersionForApiKey_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForApiKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int REQUEST_LOCATION_FIELD_NUMBER = 3;
       private int requestLocation_ = 0;
 
@@ -11581,6 +11722,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           output.writeEnum(3, requestLocation_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForApiKey_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, secretVersionForApiKey_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -11602,6 +11746,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, requestLocation_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForApiKey_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(4, secretVersionForApiKey_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -11621,6 +11769,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
         if (!getKeyName().equals(other.getKeyName())) return false;
         if (!getApiKey().equals(other.getApiKey())) return false;
+        if (!getSecretVersionForApiKey().equals(other.getSecretVersionForApiKey())) return false;
         if (requestLocation_ != other.requestLocation_) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
@@ -11637,6 +11786,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getKeyName().hashCode();
         hash = (37 * hash) + API_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getApiKey().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_API_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForApiKey().hashCode();
         hash = (37 * hash) + REQUEST_LOCATION_FIELD_NUMBER;
         hash = (53 * hash) + requestLocation_;
         hash = (29 * hash) + getUnknownFields().hashCode();
@@ -11794,6 +11945,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           keyName_ = "";
           apiKey_ = "";
+          secretVersionForApiKey_ = "";
           requestLocation_ = 0;
           return this;
         }
@@ -11843,6 +11995,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             result.apiKey_ = apiKey_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.secretVersionForApiKey_ = secretVersionForApiKey_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             result.requestLocation_ = requestLocation_;
           }
         }
@@ -11909,6 +12064,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000002;
             onChanged();
           }
+          if (!other.getSecretVersionForApiKey().isEmpty()) {
+            secretVersionForApiKey_ = other.secretVersionForApiKey_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
           if (other.requestLocation_ != 0) {
             setRequestLocationValue(other.getRequestLocationValue());
           }
@@ -11953,9 +12113,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 case 24:
                   {
                     requestLocation_ = input.readEnum();
-                    bitField0_ |= 0x00000004;
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 24
+                case 34:
+                  {
+                    secretVersionForApiKey_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 34
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12212,6 +12378,137 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object secretVersionForApiKey_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForApiKey.
+         */
+        public java.lang.String getSecretVersionForApiKey() {
+          java.lang.Object ref = secretVersionForApiKey_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForApiKey_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForApiKey.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForApiKeyBytes() {
+          java.lang.Object ref = secretVersionForApiKey_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForApiKey_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForApiKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForApiKey(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForApiKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForApiKey() {
+          secretVersionForApiKey_ = getDefaultInstance().getSecretVersionForApiKey();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the API key. If this field is set, the `api_key` field will be ignored.
+         * Format: `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_api_key = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForApiKey to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForApiKeyBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForApiKey_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
         private int requestLocation_ = 0;
 
         /**
@@ -12248,7 +12545,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder setRequestLocationValue(int value) {
           requestLocation_ = value;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -12297,7 +12594,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           requestLocation_ = value.getNumber();
           onChanged();
           return this;
@@ -12317,7 +12614,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          * @return This builder for chaining.
          */
         public Builder clearRequestLocation() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           requestLocation_ = 0;
           onChanged();
           return this;
@@ -12487,6 +12784,42 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForClientSecret.
+       */
+      java.lang.String getSecretVersionForClientSecret();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForClientSecret.
+       */
+      com.google.protobuf.ByteString getSecretVersionForClientSecretBytes();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. The token endpoint in the OAuth provider to exchange for an
        * access token.
        * </pre>
@@ -12590,6 +12923,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         oauthGrantType_ = 0;
         clientId_ = "";
         clientSecret_ = "";
+        secretVersionForClientSecret_ = "";
         tokenEndpoint_ = "";
         scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
@@ -12921,6 +13255,69 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_CLIENT_SECRET_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForClientSecret_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForClientSecret.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForClientSecret() {
+        java.lang.Object ref = secretVersionForClientSecret_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForClientSecret_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the client secret. If this field is set, the `client_secret` field will
+       * be ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForClientSecret.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForClientSecretBytes() {
+        java.lang.Object ref = secretVersionForClientSecret_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForClientSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int TOKEN_ENDPOINT_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
@@ -13076,6 +13473,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         for (int i = 0; i < scopes_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 5, scopes_.getRaw(i));
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForClientSecret_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 6, secretVersionForClientSecret_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -13108,6 +13509,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           size += dataSize;
           size += 1 * getScopesList().size();
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForClientSecret_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(
+                  6, secretVersionForClientSecret_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -13128,6 +13534,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (oauthGrantType_ != other.oauthGrantType_) return false;
         if (!getClientId().equals(other.getClientId())) return false;
         if (!getClientSecret().equals(other.getClientSecret())) return false;
+        if (!getSecretVersionForClientSecret().equals(other.getSecretVersionForClientSecret()))
+          return false;
         if (!getTokenEndpoint().equals(other.getTokenEndpoint())) return false;
         if (!getScopesList().equals(other.getScopesList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -13147,6 +13555,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getClientId().hashCode();
         hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
         hash = (53 * hash) + getClientSecret().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_CLIENT_SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForClientSecret().hashCode();
         hash = (37 * hash) + TOKEN_ENDPOINT_FIELD_NUMBER;
         hash = (53 * hash) + getTokenEndpoint().hashCode();
         if (getScopesCount() > 0) {
@@ -13309,6 +13719,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           oauthGrantType_ = 0;
           clientId_ = "";
           clientSecret_ = "";
+          secretVersionForClientSecret_ = "";
           tokenEndpoint_ = "";
           scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           return this;
@@ -13362,9 +13773,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             result.clientSecret_ = clientSecret_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            result.tokenEndpoint_ = tokenEndpoint_;
+            result.secretVersionForClientSecret_ = secretVersionForClientSecret_;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.tokenEndpoint_ = tokenEndpoint_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             scopes_.makeImmutable();
             result.scopes_ = scopes_;
           }
@@ -13435,15 +13849,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (!other.getSecretVersionForClientSecret().isEmpty()) {
+            secretVersionForClientSecret_ = other.secretVersionForClientSecret_;
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
           if (!other.getTokenEndpoint().isEmpty()) {
             tokenEndpoint_ = other.tokenEndpoint_;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (!other.scopes_.isEmpty()) {
             if (scopes_.isEmpty()) {
               scopes_ = other.scopes_;
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
             } else {
               ensureScopesIsMutable();
               scopes_.addAll(other.scopes_);
@@ -13497,7 +13916,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 case 34:
                   {
                     tokenEndpoint_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 34
                 case 42:
@@ -13507,6 +13926,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     scopes_.add(s);
                     break;
                   } // case 42
+                case 50:
+                  {
+                    secretVersionForClientSecret_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13871,6 +14296,142 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object secretVersionForClientSecret_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForClientSecret.
+         */
+        public java.lang.String getSecretVersionForClientSecret() {
+          java.lang.Object ref = secretVersionForClientSecret_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForClientSecret_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForClientSecret.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForClientSecretBytes() {
+          java.lang.Object ref = secretVersionForClientSecret_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForClientSecret_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForClientSecret to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForClientSecret(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForClientSecret_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForClientSecret() {
+          secretVersionForClientSecret_ = getDefaultInstance().getSecretVersionForClientSecret();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the client secret. If this field is set, the `client_secret` field will
+         * be ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_client_secret = 6 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForClientSecret to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForClientSecretBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForClientSecret_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
         private java.lang.Object tokenEndpoint_ = "";
 
         /**
@@ -13939,7 +14500,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           tokenEndpoint_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -13958,7 +14519,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearTokenEndpoint() {
           tokenEndpoint_ = getDefaultInstance().getTokenEndpoint();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -13982,7 +14543,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           tokenEndpoint_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -13994,7 +14555,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           if (!scopes_.isModifiable()) {
             scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
 
         /**
@@ -14079,7 +14640,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureScopesIsMutable();
           scopes_.set(index, value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14102,7 +14663,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           ensureScopesIsMutable();
           scopes_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14122,7 +14683,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
           ensureScopesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -14140,7 +14701,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearScopes() {
           scopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           ;
           onChanged();
           return this;
@@ -14165,7 +14726,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           checkByteStringIsUtf8(value);
           ensureScopesIsMutable();
           scopes_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -15207,6 +15768,42 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
        * @return The bytes for token.
        */
       com.google.protobuf.ByteString getTokenBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForToken.
+       */
+      java.lang.String getSecretVersionForToken();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForToken.
+       */
+      com.google.protobuf.ByteString getSecretVersionForTokenBytes();
     }
 
     /**
@@ -15232,6 +15829,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
       private BearerTokenConfig() {
         token_ = "";
+        secretVersionForToken_ = "";
       }
 
       @java.lang.Override
@@ -15319,6 +15917,69 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int SECRET_VERSION_FOR_TOKEN_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object secretVersionForToken_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The secretVersionForToken.
+       */
+      @java.lang.Override
+      public java.lang.String getSecretVersionForToken() {
+        java.lang.Object ref = secretVersionForToken_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretVersionForToken_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the SecretManager secret version resource storing
+       * the Bearer token. If this field is set, the `token` field will be
+       * ignored. Format:
+       * `projects/{project}/secrets/{secret}/versions/{version}`
+       * </pre>
+       *
+       * <code>
+       * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for secretVersionForToken.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getSecretVersionForTokenBytes() {
+        java.lang.Object ref = secretVersionForToken_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          secretVersionForToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -15336,6 +15997,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForToken_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretVersionForToken_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -15347,6 +16011,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         size = 0;
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(token_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretVersionForToken_)) {
+          size +=
+              com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretVersionForToken_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -15367,6 +16035,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig) obj;
 
         if (!getToken().equals(other.getToken())) return false;
+        if (!getSecretVersionForToken().equals(other.getSecretVersionForToken())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -15380,6 +16049,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + TOKEN_FIELD_NUMBER;
         hash = (53 * hash) + getToken().hashCode();
+        hash = (37 * hash) + SECRET_VERSION_FOR_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretVersionForToken().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -15536,6 +16207,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           bitField0_ = 0;
           token_ = "";
+          secretVersionForToken_ = "";
           return this;
         }
 
@@ -15581,6 +16253,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           int from_bitField0_ = bitField0_;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.token_ = token_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.secretVersionForToken_ = secretVersionForToken_;
           }
         }
 
@@ -15643,6 +16318,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000001;
             onChanged();
           }
+          if (!other.getSecretVersionForToken().isEmpty()) {
+            secretVersionForToken_ = other.secretVersionForToken_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -15675,6 +16355,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000001;
                     break;
                   } // case 10
+                case 18:
+                  {
+                    secretVersionForToken_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15830,6 +16516,142 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object secretVersionForToken_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The secretVersionForToken.
+         */
+        public java.lang.String getSecretVersionForToken() {
+          java.lang.Object ref = secretVersionForToken_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            secretVersionForToken_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for secretVersionForToken.
+         */
+        public com.google.protobuf.ByteString getSecretVersionForTokenBytes() {
+          java.lang.Object ref = secretVersionForToken_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            secretVersionForToken_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The secretVersionForToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForToken(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretVersionForToken_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSecretVersionForToken() {
+          secretVersionForToken_ = getDefaultInstance().getSecretVersionForToken();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The name of the SecretManager secret version resource storing
+         * the Bearer token. If this field is set, the `token` field will be
+         * ignored. Format:
+         * `projects/{project}/secrets/{secret}/versions/{version}`
+         * </pre>
+         *
+         * <code>
+         * string secret_version_for_token = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for secretVersionForToken to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSecretVersionForTokenBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          secretVersionForToken_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -15899,6 +16721,788 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ServiceAccountAuthConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the tool call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the tool request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The serviceAccount.
+       */
+      java.lang.String getServiceAccount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the tool call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the tool request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      com.google.protobuf.ByteString getServiceAccountBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for authentication using a service account.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig}
+     */
+    public static final class ServiceAccountAuthConfig
+        extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+        ServiceAccountAuthConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use ServiceAccountAuthConfig.newBuilder() to construct.
+      private ServiceAccountAuthConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ServiceAccountAuthConfig() {
+        serviceAccount_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new ServiceAccountAuthConfig();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAccountAuthConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAccountAuthConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                    .class,
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                    .Builder.class);
+      }
+
+      public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object serviceAccount_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the tool call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the tool request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The serviceAccount.
+       */
+      @java.lang.Override
+      public java.lang.String getServiceAccount() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccount_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The email address of the service account used to authenticate
+       * the tool call. Dialogflow uses this service account to exchange an
+       * access token and the access token is then sent in the `Authorization`
+       * header of the tool request.
+       *
+       * The service account must have the
+       * `roles/iam.serviceAccountTokenCreator` role granted to the
+       * [Dialogflow service
+       * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+       * </pre>
+       *
+       * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for serviceAccount.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getServiceAccountBytes() {
+        java.lang.Object ref = serviceAccount_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAccount_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAccount_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig other =
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+                obj;
+
+        if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceAccount().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for authentication using a service account.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAccountAuthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAccountAuthConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig.class,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          serviceAccount_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.ToolProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_Tool_Authentication_ServiceAccountAuthConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              result =
+                  new com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.serviceAccount_ = serviceAccount_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                        .ServiceAccountAuthConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                  .getDefaultInstance()) return this;
+          if (!other.getServiceAccount().isEmpty()) {
+            serviceAccount_ = other.serviceAccount_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    serviceAccount_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object serviceAccount_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the tool call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the tool request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The serviceAccount.
+         */
+        public java.lang.String getServiceAccount() {
+          java.lang.Object ref = serviceAccount_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            serviceAccount_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the tool call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the tool request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for serviceAccount.
+         */
+        public com.google.protobuf.ByteString getServiceAccountBytes() {
+          java.lang.Object ref = serviceAccount_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            serviceAccount_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the tool call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the tool request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The serviceAccount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAccount(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          serviceAccount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the tool call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the tool request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearServiceAccount() {
+          serviceAccount_ = getDefaultInstance().getServiceAccount();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The email address of the service account used to authenticate
+         * the tool call. Dialogflow uses this service account to exchange an
+         * access token and the access token is then sent in the `Authorization`
+         * header of the tool request.
+         *
+         * The service account must have the
+         * `roles/iam.serviceAccountTokenCreator` role granted to the
+         * [Dialogflow service
+         * agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent).
+         * </pre>
+         *
+         * <code>string service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for serviceAccount to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          serviceAccount_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                .ServiceAccountAuthConfig();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ServiceAccountAuthConfig> PARSER =
+          new com.google.protobuf.AbstractParser<ServiceAccountAuthConfig>() {
+            @java.lang.Override
+            public ServiceAccountAuthConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ServiceAccountAuthConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ServiceAccountAuthConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int authConfigCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -15912,6 +17516,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       OAUTH_CONFIG(2),
       SERVICE_AGENT_AUTH_CONFIG(3),
       BEARER_TOKEN_CONFIG(4),
+      SERVICE_ACCOUNT_AUTH_CONFIG(5),
       AUTHCONFIG_NOT_SET(0);
       private final int value;
 
@@ -15939,6 +17544,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             return SERVICE_AGENT_AUTH_CONFIG;
           case 4:
             return BEARER_TOKEN_CONFIG;
+          case 5:
+            return SERVICE_ACCOUNT_AUTH_CONFIG;
           case 0:
             return AUTHCONFIG_NOT_SET;
           default:
@@ -16220,6 +17827,73 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           .getDefaultInstance();
     }
 
+    public static final int SERVICE_ACCOUNT_AUTH_CONFIG_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     *
+     * @return Whether the serviceAccountAuthConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceAccountAuthConfig() {
+      return authConfigCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     *
+     * @return The serviceAccountAuthConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+        getServiceAccountAuthConfig() {
+      if (authConfigCase_ == 5) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+            authConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for service account authentication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+            .ServiceAccountAuthConfigOrBuilder
+        getServiceAccountAuthConfigOrBuilder() {
+      if (authConfigCase_ == 5) {
+        return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
+            authConfig_;
+      }
+      return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+          .getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -16254,6 +17928,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         output.writeMessage(
             4,
             (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
+                authConfig_);
+      }
+      if (authConfigCase_ == 5) {
+        output.writeMessage(
+            5,
+            (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig)
                 authConfig_);
       }
       getUnknownFields().writeTo(output);
@@ -16293,6 +17973,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.BearerTokenConfig)
                     authConfig_);
       }
+      if (authConfigCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5,
+                (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                        .ServiceAccountAuthConfig)
+                    authConfig_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -16322,6 +18010,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           break;
         case 4:
           if (!getBearerTokenConfig().equals(other.getBearerTokenConfig())) return false;
+          break;
+        case 5:
+          if (!getServiceAccountAuthConfig().equals(other.getServiceAccountAuthConfig()))
+            return false;
           break;
         case 0:
         default:
@@ -16353,6 +18045,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         case 4:
           hash = (37 * hash) + BEARER_TOKEN_CONFIG_FIELD_NUMBER;
           hash = (53 * hash) + getBearerTokenConfig().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + SERVICE_ACCOUNT_AUTH_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getServiceAccountAuthConfig().hashCode();
           break;
         case 0:
         default:
@@ -16512,6 +18208,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (bearerTokenConfigBuilder_ != null) {
           bearerTokenConfigBuilder_.clear();
         }
+        if (serviceAccountAuthConfigBuilder_ != null) {
+          serviceAccountAuthConfigBuilder_.clear();
+        }
         authConfigCase_ = 0;
         authConfig_ = null;
         return this;
@@ -16570,6 +18269,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         }
         if (authConfigCase_ == 4 && bearerTokenConfigBuilder_ != null) {
           result.authConfig_ = bearerTokenConfigBuilder_.build();
+        }
+        if (authConfigCase_ == 5 && serviceAccountAuthConfigBuilder_ != null) {
+          result.authConfig_ = serviceAccountAuthConfigBuilder_.build();
         }
       }
 
@@ -16643,6 +18345,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               mergeBearerTokenConfig(other.getBearerTokenConfig());
               break;
             }
+          case SERVICE_ACCOUNT_AUTH_CONFIG:
+            {
+              mergeServiceAccountAuthConfig(other.getServiceAccountAuthConfig());
+              break;
+            }
           case AUTHCONFIG_NOT_SET:
             {
               break;
@@ -16700,6 +18407,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   authConfigCase_ = 4;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getServiceAccountAuthConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  authConfigCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17769,6 +19483,276 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         authConfigCase_ = 4;
         onChanged();
         return bearerTokenConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                  .ServiceAccountAuthConfigOrBuilder>
+          serviceAccountAuthConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       *
+       * @return Whether the serviceAccountAuthConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasServiceAccountAuthConfig() {
+        return authConfigCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       *
+       * @return The serviceAccountAuthConfig.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+          getServiceAccountAuthConfig() {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (authConfigCase_ == 5) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                    .ServiceAccountAuthConfig)
+                authConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              .getDefaultInstance();
+        } else {
+          if (authConfigCase_ == 5) {
+            return serviceAccountAuthConfigBuilder_.getMessage();
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      public Builder setServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              value) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authConfig_ = value;
+          onChanged();
+        } else {
+          serviceAccountAuthConfigBuilder_.setMessage(value);
+        }
+        authConfigCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      public Builder setServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                  .Builder
+              builderForValue) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          authConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          serviceAccountAuthConfigBuilder_.setMessage(builderForValue.build());
+        }
+        authConfigCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      public Builder mergeServiceAccountAuthConfig(
+          com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              value) {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (authConfigCase_ == 5
+              && authConfig_
+                  != com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig.getDefaultInstance()) {
+            authConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                    .newBuilder(
+                        (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                                .ServiceAccountAuthConfig)
+                            authConfig_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            authConfig_ = value;
+          }
+          onChanged();
+        } else {
+          if (authConfigCase_ == 5) {
+            serviceAccountAuthConfigBuilder_.mergeFrom(value);
+          } else {
+            serviceAccountAuthConfigBuilder_.setMessage(value);
+          }
+        }
+        authConfigCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      public Builder clearServiceAccountAuthConfig() {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (authConfigCase_ == 5) {
+            authConfigCase_ = 0;
+            authConfig_ = null;
+            onChanged();
+          }
+        } else {
+          if (authConfigCase_ == 5) {
+            authConfigCase_ = 0;
+            authConfig_ = null;
+          }
+          serviceAccountAuthConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              .Builder
+          getServiceAccountAuthConfigBuilder() {
+        return getServiceAccountAuthConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+              .ServiceAccountAuthConfigOrBuilder
+          getServiceAccountAuthConfigOrBuilder() {
+        if ((authConfigCase_ == 5) && (serviceAccountAuthConfigBuilder_ != null)) {
+          return serviceAccountAuthConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (authConfigCase_ == 5) {
+            return (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                    .ServiceAccountAuthConfig)
+                authConfig_;
+          }
+          return com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for service account authentication.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig service_account_auth_config = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                  .ServiceAccountAuthConfigOrBuilder>
+          getServiceAccountAuthConfigFieldBuilder() {
+        if (serviceAccountAuthConfigBuilder_ == null) {
+          if (!(authConfigCase_ == 5)) {
+            authConfig_ =
+                com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication.ServiceAccountAuthConfig
+                    .getDefaultInstance();
+          }
+          serviceAccountAuthConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfig.Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                      .ServiceAccountAuthConfigOrBuilder>(
+                  (com.google.cloud.dialogflow.cx.v3beta1.Tool.Authentication
+                          .ServiceAccountAuthConfig)
+                      authConfig_,
+                  getParentForChildren(),
+                  isClean());
+          authConfig_ = null;
+        }
+        authConfigCase_ = 5;
+        onChanged();
+        return serviceAccountAuthConfigBuilder_;
       }
 
       @java.lang.Override

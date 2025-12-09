@@ -79,7 +79,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    * Required. The resource name of the parent location:
    * `projects/{project}/locations/{location_id}`
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -108,7 +108,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
    * Required. The resource name of the parent location:
    * `projects/{project}/locations/{location_id}`
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -764,7 +764,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      * Required. The resource name of the parent location:
      * `projects/{project}/locations/{location_id}`
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -792,7 +792,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      * Required. The resource name of the parent location:
      * `projects/{project}/locations/{location_id}`
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -820,7 +820,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      * Required. The resource name of the parent location:
      * `projects/{project}/locations/{location_id}`
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -847,7 +847,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      * Required. The resource name of the parent location:
      * `projects/{project}/locations/{location_id}`
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>
@@ -870,7 +870,7 @@ public final class ListDataScansRequest extends com.google.protobuf.GeneratedMes
      * Required. The resource name of the parent location:
      * `projects/{project}/locations/{location_id}`
      * where `project` refers to a *project_id* or *project_number* and
-     * `location_id` refers to a GCP region.
+     * `location_id` refers to a Google Cloud region.
      * </pre>
      *
      * <code>

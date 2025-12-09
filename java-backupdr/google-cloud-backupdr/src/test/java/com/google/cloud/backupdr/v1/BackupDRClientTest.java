@@ -17,6 +17,7 @@
 package com.google.cloud.backupdr.v1;
 
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevision
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -563,6 +565,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -629,6 +632,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -873,6 +877,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -924,6 +929,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -975,6 +981,7 @@ public class BackupDRClientTest {
             .setTotalStoredBytes(1181597162)
             .setUid("uid115792")
             .putAllAnnotations(new HashMap<String, String>())
+            .setEncryptionConfig(BackupVault.EncryptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1442,6 +1449,106 @@ public class BackupDRClientTest {
   }
 
   @Test
+  public void fetchBackupsForResourceTypeTest() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    FetchBackupsForResourceTypeResponse expectedResponse =
+        FetchBackupsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    DataSourceName parent =
+        DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupsForResourceType(parent, resourceType);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchBackupsForResourceTypeRequest actualRequest =
+        ((FetchBackupsForResourceTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(resourceType, actualRequest.getResourceType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      DataSourceName parent =
+          DataSourceName.of("[PROJECT]", "[LOCATION]", "[BACKUPVAULT]", "[DATASOURCE]");
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupsForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeTest2() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    FetchBackupsForResourceTypeResponse expectedResponse =
+        FetchBackupsForResourceTypeResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String resourceType = "resourceType-384364440";
+
+    FetchBackupsForResourceTypePagedResponse pagedListResponse =
+        client.fetchBackupsForResourceType(parent, resourceType);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchBackupsForResourceTypeRequest actualRequest =
+        ((FetchBackupsForResourceTypeRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(resourceType, actualRequest.getResourceType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchBackupsForResourceTypeExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String resourceType = "resourceType-384364440";
+      client.fetchBackupsForResourceType(parent, resourceType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getBackupTest() throws Exception {
     Backup expectedResponse =
         Backup.newBuilder()
@@ -1462,6 +1569,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1518,6 +1626,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -1572,6 +1681,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1637,6 +1747,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1701,6 +1812,7 @@ public class BackupDRClientTest {
             .setResourceSizeBytes(-275424386)
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllKmsKeyVersions(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3208,6 +3320,7 @@ public class BackupDRClientTest {
             .setDataSourceBackupCount(-1620010527)
             .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
             .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .setTotalStoredBytes(1181597162)
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -3259,6 +3372,7 @@ public class BackupDRClientTest {
             .setDataSourceBackupCount(-1620010527)
             .setDataSourceBackupConfigInfo(DataSourceBackupConfigInfo.newBuilder().build())
             .setDataSourceGcpResourceInfo(DataSourceGcpResourceInfo.newBuilder().build())
+            .setTotalStoredBytes(1181597162)
             .build();
     mockBackupDR.addResponse(expectedResponse);
 
@@ -3287,6 +3401,98 @@ public class BackupDRClientTest {
     try {
       String name = "name3373707";
       client.getDataSourceReference(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataSourceReferencesTest() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    ListDataSourceReferencesResponse expectedResponse =
+        ListDataSourceReferencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListDataSourceReferencesPagedResponse pagedListResponse =
+        client.listDataSourceReferences(parent);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDataSourceReferencesRequest actualRequest =
+        ((ListDataSourceReferencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDataSourceReferencesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listDataSourceReferences(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDataSourceReferencesTest2() throws Exception {
+    DataSourceReference responsesElement = DataSourceReference.newBuilder().build();
+    ListDataSourceReferencesResponse expectedResponse =
+        ListDataSourceReferencesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDataSourceReferences(Arrays.asList(responsesElement))
+            .build();
+    mockBackupDR.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDataSourceReferencesPagedResponse pagedListResponse =
+        client.listDataSourceReferences(parent);
+
+    List<DataSourceReference> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDataSourceReferencesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockBackupDR.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDataSourceReferencesRequest actualRequest =
+        ((ListDataSourceReferencesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDataSourceReferencesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBackupDR.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDataSourceReferences(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

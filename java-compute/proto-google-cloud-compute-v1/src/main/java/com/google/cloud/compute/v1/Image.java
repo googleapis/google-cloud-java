@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Image resource. You can use images to create boot disks for your VM instances. For more information, read Images.
+ * Represents an Image resource.
+ *
+ * You can use images to create boot disks for your VM instances.
+ * For more information, read Images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Image}
@@ -99,7 +102,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * The architecture of the image. Valid values are
+   * ARM64 or X86_64.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Image.Architecture}
@@ -281,7 +285,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only valid value is RAW.
+   * The type of the image used to create this disk. The
+   * default and only valid value is RAW.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Image.SourceType}
@@ -401,7 +406,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * [Output Only] The status of the image. An image can be used to create other
+   * resources, such as instances, only after the image has been successfully
+   * created and the status is set to READY. Possible
+   * values are FAILED, PENDING, orREADY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Image.Status}
@@ -612,7 +620,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * The architecture of the image. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -629,7 +638,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * The architecture of the image. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -654,7 +664,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The architecture of the image. Valid values are ARM64 or X86_64.
+   * The architecture of the image. Valid values are
+   * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -682,7 +693,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+   * Size of the image tar.gz archive stored in Google Cloud
+   * Storage (in bytes).
    * </pre>
    *
    * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -698,7 +710,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+   * Size of the image tar.gz archive stored in Google Cloud
+   * Storage (in bytes).
    * </pre>
    *
    * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -719,7 +732,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -735,7 +749,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -759,7 +774,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -841,7 +857,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -857,7 +874,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -881,7 +899,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -943,7 +962,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * Whether this image is created from a confidential compute mode disk.
+   * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -959,7 +979,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+   * Whether this image is created from a confidential compute mode disk.
+   * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
    * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -980,7 +1001,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+   * The name of the image family to which this image belongs. The image
+   * family name can be from a publicly managed image family provided by
+   * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+   * For more information, see Image
+   * family best practices.
+   *
+   * When creating disks, you can specify an image family instead of a specific
+   * image name. The image family always returns its latest image that is not
+   * deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
    * <code>optional string family = 328751972;</code>
@@ -996,7 +1025,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+   * The name of the image family to which this image belongs. The image
+   * family name can be from a publicly managed image family provided by
+   * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+   * For more information, see Image
+   * family best practices.
+   *
+   * When creating disks, you can specify an image family instead of a specific
+   * image name. The image family always returns its latest image that is not
+   * deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
    * <code>optional string family = 328751972;</code>
@@ -1020,7 +1057,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+   * The name of the image family to which this image belongs. The image
+   * family name can be from a publicly managed image family provided by
+   * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+   * For more information, see Image
+   * family best practices.
+   *
+   * When creating disks, you can specify an image family instead of a specific
+   * image name. The image family always returns its latest image that is not
+   * deprecated. The name of the image family must comply with RFC1035.
    * </pre>
    *
    * <code>optional string family = 328751972;</code>
@@ -1049,7 +1094,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1063,7 +1109,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1078,7 +1125,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1092,7 +1140,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1106,7 +1155,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+   * A list of features to enable on the guest operating system. Applicable
+   * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -1124,7 +1174,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1140,7 +1191,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1159,7 +1211,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt an image with a customer-supplied key, you must provide
+   * the same key if you use the image later (e.g. to create a disk from
+   * the image).
+   *
+   * Customer-supplied encryption keys do not protect access to metadata
+   * of the disk.
+   *
+   * If you do not provide an encryption key when creating the image, then the
+   * disk will be encrypted using an automatically generated key and you do not
+   * need to provide a key to use the image later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
@@ -1176,7 +1240,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt an image with a customer-supplied key, you must provide
+   * the same key if you use the image later (e.g. to create a disk from
+   * the image).
+   *
+   * Customer-supplied encryption keys do not protect access to metadata
+   * of the disk.
+   *
+   * If you do not provide an encryption key when creating the image, then the
+   * disk will be encrypted using an automatically generated key and you do not
+   * need to provide a key to use the image later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
@@ -1195,7 +1271,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+   * Encrypts the image using acustomer-supplied
+   * encryption key.
+   *
+   * After you encrypt an image with a customer-supplied key, you must provide
+   * the same key if you use the image later (e.g. to create a disk from
+   * the image).
+   *
+   * Customer-supplied encryption keys do not protect access to metadata
+   * of the disk.
+   *
+   * If you do not provide an encryption key when creating the image, then the
+   * disk will be encrypted using an automatically generated key and you do not
+   * need to provide a key to use the image later.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CustomerEncryptionKey image_encryption_key = 379512583;
@@ -1218,7 +1306,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for images.
+   * [Output Only] Type of the resource. Always compute#image for
+   * images.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1234,7 +1323,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for images.
+   * [Output Only] Type of the resource. Always compute#image for
+   * images.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1258,7 +1348,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for images.
+   * [Output Only] Type of the resource. Always compute#image for
+   * images.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1287,7 +1378,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is
+   * essentially a hash of the labels used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1303,7 +1402,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is
+   * essentially a hash of the labels used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1327,7 +1434,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+   * A fingerprint for the labels being applied to this image, which is
+   * essentially a hash of the labels used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an image.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1378,7 +1493,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this image. These can be later modified by the setLabels method.
+   * Labels to apply to this image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1402,7 +1518,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this image. These can be later modified by the setLabels method.
+   * Labels to apply to this image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1416,7 +1533,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this image. These can be later modified by the setLabels method.
+   * Labels to apply to this image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1437,7 +1555,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this image. These can be later modified by the setLabels method.
+   * Labels to apply to this image. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1585,7 +1704,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1601,7 +1726,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1625,7 +1756,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1645,6 +1782,58 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.ImageParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ImageParams getParams() {
+    return params_ == null ? com.google.cloud.compute.v1.ImageParams.getDefaultInstance() : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ImageParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null ? com.google.cloud.compute.v1.ImageParams.getDefaultInstance() : params_;
+  }
+
   public static final int RAW_DISK_FIELD_NUMBER = 503113556;
   private com.google.cloud.compute.v1.RawDisk rawDisk_;
 
@@ -1661,7 +1850,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRawDisk() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1710,7 +1899,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzi() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1745,7 +1934,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1782,7 +1971,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1851,7 +2040,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasShieldedInstanceInitialState() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1902,7 +2091,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source disk used to create this image.
+   * For example, the following are valid values:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *    - projects/project/zones/zone/disks/disk
+   *    - zones/zone/disks/disk
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1911,14 +2115,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDisk() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source disk used to create this image.
+   * For example, the following are valid values:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *    - projects/project/zones/zone/disks/disk
+   *    - zones/zone/disks/disk
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1942,7 +2161,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source disk used to create this image.
+   * For example, the following are valid values:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+   *    - projects/project/zones/zone/disks/disk
+   *    - zones/zone/disks/disk
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -1969,7 +2203,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source disk. Required if the source disk is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -1980,14 +2216,16 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDiskEncryptionKey() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source disk. Required if the source disk is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2007,7 +2245,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+   * Thecustomer-supplied
+   * encryption key of the source disk. Required if the source disk is
+   * protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2031,7 +2271,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+   * [Output Only]
+   * The ID value of the disk used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given disk name.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -2040,14 +2283,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceDiskId() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+   * [Output Only]
+   * The ID value of the disk used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given disk name.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -2071,7 +2317,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+   * [Output Only]
+   * The ID value of the disk used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given disk name.
    * </pre>
    *
    * <code>optional string source_disk_id = 454190809;</code>
@@ -2100,7 +2349,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source image used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    images/image_name
+   *    - projects/project_id/global/images/image_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -2109,14 +2373,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImage() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source image used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    images/image_name
+   *    - projects/project_id/global/images/image_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -2140,7 +2419,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source image used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    images/image_name
+   *    - projects/project_id/global/images/image_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_image = 50443319;</code>
@@ -2167,7 +2461,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source image. Required if the
+   * source image is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2178,14 +2473,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImageEncryptionKey() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source image. Required if the
+   * source image is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2205,7 +2501,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source image. Required if the
+   * source image is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2229,7 +2526,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+   * [Output Only]
+   * The ID value of the image used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given image name.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -2238,14 +2538,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceImageId() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+   * [Output Only]
+   * The ID value of the image used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given image name.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -2269,7 +2572,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+   * [Output Only]
+   * The ID value of the image used to create this image. This value may be used
+   * to determine whether the image was taken from the current or a previous
+   * instance of a given image name.
    * </pre>
    *
    * <code>optional string source_image_id = 55328291;</code>
@@ -2298,7 +2604,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source snapshot used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    snapshots/snapshot_name
+   *    - projects/project_id/global/snapshots/snapshot_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -2307,14 +2628,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshot() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source snapshot used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    snapshots/snapshot_name
+   *    - projects/project_id/global/snapshots/snapshot_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -2338,7 +2674,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+   * URL of the source snapshot used to create this image.
+   * The following are valid formats for the URL:
+   *
+   *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+   *    snapshots/snapshot_name
+   *    - projects/project_id/global/snapshots/snapshot_name
+   *
+   *
+   *
+   * In order to create an image, you must provide the full or partial URL of
+   * one of the following:
+   *
+   *    - The rawDisk.source URL
+   *    - The sourceDisk URL
+   *    - The sourceImage URL
+   *    - The sourceSnapshot URL
    * </pre>
    *
    * <code>optional string source_snapshot = 126061928;</code>
@@ -2365,7 +2716,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source snapshot. Required if
+   * the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2376,14 +2728,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotEncryptionKey() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source snapshot. Required if
+   * the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2403,7 +2756,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+   * The customer-supplied encryption key of the source snapshot. Required if
+   * the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
    * <code>
@@ -2427,7 +2781,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+   * [Output Only]
+   * The ID value of the snapshot used to create this image. This value may be
+   * used to determine whether the snapshot was taken from the current or a
+   * previous instance of a given snapshot name.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -2436,14 +2793,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceSnapshotId() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+   * [Output Only]
+   * The ID value of the snapshot used to create this image. This value may be
+   * used to determine whether the snapshot was taken from the current or a
+   * previous instance of a given snapshot name.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -2467,7 +2827,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+   * [Output Only]
+   * The ID value of the snapshot used to create this image. This value may be
+   * used to determine whether the snapshot was taken from the current or a
+   * previous instance of a given snapshot name.
    * </pre>
    *
    * <code>optional string source_snapshot_id = 98962258;</code>
@@ -2496,7 +2859,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only valid value is RAW.
+   * The type of the image used to create this disk. The
+   * default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *
@@ -2506,14 +2870,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSourceType() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only valid value is RAW.
+   * The type of the image used to create this disk. The
+   * default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *
@@ -2538,7 +2903,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The type of the image used to create this disk. The default and only valid value is RAW.
+   * The type of the image used to create this disk. The
+   * default and only valid value is RAW.
    * Check the SourceType enum for the list of possible values.
    * </pre>
    *
@@ -2568,7 +2934,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * [Output Only] The status of the image. An image can be used to create other
+   * resources, such as instances, only after the image has been successfully
+   * created and the status is set to READY. Possible
+   * values are FAILED, PENDING, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2578,14 +2947,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * [Output Only] The status of the image. An image can be used to create other
+   * resources, such as instances, only after the image has been successfully
+   * created and the status is set to READY. Possible
+   * values are FAILED, PENDING, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2610,7 +2982,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * [Output Only] The status of the image. An image can be used to create other
+   * resources, such as instances, only after the image has been successfully
+   * created and the status is set to READY. Possible
+   * values are FAILED, PENDING, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -2641,7 +3016,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the image (regional or multi-regional).
+   * Cloud Storage bucket storage location of the image (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -2656,7 +3032,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the image (regional or multi-regional).
+   * Cloud Storage bucket storage location of the image (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -2671,7 +3048,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the image (regional or multi-regional).
+   * Cloud Storage bucket storage location of the image (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -2687,7 +3065,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Cloud Storage bucket storage location of the image (regional or multi-regional).
+   * Cloud Storage bucket storage location of the image (regional or
+   * multi-regional).
    * </pre>
    *
    * <code>repeated string storage_locations = 328005274;</code>
@@ -2733,37 +3112,40 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < licenseCodes_.size(); i++) {
       output.writeInt64NoTag(licenseCodes_.getLong(i));
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50443319, sourceImage_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 55328291, sourceImageId_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(78313862, getParams());
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98962258, sourceSnapshotId_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(102135228, enableConfidentialCompute_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       output.writeMessage(192356867, getShieldedInstanceInitialState());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 302803283, architecture_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -2785,39 +3167,39 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt64(381093450, archiveSizeBytes_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(381503659, getSourceImageEncryptionKey());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 452245726, sourceType_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeBool(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(503113556, getRawDisk());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(515138995, getDeprecated());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       output.writeMessage(531501153, getSourceDiskEncryptionKey());
     }
     getUnknownFields().writeTo(output);
@@ -2855,18 +3237,21 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       licenseCodesMemoizedSerializedSize = dataSize;
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50443319, sourceImage_);
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55328291, sourceImageId_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               79294545, guestOsFeatures_.get(i));
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98962258, sourceSnapshotId_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -2874,17 +3259,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               102135228, enableConfidentialCompute_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192356867, getShieldedInstanceInitialState());
@@ -2892,7 +3277,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(302803283, architecture_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               303679322, getSourceSnapshotEncryptionKey());
@@ -2927,7 +3312,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(381093450, archiveSizeBytes_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               381503659, getSourceImageEncryptionKey());
@@ -2935,22 +3320,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(452245726, sourceType_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(454190809, sourceDiskId_);
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964257, satisfiesPzi_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -2963,13 +3348,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(503113556, getRawDisk());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               531501153, getSourceDiskEncryptionKey());
@@ -3044,6 +3429,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
     }
     if (hasRawDisk() != other.hasRawDisk()) return false;
     if (hasRawDisk()) {
@@ -3190,6 +3579,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
     }
     if (hasRawDisk()) {
       hash = (37 * hash) + RAW_DISK_FIELD_NUMBER;
@@ -3363,7 +3756,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Image resource. You can use images to create boot disks for your VM instances. For more information, read Images.
+   * Represents an Image resource.
+   *
+   * You can use images to create boot disks for your VM instances.
+   * For more information, read Images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Image}
@@ -3424,6 +3820,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         getDeprecatedFieldBuilder();
         getGuestOsFeaturesFieldBuilder();
         getImageEncryptionKeyFieldBuilder();
+        getParamsFieldBuilder();
         getRawDiskFieldBuilder();
         getShieldedInstanceInitialStateFieldBuilder();
         getSourceDiskEncryptionKeyFieldBuilder();
@@ -3468,6 +3865,11 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       licenseCodes_ = emptyLongList();
       licenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       name_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       rawDisk_ = null;
       if (rawDiskBuilder_ != null) {
         rawDiskBuilder_.dispose();
@@ -3625,75 +4027,75 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.rawDisk_ = rawDiskBuilder_ == null ? rawDisk_ : rawDiskBuilder_.build();
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
+        result.rawDisk_ = rawDiskBuilder_ == null ? rawDisk_ : rawDiskBuilder_.build();
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.shieldedInstanceInitialState_ =
             shieldedInstanceInitialStateBuilder_ == null
                 ? shieldedInstanceInitialState_
                 : shieldedInstanceInitialStateBuilder_.build();
-        to_bitField0_ |= 0x00020000;
-      }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.sourceDisk_ = sourceDisk_;
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.sourceDisk_ = sourceDisk_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.sourceDiskEncryptionKey_ =
             sourceDiskEncryptionKeyBuilder_ == null
                 ? sourceDiskEncryptionKey_
                 : sourceDiskEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x00080000;
-      }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.sourceDiskId_ = sourceDiskId_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.sourceImage_ = sourceImage_;
+        result.sourceDiskId_ = sourceDiskId_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.sourceImage_ = sourceImage_;
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.sourceImageEncryptionKey_ =
             sourceImageEncryptionKeyBuilder_ == null
                 ? sourceImageEncryptionKey_
                 : sourceImageEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x00400000;
-      }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.sourceImageId_ = sourceImageId_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.sourceSnapshot_ = sourceSnapshot_;
+        result.sourceImageId_ = sourceImageId_;
         to_bitField0_ |= 0x01000000;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.sourceSnapshot_ = sourceSnapshot_;
+        to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.sourceSnapshotEncryptionKey_ =
             sourceSnapshotEncryptionKeyBuilder_ == null
                 ? sourceSnapshotEncryptionKey_
                 : sourceSnapshotEncryptionKeyBuilder_.build();
-        to_bitField0_ |= 0x02000000;
-      }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.sourceSnapshotId_ = sourceSnapshotId_;
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.sourceType_ = sourceType_;
+        result.sourceSnapshotId_ = sourceSnapshotId_;
         to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3703,10 +4105,14 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.status_ = status_;
+        result.sourceType_ = sourceType_;
         to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
         storageLocations_.makeImmutable();
         result.storageLocations_ = storageLocations_;
       }
@@ -3861,6 +4267,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00010000;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasRawDisk()) {
         mergeRawDisk(other.getRawDisk());
       }
@@ -3872,7 +4281,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasShieldedInstanceInitialState()) {
@@ -3880,7 +4289,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceDisk()) {
         sourceDisk_ = other.sourceDisk_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasSourceDiskEncryptionKey()) {
@@ -3888,12 +4297,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceDiskId()) {
         sourceDiskId_ = other.sourceDiskId_;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (other.hasSourceImage()) {
         sourceImage_ = other.sourceImage_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasSourceImageEncryptionKey()) {
@@ -3901,12 +4310,12 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceImageId()) {
         sourceImageId_ = other.sourceImageId_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (other.hasSourceSnapshot()) {
         sourceSnapshot_ = other.sourceSnapshot_;
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       if (other.hasSourceSnapshotEncryptionKey()) {
@@ -3914,23 +4323,23 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSourceSnapshotId()) {
         sourceSnapshotId_ = other.sourceSnapshotId_;
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasSourceType()) {
         sourceType_ = other.sourceType_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
           storageLocations_ = other.storageLocations_;
-          bitField1_ |= 0x00000002;
+          bitField1_ |= 0x00000004;
         } else {
           ensureStorageLocationsIsMutable();
           storageLocations_.addAll(other.storageLocations_);
@@ -4008,15 +4417,21 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 403546554:
               {
                 sourceImage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 403546554
             case 442626330:
               {
                 sourceImageId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 442626330
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 626510898
             case 634356362:
               {
                 com.google.cloud.compute.v1.GuestOsFeature m =
@@ -4033,7 +4448,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 791698066:
               {
                 sourceSnapshotId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 791698066
             case 817081824:
@@ -4045,7 +4460,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 1008495426:
               {
                 sourceSnapshot_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 1008495426
             case 1424998602:
@@ -4057,14 +4472,14 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 1450082194
             case 1538854938:
               {
                 input.readMessage(
                     getShieldedInstanceInitialStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 1538854938
             case -1872541030:
@@ -4077,7 +4492,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case -1865532718
             case -1764857416:
@@ -4123,7 +4538,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceImageEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -1242938022
             case -911466526:
@@ -4135,37 +4550,37 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case -680936950:
               {
                 sourceDisk_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case -680936950
             case -677001486:
               {
                 sourceType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case -677001486
             case -661440822:
               {
                 sourceDiskId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case -661440822
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case -645248918
             case -447253240:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -447253240
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -447253160
             case -293404678:
@@ -4183,7 +4598,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
             case -270058846:
               {
                 input.readMessage(getRawDiskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -270058846
             case -173855334:
@@ -4196,7 +4611,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceDiskEncryptionKeyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case -42958070
             default:
@@ -4225,7 +4640,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4241,7 +4657,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4265,7 +4682,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4289,7 +4707,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4312,7 +4731,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4331,7 +4751,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The architecture of the image. Valid values are ARM64 or X86_64.
+     * The architecture of the image. Valid values are
+     * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -4357,7 +4778,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+     * Size of the image tar.gz archive stored in Google Cloud
+     * Storage (in bytes).
      * </pre>
      *
      * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -4373,7 +4795,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+     * Size of the image tar.gz archive stored in Google Cloud
+     * Storage (in bytes).
      * </pre>
      *
      * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -4389,7 +4812,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+     * Size of the image tar.gz archive stored in Google Cloud
+     * Storage (in bytes).
      * </pre>
      *
      * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -4409,7 +4833,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+     * Size of the image tar.gz archive stored in Google Cloud
+     * Storage (in bytes).
      * </pre>
      *
      * <code>optional int64 archive_size_bytes = 381093450;</code>
@@ -4429,7 +4854,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4444,7 +4870,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4467,7 +4894,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4490,7 +4918,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4512,7 +4941,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4530,7 +4960,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4750,7 +5181,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4765,7 +5197,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4788,7 +5221,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4811,7 +5245,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4833,7 +5268,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4851,7 +5287,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4948,7 +5385,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+     * Whether this image is created from a confidential compute mode disk.
+     * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -4964,7 +5402,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+     * Whether this image is created from a confidential compute mode disk.
+     * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -4980,7 +5419,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+     * Whether this image is created from a confidential compute mode disk.
+     * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -5000,7 +5440,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
+     * Whether this image is created from a confidential compute mode disk.
+     * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
      * <code>optional bool enable_confidential_compute = 102135228;</code>
@@ -5020,7 +5461,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5035,7 +5484,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5058,7 +5515,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5081,7 +5546,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5103,7 +5576,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5121,7 +5602,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+     * The name of the image family to which this image belongs. The image
+     * family name can be from a publicly managed image family provided by
+     * Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family.
+     * For more information, see Image
+     * family best practices.
+     *
+     * When creating disks, you can specify an image family instead of a specific
+     * image name. The image family always returns its latest image that is not
+     * deprecated. The name of the image family must comply with RFC1035.
      * </pre>
      *
      * <code>optional string family = 328751972;</code>
@@ -5161,7 +5650,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5178,7 +5668,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5195,7 +5686,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5212,7 +5704,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5235,7 +5728,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5256,7 +5750,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5279,7 +5774,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5302,7 +5798,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5323,7 +5820,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5344,7 +5842,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5365,7 +5864,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5385,7 +5885,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5405,7 +5906,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5418,7 +5920,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5436,7 +5939,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5454,7 +5958,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5468,7 +5973,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5482,7 +5988,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+     * A list of features to enable on the guest operating system. Applicable
+     * only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
@@ -5518,7 +6025,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5534,7 +6042,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5550,7 +6059,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5570,7 +6080,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5595,7 +6106,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5612,7 +6135,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5635,7 +6170,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5660,7 +6207,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5683,7 +6242,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5715,7 +6286,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5737,7 +6320,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5755,7 +6350,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5777,7 +6384,19 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+     * Encrypts the image using acustomer-supplied
+     * encryption key.
+     *
+     * After you encrypt an image with a customer-supplied key, you must provide
+     * the same key if you use the image later (e.g. to create a disk from
+     * the image).
+     *
+     * Customer-supplied encryption keys do not protect access to metadata
+     * of the disk.
+     *
+     * If you do not provide an encryption key when creating the image, then the
+     * disk will be encrypted using an automatically generated key and you do not
+     * need to provide a key to use the image later.
      * </pre>
      *
      * <code>
@@ -5807,7 +6426,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5822,7 +6442,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5845,7 +6466,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5868,7 +6490,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5890,7 +6513,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5908,7 +6532,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#image for images.
+     * [Output Only] Type of the resource. Always compute#image for
+     * images.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5933,7 +6558,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -5948,7 +6581,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -5971,7 +6612,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -5994,7 +6643,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -6016,7 +6673,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -6034,7 +6699,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+     * A fingerprint for the labels being applied to this image, which is
+     * essentially a hash of the labels used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an image.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -6083,7 +6756,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6107,7 +6781,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6121,7 +6796,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6142,7 +6818,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6169,7 +6846,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6193,7 +6871,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6214,7 +6893,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this image. These can be later modified by the setLabels method.
+     * Labels to apply to this image. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -6551,7 +7231,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6566,7 +7252,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6589,7 +7281,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6612,7 +7310,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6634,7 +7338,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6652,7 +7362,13 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6669,6 +7385,209 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00010000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.ImageParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ImageParams,
+            com.google.cloud.compute.v1.ImageParams.Builder,
+            com.google.cloud.compute.v1.ImageParamsOrBuilder>
+        paramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     *
+     * @return Whether the params field is set.
+     */
+    public boolean hasParams() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.ImageParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.ImageParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.ImageParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.ImageParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.ImageParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.ImageParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.ImageParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.ImageParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.ImageParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ImageParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ImageParams,
+            com.google.cloud.compute.v1.ImageParams.Builder,
+            com.google.cloud.compute.v1.ImageParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ImageParams,
+                com.google.cloud.compute.v1.ImageParams.Builder,
+                com.google.cloud.compute.v1.ImageParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
     }
 
     private com.google.cloud.compute.v1.RawDisk rawDisk_;
@@ -6690,7 +7609,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the rawDisk field is set.
      */
     public boolean hasRawDisk() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6732,7 +7651,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         rawDiskBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6752,7 +7671,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         rawDiskBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6768,7 +7687,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeRawDisk(com.google.cloud.compute.v1.RawDisk value) {
       if (rawDiskBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && rawDisk_ != null
             && rawDisk_ != com.google.cloud.compute.v1.RawDisk.getDefaultInstance()) {
           getRawDiskBuilder().mergeFrom(value);
@@ -6779,7 +7698,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         rawDiskBuilder_.mergeFrom(value);
       }
       if (rawDisk_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6795,7 +7714,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
      */
     public Builder clearRawDisk() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       rawDisk_ = null;
       if (rawDiskBuilder_ != null) {
         rawDiskBuilder_.dispose();
@@ -6815,7 +7734,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.RawDisk raw_disk = 503113556;</code>
      */
     public com.google.cloud.compute.v1.RawDisk.Builder getRawDiskBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getRawDiskFieldBuilder().getBuilder();
     }
@@ -6880,7 +7799,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6914,7 +7833,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6931,7 +7850,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -6952,7 +7871,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6986,7 +7905,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7003,7 +7922,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -7023,7 +7942,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7089,7 +8008,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7107,7 +8026,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7130,7 +8049,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7156,7 +8075,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shieldedInstanceInitialState field is set.
      */
     public boolean hasShieldedInstanceInitialState() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -7203,7 +8122,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7226,7 +8145,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         shieldedInstanceInitialStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7245,7 +8164,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeShieldedInstanceInitialState(
         com.google.cloud.compute.v1.InitialStateConfig value) {
       if (shieldedInstanceInitialStateBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && shieldedInstanceInitialState_ != null
             && shieldedInstanceInitialState_
                 != com.google.cloud.compute.v1.InitialStateConfig.getDefaultInstance()) {
@@ -7257,7 +8176,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         shieldedInstanceInitialStateBuilder_.mergeFrom(value);
       }
       if (shieldedInstanceInitialState_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -7275,7 +8194,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearShieldedInstanceInitialState() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       shieldedInstanceInitialState_ = null;
       if (shieldedInstanceInitialStateBuilder_ != null) {
         shieldedInstanceInitialStateBuilder_.dispose();
@@ -7298,7 +8217,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.InitialStateConfig.Builder
         getShieldedInstanceInitialStateBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getShieldedInstanceInitialStateFieldBuilder().getBuilder();
     }
@@ -7359,7 +8278,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7367,14 +8301,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDisk field is set.
      */
     public boolean hasSourceDisk() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7397,7 +8346,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7420,7 +8384,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7433,7 +8412,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceDisk_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7442,7 +8421,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7451,7 +8445,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceDisk() {
       sourceDisk_ = getDefaultInstance().getSourceDisk();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7460,7 +8454,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source disk used to create this image.
+     * For example, the following are valid values:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk
+     *    - projects/project/zones/zone/disks/disk
+     *    - zones/zone/disks/disk
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -7474,7 +8483,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceDisk_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7490,7 +8499,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7500,14 +8511,16 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDiskEncryptionKey field is set.
      */
     public boolean hasSourceDiskEncryptionKey() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7530,7 +8543,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7547,7 +8562,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceDiskEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7556,7 +8571,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7570,7 +8587,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceDiskEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7579,7 +8596,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7589,7 +8608,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceDiskEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && sourceDiskEncryptionKey_ != null
             && sourceDiskEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -7601,7 +8620,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         sourceDiskEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceDiskEncryptionKey_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       return this;
@@ -7611,7 +8630,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7619,7 +8640,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceDiskEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       sourceDiskEncryptionKey_ = null;
       if (sourceDiskEncryptionKeyBuilder_ != null) {
         sourceDiskEncryptionKeyBuilder_.dispose();
@@ -7633,7 +8654,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7642,7 +8665,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceDiskEncryptionKeyBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getSourceDiskEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -7651,7 +8674,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7673,7 +8698,9 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+     * Thecustomer-supplied
+     * encryption key of the source disk. Required if the source disk is
+     * protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7703,7 +8730,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7711,14 +8741,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceDiskId field is set.
      */
     public boolean hasSourceDiskId() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7741,7 +8774,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7764,7 +8800,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7777,7 +8816,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceDiskId_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7786,7 +8825,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7795,7 +8837,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceDiskId() {
       sourceDiskId_ = getDefaultInstance().getSourceDiskId();
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -7804,7 +8846,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+     * [Output Only]
+     * The ID value of the disk used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given disk name.
      * </pre>
      *
      * <code>optional string source_disk_id = 454190809;</code>
@@ -7818,7 +8863,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceDiskId_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7829,7 +8874,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7837,14 +8897,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImage field is set.
      */
     public boolean hasSourceImage() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7867,7 +8942,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7890,7 +8980,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7903,7 +9008,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceImage_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7912,7 +9017,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7921,7 +9041,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceImage() {
       sourceImage_ = getDefaultInstance().getSourceImage();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -7930,7 +9050,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source image used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    images/image_name
+     *    - projects/project_id/global/images/image_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_image = 50443319;</code>
@@ -7944,7 +9079,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceImage_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7960,7 +9095,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -7970,14 +9106,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImageEncryptionKey field is set.
      */
     public boolean hasSourceImageEncryptionKey() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8000,7 +9137,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8017,7 +9155,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8026,7 +9164,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8040,7 +9179,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceImageEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8049,7 +9188,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8059,7 +9199,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceImageEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceImageEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && sourceImageEncryptionKey_ != null
             && sourceImageEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -8071,7 +9211,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         sourceImageEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceImageEncryptionKey_ != null) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       return this;
@@ -8081,7 +9221,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8089,7 +9230,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       sourceImageEncryptionKey_ = null;
       if (sourceImageEncryptionKeyBuilder_ != null) {
         sourceImageEncryptionKeyBuilder_.dispose();
@@ -8103,7 +9244,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8112,7 +9254,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceImageEncryptionKeyBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getSourceImageEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -8121,7 +9263,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8143,7 +9286,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source image. Required if the
+     * source image is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8173,7 +9317,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8181,14 +9328,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceImageId field is set.
      */
     public boolean hasSourceImageId() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8211,7 +9361,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8234,7 +9387,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8247,7 +9403,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceImageId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8256,7 +9412,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8265,7 +9424,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceImageId() {
       sourceImageId_ = getDefaultInstance().getSourceImageId();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -8274,7 +9433,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+     * [Output Only]
+     * The ID value of the image used to create this image. This value may be used
+     * to determine whether the image was taken from the current or a previous
+     * instance of a given image name.
      * </pre>
      *
      * <code>optional string source_image_id = 55328291;</code>
@@ -8288,7 +9450,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceImageId_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8299,7 +9461,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8307,14 +9484,29 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshot field is set.
      */
     public boolean hasSourceSnapshot() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8337,7 +9529,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8360,7 +9567,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8373,7 +9595,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshot_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8382,7 +9604,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8391,7 +9628,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshot() {
       sourceSnapshot_ = getDefaultInstance().getSourceSnapshot();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -8400,7 +9637,22 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
+     * URL of the source snapshot used to create this image.
+     * The following are valid formats for the URL:
+     *
+     *    - https://www.googleapis.com/compute/v1/projects/project_id/global/
+     *    snapshots/snapshot_name
+     *    - projects/project_id/global/snapshots/snapshot_name
+     *
+     *
+     *
+     * In order to create an image, you must provide the full or partial URL of
+     * one of the following:
+     *
+     *    - The rawDisk.source URL
+     *    - The sourceDisk URL
+     *    - The sourceImage URL
+     *    - The sourceSnapshot URL
      * </pre>
      *
      * <code>optional string source_snapshot = 126061928;</code>
@@ -8414,7 +9666,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshot_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8430,7 +9682,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8440,14 +9693,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotEncryptionKey field is set.
      */
     public boolean hasSourceSnapshotEncryptionKey() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8470,7 +9724,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8487,7 +9742,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8496,7 +9751,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8510,7 +9766,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSnapshotEncryptionKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8519,7 +9775,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8529,7 +9786,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSnapshotEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (sourceSnapshotEncryptionKeyBuilder_ == null) {
-        if (((bitField0_ & 0x20000000) != 0)
+        if (((bitField0_ & 0x40000000) != 0)
             && sourceSnapshotEncryptionKey_ != null
             && sourceSnapshotEncryptionKey_
                 != com.google.cloud.compute.v1.CustomerEncryptionKey.getDefaultInstance()) {
@@ -8541,7 +9798,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         sourceSnapshotEncryptionKeyBuilder_.mergeFrom(value);
       }
       if (sourceSnapshotEncryptionKey_ != null) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -8551,7 +9808,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8559,7 +9817,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       sourceSnapshotEncryptionKey_ = null;
       if (sourceSnapshotEncryptionKeyBuilder_ != null) {
         sourceSnapshotEncryptionKeyBuilder_.dispose();
@@ -8573,7 +9831,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8582,7 +9841,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
         getSourceSnapshotEncryptionKeyBuilder() {
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return getSourceSnapshotEncryptionKeyFieldBuilder().getBuilder();
     }
@@ -8591,7 +9850,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8613,7 +9873,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+     * The customer-supplied encryption key of the source snapshot. Required if
+     * the source snapshot is protected by a customer-supplied encryption key.
      * </pre>
      *
      * <code>
@@ -8643,7 +9904,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8651,14 +9915,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSnapshotId field is set.
      */
     public boolean hasSourceSnapshotId() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8681,7 +9948,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8704,7 +9974,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8717,7 +9990,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceSnapshotId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8726,7 +9999,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8735,7 +10011,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceSnapshotId() {
       sourceSnapshotId_ = getDefaultInstance().getSourceSnapshotId();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -8744,7 +10020,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
+     * [Output Only]
+     * The ID value of the snapshot used to create this image. This value may be
+     * used to determine whether the snapshot was taken from the current or a
+     * previous instance of a given snapshot name.
      * </pre>
      *
      * <code>optional string source_snapshot_id = 98962258;</code>
@@ -8758,7 +10037,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceSnapshotId_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -8769,7 +10048,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8778,14 +10058,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceType field is set.
      */
     public boolean hasSourceType() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8809,7 +10090,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8833,7 +10115,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8847,7 +10130,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceType_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8856,7 +10139,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8866,7 +10150,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceType() {
       sourceType_ = getDefaultInstance().getSourceType();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -8875,7 +10159,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The type of the image used to create this disk. The default and only valid value is RAW.
+     * The type of the image used to create this disk. The
+     * default and only valid value is RAW.
      * Check the SourceType enum for the list of possible values.
      * </pre>
      *
@@ -8890,7 +10175,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceType_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -8901,7 +10186,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -8910,14 +10198,17 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -8941,7 +10232,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -8965,7 +10259,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -8979,7 +10276,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       status_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -8988,7 +10285,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -8998,7 +10298,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9007,7 +10307,10 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * [Output Only] The status of the image. An image can be used to create other
+     * resources, such as instances, only after the image has been successfully
+     * created and the status is set to READY. Possible
+     * values are FAILED, PENDING, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -9022,7 +10325,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9034,14 +10337,15 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       if (!storageLocations_.isModifiable()) {
         storageLocations_ = new com.google.protobuf.LazyStringArrayList(storageLocations_);
       }
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
     }
 
     /**
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9057,7 +10361,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9072,7 +10377,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9088,7 +10394,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9104,7 +10411,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9119,7 +10427,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.set(index, value);
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9128,7 +10436,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9142,7 +10451,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       }
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9151,7 +10460,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9162,7 +10472,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllStorageLocations(java.lang.Iterable<java.lang.String> values) {
       ensureStorageLocationsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storageLocations_);
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -9171,7 +10481,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9180,7 +10491,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearStorageLocations() {
       storageLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -9190,7 +10501,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Storage bucket storage location of the image (regional or multi-regional).
+     * Cloud Storage bucket storage location of the image (regional or
+     * multi-regional).
      * </pre>
      *
      * <code>repeated string storage_locations = 328005274;</code>
@@ -9205,7 +10517,7 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureStorageLocationsIsMutable();
       storageLocations_.add(value);
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }

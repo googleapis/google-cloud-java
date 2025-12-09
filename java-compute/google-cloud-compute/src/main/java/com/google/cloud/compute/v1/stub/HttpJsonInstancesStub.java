@@ -35,12 +35,14 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddAccessConfigInstanceRequest;
+import com.google.cloud.compute.v1.AddNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.AddResourcePoliciesInstanceRequest;
 import com.google.cloud.compute.v1.AggregatedListInstancesRequest;
 import com.google.cloud.compute.v1.AttachDiskInstanceRequest;
 import com.google.cloud.compute.v1.BulkInsertInstanceRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceRequest;
 import com.google.cloud.compute.v1.DeleteInstanceRequest;
+import com.google.cloud.compute.v1.DeleteNetworkInterfaceInstanceRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceRequest;
 import com.google.cloud.compute.v1.GetEffectiveFirewallsInstanceRequest;
 import com.google.cloud.compute.v1.GetGuestAttributesInstanceRequest;
@@ -163,6 +165,63 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (AddAccessConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceMethodDescriptor =
+          ApiMethodDescriptor.<AddNetworkInterfaceInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/AddNetworkInterface")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddNetworkInterfaceInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/addNetworkInterface",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "networkInterfaceResource",
+                                      request.getNetworkInterfaceResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddNetworkInterfaceInstanceRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getZone());
@@ -505,6 +564,59 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteAccessConfigInstanceRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceMethodDescriptor =
+          ApiMethodDescriptor.<DeleteNetworkInterfaceInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Instances/DeleteNetworkInterface")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteNetworkInterfaceInstanceRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/instances/{instance}/deleteNetworkInterface",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteNetworkInterfaceInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "networkInterfaceName", request.getNetworkInterfaceName());
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteNetworkInterfaceInstanceRequest request, Operation response) -> {
                     StringBuilder opName = new StringBuilder(response.getName());
                     opName.append(":").append(request.getProject());
                     opName.append(":").append(request.getZone());
@@ -2706,6 +2818,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
   private final UnaryCallable<AddAccessConfigInstanceRequest, Operation> addAccessConfigCallable;
   private final OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
       addAccessConfigOperationCallable;
+  private final UnaryCallable<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceCallable;
+  private final OperationCallable<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationCallable;
   private final UnaryCallable<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesInstanceRequest, Operation, Operation>
@@ -2727,6 +2843,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
       deleteAccessConfigCallable;
   private final OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationCallable;
+  private final UnaryCallable<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceCallable;
+  private final OperationCallable<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationCallable;
   private final UnaryCallable<DetachDiskInstanceRequest, Operation> detachDiskCallable;
   private final OperationCallable<DetachDiskInstanceRequest, Operation, Operation>
       detachDiskOperationCallable;
@@ -2914,6 +3034,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceTransportSettings =
+            HttpJsonCallSettings.<AddNetworkInterfaceInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(addNetworkInterfaceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesTransportSettings =
             HttpJsonCallSettings.<AddResourcePoliciesInstanceRequest, Operation>newBuilder()
@@ -2983,6 +3117,20 @@ public class HttpJsonInstancesStub extends InstancesStub {
         deleteAccessConfigTransportSettings =
             HttpJsonCallSettings.<DeleteAccessConfigInstanceRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAccessConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceTransportSettings =
+            HttpJsonCallSettings.<DeleteNetworkInterfaceInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteNetworkInterfaceMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -3580,6 +3728,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
             settings.addAccessConfigOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.addNetworkInterfaceCallable =
+        callableFactory.createUnaryCallable(
+            addNetworkInterfaceTransportSettings,
+            settings.addNetworkInterfaceSettings(),
+            clientContext);
+    this.addNetworkInterfaceOperationCallable =
+        callableFactory.createOperationCallable(
+            addNetworkInterfaceTransportSettings,
+            settings.addNetworkInterfaceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.addResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
             addResourcePoliciesTransportSettings,
@@ -3633,6 +3792,17 @@ public class HttpJsonInstancesStub extends InstancesStub {
         callableFactory.createOperationCallable(
             deleteAccessConfigTransportSettings,
             settings.deleteAccessConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteNetworkInterfaceCallable =
+        callableFactory.createUnaryCallable(
+            deleteNetworkInterfaceTransportSettings,
+            settings.deleteNetworkInterfaceSettings(),
+            clientContext);
+    this.deleteNetworkInterfaceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteNetworkInterfaceTransportSettings,
+            settings.deleteNetworkInterfaceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.detachDiskCallable =
@@ -4000,12 +4170,14 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(addAccessConfigMethodDescriptor);
+    methodDescriptors.add(addNetworkInterfaceMethodDescriptor);
     methodDescriptors.add(addResourcePoliciesMethodDescriptor);
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(attachDiskMethodDescriptor);
     methodDescriptors.add(bulkInsertMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(deleteAccessConfigMethodDescriptor);
+    methodDescriptors.add(deleteNetworkInterfaceMethodDescriptor);
     methodDescriptors.add(detachDiskMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(getEffectiveFirewallsMethodDescriptor);
@@ -4060,6 +4232,18 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<AddAccessConfigInstanceRequest, Operation, Operation>
       addAccessConfigOperationCallable() {
     return addAccessConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceCallable() {
+    return addNetworkInterfaceCallable;
+  }
+
+  @Override
+  public OperationCallable<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationCallable() {
+    return addNetworkInterfaceOperationCallable;
   }
 
   @Override
@@ -4127,6 +4311,18 @@ public class HttpJsonInstancesStub extends InstancesStub {
   public OperationCallable<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationCallable() {
     return deleteAccessConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceCallable() {
+    return deleteNetworkInterfaceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationCallable() {
+    return deleteNetworkInterfaceOperationCallable;
   }
 
   @Override

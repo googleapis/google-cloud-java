@@ -199,6 +199,8 @@ public class AccountsServiceClientHttpJsonTest {
             .setAccount(Account.newBuilder().build())
             .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
             .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+            .addAllSetAlias(
+                new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
             .build();
 
     Account actualResponse = client.createAndConfigureAccount(request);
@@ -232,6 +234,8 @@ public class AccountsServiceClientHttpJsonTest {
               .setAccount(Account.newBuilder().build())
               .addAllUser(new ArrayList<CreateAndConfigureAccountRequest.AddUser>())
               .addAllService(new ArrayList<CreateAndConfigureAccountRequest.AddAccountService>())
+              .addAllSetAlias(
+                  new ArrayList<CreateAndConfigureAccountRequest.SetAliasForRelationship>())
               .build();
       client.createAndConfigureAccount(request);
       Assert.fail("No exception raised");

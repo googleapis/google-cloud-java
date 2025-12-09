@@ -28,7 +28,11 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * This field will be deprecated soon. Use theexchange_subnet_routes field instead.
+   * Indicates whether full mesh connectivity is created and managed
+   * automatically between peered networks. Currently this field should always
+   * be true since Google Compute Engine will automatically create and manage
+   * subnetwork routes between two networks when peering state isACTIVE.
    * </pre>
    *
    * <code>optional bool auto_create_routes = 57454941;</code>
@@ -41,7 +45,11 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * This field will be deprecated soon. Use the exchange_subnet_routes field instead. Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * This field will be deprecated soon. Use theexchange_subnet_routes field instead.
+   * Indicates whether full mesh connectivity is created and managed
+   * automatically between peered networks. Currently this field should always
+   * be true since Google Compute Engine will automatically create and manage
+   * subnetwork routes between two networks when peering state isACTIVE.
    * </pre>
    *
    * <code>optional bool auto_create_routes = 57454941;</code>
@@ -54,7 +62,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection as a whole.
+   * [Output Only] The effective state of the peering connection
+   * as a whole.
    * </pre>
    *
    * <code>
@@ -69,7 +78,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection as a whole.
+   * [Output Only] The effective state of the peering connection
+   * as a whole.
    * </pre>
    *
    * <code>
@@ -84,7 +94,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection as a whole.
+   * [Output Only] The effective state of the peering connection
+   * as a whole.
    * </pre>
    *
    * <code>
@@ -98,7 +109,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * Indicates whether full mesh connectivity is created and managed
+   * automatically between peered networks. Currently this field should always
+   * be true since Google Compute Engine will automatically create and manage
+   * subnetwork routes between two networks when peering state isACTIVE.
    * </pre>
    *
    * <code>optional bool exchange_subnet_routes = 26322256;</code>
@@ -111,7 +125,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
+   * Indicates whether full mesh connectivity is created and managed
+   * automatically between peered networks. Currently this field should always
+   * be true since Google Compute Engine will automatically create and manage
+   * subnetwork routes between two networks when peering state isACTIVE.
    * </pre>
    *
    * <code>optional bool exchange_subnet_routes = 26322256;</code>
@@ -124,7 +141,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to export the custom routes to peer network. The default value is false.
+   * Whether to export the custom routes to peer network. The default value is
+   * false.
    * </pre>
    *
    * <code>optional bool export_custom_routes = 60281485;</code>
@@ -137,7 +155,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to export the custom routes to peer network. The default value is false.
+   * Whether to export the custom routes to peer network. The default value is
+   * false.
    * </pre>
    *
    * <code>optional bool export_custom_routes = 60281485;</code>
@@ -150,7 +169,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value
+   * is true, all subnet routes are exported.IPv4
+   * special-use ranges are always
+   * exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -163,7 +185,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are exported. The default value is true, all subnet routes are exported. IPv4 special-use ranges are always exported to peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are exported. The default value
+   * is true, all subnet routes are exported.IPv4
+   * special-use ranges are always
+   * exported to peers and are not controlled by this field.
    * </pre>
    *
    * <code>optional bool export_subnet_routes_with_public_ip = 97940834;</code>
@@ -176,7 +201,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to import the custom routes from peer network. The default value is false.
+   * Whether to import the custom routes from peer network. The default value is
+   * false.
    * </pre>
    *
    * <code>optional bool import_custom_routes = 197982398;</code>
@@ -189,7 +215,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether to import the custom routes from peer network. The default value is false.
+   * Whether to import the custom routes from peer network. The default value is
+   * false.
    * </pre>
    *
    * <code>optional bool import_custom_routes = 197982398;</code>
@@ -202,7 +229,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value
+   * is false.IPv4
+   * special-use ranges are always
+   * imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -215,7 +245,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Whether subnet routes with public IP range are imported. The default value is false. IPv4 special-use ranges are always imported from peers and are not controlled by this field.
+   * Whether subnet routes with public IP range are imported. The default value
+   * is false.IPv4
+   * special-use ranges are always
+   * imported from peers and are not controlled by this field.
    * </pre>
    *
    * <code>optional bool import_subnet_routes_with_public_ip = 14419729;</code>
@@ -228,7 +261,13 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this peering. Provided by the client when the peering is created.
+   * The name must comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all the following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -241,7 +280,13 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this peering. Provided by the client when the peering is created.
+   * The name must comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all the following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -254,7 +299,13 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Name of this peering. Provided by the client when the peering is created. The name must comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all the following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of this peering. Provided by the client when the peering is created.
+   * The name must comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all the following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a
+   * dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -267,7 +318,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+   * The URL of the peer network. It can be either full URL or partial URL. The
+   * peer network may belong to a different project. If the partial URL does not
+   * contain project, it is assumed that the peer network is in the same project
+   * as the current network.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -280,7 +334,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+   * The URL of the peer network. It can be either full URL or partial URL. The
+   * peer network may belong to a different project. If the partial URL does not
+   * contain project, it is assumed that the peer network is in the same project
+   * as the current network.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -293,7 +350,10 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
+   * The URL of the peer network. It can be either full URL or partial URL. The
+   * peer network may belong to a different project. If the partial URL does not
+   * contain project, it is assumed that the peer network is in the same project
+   * as the current network.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -332,7 +392,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are allowed to be imported or exported between peer networks. The default value is IPV4_ONLY.
+   * Which IP version(s) of traffic and routes are allowed to be imported or
+   * exported between peer networks. The default value is IPV4_ONLY.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -346,7 +407,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are allowed to be imported or exported between peer networks. The default value is IPV4_ONLY.
+   * Which IP version(s) of traffic and routes are allowed to be imported or
+   * exported between peer networks. The default value is IPV4_ONLY.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -360,7 +422,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Which IP version(s) of traffic and routes are allowed to be imported or exported between peer networks. The default value is IPV4_ONLY.
+   * Which IP version(s) of traffic and routes are allowed to be imported or
+   * exported between peer networks. The default value is IPV4_ONLY.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -374,7 +437,9 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -388,7 +453,9 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -402,7 +469,9 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * peering is `ACTIVE` when there's a matching configuration in the peer
+   * network.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -455,7 +524,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * The update strategy determines the semantics for updates and deletes to the
+   * peering connection configuration.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -469,7 +539,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * The update strategy determines the semantics for updates and deletes to the
+   * peering connection configuration.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *
@@ -483,7 +554,8 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * The update strategy determines the semantics for updates and deletes to the
+   * peering connection configuration.
    * Check the UpdateStrategy enum for the list of possible values.
    * </pre>
    *

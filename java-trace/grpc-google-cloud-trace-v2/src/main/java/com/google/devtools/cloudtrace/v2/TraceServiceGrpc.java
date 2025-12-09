@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A single trace can contain spans from multiple services.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/devtools/cloudtrace/v2/tracing.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TraceServiceGrpc {
 
@@ -325,8 +322,9 @@ public final class TraceServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchWriteSpans(
-        com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudtrace.v2.BatchWriteSpansRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchWriteSpansMethod(), getCallOptions(), request);
     }
 
@@ -338,8 +336,8 @@ public final class TraceServiceGrpc {
      * </pre>
      */
     public com.google.devtools.cloudtrace.v2.Span createSpan(
-        com.google.devtools.cloudtrace.v2.Span request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.devtools.cloudtrace.v2.Span request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSpanMethod(), getCallOptions(), request);
     }
   }

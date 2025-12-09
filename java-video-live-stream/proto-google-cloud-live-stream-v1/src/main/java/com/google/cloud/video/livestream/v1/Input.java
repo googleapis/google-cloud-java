@@ -283,12 +283,42 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resolution &lt;= 4096x2160. Not supported yet.
+     * Resolution &lt;= 4096x2160. Bitrate &lt;= 50 Mbps. FPS &lt;= 60.
      * </pre>
      *
      * <code>UHD = 3;</code>
      */
     UHD(3),
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 1280x720. Bitrate &lt;= 6 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>SD_H265 = 4;</code>
+     */
+    SD_H265(4),
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 1920x1080. Bitrate &lt;= 25 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>HD_H265 = 5;</code>
+     */
+    HD_H265(5),
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 4096x2160. Bitrate &lt;= 50 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>UHD_H265 = 6;</code>
+     */
+    UHD_H265(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,12 +359,45 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resolution &lt;= 4096x2160. Not supported yet.
+     * Resolution &lt;= 4096x2160. Bitrate &lt;= 50 Mbps. FPS &lt;= 60.
      * </pre>
      *
      * <code>UHD = 3;</code>
      */
     public static final int UHD_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 1280x720. Bitrate &lt;= 6 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>SD_H265 = 4;</code>
+     */
+    public static final int SD_H265_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 1920x1080. Bitrate &lt;= 25 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>HD_H265 = 5;</code>
+     */
+    public static final int HD_H265_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolution &lt;= 4096x2160. Bitrate &lt;= 50 Mbps. FPS &lt;= 60. H265 codec.
+     * </pre>
+     *
+     * <code>UHD_H265 = 6;</code>
+     */
+    public static final int UHD_H265_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -368,6 +431,12 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
           return HD;
         case 3:
           return UHD;
+        case 4:
+          return SD_H265;
+        case 5:
+          return HD_H265;
+        case 6:
+          return UHD_H265;
         default:
           return null;
       }

@@ -51,6 +51,9 @@ import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
+import com.google.devtools.artifactregistry.v1.ExportArtifactMetadata;
+import com.google.devtools.artifactregistry.v1.ExportArtifactRequest;
+import com.google.devtools.artifactregistry.v1.ExportArtifactResponse;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
@@ -444,6 +447,15 @@ public abstract class ArtifactRegistryStub implements BackgroundResource {
 
   public UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteAttachmentCallable()");
+  }
+
+  public OperationCallable<ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportArtifactOperationCallable()");
+  }
+
+  public UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportArtifactCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

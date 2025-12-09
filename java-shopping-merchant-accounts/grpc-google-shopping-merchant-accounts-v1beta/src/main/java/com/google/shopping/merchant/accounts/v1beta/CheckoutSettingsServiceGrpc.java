@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * settings](https://support.google.com/merchants/answer/13945960).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/checkoutsettings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CheckoutSettingsServiceGrpc {
 
@@ -513,8 +510,9 @@ public final class CheckoutSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.CheckoutSettings getCheckoutSettings(
-        com.google.shopping.merchant.accounts.v1beta.GetCheckoutSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetCheckoutSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCheckoutSettingsMethod(), getCallOptions(), request);
     }
 
@@ -526,8 +524,9 @@ public final class CheckoutSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.CheckoutSettings createCheckoutSettings(
-        com.google.shopping.merchant.accounts.v1beta.CreateCheckoutSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.CreateCheckoutSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCheckoutSettingsMethod(), getCallOptions(), request);
     }
 
@@ -539,8 +538,9 @@ public final class CheckoutSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.CheckoutSettings updateCheckoutSettings(
-        com.google.shopping.merchant.accounts.v1beta.UpdateCheckoutSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateCheckoutSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCheckoutSettingsMethod(), getCallOptions(), request);
     }
 
@@ -553,8 +553,9 @@ public final class CheckoutSettingsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCheckoutSettings(
-        com.google.shopping.merchant.accounts.v1beta.DeleteCheckoutSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.DeleteCheckoutSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCheckoutSettingsMethod(), getCallOptions(), request);
     }
   }

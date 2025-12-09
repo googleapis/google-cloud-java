@@ -45,6 +45,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     sourceIp_ = "";
     destinationIp_ = "";
     region_ = "";
+    sourceGeolocationCode_ = "";
+    destinationGeolocationCode_ = "";
   }
 
   @java.lang.Override
@@ -230,12 +232,24 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet is sent from the Internet to the private IPv6 address.
+     * Packet is sent from the Internet or Google service to the private IPv6
+     * address.
      * </pre>
      *
      * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
      */
     NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS(44),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the external IPv6 source address of an instance to
+     * the private IPv6 address of an instance.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS = 98;</code>
+     */
+    NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS(98),
     /**
      *
      *
@@ -270,8 +284,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance with only an internal IP address tries to access Google API and
-     * services, but private Google access is not enabled in the subnet.
+     * Endpoint with only an internal IP address tries to access Google API and
+     * services, but Private Google Access is not enabled in the subnet or is
+     * not applicable.
      * </pre>
      *
      * <code>PRIVATE_GOOGLE_ACCESS_DISALLOWED = 8;</code>
@@ -293,9 +308,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance with only an internal IP address tries to access external hosts,
-     * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection.
+     * Endpoint with only an internal IP address tries to access external hosts,
+     * but there is no matching Cloud NAT gateway in the subnet.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>
@@ -1043,6 +1057,117 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION = 88;</code>
      */
     UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION(88),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because hybrid endpoint like a VPN gateway or
+     * Interconnect is not allowed to send traffic to the Internet.
+     * </pre>
+     *
+     * <code>TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED = 89;</code>
+     */
+    TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED(89),
+    /**
+     *
+     *
+     * <pre>
+     * Packet with destination IP address within the reserved NAT64 range is
+     * dropped due to no matching NAT gateway in the subnet.
+     * </pre>
+     *
+     * <code>NO_MATCHING_NAT64_GATEWAY = 90;</code>
+     */
+    NO_MATCHING_NAT64_GATEWAY(90),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to being sent to a backend of a passthrough load
+     * balancer that doesn't use the same IP version as the frontend.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH = 96;</code>
+     */
+    LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH(96),
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the unknown NCC network is dropped due to no known route
+     * from the source network to the destination IP address.
+     * </pre>
+     *
+     * <code>NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION = 97;</code>
+     */
+    NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION(97),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped by Cloud NAT due to using an unsupported protocol.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_PROTOCOL_UNSUPPORTED = 99;</code>
+     */
+    CLOUD_NAT_PROTOCOL_UNSUPPORTED(99),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to using an unsupported protocol (any other than
+     * UDP) for L2 Interconnect.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_UNSUPPORTED_PROTOCOL = 100;</code>
+     */
+    L2_INTERCONNECT_UNSUPPORTED_PROTOCOL(100),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to using an unsupported port (any other than
+     * 6081) for L2 Interconnect.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_UNSUPPORTED_PORT = 101;</code>
+     */
+    L2_INTERCONNECT_UNSUPPORTED_PORT(101),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to destination IP not matching the appliance
+     * mapping IPs configured on the L2 Interconnect attachment.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_DESTINATION_IP_MISMATCH = 102;</code>
+     */
+    L2_INTERCONNECT_DESTINATION_IP_MISMATCH(102),
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because it matches a route associated with an NCC
+     * spoke in the hybrid subnet context, but such a configuration is not
+     * supported.
+     * </pre>
+     *
+     * <code>NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED = 104;</code>
+     */
+    NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED(104),
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because the region of the hybrid subnet is different
+     * from the region of the next hop of the route matched within this hybrid
+     * subnet.
+     * </pre>
+     *
+     * <code>HYBRID_SUBNET_REGION_MISMATCH = 105;</code>
+     */
+    HYBRID_SUBNET_REGION_MISMATCH(105),
     UNRECOGNIZED(-1),
     ;
 
@@ -1212,12 +1337,25 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Packet is sent from the Internet to the private IPv6 address.
+     * Packet is sent from the Internet or Google service to the private IPv6
+     * address.
      * </pre>
      *
      * <code>NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS = 44;</code>
      */
     public static final int NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS_VALUE = 44;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is sent from the external IPv6 source address of an instance to
+     * the private IPv6 address of an instance.
+     * </pre>
+     *
+     * <code>NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS = 98;</code>
+     */
+    public static final int NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS_VALUE = 98;
 
     /**
      *
@@ -1256,8 +1394,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance with only an internal IP address tries to access Google API and
-     * services, but private Google access is not enabled in the subnet.
+     * Endpoint with only an internal IP address tries to access Google API and
+     * services, but Private Google Access is not enabled in the subnet or is
+     * not applicable.
      * </pre>
      *
      * <code>PRIVATE_GOOGLE_ACCESS_DISALLOWED = 8;</code>
@@ -1281,9 +1420,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instance with only an internal IP address tries to access external hosts,
-     * but Cloud NAT is not enabled in the subnet, unless special configurations
-     * on a VM allow this connection.
+     * Endpoint with only an internal IP address tries to access external hosts,
+     * but there is no matching Cloud NAT gateway in the subnet.
      * </pre>
      *
      * <code>NO_EXTERNAL_ADDRESS = 9;</code>
@@ -2099,6 +2237,127 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION_VALUE = 88;
 
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because hybrid endpoint like a VPN gateway or
+     * Interconnect is not allowed to send traffic to the Internet.
+     * </pre>
+     *
+     * <code>TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED = 89;</code>
+     */
+    public static final int TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED_VALUE = 89;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet with destination IP address within the reserved NAT64 range is
+     * dropped due to no matching NAT gateway in the subnet.
+     * </pre>
+     *
+     * <code>NO_MATCHING_NAT64_GATEWAY = 90;</code>
+     */
+    public static final int NO_MATCHING_NAT64_GATEWAY_VALUE = 90;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to being sent to a backend of a passthrough load
+     * balancer that doesn't use the same IP version as the frontend.
+     * </pre>
+     *
+     * <code>LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH = 96;</code>
+     */
+    public static final int LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH_VALUE = 96;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet from the unknown NCC network is dropped due to no known route
+     * from the source network to the destination IP address.
+     * </pre>
+     *
+     * <code>NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION = 97;</code>
+     */
+    public static final int NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION_VALUE = 97;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped by Cloud NAT due to using an unsupported protocol.
+     * </pre>
+     *
+     * <code>CLOUD_NAT_PROTOCOL_UNSUPPORTED = 99;</code>
+     */
+    public static final int CLOUD_NAT_PROTOCOL_UNSUPPORTED_VALUE = 99;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to using an unsupported protocol (any other than
+     * UDP) for L2 Interconnect.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_UNSUPPORTED_PROTOCOL = 100;</code>
+     */
+    public static final int L2_INTERCONNECT_UNSUPPORTED_PROTOCOL_VALUE = 100;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to using an unsupported port (any other than
+     * 6081) for L2 Interconnect.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_UNSUPPORTED_PORT = 101;</code>
+     */
+    public static final int L2_INTERCONNECT_UNSUPPORTED_PORT_VALUE = 101;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped due to destination IP not matching the appliance
+     * mapping IPs configured on the L2 Interconnect attachment.
+     * </pre>
+     *
+     * <code>L2_INTERCONNECT_DESTINATION_IP_MISMATCH = 102;</code>
+     */
+    public static final int L2_INTERCONNECT_DESTINATION_IP_MISMATCH_VALUE = 102;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet could be dropped because it matches a route associated with an NCC
+     * spoke in the hybrid subnet context, but such a configuration is not
+     * supported.
+     * </pre>
+     *
+     * <code>NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED = 104;</code>
+     */
+    public static final int NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED_VALUE = 104;
+
+    /**
+     *
+     *
+     * <pre>
+     * Packet is dropped because the region of the hybrid subnet is different
+     * from the region of the next hop of the route matched within this hybrid
+     * subnet.
+     * </pre>
+     *
+     * <code>HYBRID_SUBNET_REGION_MISMATCH = 105;</code>
+     */
+    public static final int HYBRID_SUBNET_REGION_MISMATCH_VALUE = 105;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -2153,6 +2412,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return ROUTE_NEXT_HOP_FORWARDING_RULE_TYPE_INVALID;
         case 44:
           return NO_ROUTE_FROM_INTERNET_TO_PRIVATE_IPV6_ADDRESS;
+        case 98:
+          return NO_ROUTE_FROM_EXTERNAL_IPV6_SOURCE_TO_PRIVATE_IPV6_ADDRESS;
         case 45:
           return VPN_TUNNEL_LOCAL_SELECTOR_MISMATCH;
         case 46:
@@ -2299,6 +2560,26 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
           return PSC_PORT_MAPPING_WITHOUT_PSC_CONNECTION_UNSUPPORTED;
         case 88:
           return UNSUPPORTED_ROUTE_MATCHED_FOR_NAT64_DESTINATION;
+        case 89:
+          return TRAFFIC_FROM_HYBRID_ENDPOINT_TO_INTERNET_DISALLOWED;
+        case 90:
+          return NO_MATCHING_NAT64_GATEWAY;
+        case 96:
+          return LOAD_BALANCER_BACKEND_IP_VERSION_MISMATCH;
+        case 97:
+          return NO_KNOWN_ROUTE_FROM_NCC_NETWORK_TO_DESTINATION;
+        case 99:
+          return CLOUD_NAT_PROTOCOL_UNSUPPORTED;
+        case 100:
+          return L2_INTERCONNECT_UNSUPPORTED_PROTOCOL;
+        case 101:
+          return L2_INTERCONNECT_UNSUPPORTED_PORT;
+        case 102:
+          return L2_INTERCONNECT_DESTINATION_IP_MISMATCH;
+        case 104:
+          return NCC_ROUTE_WITHIN_HYBRID_SUBNET_UNSUPPORTED;
+        case 105:
+          return HYBRID_SUBNET_REGION_MISMATCH;
         default:
           return null;
       }
@@ -2603,6 +2884,112 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_GEOLOCATION_CODE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceGeolocationCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the source IP address (if relevant).
+   * </pre>
+   *
+   * <code>string source_geolocation_code = 6;</code>
+   *
+   * @return The sourceGeolocationCode.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceGeolocationCode() {
+    java.lang.Object ref = sourceGeolocationCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceGeolocationCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the source IP address (if relevant).
+   * </pre>
+   *
+   * <code>string source_geolocation_code = 6;</code>
+   *
+   * @return The bytes for sourceGeolocationCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceGeolocationCodeBytes() {
+    java.lang.Object ref = sourceGeolocationCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceGeolocationCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESTINATION_GEOLOCATION_CODE_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object destinationGeolocationCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the destination IP address (if relevant).
+   * </pre>
+   *
+   * <code>string destination_geolocation_code = 7;</code>
+   *
+   * @return The destinationGeolocationCode.
+   */
+  @java.lang.Override
+  public java.lang.String getDestinationGeolocationCode() {
+    java.lang.Object ref = destinationGeolocationCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      destinationGeolocationCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Geolocation (region code) of the destination IP address (if relevant).
+   * </pre>
+   *
+   * <code>string destination_geolocation_code = 7;</code>
+   *
+   * @return The bytes for destinationGeolocationCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDestinationGeolocationCodeBytes() {
+    java.lang.Object ref = destinationGeolocationCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      destinationGeolocationCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2633,6 +3020,12 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, region_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGeolocationCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sourceGeolocationCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationGeolocationCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, destinationGeolocationCode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2658,6 +3051,13 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, region_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceGeolocationCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sourceGeolocationCode_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destinationGeolocationCode_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(7, destinationGeolocationCode_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2679,6 +3079,9 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     if (!getSourceIp().equals(other.getSourceIp())) return false;
     if (!getDestinationIp().equals(other.getDestinationIp())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
+    if (!getSourceGeolocationCode().equals(other.getSourceGeolocationCode())) return false;
+    if (!getDestinationGeolocationCode().equals(other.getDestinationGeolocationCode()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2700,6 +3103,10 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDestinationIp().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
+    hash = (37 * hash) + SOURCE_GEOLOCATION_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceGeolocationCode().hashCode();
+    hash = (37 * hash) + DESTINATION_GEOLOCATION_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getDestinationGeolocationCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2845,6 +3252,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       sourceIp_ = "";
       destinationIp_ = "";
       region_ = "";
+      sourceGeolocationCode_ = "";
+      destinationGeolocationCode_ = "";
       return this;
     }
 
@@ -2895,6 +3304,12 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.region_ = region_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sourceGeolocationCode_ = sourceGeolocationCode_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.destinationGeolocationCode_ = destinationGeolocationCode_;
       }
     }
 
@@ -2966,6 +3381,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getSourceGeolocationCode().isEmpty()) {
+        sourceGeolocationCode_ = other.sourceGeolocationCode_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getDestinationGeolocationCode().isEmpty()) {
+        destinationGeolocationCode_ = other.destinationGeolocationCode_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3022,6 +3447,18 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                sourceGeolocationCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                destinationGeolocationCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3578,6 +4015,228 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       region_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceGeolocationCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the source IP address (if relevant).
+     * </pre>
+     *
+     * <code>string source_geolocation_code = 6;</code>
+     *
+     * @return The sourceGeolocationCode.
+     */
+    public java.lang.String getSourceGeolocationCode() {
+      java.lang.Object ref = sourceGeolocationCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceGeolocationCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the source IP address (if relevant).
+     * </pre>
+     *
+     * <code>string source_geolocation_code = 6;</code>
+     *
+     * @return The bytes for sourceGeolocationCode.
+     */
+    public com.google.protobuf.ByteString getSourceGeolocationCodeBytes() {
+      java.lang.Object ref = sourceGeolocationCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceGeolocationCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the source IP address (if relevant).
+     * </pre>
+     *
+     * <code>string source_geolocation_code = 6;</code>
+     *
+     * @param value The sourceGeolocationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceGeolocationCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceGeolocationCode_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the source IP address (if relevant).
+     * </pre>
+     *
+     * <code>string source_geolocation_code = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceGeolocationCode() {
+      sourceGeolocationCode_ = getDefaultInstance().getSourceGeolocationCode();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the source IP address (if relevant).
+     * </pre>
+     *
+     * <code>string source_geolocation_code = 6;</code>
+     *
+     * @param value The bytes for sourceGeolocationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceGeolocationCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceGeolocationCode_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object destinationGeolocationCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the destination IP address (if relevant).
+     * </pre>
+     *
+     * <code>string destination_geolocation_code = 7;</code>
+     *
+     * @return The destinationGeolocationCode.
+     */
+    public java.lang.String getDestinationGeolocationCode() {
+      java.lang.Object ref = destinationGeolocationCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        destinationGeolocationCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the destination IP address (if relevant).
+     * </pre>
+     *
+     * <code>string destination_geolocation_code = 7;</code>
+     *
+     * @return The bytes for destinationGeolocationCode.
+     */
+    public com.google.protobuf.ByteString getDestinationGeolocationCodeBytes() {
+      java.lang.Object ref = destinationGeolocationCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        destinationGeolocationCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the destination IP address (if relevant).
+     * </pre>
+     *
+     * <code>string destination_geolocation_code = 7;</code>
+     *
+     * @param value The destinationGeolocationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationGeolocationCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      destinationGeolocationCode_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the destination IP address (if relevant).
+     * </pre>
+     *
+     * <code>string destination_geolocation_code = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDestinationGeolocationCode() {
+      destinationGeolocationCode_ = getDefaultInstance().getDestinationGeolocationCode();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Geolocation (region code) of the destination IP address (if relevant).
+     * </pre>
+     *
+     * <code>string destination_geolocation_code = 7;</code>
+     *
+     * @param value The bytes for destinationGeolocationCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDestinationGeolocationCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      destinationGeolocationCode_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * An API that lets users analyze and explore their business conversation data.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contactcenterinsights/v1/contact_center_insights.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ContactCenterInsightsGrpc {
 
@@ -6109,8 +6106,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Conversation createConversation(
-        com.google.cloud.contactcenterinsights.v1.CreateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationMethod(), getCallOptions(), request);
     }
 
@@ -6124,8 +6122,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation uploadConversation(
-        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UploadConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUploadConversationMethod(), getCallOptions(), request);
     }
 
@@ -6137,8 +6136,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Conversation updateConversation(
-        com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversationMethod(), getCallOptions(), request);
     }
 
@@ -6150,8 +6150,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Conversation getConversation(
-        com.google.cloud.contactcenterinsights.v1.GetConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationMethod(), getCallOptions(), request);
     }
 
@@ -6163,8 +6164,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListConversationsResponse listConversations(
-        com.google.cloud.contactcenterinsights.v1.ListConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationsMethod(), getCallOptions(), request);
     }
 
@@ -6176,8 +6178,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversation(
-        com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteConversationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
     }
 
@@ -6190,8 +6193,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAnalysis(
-        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -6203,8 +6207,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Analysis getAnalysis(
-        com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetAnalysisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -6216,8 +6221,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListAnalysesResponse listAnalyses(
-        com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListAnalysesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnalysesMethod(), getCallOptions(), request);
     }
 
@@ -6229,8 +6235,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAnalysis(
-        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -6242,8 +6249,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation bulkAnalyzeConversations(
-        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.BulkAnalyzeConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBulkAnalyzeConversationsMethod(), getCallOptions(), request);
     }
 
@@ -6255,8 +6263,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation bulkDeleteConversations(
-        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.BulkDeleteConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBulkDeleteConversationsMethod(), getCallOptions(), request);
     }
 
@@ -6269,8 +6278,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation ingestConversations(
-        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.IngestConversationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getIngestConversationsMethod(), getCallOptions(), request);
     }
 
@@ -6282,8 +6292,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportInsightsData(
-        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportInsightsDataMethod(), getCallOptions(), request);
     }
 
@@ -6295,8 +6306,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createIssueModel(
-        com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6308,8 +6320,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.IssueModel updateIssueModel(
-        com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6321,8 +6334,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.IssueModel getIssueModel(
-        com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6334,8 +6348,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse listIssueModels(
-        com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIssueModelsMethod(), getCallOptions(), request);
     }
 
@@ -6347,8 +6362,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIssueModel(
-        com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6361,8 +6377,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployIssueModel(
-        com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6375,8 +6392,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployIssueModel(
-        com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6388,8 +6406,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportIssueModel(
-        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ExportIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6401,8 +6420,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importIssueModel(
-        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ImportIssueModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportIssueModelMethod(), getCallOptions(), request);
     }
 
@@ -6414,8 +6434,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Issue getIssue(
-        com.google.cloud.contactcenterinsights.v1.GetIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIssueMethod(), getCallOptions(), request);
     }
 
@@ -6427,8 +6448,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListIssuesResponse listIssues(
-        com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIssuesMethod(), getCallOptions(), request);
     }
 
@@ -6440,8 +6462,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Issue updateIssue(
-        com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
     }
 
@@ -6453,8 +6476,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIssue(
-        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIssueMethod(), getCallOptions(), request);
     }
 
@@ -6467,8 +6491,9 @@ public final class ContactCenterInsightsGrpc {
      */
     public com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse
         calculateIssueModelStats(
-            com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCalculateIssueModelStatsMethod(), getCallOptions(), request);
     }
 
@@ -6480,8 +6505,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher createPhraseMatcher(
-        com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePhraseMatcherMethod(), getCallOptions(), request);
     }
 
@@ -6493,8 +6519,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher getPhraseMatcher(
-        com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetPhraseMatcherRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPhraseMatcherMethod(), getCallOptions(), request);
     }
 
@@ -6506,8 +6533,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersResponse listPhraseMatchers(
-        com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListPhraseMatchersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPhraseMatchersMethod(), getCallOptions(), request);
     }
 
@@ -6519,8 +6547,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePhraseMatcher(
-        com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeletePhraseMatcherRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePhraseMatcherMethod(), getCallOptions(), request);
     }
 
@@ -6532,8 +6561,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.PhraseMatcher updatePhraseMatcher(
-        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdatePhraseMatcherRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePhraseMatcherMethod(), getCallOptions(), request);
     }
 
@@ -6545,8 +6575,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.CalculateStatsResponse calculateStats(
-        com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CalculateStatsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCalculateStatsMethod(), getCallOptions(), request);
     }
 
@@ -6558,8 +6589,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Settings getSettings(
-        com.google.cloud.contactcenterinsights.v1.GetSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSettingsMethod(), getCallOptions(), request);
     }
 
@@ -6571,8 +6603,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.Settings updateSettings(
-        com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
     }
 
@@ -6584,8 +6617,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.AnalysisRule createAnalysisRule(
-        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateAnalysisRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnalysisRuleMethod(), getCallOptions(), request);
     }
 
@@ -6597,8 +6631,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.AnalysisRule getAnalysisRule(
-        com.google.cloud.contactcenterinsights.v1.GetAnalysisRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetAnalysisRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnalysisRuleMethod(), getCallOptions(), request);
     }
 
@@ -6610,8 +6645,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesResponse listAnalysisRules(
-        com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListAnalysisRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnalysisRulesMethod(), getCallOptions(), request);
     }
 
@@ -6623,8 +6659,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.AnalysisRule updateAnalysisRule(
-        com.google.cloud.contactcenterinsights.v1.UpdateAnalysisRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateAnalysisRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAnalysisRuleMethod(), getCallOptions(), request);
     }
 
@@ -6636,8 +6673,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAnalysisRule(
-        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteAnalysisRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnalysisRuleMethod(), getCallOptions(), request);
     }
 
@@ -6649,8 +6687,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.EncryptionSpec getEncryptionSpec(
-        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetEncryptionSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEncryptionSpecMethod(), getCallOptions(), request);
     }
 
@@ -6666,8 +6705,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation initializeEncryptionSpec(
-        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.InitializeEncryptionSpecRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeEncryptionSpecMethod(), getCallOptions(), request);
     }
 
@@ -6679,8 +6719,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.View createView(
-        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateViewMethod(), getCallOptions(), request);
     }
 
@@ -6692,8 +6733,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.View getView(
-        com.google.cloud.contactcenterinsights.v1.GetViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetViewMethod(), getCallOptions(), request);
     }
 
@@ -6705,8 +6747,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListViewsResponse listViews(
-        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListViewsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListViewsMethod(), getCallOptions(), request);
     }
 
@@ -6718,8 +6761,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.View updateView(
-        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateViewMethod(), getCallOptions(), request);
     }
 
@@ -6731,8 +6775,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteView(
-        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteViewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteViewMethod(), getCallOptions(), request);
     }
 
@@ -6744,8 +6789,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation queryMetrics(
-        com.google.cloud.contactcenterinsights.v1.QueryMetricsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.QueryMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryMetricsMethod(), getCallOptions(), request);
     }
 
@@ -6757,8 +6803,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaQuestion createQaQuestion(
-        com.google.cloud.contactcenterinsights.v1.CreateQaQuestionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateQaQuestionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQaQuestionMethod(), getCallOptions(), request);
     }
 
@@ -6770,8 +6817,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaQuestion getQaQuestion(
-        com.google.cloud.contactcenterinsights.v1.GetQaQuestionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetQaQuestionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQaQuestionMethod(), getCallOptions(), request);
     }
 
@@ -6783,8 +6831,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaQuestion updateQaQuestion(
-        com.google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateQaQuestionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQaQuestionMethod(), getCallOptions(), request);
     }
 
@@ -6796,8 +6845,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteQaQuestion(
-        com.google.cloud.contactcenterinsights.v1.DeleteQaQuestionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaQuestionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQaQuestionMethod(), getCallOptions(), request);
     }
 
@@ -6809,8 +6859,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListQaQuestionsResponse listQaQuestions(
-        com.google.cloud.contactcenterinsights.v1.ListQaQuestionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListQaQuestionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQaQuestionsMethod(), getCallOptions(), request);
     }
 
@@ -6822,8 +6873,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecard createQaScorecard(
-        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQaScorecardMethod(), getCallOptions(), request);
     }
 
@@ -6835,8 +6887,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecard getQaScorecard(
-        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQaScorecardMethod(), getCallOptions(), request);
     }
 
@@ -6848,8 +6901,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecard updateQaScorecard(
-        com.google.cloud.contactcenterinsights.v1.UpdateQaScorecardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateQaScorecardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQaScorecardMethod(), getCallOptions(), request);
     }
 
@@ -6861,8 +6915,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteQaScorecard(
-        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQaScorecardMethod(), getCallOptions(), request);
     }
 
@@ -6874,8 +6929,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListQaScorecardsResponse listQaScorecards(
-        com.google.cloud.contactcenterinsights.v1.ListQaScorecardsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListQaScorecardsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQaScorecardsMethod(), getCallOptions(), request);
     }
 
@@ -6887,8 +6943,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision createQaScorecardRevision(
-        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateQaScorecardRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6900,8 +6957,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision getQaScorecardRevision(
-        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetQaScorecardRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6913,8 +6971,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation tuneQaScorecardRevision(
-        com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.TuneQaScorecardRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTuneQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6926,8 +6985,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision deployQaScorecardRevision(
-        com.google.cloud.contactcenterinsights.v1.DeployQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeployQaScorecardRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6940,8 +7000,9 @@ public final class ContactCenterInsightsGrpc {
      */
     public com.google.cloud.contactcenterinsights.v1.QaScorecardRevision
         undeployQaScorecardRevision(
-            com.google.cloud.contactcenterinsights.v1.UndeployQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.contactcenterinsights.v1.UndeployQaScorecardRevisionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6953,8 +7014,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteQaScorecardRevision(
-        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteQaScorecardRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteQaScorecardRevisionMethod(), getCallOptions(), request);
     }
 
@@ -6967,8 +7029,9 @@ public final class ContactCenterInsightsGrpc {
      */
     public com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsResponse
         listQaScorecardRevisions(
-            com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.contactcenterinsights.v1.ListQaScorecardRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListQaScorecardRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -6980,8 +7043,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.FeedbackLabel createFeedbackLabel(
-        com.google.cloud.contactcenterinsights.v1.CreateFeedbackLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.CreateFeedbackLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFeedbackLabelMethod(), getCallOptions(), request);
     }
 
@@ -6993,8 +7057,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsResponse listFeedbackLabels(
-        com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.ListFeedbackLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFeedbackLabelsMethod(), getCallOptions(), request);
     }
 
@@ -7006,8 +7071,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.FeedbackLabel getFeedbackLabel(
-        com.google.cloud.contactcenterinsights.v1.GetFeedbackLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.GetFeedbackLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFeedbackLabelMethod(), getCallOptions(), request);
     }
 
@@ -7019,8 +7085,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.cloud.contactcenterinsights.v1.FeedbackLabel updateFeedbackLabel(
-        com.google.cloud.contactcenterinsights.v1.UpdateFeedbackLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.UpdateFeedbackLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFeedbackLabelMethod(), getCallOptions(), request);
     }
 
@@ -7032,8 +7099,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFeedbackLabel(
-        com.google.cloud.contactcenterinsights.v1.DeleteFeedbackLabelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.DeleteFeedbackLabelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFeedbackLabelMethod(), getCallOptions(), request);
     }
 
@@ -7046,8 +7114,9 @@ public final class ContactCenterInsightsGrpc {
      */
     public com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsResponse
         listAllFeedbackLabels(
-            com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.contactcenterinsights.v1.ListAllFeedbackLabelsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAllFeedbackLabelsMethod(), getCallOptions(), request);
     }
 
@@ -7059,8 +7128,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation bulkUploadFeedbackLabels(
-        com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.BulkUploadFeedbackLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBulkUploadFeedbackLabelsMethod(), getCallOptions(), request);
     }
 
@@ -7072,8 +7142,9 @@ public final class ContactCenterInsightsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation bulkDownloadFeedbackLabels(
-        com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contactcenterinsights.v1.BulkDownloadFeedbackLabelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBulkDownloadFeedbackLabelsMethod(), getCallOptions(), request);
     }
   }

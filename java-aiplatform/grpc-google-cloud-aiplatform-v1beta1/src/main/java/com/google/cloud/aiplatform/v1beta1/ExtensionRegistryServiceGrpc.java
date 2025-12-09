@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's Extension registry.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/extension_registry_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExtensionRegistryServiceGrpc {
 
@@ -558,8 +555,9 @@ public final class ExtensionRegistryServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importExtension(
-        com.google.cloud.aiplatform.v1beta1.ImportExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ImportExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportExtensionMethod(), getCallOptions(), request);
     }
 
@@ -571,8 +569,9 @@ public final class ExtensionRegistryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Extension getExtension(
-        com.google.cloud.aiplatform.v1beta1.GetExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExtensionMethod(), getCallOptions(), request);
     }
 
@@ -584,8 +583,9 @@ public final class ExtensionRegistryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListExtensionsResponse listExtensions(
-        com.google.cloud.aiplatform.v1beta1.ListExtensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListExtensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExtensionsMethod(), getCallOptions(), request);
     }
 
@@ -597,8 +597,9 @@ public final class ExtensionRegistryServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Extension updateExtension(
-        com.google.cloud.aiplatform.v1beta1.UpdateExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExtensionMethod(), getCallOptions(), request);
     }
 
@@ -610,8 +611,9 @@ public final class ExtensionRegistryServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExtension(
-        com.google.cloud.aiplatform.v1beta1.DeleteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExtensionMethod(), getCallOptions(), request);
     }
   }

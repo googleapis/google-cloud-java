@@ -263,4 +263,82 @@ public interface RedactImageRequestOrBuilder
    * <code>.google.privacy.dlp.v2.ByteContentItem byte_item = 7;</code>
    */
   com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the inspection template to use. Settings in the
+   * main `inspect_config` field override the corresponding settings in this
+   * inspection template.
+   *
+   * The merge behavior is as follows:
+   *
+   *   - Singular field: The main field's value replaces the value of the
+   *   corresponding field in the template.
+   *   - Repeated fields: The field values are appended to the list defined in
+   *   the template.
+   *   - Sub-messages and groups: The fields are recursively merged.
+   * </pre>
+   *
+   * <code>string inspect_template = 9;</code>
+   *
+   * @return The inspectTemplate.
+   */
+  java.lang.String getInspectTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the inspection template to use. Settings in the
+   * main `inspect_config` field override the corresponding settings in this
+   * inspection template.
+   *
+   * The merge behavior is as follows:
+   *
+   *   - Singular field: The main field's value replaces the value of the
+   *   corresponding field in the template.
+   *   - Repeated fields: The field values are appended to the list defined in
+   *   the template.
+   *   - Sub-messages and groups: The fields are recursively merged.
+   * </pre>
+   *
+   * <code>string inspect_template = 9;</code>
+   *
+   * @return The bytes for inspectTemplate.
+   */
+  com.google.protobuf.ByteString getInspectTemplateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the de-identification template to use. Settings
+   * in the main `image_redaction_configs` field override the corresponding
+   * settings in this de-identification template. The request fails if the
+   * type of the template's deidentify_config is not image_transformations.
+   * </pre>
+   *
+   * <code>string deidentify_template = 10;</code>
+   *
+   * @return The deidentifyTemplate.
+   */
+  java.lang.String getDeidentifyTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * The full resource name of the de-identification template to use. Settings
+   * in the main `image_redaction_configs` field override the corresponding
+   * settings in this de-identification template. The request fails if the
+   * type of the template's deidentify_config is not image_transformations.
+   * </pre>
+   *
+   * <code>string deidentify_template = 10;</code>
+   *
+   * @return The bytes for deidentifyTemplate.
+   */
+  com.google.protobuf.ByteString getDeidentifyTemplateBytes();
 }

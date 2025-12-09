@@ -28,7 +28,7 @@ public interface ProcessingLocationOrBuilder
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ProcessingLocationOrBuilder
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface ProcessingLocationOrBuilder
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -67,4 +67,49 @@ public interface ProcessingLocationOrBuilder
    */
   com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocationOrBuilder
       getImageFallbackLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   *
+   * @return Whether the documentFallbackLocation field is set.
+   */
+  boolean hasDocumentFallbackLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   *
+   * @return The documentFallbackLocation.
+   */
+  com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+      getDocumentFallbackLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   */
+  com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder
+      getDocumentFallbackLocationOrBuilder();
 }

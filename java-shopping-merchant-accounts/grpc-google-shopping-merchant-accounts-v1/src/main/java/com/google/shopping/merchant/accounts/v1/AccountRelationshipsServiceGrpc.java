@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support AccountRelationship API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/accountrelationships.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccountRelationshipsServiceGrpc {
 
@@ -426,8 +423,9 @@ public final class AccountRelationshipsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AccountRelationship getAccountRelationship(
-        com.google.shopping.merchant.accounts.v1.GetAccountRelationshipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetAccountRelationshipRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountRelationshipMethod(), getCallOptions(), request);
     }
 
@@ -440,8 +438,9 @@ public final class AccountRelationshipsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.AccountRelationship updateAccountRelationship(
-        com.google.shopping.merchant.accounts.v1.UpdateAccountRelationshipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateAccountRelationshipRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountRelationshipMethod(), getCallOptions(), request);
     }
 
@@ -454,8 +453,9 @@ public final class AccountRelationshipsServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.ListAccountRelationshipsResponse
         listAccountRelationships(
-            com.google.shopping.merchant.accounts.v1.ListAccountRelationshipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.ListAccountRelationshipsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountRelationshipsMethod(), getCallOptions(), request);
     }
   }

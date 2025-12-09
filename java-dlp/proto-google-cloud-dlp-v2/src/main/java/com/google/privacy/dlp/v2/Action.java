@@ -2435,6 +2435,468 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PublishFindingsToDataplexCatalogOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings of a DlpJob to Dataplex Universal Catalog as a
+   * `sensitive-data-protection-job-result` aspect. For more information,
+   * see [Send inspection results to Dataplex Universal Catalog as
+   * aspects](https://cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
+   *
+   * Aspects are stored in Dataplex Universal Catalog storage and are
+   * governed by service-specific policies for Dataplex Universal Catalog. For
+   * more information, see [Service Specific
+   * Terms](https://cloud.google.com/terms/service-terms).
+   *
+   * Only a single instance of this action can be specified. This action is
+   * allowed only if all resources being scanned are BigQuery tables.
+   * Compatible with: Inspect
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog}
+   */
+  public static final class PublishFindingsToDataplexCatalog
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)
+      PublishFindingsToDataplexCatalogOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use PublishFindingsToDataplexCatalog.newBuilder() to construct.
+    private PublishFindingsToDataplexCatalog(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PublishFindingsToDataplexCatalog() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PublishFindingsToDataplexCatalog();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToDataplexCatalog_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToDataplexCatalog_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.class,
+              com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog other =
+          (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings of a DlpJob to Dataplex Universal Catalog as a
+     * `sensitive-data-protection-job-result` aspect. For more information,
+     * see [Send inspection results to Dataplex Universal Catalog as
+     * aspects](https://cloud.google.com/sensitive-data-protection/docs/add-aspects-inspection-job).
+     *
+     * Aspects are stored in Dataplex Universal Catalog storage and are
+     * governed by service-specific policies for Dataplex Universal Catalog. For
+     * more information, see [Service Specific
+     * Terms](https://cloud.google.com/terms/service-terms).
+     *
+     * Only a single instance of this action can be specified. This action is
+     * allowed only if all resources being scanned are BigQuery tables.
+     * Compatible with: Inspect
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToDataplexCatalog_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToDataplexCatalog_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.class,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder.class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_Action_PublishFindingsToDataplexCatalog_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog build() {
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog buildPartial() {
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog result =
+            new com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog other) {
+        if (other
+            == com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog)
+    private static final com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog();
+    }
+
+    public static com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PublishFindingsToDataplexCatalog> PARSER =
+        new com.google.protobuf.AbstractParser<PublishFindingsToDataplexCatalog>() {
+          @java.lang.Override
+          public PublishFindingsToDataplexCatalog parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PublishFindingsToDataplexCatalog> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PublishFindingsToDataplexCatalog> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DeidentifyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action.Deidentify)
@@ -2761,12 +3223,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -2780,12 +3242,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -2799,12 +3261,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -2819,12 +3281,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -2838,12 +3300,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -3362,12 +3824,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -3386,12 +3848,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -3408,12 +3870,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -3431,12 +3893,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -3453,12 +3915,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * List of user-specified file type groups to transform. If specified, only
-     * the files with these file types will be transformed. If empty, all
-     * supported files will be transformed. Supported types may be automatically
-     * added over time. If a file type is set in this field that isn't supported
-     * by the Deidentify action then the job will fail and will not be
-     * successfully created/started. Currently the only file types supported
-     * are: IMAGES, TEXT_FILES, CSV, TSV.
+     * the files with these file types are transformed. If empty, all
+     * supported files are transformed. Supported types may be automatically
+     * added over time. Any unsupported file types that are set in this field
+     * are excluded from de-identification. An error is recorded for each
+     * unsupported file in the TransformationDetails output table. Currently the
+     * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5164,12 +5626,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5187,12 +5649,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5208,12 +5670,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5230,12 +5692,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5259,12 +5721,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5287,12 +5749,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5315,12 +5777,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5339,12 +5801,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5360,12 +5822,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5382,12 +5844,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5408,12 +5870,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -5433,12 +5895,12 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * List of user-specified file type groups to transform. If specified, only
-       * the files with these file types will be transformed. If empty, all
-       * supported files will be transformed. Supported types may be automatically
-       * added over time. If a file type is set in this field that isn't supported
-       * by the Deidentify action then the job will fail and will not be
-       * successfully created/started. Currently the only file types supported
-       * are: IMAGES, TEXT_FILES, CSV, TSV.
+       * the files with these file types are transformed. If empty, all
+       * supported files are transformed. Supported types may be automatically
+       * added over time. Any unsupported file types that are set in this field
+       * are excluded from de-identification. An error is recorded for each
+       * unsupported file in the TransformationDetails output table. Currently the
+       * only file types supported are: IMAGES, TEXT_FILES, CSV, TSV.
        * </pre>
        *
        * <code>repeated .google.privacy.dlp.v2.FileType file_types_to_transform = 8;</code>
@@ -6394,6 +6856,7 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     PUB_SUB(2),
     PUBLISH_SUMMARY_TO_CSCC(3),
     PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG(5),
+    PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG(10),
     DEIDENTIFY(7),
     JOB_NOTIFICATION_EMAILS(8),
     PUBLISH_TO_STACKDRIVER(9),
@@ -6424,6 +6887,8 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           return PUBLISH_SUMMARY_TO_CSCC;
         case 5:
           return PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG;
+        case 10:
+          return PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG;
         case 7:
           return DEIDENTIFY;
         case 8:
@@ -6671,6 +7136,68 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.Action.PublishFindingsToCloudDataCatalog.getDefaultInstance();
   }
 
+  public static final int PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   *
+   * @return Whether the publishFindingsToDataplexCatalog field is set.
+   */
+  @java.lang.Override
+  public boolean hasPublishFindingsToDataplexCatalog() {
+    return actionCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   *
+   * @return The publishFindingsToDataplexCatalog.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+      getPublishFindingsToDataplexCatalog() {
+    if (actionCase_ == 10) {
+      return (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Publish findings as an aspect to Dataplex Universal Catalog.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder
+      getPublishFindingsToDataplexCatalogOrBuilder() {
+    if (actionCase_ == 10) {
+      return (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_;
+    }
+    return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.getDefaultInstance();
+  }
+
   public static final int DEIDENTIFY_FIELD_NUMBER = 7;
 
   /**
@@ -6877,6 +7404,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
     if (actionCase_ == 9) {
       output.writeMessage(9, (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_);
     }
+    if (actionCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6921,6 +7452,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.privacy.dlp.v2.Action.PublishToStackdriver) action_);
     }
+    if (actionCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6950,6 +7486,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getPublishFindingsToCloudDataCatalog()
             .equals(other.getPublishFindingsToCloudDataCatalog())) return false;
+        break;
+      case 10:
+        if (!getPublishFindingsToDataplexCatalog()
+            .equals(other.getPublishFindingsToDataplexCatalog())) return false;
         break;
       case 7:
         if (!getDeidentify().equals(other.getDeidentify())) return false;
@@ -6990,6 +7530,10 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG_FIELD_NUMBER;
         hash = (53 * hash) + getPublishFindingsToCloudDataCatalog().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG_FIELD_NUMBER;
+        hash = (53 * hash) + getPublishFindingsToDataplexCatalog().hashCode();
         break;
       case 7:
         hash = (37 * hash) + DEIDENTIFY_FIELD_NUMBER;
@@ -7159,6 +7703,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       if (publishFindingsToCloudDataCatalogBuilder_ != null) {
         publishFindingsToCloudDataCatalogBuilder_.clear();
       }
+      if (publishFindingsToDataplexCatalogBuilder_ != null) {
+        publishFindingsToDataplexCatalogBuilder_.clear();
+      }
       if (deidentifyBuilder_ != null) {
         deidentifyBuilder_.clear();
       }
@@ -7222,6 +7769,9 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       }
       if (actionCase_ == 5 && publishFindingsToCloudDataCatalogBuilder_ != null) {
         result.action_ = publishFindingsToCloudDataCatalogBuilder_.build();
+      }
+      if (actionCase_ == 10 && publishFindingsToDataplexCatalogBuilder_ != null) {
+        result.action_ = publishFindingsToDataplexCatalogBuilder_.build();
       }
       if (actionCase_ == 7 && deidentifyBuilder_ != null) {
         result.action_ = deidentifyBuilder_.build();
@@ -7298,6 +7848,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
         case PUBLISH_FINDINGS_TO_CLOUD_DATA_CATALOG:
           {
             mergePublishFindingsToCloudDataCatalog(other.getPublishFindingsToCloudDataCatalog());
+            break;
+          }
+        case PUBLISH_FINDINGS_TO_DATAPLEX_CATALOG:
+          {
+            mergePublishFindingsToDataplexCatalog(other.getPublishFindingsToDataplexCatalog());
             break;
           }
         case DEIDENTIFY:
@@ -7393,6 +7948,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
                 actionCase_ = 9;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getPublishFindingsToDataplexCatalogFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                actionCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8332,6 +8895,254 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
       actionCase_ = 5;
       onChanged();
       return publishFindingsToCloudDataCatalogBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder>
+        publishFindingsToDataplexCatalogBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     *
+     * @return Whether the publishFindingsToDataplexCatalog field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishFindingsToDataplexCatalog() {
+      return actionCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     *
+     * @return The publishFindingsToDataplexCatalog.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+        getPublishFindingsToDataplexCatalog() {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        if (actionCase_ == 10) {
+          return (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+            .getDefaultInstance();
+      } else {
+        if (actionCase_ == 10) {
+          return publishFindingsToDataplexCatalogBuilder_.getMessage();
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    public Builder setPublishFindingsToDataplexCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog value) {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        action_ = value;
+        onChanged();
+      } else {
+        publishFindingsToDataplexCatalogBuilder_.setMessage(value);
+      }
+      actionCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    public Builder setPublishFindingsToDataplexCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder builderForValue) {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        action_ = builderForValue.build();
+        onChanged();
+      } else {
+        publishFindingsToDataplexCatalogBuilder_.setMessage(builderForValue.build());
+      }
+      actionCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    public Builder mergePublishFindingsToDataplexCatalog(
+        com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog value) {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        if (actionCase_ == 10
+            && action_
+                != com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+                    .getDefaultInstance()) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.newBuilder(
+                      (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          action_ = value;
+        }
+        onChanged();
+      } else {
+        if (actionCase_ == 10) {
+          publishFindingsToDataplexCatalogBuilder_.mergeFrom(value);
+        } else {
+          publishFindingsToDataplexCatalogBuilder_.setMessage(value);
+        }
+      }
+      actionCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    public Builder clearPublishFindingsToDataplexCatalog() {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        if (actionCase_ == 10) {
+          actionCase_ = 0;
+          action_ = null;
+          onChanged();
+        }
+      } else {
+        if (actionCase_ == 10) {
+          actionCase_ = 0;
+          action_ = null;
+        }
+        publishFindingsToDataplexCatalogBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder
+        getPublishFindingsToDataplexCatalogBuilder() {
+      return getPublishFindingsToDataplexCatalogFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder
+        getPublishFindingsToDataplexCatalogOrBuilder() {
+      if ((actionCase_ == 10) && (publishFindingsToDataplexCatalogBuilder_ != null)) {
+        return publishFindingsToDataplexCatalogBuilder_.getMessageOrBuilder();
+      } else {
+        if (actionCase_ == 10) {
+          return (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_;
+        }
+        return com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Publish findings as an aspect to Dataplex Universal Catalog.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog publish_findings_to_dataplex_catalog = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder,
+            com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder>
+        getPublishFindingsToDataplexCatalogFieldBuilder() {
+      if (publishFindingsToDataplexCatalogBuilder_ == null) {
+        if (!(actionCase_ == 10)) {
+          action_ =
+              com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog
+                  .getDefaultInstance();
+        }
+        publishFindingsToDataplexCatalogBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog.Builder,
+                com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalogOrBuilder>(
+                (com.google.privacy.dlp.v2.Action.PublishFindingsToDataplexCatalog) action_,
+                getParentForChildren(),
+                isClean());
+        action_ = null;
+      }
+      actionCase_ = 10;
+      onChanged();
+      return publishFindingsToDataplexCatalogBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

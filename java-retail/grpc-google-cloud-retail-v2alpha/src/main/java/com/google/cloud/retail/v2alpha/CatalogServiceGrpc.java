@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing catalog configuration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/catalog_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CatalogServiceGrpc {
 
@@ -1237,8 +1234,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ListCatalogsResponse listCatalogs(
-        com.google.cloud.retail.v2alpha.ListCatalogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.ListCatalogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCatalogsMethod(), getCallOptions(), request);
     }
 
@@ -1250,8 +1248,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Catalog updateCatalog(
-        com.google.cloud.retail.v2alpha.UpdateCatalogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCatalogMethod(), getCallOptions(), request);
     }
 
@@ -1291,8 +1290,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty setDefaultBranch(
-        com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetDefaultBranchMethod(), getCallOptions(), request);
     }
 
@@ -1306,8 +1306,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.GetDefaultBranchResponse getDefaultBranch(
-        com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDefaultBranchMethod(), getCallOptions(), request);
     }
 
@@ -1319,8 +1320,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.CompletionConfig getCompletionConfig(
-        com.google.cloud.retail.v2alpha.GetCompletionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetCompletionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCompletionConfigMethod(), getCallOptions(), request);
     }
 
@@ -1333,8 +1335,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.CompletionConfig updateCompletionConfig(
-        com.google.cloud.retail.v2alpha.UpdateCompletionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateCompletionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCompletionConfigMethod(), getCallOptions(), request);
     }
 
@@ -1346,8 +1349,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AttributesConfig getAttributesConfig(
-        com.google.cloud.retail.v2alpha.GetAttributesConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetAttributesConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttributesConfigMethod(), getCallOptions(), request);
     }
 
@@ -1366,8 +1370,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AttributesConfig updateAttributesConfig(
-        com.google.cloud.retail.v2alpha.UpdateAttributesConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateAttributesConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAttributesConfigMethod(), getCallOptions(), request);
     }
 
@@ -1383,8 +1388,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AttributesConfig addCatalogAttribute(
-        com.google.cloud.retail.v2alpha.AddCatalogAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.AddCatalogAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddCatalogAttributeMethod(), getCallOptions(), request);
     }
 
@@ -1400,8 +1406,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AttributesConfig removeCatalogAttribute(
-        com.google.cloud.retail.v2alpha.RemoveCatalogAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.RemoveCatalogAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveCatalogAttributeMethod(), getCallOptions(), request);
     }
 
@@ -1416,8 +1423,9 @@ public final class CatalogServiceGrpc {
      */
     public com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesResponse
         batchRemoveCatalogAttributes(
-            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2alpha.BatchRemoveCatalogAttributesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRemoveCatalogAttributesMethod(), getCallOptions(), request);
     }
 
@@ -1435,8 +1443,9 @@ public final class CatalogServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.AttributesConfig replaceCatalogAttribute(
-        com.google.cloud.retail.v2alpha.ReplaceCatalogAttributeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.ReplaceCatalogAttributeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReplaceCatalogAttributeMethod(), getCallOptions(), request);
     }
   }

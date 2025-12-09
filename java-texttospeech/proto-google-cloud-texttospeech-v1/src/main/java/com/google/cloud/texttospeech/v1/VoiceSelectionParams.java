@@ -43,6 +43,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     languageCode_ = "";
     name_ = "";
     ssmlGender_ = 0;
+    modelName_ = "";
   }
 
   @java.lang.Override
@@ -366,6 +367,127 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         : voiceClone_;
   }
 
+  public static final int MODEL_NAME_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object modelName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelName.
+   */
+  @java.lang.Override
+  public java.lang.String getModelName() {
+    java.lang.Object ref = modelName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      modelName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelNameBytes() {
+    java.lang.Object ref = modelName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      modelName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MULTI_SPEAKER_VOICE_CONFIG_FIELD_NUMBER = 7;
+  private com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multiSpeakerVoiceConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiSpeakerVoiceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMultiSpeakerVoiceConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiSpeakerVoiceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig getMultiSpeakerVoiceConfig() {
+    return multiSpeakerVoiceConfig_ == null
+        ? com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.getDefaultInstance()
+        : multiSpeakerVoiceConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder
+      getMultiSpeakerVoiceConfigOrBuilder() {
+    return multiSpeakerVoiceConfig_ == null
+        ? com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.getDefaultInstance()
+        : multiSpeakerVoiceConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -397,6 +519,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getVoiceClone());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getMultiSpeakerVoiceConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -422,6 +550,13 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getVoiceClone());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelName_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getMultiSpeakerVoiceConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -450,6 +585,11 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (hasVoiceClone()) {
       if (!getVoiceClone().equals(other.getVoiceClone())) return false;
     }
+    if (!getModelName().equals(other.getModelName())) return false;
+    if (hasMultiSpeakerVoiceConfig() != other.hasMultiSpeakerVoiceConfig()) return false;
+    if (hasMultiSpeakerVoiceConfig()) {
+      if (!getMultiSpeakerVoiceConfig().equals(other.getMultiSpeakerVoiceConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -474,6 +614,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
     if (hasVoiceClone()) {
       hash = (37 * hash) + VOICE_CLONE_FIELD_NUMBER;
       hash = (53 * hash) + getVoiceClone().hashCode();
+    }
+    hash = (37 * hash) + MODEL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getModelName().hashCode();
+    if (hasMultiSpeakerVoiceConfig()) {
+      hash = (37 * hash) + MULTI_SPEAKER_VOICE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMultiSpeakerVoiceConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -619,6 +765,7 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCustomVoiceFieldBuilder();
         getVoiceCloneFieldBuilder();
+        getMultiSpeakerVoiceConfigFieldBuilder();
       }
     }
 
@@ -638,6 +785,12 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (voiceCloneBuilder_ != null) {
         voiceCloneBuilder_.dispose();
         voiceCloneBuilder_ = null;
+      }
+      modelName_ = "";
+      multiSpeakerVoiceConfig_ = null;
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        multiSpeakerVoiceConfigBuilder_.dispose();
+        multiSpeakerVoiceConfigBuilder_ = null;
       }
       return this;
     }
@@ -693,6 +846,16 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.voiceClone_ = voiceCloneBuilder_ == null ? voiceClone_ : voiceCloneBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.modelName_ = modelName_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.multiSpeakerVoiceConfig_ =
+            multiSpeakerVoiceConfigBuilder_ == null
+                ? multiSpeakerVoiceConfig_
+                : multiSpeakerVoiceConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -762,6 +925,14 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
       if (other.hasVoiceClone()) {
         mergeVoiceClone(other.getVoiceClone());
       }
+      if (!other.getModelName().isEmpty()) {
+        modelName_ = other.modelName_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasMultiSpeakerVoiceConfig()) {
+        mergeMultiSpeakerVoiceConfig(other.getMultiSpeakerVoiceConfig());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -818,6 +989,19 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                modelName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    getMultiSpeakerVoiceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1680,6 +1864,358 @@ public final class VoiceSelectionParams extends com.google.protobuf.GeneratedMes
         voiceClone_ = null;
       }
       return voiceCloneBuilder_;
+    }
+
+    private java.lang.Object modelName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the model. If set, the service will choose the model
+     * matching the specified configuration.
+     * </pre>
+     *
+     * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelName.
+     */
+    public java.lang.String getModelName() {
+      java.lang.Object ref = modelName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the model. If set, the service will choose the model
+     * matching the specified configuration.
+     * </pre>
+     *
+     * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelName.
+     */
+    public com.google.protobuf.ByteString getModelNameBytes() {
+      java.lang.Object ref = modelName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the model. If set, the service will choose the model
+     * matching the specified configuration.
+     * </pre>
+     *
+     * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The modelName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      modelName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the model. If set, the service will choose the model
+     * matching the specified configuration.
+     * </pre>
+     *
+     * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModelName() {
+      modelName_ = getDefaultInstance().getModelName();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the model. If set, the service will choose the model
+     * matching the specified configuration.
+     * </pre>
+     *
+     * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for modelName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      modelName_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multiSpeakerVoiceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig,
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.Builder,
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder>
+        multiSpeakerVoiceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the multiSpeakerVoiceConfig field is set.
+     */
+    public boolean hasMultiSpeakerVoiceConfig() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The multiSpeakerVoiceConfig.
+     */
+    public com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig getMultiSpeakerVoiceConfig() {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        return multiSpeakerVoiceConfig_ == null
+            ? com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.getDefaultInstance()
+            : multiSpeakerVoiceConfig_;
+      } else {
+        return multiSpeakerVoiceConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiSpeakerVoiceConfig(
+        com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig value) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        multiSpeakerVoiceConfig_ = value;
+      } else {
+        multiSpeakerVoiceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMultiSpeakerVoiceConfig(
+        com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.Builder builderForValue) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        multiSpeakerVoiceConfig_ = builderForValue.build();
+      } else {
+        multiSpeakerVoiceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMultiSpeakerVoiceConfig(
+        com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig value) {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && multiSpeakerVoiceConfig_ != null
+            && multiSpeakerVoiceConfig_
+                != com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.getDefaultInstance()) {
+          getMultiSpeakerVoiceConfigBuilder().mergeFrom(value);
+        } else {
+          multiSpeakerVoiceConfig_ = value;
+        }
+      } else {
+        multiSpeakerVoiceConfigBuilder_.mergeFrom(value);
+      }
+      if (multiSpeakerVoiceConfig_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMultiSpeakerVoiceConfig() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      multiSpeakerVoiceConfig_ = null;
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        multiSpeakerVoiceConfigBuilder_.dispose();
+        multiSpeakerVoiceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.Builder
+        getMultiSpeakerVoiceConfigBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getMultiSpeakerVoiceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder
+        getMultiSpeakerVoiceConfigOrBuilder() {
+      if (multiSpeakerVoiceConfigBuilder_ != null) {
+        return multiSpeakerVoiceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return multiSpeakerVoiceConfig_ == null
+            ? com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.getDefaultInstance()
+            : multiSpeakerVoiceConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for a Gemini multi-speaker text-to-speech
+     * setup. Enables the use of two distinct voices in a single synthesis
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig,
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.Builder,
+            com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder>
+        getMultiSpeakerVoiceConfigFieldBuilder() {
+      if (multiSpeakerVoiceConfigBuilder_ == null) {
+        multiSpeakerVoiceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig,
+                com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig.Builder,
+                com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder>(
+                getMultiSpeakerVoiceConfig(), getParentForChildren(), isClean());
+        multiSpeakerVoiceConfig_ = null;
+      }
+      return multiSpeakerVoiceConfigBuilder_;
     }
 
     @java.lang.Override

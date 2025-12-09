@@ -23,7 +23,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Represents the selection of a suggestion.
+ * Represents the action to take for a tool call that requires confirmation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestionInput}
@@ -41,6 +41,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
 
   private SuggestionInput() {
     answerRecord_ = "";
+    action_ = 0;
   }
 
   @java.lang.Override
@@ -64,6 +65,198 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.dialogflow.v2beta1.SuggestionInput.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Indicate what type of action to take with the tool call.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2beta1.SuggestionInput.Action}
+   */
+  public enum Action implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Action not specified.
+     * </pre>
+     *
+     * <code>ACTION_UNSPECIFIED = 0;</code>
+     */
+    ACTION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user chooses to not make the tool call. It
+     * is only applicable to tool calls that are waiting for user
+     * confirmation.
+     * </pre>
+     *
+     * <code>CANCEL = 1;</code>
+     */
+    CANCEL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Makes the tool call with provided parameters. This action is intended
+     * for tool calls that only read but not write data.
+     * </pre>
+     *
+     * <code>REVISE = 2;</code>
+     */
+    REVISE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Makes the tool call with provided parameters. This action is intended
+     * for tool calls that may write data.
+     * </pre>
+     *
+     * <code>CONFIRM = 3;</code>
+     */
+    CONFIRM(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Action not specified.
+     * </pre>
+     *
+     * <code>ACTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int ACTION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates the user chooses to not make the tool call. It
+     * is only applicable to tool calls that are waiting for user
+     * confirmation.
+     * </pre>
+     *
+     * <code>CANCEL = 1;</code>
+     */
+    public static final int CANCEL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Makes the tool call with provided parameters. This action is intended
+     * for tool calls that only read but not write data.
+     * </pre>
+     *
+     * <code>REVISE = 2;</code>
+     */
+    public static final int REVISE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Makes the tool call with provided parameters. This action is intended
+     * for tool calls that may write data.
+     * </pre>
+     *
+     * <code>CONFIRM = 3;</code>
+     */
+    public static final int CONFIRM_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Action valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Action forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ACTION_UNSPECIFIED;
+        case 1:
+          return CANCEL;
+        case 2:
+          return REVISE;
+        case 3:
+          return CONFIRM;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Action> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Action> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Action>() {
+          public Action findValueByNumber(int number) {
+            return Action.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SuggestionInput.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Action[] VALUES = values();
+
+    public static Action valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Action(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.SuggestionInput.Action)
+  }
+
   private int bitField0_;
   public static final int ANSWER_RECORD_FIELD_NUMBER = 1;
 
@@ -74,12 +267,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The ID of a suggestion selected by the human agent.
-   * The suggestion(s) were generated in a previous call to
-   * request Dialogflow assist.
-   * The format is:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-   * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+   * The answer record associated with the tool call.
    * </pre>
    *
    * <code>string answer_record = 1;</code>
@@ -103,12 +293,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Required. The ID of a suggestion selected by the human agent.
-   * The suggestion(s) were generated in a previous call to
-   * request Dialogflow assist.
-   * The format is:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-   * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+   * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+   * The answer record associated with the tool call.
    * </pre>
    *
    * <code>string answer_record = 1;</code>
@@ -191,29 +378,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * In Dialogflow assist for v3, the user can submit a form by sending
-   * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-   * form is uniquely determined by the
-   * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-   * field, which identifies a v3
-   * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-   * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-   * are specified via the
-   * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-   * field.
-   *
-   * Depending on your protocol or client library language, this is a
-   * map, associative array, symbol table, dictionary, or JSON object
-   * composed of a collection of (MapKey, MapValue) pairs:
-   *
-   * * MapKey type: string
-   * * MapKey value: parameter name
-   * * MapValue type: If parameter's entity type is a composite entity then use
-   * map, otherwise, depending on the parameter value type, it could be one of
-   * string, number, boolean, null, list or map.
-   * * MapValue value: If parameter's entity type is a composite entity then use
-   * map from composite entity property names to property values, otherwise,
-   * use parameter value.
+   * Parameters to be used for the tool call.  If not provided, the tool
+   * will be called without any parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -229,29 +395,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * In Dialogflow assist for v3, the user can submit a form by sending
-   * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-   * form is uniquely determined by the
-   * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-   * field, which identifies a v3
-   * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-   * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-   * are specified via the
-   * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-   * field.
-   *
-   * Depending on your protocol or client library language, this is a
-   * map, associative array, symbol table, dictionary, or JSON object
-   * composed of a collection of (MapKey, MapValue) pairs:
-   *
-   * * MapKey type: string
-   * * MapKey value: parameter name
-   * * MapValue type: If parameter's entity type is a composite entity then use
-   * map, otherwise, depending on the parameter value type, it could be one of
-   * string, number, boolean, null, list or map.
-   * * MapValue value: If parameter's entity type is a composite entity then use
-   * map from composite entity property names to property values, otherwise,
-   * use parameter value.
+   * Parameters to be used for the tool call.  If not provided, the tool
+   * will be called without any parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -267,29 +412,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * In Dialogflow assist for v3, the user can submit a form by sending
-   * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-   * form is uniquely determined by the
-   * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-   * field, which identifies a v3
-   * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-   * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-   * are specified via the
-   * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-   * field.
-   *
-   * Depending on your protocol or client library language, this is a
-   * map, associative array, symbol table, dictionary, or JSON object
-   * composed of a collection of (MapKey, MapValue) pairs:
-   *
-   * * MapKey type: string
-   * * MapKey value: parameter name
-   * * MapValue type: If parameter's entity type is a composite entity then use
-   * map, otherwise, depending on the parameter value type, it could be one of
-   * string, number, boolean, null, list or map.
-   * * MapValue value: If parameter's entity type is a composite entity then use
-   * map from composite entity property names to property values, otherwise,
-   * use parameter value.
+   * Parameters to be used for the tool call.  If not provided, the tool
+   * will be called without any parameters.
    * </pre>
    *
    * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -297,6 +421,49 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
     return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+  }
+
+  public static final int ACTION_FIELD_NUMBER = 5;
+  private int action_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of action to take with the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for action.
+   */
+  @java.lang.Override
+  public int getActionValue() {
+    return action_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of action to take with the tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The action.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action getAction() {
+    com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action result =
+        com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.forNumber(action_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.UNRECOGNIZED
+        : result;
   }
 
   public static final int INTENT_INPUT_FIELD_NUMBER = 6;
@@ -352,6 +519,64 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         : intentInput_;
   }
 
+  public static final int SEND_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp sendTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sendTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasSendTime() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sendTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getSendTime() {
+    return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Time when the current suggest input is sent. For tool calls, this
+   * timestamp (along with the answer record) will be included in the
+   * corresponding tool call result so that it can be identified.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+    return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -375,8 +600,16 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getParameters());
     }
+    if (action_
+        != com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.ACTION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, action_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getIntentInput());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(7, getSendTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -396,8 +629,16 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getParameters());
     }
+    if (action_
+        != com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.ACTION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, action_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getIntentInput());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSendTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -424,9 +665,14 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
     if (hasParameters()) {
       if (!getParameters().equals(other.getParameters())) return false;
     }
+    if (action_ != other.action_) return false;
     if (hasIntentInput() != other.hasIntentInput()) return false;
     if (hasIntentInput()) {
       if (!getIntentInput().equals(other.getIntentInput())) return false;
+    }
+    if (hasSendTime() != other.hasSendTime()) return false;
+    if (hasSendTime()) {
+      if (!getSendTime().equals(other.getSendTime())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -449,9 +695,15 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParameters().hashCode();
     }
+    hash = (37 * hash) + ACTION_FIELD_NUMBER;
+    hash = (53 * hash) + action_;
     if (hasIntentInput()) {
       hash = (37 * hash) + INTENT_INPUT_FIELD_NUMBER;
       hash = (53 * hash) + getIntentInput().hashCode();
+    }
+    if (hasSendTime()) {
+      hash = (37 * hash) + SEND_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getSendTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -558,7 +810,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents the selection of a suggestion.
+   * Represents the action to take for a tool call that requires confirmation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestionInput}
@@ -597,6 +849,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         getTextOverrideFieldBuilder();
         getParametersFieldBuilder();
         getIntentInputFieldBuilder();
+        getSendTimeFieldBuilder();
       }
     }
 
@@ -615,10 +868,16 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         parametersBuilder_.dispose();
         parametersBuilder_ = null;
       }
+      action_ = 0;
       intentInput_ = null;
       if (intentInputBuilder_ != null) {
         intentInputBuilder_.dispose();
         intentInputBuilder_ = null;
+      }
+      sendTime_ = null;
+      if (sendTimeBuilder_ != null) {
+        sendTimeBuilder_.dispose();
+        sendTimeBuilder_ = null;
       }
       return this;
     }
@@ -670,9 +929,16 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.intentInput_ =
             intentInputBuilder_ == null ? intentInput_ : intentInputBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.sendTime_ = sendTimeBuilder_ == null ? sendTime_ : sendTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -734,8 +1000,14 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       if (other.hasParameters()) {
         mergeParameters(other.getParameters());
       }
+      if (other.action_ != 0) {
+        setActionValue(other.getActionValue());
+      }
       if (other.hasIntentInput()) {
         mergeIntentInput(other.getIntentInput());
+      }
+      if (other.hasSendTime()) {
+        mergeSendTime(other.getSendTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -781,12 +1053,24 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 40:
+              {
+                action_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
             case 50:
               {
                 input.readMessage(getIntentInputFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(getSendTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -812,12 +1096,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The ID of a suggestion selected by the human agent.
-     * The suggestion(s) were generated in a previous call to
-     * request Dialogflow assist.
-     * The format is:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-     * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * The answer record associated with the tool call.
      * </pre>
      *
      * <code>string answer_record = 1;</code>
@@ -840,12 +1121,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The ID of a suggestion selected by the human agent.
-     * The suggestion(s) were generated in a previous call to
-     * request Dialogflow assist.
-     * The format is:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-     * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * The answer record associated with the tool call.
      * </pre>
      *
      * <code>string answer_record = 1;</code>
@@ -868,12 +1146,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The ID of a suggestion selected by the human agent.
-     * The suggestion(s) were generated in a previous call to
-     * request Dialogflow assist.
-     * The format is:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-     * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * The answer record associated with the tool call.
      * </pre>
      *
      * <code>string answer_record = 1;</code>
@@ -895,12 +1170,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The ID of a suggestion selected by the human agent.
-     * The suggestion(s) were generated in a previous call to
-     * request Dialogflow assist.
-     * The format is:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-     * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * The answer record associated with the tool call.
      * </pre>
      *
      * <code>string answer_record = 1;</code>
@@ -918,12 +1190,9 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Required. The ID of a suggestion selected by the human agent.
-     * The suggestion(s) were generated in a previous call to
-     * request Dialogflow assist.
-     * The format is:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/answerRecords/&lt;Answer Record
-     * ID&gt;` where &lt;Answer Record ID&gt; is an alphanumeric string.
+     * Required. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/answerRecords/&lt;Answer Record ID&gt;`
+     * The answer record associated with the tool call.
      * </pre>
      *
      * <code>string answer_record = 1;</code>
@@ -1158,29 +1427,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1195,29 +1443,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1236,29 +1463,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1281,29 +1487,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1323,29 +1508,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1373,29 +1537,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1415,29 +1558,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1452,29 +1574,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1491,29 +1592,8 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * In Dialogflow assist for v3, the user can submit a form by sending
-     * a [SuggestionInput][google.cloud.dialogflow.v2beta1.SuggestionInput]. The
-     * form is uniquely determined by the
-     * [answer_record][google.cloud.dialogflow.v2beta1.SuggestionInput.answer_record]
-     * field, which identifies a v3
-     * [QueryResult][google.cloud.dialogflow.v3alpha1.QueryResult] containing the
-     * current [page][google.cloud.dialogflow.v3alpha1.Page]. The form parameters
-     * are specified via the
-     * [parameters][google.cloud.dialogflow.v2beta1.SuggestionInput.parameters]
-     * field.
-     *
-     * Depending on your protocol or client library language, this is a
-     * map, associative array, symbol table, dictionary, or JSON object
-     * composed of a collection of (MapKey, MapValue) pairs:
-     *
-     * * MapKey type: string
-     * * MapKey value: parameter name
-     * * MapValue type: If parameter's entity type is a composite entity then use
-     * map, otherwise, depending on the parameter value type, it could be one of
-     * string, number, boolean, null, list or map.
-     * * MapValue value: If parameter's entity type is a composite entity then use
-     * map from composite entity property names to property values, otherwise,
-     * use parameter value.
+     * Parameters to be used for the tool call.  If not provided, the tool
+     * will be called without any parameters.
      * </pre>
      *
      * <code>.google.protobuf.Struct parameters = 4;</code>
@@ -1535,6 +1615,113 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       return parametersBuilder_;
     }
 
+    private int action_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of action to take with the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for action.
+     */
+    @java.lang.Override
+    public int getActionValue() {
+      return action_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of action to take with the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActionValue(int value) {
+      action_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of action to take with the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The action.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action getAction() {
+      com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action result =
+          com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.forNumber(action_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of action to take with the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The action to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAction(com.google.cloud.dialogflow.v2beta1.SuggestionInput.Action value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      action_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of action to take with the tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SuggestionInput.Action action = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAction() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      action_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dialogflow.v2beta1.IntentInput intentInput_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.v2beta1.IntentInput,
@@ -1554,7 +1741,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      * @return Whether the intentInput field is set.
      */
     public boolean hasIntentInput() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1596,7 +1783,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       } else {
         intentInputBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1617,7 +1804,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
       } else {
         intentInputBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1633,7 +1820,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      */
     public Builder mergeIntentInput(com.google.cloud.dialogflow.v2beta1.IntentInput value) {
       if (intentInputBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && intentInput_ != null
             && intentInput_
                 != com.google.cloud.dialogflow.v2beta1.IntentInput.getDefaultInstance()) {
@@ -1645,7 +1832,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         intentInputBuilder_.mergeFrom(value);
       }
       if (intentInput_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1661,7 +1848,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 6;</code>
      */
     public Builder clearIntentInput() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       intentInput_ = null;
       if (intentInputBuilder_ != null) {
         intentInputBuilder_.dispose();
@@ -1681,7 +1868,7 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.dialogflow.v2beta1.IntentInput intent_input = 6;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.IntentInput.Builder getIntentInputBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getIntentInputFieldBuilder().getBuilder();
     }
@@ -1729,6 +1916,223 @@ public final class SuggestionInput extends com.google.protobuf.GeneratedMessageV
         intentInput_ = null;
       }
       return intentInputBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp sendTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        sendTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sendTime field is set.
+     */
+    public boolean hasSendTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sendTime.
+     */
+    public com.google.protobuf.Timestamp getSendTime() {
+      if (sendTimeBuilder_ == null) {
+        return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+      } else {
+        return sendTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSendTime(com.google.protobuf.Timestamp value) {
+      if (sendTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sendTime_ = value;
+      } else {
+        sendTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSendTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (sendTimeBuilder_ == null) {
+        sendTime_ = builderForValue.build();
+      } else {
+        sendTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSendTime(com.google.protobuf.Timestamp value) {
+      if (sendTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && sendTime_ != null
+            && sendTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getSendTimeBuilder().mergeFrom(value);
+        } else {
+          sendTime_ = value;
+        }
+      } else {
+        sendTimeBuilder_.mergeFrom(value);
+      }
+      if (sendTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSendTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      sendTime_ = null;
+      if (sendTimeBuilder_ != null) {
+        sendTimeBuilder_.dispose();
+        sendTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getSendTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getSendTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getSendTimeOrBuilder() {
+      if (sendTimeBuilder_ != null) {
+        return sendTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return sendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : sendTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Time when the current suggest input is sent. For tool calls, this
+     * timestamp (along with the answer record) will be included in the
+     * corresponding tool call result so that it can be identified.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp send_time = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getSendTimeFieldBuilder() {
+      if (sendTimeBuilder_ == null) {
+        sendTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getSendTime(), getParentForChildren(), isClean());
+        sendTime_ = null;
+      }
+      return sendTimeBuilder_;
     }
 
     @java.lang.Override

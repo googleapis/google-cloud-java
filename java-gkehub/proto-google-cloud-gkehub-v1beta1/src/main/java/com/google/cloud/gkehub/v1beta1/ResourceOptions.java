@@ -42,6 +42,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
   private ResourceOptions() {
     connectVersion_ = "";
     k8SVersion_ = "";
+    k8SGitVersion_ = "";
   }
 
   @java.lang.Override
@@ -153,9 +154,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to
-   * determine which version to use for the CustomResourceDefinition resources,
-   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * Optional. Major and minor version of the Kubernetes cluster. This is only
+   * used to determine which version to use for the CustomResourceDefinition
+   * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *
    * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -179,9 +180,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to
-   * determine which version to use for the CustomResourceDefinition resources,
-   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * Optional. Major and minor version of the Kubernetes cluster. This is only
+   * used to determine which version to use for the CustomResourceDefinition
+   * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *
    * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -195,6 +196,63 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       k8SVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int K8S_GIT_VERSION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object k8SGitVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Git version of the Kubernetes cluster. This is only used to gate
+   * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+   * above.
+   * </pre>
+   *
+   * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The k8sGitVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getK8SGitVersion() {
+    java.lang.Object ref = k8SGitVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      k8SGitVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Git version of the Kubernetes cluster. This is only used to gate
+   * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+   * above.
+   * </pre>
+   *
+   * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for k8sGitVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getK8SGitVersionBytes() {
+    java.lang.Object ref = k8SGitVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      k8SGitVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -224,6 +282,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, k8SVersion_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SGitVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, k8SGitVersion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -241,6 +302,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, k8SVersion_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(k8SGitVersion_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, k8SGitVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -261,6 +325,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     if (!getConnectVersion().equals(other.getConnectVersion())) return false;
     if (getV1Beta1Crd() != other.getV1Beta1Crd()) return false;
     if (!getK8SVersion().equals(other.getK8SVersion())) return false;
+    if (!getK8SGitVersion().equals(other.getK8SGitVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -278,6 +343,8 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getV1Beta1Crd());
     hash = (37 * hash) + K8S_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getK8SVersion().hashCode();
+    hash = (37 * hash) + K8S_GIT_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getK8SGitVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -421,6 +488,7 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       connectVersion_ = "";
       v1Beta1Crd_ = false;
       k8SVersion_ = "";
+      k8SGitVersion_ = "";
       return this;
     }
 
@@ -465,6 +533,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.k8SVersion_ = k8SVersion_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.k8SGitVersion_ = k8SGitVersion_;
       }
     }
 
@@ -527,6 +598,11 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getK8SGitVersion().isEmpty()) {
+        k8SGitVersion_ = other.k8SGitVersion_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -571,6 +647,12 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                k8SGitVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -782,9 +864,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Major version of the Kubernetes cluster. This is only used to
-     * determine which version to use for the CustomResourceDefinition resources,
-     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * Optional. Major and minor version of the Kubernetes cluster. This is only
+     * used to determine which version to use for the CustomResourceDefinition
+     * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
      * </pre>
      *
      * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -807,9 +889,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Major version of the Kubernetes cluster. This is only used to
-     * determine which version to use for the CustomResourceDefinition resources,
-     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * Optional. Major and minor version of the Kubernetes cluster. This is only
+     * used to determine which version to use for the CustomResourceDefinition
+     * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
      * </pre>
      *
      * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -832,9 +914,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Major version of the Kubernetes cluster. This is only used to
-     * determine which version to use for the CustomResourceDefinition resources,
-     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * Optional. Major and minor version of the Kubernetes cluster. This is only
+     * used to determine which version to use for the CustomResourceDefinition
+     * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
      * </pre>
      *
      * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -856,9 +938,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Major version of the Kubernetes cluster. This is only used to
-     * determine which version to use for the CustomResourceDefinition resources,
-     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * Optional. Major and minor version of the Kubernetes cluster. This is only
+     * used to determine which version to use for the CustomResourceDefinition
+     * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
      * </pre>
      *
      * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -876,9 +958,9 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Optional. Major version of the Kubernetes cluster. This is only used to
-     * determine which version to use for the CustomResourceDefinition resources,
-     * `apiextensions/v1beta1` or`apiextensions/v1`.
+     * Optional. Major and minor version of the Kubernetes cluster. This is only
+     * used to determine which version to use for the CustomResourceDefinition
+     * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
      * </pre>
      *
      * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,6 +975,127 @@ public final class ResourceOptions extends com.google.protobuf.GeneratedMessageV
       checkByteStringIsUtf8(value);
       k8SVersion_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object k8SGitVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Git version of the Kubernetes cluster. This is only used to gate
+     * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+     * above.
+     * </pre>
+     *
+     * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The k8sGitVersion.
+     */
+    public java.lang.String getK8SGitVersion() {
+      java.lang.Object ref = k8SGitVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        k8SGitVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Git version of the Kubernetes cluster. This is only used to gate
+     * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+     * above.
+     * </pre>
+     *
+     * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for k8sGitVersion.
+     */
+    public com.google.protobuf.ByteString getK8SGitVersionBytes() {
+      java.lang.Object ref = k8SGitVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        k8SGitVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Git version of the Kubernetes cluster. This is only used to gate
+     * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+     * above.
+     * </pre>
+     *
+     * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The k8sGitVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setK8SGitVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      k8SGitVersion_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Git version of the Kubernetes cluster. This is only used to gate
+     * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+     * above.
+     * </pre>
+     *
+     * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearK8SGitVersion() {
+      k8SGitVersion_ = getDefaultInstance().getK8SGitVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Git version of the Kubernetes cluster. This is only used to gate
+     * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+     * above.
+     * </pre>
+     *
+     * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for k8sGitVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setK8SGitVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      k8SGitVersion_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

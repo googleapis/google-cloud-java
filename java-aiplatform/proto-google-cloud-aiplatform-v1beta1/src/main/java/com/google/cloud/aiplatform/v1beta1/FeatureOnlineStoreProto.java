@@ -41,6 +41,10 @@ public final class FeatureOnlineStoreProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_AutoScaling_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_BigtableMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_fieldAccessorTable;
@@ -70,7 +74,7 @@ public final class FeatureOnlineStoreProto {
           + "tform.v1beta1\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\0325googl"
           + "e/cloud/aiplatform/v1beta1/encryption_spec.proto\0328google/cloud/aiplatform/v1beta"
-          + "1/service_networking.proto\032\037google/protobuf/timestamp.proto\"\323\014\n"
+          + "1/service_networking.proto\032\037google/protobuf/timestamp.proto\"\327\016\n"
           + "\022FeatureOnlineStore\022P\n"
           + "\010bigtable\030\010 \001(\0132<.google.cloud.aipl"
           + "atform.v1beta1.FeatureOnlineStore.BigtableH\000\022R\n"
@@ -93,19 +97,27 @@ public final class FeatureOnlineStoreProto {
           + "\017encryption_spec\030\r"
           + " \001(\0132/.google.cloud.aiplatform.v1beta1.EncryptionSpecB\003\340A\001\022\032\n\r"
           + "satisfies_pzs\030\017 \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\030\020 \001(\010B\003\340A\003\032\335\001\n"
+          + "satisfies_pzi\030\020 \001(\010B\003\340A\003\032\341\003\n"
           + "\010Bigtable\022c\n"
           + "\014auto_scaling\030\001 \001(\0132H"
-          + ".google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScalingB\003\340A\002\032l\n"
+          + ".google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.AutoScalingB\003\340A\002\022*\n"
+          + "\035enable_direct_bigtable_access\030\003 \001(\010B\003\340A\001\022m\n"
+          + "\021bigtable_metadata\030\004 \001(\0132M.google.cl"
+          + "oud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable.BigtableMetadataB\003\340A\003\022\021\n"
+          + "\004zone\030\005 \001(\tB\003\340A\001\032l\n"
           + "\013AutoScaling\022\033\n"
           + "\016min_node_count\030\001 \001(\005B\003\340A\002\022\033\n"
           + "\016max_node_count\030\002 \001(\005B\003\340A\002\022#\n"
-          + "\026cpu_utilization_target\030\003 \001(\005B\003\340A\001\032\013\n"
+          + "\026cpu_utilization_target\030\003 \001(\005B\003\340A\001\032T\n"
+          + "\020BigtableMetadata\022\031\n"
+          + "\021tenant_project_id\030\001 \001(\t\022\023\n"
+          + "\013instance_id\030\002 \001(\t\022\020\n"
+          + "\010table_id\030\003 \001(\t\032\013\n"
           + "\tOptimized\032\320\001\n"
           + "\030DedicatedServingEndpoint\022(\n"
           + "\033public_endpoint_domain_name\030\002 \001(\tB\003\340A\003\022i\n"
-          + "\036private_service_connect_config\030\003 \001(\0132<.google"
-          + ".cloud.aiplatform.v1beta1.PrivateServiceConnectConfigB\003\340A\001\022\037\n"
+          + "\036private_service_connect_config\030\003 \001(\0132<.google.cloud.aiplatform.v1"
+          + "beta1.PrivateServiceConnectConfigB\003\340A\001\022\037\n"
           + "\022service_attachment\030\004 \001(\tB\003\340A\003\0322\n"
           + "\023EmbeddingManagement\022\027\n"
           + "\007enabled\030\001 \001(\010B\006\340A\001\340A\005:\002\030\001\032-\n"
@@ -116,14 +128,15 @@ public final class FeatureOnlineStoreProto {
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006STABLE\020\001\022\014\n"
           + "\010UPDATING\020\002:\206\001\352A\202\001\n"
-          + ",aiplatform.googleapis.com/FeatureOnlineStore\022Rprojects/{project"
-          + "}/locations/{location}/featureOnlineStores/{feature_online_store}B\016\n"
+          + ",aiplatform.googleapis.com/FeatureOnlineStor"
+          + "e\022Rprojects/{project}/locations/{locatio"
+          + "n}/featureOnlineStores/{feature_online_store}B\016\n"
           + "\014storage_typeB\356\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\027FeatureOnlineStoreProtoP\001ZCcloud.goog"
-          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
-          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
-          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
-          + "beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\027FeatureOnlineStor"
+          + "eProtoP\001ZCcloud.google.com/go/aiplatform"
+          + "/apiv1beta1/aiplatformpb;aiplatformpb\252\002\037"
+          + "Google.Cloud.AIPlatform.V1Beta1\312\002\037Google"
+          + "\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -164,7 +177,7 @@ public final class FeatureOnlineStoreProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_descriptor,
             new java.lang.String[] {
-              "AutoScaling",
+              "AutoScaling", "EnableDirectBigtableAccess", "BigtableMetadata", "Zone",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_AutoScaling_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_descriptor
@@ -175,6 +188,16 @@ public final class FeatureOnlineStoreProto {
             internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_AutoScaling_descriptor,
             new java.lang.String[] {
               "MinNodeCount", "MaxNodeCount", "CpuUtilizationTarget",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_BigtableMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor,
+            new java.lang.String[] {
+              "TenantProjectId", "InstanceId", "TableId",
             });
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Optimized_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_descriptor

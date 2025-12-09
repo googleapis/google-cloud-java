@@ -32,13 +32,19 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetIamPolicyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.ReportFaultyReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
+import com.google.cloud.compute.v1.SetIamPolicyReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsReservationSubBlockRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -87,6 +93,9 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetReservationSubBlockRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasView()) {
+                              serializer.putQueryParam(fields, "view", request.getView());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -94,6 +103,49 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ReservationSubBlocksGetResponse>newBuilder()
                       .setDefaultInstance(ReservationSubBlocksGetResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetIamPolicyReservationSubBlockRequest, Policy>
+      getIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyReservationSubBlockRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/GetIamPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetIamPolicyReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/getIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "parentResource", request.getParentResource());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetIamPolicyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasOptionsRequestedPolicyVersion()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "optionsRequestedPolicyVersion",
+                                  request.getOptionsRequestedPolicyVersion());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -208,8 +260,157 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultyMethodDescriptor =
+          ApiMethodDescriptor.<ReportFaultyReservationSubBlockRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/ReportFaulty")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReportFaultyReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentName}/reservationSubBlocks/{reservationSubBlock}/reportFaulty",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportFaultyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parentName", request.getParentName());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(
+                                fields, "reservationSubBlock", request.getReservationSubBlock());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReportFaultyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "reservationSubBlocksReportFaultyRequestResource",
+                                      request.getReservationSubBlocksReportFaultyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ReportFaultyReservationSubBlockRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
+  private static final ApiMethodDescriptor<SetIamPolicyReservationSubBlockRequest, Policy>
+      setIamPolicyMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyReservationSubBlockRequest, Policy>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/SetIamPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetIamPolicyReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/setIamPolicy",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "parentResource", request.getParentResource());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetIamPolicyReservationSubBlockRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "zoneSetNestedPolicyRequestResource",
+                                      request.getZoneSetNestedPolicyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Policy>newBuilder()
+                      .setDefaultInstance(Policy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.ReservationSubBlocks/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsReservationSubBlockRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/{parentResource}/reservationSubBlocks/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsReservationSubBlockRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "parentResource", request.getParentResource());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsReservationSubBlockRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable;
+  private final UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
       listCallable;
   private final UnaryCallable<ListReservationSubBlocksRequest, ListPagedResponse> listPagedCallable;
@@ -218,6 +419,13 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   private final OperationCallable<
           PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
       performMaintenanceOperationCallable;
+  private final UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation>
+      reportFaultyCallable;
+  private final OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable;
+  private final UnaryCallable<SetIamPolicyReservationSubBlockRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -281,6 +489,21 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GetIamPolicyReservationSubBlockRequest, Policy>
+        getIamPolicyTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyReservationSubBlockRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_resource", String.valueOf(request.getParentResource()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListReservationSubBlocksRequest, ReservationSubBlocksListResponse>
         listTransportSettings =
             HttpJsonCallSettings
@@ -314,10 +537,61 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ReportFaultyReservationSubBlockRequest, Operation>
+        reportFaultyTransportSettings =
+            HttpJsonCallSettings.<ReportFaultyReservationSubBlockRequest, Operation>newBuilder()
+                .setMethodDescriptor(reportFaultyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_name", String.valueOf(request.getParentName()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add(
+                          "reservation_sub_block",
+                          String.valueOf(request.getReservationSubBlock()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<SetIamPolicyReservationSubBlockRequest, Policy>
+        setIamPolicyTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyReservationSubBlockRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_resource", String.valueOf(request.getParentResource()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent_resource", String.valueOf(request.getParentResource()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      builder.add("zone", String.valueOf(request.getZone()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
     this.listCallable =
         callableFactory.createUnaryCallable(
             listTransportSettings, settings.listSettings(), clientContext);
@@ -335,6 +609,23 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
             settings.performMaintenanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.reportFaultyCallable =
+        callableFactory.createUnaryCallable(
+            reportFaultyTransportSettings, settings.reportFaultySettings(), clientContext);
+    this.reportFaultyOperationCallable =
+        callableFactory.createOperationCallable(
+            reportFaultyTransportSettings,
+            settings.reportFaultyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -344,8 +635,12 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(performMaintenanceMethodDescriptor);
+    methodDescriptors.add(reportFaultyMethodDescriptor);
+    methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -353,6 +648,11 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   public UnaryCallable<GetReservationSubBlockRequest, ReservationSubBlocksGetResponse>
       getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyReservationSubBlockRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
   }
 
   @Override
@@ -376,6 +676,28 @@ public class HttpJsonReservationSubBlocksStub extends ReservationSubBlocksStub {
   public OperationCallable<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
       performMaintenanceOperationCallable() {
     return performMaintenanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReportFaultyReservationSubBlockRequest, Operation> reportFaultyCallable() {
+    return reportFaultyCallable;
+  }
+
+  @Override
+  public OperationCallable<ReportFaultyReservationSubBlockRequest, Operation, Operation>
+      reportFaultyOperationCallable() {
+    return reportFaultyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyReservationSubBlockRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsReservationSubBlockRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

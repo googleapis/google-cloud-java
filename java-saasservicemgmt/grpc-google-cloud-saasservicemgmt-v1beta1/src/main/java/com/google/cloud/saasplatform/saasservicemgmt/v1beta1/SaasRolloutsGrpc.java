@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages the rollout of SaaS services.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/saasplatform/saasservicemgmt/v1beta1/rollouts_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SaasRolloutsGrpc {
 
@@ -967,8 +964,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutsResponse listRollouts(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRolloutsMethod(), getCallOptions(), request);
     }
 
@@ -980,8 +978,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout getRollout(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRolloutMethod(), getCallOptions(), request);
     }
 
@@ -993,8 +992,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout createRollout(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1006,8 +1006,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Rollout updateRollout(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1019,8 +1020,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRollout(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteRolloutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteRolloutRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRolloutMethod(), getCallOptions(), request);
     }
 
@@ -1033,8 +1035,9 @@ public final class SaasRolloutsGrpc {
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutKindsResponse
         listRolloutKinds(
-            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutKindsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListRolloutKindsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRolloutKindsMethod(), getCallOptions(), request);
     }
 
@@ -1046,8 +1049,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutKind getRolloutKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetRolloutKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetRolloutKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRolloutKindMethod(), getCallOptions(), request);
     }
 
@@ -1059,8 +1063,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutKind createRolloutKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateRolloutKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateRolloutKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRolloutKindMethod(), getCallOptions(), request);
     }
 
@@ -1072,8 +1077,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.RolloutKind updateRolloutKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateRolloutKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateRolloutKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRolloutKindMethod(), getCallOptions(), request);
     }
 
@@ -1085,8 +1091,9 @@ public final class SaasRolloutsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRolloutKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteRolloutKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteRolloutKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRolloutKindMethod(), getCallOptions(), request);
     }
   }

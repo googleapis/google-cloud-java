@@ -288,7 +288,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -303,7 +303,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -320,7 +320,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -428,8 +428,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * GCPSecretManagerCertificateConfig configures a secret from
-       * [Google Secret
-       * Manager](https://cloud.google.com/secret-manager).
+       * [Secret Manager](https://cloud.google.com/secret-manager).
        * </pre>
        *
        * Protobuf type {@code
@@ -732,8 +731,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          * <pre>
          * GCPSecretManagerCertificateConfig configures a secret from
-         * [Google Secret
-         * Manager](https://cloud.google.com/secret-manager).
+         * [Secret Manager](https://cloud.google.com/secret-manager).
          * </pre>
          *
          * Protobuf type {@code
@@ -1283,7 +1281,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -1301,7 +1299,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -1328,7 +1326,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Google Secret Manager (GCP) certificate configuration.
+       * Secret Manager certificate configuration.
        * </pre>
        *
        * <code>
@@ -2095,7 +2093,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2113,7 +2111,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2149,7 +2147,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2177,7 +2175,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2202,7 +2200,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2248,7 +2246,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2276,7 +2274,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2293,7 +2291,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -2323,7 +2321,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Google Secret Manager (GCP) certificate configuration.
+         * Secret Manager certificate configuration.
          * </pre>
          *
          * <code>
@@ -3595,6 +3593,560 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface WritableCgroupsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.ContainerdConfig.WritableCgroups)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether writable cgroups is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines writable cgroups configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.ContainerdConfig.WritableCgroups}
+   */
+  public static final class WritableCgroups extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.ContainerdConfig.WritableCgroups)
+      WritableCgroupsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use WritableCgroups.newBuilder() to construct.
+    private WritableCgroups(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private WritableCgroups() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new WritableCgroups();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_ContainerdConfig_WritableCgroups_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_ContainerdConfig_WritableCgroups_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.ContainerdConfig.WritableCgroups.class,
+              com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether writable cgroups is enabled.
+     * </pre>
+     *
+     * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.ContainerdConfig.WritableCgroups)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.ContainerdConfig.WritableCgroups other =
+          (com.google.container.v1beta1.ContainerdConfig.WritableCgroups) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines writable cgroups configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.ContainerdConfig.WritableCgroups}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.ContainerdConfig.WritableCgroups)
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_ContainerdConfig_WritableCgroups_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_ContainerdConfig_WritableCgroups_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.ContainerdConfig.WritableCgroups.class,
+                com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder.class);
+      }
+
+      // Construct using com.google.container.v1beta1.ContainerdConfig.WritableCgroups.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_ContainerdConfig_WritableCgroups_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.ContainerdConfig.WritableCgroups
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.ContainerdConfig.WritableCgroups build() {
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.ContainerdConfig.WritableCgroups buildPartial() {
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups result =
+            new com.google.container.v1beta1.ContainerdConfig.WritableCgroups(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.ContainerdConfig.WritableCgroups result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.ContainerdConfig.WritableCgroups) {
+          return mergeFrom((com.google.container.v1beta1.ContainerdConfig.WritableCgroups) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.ContainerdConfig.WritableCgroups other) {
+        if (other
+            == com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether writable cgroups is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether writable cgroups is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether writable cgroups is enabled.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.ContainerdConfig.WritableCgroups)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.ContainerdConfig.WritableCgroups)
+    private static final com.google.container.v1beta1.ContainerdConfig.WritableCgroups
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.ContainerdConfig.WritableCgroups();
+    }
+
+    public static com.google.container.v1beta1.ContainerdConfig.WritableCgroups
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WritableCgroups> PARSER =
+        new com.google.protobuf.AbstractParser<WritableCgroups>() {
+          @java.lang.Override
+          public WritableCgroups parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<WritableCgroups> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WritableCgroups> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.ContainerdConfig.WritableCgroups
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int PRIVATE_REGISTRY_ACCESS_CONFIG_FIELD_NUMBER = 1;
   private com.google.container.v1beta1.ContainerdConfig.PrivateRegistryAccessConfig
@@ -3663,6 +4215,69 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         : privateRegistryAccessConfig_;
   }
 
+  public static final int WRITABLE_CGROUPS_FIELD_NUMBER = 2;
+  private com.google.container.v1beta1.ContainerdConfig.WritableCgroups writableCgroups_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the writableCgroups field is set.
+   */
+  @java.lang.Override
+  public boolean hasWritableCgroups() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The writableCgroups.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ContainerdConfig.WritableCgroups getWritableCgroups() {
+    return writableCgroups_ == null
+        ? com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance()
+        : writableCgroups_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. WritableCgroups defines writable cgroups configuration for the
+   * node pool.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder
+      getWritableCgroupsOrBuilder() {
+    return writableCgroups_ == null
+        ? com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance()
+        : writableCgroups_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3680,6 +4295,9 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getPrivateRegistryAccessConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getWritableCgroups());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3693,6 +4311,9 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, getPrivateRegistryAccessConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getWritableCgroups());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3715,6 +4336,10 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       if (!getPrivateRegistryAccessConfig().equals(other.getPrivateRegistryAccessConfig()))
         return false;
     }
+    if (hasWritableCgroups() != other.hasWritableCgroups()) return false;
+    if (hasWritableCgroups()) {
+      if (!getWritableCgroups().equals(other.getWritableCgroups())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3729,6 +4354,10 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     if (hasPrivateRegistryAccessConfig()) {
       hash = (37 * hash) + PRIVATE_REGISTRY_ACCESS_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPrivateRegistryAccessConfig().hashCode();
+    }
+    if (hasWritableCgroups()) {
+      hash = (37 * hash) + WRITABLE_CGROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getWritableCgroups().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3872,6 +4501,7 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPrivateRegistryAccessConfigFieldBuilder();
+        getWritableCgroupsFieldBuilder();
       }
     }
 
@@ -3883,6 +4513,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       if (privateRegistryAccessConfigBuilder_ != null) {
         privateRegistryAccessConfigBuilder_.dispose();
         privateRegistryAccessConfigBuilder_ = null;
+      }
+      writableCgroups_ = null;
+      if (writableCgroupsBuilder_ != null) {
+        writableCgroupsBuilder_.dispose();
+        writableCgroupsBuilder_ = null;
       }
       return this;
     }
@@ -3927,6 +4562,11 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 ? privateRegistryAccessConfig_
                 : privateRegistryAccessConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.writableCgroups_ =
+            writableCgroupsBuilder_ == null ? writableCgroups_ : writableCgroupsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3979,6 +4619,9 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasPrivateRegistryAccessConfig()) {
         mergePrivateRegistryAccessConfig(other.getPrivateRegistryAccessConfig());
       }
+      if (other.hasWritableCgroups()) {
+        mergeWritableCgroups(other.getWritableCgroups());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4012,6 +4655,12 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getWritableCgroupsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4262,6 +4911,234 @@ public final class ContainerdConfig extends com.google.protobuf.GeneratedMessage
         privateRegistryAccessConfig_ = null;
       }
       return privateRegistryAccessConfigBuilder_;
+    }
+
+    private com.google.container.v1beta1.ContainerdConfig.WritableCgroups writableCgroups_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroups,
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder,
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder>
+        writableCgroupsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the writableCgroups field is set.
+     */
+    public boolean hasWritableCgroups() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The writableCgroups.
+     */
+    public com.google.container.v1beta1.ContainerdConfig.WritableCgroups getWritableCgroups() {
+      if (writableCgroupsBuilder_ == null) {
+        return writableCgroups_ == null
+            ? com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance()
+            : writableCgroups_;
+      } else {
+        return writableCgroupsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWritableCgroups(
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups value) {
+      if (writableCgroupsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        writableCgroups_ = value;
+      } else {
+        writableCgroupsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWritableCgroups(
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder builderForValue) {
+      if (writableCgroupsBuilder_ == null) {
+        writableCgroups_ = builderForValue.build();
+      } else {
+        writableCgroupsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWritableCgroups(
+        com.google.container.v1beta1.ContainerdConfig.WritableCgroups value) {
+      if (writableCgroupsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && writableCgroups_ != null
+            && writableCgroups_
+                != com.google.container.v1beta1.ContainerdConfig.WritableCgroups
+                    .getDefaultInstance()) {
+          getWritableCgroupsBuilder().mergeFrom(value);
+        } else {
+          writableCgroups_ = value;
+        }
+      } else {
+        writableCgroupsBuilder_.mergeFrom(value);
+      }
+      if (writableCgroups_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWritableCgroups() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      writableCgroups_ = null;
+      if (writableCgroupsBuilder_ != null) {
+        writableCgroupsBuilder_.dispose();
+        writableCgroupsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder
+        getWritableCgroupsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getWritableCgroupsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder
+        getWritableCgroupsOrBuilder() {
+      if (writableCgroupsBuilder_ != null) {
+        return writableCgroupsBuilder_.getMessageOrBuilder();
+      } else {
+        return writableCgroups_ == null
+            ? com.google.container.v1beta1.ContainerdConfig.WritableCgroups.getDefaultInstance()
+            : writableCgroups_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. WritableCgroups defines writable cgroups configuration for the
+     * node pool.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.ContainerdConfig.WritableCgroups writable_cgroups = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroups,
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder,
+            com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder>
+        getWritableCgroupsFieldBuilder() {
+      if (writableCgroupsBuilder_ == null) {
+        writableCgroupsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.ContainerdConfig.WritableCgroups,
+                com.google.container.v1beta1.ContainerdConfig.WritableCgroups.Builder,
+                com.google.container.v1beta1.ContainerdConfig.WritableCgroupsOrBuilder>(
+                getWritableCgroups(), getParentForChildren(), isClean());
+        writableCgroups_ = null;
+      }
+      return writableCgroupsBuilder_;
     }
 
     @java.lang.Override

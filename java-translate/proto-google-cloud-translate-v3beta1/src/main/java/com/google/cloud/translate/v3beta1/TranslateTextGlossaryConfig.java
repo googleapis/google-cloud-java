@@ -140,6 +140,26 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     return ignoreCase_;
   }
 
+  public static final int CONTEXTUAL_TRANSLATION_ENABLED_FIELD_NUMBER = 4;
+  private boolean contextualTranslationEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the glossary will be used for contextual
+   * translation.
+   * </pre>
+   *
+   * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The contextualTranslationEnabled.
+   */
+  @java.lang.Override
+  public boolean getContextualTranslationEnabled() {
+    return contextualTranslationEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -160,6 +180,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     if (ignoreCase_ != false) {
       output.writeBool(2, ignoreCase_);
     }
+    if (contextualTranslationEnabled_ != false) {
+      output.writeBool(4, contextualTranslationEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -174,6 +197,10 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     }
     if (ignoreCase_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, ignoreCase_);
+    }
+    if (contextualTranslationEnabled_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(4, contextualTranslationEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -193,6 +220,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
 
     if (!getGlossary().equals(other.getGlossary())) return false;
     if (getIgnoreCase() != other.getIgnoreCase()) return false;
+    if (getContextualTranslationEnabled() != other.getContextualTranslationEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -208,6 +236,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     hash = (53 * hash) + getGlossary().hashCode();
     hash = (37 * hash) + IGNORE_CASE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreCase());
+    hash = (37 * hash) + CONTEXTUAL_TRANSLATION_ENABLED_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getContextualTranslationEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -352,6 +383,7 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       bitField0_ = 0;
       glossary_ = "";
       ignoreCase_ = false;
+      contextualTranslationEnabled_ = false;
       return this;
     }
 
@@ -395,6 +427,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.ignoreCase_ = ignoreCase_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.contextualTranslationEnabled_ = contextualTranslationEnabled_;
       }
     }
 
@@ -453,6 +488,9 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
       if (other.getIgnoreCase() != false) {
         setIgnoreCase(other.getIgnoreCase());
       }
+      if (other.getContextualTranslationEnabled() != false) {
+        setContextualTranslationEnabled(other.getContextualTranslationEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -491,6 +529,12 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 32:
+              {
+                contextualTranslationEnabled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -681,6 +725,68 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
     public Builder clearIgnoreCase() {
       bitField0_ = (bitField0_ & ~0x00000002);
       ignoreCase_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean contextualTranslationEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the glossary will be used for contextual
+     * translation.
+     * </pre>
+     *
+     * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextualTranslationEnabled.
+     */
+    @java.lang.Override
+    public boolean getContextualTranslationEnabled() {
+      return contextualTranslationEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the glossary will be used for contextual
+     * translation.
+     * </pre>
+     *
+     * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The contextualTranslationEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContextualTranslationEnabled(boolean value) {
+
+      contextualTranslationEnabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the glossary will be used for contextual
+     * translation.
+     * </pre>
+     *
+     * <code>bool contextual_translation_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContextualTranslationEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      contextualTranslationEnabled_ = false;
       onChanged();
       return this;
     }

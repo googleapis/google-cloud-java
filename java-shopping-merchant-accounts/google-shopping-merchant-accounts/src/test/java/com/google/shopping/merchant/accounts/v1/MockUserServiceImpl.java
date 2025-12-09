@@ -159,4 +159,24 @@ public class MockUserServiceImpl extends UserServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void verifySelf(VerifySelfRequest request, StreamObserver<User> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof User) {
+      requests.add(request);
+      responseObserver.onNext(((User) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method VerifySelf, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  User.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

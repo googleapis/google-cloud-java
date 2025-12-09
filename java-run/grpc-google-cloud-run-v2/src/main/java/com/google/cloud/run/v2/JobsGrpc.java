@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Job Control Plane API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/job.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobsGrpc {
 
@@ -774,8 +771,8 @@ public final class JobsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createJob(
-        com.google.cloud.run.v2.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -786,8 +783,9 @@ public final class JobsGrpc {
      * Gets information about a Job.
      * </pre>
      */
-    public com.google.cloud.run.v2.Job getJob(com.google.cloud.run.v2.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.cloud.run.v2.Job getJob(com.google.cloud.run.v2.GetJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -799,8 +797,8 @@ public final class JobsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.ListJobsResponse listJobs(
-        com.google.cloud.run.v2.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -812,8 +810,8 @@ public final class JobsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateJob(
-        com.google.cloud.run.v2.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -825,8 +823,8 @@ public final class JobsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteJob(
-        com.google.cloud.run.v2.DeleteJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.DeleteJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
@@ -837,8 +835,9 @@ public final class JobsGrpc {
      * Triggers creation of a new Execution of this Job.
      * </pre>
      */
-    public com.google.longrunning.Operation runJob(com.google.cloud.run.v2.RunJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.longrunning.Operation runJob(com.google.cloud.run.v2.RunJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunJobMethod(), getCallOptions(), request);
     }
 
@@ -850,8 +849,9 @@ public final class JobsGrpc {
      * This result does not include any inherited policies.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -863,8 +863,9 @@ public final class JobsGrpc {
      * any existing policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -877,8 +878,8 @@ public final class JobsGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

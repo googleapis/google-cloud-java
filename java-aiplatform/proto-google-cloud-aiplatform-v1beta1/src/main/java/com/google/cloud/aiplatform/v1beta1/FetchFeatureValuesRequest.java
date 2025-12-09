@@ -292,7 +292,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
    * @return Whether the id field is set.
    */
   @java.lang.Deprecated
@@ -311,7 +311,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
    * @return The id.
    */
   @java.lang.Deprecated
@@ -343,7 +343,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * <code>string id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
    * @return The bytes for id.
    */
   @java.lang.Deprecated
@@ -546,7 +546,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
    * @return The enum numeric value on the wire for format.
    */
   @java.lang.Override
@@ -569,7 +569,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+   *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
    * @return The format.
    */
   @java.lang.Override
@@ -1104,7 +1104,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @return Whether the id field is set.
      */
     @java.lang.Override
@@ -1124,7 +1124,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @return The id.
      */
     @java.lang.Override
@@ -1157,7 +1157,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @return The bytes for id.
      */
     @java.lang.Override
@@ -1190,7 +1190,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1216,7 +1216,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1240,7 +1240,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * <code>string id = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.id is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=141
+     *     google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=151
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */
@@ -1729,7 +1729,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
      * @return The enum numeric value on the wire for format.
      */
     @java.lang.Override
@@ -1752,7 +1752,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
      * @param value The enum numeric value on the wire for format to set.
      * @return This builder for chaining.
      */
@@ -1778,7 +1778,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
      * @return The format.
      */
     @java.lang.Override
@@ -1805,7 +1805,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
      * @param value The format to set.
      * @return This builder for chaining.
      */
@@ -1835,7 +1835,7 @@ public final class FetchFeatureValuesRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.FetchFeatureValuesRequest.format is deprecated.
-     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=165
+     *     See google/cloud/aiplatform/v1beta1/feature_online_store_service.proto;l=175
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

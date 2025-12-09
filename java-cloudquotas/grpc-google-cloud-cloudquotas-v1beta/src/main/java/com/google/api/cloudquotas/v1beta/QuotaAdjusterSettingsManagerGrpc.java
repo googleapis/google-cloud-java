@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - Get the name of the configurations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/cloudquotas/v1beta/quota_adjuster_settings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class QuotaAdjusterSettingsManagerGrpc {
 
@@ -356,8 +353,9 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings updateQuotaAdjusterSettings(
-        com.google.api.cloudquotas.v1beta.UpdateQuotaAdjusterSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1beta.UpdateQuotaAdjusterSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateQuotaAdjusterSettingsMethod(), getCallOptions(), request);
     }
 
@@ -369,8 +367,9 @@ public final class QuotaAdjusterSettingsManagerGrpc {
      * </pre>
      */
     public com.google.api.cloudquotas.v1beta.QuotaAdjusterSettings getQuotaAdjusterSettings(
-        com.google.api.cloudquotas.v1beta.GetQuotaAdjusterSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.cloudquotas.v1beta.GetQuotaAdjusterSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetQuotaAdjusterSettingsMethod(), getCallOptions(), request);
     }
   }

@@ -105,6 +105,49 @@ public interface CloudSqlInstanceBackupPropertiesOrBuilder
    *
    *
    * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceCreateTime field is set.
+   */
+  boolean hasInstanceCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceCreateTime.
+   */
+  com.google.protobuf.Timestamp getInstanceCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance creation timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInstanceCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The tier (or machine type) for this instance. Example:
    * `db-custom-1-3840`
    * </pre>
@@ -128,4 +171,47 @@ public interface CloudSqlInstanceBackupPropertiesOrBuilder
    * @return The bytes for instanceTier.
    */
   com.google.protobuf.ByteString getInstanceTierBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instanceDeleteTime field is set.
+   */
+  boolean hasInstanceDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The instanceDeleteTime.
+   */
+  com.google.protobuf.Timestamp getInstanceDeleteTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The instance delete timestamp.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp instance_delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getInstanceDeleteTimeOrBuilder();
 }

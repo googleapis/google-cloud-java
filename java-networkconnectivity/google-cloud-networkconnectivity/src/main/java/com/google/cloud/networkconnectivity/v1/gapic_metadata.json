@@ -83,6 +83,66 @@
         }
       }
     },
+    "DataTransferService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataTransferServiceClient",
+          "rpcs": {
+            "CreateDestination": {
+              "methods": ["createDestinationAsync", "createDestinationAsync", "createDestinationAsync", "createDestinationOperationCallable", "createDestinationCallable"]
+            },
+            "CreateMulticloudDataTransferConfig": {
+              "methods": ["createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigAsync", "createMulticloudDataTransferConfigOperationCallable", "createMulticloudDataTransferConfigCallable"]
+            },
+            "DeleteDestination": {
+              "methods": ["deleteDestinationAsync", "deleteDestinationAsync", "deleteDestinationAsync", "deleteDestinationOperationCallable", "deleteDestinationCallable"]
+            },
+            "DeleteMulticloudDataTransferConfig": {
+              "methods": ["deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigAsync", "deleteMulticloudDataTransferConfigOperationCallable", "deleteMulticloudDataTransferConfigCallable"]
+            },
+            "GetDestination": {
+              "methods": ["getDestination", "getDestination", "getDestination", "getDestinationCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMulticloudDataTransferConfig": {
+              "methods": ["getMulticloudDataTransferConfig", "getMulticloudDataTransferConfig", "getMulticloudDataTransferConfig", "getMulticloudDataTransferConfigCallable"]
+            },
+            "GetMulticloudDataTransferSupportedService": {
+              "methods": ["getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedService", "getMulticloudDataTransferSupportedServiceCallable"]
+            },
+            "ListDestinations": {
+              "methods": ["listDestinations", "listDestinations", "listDestinations", "listDestinationsPagedCallable", "listDestinationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMulticloudDataTransferConfigs": {
+              "methods": ["listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigs", "listMulticloudDataTransferConfigsPagedCallable", "listMulticloudDataTransferConfigsCallable"]
+            },
+            "ListMulticloudDataTransferSupportedServices": {
+              "methods": ["listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServices", "listMulticloudDataTransferSupportedServicesPagedCallable", "listMulticloudDataTransferSupportedServicesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateDestination": {
+              "methods": ["updateDestinationAsync", "updateDestinationAsync", "updateDestinationOperationCallable", "updateDestinationCallable"]
+            },
+            "UpdateMulticloudDataTransferConfig": {
+              "methods": ["updateMulticloudDataTransferConfigAsync", "updateMulticloudDataTransferConfigAsync", "updateMulticloudDataTransferConfigOperationCallable", "updateMulticloudDataTransferConfigCallable"]
+            }
+          }
+        }
+      }
+    },
     "HubService": {
       "clients": {
         "grpc": {

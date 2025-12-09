@@ -179,4 +179,67 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams>
+      getPronunciationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.CustomPronunciationParams getPronunciations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  int getPronunciationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder>
+      getPronunciationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2beta1.CustomPronunciationParams pronunciations = 6;
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.CustomPronunciationParamsOrBuilder getPronunciationsOrBuilder(
+      int index);
 }

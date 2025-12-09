@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * issues.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/issueresolution/v1/issueresolution.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IssueResolutionServiceGrpc {
 
@@ -453,8 +450,9 @@ public final class IssueResolutionServiceGrpc {
      */
     public com.google.shopping.merchant.issueresolution.v1.RenderAccountIssuesResponse
         renderAccountIssues(
-            com.google.shopping.merchant.issueresolution.v1.RenderAccountIssuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.issueresolution.v1.RenderAccountIssuesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenderAccountIssuesMethod(), getCallOptions(), request);
     }
 
@@ -469,8 +467,9 @@ public final class IssueResolutionServiceGrpc {
      */
     public com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesResponse
         renderProductIssues(
-            com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.issueresolution.v1.RenderProductIssuesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRenderProductIssuesMethod(), getCallOptions(), request);
     }
 
@@ -491,8 +490,9 @@ public final class IssueResolutionServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.issueresolution.v1.TriggerActionResponse triggerAction(
-        com.google.shopping.merchant.issueresolution.v1.TriggerActionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.issueresolution.v1.TriggerActionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTriggerActionMethod(), getCallOptions(), request);
     }
   }

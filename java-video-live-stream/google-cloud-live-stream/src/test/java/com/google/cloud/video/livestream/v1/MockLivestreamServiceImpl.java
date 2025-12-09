@@ -206,6 +206,48 @@ public class MockLivestreamServiceImpl extends LivestreamServiceImplBase {
   }
 
   @Override
+  public void startDistribution(
+      StartDistributionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartDistribution, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void stopDistribution(
+      StopDistributionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopDistribution, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createInput(CreateInputRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Operation) {
@@ -302,6 +344,27 @@ public class MockLivestreamServiceImpl extends LivestreamServiceImplBase {
                   "Unrecognized response type %s for method UpdateInput, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void previewInput(
+      PreviewInputRequest request, StreamObserver<PreviewInputResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PreviewInputResponse) {
+      requests.add(request);
+      responseObserver.onNext(((PreviewInputResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PreviewInput, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PreviewInputResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

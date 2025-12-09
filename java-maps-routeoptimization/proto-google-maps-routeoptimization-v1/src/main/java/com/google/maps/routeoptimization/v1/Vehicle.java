@@ -93,9 +93,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Travel modes which can be used by vehicles.
    *
-   * These should be a subset of the Google Maps Platform Routes Preferred API
-   * travel modes, see:
-   * https://developers.google.com/maps/documentation/routes_preferred/reference/rest/Shared.Types/RouteTravelMode.
+   * These should be a subset of the Google Maps Platform Routes API travel
+   * modes, see:
+   * https://developers.google.com/maps/documentation/routes/reference/rest/v2/RouteTravelMode
+   *
+   * Note: `WALKING` routes are in beta and might sometimes be missing clear
+   * sidewalks or pedestrian paths. You must display this warning to the user
+   * for all walking routes that you display in your app.
    * </pre>
    *
    * Protobuf enum {@code google.maps.routeoptimization.v1.Vehicle.TravelMode}
@@ -474,6 +478,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * * [cost_per_unit_above_soft_max][google.maps.routeoptimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
      * add up and must be in the same unit as
      * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost].
+     * Soft limits may only be defined on types that apply to either pickups
+     * only or deliveries only throughout the model.
      * </pre>
      *
      * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -563,6 +569,124 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.IntervalOrBuilder
         getEndLoadIntervalOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     *
+     * @return Whether the costPerKilometer field is set.
+     */
+    boolean hasCostPerKilometer();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     *
+     * @return The costPerKilometer.
+     */
+    com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost getCostPerKilometer();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     */
+    com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+        getCostPerKilometerOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     *
+     * @return Whether the costPerTraveledHour field is set.
+     */
+    boolean hasCostPerTraveledHour();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     *
+     * @return The costPerTraveledHour.
+     */
+    com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost getCostPerTraveledHour();
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     */
+    com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+        getCostPerTraveledHourOrBuilder();
   }
 
   /**
@@ -1393,6 +1517,1143 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface LoadCostOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Amount of load above which the cost of moving a unit of load changes
+       * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+       * Must be &gt;= 0.
+       * </pre>
+       *
+       * <code>optional int64 load_threshold = 1;</code>
+       *
+       * @return Whether the loadThreshold field is set.
+       */
+      boolean hasLoadThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Amount of load above which the cost of moving a unit of load changes
+       * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+       * Must be &gt;= 0.
+       * </pre>
+       *
+       * <code>optional int64 load_threshold = 1;</code>
+       *
+       * @return The loadThreshold.
+       */
+      long getLoadThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit between 0 and threshold.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_below_threshold = 2;</code>
+       *
+       * @return Whether the costPerUnitBelowThreshold field is set.
+       */
+      boolean hasCostPerUnitBelowThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit between 0 and threshold.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_below_threshold = 2;</code>
+       *
+       * @return The costPerUnitBelowThreshold.
+       */
+      double getCostPerUnitBelowThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit above threshold.
+       * In the special case threshold = 0, this is a fixed cost per unit.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_above_threshold = 3;</code>
+       *
+       * @return Whether the costPerUnitAboveThreshold field is set.
+       */
+      boolean hasCostPerUnitAboveThreshold();
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit above threshold.
+       * In the special case threshold = 0, this is a fixed cost per unit.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_above_threshold = 3;</code>
+       *
+       * @return The costPerUnitAboveThreshold.
+       */
+      double getCostPerUnitAboveThreshold();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load during a `Transition`.
+     * For a given load, the cost is the sum of two parts:
+     *
+     * - min(load, `load_threshold`) * `cost_per_unit_below_threshold`
+     * - max(0, load - `load_threshold`) * `cost_per_unit_above_threshold`
+     *
+     * With this cost, solutions prefer to deliver high demands first,
+     * or equivalently pickup high demands last.
+     * For example, if a vehicle has
+     *
+     *     load_limit {
+     *       key: "weight"
+     *       value {
+     *         cost_per_kilometer {
+     *           load_threshold: 15
+     *           cost_per_unit_below_threshold: 2.0
+     *           cost_per_unit_above_threshold: 10.0
+     *         }
+     *       }
+     *     }
+     *
+     * and its route is start,pickup,pickup,delivery,delivery,end with
+     * transitions:
+     *
+     *     transition { vehicle_load['weight'] { amount: 0 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 10 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 20 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 10 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 0 }
+     *                  travel_distance_meters: 1000.0 }
+     *
+     * then the cost incurred by this `LoadCost` is
+     * (cost_below * load_below * kilometers + cost_above * load_above * kms)
+     *
+     * - transition 0: 0.0
+     * - transition 1: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+     * - transition 2: 2.0 * 15 * 1.0 + 10.0 * (20 - 15) * 1.0 = 80.0
+     * - transition 3: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+     * - transition 4: 0.0
+     *
+     * So the `LoadCost` over the route is 120.0.
+     *
+     * However, if the route is start,pickup,delivery,pickup,delivery,end
+     * with transitions:
+     *
+     *     transition { vehicle_load['weight'] { amount: 0 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 10 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 0 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 10 }
+     *                  travel_distance_meters: 1000.0 }
+     *     transition { vehicle_load['weight'] { amount: 0 }
+     *                  travel_distance_meters: 1000.0 }
+     *
+     * then the cost incurred by this `LoadCost` is
+     *
+     * - transition 0: 0.0
+     * - transition 1: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+     * - transition 2: 0.0
+     * - transition 3: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+     * - transition 4: 0.0
+     *
+     * Here the `LoadCost` over the route is 40.0.
+     *
+     * `LoadCost` makes solutions with heavy-loaded transitions more expensive.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost}
+     */
+    public static final class LoadCost extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)
+        LoadCostOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use LoadCost.newBuilder() to construct.
+      private LoadCost(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private LoadCost() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new LoadCost();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+            .internal_static_google_maps_routeoptimization_v1_Vehicle_LoadLimit_LoadCost_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+            .internal_static_google_maps_routeoptimization_v1_Vehicle_LoadLimit_LoadCost_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.class,
+                com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int LOAD_THRESHOLD_FIELD_NUMBER = 1;
+      private long loadThreshold_ = 0L;
+
+      /**
+       *
+       *
+       * <pre>
+       * Amount of load above which the cost of moving a unit of load changes
+       * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+       * Must be &gt;= 0.
+       * </pre>
+       *
+       * <code>optional int64 load_threshold = 1;</code>
+       *
+       * @return Whether the loadThreshold field is set.
+       */
+      @java.lang.Override
+      public boolean hasLoadThreshold() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Amount of load above which the cost of moving a unit of load changes
+       * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+       * Must be &gt;= 0.
+       * </pre>
+       *
+       * <code>optional int64 load_threshold = 1;</code>
+       *
+       * @return The loadThreshold.
+       */
+      @java.lang.Override
+      public long getLoadThreshold() {
+        return loadThreshold_;
+      }
+
+      public static final int COST_PER_UNIT_BELOW_THRESHOLD_FIELD_NUMBER = 2;
+      private double costPerUnitBelowThreshold_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit between 0 and threshold.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_below_threshold = 2;</code>
+       *
+       * @return Whether the costPerUnitBelowThreshold field is set.
+       */
+      @java.lang.Override
+      public boolean hasCostPerUnitBelowThreshold() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit between 0 and threshold.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_below_threshold = 2;</code>
+       *
+       * @return The costPerUnitBelowThreshold.
+       */
+      @java.lang.Override
+      public double getCostPerUnitBelowThreshold() {
+        return costPerUnitBelowThreshold_;
+      }
+
+      public static final int COST_PER_UNIT_ABOVE_THRESHOLD_FIELD_NUMBER = 3;
+      private double costPerUnitAboveThreshold_ = 0D;
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit above threshold.
+       * In the special case threshold = 0, this is a fixed cost per unit.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_above_threshold = 3;</code>
+       *
+       * @return Whether the costPerUnitAboveThreshold field is set.
+       */
+      @java.lang.Override
+      public boolean hasCostPerUnitAboveThreshold() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving a unit of load, for each unit above threshold.
+       * In the special case threshold = 0, this is a fixed cost per unit.
+       * Must be a finite value, and &gt;= 0.
+       * </pre>
+       *
+       * <code>optional double cost_per_unit_above_threshold = 3;</code>
+       *
+       * @return The costPerUnitAboveThreshold.
+       */
+      @java.lang.Override
+      public double getCostPerUnitAboveThreshold() {
+        return costPerUnitAboveThreshold_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeInt64(1, loadThreshold_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeDouble(2, costPerUnitBelowThreshold_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          output.writeDouble(3, costPerUnitAboveThreshold_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, loadThreshold_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                  2, costPerUnitBelowThreshold_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                  3, costPerUnitAboveThreshold_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)) {
+          return super.equals(obj);
+        }
+        com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost other =
+            (com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost) obj;
+
+        if (hasLoadThreshold() != other.hasLoadThreshold()) return false;
+        if (hasLoadThreshold()) {
+          if (getLoadThreshold() != other.getLoadThreshold()) return false;
+        }
+        if (hasCostPerUnitBelowThreshold() != other.hasCostPerUnitBelowThreshold()) return false;
+        if (hasCostPerUnitBelowThreshold()) {
+          if (java.lang.Double.doubleToLongBits(getCostPerUnitBelowThreshold())
+              != java.lang.Double.doubleToLongBits(other.getCostPerUnitBelowThreshold()))
+            return false;
+        }
+        if (hasCostPerUnitAboveThreshold() != other.hasCostPerUnitAboveThreshold()) return false;
+        if (hasCostPerUnitAboveThreshold()) {
+          if (java.lang.Double.doubleToLongBits(getCostPerUnitAboveThreshold())
+              != java.lang.Double.doubleToLongBits(other.getCostPerUnitAboveThreshold()))
+            return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasLoadThreshold()) {
+          hash = (37 * hash) + LOAD_THRESHOLD_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLoadThreshold());
+        }
+        if (hasCostPerUnitBelowThreshold()) {
+          hash = (37 * hash) + COST_PER_UNIT_BELOW_THRESHOLD_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getCostPerUnitBelowThreshold()));
+        }
+        if (hasCostPerUnitAboveThreshold()) {
+          hash = (37 * hash) + COST_PER_UNIT_ABOVE_THRESHOLD_FIELD_NUMBER;
+          hash =
+              (53 * hash)
+                  + com.google.protobuf.Internal.hashLong(
+                      java.lang.Double.doubleToLongBits(getCostPerUnitAboveThreshold()));
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load during a `Transition`.
+       * For a given load, the cost is the sum of two parts:
+       *
+       * - min(load, `load_threshold`) * `cost_per_unit_below_threshold`
+       * - max(0, load - `load_threshold`) * `cost_per_unit_above_threshold`
+       *
+       * With this cost, solutions prefer to deliver high demands first,
+       * or equivalently pickup high demands last.
+       * For example, if a vehicle has
+       *
+       *     load_limit {
+       *       key: "weight"
+       *       value {
+       *         cost_per_kilometer {
+       *           load_threshold: 15
+       *           cost_per_unit_below_threshold: 2.0
+       *           cost_per_unit_above_threshold: 10.0
+       *         }
+       *       }
+       *     }
+       *
+       * and its route is start,pickup,pickup,delivery,delivery,end with
+       * transitions:
+       *
+       *     transition { vehicle_load['weight'] { amount: 0 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 10 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 20 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 10 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 0 }
+       *                  travel_distance_meters: 1000.0 }
+       *
+       * then the cost incurred by this `LoadCost` is
+       * (cost_below * load_below * kilometers + cost_above * load_above * kms)
+       *
+       * - transition 0: 0.0
+       * - transition 1: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+       * - transition 2: 2.0 * 15 * 1.0 + 10.0 * (20 - 15) * 1.0 = 80.0
+       * - transition 3: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+       * - transition 4: 0.0
+       *
+       * So the `LoadCost` over the route is 120.0.
+       *
+       * However, if the route is start,pickup,delivery,pickup,delivery,end
+       * with transitions:
+       *
+       *     transition { vehicle_load['weight'] { amount: 0 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 10 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 0 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 10 }
+       *                  travel_distance_meters: 1000.0 }
+       *     transition { vehicle_load['weight'] { amount: 0 }
+       *                  travel_distance_meters: 1000.0 }
+       *
+       * then the cost incurred by this `LoadCost` is
+       *
+       * - transition 0: 0.0
+       * - transition 1: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+       * - transition 2: 0.0
+       * - transition 3: 2.0 * 10 * 1.0 + 10.0 * 0 * 1.0 = 20.0
+       * - transition 4: 0.0
+       *
+       * Here the `LoadCost` over the route is 40.0.
+       *
+       * `LoadCost` makes solutions with heavy-loaded transitions more expensive.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * Protobuf type {@code google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+              .internal_static_google_maps_routeoptimization_v1_Vehicle_LoadLimit_LoadCost_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+              .internal_static_google_maps_routeoptimization_v1_Vehicle_LoadLimit_LoadCost_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.class,
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder.class);
+        }
+
+        // Construct using
+        // com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          loadThreshold_ = 0L;
+          costPerUnitBelowThreshold_ = 0D;
+          costPerUnitAboveThreshold_ = 0D;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.maps.routeoptimization.v1.RouteOptimizationServiceProto
+              .internal_static_google_maps_routeoptimization_v1_Vehicle_LoadLimit_LoadCost_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+            getDefaultInstanceForType() {
+          return com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost build() {
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost buildPartial() {
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost result =
+              new com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.loadThreshold_ = loadThreshold_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.costPerUnitBelowThreshold_ = costPerUnitBelowThreshold_;
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.costPerUnitAboveThreshold_ = costPerUnitAboveThreshold_;
+            to_bitField0_ |= 0x00000004;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost) {
+            return mergeFrom(
+                (com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost other) {
+          if (other
+              == com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+                  .getDefaultInstance()) return this;
+          if (other.hasLoadThreshold()) {
+            setLoadThreshold(other.getLoadThreshold());
+          }
+          if (other.hasCostPerUnitBelowThreshold()) {
+            setCostPerUnitBelowThreshold(other.getCostPerUnitBelowThreshold());
+          }
+          if (other.hasCostPerUnitAboveThreshold()) {
+            setCostPerUnitAboveThreshold(other.getCostPerUnitAboveThreshold());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    loadThreshold_ = input.readInt64();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 17:
+                  {
+                    costPerUnitBelowThreshold_ = input.readDouble();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 17
+                case 25:
+                  {
+                    costPerUnitAboveThreshold_ = input.readDouble();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 25
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private long loadThreshold_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Amount of load above which the cost of moving a unit of load changes
+         * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+         * Must be &gt;= 0.
+         * </pre>
+         *
+         * <code>optional int64 load_threshold = 1;</code>
+         *
+         * @return Whether the loadThreshold field is set.
+         */
+        @java.lang.Override
+        public boolean hasLoadThreshold() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Amount of load above which the cost of moving a unit of load changes
+         * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+         * Must be &gt;= 0.
+         * </pre>
+         *
+         * <code>optional int64 load_threshold = 1;</code>
+         *
+         * @return The loadThreshold.
+         */
+        @java.lang.Override
+        public long getLoadThreshold() {
+          return loadThreshold_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Amount of load above which the cost of moving a unit of load changes
+         * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+         * Must be &gt;= 0.
+         * </pre>
+         *
+         * <code>optional int64 load_threshold = 1;</code>
+         *
+         * @param value The loadThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLoadThreshold(long value) {
+
+          loadThreshold_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Amount of load above which the cost of moving a unit of load changes
+         * from cost_per_unit_below_threshold to cost_per_unit_above_threshold.
+         * Must be &gt;= 0.
+         * </pre>
+         *
+         * <code>optional int64 load_threshold = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLoadThreshold() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          loadThreshold_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private double costPerUnitBelowThreshold_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit between 0 and threshold.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_below_threshold = 2;</code>
+         *
+         * @return Whether the costPerUnitBelowThreshold field is set.
+         */
+        @java.lang.Override
+        public boolean hasCostPerUnitBelowThreshold() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit between 0 and threshold.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_below_threshold = 2;</code>
+         *
+         * @return The costPerUnitBelowThreshold.
+         */
+        @java.lang.Override
+        public double getCostPerUnitBelowThreshold() {
+          return costPerUnitBelowThreshold_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit between 0 and threshold.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_below_threshold = 2;</code>
+         *
+         * @param value The costPerUnitBelowThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCostPerUnitBelowThreshold(double value) {
+
+          costPerUnitBelowThreshold_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit between 0 and threshold.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_below_threshold = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCostPerUnitBelowThreshold() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          costPerUnitBelowThreshold_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        private double costPerUnitAboveThreshold_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit above threshold.
+         * In the special case threshold = 0, this is a fixed cost per unit.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_above_threshold = 3;</code>
+         *
+         * @return Whether the costPerUnitAboveThreshold field is set.
+         */
+        @java.lang.Override
+        public boolean hasCostPerUnitAboveThreshold() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit above threshold.
+         * In the special case threshold = 0, this is a fixed cost per unit.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_above_threshold = 3;</code>
+         *
+         * @return The costPerUnitAboveThreshold.
+         */
+        @java.lang.Override
+        public double getCostPerUnitAboveThreshold() {
+          return costPerUnitAboveThreshold_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit above threshold.
+         * In the special case threshold = 0, this is a fixed cost per unit.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_above_threshold = 3;</code>
+         *
+         * @param value The costPerUnitAboveThreshold to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCostPerUnitAboveThreshold(double value) {
+
+          costPerUnitAboveThreshold_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Cost of moving a unit of load, for each unit above threshold.
+         * In the special case threshold = 0, this is a fixed cost per unit.
+         * Must be a finite value, and &gt;= 0.
+         * </pre>
+         *
+         * <code>optional double cost_per_unit_above_threshold = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCostPerUnitAboveThreshold() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          costPerUnitAboveThreshold_ = 0D;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost)
+      private static final com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost();
+      }
+
+      public static com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<LoadCost> PARSER =
+          new com.google.protobuf.AbstractParser<LoadCost>() {
+            @java.lang.Override
+            public LoadCost parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<LoadCost> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LoadCost> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int MAX_LOAD_FIELD_NUMBER = 1;
     private long maxLoad_ = 0L;
@@ -1464,6 +2725,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * * [cost_per_unit_above_soft_max][google.maps.routeoptimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
      * add up and must be in the same unit as
      * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost].
+     * Soft limits may only be defined on types that apply to either pickups
+     * only or deliveries only throughout the model.
      * </pre>
      *
      * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -1589,6 +2852,157 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           : endLoadInterval_;
     }
 
+    public static final int COST_PER_KILOMETER_FIELD_NUMBER = 6;
+    private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost costPerKilometer_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     *
+     * @return Whether the costPerKilometer field is set.
+     */
+    @java.lang.Override
+    public boolean hasCostPerKilometer() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     *
+     * @return The costPerKilometer.
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost getCostPerKilometer() {
+      return costPerKilometer_ == null
+          ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+          : costPerKilometer_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of moving one unit of load over one kilometer for this vehicle.
+     * This can be used as a proxy for fuel consumption: if the load is a weight
+     * (in Newtons), then load*kilometer has the dimension of an energy.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+        getCostPerKilometerOrBuilder() {
+      return costPerKilometer_ == null
+          ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+          : costPerKilometer_;
+    }
+
+    public static final int COST_PER_TRAVELED_HOUR_FIELD_NUMBER = 7;
+    private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost costPerTraveledHour_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     *
+     * @return Whether the costPerTraveledHour field is set.
+     */
+    @java.lang.Override
+    public boolean hasCostPerTraveledHour() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     *
+     * @return The costPerTraveledHour.
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+        getCostPerTraveledHour() {
+      return costPerTraveledHour_ == null
+          ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+          : costPerTraveledHour_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cost of traveling with a unit of load during one hour for this vehicle.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>
+     * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+        getCostPerTraveledHourOrBuilder() {
+      return costPerTraveledHour_ == null
+          ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+          : costPerTraveledHour_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1618,6 +3032,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(5, getEndLoadInterval());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(6, getCostPerKilometer());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(7, getCostPerTraveledHour());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1642,6 +3062,13 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndLoadInterval());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCostPerKilometer());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCostPerTraveledHour());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1674,6 +3101,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (hasEndLoadInterval()) {
         if (!getEndLoadInterval().equals(other.getEndLoadInterval())) return false;
       }
+      if (hasCostPerKilometer() != other.hasCostPerKilometer()) return false;
+      if (hasCostPerKilometer()) {
+        if (!getCostPerKilometer().equals(other.getCostPerKilometer())) return false;
+      }
+      if (hasCostPerTraveledHour() != other.hasCostPerTraveledHour()) return false;
+      if (hasCostPerTraveledHour()) {
+        if (!getCostPerTraveledHour().equals(other.getCostPerTraveledHour())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1703,6 +3138,14 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
       if (hasEndLoadInterval()) {
         hash = (37 * hash) + END_LOAD_INTERVAL_FIELD_NUMBER;
         hash = (53 * hash) + getEndLoadInterval().hashCode();
+      }
+      if (hasCostPerKilometer()) {
+        hash = (37 * hash) + COST_PER_KILOMETER_FIELD_NUMBER;
+        hash = (53 * hash) + getCostPerKilometer().hashCode();
+      }
+      if (hasCostPerTraveledHour()) {
+        hash = (37 * hash) + COST_PER_TRAVELED_HOUR_FIELD_NUMBER;
+        hash = (53 * hash) + getCostPerTraveledHour().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1852,6 +3295,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getStartLoadIntervalFieldBuilder();
           getEndLoadIntervalFieldBuilder();
+          getCostPerKilometerFieldBuilder();
+          getCostPerTraveledHourFieldBuilder();
         }
       }
 
@@ -1871,6 +3316,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (endLoadIntervalBuilder_ != null) {
           endLoadIntervalBuilder_.dispose();
           endLoadIntervalBuilder_ = null;
+        }
+        costPerKilometer_ = null;
+        if (costPerKilometerBuilder_ != null) {
+          costPerKilometerBuilder_.dispose();
+          costPerKilometerBuilder_ = null;
+        }
+        costPerTraveledHour_ = null;
+        if (costPerTraveledHourBuilder_ != null) {
+          costPerTraveledHourBuilder_.dispose();
+          costPerTraveledHourBuilder_ = null;
         }
         return this;
       }
@@ -1930,6 +3385,20 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           result.endLoadInterval_ =
               endLoadIntervalBuilder_ == null ? endLoadInterval_ : endLoadIntervalBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.costPerKilometer_ =
+              costPerKilometerBuilder_ == null
+                  ? costPerKilometer_
+                  : costPerKilometerBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.costPerTraveledHour_ =
+              costPerTraveledHourBuilder_ == null
+                  ? costPerTraveledHour_
+                  : costPerTraveledHourBuilder_.build();
+          to_bitField0_ |= 0x00000010;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1997,6 +3466,12 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
         if (other.hasEndLoadInterval()) {
           mergeEndLoadInterval(other.getEndLoadInterval());
         }
+        if (other.hasCostPerKilometer()) {
+          mergeCostPerKilometer(other.getCostPerKilometer());
+        }
+        if (other.hasCostPerTraveledHour()) {
+          mergeCostPerTraveledHour(other.getCostPerTraveledHour());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2055,6 +3530,20 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getCostPerKilometerFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  input.readMessage(
+                      getCostPerTraveledHourFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2219,6 +3708,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * * [cost_per_unit_above_soft_max][google.maps.routeoptimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
        * add up and must be in the same unit as
        * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost].
+       * Soft limits may only be defined on types that apply to either pickups
+       * only or deliveries only throughout the model.
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -2242,6 +3733,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * * [cost_per_unit_above_soft_max][google.maps.routeoptimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
        * add up and must be in the same unit as
        * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost].
+       * Soft limits may only be defined on types that apply to either pickups
+       * only or deliveries only throughout the model.
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -2269,6 +3762,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
        * * [cost_per_unit_above_soft_max][google.maps.routeoptimization.v1.Vehicle.LoadLimit.cost_per_unit_above_soft_max]. All costs
        * add up and must be in the same unit as
        * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost].
+       * Soft limits may only be defined on types that apply to either pickups
+       * only or deliveries only throughout the model.
        * </pre>
        *
        * <code>double cost_per_unit_above_soft_max = 3;</code>
@@ -2701,6 +4196,535 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           endLoadInterval_ = null;
         }
         return endLoadIntervalBuilder_;
+      }
+
+      private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost costPerKilometer_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>
+          costPerKilometerBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       *
+       * @return Whether the costPerKilometer field is set.
+       */
+      public boolean hasCostPerKilometer() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       *
+       * @return The costPerKilometer.
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost getCostPerKilometer() {
+        if (costPerKilometerBuilder_ == null) {
+          return costPerKilometer_ == null
+              ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+              : costPerKilometer_;
+        } else {
+          return costPerKilometerBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public Builder setCostPerKilometer(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost value) {
+        if (costPerKilometerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          costPerKilometer_ = value;
+        } else {
+          costPerKilometerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public Builder setCostPerKilometer(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder builderForValue) {
+        if (costPerKilometerBuilder_ == null) {
+          costPerKilometer_ = builderForValue.build();
+        } else {
+          costPerKilometerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public Builder mergeCostPerKilometer(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost value) {
+        if (costPerKilometerBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && costPerKilometer_ != null
+              && costPerKilometer_
+                  != com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+                      .getDefaultInstance()) {
+            getCostPerKilometerBuilder().mergeFrom(value);
+          } else {
+            costPerKilometer_ = value;
+          }
+        } else {
+          costPerKilometerBuilder_.mergeFrom(value);
+        }
+        if (costPerKilometer_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public Builder clearCostPerKilometer() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        costPerKilometer_ = null;
+        if (costPerKilometerBuilder_ != null) {
+          costPerKilometerBuilder_.dispose();
+          costPerKilometerBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder
+          getCostPerKilometerBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getCostPerKilometerFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+          getCostPerKilometerOrBuilder() {
+        if (costPerKilometerBuilder_ != null) {
+          return costPerKilometerBuilder_.getMessageOrBuilder();
+        } else {
+          return costPerKilometer_ == null
+              ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+              : costPerKilometer_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of moving one unit of load over one kilometer for this vehicle.
+       * This can be used as a proxy for fuel consumption: if the load is a weight
+       * (in Newtons), then load*kilometer has the dimension of an energy.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_kilometer = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>
+          getCostPerKilometerFieldBuilder() {
+        if (costPerKilometerBuilder_ == null) {
+          costPerKilometerBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>(
+                  getCostPerKilometer(), getParentForChildren(), isClean());
+          costPerKilometer_ = null;
+        }
+        return costPerKilometerBuilder_;
+      }
+
+      private com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost costPerTraveledHour_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>
+          costPerTraveledHourBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       *
+       * @return Whether the costPerTraveledHour field is set.
+       */
+      public boolean hasCostPerTraveledHour() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       *
+       * @return The costPerTraveledHour.
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+          getCostPerTraveledHour() {
+        if (costPerTraveledHourBuilder_ == null) {
+          return costPerTraveledHour_ == null
+              ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+              : costPerTraveledHour_;
+        } else {
+          return costPerTraveledHourBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public Builder setCostPerTraveledHour(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost value) {
+        if (costPerTraveledHourBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          costPerTraveledHour_ = value;
+        } else {
+          costPerTraveledHourBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public Builder setCostPerTraveledHour(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder builderForValue) {
+        if (costPerTraveledHourBuilder_ == null) {
+          costPerTraveledHour_ = builderForValue.build();
+        } else {
+          costPerTraveledHourBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public Builder mergeCostPerTraveledHour(
+          com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost value) {
+        if (costPerTraveledHourBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)
+              && costPerTraveledHour_ != null
+              && costPerTraveledHour_
+                  != com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost
+                      .getDefaultInstance()) {
+            getCostPerTraveledHourBuilder().mergeFrom(value);
+          } else {
+            costPerTraveledHour_ = value;
+          }
+        } else {
+          costPerTraveledHourBuilder_.mergeFrom(value);
+        }
+        if (costPerTraveledHour_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public Builder clearCostPerTraveledHour() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        costPerTraveledHour_ = null;
+        if (costPerTraveledHourBuilder_ != null) {
+          costPerTraveledHourBuilder_.dispose();
+          costPerTraveledHourBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder
+          getCostPerTraveledHourBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getCostPerTraveledHourFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      public com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder
+          getCostPerTraveledHourOrBuilder() {
+        if (costPerTraveledHourBuilder_ != null) {
+          return costPerTraveledHourBuilder_.getMessageOrBuilder();
+        } else {
+          return costPerTraveledHour_ == null
+              ? com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.getDefaultInstance()
+              : costPerTraveledHour_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Cost of traveling with a unit of load during one hour for this vehicle.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/load-cost/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>
+       * optional .google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost cost_per_traveled_hour = 7;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+              com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>
+          getCostPerTraveledHourFieldBuilder() {
+        if (costPerTraveledHourBuilder_ == null) {
+          costPerTraveledHourBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost,
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCost.Builder,
+                  com.google.maps.routeoptimization.v1.Vehicle.LoadLimit.LoadCostOrBuilder>(
+                  getCostPerTraveledHour(), getParentForChildren(), isClean());
+          costPerTraveledHour_ = null;
+        }
+        return costPerTraveledHourBuilder_;
       }
 
       @java.lang.Override

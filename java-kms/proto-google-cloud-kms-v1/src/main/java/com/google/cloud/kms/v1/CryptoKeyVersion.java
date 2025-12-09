@@ -508,6 +508,37 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * ML-KEM-768 (FIPS 203)
+     * </pre>
+     *
+     * <code>ML_KEM_768 = 47;</code>
+     */
+    ML_KEM_768(47),
+    /**
+     *
+     *
+     * <pre>
+     * ML-KEM-1024 (FIPS 203)
+     * </pre>
+     *
+     * <code>ML_KEM_1024 = 48;</code>
+     */
+    ML_KEM_1024(48),
+    /**
+     *
+     *
+     * <pre>
+     * X-Wing hybrid KEM combining ML-KEM-768 with X25519 following
+     * datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/.
+     * </pre>
+     *
+     * <code>KEM_XWING = 63;</code>
+     */
+    KEM_XWING(63),
+    /**
+     *
+     *
+     * <pre>
      * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
      * security level 3. Randomized version.
      * </pre>
@@ -936,6 +967,40 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * ML-KEM-768 (FIPS 203)
+     * </pre>
+     *
+     * <code>ML_KEM_768 = 47;</code>
+     */
+    public static final int ML_KEM_768_VALUE = 47;
+
+    /**
+     *
+     *
+     * <pre>
+     * ML-KEM-1024 (FIPS 203)
+     * </pre>
+     *
+     * <code>ML_KEM_1024 = 48;</code>
+     */
+    public static final int ML_KEM_1024_VALUE = 48;
+
+    /**
+     *
+     *
+     * <pre>
+     * X-Wing hybrid KEM combining ML-KEM-768 with X25519 following
+     * datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/.
+     * </pre>
+     *
+     * <code>KEM_XWING = 63;</code>
+     */
+    public static final int KEM_XWING_VALUE = 63;
+
+    /**
+     *
+     *
+     * <pre>
      * The post-quantum Module-Lattice-Based Digital Signature Algorithm, at
      * security level 3. Randomized version.
      * </pre>
@@ -1052,6 +1117,12 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return HMAC_SHA224;
         case 18:
           return EXTERNAL_SYMMETRIC_ENCRYPTION;
+        case 47:
+          return ML_KEM_768;
+        case 48:
+          return ML_KEM_1024;
+        case 63:
+          return KEM_XWING;
         case 56:
           return PQ_SIGN_ML_DSA_65;
         case 57:

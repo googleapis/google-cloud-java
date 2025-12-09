@@ -73,6 +73,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field.
+   * For example, to change the state of the configuration to ENABLED, specify
+   *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+   *   `vpc_flow_logs_config = {
+   *     name =
+   *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+   *     state = "ENABLED" }`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -91,6 +97,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field.
+   * For example, to change the state of the configuration to ENABLED, specify
+   *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+   *   `vpc_flow_logs_config = {
+   *     name =
+   *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+   *     state = "ENABLED" }`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -109,6 +121,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field.
+   * For example, to change the state of the configuration to ENABLED, specify
+   *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+   *   `vpc_flow_logs_config = {
+   *     name =
+   *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+   *     state = "ENABLED" }`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -600,6 +618,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -617,6 +641,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -640,6 +670,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -665,6 +701,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -687,6 +729,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -717,6 +765,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -739,6 +793,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -756,6 +816,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -777,6 +843,12 @@ public final class UpdateVpcFlowLogsConfigRequest extends com.google.protobuf.Ge
      * <pre>
      * Required. Mask of fields to update. At least one path must be supplied in
      * this field.
+     * For example, to change the state of the configuration to ENABLED, specify
+     *   `update_mask` = `"state"`, and the `vpc_flow_logs_config` would be:
+     *   `vpc_flow_logs_config = {
+     *     name =
+     *     "projects/my-project/locations/global/vpcFlowLogsConfigs/my-config"
+     *     state = "ENABLED" }`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

@@ -28,7 +28,8 @@ public interface BgpRouteNetworkLayerReachabilityInformationOrBuilder
    *
    *
    * <pre>
-   * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+   * If the BGP session supports multiple paths (RFC 7911), the path
+   * identifier for this route.
    * </pre>
    *
    * <code>optional uint32 path_id = 282287989;</code>
@@ -41,7 +42,8 @@ public interface BgpRouteNetworkLayerReachabilityInformationOrBuilder
    *
    *
    * <pre>
-   * If the BGP session supports multiple paths (RFC 7911), the path identifier for this route.
+   * If the BGP session supports multiple paths (RFC 7911), the path
+   * identifier for this route.
    * </pre>
    *
    * <code>optional uint32 path_id = 282287989;</code>

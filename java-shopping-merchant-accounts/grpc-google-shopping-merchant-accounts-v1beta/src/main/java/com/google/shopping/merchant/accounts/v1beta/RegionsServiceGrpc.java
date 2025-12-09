@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * - [Region][google.shopping.merchant.accounts.v1main.Region]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/regions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RegionsServiceGrpc {
 
@@ -568,8 +565,9 @@ public final class RegionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Region getRegion(
-        com.google.shopping.merchant.accounts.v1beta.GetRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetRegionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRegionMethod(), getCallOptions(), request);
     }
 
@@ -582,8 +580,9 @@ public final class RegionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Region createRegion(
-        com.google.shopping.merchant.accounts.v1beta.CreateRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.CreateRegionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRegionMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +595,9 @@ public final class RegionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Region updateRegion(
-        com.google.shopping.merchant.accounts.v1beta.UpdateRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateRegionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRegionMethod(), getCallOptions(), request);
     }
 
@@ -610,8 +610,9 @@ public final class RegionsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRegion(
-        com.google.shopping.merchant.accounts.v1beta.DeleteRegionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.DeleteRegionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRegionMethod(), getCallOptions(), request);
     }
 
@@ -623,8 +624,9 @@ public final class RegionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.ListRegionsResponse listRegions(
-        com.google.shopping.merchant.accounts.v1beta.ListRegionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.ListRegionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRegionsMethod(), getCallOptions(), request);
     }
   }

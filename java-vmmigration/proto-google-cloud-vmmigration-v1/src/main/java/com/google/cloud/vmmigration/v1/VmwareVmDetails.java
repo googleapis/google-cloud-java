@@ -48,6 +48,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     powerState_ = 0;
     guestDescription_ = "";
     bootOption_ = 0;
+    architecture_ = 0;
   }
 
   @java.lang.Override
@@ -410,6 +411,165 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.VmwareVmDetails.BootOption)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Possible values for the VM architecture.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture}
+   */
+  public enum VmArchitecture implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is unknown.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_UNSPECIFIED = 0;</code>
+     */
+    VM_ARCHITECTURE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is one of the x86 architectures.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_X86_FAMILY = 1;</code>
+     */
+    VM_ARCHITECTURE_X86_FAMILY(1),
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is ARM64.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_ARM64 = 2;</code>
+     */
+    VM_ARCHITECTURE_ARM64(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is unknown.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VM_ARCHITECTURE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is one of the x86 architectures.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_X86_FAMILY = 1;</code>
+     */
+    public static final int VM_ARCHITECTURE_X86_FAMILY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The architecture is ARM64.
+     * </pre>
+     *
+     * <code>VM_ARCHITECTURE_ARM64 = 2;</code>
+     */
+    public static final int VM_ARCHITECTURE_ARM64_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VmArchitecture valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VmArchitecture forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VM_ARCHITECTURE_UNSPECIFIED;
+        case 1:
+          return VM_ARCHITECTURE_X86_FAMILY;
+        case 2:
+          return VM_ARCHITECTURE_ARM64;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VmArchitecture> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VmArchitecture> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<VmArchitecture>() {
+          public VmArchitecture findValueByNumber(int number) {
+            return VmArchitecture.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vmmigration.v1.VmwareVmDetails.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final VmArchitecture[] VALUES = values();
+
+    public static VmArchitecture valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VmArchitecture(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture)
   }
 
   public static final int VM_ID_FIELD_NUMBER = 1;
@@ -894,6 +1054,49 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
         : result;
   }
 
+  public static final int ARCHITECTURE_FIELD_NUMBER = 14;
+  private int architecture_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CPU architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for architecture.
+   */
+  @java.lang.Override
+  public int getArchitectureValue() {
+    return architecture_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CPU architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The architecture.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture getArchitecture() {
+    com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture result =
+        com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture.forNumber(architecture_);
+    return result == null
+        ? com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -948,6 +1151,12 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(13, bootOption_);
     }
+    if (architecture_
+        != com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture
+            .VM_ARCHITECTURE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, architecture_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -997,6 +1206,12 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, bootOption_);
     }
+    if (architecture_
+        != com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture
+            .VM_ARCHITECTURE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, architecture_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1025,6 +1240,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     if (getCommittedStorageMb() != other.getCommittedStorageMb()) return false;
     if (!getGuestDescription().equals(other.getGuestDescription())) return false;
     if (bootOption_ != other.bootOption_) return false;
+    if (architecture_ != other.architecture_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1060,6 +1276,8 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getGuestDescription().hashCode();
     hash = (37 * hash) + BOOT_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + bootOption_;
+    hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
+    hash = (53 * hash) + architecture_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1212,6 +1430,7 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       committedStorageMb_ = 0L;
       guestDescription_ = "";
       bootOption_ = 0;
+      architecture_ = 0;
       return this;
     }
 
@@ -1283,6 +1502,9 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.bootOption_ = bootOption_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.architecture_ = architecture_;
       }
     }
 
@@ -1379,6 +1601,9 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
       }
       if (other.bootOption_ != 0) {
         setBootOptionValue(other.getBootOptionValue());
+      }
+      if (other.architecture_ != 0) {
+        setArchitectureValue(other.getArchitectureValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1478,6 +1703,12 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000800;
                 break;
               } // case 104
+            case 112:
+              {
+                architecture_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2602,6 +2833,114 @@ public final class VmwareVmDetails extends com.google.protobuf.GeneratedMessageV
     public Builder clearBootOption() {
       bitField0_ = (bitField0_ & ~0x00000800);
       bootOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int architecture_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CPU architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for architecture.
+     */
+    @java.lang.Override
+    public int getArchitectureValue() {
+      return architecture_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CPU architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitectureValue(int value) {
+      architecture_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CPU architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The architecture.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture getArchitecture() {
+      com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture result =
+          com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture.forNumber(architecture_);
+      return result == null
+          ? com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CPU architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitecture(
+        com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      architecture_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The CPU architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchitecture() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      architecture_ = 0;
       onChanged();
       return this;
     }

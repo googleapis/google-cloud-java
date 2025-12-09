@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * https://developers.google.com/maps/documentation/places/web-service/choose-fields
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/places/v1/places_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PlacesGrpc {
 
@@ -547,8 +544,8 @@ public final class PlacesGrpc {
      * </pre>
      */
     public com.google.maps.places.v1.SearchNearbyResponse searchNearby(
-        com.google.maps.places.v1.SearchNearbyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.places.v1.SearchNearbyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchNearbyMethod(), getCallOptions(), request);
     }
 
@@ -560,8 +557,8 @@ public final class PlacesGrpc {
      * </pre>
      */
     public com.google.maps.places.v1.SearchTextResponse searchText(
-        com.google.maps.places.v1.SearchTextRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.places.v1.SearchTextRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchTextMethod(), getCallOptions(), request);
     }
 
@@ -573,8 +570,8 @@ public final class PlacesGrpc {
      * </pre>
      */
     public com.google.maps.places.v1.PhotoMedia getPhotoMedia(
-        com.google.maps.places.v1.GetPhotoMediaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.places.v1.GetPhotoMediaRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPhotoMediaMethod(), getCallOptions(), request);
     }
 
@@ -587,8 +584,8 @@ public final class PlacesGrpc {
      * </pre>
      */
     public com.google.maps.places.v1.Place getPlace(
-        com.google.maps.places.v1.GetPlaceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.places.v1.GetPlaceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPlaceMethod(), getCallOptions(), request);
     }
 
@@ -600,8 +597,9 @@ public final class PlacesGrpc {
      * </pre>
      */
     public com.google.maps.places.v1.AutocompletePlacesResponse autocompletePlaces(
-        com.google.maps.places.v1.AutocompletePlacesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.places.v1.AutocompletePlacesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAutocompletePlacesMethod(), getCallOptions(), request);
     }
   }

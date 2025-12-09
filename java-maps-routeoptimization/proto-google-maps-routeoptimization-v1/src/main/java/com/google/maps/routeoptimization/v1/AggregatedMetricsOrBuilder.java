@@ -42,6 +42,70 @@ public interface AggregatedMetricsOrBuilder
    *
    *
    * <pre>
+   * Number of mandatory shipments performed.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+   *
+   * @return Whether the performedMandatoryShipmentCount field is set.
+   */
+  boolean hasPerformedMandatoryShipmentCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Number of mandatory shipments performed.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional int32 performed_mandatory_shipment_count = 12;</code>
+   *
+   * @return The performedMandatoryShipmentCount.
+   */
+  int getPerformedMandatoryShipmentCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The sum of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * of the performed shipments.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+   *
+   * @return Whether the performedShipmentPenaltyCostSum field is set.
+   */
+  boolean hasPerformedShipmentPenaltyCostSum();
+
+  /**
+   *
+   *
+   * <pre>
+   * The sum of the
+   * [Shipment.penalty_cost][google.maps.routeoptimization.v1.Shipment.penalty_cost]
+   * of the performed shipments.
+   *
+   * Experimental: This field's behavior or existence may change in future.
+   * </pre>
+   *
+   * <code>optional double performed_shipment_penalty_cost_sum = 13;</code>
+   *
+   * @return The performedShipmentPenaltyCostSum.
+   */
+  double getPerformedShipmentPenaltyCostSum();
+
+  /**
+   *
+   *
+   * <pre>
    * Total travel duration for a route or a solution.
    * </pre>
    *

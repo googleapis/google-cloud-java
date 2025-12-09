@@ -40,6 +40,7 @@ public class AsyncGet {
               .setProject("project-309310695")
               .setRegion("region-934795532")
               .setServiceAttachment("serviceAttachment-398467656")
+              .setShowNatIps(true)
               .build();
       ApiFuture<ServiceAttachment> future =
           serviceAttachmentsClient.getCallable().futureCall(request);

@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance resource. An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances.
+ * Represents an Instance resource.
+ *
+ * An instance is a virtual machine that is hosted on Google Cloud Platform.
+ * For more information, readVirtual Machine Instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Instance}
@@ -104,7 +107,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Instance.KeyRevocationActionType}
@@ -289,7 +293,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess}
@@ -309,7 +314,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Bidirectional private IPv6 access to/from Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
@@ -319,7 +327,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
@@ -329,7 +340,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * Each network interface inherits PrivateIpv6GoogleAccess from its
+     * subnetwork.
      * </pre>
      *
      * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
@@ -353,7 +365,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Bidirectional private IPv6 access to/from Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Bidirectional private IPv6 access to/from Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code>
@@ -364,7 +379,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Outbound private IPv6 access from VMs in this subnet to Google services. If specified, the subnetwork who is attached to the instance's default network interface will be assigned an internal IPv6 prefix if it doesn't have before.
+     * Outbound private IPv6 access from VMs in this subnet to Google services. If
+     * specified, the subnetwork who is attached to the instance's default network
+     * interface will be assigned an internal IPv6 prefix if it doesn't have
+     * before.
      * </pre>
      *
      * <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code>
@@ -375,7 +393,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Each network interface inherits PrivateIpv6GoogleAccess from its subnetwork.
+     * Each network interface inherits PrivateIpv6GoogleAccess from its
+     * subnetwork.
      * </pre>
      *
      * <code>INHERIT_FROM_SUBNETWORK = 530256959;</code>
@@ -474,7 +493,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * [Output Only] The status of the instance. One of the
+   * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+   * instance, see
+   * Instance life cycle.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Instance.Status}
@@ -494,12 +516,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
      */
     DEPROVISIONING(428935662),
+    /**
+     *
+     *
+     * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    PENDING(35394935),
     /**
      *
      *
@@ -534,7 +568,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -584,7 +619,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -608,12 +644,25 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
      */
     public static final int DEPROVISIONING_VALUE = 428935662;
+
+    /**
+     *
+     *
+     * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    public static final int PENDING_VALUE = 35394935;
 
     /**
      *
@@ -652,7 +701,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -707,7 +757,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -742,6 +793,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_STATUS;
         case 428935662:
           return DEPROVISIONING;
+        case 35394935:
+          return PENDING;
         case 290896621:
           return PROVISIONING;
         case 413483285:
@@ -882,7 +935,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+   * Allows this instance to send and receive packets with non-matching
+   * destination or source IPs. This is required if you plan to use this
+   * instance to forward routes. For more information, seeEnabling IP Forwarding.
    * </pre>
    *
    * <code>optional bool can_ip_forward = 467731324;</code>
@@ -898,7 +953,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+   * Allows this instance to send and receive packets with non-matching
+   * destination or source IPs. This is required if you plan to use this
+   * instance to forward routes. For more information, seeEnabling IP Forwarding.
    * </pre>
    *
    * <code>optional bool can_ip_forward = 467731324;</code>
@@ -1030,7 +1087,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1046,7 +1103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1070,7 +1127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1134,7 +1191,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1150,7 +1208,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1174,7 +1233,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1203,7 +1263,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+   * Array of disks associated with this instance. Persistent disks must be
+   * created before you can assign them.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -1217,7 +1278,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+   * Array of disks associated with this instance. Persistent disks must be
+   * created before you can assign them.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -1232,7 +1294,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+   * Array of disks associated with this instance. Persistent disks must be
+   * created before you can assign them.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -1246,7 +1309,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+   * Array of disks associated with this instance. Persistent disks must be
+   * created before you can assign them.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -1260,7 +1324,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+   * Array of disks associated with this instance. Persistent disks must be
+   * created before you can assign them.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -1332,7 +1397,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the instance's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update the instance. You must always provide an
+   * up-to-date fingerprint hash in order to update the instance.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1348,7 +1420,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the instance's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update the instance. You must always provide an
+   * up-to-date fingerprint hash in order to update the instance.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1372,7 +1451,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+   * Specifies a fingerprint for this resource, which is essentially a hash of
+   * the instance's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update the instance. You must always provide an
+   * up-to-date fingerprint hash in order to update the instance.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1483,7 +1569,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+   * Specifies the hostname of the instance. The specified hostname must be
+   * RFC1035 compliant. If hostname is not specified, the default hostname is
+   * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+   * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -1499,7 +1588,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+   * Specifies the hostname of the instance. The specified hostname must be
+   * RFC1035 compliant. If hostname is not specified, the default hostname is
+   * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+   * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -1523,7 +1615,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+   * Specifies the hostname of the instance. The specified hostname must be
+   * RFC1035 compliant. If hostname is not specified, the default hostname is
+   * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+   * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
    * </pre>
    *
    * <code>optional string hostname = 237067315;</code>
@@ -1550,7 +1645,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1566,7 +1662,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1585,7 +1682,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * Encrypts suspended data for an instance with acustomer-managed
+   * encryption key.
+   *
+   * If you are creating a new instance, this field will encrypt the local SSD
+   * and in-memory contents of the instance during the suspend operation.
+   *
+   * If you do not provide an encryption key when creating the instance, then
+   * the local SSD and in-memory contents will be encrypted using
+   * an automatically generated key during the suspend operation.
    * </pre>
    *
    * <code>
@@ -1603,7 +1708,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * Encrypts suspended data for an instance with acustomer-managed
+   * encryption key.
+   *
+   * If you are creating a new instance, this field will encrypt the local SSD
+   * and in-memory contents of the instance during the suspend operation.
+   *
+   * If you do not provide an encryption key when creating the instance, then
+   * the local SSD and in-memory contents will be encrypted using
+   * an automatically generated key during the suspend operation.
    * </pre>
    *
    * <code>
@@ -1623,7 +1736,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+   * Encrypts suspended data for an instance with acustomer-managed
+   * encryption key.
+   *
+   * If you are creating a new instance, this field will encrypt the local SSD
+   * and in-memory contents of the instance during the suspend operation.
+   *
+   * If you do not provide an encryption key when creating the instance, then
+   * the local SSD and in-memory contents will be encrypted using
+   * an automatically generated key during the suspend operation.
    * </pre>
    *
    * <code>
@@ -1647,7 +1768,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -1664,7 +1786,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -1689,7 +1812,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+   * KeyRevocationActionType of the instance. Supported options are "STOP" and
+   * "NONE". The default value is "NONE" if it is not specified.
    * Check the KeyRevocationActionType enum for the list of possible values.
    * </pre>
    *
@@ -1719,7 +1843,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance for instances.
+   * [Output Only] Type of the resource. Always compute#instance
+   * for instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1735,7 +1860,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance for instances.
+   * [Output Only] Type of the resource. Always compute#instance
+   * for instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1759,7 +1885,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance for instances.
+   * [Output Only] Type of the resource. Always compute#instance
+   * for instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1788,7 +1915,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of
+   * the label's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1804,7 +1938,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of
+   * the label's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1828,7 +1969,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+   * A fingerprint for this request, which is essentially a hash of
+   * the label's contents and used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels.
+   *
+   * To see the latest fingerprint, make get() request to the
+   * instance.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -1879,7 +2027,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this instance. These can be later modified by the setLabels method.
+   * Labels to apply to this instance. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1903,7 +2052,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this instance. These can be later modified by the setLabels method.
+   * Labels to apply to this instance. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1917,7 +2067,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this instance. These can be later modified by the setLabels method.
+   * Labels to apply to this instance. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1938,7 +2089,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels to apply to this instance. These can be later modified by the setLabels method.
+   * Labels to apply to this instance. These can be later modified by
+   * the setLabels method.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -1964,7 +2116,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp in RFC3339 text format.
+   * [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -1980,7 +2132,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp in RFC3339 text format.
+   * [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -2004,7 +2156,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp in RFC3339 text format.
+   * [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -2033,7 +2185,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp in RFC3339 text format.
+   * [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2049,7 +2201,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp in RFC3339 text format.
+   * [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2073,7 +2225,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp in RFC3339 text format.
+   * [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2102,7 +2254,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp in RFC3339 text format.
+   * [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -2118,7 +2270,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp in RFC3339 text format.
+   * [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -2142,7 +2294,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp in RFC3339 text format.
+   * [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -2171,7 +2323,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance,
+   * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+   * when the instance is created. For example, the following is a valid partial
+   * url to a predefined
+   * machine type:
+   *
+   * zones/us-central1-f/machineTypes/n1-standard-1
+   *
+   *
+   * To create acustom
+   * machine type, provide a URL to a machine type in the following format,
+   * where CPUS is 1 or an even number up to 32 (2,
+   * 4, 6, ... 24, etc), and MEMORY is the total
+   * memory for this instance. Memory must be a multiple of 256 MB and must
+   * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+   *
+   * zones/zone/machineTypes/custom-CPUS-MEMORY
+   *
+   *
+   * For example: zones/us-central1-f/machineTypes/custom-4-5120
+   * For a full list of restrictions, read theSpecifications
+   * for custom machine types.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -2187,7 +2360,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance,
+   * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+   * when the instance is created. For example, the following is a valid partial
+   * url to a predefined
+   * machine type:
+   *
+   * zones/us-central1-f/machineTypes/n1-standard-1
+   *
+   *
+   * To create acustom
+   * machine type, provide a URL to a machine type in the following format,
+   * where CPUS is 1 or an even number up to 32 (2,
+   * 4, 6, ... 24, etc), and MEMORY is the total
+   * memory for this instance. Memory must be a multiple of 256 MB and must
+   * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+   *
+   * zones/zone/machineTypes/custom-CPUS-MEMORY
+   *
+   *
+   * For example: zones/us-central1-f/machineTypes/custom-4-5120
+   * For a full list of restrictions, read theSpecifications
+   * for custom machine types.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -2211,7 +2405,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+   * Full or partial URL of the machine type resource to use for this instance,
+   * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+   * when the instance is created. For example, the following is a valid partial
+   * url to a predefined
+   * machine type:
+   *
+   * zones/us-central1-f/machineTypes/n1-standard-1
+   *
+   *
+   * To create acustom
+   * machine type, provide a URL to a machine type in the following format,
+   * where CPUS is 1 or an even number up to 32 (2,
+   * 4, 6, ... 24, etc), and MEMORY is the total
+   * memory for this instance. Memory must be a multiple of 256 MB and must
+   * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+   *
+   * zones/zone/machineTypes/custom-CPUS-MEMORY
+   *
+   *
+   * For example: zones/us-central1-f/machineTypes/custom-4-5120
+   * For a full list of restrictions, read theSpecifications
+   * for custom machine types.
    * </pre>
    *
    * <code>optional string machine_type = 227711026;</code>
@@ -2238,7 +2453,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+   * The metadata key/value pairs assigned
+   * to this instance. This includes metadata keys that were explicitly defined
+   * for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -2254,7 +2471,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+   * The metadata key/value pairs assigned
+   * to this instance. This includes metadata keys that were explicitly defined
+   * for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -2272,7 +2491,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+   * The metadata key/value pairs assigned
+   * to this instance. This includes metadata keys that were explicitly defined
+   * for the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -2293,7 +2514,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+   * Specifies aminimum CPU
+   * platform for the VM instance. Applicable values are the friendly names
+   * of CPU platforms, such as minCpuPlatform: "Intel
+   * Haswell" or minCpuPlatform: "Intel Sandy
+   * Bridge".
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -2309,7 +2534,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+   * Specifies aminimum CPU
+   * platform for the VM instance. Applicable values are the friendly names
+   * of CPU platforms, such as minCpuPlatform: "Intel
+   * Haswell" or minCpuPlatform: "Intel Sandy
+   * Bridge".
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -2333,7 +2562,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+   * Specifies aminimum CPU
+   * platform for the VM instance. Applicable values are the friendly names
+   * of CPU platforms, such as minCpuPlatform: "Intel
+   * Haswell" or minCpuPlatform: "Intel Sandy
+   * Bridge".
    * </pre>
    *
    * <code>optional string min_cpu_platform = 242912759;</code>
@@ -2362,7 +2595,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2378,7 +2618,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2402,7 +2649,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2431,7 +2685,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+   * An array of network configurations for this instance. These specify how
+   * interfaces are configured to interact with other network services, such as
+   * connecting to the internet. Multiple interfaces are supported
+   * per instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
@@ -2445,7 +2702,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+   * An array of network configurations for this instance. These specify how
+   * interfaces are configured to interact with other network services, such as
+   * connecting to the internet. Multiple interfaces are supported
+   * per instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
@@ -2460,7 +2720,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+   * An array of network configurations for this instance. These specify how
+   * interfaces are configured to interact with other network services, such as
+   * connecting to the internet. Multiple interfaces are supported
+   * per instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
@@ -2474,7 +2737,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+   * An array of network configurations for this instance. These specify how
+   * interfaces are configured to interact with other network services, such as
+   * connecting to the internet. Multiple interfaces are supported
+   * per instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
@@ -2488,7 +2754,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+   * An array of network configurations for this instance. These specify how
+   * interfaces are configured to interact with other network services, such as
+   * connecting to the internet. Multiple interfaces are supported
+   * per instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;</code>
@@ -2548,7 +2817,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -2564,7 +2834,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -2582,7 +2853,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -2603,7 +2875,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2620,7 +2893,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2645,7 +2919,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * The private IPv6 google access type for the VM.
+   * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2798,7 +3073,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * [Output Only] Specifies values set for instance attributes as
+   * compared to the values requested by user in the corresponding input only
+   * field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -2814,7 +3091,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * [Output Only] Specifies values set for instance attributes as
+   * compared to the values requested by user in the corresponding input only
+   * field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -2832,7 +3111,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+   * [Output Only] Specifies values set for instance attributes as
+   * compared to the values requested by user in the corresponding input only
+   * field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -3045,7 +3326,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for
+   * this instance. Only one service account per VM instance is supported.
+   *
+   * Service accounts generate access tokens that can be accessed
+   * through the metadata server and used to authenticate applications on the
+   * instance. SeeService Accounts
+   * for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -3059,7 +3346,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for
+   * this instance. Only one service account per VM instance is supported.
+   *
+   * Service accounts generate access tokens that can be accessed
+   * through the metadata server and used to authenticate applications on the
+   * instance. SeeService Accounts
+   * for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -3074,7 +3367,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for
+   * this instance. Only one service account per VM instance is supported.
+   *
+   * Service accounts generate access tokens that can be accessed
+   * through the metadata server and used to authenticate applications on the
+   * instance. SeeService Accounts
+   * for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -3088,7 +3387,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for
+   * this instance. Only one service account per VM instance is supported.
+   *
+   * Service accounts generate access tokens that can be accessed
+   * through the metadata server and used to authenticate applications on the
+   * instance. SeeService Accounts
+   * for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -3102,7 +3407,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+   * A list of service accounts, with their specified scopes, authorized for
+   * this instance. Only one service account per VM instance is supported.
+   *
+   * Service accounts generate access tokens that can be accessed
+   * through the metadata server and used to authenticate applications on the
+   * instance. SeeService Accounts
+   * for more information.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -3275,7 +3586,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source machine image encryption key when creating an instance from a machine image.
+   * Source machine image encryption key when creating an instance from a
+   * machine image.
    * </pre>
    *
    * <code>
@@ -3293,7 +3605,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source machine image encryption key when creating an instance from a machine image.
+   * Source machine image encryption key when creating an instance from a
+   * machine image.
    * </pre>
    *
    * <code>
@@ -3313,7 +3626,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source machine image encryption key when creating an instance from a machine image.
+   * Source machine image encryption key when creating an instance from a
+   * machine image.
    * </pre>
    *
    * <code>
@@ -3335,7 +3649,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+   * [Output Only] Whether a VM has been restricted for start because Compute
+   * Engine has detected suspicious activity.
    * </pre>
    *
    * <code>optional bool start_restricted = 123693144;</code>
@@ -3351,7 +3666,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+   * [Output Only] Whether a VM has been restricted for start because Compute
+   * Engine has detected suspicious activity.
    * </pre>
    *
    * <code>optional bool start_restricted = 123693144;</code>
@@ -3372,7 +3688,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * [Output Only] The status of the instance. One of the
+   * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+   * instance, see
+   * Instance life cycle.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3389,7 +3708,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * [Output Only] The status of the instance. One of the
+   * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+   * instance, see
+   * Instance life cycle.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3414,7 +3736,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * [Output Only] The status of the instance. One of the
+   * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+   * instance, see
+   * Instance life cycle.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3511,7 +3836,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+   * Tags to apply to this instance. Tags are used to identify valid
+   * sources or targets for network firewalls and are specified by the client
+   * during instance creation. The tags can be later modified by the setTags
+   * method. Each tag within the list must comply withRFC1035.
+   * Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -3527,7 +3856,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+   * Tags to apply to this instance. Tags are used to identify valid
+   * sources or targets for network firewalls and are specified by the client
+   * during instance creation. The tags can be later modified by the setTags
+   * method. Each tag within the list must comply withRFC1035.
+   * Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -3543,7 +3876,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+   * Tags to apply to this instance. Tags are used to identify valid
+   * sources or targets for network firewalls and are specified by the client
+   * during instance creation. The tags can be later modified by the setTags
+   * method. Each tag within the list must comply withRFC1035.
+   * Multiple tags can be specified via the 'tags.items' field.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -3562,7 +3899,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the instance resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -3578,7 +3917,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the instance resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -3602,7 +3943,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the zone where the instance resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -4456,7 +4799,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Instance resource. An instance is a virtual machine that is hosted on Google Cloud Platform. For more information, read Virtual Machine Instances.
+   * Represents an Instance resource.
+   *
+   * An instance is a virtual machine that is hosted on Google Cloud Platform.
+   * For more information, readVirtual Machine Instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Instance}
@@ -5866,7 +6212,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+     * Allows this instance to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use this
+     * instance to forward routes. For more information, seeEnabling IP Forwarding.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -5882,7 +6230,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+     * Allows this instance to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use this
+     * instance to forward routes. For more information, seeEnabling IP Forwarding.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -5898,7 +6248,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+     * Allows this instance to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use this
+     * instance to forward routes. For more information, seeEnabling IP Forwarding.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -5918,7 +6270,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding .
+     * Allows this instance to send and receive packets with non-matching
+     * destination or source IPs. This is required if you plan to use this
+     * instance to forward routes. For more information, seeEnabling IP Forwarding.
      * </pre>
      *
      * <code>optional bool can_ip_forward = 467731324;</code>
@@ -6228,7 +6582,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6243,7 +6597,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6266,7 +6620,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6289,7 +6643,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6311,7 +6665,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6329,7 +6683,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6426,7 +6780,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6441,7 +6796,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6464,7 +6820,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6487,7 +6844,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6509,7 +6867,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6527,7 +6886,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6566,7 +6926,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6583,7 +6944,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6600,7 +6962,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6617,7 +6980,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6640,7 +7004,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6661,7 +7026,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6684,7 +7050,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6707,7 +7074,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6727,7 +7095,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6748,7 +7117,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6769,7 +7139,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6789,7 +7160,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6809,7 +7181,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6822,7 +7195,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6839,7 +7213,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6857,7 +7232,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6871,7 +7247,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -6885,7 +7262,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Array of disks associated with this instance. Persistent disks must be created before you can assign them.
+     * Array of disks associated with this instance. Persistent disks must be
+     * created before you can assign them.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
@@ -7112,7 +7490,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7127,7 +7512,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7150,7 +7542,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7173,7 +7572,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7195,7 +7601,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7213,7 +7626,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a fingerprint for this resource, which is essentially a hash of the instance's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update the instance. You must always provide an up-to-date fingerprint hash in order to update the instance. To see the latest fingerprint, make get() request to the instance.
+     * Specifies a fingerprint for this resource, which is essentially a hash of
+     * the instance's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update the instance. You must always provide an
+     * up-to-date fingerprint hash in order to update the instance.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -7634,7 +8054,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7649,7 +8072,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7672,7 +8098,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7695,7 +8124,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7717,7 +8149,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7735,7 +8170,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
+     * Specifies the hostname of the instance. The specified hostname must be
+     * RFC1035 compliant. If hostname is not specified, the default hostname is
+     * [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and
+     * [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
      * </pre>
      *
      * <code>optional string hostname = 237067315;</code>
@@ -7760,7 +8198,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -7776,7 +8215,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -7792,7 +8232,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -7812,7 +8253,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -7837,7 +8279,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7854,7 +8304,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7877,7 +8335,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7903,7 +8369,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7926,7 +8400,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7958,7 +8440,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7980,7 +8470,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -7998,7 +8496,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -8020,7 +8526,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encrypts suspended data for an instance with a customer-managed encryption key. If you are creating a new instance, this field will encrypt the local SSD and in-memory contents of the instance during the suspend operation. If you do not provide an encryption key when creating the instance, then the local SSD and in-memory contents will be encrypted using an automatically generated key during the suspend operation.
+     * Encrypts suspended data for an instance with acustomer-managed
+     * encryption key.
+     *
+     * If you are creating a new instance, this field will encrypt the local SSD
+     * and in-memory contents of the instance during the suspend operation.
+     *
+     * If you do not provide an encryption key when creating the instance, then
+     * the local SSD and in-memory contents will be encrypted using
+     * an automatically generated key during the suspend operation.
      * </pre>
      *
      * <code>
@@ -8050,7 +8564,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8066,7 +8581,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8090,7 +8606,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8114,7 +8631,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8137,7 +8655,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8156,7 +8675,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+     * KeyRevocationActionType of the instance. Supported options are "STOP" and
+     * "NONE". The default value is "NONE" if it is not specified.
      * Check the KeyRevocationActionType enum for the list of possible values.
      * </pre>
      *
@@ -8182,7 +8702,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8197,7 +8718,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8220,7 +8742,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8243,7 +8766,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8265,7 +8789,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8283,7 +8808,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance for instances.
+     * [Output Only] Type of the resource. Always compute#instance
+     * for instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8308,7 +8834,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8323,7 +8856,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8346,7 +8886,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8369,7 +8916,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8391,7 +8945,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8409,7 +8970,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
+     * A fingerprint for this request, which is essentially a hash of
+     * the label's contents and used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels.
+     *
+     * To see the latest fingerprint, make get() request to the
+     * instance.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -8458,7 +9026,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8482,7 +9051,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8496,7 +9066,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8517,7 +9088,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8544,7 +9116,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8568,7 +9141,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8589,7 +9163,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels to apply to this instance. These can be later modified by the setLabels method.
+     * Labels to apply to this instance. These can be later modified by
+     * the setLabels method.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -8606,7 +9181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8621,7 +9196,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8644,7 +9219,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8667,7 +9242,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8689,7 +9264,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8707,7 +9282,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp in RFC3339 text format.
+     * [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -8732,7 +9307,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8747,7 +9322,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8770,7 +9345,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8793,7 +9368,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8815,7 +9390,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8833,7 +9408,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp in RFC3339 text format.
+     * [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -8858,7 +9433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8873,7 +9448,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8896,7 +9471,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8919,7 +9494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8941,7 +9516,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8959,7 +9534,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp in RFC3339 text format.
+     * [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -8984,7 +9559,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -8999,7 +9595,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -9022,7 +9639,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -9045,7 +9683,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -9067,7 +9726,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -9085,7 +9765,28 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full or partial URL of the machine type resource to use for this instance, in the format: zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create a custom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read the Specifications for custom machine types.
+     * Full or partial URL of the machine type resource to use for this instance,
+     * in the format:zones/zone/machineTypes/machine-type. This is provided by the client
+     * when the instance is created. For example, the following is a valid partial
+     * url to a predefined
+     * machine type:
+     *
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     *
+     * To create acustom
+     * machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2,
+     * 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must
+     * be supplied in MB (e.g. 5 GB of memory is 5120 MB):
+     *
+     * zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     *
+     * For example: zones/us-central1-f/machineTypes/custom-4-5120
+     * For a full list of restrictions, read theSpecifications
+     * for custom machine types.
      * </pre>
      *
      * <code>optional string machine_type = 227711026;</code>
@@ -9115,7 +9816,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9130,7 +9833,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9151,7 +9856,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9174,7 +9881,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9194,7 +9903,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9222,7 +9933,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9242,7 +9955,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9257,7 +9972,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9276,7 +9993,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The metadata key/value pairs assigned to this instance. This includes metadata keys that were explicitly defined for the instance.
+     * The metadata key/value pairs assigned
+     * to this instance. This includes metadata keys that were explicitly defined
+     * for the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Metadata metadata = 86866735;</code>
@@ -9304,7 +10023,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9319,7 +10042,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9342,7 +10069,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9365,7 +10096,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9387,7 +10122,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9405,7 +10144,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge".
+     * Specifies aminimum CPU
+     * platform for the VM instance. Applicable values are the friendly names
+     * of CPU platforms, such as minCpuPlatform: "Intel
+     * Haswell" or minCpuPlatform: "Intel Sandy
+     * Bridge".
      * </pre>
      *
      * <code>optional string min_cpu_platform = 242912759;</code>
@@ -9430,7 +10173,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9445,7 +10195,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9468,7 +10225,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9491,7 +10255,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9513,7 +10284,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9531,7 +10309,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -9572,7 +10357,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9590,7 +10378,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9608,7 +10399,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9626,7 +10420,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9651,7 +10448,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9673,7 +10473,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9697,7 +10500,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9722,7 +10528,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9744,7 +10553,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9766,7 +10578,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9788,7 +10603,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9809,7 +10627,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9830,7 +10651,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9845,7 +10669,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9864,7 +10691,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9883,7 +10713,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9898,7 +10731,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -9914,7 +10750,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
+     * An array of network configurations for this instance. These specify how
+     * interfaces are configured to interact with other network services, such as
+     * connecting to the internet. Multiple interfaces are supported
+     * per instance.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.NetworkInterface network_interfaces = 52735243;
@@ -10120,7 +10959,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10135,7 +10975,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10156,7 +10997,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10179,7 +11021,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10199,7 +11042,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10227,7 +11071,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10247,7 +11092,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10262,7 +11108,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10281,7 +11128,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InstanceParams params = 78313862;</code>
@@ -10309,7 +11157,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10325,7 +11174,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10349,7 +11199,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10373,7 +11224,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10396,7 +11248,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10415,7 +11268,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * The private IPv6 google access type for the VM.
+     * If not specified, use  INHERIT_FROM_SUBNETWORK as default.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -10835,7 +11689,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10850,7 +11706,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10871,7 +11729,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10894,7 +11754,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10915,7 +11777,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10943,7 +11807,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10963,7 +11829,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10978,7 +11846,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -10997,7 +11867,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as compared to the values requested by user in the corresponding input only field.
+     * [Output Only] Specifies values set for instance attributes as
+     * compared to the values requested by user in the corresponding input only
+     * field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ResourceStatus resource_status = 249429315;</code>
@@ -11504,7 +12376,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11521,7 +12399,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11538,7 +12422,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11555,7 +12445,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11578,7 +12474,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11599,7 +12501,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11622,7 +12530,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11645,7 +12559,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11666,7 +12586,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11687,7 +12613,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11708,7 +12640,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11728,7 +12666,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11748,7 +12692,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11761,7 +12711,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11779,7 +12735,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11797,7 +12759,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11811,7 +12779,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -11825,7 +12799,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
+     * A list of service accounts, with their specified scopes, authorized for
+     * this instance. Only one service account per VM instance is supported.
+     *
+     * Service accounts generate access tokens that can be accessed
+     * through the metadata server and used to authenticate applications on the
+     * instance. SeeService Accounts
+     * for more information.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
@@ -12323,7 +13303,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12340,7 +13321,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12363,7 +13345,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12389,7 +13372,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12412,7 +13396,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12444,7 +13429,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12466,7 +13452,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12484,7 +13471,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12506,7 +13494,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source machine image encryption key when creating an instance from a machine image.
+     * Source machine image encryption key when creating an instance from a
+     * machine image.
      * </pre>
      *
      * <code>
@@ -12536,7 +13525,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Engine has detected suspicious activity.
      * </pre>
      *
      * <code>optional bool start_restricted = 123693144;</code>
@@ -12552,7 +13542,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Engine has detected suspicious activity.
      * </pre>
      *
      * <code>optional bool start_restricted = 123693144;</code>
@@ -12568,7 +13559,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Engine has detected suspicious activity.
      * </pre>
      *
      * <code>optional bool start_restricted = 123693144;</code>
@@ -12588,7 +13580,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
+     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Engine has detected suspicious activity.
      * </pre>
      *
      * <code>optional bool start_restricted = 123693144;</code>
@@ -12608,7 +13601,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12624,7 +13620,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12648,7 +13647,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12672,7 +13674,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12695,7 +13700,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12714,7 +13722,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * [Output Only] The status of the instance. One of the
+     * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
+     * instance, see
+     * Instance life cycle.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -12871,7 +13882,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12886,7 +13901,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12905,7 +13924,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12928,7 +13951,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12948,7 +13975,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12976,7 +14007,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -12996,7 +14031,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -13011,7 +14050,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -13028,7 +14071,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Tags to apply to this instance. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during instance creation. The tags can be later modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple tags can be specified via the 'tags.items' field.
+     * Tags to apply to this instance. Tags are used to identify valid
+     * sources or targets for network firewalls and are specified by the client
+     * during instance creation. The tags can be later modified by the setTags
+     * method. Each tag within the list must comply withRFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Tags tags = 3552281;</code>
@@ -13056,7 +14103,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -13071,7 +14120,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -13094,7 +14145,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -13117,7 +14170,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -13139,7 +14194,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -13157,7 +14214,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+     * [Output Only] URL of the zone where the instance resides.
+     * You must specify this field as part of the HTTP request URL. It is
+     * not settable as a field in the request body.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

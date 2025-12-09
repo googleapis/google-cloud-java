@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service that manages Vertex Session related resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/session_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionServiceGrpc {
 
@@ -701,8 +698,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSession(
-        com.google.cloud.aiplatform.v1beta1.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.CreateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
 
@@ -715,8 +713,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Session getSession(
-        com.google.cloud.aiplatform.v1beta1.GetSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.GetSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionMethod(), getCallOptions(), request);
     }
 
@@ -729,8 +728,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListSessionsResponse listSessions(
-        com.google.cloud.aiplatform.v1beta1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
 
@@ -742,8 +742,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.Session updateSession(
-        com.google.cloud.aiplatform.v1beta1.UpdateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.UpdateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
     }
 
@@ -756,8 +757,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSession(
-        com.google.cloud.aiplatform.v1beta1.DeleteSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.DeleteSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
     }
 
@@ -769,8 +771,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListEventsResponse listEvents(
-        com.google.cloud.aiplatform.v1beta1.ListEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ListEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventsMethod(), getCallOptions(), request);
     }
 
@@ -782,8 +785,9 @@ public final class SessionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.AppendEventResponse appendEvent(
-        com.google.cloud.aiplatform.v1beta1.AppendEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.AppendEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAppendEventMethod(), getCallOptions(), request);
     }
   }

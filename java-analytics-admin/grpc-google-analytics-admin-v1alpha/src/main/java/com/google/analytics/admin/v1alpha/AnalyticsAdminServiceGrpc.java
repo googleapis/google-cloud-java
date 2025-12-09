@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service Interface for the Google Analytics Admin API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/analytics/admin/v1alpha/analytics_admin.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AnalyticsAdminServiceGrpc {
 
@@ -13076,8 +13073,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Account getAccount(
-        com.google.analytics.admin.v1alpha.GetAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccountMethod(), getCallOptions(), request);
     }
 
@@ -13092,8 +13090,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAccountsResponse listAccounts(
-        com.google.analytics.admin.v1alpha.ListAccountsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListAccountsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountsMethod(), getCallOptions(), request);
     }
 
@@ -13112,8 +13111,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccount(
-        com.google.analytics.admin.v1alpha.DeleteAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccountMethod(), getCallOptions(), request);
     }
 
@@ -13125,8 +13125,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Account updateAccount(
-        com.google.analytics.admin.v1alpha.UpdateAccountRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateAccountRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccountMethod(), getCallOptions(), request);
     }
 
@@ -13138,8 +13139,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse provisionAccountTicket(
-        com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProvisionAccountTicketMethod(), getCallOptions(), request);
     }
 
@@ -13151,8 +13153,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAccountSummariesResponse listAccountSummaries(
-        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListAccountSummariesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccountSummariesMethod(), getCallOptions(), request);
     }
 
@@ -13164,8 +13167,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property getProperty(
-        com.google.analytics.admin.v1alpha.GetPropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetPropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPropertyMethod(), getCallOptions(), request);
     }
 
@@ -13180,8 +13184,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListPropertiesResponse listProperties(
-        com.google.analytics.admin.v1alpha.ListPropertiesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListPropertiesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPropertiesMethod(), getCallOptions(), request);
     }
 
@@ -13194,8 +13199,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property createProperty(
-        com.google.analytics.admin.v1alpha.CreatePropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreatePropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePropertyMethod(), getCallOptions(), request);
     }
 
@@ -13214,8 +13220,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property deleteProperty(
-        com.google.analytics.admin.v1alpha.DeletePropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeletePropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePropertyMethod(), getCallOptions(), request);
     }
 
@@ -13227,8 +13234,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Property updateProperty(
-        com.google.analytics.admin.v1alpha.UpdatePropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdatePropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePropertyMethod(), getCallOptions(), request);
     }
 
@@ -13241,8 +13249,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.FirebaseLink createFirebaseLink(
-        com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFirebaseLinkMethod(), getCallOptions(), request);
     }
 
@@ -13254,8 +13263,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteFirebaseLink(
-        com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFirebaseLinkMethod(), getCallOptions(), request);
     }
 
@@ -13268,8 +13278,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse listFirebaseLinks(
-        com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListFirebaseLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFirebaseLinksMethod(), getCallOptions(), request);
     }
 
@@ -13282,8 +13293,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GlobalSiteTag getGlobalSiteTag(
-        com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGlobalSiteTagMethod(), getCallOptions(), request);
     }
 
@@ -13295,8 +13307,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink createGoogleAdsLink(
-        com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -13308,8 +13321,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleAdsLink updateGoogleAdsLink(
-        com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -13321,8 +13335,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteGoogleAdsLink(
-        com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGoogleAdsLinkMethod(), getCallOptions(), request);
     }
 
@@ -13334,8 +13349,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListGoogleAdsLinksResponse listGoogleAdsLinks(
-        com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListGoogleAdsLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGoogleAdsLinksMethod(), getCallOptions(), request);
     }
 
@@ -13348,8 +13364,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataSharingSettings getDataSharingSettings(
-        com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetDataSharingSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataSharingSettingsMethod(), getCallOptions(), request);
     }
 
@@ -13362,8 +13379,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
         getMeasurementProtocolSecret(
-            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMeasurementProtocolSecretMethod(), getCallOptions(), request);
     }
 
@@ -13377,8 +13395,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse
         listMeasurementProtocolSecrets(
-            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMeasurementProtocolSecretsMethod(), getCallOptions(), request);
     }
 
@@ -13391,8 +13410,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
         createMeasurementProtocolSecret(
-            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMeasurementProtocolSecretMethod(), getCallOptions(), request);
     }
 
@@ -13404,8 +13424,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMeasurementProtocolSecret(
-        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMeasurementProtocolSecretMethod(), getCallOptions(), request);
     }
 
@@ -13418,8 +13439,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.MeasurementProtocolSecret
         updateMeasurementProtocolSecret(
-            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMeasurementProtocolSecretMethod(), getCallOptions(), request);
     }
 
@@ -13435,8 +13457,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse
         acknowledgeUserDataCollection(
-            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcknowledgeUserDataCollectionMethod(), getCallOptions(), request);
     }
 
@@ -13449,8 +13472,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
         getSKAdNetworkConversionValueSchema(
-            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSKAdNetworkConversionValueSchemaMethod(), getCallOptions(), request);
     }
 
@@ -13464,8 +13488,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
         createSKAdNetworkConversionValueSchema(
             com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getCreateSKAdNetworkConversionValueSchemaMethod(),
           getCallOptions(),
@@ -13480,8 +13505,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSKAdNetworkConversionValueSchema(
-        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getDeleteSKAdNetworkConversionValueSchemaMethod(),
           getCallOptions(),
@@ -13498,8 +13524,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
         updateSKAdNetworkConversionValueSchema(
             com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getUpdateSKAdNetworkConversionValueSchemaMethod(),
           getCallOptions(),
@@ -13516,9 +13543,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse
         listSKAdNetworkConversionValueSchemas(
-            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListSKAdNetworkConversionValueSchemasMethod(),
           getCallOptions(),
@@ -13537,8 +13564,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse
         searchChangeHistoryEvents(
-            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchChangeHistoryEventsMethod(), getCallOptions(), request);
     }
 
@@ -13550,8 +13578,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings(
-        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGoogleSignalsSettingsMethod(), getCallOptions(), request);
     }
 
@@ -13563,8 +13592,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.GoogleSignalsSettings updateGoogleSignalsSettings(
-        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGoogleSignalsSettingsMethod(), getCallOptions(), request);
     }
 
@@ -13578,8 +13608,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent createConversionEvent(
-        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateConversionEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversionEventMethod(), getCallOptions(), request);
     }
 
@@ -13593,8 +13624,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent updateConversionEvent(
-        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversionEventMethod(), getCallOptions(), request);
     }
 
@@ -13608,8 +13640,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent(
-        com.google.analytics.admin.v1alpha.GetConversionEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetConversionEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversionEventMethod(), getCallOptions(), request);
     }
 
@@ -13623,8 +13656,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.protobuf.Empty deleteConversionEvent(
-        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteConversionEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversionEventMethod(), getCallOptions(), request);
     }
 
@@ -13639,8 +13673,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.analytics.admin.v1alpha.ListConversionEventsResponse listConversionEvents(
-        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListConversionEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversionEventsMethod(), getCallOptions(), request);
     }
 
@@ -13652,8 +13687,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.KeyEvent createKeyEvent(
-        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateKeyEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateKeyEventMethod(), getCallOptions(), request);
     }
 
@@ -13665,8 +13701,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.KeyEvent updateKeyEvent(
-        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateKeyEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateKeyEventMethod(), getCallOptions(), request);
     }
 
@@ -13678,8 +13715,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent(
-        com.google.analytics.admin.v1alpha.GetKeyEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetKeyEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetKeyEventMethod(), getCallOptions(), request);
     }
 
@@ -13691,8 +13729,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteKeyEvent(
-        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteKeyEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteKeyEventMethod(), getCallOptions(), request);
     }
 
@@ -13705,8 +13744,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListKeyEventsResponse listKeyEvents(
-        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListKeyEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListKeyEventsMethod(), getCallOptions(), request);
     }
 
@@ -13719,8 +13759,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
         getDisplayVideo360AdvertiserLink(
-            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
     }
 
@@ -13733,8 +13774,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksResponse
         listDisplayVideo360AdvertiserLinks(
-            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDisplayVideo360AdvertiserLinksMethod(), getCallOptions(), request);
     }
 
@@ -13751,8 +13793,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
         createDisplayVideo360AdvertiserLink(
-            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
     }
 
@@ -13764,8 +13807,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLink(
-        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
     }
 
@@ -13778,8 +13822,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
         updateDisplayVideo360AdvertiserLink(
-            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.UpdateDisplayVideo360AdvertiserLinkRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDisplayVideo360AdvertiserLinkMethod(), getCallOptions(), request);
     }
 
@@ -13793,8 +13838,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
         getDisplayVideo360AdvertiserLinkProposal(
             com.google.analytics.admin.v1alpha.GetDisplayVideo360AdvertiserLinkProposalRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetDisplayVideo360AdvertiserLinkProposalMethod(),
           getCallOptions(),
@@ -13811,8 +13857,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsResponse
         listDisplayVideo360AdvertiserLinkProposals(
             com.google.analytics.admin.v1alpha.ListDisplayVideo360AdvertiserLinkProposalsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListDisplayVideo360AdvertiserLinkProposalsMethod(),
           getCallOptions(),
@@ -13829,8 +13876,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
         createDisplayVideo360AdvertiserLinkProposal(
             com.google.analytics.admin.v1alpha.CreateDisplayVideo360AdvertiserLinkProposalRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getCreateDisplayVideo360AdvertiserLinkProposalMethod(),
           getCallOptions(),
@@ -13847,8 +13895,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.protobuf.Empty deleteDisplayVideo360AdvertiserLinkProposal(
         com.google.analytics.admin.v1alpha.DeleteDisplayVideo360AdvertiserLinkProposalRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getDeleteDisplayVideo360AdvertiserLinkProposalMethod(),
           getCallOptions(),
@@ -13867,8 +13916,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalResponse
         approveDisplayVideo360AdvertiserLinkProposal(
             com.google.analytics.admin.v1alpha.ApproveDisplayVideo360AdvertiserLinkProposalRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getApproveDisplayVideo360AdvertiserLinkProposalMethod(),
           getCallOptions(),
@@ -13889,8 +13939,9 @@ public final class AnalyticsAdminServiceGrpc {
     public com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
         cancelDisplayVideo360AdvertiserLinkProposal(
             com.google.analytics.admin.v1alpha.CancelDisplayVideo360AdvertiserLinkProposalRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getCancelDisplayVideo360AdvertiserLinkProposalMethod(),
           getCallOptions(),
@@ -13905,8 +13956,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomDimension createCustomDimension(
-        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateCustomDimensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomDimensionMethod(), getCallOptions(), request);
     }
 
@@ -13918,8 +13970,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomDimension updateCustomDimension(
-        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomDimensionMethod(), getCallOptions(), request);
     }
 
@@ -13931,8 +13984,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListCustomDimensionsResponse listCustomDimensions(
-        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListCustomDimensionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomDimensionsMethod(), getCallOptions(), request);
     }
 
@@ -13944,8 +13998,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty archiveCustomDimension(
-        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ArchiveCustomDimensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getArchiveCustomDimensionMethod(), getCallOptions(), request);
     }
 
@@ -13957,8 +14012,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension(
-        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetCustomDimensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomDimensionMethod(), getCallOptions(), request);
     }
 
@@ -13970,8 +14026,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomMetric createCustomMetric(
-        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateCustomMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomMetricMethod(), getCallOptions(), request);
     }
 
@@ -13983,8 +14040,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomMetric updateCustomMetric(
-        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomMetricMethod(), getCallOptions(), request);
     }
 
@@ -13996,8 +14054,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListCustomMetricsResponse listCustomMetrics(
-        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListCustomMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomMetricsMethod(), getCallOptions(), request);
     }
 
@@ -14009,8 +14068,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty archiveCustomMetric(
-        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ArchiveCustomMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getArchiveCustomMetricMethod(), getCallOptions(), request);
     }
 
@@ -14022,8 +14082,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric(
-        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetCustomMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomMetricMethod(), getCallOptions(), request);
     }
 
@@ -14035,8 +14096,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings(
-        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetDataRetentionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataRetentionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14048,8 +14110,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataRetentionSettings updateDataRetentionSettings(
-        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataRetentionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14061,8 +14124,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataStream createDataStream(
-        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateDataStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -14074,8 +14138,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataStream(
-        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteDataStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -14087,8 +14152,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataStream updateDataStream(
-        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateDataStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -14100,8 +14166,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListDataStreamsResponse listDataStreams(
-        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListDataStreamsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataStreamsMethod(), getCallOptions(), request);
     }
 
@@ -14113,8 +14180,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataStream getDataStream(
-        com.google.analytics.admin.v1alpha.GetDataStreamRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetDataStreamRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataStreamMethod(), getCallOptions(), request);
     }
 
@@ -14128,8 +14196,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Audience getAudience(
-        com.google.analytics.admin.v1alpha.GetAudienceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetAudienceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAudienceMethod(), getCallOptions(), request);
     }
 
@@ -14143,8 +14212,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAudiencesResponse listAudiences(
-        com.google.analytics.admin.v1alpha.ListAudiencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListAudiencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAudiencesMethod(), getCallOptions(), request);
     }
 
@@ -14156,8 +14226,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Audience createAudience(
-        com.google.analytics.admin.v1alpha.CreateAudienceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateAudienceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAudienceMethod(), getCallOptions(), request);
     }
 
@@ -14169,8 +14240,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.Audience updateAudience(
-        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateAudienceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAudienceMethod(), getCallOptions(), request);
     }
 
@@ -14182,8 +14254,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty archiveAudience(
-        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ArchiveAudienceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getArchiveAudienceMethod(), getCallOptions(), request);
     }
 
@@ -14195,8 +14268,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link(
-        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSearchAds360LinkMethod(), getCallOptions(), request);
     }
 
@@ -14208,8 +14282,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse listSearchAds360Links(
-        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSearchAds360LinksMethod(), getCallOptions(), request);
     }
 
@@ -14221,8 +14296,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SearchAds360Link createSearchAds360Link(
-        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSearchAds360LinkMethod(), getCallOptions(), request);
     }
 
@@ -14234,8 +14310,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSearchAds360Link(
-        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSearchAds360LinkMethod(), getCallOptions(), request);
     }
 
@@ -14247,8 +14324,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SearchAds360Link updateSearchAds360Link(
-        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSearchAds360LinkMethod(), getCallOptions(), request);
     }
 
@@ -14260,8 +14338,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings(
-        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetAttributionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAttributionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14273,8 +14352,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AttributionSettings updateAttributionSettings(
-        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAttributionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14302,8 +14382,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.RunAccessReportResponse runAccessReport(
-        com.google.analytics.admin.v1alpha.RunAccessReportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.RunAccessReportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunAccessReportMethod(), getCallOptions(), request);
     }
 
@@ -14315,8 +14396,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AccessBinding createAccessBinding(
-        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -14328,8 +14410,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AccessBinding getAccessBinding(
-        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -14341,8 +14424,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AccessBinding updateAccessBinding(
-        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -14354,8 +14438,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccessBinding(
-        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteAccessBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccessBindingMethod(), getCallOptions(), request);
     }
 
@@ -14367,8 +14452,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAccessBindingsResponse listAccessBindings(
-        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListAccessBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -14384,8 +14470,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsResponse
         batchCreateAccessBindings(
-            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.BatchCreateAccessBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -14397,8 +14484,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BatchGetAccessBindingsResponse batchGetAccessBindings(
-        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.BatchGetAccessBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -14412,8 +14500,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsResponse
         batchUpdateAccessBindings(
-            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.BatchUpdateAccessBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -14425,8 +14514,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty batchDeleteAccessBindings(
-        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.BatchDeleteAccessBindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchDeleteAccessBindingsMethod(), getCallOptions(), request);
     }
 
@@ -14438,8 +14528,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet(
-        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetExpandedDataSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExpandedDataSetMethod(), getCallOptions(), request);
     }
 
@@ -14451,8 +14542,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListExpandedDataSetsResponse listExpandedDataSets(
-        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListExpandedDataSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExpandedDataSetsMethod(), getCallOptions(), request);
     }
 
@@ -14464,8 +14556,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ExpandedDataSet createExpandedDataSet(
-        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateExpandedDataSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExpandedDataSetMethod(), getCallOptions(), request);
     }
 
@@ -14477,8 +14570,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ExpandedDataSet updateExpandedDataSet(
-        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateExpandedDataSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExpandedDataSetMethod(), getCallOptions(), request);
     }
 
@@ -14490,8 +14584,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteExpandedDataSet(
-        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteExpandedDataSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExpandedDataSetMethod(), getCallOptions(), request);
     }
 
@@ -14503,8 +14598,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup(
-        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetChannelGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChannelGroupMethod(), getCallOptions(), request);
     }
 
@@ -14516,8 +14612,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListChannelGroupsResponse listChannelGroups(
-        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListChannelGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChannelGroupsMethod(), getCallOptions(), request);
     }
 
@@ -14529,8 +14626,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ChannelGroup createChannelGroup(
-        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateChannelGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateChannelGroupMethod(), getCallOptions(), request);
     }
 
@@ -14542,8 +14640,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ChannelGroup updateChannelGroup(
-        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateChannelGroupMethod(), getCallOptions(), request);
     }
 
@@ -14555,8 +14654,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteChannelGroup(
-        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteChannelGroupMethod(), getCallOptions(), request);
     }
 
@@ -14568,8 +14668,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BigQueryLink createBigQueryLink(
-        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBigQueryLinkMethod(), getCallOptions(), request);
     }
 
@@ -14581,8 +14682,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BigQueryLink getBigQueryLink(
-        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetBigQueryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBigQueryLinkMethod(), getCallOptions(), request);
     }
 
@@ -14594,8 +14696,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListBigQueryLinksResponse listBigQueryLinks(
-        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListBigQueryLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBigQueryLinksMethod(), getCallOptions(), request);
     }
 
@@ -14607,8 +14710,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBigQueryLink(
-        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteBigQueryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBigQueryLinkMethod(), getCallOptions(), request);
     }
 
@@ -14620,8 +14724,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.BigQueryLink updateBigQueryLink(
-        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateBigQueryLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBigQueryLinkMethod(), getCallOptions(), request);
     }
 
@@ -14636,8 +14741,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
         getEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.GetEnhancedMeasurementSettingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14652,8 +14758,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings
         updateEnhancedMeasurementSettings(
-            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14665,8 +14772,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AdSenseLink getAdSenseLink(
-        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetAdSenseLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAdSenseLinkMethod(), getCallOptions(), request);
     }
 
@@ -14678,8 +14786,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.AdSenseLink createAdSenseLink(
-        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateAdSenseLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAdSenseLinkMethod(), getCallOptions(), request);
     }
 
@@ -14691,8 +14800,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAdSenseLink(
-        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteAdSenseLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAdSenseLinkMethod(), getCallOptions(), request);
     }
 
@@ -14704,8 +14814,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListAdSenseLinksResponse listAdSenseLinks(
-        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListAdSenseLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAdSenseLinksMethod(), getCallOptions(), request);
     }
 
@@ -14717,8 +14828,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule(
-        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetEventCreateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEventCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -14730,8 +14842,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListEventCreateRulesResponse listEventCreateRules(
-        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListEventCreateRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventCreateRulesMethod(), getCallOptions(), request);
     }
 
@@ -14743,8 +14856,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventCreateRule createEventCreateRule(
-        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateEventCreateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEventCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -14756,8 +14870,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventCreateRule updateEventCreateRule(
-        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateEventCreateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEventCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -14769,8 +14884,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEventCreateRule(
-        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteEventCreateRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEventCreateRuleMethod(), getCallOptions(), request);
     }
 
@@ -14782,8 +14898,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventEditRule getEventEditRule(
-        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetEventEditRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEventEditRuleMethod(), getCallOptions(), request);
     }
 
@@ -14795,8 +14912,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListEventEditRulesResponse listEventEditRules(
-        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListEventEditRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventEditRulesMethod(), getCallOptions(), request);
     }
 
@@ -14808,8 +14926,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventEditRule createEventEditRule(
-        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateEventEditRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEventEditRuleMethod(), getCallOptions(), request);
     }
 
@@ -14821,8 +14940,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.EventEditRule updateEventEditRule(
-        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateEventEditRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEventEditRuleMethod(), getCallOptions(), request);
     }
 
@@ -14834,8 +14954,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEventEditRule(
-        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteEventEditRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEventEditRuleMethod(), getCallOptions(), request);
     }
 
@@ -14847,8 +14968,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty reorderEventEditRules(
-        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ReorderEventEditRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReorderEventEditRulesMethod(), getCallOptions(), request);
     }
 
@@ -14860,8 +14982,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataRedactionSettings updateDataRedactionSettings(
-        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateDataRedactionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataRedactionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14873,8 +14996,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings(
-        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetDataRedactionSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataRedactionSettingsMethod(), getCallOptions(), request);
     }
 
@@ -14886,8 +15010,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric(
-        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetCalculatedMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCalculatedMetricMethod(), getCallOptions(), request);
     }
 
@@ -14899,8 +15024,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CalculatedMetric createCalculatedMetric(
-        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateCalculatedMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCalculatedMetricMethod(), getCallOptions(), request);
     }
 
@@ -14912,8 +15038,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ListCalculatedMetricsResponse listCalculatedMetrics(
-        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ListCalculatedMetricsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCalculatedMetricsMethod(), getCallOptions(), request);
     }
 
@@ -14925,8 +15052,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CalculatedMetric updateCalculatedMetric(
-        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateCalculatedMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCalculatedMetricMethod(), getCallOptions(), request);
     }
 
@@ -14938,8 +15066,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCalculatedMetric(
-        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteCalculatedMetricRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCalculatedMetricMethod(), getCallOptions(), request);
     }
 
@@ -14951,8 +15080,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.CreateRollupPropertyResponse createRollupProperty(
-        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateRollupPropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRollupPropertyMethod(), getCallOptions(), request);
     }
 
@@ -14966,8 +15096,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.RollupPropertySourceLink getRollupPropertySourceLink(
-        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetRollupPropertySourceLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRollupPropertySourceLinkMethod(), getCallOptions(), request);
     }
 
@@ -14982,8 +15113,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksResponse
         listRollupPropertySourceLinks(
-            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListRollupPropertySourceLinksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRollupPropertySourceLinksMethod(), getCallOptions(), request);
     }
 
@@ -14998,8 +15130,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.RollupPropertySourceLink
         createRollupPropertySourceLink(
-            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.CreateRollupPropertySourceLinkRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRollupPropertySourceLinkMethod(), getCallOptions(), request);
     }
 
@@ -15013,8 +15146,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRollupPropertySourceLink(
-        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteRollupPropertySourceLinkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRollupPropertySourceLinkMethod(), getCallOptions(), request);
     }
 
@@ -15027,8 +15161,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ProvisionSubpropertyResponse provisionSubproperty(
-        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.ProvisionSubpropertyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProvisionSubpropertyMethod(), getCallOptions(), request);
     }
 
@@ -15040,8 +15175,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubpropertyEventFilter createSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateSubpropertyEventFilterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSubpropertyEventFilterMethod(), getCallOptions(), request);
     }
 
@@ -15053,8 +15189,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubpropertyEventFilter getSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubpropertyEventFilterMethod(), getCallOptions(), request);
     }
 
@@ -15067,8 +15204,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersResponse
         listSubpropertyEventFilters(
-            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListSubpropertyEventFiltersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubpropertyEventFiltersMethod(), getCallOptions(), request);
     }
 
@@ -15080,8 +15218,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubpropertyEventFilter updateSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubpropertyEventFilterMethod(), getCallOptions(), request);
     }
 
@@ -15093,8 +15232,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSubpropertyEventFilter(
-        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
     }
 
@@ -15106,8 +15246,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ReportingDataAnnotation createReportingDataAnnotation(
-        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReportingDataAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -15119,8 +15260,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation(
-        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportingDataAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -15133,8 +15275,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse
         listReportingDataAnnotations(
-            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportingDataAnnotationsMethod(), getCallOptions(), request);
     }
 
@@ -15146,8 +15289,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ReportingDataAnnotation updateReportingDataAnnotation(
-        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReportingDataAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -15159,8 +15303,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteReportingDataAnnotation(
-        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReportingDataAnnotationMethod(), getCallOptions(), request);
     }
 
@@ -15172,8 +15317,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse submitUserDeletion(
-        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
     }
 
@@ -15186,8 +15332,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
         listSubpropertySyncConfigs(
-            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubpropertySyncConfigsMethod(), getCallOptions(), request);
     }
 
@@ -15199,8 +15346,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubpropertySyncConfig updateSubpropertySyncConfig(
-        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubpropertySyncConfigMethod(), getCallOptions(), request);
     }
 
@@ -15212,8 +15360,9 @@ public final class AnalyticsAdminServiceGrpc {
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig(
-        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubpropertySyncConfigMethod(), getCallOptions(), request);
     }
 
@@ -15226,8 +15375,9 @@ public final class AnalyticsAdminServiceGrpc {
      */
     public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
         getReportingIdentitySettings(
-            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
     }
   }

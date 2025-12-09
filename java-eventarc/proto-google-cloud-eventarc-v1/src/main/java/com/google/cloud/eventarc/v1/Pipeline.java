@@ -3859,9 +3859,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -3878,9 +3878,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -3898,9 +3898,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -4722,7 +4722,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The URI of the HTTP enpdoint.
+       * Required. The URI of the HTTP endpoint.
        *
        * The value must be a RFC2396 URI string.
        * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -4739,7 +4739,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The URI of the HTTP enpdoint.
+       * Required. The URI of the HTTP endpoint.
        *
        * The value must be a RFC2396 URI string.
        * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -4761,10 +4761,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * If a binding expression is not specified here, the message
        * is treated as a CloudEvent and is mapped to the HTTP request according
-       * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-       * representation, all fields except the `data` and `datacontenttype`
-       * field on the message are mapped to HTTP request headers with a prefix
-       * of `ce-`.
+       * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+       * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+       * In this representation, all fields except the `data` and
+       * `datacontenttype` field on the message are mapped to HTTP request
+       * headers with a prefix of `ce-`.
        *
        * To construct the HTTP request payload and the value of the content-type
        * HTTP header, the payload format is defined as follows:
@@ -4794,7 +4795,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - If a map named `headers` exists on the result of the expression,
        * then its key/value pairs are directly mapped to the HTTP request
        * headers. The headers values are constructed from the corresponding
-       * value type’s canonical representation. If the `headers` field doesn’t
+       * value type's canonical representation. If the `headers` field doesn't
        * exist then the resulting HTTP request will be the headers of the
        * CloudEvent HTTP Binding Binary Content Mode representation of the final
        * message. Note: If the specified binding expression, has updated the
@@ -4836,6 +4837,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *   "body": "new-body"
        * }
        * ```
+       * - The default binding for the message payload can be accessed using the
+       * `body` variable. It conatins a string representation of the message
+       * payload in the format specified by the `output_payload_format` field.
+       * If the `input_payload_format` field is not set, the `body`
+       * variable contains the same message payload bytes that were published.
        *
        * Additionally, the following CEL extension functions are provided for
        * use in this CEL expression:
@@ -4893,33 +4899,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - toMap:
        *   [map1, map2, ...].toMap() -&gt; map
        *     - Converts a CEL list of CEL maps to a single CEL map
-       * - toDestinationPayloadFormat():
-       *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-       *     - Converts the message data to the destination payload format
-       *     specified in Pipeline.Destination.output_payload_format
-       *     - This function is meant to be applied to the message.data field.
-       *     - If the destination payload format is not set, the function will
-       *     return the message data unchanged.
        * - toCloudEventJsonWithPayloadFormat:
        *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
        *     - Converts a message to the corresponding structure of JSON
-       *     format for CloudEvents
-       *     - This function applies toDestinationPayloadFormat() to the
-       *     message data. It also sets the corresponding datacontenttype of
+       *     format for CloudEvents.
+       *     - It converts `data` to destination payload format
+       *     specified in `output_payload_format`. If `output_payload_format` is
+       *     not set, the data will remain unchanged.
+       *     - It also sets the corresponding datacontenttype of
        *     the CloudEvent, as indicated by
-       *     Pipeline.Destination.output_payload_format. If no
-       *     output_payload_format is set it will use the existing
-       *     datacontenttype on the CloudEvent if present, else leave
-       *     datacontenttype absent.
+       *     `output_payload_format`. If no
+       *     `output_payload_format` is set it will use the value of the
+       *     "datacontenttype" attribute on the CloudEvent if present, else
+       *     remove "datacontenttype" attribute.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
        *     string it can be chained with the toJsonString function.
        *
        * The Pipeline expects that the message it receives adheres to the
-       * standard CloudEvent format. If it doesn’t then the outgoing message
+       * standard CloudEvent format. If it doesn't then the outgoing message
        * request may fail with a persistent error.
        * </pre>
        *
@@ -4938,10 +4939,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * If a binding expression is not specified here, the message
        * is treated as a CloudEvent and is mapped to the HTTP request according
-       * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-       * representation, all fields except the `data` and `datacontenttype`
-       * field on the message are mapped to HTTP request headers with a prefix
-       * of `ce-`.
+       * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+       * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+       * In this representation, all fields except the `data` and
+       * `datacontenttype` field on the message are mapped to HTTP request
+       * headers with a prefix of `ce-`.
        *
        * To construct the HTTP request payload and the value of the content-type
        * HTTP header, the payload format is defined as follows:
@@ -4971,7 +4973,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - If a map named `headers` exists on the result of the expression,
        * then its key/value pairs are directly mapped to the HTTP request
        * headers. The headers values are constructed from the corresponding
-       * value type’s canonical representation. If the `headers` field doesn’t
+       * value type's canonical representation. If the `headers` field doesn't
        * exist then the resulting HTTP request will be the headers of the
        * CloudEvent HTTP Binding Binary Content Mode representation of the final
        * message. Note: If the specified binding expression, has updated the
@@ -5013,6 +5015,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *   "body": "new-body"
        * }
        * ```
+       * - The default binding for the message payload can be accessed using the
+       * `body` variable. It conatins a string representation of the message
+       * payload in the format specified by the `output_payload_format` field.
+       * If the `input_payload_format` field is not set, the `body`
+       * variable contains the same message payload bytes that were published.
        *
        * Additionally, the following CEL extension functions are provided for
        * use in this CEL expression:
@@ -5070,33 +5077,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - toMap:
        *   [map1, map2, ...].toMap() -&gt; map
        *     - Converts a CEL list of CEL maps to a single CEL map
-       * - toDestinationPayloadFormat():
-       *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-       *     - Converts the message data to the destination payload format
-       *     specified in Pipeline.Destination.output_payload_format
-       *     - This function is meant to be applied to the message.data field.
-       *     - If the destination payload format is not set, the function will
-       *     return the message data unchanged.
        * - toCloudEventJsonWithPayloadFormat:
        *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
        *     - Converts a message to the corresponding structure of JSON
-       *     format for CloudEvents
-       *     - This function applies toDestinationPayloadFormat() to the
-       *     message data. It also sets the corresponding datacontenttype of
+       *     format for CloudEvents.
+       *     - It converts `data` to destination payload format
+       *     specified in `output_payload_format`. If `output_payload_format` is
+       *     not set, the data will remain unchanged.
+       *     - It also sets the corresponding datacontenttype of
        *     the CloudEvent, as indicated by
-       *     Pipeline.Destination.output_payload_format. If no
-       *     output_payload_format is set it will use the existing
-       *     datacontenttype on the CloudEvent if present, else leave
-       *     datacontenttype absent.
+       *     `output_payload_format`. If no
+       *     `output_payload_format` is set it will use the value of the
+       *     "datacontenttype" attribute on the CloudEvent if present, else
+       *     remove "datacontenttype" attribute.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
        *     string it can be chained with the toJsonString function.
        *
        * The Pipeline expects that the message it receives adheres to the
-       * standard CloudEvent format. If it doesn’t then the outgoing message
+       * standard CloudEvent format. If it doesn't then the outgoing message
        * request may fail with a persistent error.
        * </pre>
        *
@@ -5162,7 +5164,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The URI of the HTTP enpdoint.
+       * Required. The URI of the HTTP endpoint.
        *
        * The value must be a RFC2396 URI string.
        * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -5190,7 +5192,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The URI of the HTTP enpdoint.
+       * Required. The URI of the HTTP endpoint.
        *
        * The value must be a RFC2396 URI string.
        * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -5228,10 +5230,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * If a binding expression is not specified here, the message
        * is treated as a CloudEvent and is mapped to the HTTP request according
-       * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-       * representation, all fields except the `data` and `datacontenttype`
-       * field on the message are mapped to HTTP request headers with a prefix
-       * of `ce-`.
+       * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+       * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+       * In this representation, all fields except the `data` and
+       * `datacontenttype` field on the message are mapped to HTTP request
+       * headers with a prefix of `ce-`.
        *
        * To construct the HTTP request payload and the value of the content-type
        * HTTP header, the payload format is defined as follows:
@@ -5261,7 +5264,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - If a map named `headers` exists on the result of the expression,
        * then its key/value pairs are directly mapped to the HTTP request
        * headers. The headers values are constructed from the corresponding
-       * value type’s canonical representation. If the `headers` field doesn’t
+       * value type's canonical representation. If the `headers` field doesn't
        * exist then the resulting HTTP request will be the headers of the
        * CloudEvent HTTP Binding Binary Content Mode representation of the final
        * message. Note: If the specified binding expression, has updated the
@@ -5303,6 +5306,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *   "body": "new-body"
        * }
        * ```
+       * - The default binding for the message payload can be accessed using the
+       * `body` variable. It conatins a string representation of the message
+       * payload in the format specified by the `output_payload_format` field.
+       * If the `input_payload_format` field is not set, the `body`
+       * variable contains the same message payload bytes that were published.
        *
        * Additionally, the following CEL extension functions are provided for
        * use in this CEL expression:
@@ -5360,33 +5368,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - toMap:
        *   [map1, map2, ...].toMap() -&gt; map
        *     - Converts a CEL list of CEL maps to a single CEL map
-       * - toDestinationPayloadFormat():
-       *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-       *     - Converts the message data to the destination payload format
-       *     specified in Pipeline.Destination.output_payload_format
-       *     - This function is meant to be applied to the message.data field.
-       *     - If the destination payload format is not set, the function will
-       *     return the message data unchanged.
        * - toCloudEventJsonWithPayloadFormat:
        *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
        *     - Converts a message to the corresponding structure of JSON
-       *     format for CloudEvents
-       *     - This function applies toDestinationPayloadFormat() to the
-       *     message data. It also sets the corresponding datacontenttype of
+       *     format for CloudEvents.
+       *     - It converts `data` to destination payload format
+       *     specified in `output_payload_format`. If `output_payload_format` is
+       *     not set, the data will remain unchanged.
+       *     - It also sets the corresponding datacontenttype of
        *     the CloudEvent, as indicated by
-       *     Pipeline.Destination.output_payload_format. If no
-       *     output_payload_format is set it will use the existing
-       *     datacontenttype on the CloudEvent if present, else leave
-       *     datacontenttype absent.
+       *     `output_payload_format`. If no
+       *     `output_payload_format` is set it will use the value of the
+       *     "datacontenttype" attribute on the CloudEvent if present, else
+       *     remove "datacontenttype" attribute.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
        *     string it can be chained with the toJsonString function.
        *
        * The Pipeline expects that the message it receives adheres to the
-       * standard CloudEvent format. If it doesn’t then the outgoing message
+       * standard CloudEvent format. If it doesn't then the outgoing message
        * request may fail with a persistent error.
        * </pre>
        *
@@ -5416,10 +5419,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * If a binding expression is not specified here, the message
        * is treated as a CloudEvent and is mapped to the HTTP request according
-       * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-       * representation, all fields except the `data` and `datacontenttype`
-       * field on the message are mapped to HTTP request headers with a prefix
-       * of `ce-`.
+       * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+       * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+       * In this representation, all fields except the `data` and
+       * `datacontenttype` field on the message are mapped to HTTP request
+       * headers with a prefix of `ce-`.
        *
        * To construct the HTTP request payload and the value of the content-type
        * HTTP header, the payload format is defined as follows:
@@ -5449,7 +5453,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - If a map named `headers` exists on the result of the expression,
        * then its key/value pairs are directly mapped to the HTTP request
        * headers. The headers values are constructed from the corresponding
-       * value type’s canonical representation. If the `headers` field doesn’t
+       * value type's canonical representation. If the `headers` field doesn't
        * exist then the resulting HTTP request will be the headers of the
        * CloudEvent HTTP Binding Binary Content Mode representation of the final
        * message. Note: If the specified binding expression, has updated the
@@ -5491,6 +5495,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *   "body": "new-body"
        * }
        * ```
+       * - The default binding for the message payload can be accessed using the
+       * `body` variable. It conatins a string representation of the message
+       * payload in the format specified by the `output_payload_format` field.
+       * If the `input_payload_format` field is not set, the `body`
+       * variable contains the same message payload bytes that were published.
        *
        * Additionally, the following CEL extension functions are provided for
        * use in this CEL expression:
@@ -5548,33 +5557,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * - toMap:
        *   [map1, map2, ...].toMap() -&gt; map
        *     - Converts a CEL list of CEL maps to a single CEL map
-       * - toDestinationPayloadFormat():
-       *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-       *     - Converts the message data to the destination payload format
-       *     specified in Pipeline.Destination.output_payload_format
-       *     - This function is meant to be applied to the message.data field.
-       *     - If the destination payload format is not set, the function will
-       *     return the message data unchanged.
        * - toCloudEventJsonWithPayloadFormat:
        *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
        *     - Converts a message to the corresponding structure of JSON
-       *     format for CloudEvents
-       *     - This function applies toDestinationPayloadFormat() to the
-       *     message data. It also sets the corresponding datacontenttype of
+       *     format for CloudEvents.
+       *     - It converts `data` to destination payload format
+       *     specified in `output_payload_format`. If `output_payload_format` is
+       *     not set, the data will remain unchanged.
+       *     - It also sets the corresponding datacontenttype of
        *     the CloudEvent, as indicated by
-       *     Pipeline.Destination.output_payload_format. If no
-       *     output_payload_format is set it will use the existing
-       *     datacontenttype on the CloudEvent if present, else leave
-       *     datacontenttype absent.
+       *     `output_payload_format`. If no
+       *     `output_payload_format` is set it will use the value of the
+       *     "datacontenttype" attribute on the CloudEvent if present, else
+       *     remove "datacontenttype" attribute.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
        *     string it can be chained with the toJsonString function.
        *
        * The Pipeline expects that the message it receives adheres to the
-       * standard CloudEvent format. If it doesn’t then the outgoing message
+       * standard CloudEvent format. If it doesn't then the outgoing message
        * request may fail with a persistent error.
        * </pre>
        *
@@ -5983,7 +5987,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The URI of the HTTP enpdoint.
+         * Required. The URI of the HTTP endpoint.
          *
          * The value must be a RFC2396 URI string.
          * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -6010,7 +6014,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The URI of the HTTP enpdoint.
+         * Required. The URI of the HTTP endpoint.
          *
          * The value must be a RFC2396 URI string.
          * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -6037,7 +6041,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The URI of the HTTP enpdoint.
+         * Required. The URI of the HTTP endpoint.
          *
          * The value must be a RFC2396 URI string.
          * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -6063,7 +6067,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The URI of the HTTP enpdoint.
+         * Required. The URI of the HTTP endpoint.
          *
          * The value must be a RFC2396 URI string.
          * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -6085,7 +6089,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * Required. The URI of the HTTP enpdoint.
+         * Required. The URI of the HTTP endpoint.
          *
          * The value must be a RFC2396 URI string.
          * Examples: `https://svc.us-central1.p.local:8080/route`.
@@ -6119,10 +6123,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * If a binding expression is not specified here, the message
          * is treated as a CloudEvent and is mapped to the HTTP request according
-         * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-         * representation, all fields except the `data` and `datacontenttype`
-         * field on the message are mapped to HTTP request headers with a prefix
-         * of `ce-`.
+         * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+         * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+         * In this representation, all fields except the `data` and
+         * `datacontenttype` field on the message are mapped to HTTP request
+         * headers with a prefix of `ce-`.
          *
          * To construct the HTTP request payload and the value of the content-type
          * HTTP header, the payload format is defined as follows:
@@ -6152,7 +6157,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - If a map named `headers` exists on the result of the expression,
          * then its key/value pairs are directly mapped to the HTTP request
          * headers. The headers values are constructed from the corresponding
-         * value type’s canonical representation. If the `headers` field doesn’t
+         * value type's canonical representation. If the `headers` field doesn't
          * exist then the resulting HTTP request will be the headers of the
          * CloudEvent HTTP Binding Binary Content Mode representation of the final
          * message. Note: If the specified binding expression, has updated the
@@ -6194,6 +6199,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *   "body": "new-body"
          * }
          * ```
+         * - The default binding for the message payload can be accessed using the
+         * `body` variable. It conatins a string representation of the message
+         * payload in the format specified by the `output_payload_format` field.
+         * If the `input_payload_format` field is not set, the `body`
+         * variable contains the same message payload bytes that were published.
          *
          * Additionally, the following CEL extension functions are provided for
          * use in this CEL expression:
@@ -6251,33 +6261,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - toMap:
          *   [map1, map2, ...].toMap() -&gt; map
          *     - Converts a CEL list of CEL maps to a single CEL map
-         * - toDestinationPayloadFormat():
-         *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-         *     - Converts the message data to the destination payload format
-         *     specified in Pipeline.Destination.output_payload_format
-         *     - This function is meant to be applied to the message.data field.
-         *     - If the destination payload format is not set, the function will
-         *     return the message data unchanged.
          * - toCloudEventJsonWithPayloadFormat:
          *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
          *     - Converts a message to the corresponding structure of JSON
-         *     format for CloudEvents
-         *     - This function applies toDestinationPayloadFormat() to the
-         *     message data. It also sets the corresponding datacontenttype of
+         *     format for CloudEvents.
+         *     - It converts `data` to destination payload format
+         *     specified in `output_payload_format`. If `output_payload_format` is
+         *     not set, the data will remain unchanged.
+         *     - It also sets the corresponding datacontenttype of
          *     the CloudEvent, as indicated by
-         *     Pipeline.Destination.output_payload_format. If no
-         *     output_payload_format is set it will use the existing
-         *     datacontenttype on the CloudEvent if present, else leave
-         *     datacontenttype absent.
+         *     `output_payload_format`. If no
+         *     `output_payload_format` is set it will use the value of the
+         *     "datacontenttype" attribute on the CloudEvent if present, else
+         *     remove "datacontenttype" attribute.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
          *     string it can be chained with the toJsonString function.
          *
          * The Pipeline expects that the message it receives adheres to the
-         * standard CloudEvent format. If it doesn’t then the outgoing message
+         * standard CloudEvent format. If it doesn't then the outgoing message
          * request may fail with a persistent error.
          * </pre>
          *
@@ -6307,10 +6312,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * If a binding expression is not specified here, the message
          * is treated as a CloudEvent and is mapped to the HTTP request according
-         * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-         * representation, all fields except the `data` and `datacontenttype`
-         * field on the message are mapped to HTTP request headers with a prefix
-         * of `ce-`.
+         * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+         * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+         * In this representation, all fields except the `data` and
+         * `datacontenttype` field on the message are mapped to HTTP request
+         * headers with a prefix of `ce-`.
          *
          * To construct the HTTP request payload and the value of the content-type
          * HTTP header, the payload format is defined as follows:
@@ -6340,7 +6346,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - If a map named `headers` exists on the result of the expression,
          * then its key/value pairs are directly mapped to the HTTP request
          * headers. The headers values are constructed from the corresponding
-         * value type’s canonical representation. If the `headers` field doesn’t
+         * value type's canonical representation. If the `headers` field doesn't
          * exist then the resulting HTTP request will be the headers of the
          * CloudEvent HTTP Binding Binary Content Mode representation of the final
          * message. Note: If the specified binding expression, has updated the
@@ -6382,6 +6388,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *   "body": "new-body"
          * }
          * ```
+         * - The default binding for the message payload can be accessed using the
+         * `body` variable. It conatins a string representation of the message
+         * payload in the format specified by the `output_payload_format` field.
+         * If the `input_payload_format` field is not set, the `body`
+         * variable contains the same message payload bytes that were published.
          *
          * Additionally, the following CEL extension functions are provided for
          * use in this CEL expression:
@@ -6439,33 +6450,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - toMap:
          *   [map1, map2, ...].toMap() -&gt; map
          *     - Converts a CEL list of CEL maps to a single CEL map
-         * - toDestinationPayloadFormat():
-         *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-         *     - Converts the message data to the destination payload format
-         *     specified in Pipeline.Destination.output_payload_format
-         *     - This function is meant to be applied to the message.data field.
-         *     - If the destination payload format is not set, the function will
-         *     return the message data unchanged.
          * - toCloudEventJsonWithPayloadFormat:
          *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
          *     - Converts a message to the corresponding structure of JSON
-         *     format for CloudEvents
-         *     - This function applies toDestinationPayloadFormat() to the
-         *     message data. It also sets the corresponding datacontenttype of
+         *     format for CloudEvents.
+         *     - It converts `data` to destination payload format
+         *     specified in `output_payload_format`. If `output_payload_format` is
+         *     not set, the data will remain unchanged.
+         *     - It also sets the corresponding datacontenttype of
          *     the CloudEvent, as indicated by
-         *     Pipeline.Destination.output_payload_format. If no
-         *     output_payload_format is set it will use the existing
-         *     datacontenttype on the CloudEvent if present, else leave
-         *     datacontenttype absent.
+         *     `output_payload_format`. If no
+         *     `output_payload_format` is set it will use the value of the
+         *     "datacontenttype" attribute on the CloudEvent if present, else
+         *     remove "datacontenttype" attribute.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
          *     string it can be chained with the toJsonString function.
          *
          * The Pipeline expects that the message it receives adheres to the
-         * standard CloudEvent format. If it doesn’t then the outgoing message
+         * standard CloudEvent format. If it doesn't then the outgoing message
          * request may fail with a persistent error.
          * </pre>
          *
@@ -6495,10 +6501,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * If a binding expression is not specified here, the message
          * is treated as a CloudEvent and is mapped to the HTTP request according
-         * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-         * representation, all fields except the `data` and `datacontenttype`
-         * field on the message are mapped to HTTP request headers with a prefix
-         * of `ce-`.
+         * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+         * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+         * In this representation, all fields except the `data` and
+         * `datacontenttype` field on the message are mapped to HTTP request
+         * headers with a prefix of `ce-`.
          *
          * To construct the HTTP request payload and the value of the content-type
          * HTTP header, the payload format is defined as follows:
@@ -6528,7 +6535,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - If a map named `headers` exists on the result of the expression,
          * then its key/value pairs are directly mapped to the HTTP request
          * headers. The headers values are constructed from the corresponding
-         * value type’s canonical representation. If the `headers` field doesn’t
+         * value type's canonical representation. If the `headers` field doesn't
          * exist then the resulting HTTP request will be the headers of the
          * CloudEvent HTTP Binding Binary Content Mode representation of the final
          * message. Note: If the specified binding expression, has updated the
@@ -6570,6 +6577,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *   "body": "new-body"
          * }
          * ```
+         * - The default binding for the message payload can be accessed using the
+         * `body` variable. It conatins a string representation of the message
+         * payload in the format specified by the `output_payload_format` field.
+         * If the `input_payload_format` field is not set, the `body`
+         * variable contains the same message payload bytes that were published.
          *
          * Additionally, the following CEL extension functions are provided for
          * use in this CEL expression:
@@ -6627,33 +6639,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - toMap:
          *   [map1, map2, ...].toMap() -&gt; map
          *     - Converts a CEL list of CEL maps to a single CEL map
-         * - toDestinationPayloadFormat():
-         *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-         *     - Converts the message data to the destination payload format
-         *     specified in Pipeline.Destination.output_payload_format
-         *     - This function is meant to be applied to the message.data field.
-         *     - If the destination payload format is not set, the function will
-         *     return the message data unchanged.
          * - toCloudEventJsonWithPayloadFormat:
          *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
          *     - Converts a message to the corresponding structure of JSON
-         *     format for CloudEvents
-         *     - This function applies toDestinationPayloadFormat() to the
-         *     message data. It also sets the corresponding datacontenttype of
+         *     format for CloudEvents.
+         *     - It converts `data` to destination payload format
+         *     specified in `output_payload_format`. If `output_payload_format` is
+         *     not set, the data will remain unchanged.
+         *     - It also sets the corresponding datacontenttype of
          *     the CloudEvent, as indicated by
-         *     Pipeline.Destination.output_payload_format. If no
-         *     output_payload_format is set it will use the existing
-         *     datacontenttype on the CloudEvent if present, else leave
-         *     datacontenttype absent.
+         *     `output_payload_format`. If no
+         *     `output_payload_format` is set it will use the value of the
+         *     "datacontenttype" attribute on the CloudEvent if present, else
+         *     remove "datacontenttype" attribute.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
          *     string it can be chained with the toJsonString function.
          *
          * The Pipeline expects that the message it receives adheres to the
-         * standard CloudEvent format. If it doesn’t then the outgoing message
+         * standard CloudEvent format. If it doesn't then the outgoing message
          * request may fail with a persistent error.
          * </pre>
          *
@@ -6682,10 +6689,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * If a binding expression is not specified here, the message
          * is treated as a CloudEvent and is mapped to the HTTP request according
-         * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-         * representation, all fields except the `data` and `datacontenttype`
-         * field on the message are mapped to HTTP request headers with a prefix
-         * of `ce-`.
+         * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+         * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+         * In this representation, all fields except the `data` and
+         * `datacontenttype` field on the message are mapped to HTTP request
+         * headers with a prefix of `ce-`.
          *
          * To construct the HTTP request payload and the value of the content-type
          * HTTP header, the payload format is defined as follows:
@@ -6715,7 +6723,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - If a map named `headers` exists on the result of the expression,
          * then its key/value pairs are directly mapped to the HTTP request
          * headers. The headers values are constructed from the corresponding
-         * value type’s canonical representation. If the `headers` field doesn’t
+         * value type's canonical representation. If the `headers` field doesn't
          * exist then the resulting HTTP request will be the headers of the
          * CloudEvent HTTP Binding Binary Content Mode representation of the final
          * message. Note: If the specified binding expression, has updated the
@@ -6757,6 +6765,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *   "body": "new-body"
          * }
          * ```
+         * - The default binding for the message payload can be accessed using the
+         * `body` variable. It conatins a string representation of the message
+         * payload in the format specified by the `output_payload_format` field.
+         * If the `input_payload_format` field is not set, the `body`
+         * variable contains the same message payload bytes that were published.
          *
          * Additionally, the following CEL extension functions are provided for
          * use in this CEL expression:
@@ -6814,33 +6827,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - toMap:
          *   [map1, map2, ...].toMap() -&gt; map
          *     - Converts a CEL list of CEL maps to a single CEL map
-         * - toDestinationPayloadFormat():
-         *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-         *     - Converts the message data to the destination payload format
-         *     specified in Pipeline.Destination.output_payload_format
-         *     - This function is meant to be applied to the message.data field.
-         *     - If the destination payload format is not set, the function will
-         *     return the message data unchanged.
          * - toCloudEventJsonWithPayloadFormat:
          *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
          *     - Converts a message to the corresponding structure of JSON
-         *     format for CloudEvents
-         *     - This function applies toDestinationPayloadFormat() to the
-         *     message data. It also sets the corresponding datacontenttype of
+         *     format for CloudEvents.
+         *     - It converts `data` to destination payload format
+         *     specified in `output_payload_format`. If `output_payload_format` is
+         *     not set, the data will remain unchanged.
+         *     - It also sets the corresponding datacontenttype of
          *     the CloudEvent, as indicated by
-         *     Pipeline.Destination.output_payload_format. If no
-         *     output_payload_format is set it will use the existing
-         *     datacontenttype on the CloudEvent if present, else leave
-         *     datacontenttype absent.
+         *     `output_payload_format`. If no
+         *     `output_payload_format` is set it will use the value of the
+         *     "datacontenttype" attribute on the CloudEvent if present, else
+         *     remove "datacontenttype" attribute.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
          *     string it can be chained with the toJsonString function.
          *
          * The Pipeline expects that the message it receives adheres to the
-         * standard CloudEvent format. If it doesn’t then the outgoing message
+         * standard CloudEvent format. If it doesn't then the outgoing message
          * request may fail with a persistent error.
          * </pre>
          *
@@ -6865,10 +6873,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * If a binding expression is not specified here, the message
          * is treated as a CloudEvent and is mapped to the HTTP request according
-         * to the CloudEvent HTTP Protocol Binding Binary Content Mode. In this
-         * representation, all fields except the `data` and `datacontenttype`
-         * field on the message are mapped to HTTP request headers with a prefix
-         * of `ce-`.
+         * to the CloudEvent HTTP Protocol Binding Binary Content Mode
+         * (https://github.com/cloudevents/spec/blob/main/cloudevents/bindings/http-protocol-binding.md#31-binary-content-mode).
+         * In this representation, all fields except the `data` and
+         * `datacontenttype` field on the message are mapped to HTTP request
+         * headers with a prefix of `ce-`.
          *
          * To construct the HTTP request payload and the value of the content-type
          * HTTP header, the payload format is defined as follows:
@@ -6898,7 +6907,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - If a map named `headers` exists on the result of the expression,
          * then its key/value pairs are directly mapped to the HTTP request
          * headers. The headers values are constructed from the corresponding
-         * value type’s canonical representation. If the `headers` field doesn’t
+         * value type's canonical representation. If the `headers` field doesn't
          * exist then the resulting HTTP request will be the headers of the
          * CloudEvent HTTP Binding Binary Content Mode representation of the final
          * message. Note: If the specified binding expression, has updated the
@@ -6940,6 +6949,11 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *   "body": "new-body"
          * }
          * ```
+         * - The default binding for the message payload can be accessed using the
+         * `body` variable. It conatins a string representation of the message
+         * payload in the format specified by the `output_payload_format` field.
+         * If the `input_payload_format` field is not set, the `body`
+         * variable contains the same message payload bytes that were published.
          *
          * Additionally, the following CEL extension functions are provided for
          * use in this CEL expression:
@@ -6997,33 +7011,28 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * - toMap:
          *   [map1, map2, ...].toMap() -&gt; map
          *     - Converts a CEL list of CEL maps to a single CEL map
-         * - toDestinationPayloadFormat():
-         *   message.data.toDestinationPayloadFormat() -&gt; string or bytes
-         *     - Converts the message data to the destination payload format
-         *     specified in Pipeline.Destination.output_payload_format
-         *     - This function is meant to be applied to the message.data field.
-         *     - If the destination payload format is not set, the function will
-         *     return the message data unchanged.
          * - toCloudEventJsonWithPayloadFormat:
          *   message.toCloudEventJsonWithPayloadFormat() -&gt; map
          *     - Converts a message to the corresponding structure of JSON
-         *     format for CloudEvents
-         *     - This function applies toDestinationPayloadFormat() to the
-         *     message data. It also sets the corresponding datacontenttype of
+         *     format for CloudEvents.
+         *     - It converts `data` to destination payload format
+         *     specified in `output_payload_format`. If `output_payload_format` is
+         *     not set, the data will remain unchanged.
+         *     - It also sets the corresponding datacontenttype of
          *     the CloudEvent, as indicated by
-         *     Pipeline.Destination.output_payload_format. If no
-         *     output_payload_format is set it will use the existing
-         *     datacontenttype on the CloudEvent if present, else leave
-         *     datacontenttype absent.
+         *     `output_payload_format`. If no
+         *     `output_payload_format` is set it will use the value of the
+         *     "datacontenttype" attribute on the CloudEvent if present, else
+         *     remove "datacontenttype" attribute.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
          *     string it can be chained with the toJsonString function.
          *
          * The Pipeline expects that the message it receives adheres to the
-         * standard CloudEvent format. If it doesn’t then the outgoing message
+         * standard CloudEvent format. If it doesn't then the outgoing message
          * request may fail with a persistent error.
          * </pre>
          *
@@ -7121,7 +7130,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -7137,7 +7146,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -7154,7 +7163,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -7288,7 +7297,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * Required. Service account email used to generate the OIDC Token.
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow the
          * Pipeline to create OpenID tokens for authenticated requests.
@@ -7309,7 +7318,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * Required. Service account email used to generate the OIDC Token.
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow the
          * Pipeline to create OpenID tokens for authenticated requests.
@@ -7359,9 +7368,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Represents a config used to authenticate with a Google OIDC token using
-       * a GCP service account. Use this authentication method to invoke your
-       * Cloud Run and Cloud Functions destinations or HTTP endpoints that
-       * support Google OIDC.
+       * a Google Cloud service account. Use this authentication method to
+       * invoke your Cloud Run and Cloud Functions destinations or HTTP
+       * endpoints that support Google OIDC.
        * </pre>
        *
        * Protobuf type {@code
@@ -7418,7 +7427,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * Required. Service account email used to generate the OIDC Token.
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow the
          * Pipeline to create OpenID tokens for authenticated requests.
@@ -7450,7 +7459,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * Required. Service account email used to generate the OIDC Token.
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow the
          * Pipeline to create OpenID tokens for authenticated requests.
@@ -7735,9 +7744,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Represents a config used to authenticate with a Google OIDC token using
-         * a GCP service account. Use this authentication method to invoke your
-         * Cloud Run and Cloud Functions destinations or HTTP endpoints that
-         * support Google OIDC.
+         * a Google Cloud service account. Use this authentication method to
+         * invoke your Cloud Run and Cloud Functions destinations or HTTP
+         * endpoints that support Google OIDC.
          * </pre>
          *
          * Protobuf type {@code
@@ -7964,7 +7973,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * Required. Service account email used to generate the OIDC Token.
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow the
            * Pipeline to create OpenID tokens for authenticated requests.
@@ -7995,7 +8004,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * Required. Service account email used to generate the OIDC Token.
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow the
            * Pipeline to create OpenID tokens for authenticated requests.
@@ -8026,7 +8035,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * Required. Service account email used to generate the OIDC Token.
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow the
            * Pipeline to create OpenID tokens for authenticated requests.
@@ -8056,7 +8065,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * Required. Service account email used to generate the OIDC Token.
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow the
            * Pipeline to create OpenID tokens for authenticated requests.
@@ -8082,7 +8091,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * Required. Service account email used to generate the OIDC Token.
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow the
            * Pipeline to create OpenID tokens for authenticated requests.
@@ -8311,7 +8320,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * token](https://developers.google.com/identity/protocols/OAuth2).
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
          * to create OAuth2 tokens for authenticated requests.
@@ -8333,7 +8342,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * token](https://developers.google.com/identity/protocols/OAuth2).
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
          * to create OAuth2 tokens for authenticated requests.
@@ -8443,7 +8452,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * token](https://developers.google.com/identity/protocols/OAuth2).
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
          * to create OAuth2 tokens for authenticated requests.
@@ -8476,7 +8485,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          * token](https://developers.google.com/identity/protocols/OAuth2).
          * The principal who calls this API must have
          * iam.serviceAccounts.actAs permission in the service account. See
-         * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+         * https://cloud.google.com/iam/docs/understanding-service-accounts
          * for more information. Eventarc service agents must have
          * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
          * to create OAuth2 tokens for authenticated requests.
@@ -8992,7 +9001,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * token](https://developers.google.com/identity/protocols/OAuth2).
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
            * to create OAuth2 tokens for authenticated requests.
@@ -9024,7 +9033,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * token](https://developers.google.com/identity/protocols/OAuth2).
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
            * to create OAuth2 tokens for authenticated requests.
@@ -9056,7 +9065,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * token](https://developers.google.com/identity/protocols/OAuth2).
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
            * to create OAuth2 tokens for authenticated requests.
@@ -9087,7 +9096,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * token](https://developers.google.com/identity/protocols/OAuth2).
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
            * to create OAuth2 tokens for authenticated requests.
@@ -9114,7 +9123,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
            * token](https://developers.google.com/identity/protocols/OAuth2).
            * The principal who calls this API must have
            * iam.serviceAccounts.actAs permission in the service account. See
-           * https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common
+           * https://cloud.google.com/iam/docs/understanding-service-accounts
            * for more information. Eventarc service agents must have
            * roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline
            * to create OAuth2 tokens for authenticated requests.
@@ -9387,7 +9396,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -9406,7 +9415,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -9431,7 +9440,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Optional. This authenticate method will apply Google OIDC tokens
-       * signed by a GCP service account to the requests.
+       * signed by a Google Cloud service account to the requests.
        * </pre>
        *
        * <code>
@@ -10006,7 +10015,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10025,7 +10034,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10059,7 +10068,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10087,7 +10096,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10112,7 +10121,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10155,7 +10164,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10184,7 +10193,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10202,7 +10211,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -10231,7 +10240,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *
          * <pre>
          * Optional. This authenticate method will apply Google OIDC tokens
-         * signed by a GCP service account to the requests.
+         * signed by a Google Cloud service account to the requests.
          * </pre>
          *
          * <code>
@@ -11129,9 +11138,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -11151,9 +11160,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -11177,9 +11186,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. An authentication config used to authenticate message requests,
      * such that destinations can verify the source. For example, this can be
-     * used with private GCP destinations that require GCP credentials to access
-     * like Cloud Run. This field is optional and should be set only by users
-     * interested in authenticated push
+     * used with private Google Cloud destinations that require Google Cloud
+     * credentials for access like Cloud Run. This field is optional and should
+     * be set only by users interested in authenticated push.
      * </pre>
      *
      * <code>
@@ -12892,9 +12901,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -12913,9 +12922,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -12942,9 +12951,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -12972,9 +12981,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13000,9 +13009,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13037,9 +13046,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13063,9 +13072,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13085,9 +13094,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13112,9 +13121,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Optional. An authentication config used to authenticate message requests,
        * such that destinations can verify the source. For example, this can be
-       * used with private GCP destinations that require GCP credentials to access
-       * like Cloud Run. This field is optional and should be set only by users
-       * interested in authenticated push
+       * used with private Google Cloud destinations that require Google Cloud
+       * credentials for access like Cloud Run. This field is optional and should
+       * be set only by users interested in authenticated push.
        * </pre>
        *
        * <code>
@@ -13624,7 +13633,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *     datacontenttype on the CloudEvent if present, else leave
        *     datacontenttype absent.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
@@ -13712,7 +13721,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *     datacontenttype on the CloudEvent if present, else leave
        *     datacontenttype absent.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
@@ -13851,7 +13860,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *     datacontenttype on the CloudEvent if present, else leave
        *     datacontenttype absent.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
@@ -13950,7 +13959,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
        *     datacontenttype on the CloudEvent if present, else leave
        *     datacontenttype absent.
        *     - This function expects that the content of the message will
-       *     adhere to the standard CloudEvent format. If it doesn’t then this
+       *     adhere to the standard CloudEvent format. If it doesn't then this
        *     function will fail.
        *     - The result is a CEL map that corresponds to the JSON
        *     representation of the CloudEvent. To convert that data to a JSON
@@ -14409,7 +14418,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *     datacontenttype on the CloudEvent if present, else leave
          *     datacontenttype absent.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
@@ -14508,7 +14517,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *     datacontenttype on the CloudEvent if present, else leave
          *     datacontenttype absent.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
@@ -14607,7 +14616,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *     datacontenttype on the CloudEvent if present, else leave
          *     datacontenttype absent.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
@@ -14705,7 +14714,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *     datacontenttype on the CloudEvent if present, else leave
          *     datacontenttype absent.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
@@ -14799,7 +14808,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
          *     datacontenttype on the CloudEvent if present, else leave
          *     datacontenttype absent.
          *     - This function expects that the content of the message will
-         *     adhere to the standard CloudEvent format. If it doesn’t then this
+         *     adhere to the standard CloudEvent format. If it doesn't then this
          *     function will fail.
          *     - The result is a CEL map that corresponds to the JSON
          *     representation of the CloudEvent. To convert that data to a JSON
@@ -18028,7 +18037,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    * client has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 99;</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The etag.
    */
@@ -18054,7 +18063,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
    * client has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 99;</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for etag.
    */
@@ -18069,6 +18078,26 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 14;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this Pipeline satisfies the requirements of
+   * physical zone separation
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -18121,6 +18150,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(13, getRetryPolicy());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(14, satisfiesPzs_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
@@ -18187,6 +18219,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getRetryPolicy());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, satisfiesPzs_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -18234,6 +18269,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       if (!getRetryPolicy().equals(other.getRetryPolicy())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -18291,6 +18327,8 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -18517,6 +18555,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         retryPolicyBuilder_ = null;
       }
       etag_ = "";
+      satisfiesPzs_ = false;
       return this;
     }
 
@@ -18623,6 +18662,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -18770,6 +18812,9 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00002000;
         onChanged();
       }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -18903,6 +18948,12 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 112:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 112
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
@@ -21852,7 +21903,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * client has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 99;</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The etag.
      */
@@ -21877,7 +21928,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * client has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 99;</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for etag.
      */
@@ -21902,7 +21953,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * client has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 99;</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -21926,7 +21977,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * client has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 99;</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -21946,7 +21997,7 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
      * client has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 99;</code>
+     * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -21958,6 +22009,65 @@ public final class Pipeline extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Pipeline satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Pipeline satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether or not this Pipeline satisfies the requirements of
+     * physical zone separation
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      satisfiesPzs_ = false;
       onChanged();
       return this;
     }

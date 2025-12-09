@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * example, when table data is based on data from multiple tables.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/datacatalog/lineage/v1/lineage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LineageGrpc {
 
@@ -1530,8 +1527,9 @@ public final class LineageGrpc {
      */
     public com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventResponse
         processOpenLineageRunEvent(
-            com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.datacatalog.lineage.v1.ProcessOpenLineageRunEventRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProcessOpenLineageRunEventMethod(), getCallOptions(), request);
     }
 
@@ -1543,8 +1541,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Process createProcess(
-        com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.CreateProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProcessMethod(), getCallOptions(), request);
     }
 
@@ -1556,8 +1555,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Process updateProcess(
-        com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.UpdateProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProcessMethod(), getCallOptions(), request);
     }
 
@@ -1569,8 +1569,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Process getProcess(
-        com.google.cloud.datacatalog.lineage.v1.GetProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.GetProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessMethod(), getCallOptions(), request);
     }
 
@@ -1583,8 +1584,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.ListProcessesResponse listProcesses(
-        com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.ListProcessesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessesMethod(), getCallOptions(), request);
     }
 
@@ -1596,8 +1598,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProcess(
-        com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.DeleteProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProcessMethod(), getCallOptions(), request);
     }
 
@@ -1609,8 +1612,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Run createRun(
-        com.google.cloud.datacatalog.lineage.v1.CreateRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.CreateRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRunMethod(), getCallOptions(), request);
     }
 
@@ -1622,8 +1626,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Run updateRun(
-        com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.UpdateRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRunMethod(), getCallOptions(), request);
     }
 
@@ -1635,8 +1640,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.Run getRun(
-        com.google.cloud.datacatalog.lineage.v1.GetRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.GetRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRunMethod(), getCallOptions(), request);
     }
 
@@ -1649,8 +1655,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.ListRunsResponse listRuns(
-        com.google.cloud.datacatalog.lineage.v1.ListRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.ListRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRunsMethod(), getCallOptions(), request);
     }
 
@@ -1662,8 +1669,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRun(
-        com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.DeleteRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRunMethod(), getCallOptions(), request);
     }
 
@@ -1675,8 +1683,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.LineageEvent createLineageEvent(
-        com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.CreateLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLineageEventMethod(), getCallOptions(), request);
     }
 
@@ -1688,8 +1697,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvent(
-        com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.GetLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLineageEventMethod(), getCallOptions(), request);
     }
 
@@ -1702,8 +1712,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.ListLineageEventsResponse listLineageEvents(
-        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.ListLineageEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLineageEventsMethod(), getCallOptions(), request);
     }
 
@@ -1715,8 +1726,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteLineageEvent(
-        com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.DeleteLineageEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLineageEventMethod(), getCallOptions(), request);
     }
 
@@ -1735,8 +1747,9 @@ public final class LineageGrpc {
      * </pre>
      */
     public com.google.cloud.datacatalog.lineage.v1.SearchLinksResponse searchLinks(
-        com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.datacatalog.lineage.v1.SearchLinksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchLinksMethod(), getCallOptions(), request);
     }
 
@@ -1760,8 +1773,9 @@ public final class LineageGrpc {
      */
     public com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesResponse
         batchSearchLinkProcesses(
-            com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.datacatalog.lineage.v1.BatchSearchLinkProcessesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchSearchLinkProcessesMethod(), getCallOptions(), request);
     }
   }

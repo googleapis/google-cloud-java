@@ -28,7 +28,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of active IPs for NAT.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string active_nat_ips = 208517077;</code>
@@ -41,7 +42,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of active IPs for NAT.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string active_nat_ips = 208517077;</code>
@@ -54,7 +56,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of active IPs for NAT.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string active_nat_ips = 208517077;</code>
@@ -68,7 +71,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of active IPs for NAT.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string active_nat_ips = 208517077;</code>
@@ -82,7 +86,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of IPs for NAT that are in drain mode.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string drain_nat_ips = 504078535;</code>
@@ -95,7 +100,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of IPs for NAT that are in drain mode.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string drain_nat_ips = 504078535;</code>
@@ -108,7 +114,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of IPs for NAT that are in drain mode.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string drain_nat_ips = 504078535;</code>
@@ -122,7 +129,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
+   * A list of IPs for NAT that are in drain mode.
+   * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
    * <code>repeated string drain_nat_ips = 504078535;</code>
@@ -136,7 +144,9 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * The number of extra IPs to allocate. This will be greater than 0 only if the existing IPs in this NAT Rule are NOT enough to allow all configured VMs to use NAT.
+   * The number of extra IPs to allocate. This will be greater than 0 only
+   * if the existing IPs in this NAT Rule are NOT enough to allow all
+   * configured VMs to use NAT.
    * </pre>
    *
    * <code>optional int32 min_extra_ips_needed = 353002756;</code>
@@ -149,7 +159,9 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * The number of extra IPs to allocate. This will be greater than 0 only if the existing IPs in this NAT Rule are NOT enough to allow all configured VMs to use NAT.
+   * The number of extra IPs to allocate. This will be greater than 0 only
+   * if the existing IPs in this NAT Rule are NOT enough to allow all
+   * configured VMs to use NAT.
    * </pre>
    *
    * <code>optional int32 min_extra_ips_needed = 353002756;</code>
@@ -162,7 +174,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this NAT Rule.
+   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
+   * NAT Rule.
    * </pre>
    *
    * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
@@ -175,7 +188,8 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this NAT Rule.
+   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
+   * NAT Rule.
    * </pre>
    *
    * <code>optional int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>

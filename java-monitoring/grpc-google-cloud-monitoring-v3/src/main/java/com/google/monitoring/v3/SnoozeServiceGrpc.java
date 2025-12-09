@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * or more alert policies should not fire alerts for the specified duration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/snooze_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SnoozeServiceGrpc {
 
@@ -466,8 +463,8 @@ public final class SnoozeServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Snooze createSnooze(
-        com.google.monitoring.v3.CreateSnoozeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateSnoozeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSnoozeMethod(), getCallOptions(), request);
     }
 
@@ -480,8 +477,8 @@ public final class SnoozeServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListSnoozesResponse listSnoozes(
-        com.google.monitoring.v3.ListSnoozesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListSnoozesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSnoozesMethod(), getCallOptions(), request);
     }
 
@@ -493,8 +490,8 @@ public final class SnoozeServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Snooze getSnooze(
-        com.google.monitoring.v3.GetSnoozeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetSnoozeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSnoozeMethod(), getCallOptions(), request);
     }
 
@@ -507,8 +504,8 @@ public final class SnoozeServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.Snooze updateSnooze(
-        com.google.monitoring.v3.UpdateSnoozeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateSnoozeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSnoozeMethod(), getCallOptions(), request);
     }
   }

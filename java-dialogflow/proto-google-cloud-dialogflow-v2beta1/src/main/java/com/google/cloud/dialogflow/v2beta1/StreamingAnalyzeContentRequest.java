@@ -648,7 +648,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The intent to be triggered on V3 agent.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+   * used to trigger the Welcome intent id if you are using text_config.
    * </pre>
    *
    * <code>string input_intent = 17;</code>
@@ -665,7 +666,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The intent to be triggered on V3 agent.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+   * used to trigger the Welcome intent id if you are using text_config.
    * </pre>
    *
    * <code>string input_intent = 17;</code>
@@ -695,7 +697,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The intent to be triggered on V3 agent.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+   * used to trigger the Welcome intent id if you are using text_config.
    * </pre>
    *
    * <code>string input_intent = 17;</code>
@@ -727,7 +730,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The input event name.
    * This can only be sent once and would cancel the ongoing speech
-   * recognition if any.
+   * recognition if any. To trigger the Welcome intent use the event "WELCOME"
    * </pre>
    *
    * <code>string input_event = 20;</code>
@@ -744,7 +747,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The input event name.
    * This can only be sent once and would cancel the ongoing speech
-   * recognition if any.
+   * recognition if any. To trigger the Welcome intent use the event "WELCOME"
    * </pre>
    *
    * <code>string input_event = 20;</code>
@@ -774,7 +777,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * <pre>
    * The input event name.
    * This can only be sent once and would cancel the ongoing speech
-   * recognition if any.
+   * recognition if any. To trigger the Welcome intent use the event "WELCOME"
    * </pre>
    *
    * <code>string input_event = 20;</code>
@@ -3340,7 +3343,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3358,7 +3362,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3389,7 +3394,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3420,7 +3426,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3444,7 +3451,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3466,7 +3474,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The intent to be triggered on V3 agent.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/locations/
-     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`. This can only be
+     * used to trigger the Welcome intent id if you are using text_config.
      * </pre>
      *
      * <code>string input_intent = 17;</code>
@@ -3491,7 +3500,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>
@@ -3509,7 +3518,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>
@@ -3540,7 +3549,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>
@@ -3571,7 +3580,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>
@@ -3595,7 +3604,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>
@@ -3617,7 +3626,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * <pre>
      * The input event name.
      * This can only be sent once and would cancel the ongoing speech
-     * recognition if any.
+     * recognition if any. To trigger the Welcome intent use the event "WELCOME"
      * </pre>
      *
      * <code>string input_event = 20;</code>

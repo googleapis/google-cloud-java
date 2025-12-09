@@ -1445,6 +1445,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -1456,6 +1457,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();
@@ -1467,6 +1469,7 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("account", String.valueOf(request.getAccount()));
+                      builder.add("integrator", String.valueOf(request.getIntegrator()));
                       return builder.build();
                     })
                 .build();

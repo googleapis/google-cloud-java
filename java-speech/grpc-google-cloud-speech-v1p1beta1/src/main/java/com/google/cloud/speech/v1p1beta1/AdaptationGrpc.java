@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements Google Cloud Speech Adaptation API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/speech/v1p1beta1/cloud_speech_adaptation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AdaptationGrpc {
 
@@ -927,8 +924,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet createPhraseSet(
-        com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -940,8 +938,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet getPhraseSet(
-        com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.GetPhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -953,8 +952,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.ListPhraseSetResponse listPhraseSet(
-        com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.ListPhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -966,8 +966,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.PhraseSet updatePhraseSet(
-        com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -979,8 +980,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deletePhraseSet(
-        com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePhraseSetMethod(), getCallOptions(), request);
     }
 
@@ -992,8 +994,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass createCustomClass(
-        com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.CreateCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -1005,8 +1008,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass getCustomClass(
-        com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.GetCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -1018,8 +1022,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.ListCustomClassesResponse listCustomClasses(
-        com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.ListCustomClassesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomClassesMethod(), getCallOptions(), request);
     }
 
@@ -1031,8 +1036,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.cloud.speech.v1p1beta1.CustomClass updateCustomClass(
-        com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateCustomClassMethod(), getCallOptions(), request);
     }
 
@@ -1044,8 +1050,9 @@ public final class AdaptationGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteCustomClass(
-        com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteCustomClassMethod(), getCallOptions(), request);
     }
   }

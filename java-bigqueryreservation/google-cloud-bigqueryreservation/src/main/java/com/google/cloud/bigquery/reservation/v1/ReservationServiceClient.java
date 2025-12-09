@@ -24,9 +24,15 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.bigquery.reservation.v1.stub.ReservationServiceStub;
 import com.google.cloud.bigquery.reservation.v1.stub.ReservationServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -541,6 +547,142 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateBiReservationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the access control policy for a resource. May return:
+ * <ul>
+ * <li>  A`NOT_FOUND` error if the resource doesn't exist or you don't have the   permission to view it.
+ * <li>  An empty policy if the resource exists but doesn't have a set policy.
+ * </ul>
+ * <p>  Supported resources are: - Reservations - ReservationAssignments
+ * <p>  To call this method, you must have the following Google IAM permissions:
+ * <p>  - `bigqueryreservation.reservations.getIamPolicy` to get policies on reservations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets an access control policy for a resource. Replaces any existing policy.
+ * <p>  Supported resources are: - Reservations
+ * <p>  To call this method, you must have the following Google IAM permissions:
+ * <p>  - `bigqueryreservation.reservations.setIamPolicy` to set policies on reservations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Gets your permissions on a resource. Returns an empty set of permissions if the resource doesn't exist.
+ * <p>  Supported resources are: - Reservations
+ * <p>  No Google IAM permissions are required to call this method.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateReservationGroup</td>
+ *      <td><p> Creates a new reservation group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createReservationGroup(CreateReservationGroupRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createReservationGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReservationGroup</td>
+ *      <td><p> Returns information about the reservation group.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReservationGroup(GetReservationGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReservationGroup(ReservationGroupName name)
+ *           <li><p> getReservationGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReservationGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteReservationGroup</td>
+ *      <td><p> Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has assignments.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteReservationGroup(DeleteReservationGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteReservationGroup(ReservationGroupName name)
+ *           <li><p> deleteReservationGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteReservationGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListReservationGroups</td>
+ *      <td><p> Lists all the reservation groups for the project in the specified location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listReservationGroups(ListReservationGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listReservationGroups(LocationName parent)
+ *           <li><p> listReservationGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listReservationGroupsPagedCallable()
+ *           <li><p> listReservationGroupsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1294,6 +1436,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   FailoverReservationRequest request =
    *       FailoverReservationRequest.newBuilder()
    *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setFailoverMode(FailoverMode.forNumber(0))
    *           .build();
    *   Reservation response = reservationServiceClient.failoverReservation(request);
    * }
@@ -1325,6 +1468,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   FailoverReservationRequest request =
    *       FailoverReservationRequest.newBuilder()
    *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setFailoverMode(FailoverMode.forNumber(0))
    *           .build();
    *   ApiFuture<Reservation> future =
    *       reservationServiceClient.failoverReservationCallable().futureCall(request);
@@ -2272,6 +2416,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *       MergeCapacityCommitmentsRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllCapacityCommitmentIds(new ArrayList<String>())
+   *           .setCapacityCommitmentId("capacityCommitmentId1185645802")
    *           .build();
    *   CapacityCommitment response = reservationServiceClient.mergeCapacityCommitments(request);
    * }
@@ -2308,6 +2453,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *       MergeCapacityCommitmentsRequest.newBuilder()
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .addAllCapacityCommitmentIds(new ArrayList<String>())
+   *           .setCapacityCommitmentId("capacityCommitmentId1185645802")
    *           .build();
    *   ApiFuture<CapacityCommitment> future =
    *       reservationServiceClient.mergeCapacityCommitmentsCallable().futureCall(request);
@@ -4118,6 +4264,883 @@ public class ReservationServiceClient implements BackgroundResource {
     return stub.updateBiReservationCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May return:
+   *
+   * <ul>
+   *   <li>A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view
+   *       it.
+   *   <li>An empty policy if the resource exists but doesn't have a set policy.
+   * </ul>
+   *
+   * <p>Supported resources are: - Reservations - ReservationAssignments
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.getIamPolicy` to get policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ResourceName resource =
+   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   Policy response = reservationServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May return:
+   *
+   * <ul>
+   *   <li>A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view
+   *       it.
+   *   <li>An empty policy if the resource exists but doesn't have a set policy.
+   * </ul>
+   *
+   * <p>Supported resources are: - Reservations - ReservationAssignments
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.getIamPolicy` to get policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String resource =
+   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *   Policy response = reservationServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May return:
+   *
+   * <ul>
+   *   <li>A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view
+   *       it.
+   *   <li>An empty policy if the resource exists but doesn't have a set policy.
+   * </ul>
+   *
+   * <p>Supported resources are: - Reservations - ReservationAssignments
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.getIamPolicy` to get policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = reservationServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. May return:
+   *
+   * <ul>
+   *   <li>A`NOT_FOUND` error if the resource doesn't exist or you don't have the permission to view
+   *       it.
+   *   <li>An empty policy if the resource exists but doesn't have a set policy.
+   * </ul>
+   *
+   * <p>Supported resources are: - Reservations - ReservationAssignments
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.getIamPolicy` to get policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reservationServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets an access control policy for a resource. Replaces any existing policy.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.setIamPolicy` to set policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ResourceName resource =
+   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = reservationServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets an access control policy for a resource. Replaces any existing policy.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.setIamPolicy` to set policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String resource =
+   *       AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = reservationServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets an access control policy for a resource. Replaces any existing policy.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.setIamPolicy` to set policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = reservationServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets an access control policy for a resource. Replaces any existing policy.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>To call this method, you must have the following Google IAM permissions:
+   *
+   * <p>- `bigqueryreservation.reservations.setIamPolicy` to set policies on reservations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       reservationServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets your permissions on a resource. Returns an empty set of permissions if the resource
+   * doesn't exist.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>No Google IAM permissions are required to call this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = reservationServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets your permissions on a resource. Returns an empty set of permissions if the resource
+   * doesn't exist.
+   *
+   * <p>Supported resources are: - Reservations
+   *
+   * <p>No Google IAM permissions are required to call this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(
+   *               AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+   *                   .toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       reservationServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CreateReservationGroupRequest request =
+   *       CreateReservationGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setReservationGroupId("reservationGroupId-1636887922")
+   *           .setReservationGroup(ReservationGroup.newBuilder().build())
+   *           .build();
+   *   ReservationGroup response = reservationServiceClient.createReservationGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup createReservationGroup(CreateReservationGroupRequest request) {
+    return createReservationGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   CreateReservationGroupRequest request =
+   *       CreateReservationGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setReservationGroupId("reservationGroupId-1636887922")
+   *           .setReservationGroup(ReservationGroup.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ReservationGroup> future =
+   *       reservationServiceClient.createReservationGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ReservationGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable() {
+    return stub.createReservationGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about the reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationGroupName name =
+   *       ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+   *   ReservationGroup response = reservationServiceClient.getReservationGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the reservation group to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservationGroups/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup getReservationGroup(ReservationGroupName name) {
+    GetReservationGroupRequest request =
+        GetReservationGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getReservationGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about the reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String name =
+   *       ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]").toString();
+   *   ReservationGroup response = reservationServiceClient.getReservationGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the reservation group to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservationGroups/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup getReservationGroup(String name) {
+    GetReservationGroupRequest request =
+        GetReservationGroupRequest.newBuilder().setName(name).build();
+    return getReservationGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about the reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   GetReservationGroupRequest request =
+   *       GetReservationGroupRequest.newBuilder()
+   *           .setName(
+   *               ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   ReservationGroup response = reservationServiceClient.getReservationGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReservationGroup getReservationGroup(GetReservationGroupRequest request) {
+    return getReservationGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns information about the reservation group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   GetReservationGroupRequest request =
+   *       GetReservationGroupRequest.newBuilder()
+   *           .setName(
+   *               ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ReservationGroup> future =
+   *       reservationServiceClient.getReservationGroupCallable().futureCall(request);
+   *   // Do something.
+   *   ReservationGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupCallable() {
+    return stub.getReservationGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ReservationGroupName name =
+   *       ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+   *   reservationServiceClient.deleteReservationGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the reservation group to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservationGroups/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservationGroup(ReservationGroupName name) {
+    DeleteReservationGroupRequest request =
+        DeleteReservationGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteReservationGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String name =
+   *       ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]").toString();
+   *   reservationServiceClient.deleteReservationGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the reservation group to retrieve. E.g.,
+   *     `projects/myproject/locations/US/reservationGroups/team1-prod`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservationGroup(String name) {
+    DeleteReservationGroupRequest request =
+        DeleteReservationGroupRequest.newBuilder().setName(name).build();
+    deleteReservationGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   DeleteReservationGroupRequest request =
+   *       DeleteReservationGroupRequest.newBuilder()
+   *           .setName(
+   *               ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   reservationServiceClient.deleteReservationGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteReservationGroup(DeleteReservationGroupRequest request) {
+    deleteReservationGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a reservation. Returns `google.rpc.Code.FAILED_PRECONDITION` when reservation has
+   * assignments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   DeleteReservationGroupRequest request =
+   *       DeleteReservationGroupRequest.newBuilder()
+   *           .setName(
+   *               ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       reservationServiceClient.deleteReservationGroupCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteReservationGroupRequest, Empty>
+      deleteReservationGroupCallable() {
+    return stub.deleteReservationGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the reservation groups for the project in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (ReservationGroup element :
+   *       reservationServiceClient.listReservationGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name containing project and location, e.g.:
+   *     `projects/myproject/locations/US`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReservationGroupsPagedResponse listReservationGroups(LocationName parent) {
+    ListReservationGroupsRequest request =
+        ListReservationGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listReservationGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the reservation groups for the project in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (ReservationGroup element :
+   *       reservationServiceClient.listReservationGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name containing project and location, e.g.:
+   *     `projects/myproject/locations/US`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReservationGroupsPagedResponse listReservationGroups(String parent) {
+    ListReservationGroupsRequest request =
+        ListReservationGroupsRequest.newBuilder().setParent(parent).build();
+    return listReservationGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the reservation groups for the project in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListReservationGroupsRequest request =
+   *       ListReservationGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ReservationGroup element :
+   *       reservationServiceClient.listReservationGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListReservationGroupsPagedResponse listReservationGroups(
+      ListReservationGroupsRequest request) {
+    return listReservationGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the reservation groups for the project in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListReservationGroupsRequest request =
+   *       ListReservationGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ReservationGroup> future =
+   *       reservationServiceClient.listReservationGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ReservationGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable() {
+    return stub.listReservationGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the reservation groups for the project in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+   *   ListReservationGroupsRequest request =
+   *       ListReservationGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListReservationGroupsResponse response =
+   *         reservationServiceClient.listReservationGroupsCallable().call(request);
+   *     for (ReservationGroup element : response.getReservationGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable() {
+    return stub.listReservationGroupsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -4544,6 +5567,90 @@ public class ReservationServiceClient implements BackgroundResource {
     protected SearchAllAssignmentsFixedSizeCollection createCollection(
         List<SearchAllAssignmentsPage> pages, int collectionSize) {
       return new SearchAllAssignmentsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListReservationGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ReservationGroup,
+          ListReservationGroupsPage,
+          ListReservationGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListReservationGroupsPagedResponse> createAsync(
+        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+            context,
+        ApiFuture<ListReservationGroupsResponse> futureResponse) {
+      ApiFuture<ListReservationGroupsPage> futurePage =
+          ListReservationGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListReservationGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListReservationGroupsPagedResponse(ListReservationGroupsPage page) {
+      super(page, ListReservationGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListReservationGroupsPage
+      extends AbstractPage<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ReservationGroup,
+          ListReservationGroupsPage> {
+
+    private ListReservationGroupsPage(
+        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+            context,
+        ListReservationGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListReservationGroupsPage createEmptyPage() {
+      return new ListReservationGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListReservationGroupsPage createPage(
+        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+            context,
+        ListReservationGroupsResponse response) {
+      return new ListReservationGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListReservationGroupsPage> createPageAsync(
+        PageContext<ListReservationGroupsRequest, ListReservationGroupsResponse, ReservationGroup>
+            context,
+        ApiFuture<ListReservationGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListReservationGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListReservationGroupsRequest,
+          ListReservationGroupsResponse,
+          ReservationGroup,
+          ListReservationGroupsPage,
+          ListReservationGroupsFixedSizeCollection> {
+
+    private ListReservationGroupsFixedSizeCollection(
+        List<ListReservationGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListReservationGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListReservationGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListReservationGroupsFixedSizeCollection createCollection(
+        List<ListReservationGroupsPage> pages, int collectionSize) {
+      return new ListReservationGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

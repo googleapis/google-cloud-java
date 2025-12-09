@@ -1,0 +1,30 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.ads.datamanager.v1",
+  "libraryPackage": "com.google.ads.datamanager.v1",
+  "services": {
+    "IngestionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IngestionServiceClient",
+          "rpcs": {
+            "IngestAudienceMembers": {
+              "methods": ["ingestAudienceMembers", "ingestAudienceMembersCallable"]
+            },
+            "IngestEvents": {
+              "methods": ["ingestEvents", "ingestEventsCallable"]
+            },
+            "RemoveAudienceMembers": {
+              "methods": ["removeAudienceMembers", "removeAudienceMembersCallable"]
+            },
+            "RetrieveRequestStatus": {
+              "methods": ["retrieveRequestStatus", "retrieveRequestStatusCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

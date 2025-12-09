@@ -90,7 +90,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance for all hosts belonging to this reservation irrespective of whether VMs are running on them or not.
+     * Trigger maintenance for all hosts belonging to this reservation
+     * irrespective of whether VMs are running on them or not.
      * </pre>
      *
      * <code>ALL = 64897;</code>
@@ -110,7 +111,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance only on the hosts belonging to this reservation which have VMs running on them.
+     * Trigger maintenance only on the hosts belonging to this reservation which
+     * have VMs running on them.
      * </pre>
      *
      * <code>RUNNING_VMS = 535770588;</code>
@@ -120,7 +122,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance only on the hosts belonging to this reservation which do not have any VMs running on them. This is not allowed for Standard ExR
+     * Trigger maintenance only on the hosts belonging to this reservation which
+     * do not have any VMs running on them. This is not allowed for Standard ExR
      * </pre>
      *
      * <code>UNUSED_CAPACITY = 212724995;</code>
@@ -144,7 +147,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance for all hosts belonging to this reservation irrespective of whether VMs are running on them or not.
+     * Trigger maintenance for all hosts belonging to this reservation
+     * irrespective of whether VMs are running on them or not.
      * </pre>
      *
      * <code>ALL = 64897;</code>
@@ -166,7 +170,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance only on the hosts belonging to this reservation which have VMs running on them.
+     * Trigger maintenance only on the hosts belonging to this reservation which
+     * have VMs running on them.
      * </pre>
      *
      * <code>RUNNING_VMS = 535770588;</code>
@@ -177,7 +182,8 @@ public final class ReservationsPerformMaintenanceRequest
      *
      *
      * <pre>
-     * Trigger maintenance only on the hosts belonging to this reservation which do not have any VMs running on them. This is not allowed for Standard ExR
+     * Trigger maintenance only on the hosts belonging to this reservation which
+     * do not have any VMs running on them. This is not allowed for Standard ExR
      * </pre>
      *
      * <code>UNUSED_CAPACITY = 212724995;</code>

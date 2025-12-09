@@ -110,6 +110,26 @@ public final class AiModel extends com.google.protobuf.GeneratedMessageV3
      * <code>GKE = 2;</code>
      */
     GKE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Google Compute Engine.
+     * </pre>
+     *
+     * <code>GCE = 3;</code>
+     */
+    GCE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Fine tuned model.
+     * </pre>
+     *
+     * <code>FINE_TUNED_MODEL = 4;</code>
+     */
+    FINE_TUNED_MODEL(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -146,6 +166,28 @@ public final class AiModel extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int GKE_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Google Compute Engine.
+     * </pre>
+     *
+     * <code>GCE = 3;</code>
+     */
+    public static final int GCE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fine tuned model.
+     * </pre>
+     *
+     * <code>FINE_TUNED_MODEL = 4;</code>
+     */
+    public static final int FINE_TUNED_MODEL_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -176,6 +218,10 @@ public final class AiModel extends com.google.protobuf.GeneratedMessageV3
           return VERTEX_AI;
         case 2:
           return GKE;
+        case 3:
+          return GCE;
+        case 4:
+          return FINE_TUNED_MODEL;
         default:
           return null;
       }

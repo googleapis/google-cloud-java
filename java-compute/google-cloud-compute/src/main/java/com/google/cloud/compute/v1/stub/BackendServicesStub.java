@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.BackendServiceListUsable;
 import com.google.cloud.compute.v1.DeleteBackendServiceRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest;
 import com.google.cloud.compute.v1.GetBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceRequest;
+import com.google.cloud.compute.v1.GetEffectiveSecurityPoliciesBackendServiceResponse;
 import com.google.cloud.compute.v1.GetHealthBackendServiceRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendServiceRequest;
 import com.google.cloud.compute.v1.InsertBackendServiceRequest;
@@ -99,6 +101,14 @@ public abstract class BackendServicesStub implements BackgroundResource {
 
   public UnaryCallable<GetBackendServiceRequest, BackendService> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<
+          GetEffectiveSecurityPoliciesBackendServiceRequest,
+          GetEffectiveSecurityPoliciesBackendServiceResponse>
+      getEffectiveSecurityPoliciesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getEffectiveSecurityPoliciesCallable()");
   }
 
   public UnaryCallable<GetHealthBackendServiceRequest, BackendServiceGroupHealth>

@@ -68,7 +68,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of subnetworks. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of subnetworks.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -382,8 +383,10 @@ public class SubnetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of subnetworks. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of subnetworks.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -413,8 +416,10 @@ public class SubnetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of subnetworks. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of subnetworks.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -435,6 +440,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
+   *           .setViews("views112204398")
    *           .build();
    *   for (Map.Entry<String, SubnetworksScopedList> element :
    *       subnetworksClient.aggregatedList(request).iterateAll()) {
@@ -453,8 +459,10 @@ public class SubnetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of subnetworks. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of subnetworks.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -475,6 +483,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
+   *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Map.Entry<String, SubnetworksScopedList>> future =
    *       subnetworksClient.aggregatedListPagedCallable().futureCall(request);
@@ -492,8 +501,10 @@ public class SubnetworksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of subnetworks. To prevent failure, Google recommends that you set
-   * the `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of subnetworks.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -514,6 +525,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
+   *           .setViews("views112204398")
    *           .build();
    *   while (true) {
    *     SubnetworkAggregatedList response =
@@ -868,6 +880,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setSubnetwork("subnetwork-1302785042")
+   *           .setViews("views112204398")
    *           .build();
    *   Subnetwork response = subnetworksClient.get(request);
    * }
@@ -898,6 +911,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setSubnetwork("subnetwork-1302785042")
+   *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Subnetwork> future = subnetworksClient.getCallable().futureCall(request);
    *   // Do something.
@@ -1190,6 +1204,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   for (Subnetwork element : subnetworksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1226,6 +1241,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Subnetwork> future = subnetworksClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -1261,6 +1277,7 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setReturnPartialSuccess(true)
+   *           .setViews("views112204398")
    *           .build();
    *   while (true) {
    *     SubnetworkList response = subnetworksClient.listCallable().call(request);

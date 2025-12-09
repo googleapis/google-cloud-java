@@ -28,7 +28,8 @@ public interface ShieldedInstanceIntegrityPolicyOrBuilder
    *
    *
    * <pre>
-   * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+   * Updates the integrity policy baseline using the
+   * measurements from the VM instance's most recent boot.
    * </pre>
    *
    * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -41,7 +42,8 @@ public interface ShieldedInstanceIntegrityPolicyOrBuilder
    *
    *
    * <pre>
-   * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+   * Updates the integrity policy baseline using the
+   * measurements from the VM instance's most recent boot.
    * </pre>
    *
    * <code>optional bool update_auto_learn_policy = 245490215;</code>

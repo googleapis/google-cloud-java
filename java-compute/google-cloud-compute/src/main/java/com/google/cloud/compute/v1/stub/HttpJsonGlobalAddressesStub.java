@@ -42,6 +42,8 @@ import com.google.cloud.compute.v1.MoveGlobalAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.SetLabelsGlobalAddressRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsGlobalAddressRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -354,6 +356,48 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.GlobalAddresses/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsGlobalAddressRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/addresses/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsGlobalAddressRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<DeleteGlobalAddressRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteGlobalAddressRequest, Operation, Operation>
       deleteOperationCallable;
@@ -369,6 +413,8 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   private final UnaryCallable<SetLabelsGlobalAddressRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationCallable;
+  private final UnaryCallable<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -485,6 +531,20 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -531,6 +591,11 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
             settings.setLabelsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -545,6 +610,7 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(moveMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -604,6 +670,12 @@ public class HttpJsonGlobalAddressesStub extends GlobalAddressesStub {
   public OperationCallable<SetLabelsGlobalAddressRequest, Operation, Operation>
       setLabelsOperationCallable() {
     return setLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

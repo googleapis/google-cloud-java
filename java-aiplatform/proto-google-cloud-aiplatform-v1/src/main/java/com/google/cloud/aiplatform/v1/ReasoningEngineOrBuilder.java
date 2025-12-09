@@ -299,4 +299,67 @@ public interface ReasoningEngineOrBuilder
    * <code>.google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 11;</code>
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for the ReasoningEngine.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 17;</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for the ReasoningEngine.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 17;</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for the ReasoningEngine.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 17;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for the ReasoningEngine.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 17;</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Labels for the ReasoningEngine.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 17;</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

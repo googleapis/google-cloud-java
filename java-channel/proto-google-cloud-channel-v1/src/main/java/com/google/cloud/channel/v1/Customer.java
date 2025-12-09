@@ -76,7 +76,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The enum represents whether a customer belongs to public sector
+   * The enum represents if a customer belongs to public sector
    * </pre>
    *
    * Protobuf enum {@code google.cloud.channel.v1.Customer.CustomerAttestationState}
@@ -981,7 +981,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicate whether a customer is attesting about the correctness of
+   * Optional. Indicate if a customer is attesting about the correctness of
    * provided information. Only required if creating a GCP Entitlement.
    * </pre>
    *
@@ -1000,7 +1000,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Indicate whether a customer is attesting about the correctness of
+   * Optional. Indicate if a customer is attesting about the correctness of
    * provided information. Only required if creating a GCP Entitlement.
    * </pre>
    *
@@ -3772,7 +3772,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicate whether a customer is attesting about the correctness of
+     * Optional. Indicate if a customer is attesting about the correctness of
      * provided information. Only required if creating a GCP Entitlement.
      * </pre>
      *
@@ -3791,7 +3791,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicate whether a customer is attesting about the correctness of
+     * Optional. Indicate if a customer is attesting about the correctness of
      * provided information. Only required if creating a GCP Entitlement.
      * </pre>
      *
@@ -3813,7 +3813,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicate whether a customer is attesting about the correctness of
+     * Optional. Indicate if a customer is attesting about the correctness of
      * provided information. Only required if creating a GCP Entitlement.
      * </pre>
      *
@@ -3838,7 +3838,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicate whether a customer is attesting about the correctness of
+     * Optional. Indicate if a customer is attesting about the correctness of
      * provided information. Only required if creating a GCP Entitlement.
      * </pre>
      *
@@ -3864,7 +3864,7 @@ public final class Customer extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Indicate whether a customer is attesting about the correctness of
+     * Optional. Indicate if a customer is attesting about the correctness of
      * provided information. Only required if creating a GCP Entitlement.
      * </pre>
      *

@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+ * A policy that specifies how requests intended for the route's backends
+ * are shadowed to a separate mirrored backend service. The load balancer
+ * doesn't wait for responses from the shadow service. Before sending traffic
+ * to the shadow service, the host or authority header is suffixed with-shadow.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
@@ -74,7 +77,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -90,7 +101,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -114,7 +133,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -134,6 +161,41 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MIRROR_PERCENT_FIELD_NUMBER = 277432261;
+  private double mirrorPercent_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return Whether the mirrorPercent field is set.
+   */
+  @java.lang.Override
+  public boolean hasMirrorPercent() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return The mirrorPercent.
+   */
+  @java.lang.Override
+  public double getMirrorPercent() {
+    return mirrorPercent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -148,6 +210,9 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeDouble(277432261, mirrorPercent_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
@@ -160,6 +225,9 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(277432261, mirrorPercent_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
@@ -183,6 +251,11 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (hasBackendService()) {
       if (!getBackendService().equals(other.getBackendService())) return false;
     }
+    if (hasMirrorPercent() != other.hasMirrorPercent()) return false;
+    if (hasMirrorPercent()) {
+      if (java.lang.Double.doubleToLongBits(getMirrorPercent())
+          != java.lang.Double.doubleToLongBits(other.getMirrorPercent())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -197,6 +270,13 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
     if (hasBackendService()) {
       hash = (37 * hash) + BACKEND_SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getBackendService().hashCode();
+    }
+    if (hasMirrorPercent()) {
+      hash = (37 * hash) + MIRROR_PERCENT_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getMirrorPercent()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -303,7 +383,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A policy that specifies how requests intended for the route's backends are shadowed to a separate mirrored backend service. The load balancer doesn't wait for responses from the shadow service. Before sending traffic to the shadow service, the host or authority header is suffixed with -shadow.
+   * A policy that specifies how requests intended for the route's backends
+   * are shadowed to a separate mirrored backend service. The load balancer
+   * doesn't wait for responses from the shadow service. Before sending traffic
+   * to the shadow service, the host or authority header is suffixed with-shadow.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.RequestMirrorPolicy}
@@ -339,6 +422,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       backendService_ = "";
+      mirrorPercent_ = 0D;
       return this;
     }
 
@@ -379,6 +463,10 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.backendService_ = backendService_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.mirrorPercent_ = mirrorPercent_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -434,6 +522,9 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasMirrorPercent()) {
+        setMirrorPercent(other.getMirrorPercent());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -460,6 +551,12 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case -2075509207:
+              {
+                mirrorPercent_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -2075509207
             case -1839398830:
               {
                 backendService_ = input.readStringRequireUtf8();
@@ -491,7 +588,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -506,7 +611,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -529,7 +642,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -552,7 +673,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -574,7 +703,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -592,7 +729,15 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+     * The full or partial URL to the BackendService resource being
+     * mirrored to.
+     *
+     * The backend service configured for a mirroring
+     * policy must reference backends that are of the same type as the original
+     * backend service matched in the URL map.
+     *
+     * Serverless NEG backends are not currently supported as a mirrored
+     * backend service.
      * </pre>
      *
      * <code>optional string backend_service = 306946058;</code>
@@ -607,6 +752,78 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       backendService_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private double mirrorPercent_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of requests to be mirrored to `backend_service`.
+     * </pre>
+     *
+     * <code>optional double mirror_percent = 277432261;</code>
+     *
+     * @return Whether the mirrorPercent field is set.
+     */
+    @java.lang.Override
+    public boolean hasMirrorPercent() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of requests to be mirrored to `backend_service`.
+     * </pre>
+     *
+     * <code>optional double mirror_percent = 277432261;</code>
+     *
+     * @return The mirrorPercent.
+     */
+    @java.lang.Override
+    public double getMirrorPercent() {
+      return mirrorPercent_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of requests to be mirrored to `backend_service`.
+     * </pre>
+     *
+     * <code>optional double mirror_percent = 277432261;</code>
+     *
+     * @param value The mirrorPercent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMirrorPercent(double value) {
+
+      mirrorPercent_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of requests to be mirrored to `backend_service`.
+     * </pre>
+     *
+     * <code>optional double mirror_percent = 277432261;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMirrorPercent() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      mirrorPercent_ = 0D;
       onChanged();
       return this;
     }

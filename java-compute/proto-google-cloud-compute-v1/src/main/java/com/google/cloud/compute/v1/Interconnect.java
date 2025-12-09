@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Interconnect resource. An Interconnect resource is a dedicated connection between the Google Cloud network and your on-premises network. For more information, read the Dedicated Interconnect Overview.
+ * Represents an Interconnect resource.
+ *
+ * An Interconnect resource is a dedicated connection between the Google
+ * Cloud network and your on-premises network. For more information, read the
+ * Dedicated Interconnect Overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Interconnect}
@@ -63,6 +67,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     requestedFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selfLink_ = "";
     state_ = "";
+    subzone_ = "";
+    wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -104,6 +110,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    *
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * IF_CROSS_SITE_NETWORK
+   * IF_L2_FORWARDING
    * IF_MACSEC
    * </pre>
    *
@@ -220,7 +228,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Interconnect.InterconnectType}
@@ -404,7 +420,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Interconnect.LinkType}
@@ -434,7 +458,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 10G Ethernet, LR Optics. [(rate_bps) = 10000000000];
+     * 10G Ethernet, LR Optics.
+     * [(rate_bps) =  10000000000];
      * </pre>
      *
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
@@ -479,7 +504,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * 10G Ethernet, LR Optics. [(rate_bps) = 10000000000];
+     * 10G Ethernet, LR Optics.
+     * [(rate_bps) =  10000000000];
      * </pre>
      *
      * <code>LINK_TYPE_ETHERNET_10G_LR = 236739749;</code>
@@ -586,7 +612,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Interconnect.OperationalStatus}
@@ -606,7 +642,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect is valid, turned up, and ready to use. Attachments may be provisioned on this interconnect.
+     * The interconnect is valid, turned up, and ready to use. Attachments may
+     * be provisioned on this interconnect.
      * </pre>
      *
      * <code>OS_ACTIVE = 55721409;</code>
@@ -616,7 +653,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect has not completed turnup. No attachments may be provisioned on this interconnect.
+     * The interconnect has not completed turnup. No attachments may be
+     * provisioned on this interconnect.
      * </pre>
      *
      * <code>OS_UNPROVISIONED = 239771840;</code>
@@ -640,7 +678,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect is valid, turned up, and ready to use. Attachments may be provisioned on this interconnect.
+     * The interconnect is valid, turned up, and ready to use. Attachments may
+     * be provisioned on this interconnect.
      * </pre>
      *
      * <code>OS_ACTIVE = 55721409;</code>
@@ -651,7 +690,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect has not completed turnup. No attachments may be provisioned on this interconnect.
+     * The interconnect has not completed turnup. No attachments may be
+     * provisioned on this interconnect.
      * </pre>
      *
      * <code>OS_UNPROVISIONED = 239771840;</code>
@@ -750,6 +790,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    *
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * IF_CROSS_SITE_NETWORK
+   * IF_L2_FORWARDING
    * IF_MACSEC
    * </pre>
    *
@@ -866,7 +908,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Interconnect.State}
@@ -886,7 +937,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect is valid, turned up, and ready to use. Attachments may be provisioned on this interconnect.
+     * The interconnect is valid, turned up, and ready to use. Attachments may
+     * be provisioned on this interconnect.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -896,7 +948,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect has not completed turnup. No attachments may be provisioned on this interconnect.
+     * The interconnect has not completed turnup. No attachments may be
+     * provisioned on this interconnect.
      * </pre>
      *
      * <code>UNPROVISIONED = 517333979;</code>
@@ -920,7 +973,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect is valid, turned up, and ready to use. Attachments may be provisioned on this interconnect.
+     * The interconnect is valid, turned up, and ready to use. Attachments may
+     * be provisioned on this interconnect.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -931,7 +985,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The interconnect has not completed turnup. No attachments may be provisioned on this interconnect.
+     * The interconnect has not completed turnup. No attachments may be
+     * provisioned on this interconnect.
      * </pre>
      *
      * <code>UNPROVISIONED = 517333979;</code>
@@ -1021,6 +1076,166 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Interconnect.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.Interconnect.Subzone}
+   */
+  public enum Subzone implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SUBZONE = 0;</code>
+     */
+    UNDEFINED_SUBZONE(0),
+    /**
+     *
+     *
+     * <pre>
+     * Subzone A.
+     * </pre>
+     *
+     * <code>SUBZONE_A = 291575438;</code>
+     */
+    SUBZONE_A(291575438),
+    /**
+     *
+     *
+     * <pre>
+     * Subzone B.
+     * </pre>
+     *
+     * <code>SUBZONE_B = 291575439;</code>
+     */
+    SUBZONE_B(291575439),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_SUBZONE = 0;</code>
+     */
+    public static final int UNDEFINED_SUBZONE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Subzone A.
+     * </pre>
+     *
+     * <code>SUBZONE_A = 291575438;</code>
+     */
+    public static final int SUBZONE_A_VALUE = 291575438;
+
+    /**
+     *
+     *
+     * <pre>
+     * Subzone B.
+     * </pre>
+     *
+     * <code>SUBZONE_B = 291575439;</code>
+     */
+    public static final int SUBZONE_B_VALUE = 291575439;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Subzone valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Subzone forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_SUBZONE;
+        case 291575438:
+          return SUBZONE_A;
+        case 291575439:
+          return SUBZONE_B;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Subzone> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Subzone> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Subzone>() {
+          public Subzone findValueByNumber(int number) {
+            return Subzone.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.Interconnect.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final Subzone[] VALUES = values();
+
+    public static Subzone valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Subzone(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Interconnect.Subzone)
+  }
+
   private int bitField0_;
   public static final int AAI_ENABLED_FIELD_NUMBER = 388780363;
   private boolean aaiEnabled_ = false;
@@ -1029,7 +1244,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * Enable or disable the application awareness feature on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional bool aai_enabled = 388780363;</code>
@@ -1045,7 +1261,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable or disable the application awareness feature on this Cloud Interconnect.
+   * Enable or disable the application awareness feature on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>optional bool aai_enabled = 388780363;</code>
@@ -1064,7 +1281,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -1080,7 +1300,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   * Administrative status of the interconnect. When this is set to true, the
+   * Interconnect is functional and can carry traffic.
+   * When set to false, no packets can be carried over the interconnect and
+   * no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -1100,7 +1323,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -1118,7 +1342,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -1139,7 +1364,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration information for application awareness on this Cloud Interconnect.
+   * Configuration information for application awareness on this Cloud
+   * Interconnect.
    * </pre>
    *
    * <code>
@@ -1164,7 +1390,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1180,7 +1417,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1196,7 +1444,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1213,7 +1472,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+   * [Output only] List of features available for this Interconnect connection,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC: If present, then the Interconnect connection is
+   *    provisioned on MACsec capable hardware ports. If not present, then the
+   *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+   *    attempt to enable MACsec will fail.
+   *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+   *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+   *    VLAN attachments will fail. If not present, then the Interconnect
+   *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+   *    it for Cross-Site Networking will fail.
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -1235,7 +1505,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -1250,7 +1521,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -1266,7 +1538,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -1281,7 +1554,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -1296,7 +1570,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * circuits in this LAG.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -1317,7 +1592,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1333,7 +1609,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1357,7 +1634,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1386,7 +1664,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -1402,7 +1681,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -1426,7 +1706,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+   * Customer name, to put in the Letter of Authorization as the party
+   * authorized to request a crossconnect.
    * </pre>
    *
    * <code>optional string customer_name = 3665484;</code>
@@ -1455,7 +1736,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1471,7 +1753,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1495,7 +1778,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1614,7 +1898,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -1630,7 +1915,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -1654,7 +1940,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+   * [Output Only] IP address configured on the Google side of the Interconnect
+   * link. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string google_ip_address = 443105954;</code>
@@ -1683,7 +1970,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -1699,7 +1987,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -1723,7 +2012,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+   * [Output Only] Google reference ID to be used when raising support tickets
+   * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
    * <code>optional string google_reference_id = 534944469;</code>
@@ -1750,7 +2040,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1766,7 +2057,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1788,7 +2080,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -1803,7 +2096,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -1818,7 +2112,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -1834,7 +2129,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * to use  this Interconnect.
    * </pre>
    *
    * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -1856,7 +2152,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -1871,7 +2168,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -1886,7 +2184,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -1902,7 +2201,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Order is arbitrary and items are unique.
    * </pre>
    *
    * <code>repeated string interconnect_groups = 237049509;</code>
@@ -1923,7 +2223,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -1940,7 +2248,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -1965,7 +2281,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Type of interconnect, which can take one of the following values:
+   *
+   *    - PARTNER: A partner-managed interconnection shared between customers
+   *    though a partner.
+   *    - DEDICATED: A dedicated physical interconnection with the
+   *    customer.
+   *
+   *
+   * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
@@ -1995,7 +2319,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2011,7 +2335,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2035,7 +2359,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2064,7 +2388,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -2080,7 +2412,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -2104,7 +2444,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+   * A fingerprint for the labels being applied to this Interconnect, which
+   * is essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve an Interconnect.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -2155,7 +2503,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2179,7 +2528,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2193,7 +2543,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2214,7 +2565,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -2240,7 +2592,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -2257,7 +2617,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -2282,7 +2650,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Type of link requested, which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+   *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+   *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+   *
+   *
+   *  Note that this field indicates the speed of each of
+   * the links in the bundle, not the speed of the entire bundle.
    * Check the LinkType enum for the list of possible values.
    * </pre>
    *
@@ -2312,7 +2688,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -2328,7 +2705,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -2352,7 +2730,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+   * URL of the InterconnectLocation object that represents where this
+   * connection is to be provisioned.
    * </pre>
    *
    * <code>optional string location = 290430901;</code>
@@ -2379,7 +2758,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -2395,7 +2775,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -2413,7 +2794,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+   * Configuration that enables Media Access Control security (MACsec) on the
+   * Cloud Interconnect connection between Google and your on-premises router.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -2432,7 +2814,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+   * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+   * fails if the MACsec object is not specified.
    * </pre>
    *
    * <code>optional bool macsec_enabled = 194203812;</code>
@@ -2448,7 +2831,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+   * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+   * fails if the MACsec object is not specified.
    * </pre>
    *
    * <code>optional bool macsec_enabled = 194203812;</code>
@@ -2469,7 +2853,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2485,7 +2875,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2509,7 +2905,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2538,7 +2940,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -2554,7 +2961,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -2578,7 +2990,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+   * Email address to contact the customer NOC for operations and maintenance
+   * notifications regarding this Interconnect. If specified, this will be used
+   * for notifications in addition to all other forms described, such as
+   * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+   * required for users who sign up for Cloud Interconnect using
+   * workforce identity federation.
    * </pre>
    *
    * <code>optional string noc_contact_email = 14072832;</code>
@@ -2607,7 +3024,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -2624,7 +3051,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -2649,7 +3086,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current status of this Interconnect's functionality,
+   * which can take one of the following values:
+   *
+   *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+   *    use. Attachments may be provisioned on this Interconnect.
+   *
+   * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+   * attachments may be provisioned on this Interconnect.
+   * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+   * maintenance. No attachments may be provisioned or updated on this
+   * Interconnect.
    * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
@@ -2670,6 +3117,62 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PARAMS_FIELD_NUMBER = 78313862;
+  private com.google.cloud.compute.v1.InterconnectParams params_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  @java.lang.Override
+  public boolean hasParams() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectParams getParams() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.InterconnectParams.getDefaultInstance()
+        : params_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InterconnectParamsOrBuilder getParamsOrBuilder() {
+    return params_ == null
+        ? com.google.cloud.compute.v1.InterconnectParams.getDefaultInstance()
+        : params_;
+  }
+
   public static final int PEER_IP_ADDRESS_FIELD_NUMBER = 207735769;
 
   @SuppressWarnings("serial")
@@ -2679,7 +3182,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -2688,14 +3193,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPeerIpAddress() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -2719,7 +3226,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+   * [Output Only] IP address configured on the customer side of the
+   * Interconnect link. The customer should configure this IP address during
+   * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -2755,7 +3264,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisionedLinkCount() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -2783,7 +3292,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -2792,14 +3302,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRemoteLocation() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -2823,7 +3334,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+   * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+   * location outside of Google's network that the interconnect is connected to.
    * </pre>
    *
    * <code>optional string remote_location = 324388750;</code>
@@ -2853,7 +3365,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -2869,7 +3390,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -2885,7 +3415,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -2902,7 +3441,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+   * Optional. This parameter can be provided only with Interconnect INSERT. It
+   * isn't valid for Interconnect PATCH. List of features requested for this
+   * Interconnect connection, which can take one of the following values:
+   *
+   *    - IF_MACSEC: If specified, then the connection is created on MACsec
+   *    capable hardware ports. If not specified, non-MACsec capable ports will
+   *    also be considered.
+   *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+   *    exclusively for Cross-Site Networking. The connection can not be used for
+   *    Cross-Site Networking unless this feature is specified.
    * Check the RequestedFeatures enum for the list of possible values.
    * </pre>
    *
@@ -2922,7 +3470,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -2931,14 +3480,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRequestedLinkCount() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Target number of physical links in the link bundle, as requested by the customer.
+   * Target number of physical links in the link bundle, as requested by the
+   * customer.
    * </pre>
    *
    * <code>optional int32 requested_link_count = 45051387;</code>
@@ -2966,7 +3516,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -3003,7 +3553,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -3063,7 +3613,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3073,14 +3632,23 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3105,7 +3673,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * [Output Only] The current state of Interconnect functionality, which can
+   * take one of the following values:
+   *
+   *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+   *    Attachments may be provisioned on this Interconnect.
+   *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+   *    attachments may be provisioned on this Interconnect.
+   *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+   *    No attachments may be provisioned or updated on this
+   *    Interconnect.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3124,6 +3701,157 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int SUBZONE_FIELD_NUMBER = 280084972;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object subzone_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return Whether the subzone field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubzone() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The subzone.
+   */
+  @java.lang.Override
+  public java.lang.String getSubzone() {
+    java.lang.Object ref = subzone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      subzone_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specific subzone in the InterconnectLocation that represents where
+   * this connection is to be provisioned.
+   * Check the Subzone enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string subzone = 280084972;</code>
+   *
+   * @return The bytes for subzone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSubzoneBytes() {
+    java.lang.Object ref = subzone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      subzone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WIRE_GROUPS_FIELD_NUMBER = 40662734;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList wireGroups_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @return A list containing the wireGroups.
+   */
+  public com.google.protobuf.ProtocolStringList getWireGroupsList() {
+    return wireGroups_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @return The count of wireGroups.
+   */
+  public int getWireGroupsCount() {
+    return wireGroups_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The wireGroups at the given index.
+   */
+  public java.lang.String getWireGroups(int index) {
+    return wireGroups_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * configured to use this Interconnect. The Interconnect cannot be deleted if
+   * this list is non-empty.
+   * </pre>
+   *
+   * <code>repeated string wire_groups = 40662734;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the wireGroups at the given index.
+   */
+  public com.google.protobuf.ByteString getWireGroupsBytes(int index) {
+    return wireGroups_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3158,10 +3886,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    for (int i = 0; i < wireGroups_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40662734, wireGroups_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeInt32(45051387, requestedLinkCount_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeMessage(78313862, getParams());
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
@@ -3176,7 +3910,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
     for (int i = 0; i < interconnectGroups_.size(); i++) {
@@ -3186,16 +3920,19 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < expectedOutages_.size(); i++) {
       output.writeMessage(264484123, expectedOutages_.get(i));
     }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 280084972, subzone_);
+    }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 290430901, location_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 324388750, remoteLocation_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(388780363, aaiEnabled_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       output.writeInt32(410888565, provisionedLinkCount_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
@@ -3214,14 +3951,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     for (int i = 0; i < requestedFeatures_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 461240814, requestedFeatures_.getRaw(i));
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeBool(480964267, satisfiesPzs_);
     }
     for (int i = 0; i < availableFeatures_.size(); i++) {
@@ -3270,10 +4007,21 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    {
+      int dataSize = 0;
+      for (int i = 0; i < wireGroups_.size(); i++) {
+        dataSize += computeStringSizeNoTag(wireGroups_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getWireGroupsList().size();
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(45051387, requestedLinkCount_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
@@ -3291,7 +4039,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(201070847, operationalStatus_);
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
     {
@@ -3307,16 +4055,19 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               264484123, expectedOutages_.get(i));
     }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(280084972, subzone_);
+    }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(290430901, location_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324388750, remoteLocation_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(388780363, aaiEnabled_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(410888565, provisionedLinkCount_);
     }
@@ -3342,7 +4093,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(445675089, adminEnabled_);
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     {
@@ -3353,7 +4104,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getRequestedFeaturesList().size();
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(480964267, satisfiesPzs_);
     }
     {
@@ -3487,6 +4238,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasOperationalStatus()) {
       if (!getOperationalStatus().equals(other.getOperationalStatus())) return false;
     }
+    if (hasParams() != other.hasParams()) return false;
+    if (hasParams()) {
+      if (!getParams().equals(other.getParams())) return false;
+    }
     if (hasPeerIpAddress() != other.hasPeerIpAddress()) return false;
     if (hasPeerIpAddress()) {
       if (!getPeerIpAddress().equals(other.getPeerIpAddress())) return false;
@@ -3516,6 +4271,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       if (!getState().equals(other.getState())) return false;
     }
+    if (hasSubzone() != other.hasSubzone()) return false;
+    if (hasSubzone()) {
+      if (!getSubzone().equals(other.getSubzone())) return false;
+    }
+    if (!getWireGroupsList().equals(other.getWireGroupsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3627,6 +4387,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + OPERATIONAL_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getOperationalStatus().hashCode();
     }
+    if (hasParams()) {
+      hash = (37 * hash) + PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getParams().hashCode();
+    }
     if (hasPeerIpAddress()) {
       hash = (37 * hash) + PEER_IP_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getPeerIpAddress().hashCode();
@@ -3658,6 +4422,14 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
+    }
+    if (hasSubzone()) {
+      hash = (37 * hash) + SUBZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getSubzone().hashCode();
+    }
+    if (getWireGroupsCount() > 0) {
+      hash = (37 * hash) + WIRE_GROUPS_FIELD_NUMBER;
+      hash = (53 * hash) + getWireGroupsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3764,7 +4536,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents an Interconnect resource. An Interconnect resource is a dedicated connection between the Google Cloud network and your on-premises network. For more information, read the Dedicated Interconnect Overview.
+   * Represents an Interconnect resource.
+   *
+   * An Interconnect resource is a dedicated connection between the Google
+   * Cloud network and your on-premises network. For more information, read the
+   * Dedicated Interconnect Overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Interconnect}
@@ -3826,6 +4602,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         getCircuitInfosFieldBuilder();
         getExpectedOutagesFieldBuilder();
         getMacsecFieldBuilder();
+        getParamsFieldBuilder();
       }
     }
 
@@ -3879,6 +4656,11 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       nocContactEmail_ = "";
       operationalStatus_ = "";
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
       peerIpAddress_ = "";
       provisionedLinkCount_ = 0;
       remoteLocation_ = "";
@@ -3887,6 +4669,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzs_ = false;
       selfLink_ = "";
       state_ = "";
+      subzone_ = "";
+      wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -4045,31 +4829,31 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.peerIpAddress_ = peerIpAddress_;
+        result.params_ = paramsBuilder_ == null ? params_ : paramsBuilder_.build();
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.provisionedLinkCount_ = provisionedLinkCount_;
+        result.peerIpAddress_ = peerIpAddress_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
-        result.remoteLocation_ = remoteLocation_;
+        result.provisionedLinkCount_ = provisionedLinkCount_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.remoteLocation_ = remoteLocation_;
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         requestedFeatures_.makeImmutable();
         result.requestedFeatures_ = requestedFeatures_;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.requestedLinkCount_ = requestedLinkCount_;
-        to_bitField0_ |= 0x00400000;
-      }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.requestedLinkCount_ = requestedLinkCount_;
         to_bitField0_ |= 0x00800000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -4079,8 +4863,20 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.state_ = state_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.subzone_ = subzone_;
+        to_bitField0_ |= 0x08000000;
+      }
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        wireGroups_.makeImmutable();
+        result.wireGroups_ = wireGroups_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4299,9 +5095,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x01000000;
         onChanged();
       }
+      if (other.hasParams()) {
+        mergeParams(other.getParams());
+      }
       if (other.hasPeerIpAddress()) {
         peerIpAddress_ = other.peerIpAddress_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       if (other.hasProvisionedLinkCount()) {
@@ -4309,13 +5108,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRemoteLocation()) {
         remoteLocation_ = other.remoteLocation_;
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       if (!other.requestedFeatures_.isEmpty()) {
         if (requestedFeatures_.isEmpty()) {
           requestedFeatures_ = other.requestedFeatures_;
-          bitField0_ |= 0x10000000;
+          bitField0_ |= 0x20000000;
         } else {
           ensureRequestedFeaturesIsMutable();
           requestedFeatures_.addAll(other.requestedFeatures_);
@@ -4330,12 +5129,27 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasSubzone()) {
+        subzone_ = other.subzone_;
+        bitField1_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.wireGroups_.isEmpty()) {
+        if (wireGroups_.isEmpty()) {
+          wireGroups_ = other.wireGroups_;
+          bitField1_ |= 0x00000008;
+        } else {
+          ensureWireGroupsIsMutable();
+          wireGroups_.addAll(other.wireGroups_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -4400,16 +5214,29 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 244202930
+            case 325301874:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureWireGroupsIsMutable();
+                wireGroups_.add(s);
+                break;
+              } // case 325301874
             case 360411096:
               {
                 requestedLinkCount_ = input.readInt32();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 360411096
+            case 626510898:
+              {
+                input.readMessage(getParamsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 626510898
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 878060682
             case 1318718842:
@@ -4447,7 +5274,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case 1661886154:
               {
                 peerIpAddress_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 1661886154
             case 1896396074:
@@ -4471,6 +5298,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 2115872986
+            case -2054287518:
+              {
+                subzone_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case -2054287518
             case -1971520086:
               {
                 location_ = input.readStringRequireUtf8();
@@ -4480,7 +5313,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -1699857294:
               {
                 remoteLocation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case -1699857294
             case -1184724392:
@@ -4492,7 +5325,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -1007858776:
               {
                 provisionedLinkCount_ = input.readInt32();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case -1007858776
             case -911466526:
@@ -4530,7 +5363,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case -645248918
             case -605040782:
@@ -4543,7 +5376,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
             case -447253160:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case -447253160
             case -324212838:
@@ -4615,7 +5448,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * Enable or disable the application awareness feature on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>optional bool aai_enabled = 388780363;</code>
@@ -4631,7 +5465,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * Enable or disable the application awareness feature on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>optional bool aai_enabled = 388780363;</code>
@@ -4647,7 +5482,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * Enable or disable the application awareness feature on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>optional bool aai_enabled = 388780363;</code>
@@ -4667,7 +5503,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable the application awareness feature on this Cloud Interconnect.
+     * Enable or disable the application awareness feature on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>optional bool aai_enabled = 388780363;</code>
@@ -4687,7 +5524,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -4703,7 +5543,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -4719,7 +5562,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -4739,7 +5585,10 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     * Administrative status of the interconnect. When this is set to true, the
+     * Interconnect is functional and can carry traffic.
+     * When set to false, no packets can be carried over the interconnect and
+     * no BGP routes are exchanged over it. By default, the status is set to true.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -4765,7 +5614,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4782,7 +5632,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4807,7 +5658,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4833,7 +5685,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4857,7 +5710,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4890,7 +5744,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4912,7 +5767,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4930,7 +5786,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4953,7 +5810,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration information for application awareness on this Cloud Interconnect.
+     * Configuration information for application awareness on this Cloud
+     * Interconnect.
      * </pre>
      *
      * <code>
@@ -4991,7 +5849,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5008,7 +5877,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5024,7 +5904,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5041,7 +5932,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5058,7 +5960,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5083,7 +5996,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5107,7 +6031,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5128,7 +6063,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5148,7 +6094,18 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC If present then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present then the Interconnect connection is provisioned on non-MACsec capable ports and MACsec isn't supported and enabling MACsec fails.
+     * [Output only] List of features available for this Interconnect connection,
+     * which can take one of the following values:
+     *
+     *    - IF_MACSEC: If present, then the Interconnect connection is
+     *    provisioned on MACsec capable hardware ports. If not present, then the
+     *    Interconnect connection is provisioned on non-MACsec capable ports. Any
+     *    attempt to enable MACsec will fail.
+     *    - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is
+     *    provisioned exclusively for Cross-Site Networking. Any attempt to configure
+     *    VLAN attachments will fail. If not present, then the Interconnect
+     *    connection is not provisioned for Cross-Site Networking. Any attempt to use
+     *    it for Cross-Site Networking will fail.
      * Check the AvailableFeatures enum for the list of possible values.
      * </pre>
      *
@@ -5191,7 +6148,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5210,7 +6168,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5228,7 +6187,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5246,7 +6206,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5271,7 +6232,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5293,7 +6255,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5317,7 +6280,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5342,7 +6306,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5364,7 +6329,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5386,7 +6352,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5408,7 +6375,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5429,7 +6397,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5450,7 +6419,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5465,7 +6435,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5484,7 +6455,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5503,7 +6475,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5518,7 +6491,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5535,7 +6509,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * circuits in this LAG.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectCircuitInfo circuit_infos = 164839855;
@@ -5569,7 +6544,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5584,7 +6560,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5607,7 +6584,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5630,7 +6608,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5652,7 +6631,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5670,7 +6650,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -5695,7 +6676,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5710,7 +6692,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5733,7 +6716,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5756,7 +6740,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5778,7 +6763,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5796,7 +6782,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
+     * Customer name, to put in the Letter of Authorization as the party
+     * authorized to request a crossconnect.
      * </pre>
      *
      * <code>optional string customer_name = 3665484;</code>
@@ -5821,7 +6808,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5836,7 +6824,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5859,7 +6848,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5882,7 +6872,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5904,7 +6895,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5922,7 +6914,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -6371,7 +7364,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6386,7 +7380,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6409,7 +7404,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6432,7 +7428,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6454,7 +7451,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6472,7 +7470,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
+     * [Output Only] IP address configured on the Google side of the Interconnect
+     * link. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string google_ip_address = 443105954;</code>
@@ -6497,7 +7496,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6512,7 +7512,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6535,7 +7536,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6558,7 +7560,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6580,7 +7583,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6598,7 +7602,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
+     * [Output Only] Google reference ID to be used when raising support tickets
+     * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
      * <code>optional string google_reference_id = 534944469;</code>
@@ -6623,7 +7628,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -6639,7 +7645,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -6655,7 +7662,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -6675,7 +7683,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -6704,7 +7713,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6720,7 +7730,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6735,7 +7746,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6751,7 +7763,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6767,7 +7780,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6791,7 +7805,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6814,7 +7829,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6834,7 +7850,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6853,7 +7870,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * to use  this Interconnect.
      * </pre>
      *
      * <code>repeated string interconnect_attachments = 425388415;</code>
@@ -6887,7 +7905,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6903,7 +7922,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6918,7 +7938,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6934,7 +7955,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6950,7 +7972,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6974,7 +7997,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -6997,7 +8021,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -7017,7 +8042,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -7036,7 +8062,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
+     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Order is arbitrary and items are unique.
      * </pre>
      *
      * <code>repeated string interconnect_groups = 237049509;</code>
@@ -7062,7 +8089,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7078,7 +8113,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7102,7 +8145,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7126,7 +8177,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7149,7 +8208,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7168,7 +8235,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Type of interconnect, which can take one of the following values:
+     *
+     *    - PARTNER: A partner-managed interconnection shared between customers
+     *    though a partner.
+     *    - DEDICATED: A dedicated physical interconnection with the
+     *    customer.
+     *
+     *
+     * Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
      * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
@@ -7194,7 +8269,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7209,7 +8284,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7232,7 +8307,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7255,7 +8330,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7277,7 +8352,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7295,7 +8370,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#interconnect for interconnects.
+     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -7320,7 +8395,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7335,7 +8418,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7358,7 +8449,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7381,7 +8480,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7403,7 +8510,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7421,7 +8536,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
+     * A fingerprint for the labels being applied to this Interconnect, which
+     * is essentially a hash of the labels set used for optimistic locking. The
+     * fingerprint is initially generated by Compute Engine and changes after
+     * every request to modify or update labels. You must always provide an
+     * up-to-date fingerprint hash in order to update or change labels,
+     * otherwise the request will fail with error412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve an Interconnect.
      * </pre>
      *
      * <code>optional string label_fingerprint = 178124825;</code>
@@ -7470,7 +8593,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7494,7 +8618,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7508,7 +8633,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7529,7 +8655,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7556,7 +8683,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7580,7 +8708,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7601,7 +8730,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+     * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+     * Label values may be empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -7618,7 +8748,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7634,7 +8772,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7658,7 +8804,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7682,7 +8836,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7705,7 +8867,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7724,7 +8894,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Type of link requested, which can take one of the following values:
+     *
+     *    - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics
+     *    - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics.
+     *    - LINK_TYPE_ETHERNET_400G_LR4: A 400G Ethernet with LR4 optics.
+     *
+     *
+     *  Note that this field indicates the speed of each of
+     * the links in the bundle, not the speed of the entire bundle.
      * Check the LinkType enum for the list of possible values.
      * </pre>
      *
@@ -7750,7 +8928,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7765,7 +8944,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7788,7 +8968,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7811,7 +8992,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7833,7 +9015,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7851,7 +9034,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
+     * URL of the InterconnectLocation object that represents where this
+     * connection is to be provisioned.
      * </pre>
      *
      * <code>optional string location = 290430901;</code>
@@ -7881,7 +9065,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -7896,7 +9081,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -7917,7 +9103,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -7940,7 +9127,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -7961,7 +9149,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -7989,7 +9178,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -8009,7 +9199,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -8024,7 +9215,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -8043,7 +9235,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Configuration that enables Media Access Control security (MACsec) on the Cloud Interconnect connection between Google and your on-premises router.
+     * Configuration that enables Media Access Control security (MACsec) on the
+     * Cloud Interconnect connection between Google and your on-premises router.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.InterconnectMacsec macsec = 528867490;</code>
@@ -8071,7 +9264,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+     * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+     * fails if the MACsec object is not specified.
      * </pre>
      *
      * <code>optional bool macsec_enabled = 194203812;</code>
@@ -8087,7 +9281,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+     * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+     * fails if the MACsec object is not specified.
      * </pre>
      *
      * <code>optional bool macsec_enabled = 194203812;</code>
@@ -8103,7 +9298,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+     * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+     * fails if the MACsec object is not specified.
      * </pre>
      *
      * <code>optional bool macsec_enabled = 194203812;</code>
@@ -8123,7 +9319,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Enable or disable MACsec on this Interconnect connection. MACsec enablement fails if the MACsec object is not specified.
+     * Enable or disable MACsec on this Interconnect connection. MACsec enablement
+     * fails if the MACsec object is not specified.
      * </pre>
      *
      * <code>optional bool macsec_enabled = 194203812;</code>
@@ -8143,7 +9340,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8158,7 +9361,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8181,7 +9390,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8204,7 +9419,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8226,7 +9447,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8244,7 +9471,13 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -8269,7 +9502,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8284,7 +9522,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8307,7 +9550,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8330,7 +9578,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8352,7 +9605,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8370,7 +9628,12 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
+     * Email address to contact the customer NOC for operations and maintenance
+     * notifications regarding this Interconnect. If specified, this will be used
+     * for notifications in addition to all other forms described, such as
+     * Cloud Monitoring logs alerting and Cloud Notifications. This field is
+     * required for users who sign up for Cloud Interconnect using
+     * workforce identity federation.
      * </pre>
      *
      * <code>optional string noc_contact_email = 14072832;</code>
@@ -8395,7 +9658,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8411,7 +9684,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8435,7 +9718,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8459,7 +9752,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8482,7 +9785,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8501,7 +9814,17 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current status of this Interconnect's functionality,
+     * which can take one of the following values:
+     *
+     *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
+     *    use. Attachments may be provisioned on this Interconnect.
+     *
+     * - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No
+     * attachments may be provisioned on this Interconnect.
+     * - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal
+     * maintenance. No attachments may be provisioned or updated on this
+     * Interconnect.
      * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
@@ -8521,20 +9844,26 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object peerIpAddress_ = "";
+    private com.google.cloud.compute.v1.InterconnectParams params_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectParams,
+            com.google.cloud.compute.v1.InterconnectParams.Builder,
+            com.google.cloud.compute.v1.InterconnectParamsOrBuilder>
+        paramsBuilder_;
 
     /**
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
-     * <code>optional string peer_ip_address = 207735769;</code>
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
      *
-     * @return Whether the peerIpAddress field is set.
+     * @return Whether the params field is set.
      */
-    public boolean hasPeerIpAddress() {
+    public boolean hasParams() {
       return ((bitField0_ & 0x02000000) != 0);
     }
 
@@ -8542,7 +9871,209 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     *
+     * @return The params.
+     */
+    public com.google.cloud.compute.v1.InterconnectParams getParams() {
+      if (paramsBuilder_ == null) {
+        return params_ == null
+            ? com.google.cloud.compute.v1.InterconnectParams.getDefaultInstance()
+            : params_;
+      } else {
+        return paramsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public Builder setParams(com.google.cloud.compute.v1.InterconnectParams value) {
+      if (paramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        params_ = value;
+      } else {
+        paramsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public Builder setParams(
+        com.google.cloud.compute.v1.InterconnectParams.Builder builderForValue) {
+      if (paramsBuilder_ == null) {
+        params_ = builderForValue.build();
+      } else {
+        paramsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public Builder mergeParams(com.google.cloud.compute.v1.InterconnectParams value) {
+      if (paramsBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && params_ != null
+            && params_ != com.google.cloud.compute.v1.InterconnectParams.getDefaultInstance()) {
+          getParamsBuilder().mergeFrom(value);
+        } else {
+          params_ = value;
+        }
+      } else {
+        paramsBuilder_.mergeFrom(value);
+      }
+      if (params_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public Builder clearParams() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      params_ = null;
+      if (paramsBuilder_ != null) {
+        paramsBuilder_.dispose();
+        paramsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.InterconnectParams.Builder getParamsBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getParamsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    public com.google.cloud.compute.v1.InterconnectParamsOrBuilder getParamsOrBuilder() {
+      if (paramsBuilder_ != null) {
+        return paramsBuilder_.getMessageOrBuilder();
+      } else {
+        return params_ == null
+            ? com.google.cloud.compute.v1.InterconnectParams.getDefaultInstance()
+            : params_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.InterconnectParams params = 78313862;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.InterconnectParams,
+            com.google.cloud.compute.v1.InterconnectParams.Builder,
+            com.google.cloud.compute.v1.InterconnectParamsOrBuilder>
+        getParamsFieldBuilder() {
+      if (paramsBuilder_ == null) {
+        paramsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.InterconnectParams,
+                com.google.cloud.compute.v1.InterconnectParams.Builder,
+                com.google.cloud.compute.v1.InterconnectParamsOrBuilder>(
+                getParams(), getParentForChildren(), isClean());
+        params_ = null;
+      }
+      return paramsBuilder_;
+    }
+
+    private java.lang.Object peerIpAddress_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
+     * </pre>
+     *
+     * <code>optional string peer_ip_address = 207735769;</code>
+     *
+     * @return Whether the peerIpAddress field is set.
+     */
+    public boolean hasPeerIpAddress() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -8565,7 +10096,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -8588,7 +10121,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -8601,7 +10136,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       peerIpAddress_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8610,7 +10145,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -8619,7 +10156,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPeerIpAddress() {
       peerIpAddress_ = getDefaultInstance().getPeerIpAddress();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       onChanged();
       return this;
     }
@@ -8628,7 +10165,9 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
+     * [Output Only] IP address configured on the customer side of the
+     * Interconnect link. The customer should configure this IP address during
+     * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
      *
      * <code>optional string peer_ip_address = 207735769;</code>
@@ -8642,7 +10181,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       peerIpAddress_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -8662,7 +10201,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasProvisionedLinkCount() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -8696,7 +10235,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setProvisionedLinkCount(int value) {
 
       provisionedLinkCount_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8713,7 +10252,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearProvisionedLinkCount() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       provisionedLinkCount_ = 0;
       onChanged();
       return this;
@@ -8725,7 +10264,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8733,14 +10273,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the remoteLocation field is set.
      */
     public boolean hasRemoteLocation() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8763,7 +10304,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8786,7 +10328,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8799,7 +10342,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       remoteLocation_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8808,7 +10351,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8817,7 +10361,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRemoteLocation() {
       remoteLocation_ = getDefaultInstance().getRemoteLocation();
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -8826,7 +10370,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
+     * Indicates that this is a Cross-Cloud Interconnect. This field specifies the
+     * location outside of Google's network that the interconnect is connected to.
      * </pre>
      *
      * <code>optional string remote_location = 324388750;</code>
@@ -8840,7 +10385,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       remoteLocation_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8852,14 +10397,23 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       if (!requestedFeatures_.isModifiable()) {
         requestedFeatures_ = new com.google.protobuf.LazyStringArrayList(requestedFeatures_);
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8876,7 +10430,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8892,7 +10455,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8909,7 +10481,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8926,7 +10507,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8942,7 +10532,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.set(index, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8951,7 +10541,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8966,7 +10565,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8975,7 +10574,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -8987,7 +10595,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllRequestedFeatures(java.lang.Iterable<java.lang.String> values) {
       ensureRequestedFeaturesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, requestedFeatures_);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8996,7 +10604,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -9006,7 +10623,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRequestedFeatures() {
       requestedFeatures_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       ;
       onChanged();
       return this;
@@ -9016,7 +10633,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC If specified then the connection is created on MACsec capable hardware ports. If not specified, the default value is false, which allocates non-MACsec capable ports first if available. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH.
+     * Optional. This parameter can be provided only with Interconnect INSERT. It
+     * isn't valid for Interconnect PATCH. List of features requested for this
+     * Interconnect connection, which can take one of the following values:
+     *
+     *    - IF_MACSEC: If specified, then the connection is created on MACsec
+     *    capable hardware ports. If not specified, non-MACsec capable ports will
+     *    also be considered.
+     *    - IF_CROSS_SITE_NETWORK: If specified, then the connection is created
+     *    exclusively for Cross-Site Networking. The connection can not be used for
+     *    Cross-Site Networking unless this feature is specified.
      * Check the RequestedFeatures enum for the list of possible values.
      * </pre>
      *
@@ -9032,7 +10658,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureRequestedFeaturesIsMutable();
       requestedFeatures_.add(value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -9043,7 +10669,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -9052,14 +10679,15 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasRequestedLinkCount() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -9075,7 +10703,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -9086,7 +10715,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setRequestedLinkCount(int value) {
 
       requestedLinkCount_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -9095,7 +10724,8 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Target number of physical links in the link bundle, as requested by the customer.
+     * Target number of physical links in the link bundle, as requested by the
+     * customer.
      * </pre>
      *
      * <code>optional int32 requested_link_count = 45051387;</code>
@@ -9103,7 +10733,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRequestedLinkCount() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       requestedLinkCount_ = 0;
       onChanged();
       return this;
@@ -9124,7 +10754,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -9158,7 +10788,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -9175,7 +10805,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -9195,7 +10825,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -9261,7 +10891,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9279,7 +10909,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -9302,7 +10932,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -9313,7 +10943,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9322,14 +10961,23 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9353,7 +11001,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9377,7 +11034,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9391,7 +11057,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       state_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -9400,7 +11066,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9410,7 +11085,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -9419,7 +11094,16 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * [Output Only] The current state of Interconnect functionality, which can
+     * take one of the following values:
+     *
+     *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
+     *    Attachments may be provisioned on this Interconnect.
+     *    - UNPROVISIONED: The Interconnect has not completed turnup. No
+     *    attachments may be provisioned on this Interconnect.
+     *    - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance.
+     *    No attachments may be provisioned or updated on this
+     *    Interconnect.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -9434,7 +11118,346 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object subzone_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return Whether the subzone field is set.
+     */
+    public boolean hasSubzone() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return The subzone.
+     */
+    public java.lang.String getSubzone() {
+      java.lang.Object ref = subzone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subzone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return The bytes for subzone.
+     */
+    public com.google.protobuf.ByteString getSubzoneBytes() {
+      java.lang.Object ref = subzone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subzone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @param value The subzone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubzone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      subzone_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubzone() {
+      subzone_ = getDefaultInstance().getSubzone();
+      bitField1_ = (bitField1_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specific subzone in the InterconnectLocation that represents where
+     * this connection is to be provisioned.
+     * Check the Subzone enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string subzone = 280084972;</code>
+     *
+     * @param value The bytes for subzone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubzoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      subzone_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList wireGroups_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureWireGroupsIsMutable() {
+      if (!wireGroups_.isModifiable()) {
+        wireGroups_ = new com.google.protobuf.LazyStringArrayList(wireGroups_);
+      }
+      bitField1_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @return A list containing the wireGroups.
+     */
+    public com.google.protobuf.ProtocolStringList getWireGroupsList() {
+      wireGroups_.makeImmutable();
+      return wireGroups_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @return The count of wireGroups.
+     */
+    public int getWireGroupsCount() {
+      return wireGroups_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The wireGroups at the given index.
+     */
+    public java.lang.String getWireGroups(int index) {
+      return wireGroups_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the wireGroups at the given index.
+     */
+    public com.google.protobuf.ByteString getWireGroupsBytes(int index) {
+      return wireGroups_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The wireGroups to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWireGroups(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWireGroupsIsMutable();
+      wireGroups_.set(index, value);
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param value The wireGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWireGroups(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureWireGroupsIsMutable();
+      wireGroups_.add(value);
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param values The wireGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllWireGroups(java.lang.Iterable<java.lang.String> values) {
+      ensureWireGroupsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, wireGroups_);
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWireGroups() {
+      wireGroups_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * configured to use this Interconnect. The Interconnect cannot be deleted if
+     * this list is non-empty.
+     * </pre>
+     *
+     * <code>repeated string wire_groups = 40662734;</code>
+     *
+     * @param value The bytes of the wireGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addWireGroupsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureWireGroupsIsMutable();
+      wireGroups_.add(value);
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }

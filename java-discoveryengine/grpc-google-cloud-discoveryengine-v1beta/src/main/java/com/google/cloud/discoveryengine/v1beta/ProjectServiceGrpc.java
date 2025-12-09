@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Project][google.cloud.discoveryengine.v1beta.Project].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/project_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectServiceGrpc {
 
@@ -255,8 +252,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation provisionProject(
-        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.ProvisionProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProvisionProjectMethod(), getCallOptions(), request);
     }
   }

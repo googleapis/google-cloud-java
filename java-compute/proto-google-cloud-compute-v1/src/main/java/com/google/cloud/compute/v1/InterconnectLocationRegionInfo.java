@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Information about any potential InterconnectAttachments between an Interconnect at a specific InterconnectLocation, and a specific Cloud Region.
+ * Information about any potential InterconnectAttachments between an
+ * Interconnect at a specific InterconnectLocation, and a specific Cloud
+ * Region.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectLocationRegionInfo}
@@ -90,7 +92,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This region is not in any common network presence with this InterconnectLocation.
+     * This region is not in any common network presence with this
+     * InterconnectLocation.
      * </pre>
      *
      * <code>GLOBAL = 494663587;</code>
@@ -100,7 +103,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This region shares the same regional network presence as this InterconnectLocation.
+     * This region shares the same regional network presence as this
+     * InterconnectLocation.
      * </pre>
      *
      * <code>LOCAL_REGION = 403535464;</code>
@@ -110,7 +114,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This region is not in any common network presence with this InterconnectLocation.
+     * [Deprecated] This region is not in any common network presence with
+     * this InterconnectLocation.
      * </pre>
      *
      * <code>LP_GLOBAL = 429584062;</code>
@@ -120,7 +125,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This region shares the same regional network presence as this InterconnectLocation.
+     * [Deprecated] This region shares the same regional network presence as
+     * this InterconnectLocation.
      * </pre>
      *
      * <code>LP_LOCAL_REGION = 488598851;</code>
@@ -144,7 +150,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This region is not in any common network presence with this InterconnectLocation.
+     * This region is not in any common network presence with this
+     * InterconnectLocation.
      * </pre>
      *
      * <code>GLOBAL = 494663587;</code>
@@ -155,7 +162,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * This region shares the same regional network presence as this InterconnectLocation.
+     * This region shares the same regional network presence as this
+     * InterconnectLocation.
      * </pre>
      *
      * <code>LOCAL_REGION = 403535464;</code>
@@ -166,7 +174,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This region is not in any common network presence with this InterconnectLocation.
+     * [Deprecated] This region is not in any common network presence with
+     * this InterconnectLocation.
      * </pre>
      *
      * <code>LP_GLOBAL = 429584062;</code>
@@ -177,7 +186,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Deprecated] This region shares the same regional network presence as this InterconnectLocation.
+     * [Deprecated] This region shares the same regional network presence as
+     * this InterconnectLocation.
      * </pre>
      *
      * <code>LP_LOCAL_REGION = 488598851;</code>
@@ -283,7 +293,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * to a VM in this region.
    * </pre>
    *
    * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -299,7 +310,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * to a VM in this region.
    * </pre>
    *
    * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -309,6 +321,43 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
   @java.lang.Override
   public long getExpectedRttMs() {
     return expectedRttMs_;
+  }
+
+  public static final int L2_FORWARDING_ENABLED_FIELD_NUMBER = 241364888;
+  private boolean l2ForwardingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies whether L2 Interconnect Attachments can be created in this
+   * region for interconnects that are in this location.
+   * </pre>
+   *
+   * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+   *
+   * @return Whether the l2ForwardingEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasL2ForwardingEnabled() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifies whether L2 Interconnect Attachments can be created in this
+   * region for interconnects that are in this location.
+   * </pre>
+   *
+   * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+   *
+   * @return The l2ForwardingEnabled.
+   */
+  @java.lang.Override
+  public boolean getL2ForwardingEnabled() {
+    return l2ForwardingEnabled_;
   }
 
   public static final int LOCATION_PRESENCE_FIELD_NUMBER = 101517893;
@@ -330,7 +379,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public boolean hasLocationPresence() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -401,7 +450,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -466,11 +515,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 101517893, locationPresence_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(241364888, l2ForwardingEnabled_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(422543866, expectedRttMs_);
@@ -484,12 +536,16 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(101517893, locationPresence_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(241364888, l2ForwardingEnabled_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(422543866, expectedRttMs_);
@@ -514,6 +570,10 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     if (hasExpectedRttMs()) {
       if (getExpectedRttMs() != other.getExpectedRttMs()) return false;
     }
+    if (hasL2ForwardingEnabled() != other.hasL2ForwardingEnabled()) return false;
+    if (hasL2ForwardingEnabled()) {
+      if (getL2ForwardingEnabled() != other.getL2ForwardingEnabled()) return false;
+    }
     if (hasLocationPresence() != other.hasLocationPresence()) return false;
     if (hasLocationPresence()) {
       if (!getLocationPresence().equals(other.getLocationPresence())) return false;
@@ -536,6 +596,10 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     if (hasExpectedRttMs()) {
       hash = (37 * hash) + EXPECTED_RTT_MS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExpectedRttMs());
+    }
+    if (hasL2ForwardingEnabled()) {
+      hash = (37 * hash) + L2_FORWARDING_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getL2ForwardingEnabled());
     }
     if (hasLocationPresence()) {
       hash = (37 * hash) + LOCATION_PRESENCE_FIELD_NUMBER;
@@ -651,7 +715,9 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Information about any potential InterconnectAttachments between an Interconnect at a specific InterconnectLocation, and a specific Cloud Region.
+   * Information about any potential InterconnectAttachments between an
+   * Interconnect at a specific InterconnectLocation, and a specific Cloud
+   * Region.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectLocationRegionInfo}
@@ -687,6 +753,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       super.clear();
       bitField0_ = 0;
       expectedRttMs_ = 0L;
+      l2ForwardingEnabled_ = false;
       locationPresence_ = "";
       region_ = "";
       return this;
@@ -731,12 +798,16 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.locationPresence_ = locationPresence_;
+        result.l2ForwardingEnabled_ = l2ForwardingEnabled_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.region_ = region_;
+        result.locationPresence_ = locationPresence_;
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.region_ = region_;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -790,14 +861,17 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       if (other.hasExpectedRttMs()) {
         setExpectedRttMs(other.getExpectedRttMs());
       }
+      if (other.hasL2ForwardingEnabled()) {
+        setL2ForwardingEnabled(other.getL2ForwardingEnabled());
+      }
       if (other.hasLocationPresence()) {
         locationPresence_ = other.locationPresence_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -829,15 +903,21 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
             case 812143146:
               {
                 locationPresence_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 812143146
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
+            case 1930919104:
+              {
+                l2ForwardingEnabled_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1930919104
             case -914616368:
               {
                 expectedRttMs_ = input.readInt64();
@@ -869,7 +949,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * to a VM in this region.
      * </pre>
      *
      * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -885,7 +966,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * to a VM in this region.
      * </pre>
      *
      * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -901,7 +983,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * to a VM in this region.
      * </pre>
      *
      * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -921,7 +1004,8 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
+     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * to a VM in this region.
      * </pre>
      *
      * <code>optional int64 expected_rtt_ms = 422543866;</code>
@@ -931,6 +1015,82 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     public Builder clearExpectedRttMs() {
       bitField0_ = (bitField0_ & ~0x00000001);
       expectedRttMs_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private boolean l2ForwardingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies whether L2 Interconnect Attachments can be created in this
+     * region for interconnects that are in this location.
+     * </pre>
+     *
+     * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+     *
+     * @return Whether the l2ForwardingEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasL2ForwardingEnabled() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies whether L2 Interconnect Attachments can be created in this
+     * region for interconnects that are in this location.
+     * </pre>
+     *
+     * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+     *
+     * @return The l2ForwardingEnabled.
+     */
+    @java.lang.Override
+    public boolean getL2ForwardingEnabled() {
+      return l2ForwardingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies whether L2 Interconnect Attachments can be created in this
+     * region for interconnects that are in this location.
+     * </pre>
+     *
+     * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+     *
+     * @param value The l2ForwardingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setL2ForwardingEnabled(boolean value) {
+
+      l2ForwardingEnabled_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Identifies whether L2 Interconnect Attachments can be created in this
+     * region for interconnects that are in this location.
+     * </pre>
+     *
+     * <code>optional bool l2_forwarding_enabled = 241364888;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearL2ForwardingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      l2ForwardingEnabled_ = false;
       onChanged();
       return this;
     }
@@ -950,7 +1110,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return Whether the locationPresence field is set.
      */
     public boolean hasLocationPresence() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1019,7 +1179,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       locationPresence_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1038,7 +1198,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      */
     public Builder clearLocationPresence() {
       locationPresence_ = getDefaultInstance().getLocationPresence();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1062,7 +1222,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       locationPresence_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1081,7 +1241,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1147,7 +1307,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1165,7 +1325,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1188,7 +1348,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

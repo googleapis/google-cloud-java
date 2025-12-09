@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A Job is a multi-stage computation graph run by the Cloud Dataflow service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/dataflow/v1beta3/jobs.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class JobsV1Beta3Grpc {
 
@@ -727,8 +724,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job createJob(
-        com.google.dataflow.v1beta3.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -744,9 +741,9 @@ public final class JobsV1Beta3Grpc {
      * jobs that are running in `us-central1`.
      * </pre>
      */
-    public com.google.dataflow.v1beta3.Job getJob(
-        com.google.dataflow.v1beta3.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.dataflow.v1beta3.Job getJob(com.google.dataflow.v1beta3.GetJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -763,8 +760,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Job updateJob(
-        com.google.dataflow.v1beta3.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -785,8 +782,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse listJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -800,8 +797,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.ListJobsResponse aggregatedListJobs(
-        com.google.dataflow.v1beta3.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregatedListJobsMethod(), getCallOptions(), request);
     }
 
@@ -813,8 +810,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.CheckActiveJobsResponse checkActiveJobs(
-        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.CheckActiveJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckActiveJobsMethod(), getCallOptions(), request);
     }
 
@@ -826,8 +823,8 @@ public final class JobsV1Beta3Grpc {
      * </pre>
      */
     public com.google.dataflow.v1beta3.Snapshot snapshotJob(
-        com.google.dataflow.v1beta3.SnapshotJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.dataflow.v1beta3.SnapshotJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSnapshotJobMethod(), getCallOptions(), request);
     }
   }

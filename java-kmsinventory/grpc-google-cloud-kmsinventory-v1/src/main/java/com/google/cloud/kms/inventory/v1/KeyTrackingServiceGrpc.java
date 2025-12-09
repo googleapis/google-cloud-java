@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * given Cloud KMS key via CMEK.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/kms/inventory/v1/key_tracking_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class KeyTrackingServiceGrpc {
 
@@ -355,8 +352,9 @@ public final class KeyTrackingServiceGrpc {
      * </pre>
      */
     public com.google.cloud.kms.inventory.v1.ProtectedResourcesSummary getProtectedResourcesSummary(
-        com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.kms.inventory.v1.GetProtectedResourcesSummaryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProtectedResourcesSummaryMethod(), getCallOptions(), request);
     }
 
@@ -370,8 +368,9 @@ public final class KeyTrackingServiceGrpc {
      */
     public com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse
         searchProtectedResources(
-            com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchProtectedResourcesMethod(), getCallOptions(), request);
     }
   }

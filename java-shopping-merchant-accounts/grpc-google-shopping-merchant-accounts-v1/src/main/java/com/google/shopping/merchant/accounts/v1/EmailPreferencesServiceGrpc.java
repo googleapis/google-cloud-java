@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support the `EmailPreferences` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/emailpreferences.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EmailPreferencesServiceGrpc {
 
@@ -361,8 +358,9 @@ public final class EmailPreferencesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.EmailPreferences getEmailPreferences(
-        com.google.shopping.merchant.accounts.v1.GetEmailPreferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetEmailPreferencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEmailPreferencesMethod(), getCallOptions(), request);
     }
 
@@ -382,8 +380,9 @@ public final class EmailPreferencesServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.EmailPreferences updateEmailPreferences(
-        com.google.shopping.merchant.accounts.v1.UpdateEmailPreferencesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateEmailPreferencesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEmailPreferencesMethod(), getCallOptions(), request);
     }
   }

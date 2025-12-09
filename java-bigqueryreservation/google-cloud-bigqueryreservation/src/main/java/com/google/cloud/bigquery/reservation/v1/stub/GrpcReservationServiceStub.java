@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1.stub;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -34,23 +35,29 @@ import com.google.cloud.bigquery.reservation.v1.BiReservation;
 import com.google.cloud.bigquery.reservation.v1.CapacityCommitment;
 import com.google.cloud.bigquery.reservation.v1.CreateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.CreateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.CreateReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.DeleteReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.DeleteReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.GetCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.GetReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.GetReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListCapacityCommitmentsResponse;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsRequest;
+import com.google.cloud.bigquery.reservation.v1.ListReservationGroupsResponse;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsRequest;
 import com.google.cloud.bigquery.reservation.v1.ListReservationsResponse;
 import com.google.cloud.bigquery.reservation.v1.MergeCapacityCommitmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.MoveAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
+import com.google.cloud.bigquery.reservation.v1.ReservationGroup;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsRequest;
 import com.google.cloud.bigquery.reservation.v1.SearchAllAssignmentsResponse;
 import com.google.cloud.bigquery.reservation.v1.SearchAssignmentsRequest;
@@ -61,6 +68,11 @@ import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -351,6 +363,86 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.bigquery.reservation.v1.ReservationService/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.bigquery.reservation.v1.ReservationService/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/TestIamPermissions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupMethodDescriptor =
+          MethodDescriptor.<CreateReservationGroupRequest, ReservationGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/CreateReservationGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateReservationGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReservationGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupMethodDescriptor =
+          MethodDescriptor.<GetReservationGroupRequest, ReservationGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/GetReservationGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetReservationGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ReservationGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteReservationGroupRequest, Empty>
+      deleteReservationGroupMethodDescriptor =
+          MethodDescriptor.<DeleteReservationGroupRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/DeleteReservationGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteReservationGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsMethodDescriptor =
+          MethodDescriptor.<ListReservationGroupsRequest, ListReservationGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/ListReservationGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListReservationGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListReservationGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable;
@@ -395,6 +487,19 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   private final UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable;
   private final UnaryCallable<UpdateBiReservationRequest, BiReservation>
       updateBiReservationCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
+  private final UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable;
+  private final UnaryCallable<GetReservationGroupRequest, ReservationGroup>
+      getReservationGroupCallable;
+  private final UnaryCallable<DeleteReservationGroupRequest, Empty> deleteReservationGroupCallable;
+  private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable;
+  private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -679,6 +784,81 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateReservationGroupRequest, ReservationGroup>
+        createReservationGroupTransportSettings =
+            GrpcCallSettings.<CreateReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(createReservationGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetReservationGroupRequest, ReservationGroup>
+        getReservationGroupTransportSettings =
+            GrpcCallSettings.<GetReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(getReservationGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteReservationGroupRequest, Empty> deleteReservationGroupTransportSettings =
+        GrpcCallSettings.<DeleteReservationGroupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteReservationGroupMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListReservationGroupsRequest, ListReservationGroupsResponse>
+        listReservationGroupsTransportSettings =
+            GrpcCallSettings
+                .<ListReservationGroupsRequest, ListReservationGroupsResponse>newBuilder()
+                .setMethodDescriptor(listReservationGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createReservationCallable =
         callableFactory.createUnaryCallable(
@@ -794,6 +974,42 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
         callableFactory.createUnaryCallable(
             updateBiReservationTransportSettings,
             settings.updateBiReservationSettings(),
+            clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
+    this.createReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            createReservationGroupTransportSettings,
+            settings.createReservationGroupSettings(),
+            clientContext);
+    this.getReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            getReservationGroupTransportSettings,
+            settings.getReservationGroupSettings(),
+            clientContext);
+    this.deleteReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteReservationGroupTransportSettings,
+            settings.deleteReservationGroupSettings(),
+            clientContext);
+    this.listReservationGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listReservationGroupsTransportSettings,
+            settings.listReservationGroupsSettings(),
+            clientContext);
+    this.listReservationGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listReservationGroupsTransportSettings,
+            settings.listReservationGroupsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -951,6 +1167,50 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
   @Override
   public UnaryCallable<UpdateBiReservationRequest, BiReservation> updateBiReservationCallable() {
     return updateBiReservationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateReservationGroupRequest, ReservationGroup>
+      createReservationGroupCallable() {
+    return createReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetReservationGroupRequest, ReservationGroup> getReservationGroupCallable() {
+    return getReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteReservationGroupRequest, Empty> deleteReservationGroupCallable() {
+    return deleteReservationGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsResponse>
+      listReservationGroupsCallable() {
+    return listReservationGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
+      listReservationGroupsPagedCallable() {
+    return listReservationGroupsPagedCallable;
   }
 
   @Override

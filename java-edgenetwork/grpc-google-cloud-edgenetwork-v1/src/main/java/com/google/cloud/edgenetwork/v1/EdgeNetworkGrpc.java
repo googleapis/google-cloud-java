@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * configure the network setup and property to meet the workload requirement.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/edgenetwork/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EdgeNetworkGrpc {
 
@@ -2154,8 +2151,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.InitializeZoneResponse initializeZone(
-        com.google.cloud.edgenetwork.v1.InitializeZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.InitializeZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeZoneMethod(), getCallOptions(), request);
     }
 
@@ -2169,8 +2167,8 @@ public final class EdgeNetworkGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.edgenetwork.v1.ListZonesResponse listZones(
-        com.google.cloud.edgenetwork.v1.ListZonesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.ListZonesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZonesMethod(), getCallOptions(), request);
     }
 
@@ -2184,8 +2182,8 @@ public final class EdgeNetworkGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.edgenetwork.v1.Zone getZone(
-        com.google.cloud.edgenetwork.v1.GetZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetZoneRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetZoneMethod(), getCallOptions(), request);
     }
 
@@ -2197,8 +2195,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.ListNetworksResponse listNetworks(
-        com.google.cloud.edgenetwork.v1.ListNetworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.ListNetworksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNetworksMethod(), getCallOptions(), request);
     }
 
@@ -2210,8 +2209,8 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.Network getNetwork(
-        com.google.cloud.edgenetwork.v1.GetNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetNetworkRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNetworkMethod(), getCallOptions(), request);
     }
 
@@ -2223,8 +2222,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.DiagnoseNetworkResponse diagnoseNetwork(
-        com.google.cloud.edgenetwork.v1.DiagnoseNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DiagnoseNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseNetworkMethod(), getCallOptions(), request);
     }
 
@@ -2236,8 +2236,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNetwork(
-        com.google.cloud.edgenetwork.v1.CreateNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.CreateNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNetworkMethod(), getCallOptions(), request);
     }
 
@@ -2249,8 +2250,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNetwork(
-        com.google.cloud.edgenetwork.v1.DeleteNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DeleteNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNetworkMethod(), getCallOptions(), request);
     }
 
@@ -2262,8 +2264,8 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.ListSubnetsResponse listSubnets(
-        com.google.cloud.edgenetwork.v1.ListSubnetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.ListSubnetsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubnetsMethod(), getCallOptions(), request);
     }
 
@@ -2275,8 +2277,8 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.Subnet getSubnet(
-        com.google.cloud.edgenetwork.v1.GetSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetSubnetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubnetMethod(), getCallOptions(), request);
     }
 
@@ -2288,8 +2290,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSubnet(
-        com.google.cloud.edgenetwork.v1.CreateSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.CreateSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSubnetMethod(), getCallOptions(), request);
     }
 
@@ -2301,8 +2304,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSubnet(
-        com.google.cloud.edgenetwork.v1.UpdateSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.UpdateSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubnetMethod(), getCallOptions(), request);
     }
 
@@ -2314,8 +2318,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSubnet(
-        com.google.cloud.edgenetwork.v1.DeleteSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DeleteSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSubnetMethod(), getCallOptions(), request);
     }
 
@@ -2327,8 +2332,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.ListInterconnectsResponse listInterconnects(
-        com.google.cloud.edgenetwork.v1.ListInterconnectsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.ListInterconnectsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInterconnectsMethod(), getCallOptions(), request);
     }
 
@@ -2340,8 +2346,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.Interconnect getInterconnect(
-        com.google.cloud.edgenetwork.v1.GetInterconnectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetInterconnectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInterconnectMethod(), getCallOptions(), request);
     }
 
@@ -2353,8 +2360,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.DiagnoseInterconnectResponse diagnoseInterconnect(
-        com.google.cloud.edgenetwork.v1.DiagnoseInterconnectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DiagnoseInterconnectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseInterconnectMethod(), getCallOptions(), request);
     }
 
@@ -2367,8 +2375,9 @@ public final class EdgeNetworkGrpc {
      */
     public com.google.cloud.edgenetwork.v1.ListInterconnectAttachmentsResponse
         listInterconnectAttachments(
-            com.google.cloud.edgenetwork.v1.ListInterconnectAttachmentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.edgenetwork.v1.ListInterconnectAttachmentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInterconnectAttachmentsMethod(), getCallOptions(), request);
     }
 
@@ -2380,8 +2389,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.InterconnectAttachment getInterconnectAttachment(
-        com.google.cloud.edgenetwork.v1.GetInterconnectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInterconnectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2393,8 +2403,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInterconnectAttachment(
-        com.google.cloud.edgenetwork.v1.CreateInterconnectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.CreateInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInterconnectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2406,8 +2417,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInterconnectAttachment(
-        com.google.cloud.edgenetwork.v1.DeleteInterconnectAttachmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DeleteInterconnectAttachmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInterconnectAttachmentMethod(), getCallOptions(), request);
     }
 
@@ -2419,8 +2431,8 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.ListRoutersResponse listRouters(
-        com.google.cloud.edgenetwork.v1.ListRoutersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.ListRoutersRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRoutersMethod(), getCallOptions(), request);
     }
 
@@ -2432,8 +2444,8 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.Router getRouter(
-        com.google.cloud.edgenetwork.v1.GetRouterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.GetRouterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRouterMethod(), getCallOptions(), request);
     }
 
@@ -2445,8 +2457,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.cloud.edgenetwork.v1.DiagnoseRouterResponse diagnoseRouter(
-        com.google.cloud.edgenetwork.v1.DiagnoseRouterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DiagnoseRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiagnoseRouterMethod(), getCallOptions(), request);
     }
 
@@ -2458,8 +2471,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createRouter(
-        com.google.cloud.edgenetwork.v1.CreateRouterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.CreateRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateRouterMethod(), getCallOptions(), request);
     }
 
@@ -2471,8 +2485,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateRouter(
-        com.google.cloud.edgenetwork.v1.UpdateRouterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.UpdateRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRouterMethod(), getCallOptions(), request);
     }
 
@@ -2484,8 +2499,9 @@ public final class EdgeNetworkGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteRouter(
-        com.google.cloud.edgenetwork.v1.DeleteRouterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.edgenetwork.v1.DeleteRouterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteRouterMethod(), getCallOptions(), request);
     }
   }

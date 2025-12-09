@@ -105,9 +105,21 @@ public final class ApiHubServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_GetSpecContentsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_CreateApiOperationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_CreateApiOperationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_GetApiOperationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_GetApiOperationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_UpdateApiOperationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_UpdateApiOperationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_DeleteApiOperationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_DeleteApiOperationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_ListApiOperationsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -322,13 +334,26 @@ public final class ApiHubServiceProto {
           + "\017next_page_token\030\002 \001(\t\"J\n"
           + "\026GetSpecContentsRequest\0220\n"
           + "\004name\030\001 \001(\tB\"\340A\002\372A\034\n"
-          + "\032apihub.googleapis.com/Spec\"R\n"
+          + "\032apihub.googleapis.com/Spec\"\270\001\n"
+          + "\031CreateApiOperationRequest\022:\n"
+          + "\006parent\030\001 \001("
+          + "\tB*\340A\002\372A$\022\"apihub.googleapis.com/ApiOperation\022\035\n"
+          + "\020api_operation_id\030\002 \001(\tB\003\340A\001\022@\n\r"
+          + "api_operation\030\003"
+          + " \001(\0132$.google.cloud.apihub.v1.ApiOperationB\003\340A\002\"R\n"
           + "\026GetApiOperationRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"apihub.googleapis.com/ApiOperation\"\223\001\n"
+          + "\031UpdateApiOperationRequest\022@\n\r"
+          + "api_operation\030\001"
+          + " \001(\0132$.google.cloud.apihub.v1.ApiOperationB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"U\n"
+          + "\031DeleteApiOperationRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"apihub.googleapis.com/ApiOperation\"\234\001\n"
           + "\030ListApiOperationsRequest\022:\n"
-          + "\006parent\030\001 \001("
-          + "\tB*\340A\002\372A$\022\"apihub.googleapis.com/ApiOperation\022\023\n"
+          + "\006parent\030\001 \001(\t"
+          + "B*\340A\002\372A$\022\"apihub.googleapis.com/ApiOperation\022\023\n"
           + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
           + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\004 \001(\tB\003\340A\001\"r\n"
@@ -431,14 +456,14 @@ public final class ApiHubServiceProto {
           + "\006parent\030\001 \001("
           + "\tB)\340A\002\372A#\022!apihub.googleapis.com/ExternalApi\022\034\n"
           + "\017external_api_id\030\002 \001(\tB\003\340A\001\022>\n"
-          + "\014external_api\030\003 \001("
-          + "\0132#.google.cloud.apihub.v1.ExternalApiB\003\340A\002\"P\n"
+          + "\014external_api\030\003"
+          + " \001(\0132#.google.cloud.apihub.v1.ExternalApiB\003\340A\002\"P\n"
           + "\025GetExternalApiRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!apihub.googleapis.com/ExternalApi\"\220\001\n"
           + "\030UpdateExternalApiRequest\022>\n"
-          + "\014external_api\030\001"
-          + " \001(\0132#.google.cloud.apihub.v1.ExternalApiB\003\340A\002\0224\n"
+          + "\014external_api\030\001 \001(\013"
+          + "2#.google.cloud.apihub.v1.ExternalApiB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"S\n"
           + "\030DeleteExternalApiRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
@@ -450,162 +475,175 @@ public final class ApiHubServiceProto {
           + "page_token\030\003 \001(\tB\003\340A\001\"o\n"
           + "\030ListExternalApisResponse\022:\n\r"
           + "external_apis\030\001 \003(\0132#.google.cloud.apihub.v1.ExternalApi\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\2721\n"
+          + "\017next_page_token\030\002 \001(\t2\3226\n"
           + "\006ApiHub\022\235\001\n"
-          + "\tCreateApi\022(.google.cloud.apihub.v1.CreateApiRequest\032\033.goog"
-          + "le.cloud.apihub.v1.Api\"I\332A\021parent,api,ap"
-          + "i_id\202\323\344\223\002/\"(/v1/{parent=projects/*/locations/*}/apis:\003api\022\205\001\n"
-          + "\006GetApi\022%.google.cloud.apihub.v1.GetApiRequest\032\033.google.clo"
-          + "ud.apihub.v1.Api\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projects/*/locations/*/apis/*}\022\230\001\n"
-          + "\010ListApis\022\'.google.cloud.apihub.v1.ListApis"
-          + "Request\032(.google.cloud.apihub.v1.ListApi"
-          + "sResponse\"9\332A\006parent\202\323\344\223\002*\022(/v1/{parent=projects/*/locations/*}/apis\022\237\001\n"
-          + "\tUpdateApi\022(.google.cloud.apihub.v1.UpdateApiReq"
-          + "uest\032\033.google.cloud.apihub.v1.Api\"K\332A\017ap"
-          + "i,update_mask\202\323\344\223\00232,/v1/{api.name=projects/*/locations/*/apis/*}:\003api\022\206\001\n"
-          + "\tDeleteApi\022(.google.cloud.apihub.v1.DeleteApiR"
-          + "equest\032\026.google.protobuf.Empty\"7\332A\004name\202"
-          + "\323\344\223\002**(/v1/{name=projects/*/locations/*/apis/*}\022\300\001\n\r"
-          + "CreateVersion\022,.google.cloud.apihub.v1.CreateVersionRequest\032\037.google"
-          + ".cloud.apihub.v1.Version\"`\332A\031parent,vers"
-          + "ion,version_id\202\323\344\223\002>\"3/v1/{parent=projec"
-          + "ts/*/locations/*/apis/*}/versions:\007version\022\234\001\n\n"
-          + "GetVersion\022).google.cloud.apihub.v1.GetVersionRequest\032\037.google.cloud.apih"
-          + "ub.v1.Version\"B\332A\004name\202\323\344\223\0025\0223/v1/{name="
-          + "projects/*/locations/*/apis/*/versions/*}\022\257\001\n"
-          + "\014ListVersions\022+.google.cloud.apihub.v1.ListVersionsRequest\032,.google.cloud.a"
-          + "pihub.v1.ListVersionsResponse\"D\332A\006parent"
-          + "\202\323\344\223\0025\0223/v1/{parent=projects/*/locations/*/apis/*}/versions\022\302\001\n\r"
-          + "UpdateVersion\022,.google.cloud.apihub.v1.UpdateVersionRequ"
-          + "est\032\037.google.cloud.apihub.v1.Version\"b\332A"
-          + "\023version,update_mask\202\323\344\223\002F2;/v1/{version"
-          + ".name=projects/*/locations/*/apis/*/versions/*}:\007version\022\231\001\n\r"
-          + "DeleteVersion\022,.google.cloud.apihub.v1.DeleteVersionRequest"
-          + "\032\026.google.protobuf.Empty\"B\332A\004name\202\323\344\223\0025*"
-          + "3/v1/{name=projects/*/locations/*/apis/*/versions/*}\022\266\001\n\n"
-          + "CreateSpec\022).google.cloud.apihub.v1.CreateSpecRequest\032\034.google."
-          + "cloud.apihub.v1.Spec\"_\332A\023parent,spec,spe"
-          + "c_id\202\323\344\223\002C\";/v1/{parent=projects/*/locat"
-          + "ions/*/apis/*/versions/*}/specs:\004spec\022\233\001\n"
-          + "\007GetSpec\022&.google.cloud.apihub.v1.GetSp"
-          + "ecRequest\032\034.google.cloud.apihub.v1.Spec\""
-          + "J\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/locations/*/apis/*/versions/*/specs/*}\022\274\001\n"
-          + "\017GetSpecContents\022..google.cloud.apihub.v1"
-          + ".GetSpecContentsRequest\032$.google.cloud.a"
-          + "pihub.v1.SpecContents\"S\332A\004name\202\323\344\223\002F\022D/v"
-          + "1/{name=projects/*/locations/*/apis/*/versions/*/specs/*}:contents\022\256\001\n"
-          + "\tListSpecs\022(.google.cloud.apihub.v1.ListSpecsReque"
-          + "st\032).google.cloud.apihub.v1.ListSpecsRes"
-          + "ponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=proj"
-          + "ects/*/locations/*/apis/*/versions/*}/specs\022\270\001\n\n"
-          + "UpdateSpec\022).google.cloud.apihub.v1.UpdateSpecRequest\032\034.google.cloud.api"
-          + "hub.v1.Spec\"a\332A\020spec,update_mask\202\323\344\223\002H2@"
-          + "/v1/{spec.name=projects/*/locations/*/apis/*/versions/*/specs/*}:\004spec\022\233\001\n\n"
-          + "DeleteSpec\022).google.cloud.apihub.v1.DeleteSpe"
-          + "cRequest\032\026.google.protobuf.Empty\"J\332A\004nam"
-          + "e\202\323\344\223\002=*;/v1/{name=projects/*/locations/*/apis/*/versions/*/specs/*}\022\270\001\n"
-          + "\017GetApiOperation\022..google.cloud.apihub.v1.GetApi"
-          + "OperationRequest\032$.google.cloud.apihub.v"
-          + "1.ApiOperation\"O\332A\004name\202\323\344\223\002B\022@/v1/{name"
-          + "=projects/*/locations/*/apis/*/versions/*/operations/*}\022\313\001\n"
-          + "\021ListApiOperations\0220.google.cloud.apihub.v1.ListApiOperations"
-          + "Request\0321.google.cloud.apihub.v1.ListApi"
-          + "OperationsResponse\"Q\332A\006parent\202\323\344\223\002B\022@/v1"
-          + "/{parent=projects/*/locations/*/apis/*/versions/*}/operations\022\263\001\n\r"
-          + "GetDefinition\022,.google.cloud.apihub.v1.GetDefinitionRe"
-          + "quest\032\".google.cloud.apihub.v1.Definitio"
-          + "n\"P\332A\004name\202\323\344\223\002C\022A/v1/{name=projects/*/l"
-          + "ocations/*/apis/*/versions/*/definitions/*}\022\316\001\n"
-          + "\020CreateDeployment\022/.google.cloud.apihub.v1.CreateDeploymentRequest\032\".goog"
-          + "le.cloud.apihub.v1.Deployment\"e\332A\037parent"
-          + ",deployment,deployment_id\202\323\344\223\002=\"//v1/{pa"
-          + "rent=projects/*/locations/*}/deployments:\n"
+          + "\tCreateApi\022(.google.cloud.apihub.v1.CreateApiRequest\032\033.google.cloud.apihub."
+          + "v1.Api\"I\332A\021parent,api,api_id\202\323\344\223\002/\"(/v1/"
+          + "{parent=projects/*/locations/*}/apis:\003api\022\205\001\n"
+          + "\006GetApi\022%.google.cloud.apihub.v1.Ge"
+          + "tApiRequest\032\033.google.cloud.apihub.v1.Api"
+          + "\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projects/*/locations/*/apis/*}\022\230\001\n"
+          + "\010ListApis\022\'.google.cloud.apihub.v1.ListApisRequest\032(.google"
+          + ".cloud.apihub.v1.ListApisResponse\"9\332A\006pa"
+          + "rent\202\323\344\223\002*\022(/v1/{parent=projects/*/locations/*}/apis\022\237\001\n"
+          + "\tUpdateApi\022(.google.cloud.apihub.v1.UpdateApiRequest\032\033.google.cl"
+          + "oud.apihub.v1.Api\"K\332A\017api,update_mask\202\323\344"
+          + "\223\00232,/v1/{api.name=projects/*/locations/*/apis/*}:\003api\022\206\001\n"
+          + "\tDeleteApi\022(.google.cloud.apihub.v1.DeleteApiRequest\032\026.google."
+          + "protobuf.Empty\"7\332A\004name\202\323\344\223\002**(/v1/{name=projects/*/locations/*/apis/*}\022\300\001\n\r"
+          + "CreateVersion\022,.google.cloud.apihub.v1.Creat"
+          + "eVersionRequest\032\037.google.cloud.apihub.v1"
+          + ".Version\"`\332A\031parent,version,version_id\202\323"
+          + "\344\223\002>\"3/v1/{parent=projects/*/locations/*/apis/*}/versions:\007version\022\234\001\n\n"
+          + "GetVersion\022).google.cloud.apihub.v1.GetVersionReq"
+          + "uest\032\037.google.cloud.apihub.v1.Version\"B\332"
+          + "A\004name\202\323\344\223\0025\0223/v1/{name=projects/*/locations/*/apis/*/versions/*}\022\257\001\n"
+          + "\014ListVersions\022+.google.cloud.apihub.v1.ListVersions"
+          + "Request\032,.google.cloud.apihub.v1.ListVer"
+          + "sionsResponse\"D\332A\006parent\202\323\344\223\0025\0223/v1/{par"
+          + "ent=projects/*/locations/*/apis/*}/versions\022\302\001\n\r"
+          + "UpdateVersion\022,.google.cloud.apihub.v1.UpdateVersionRequest\032\037.google.clo"
+          + "ud.apihub.v1.Version\"b\332A\023version,update_"
+          + "mask\202\323\344\223\002F2;/v1/{version.name=projects/*"
+          + "/locations/*/apis/*/versions/*}:\007version\022\231\001\n\r"
+          + "DeleteVersion\022,.google.cloud.apihub.v1.DeleteVersionRequest\032\026.google.protob"
+          + "uf.Empty\"B\332A\004name\202\323\344\223\0025*3/v1/{name=projects/*/locations/*/apis/*/versions/*}\022\266\001\n"
+          + "\n"
+          + "CreateSpec\022).google.cloud.apihub.v1.Cre"
+          + "ateSpecRequest\032\034.google.cloud.apihub.v1."
+          + "Spec\"_\332A\023parent,spec,spec_id\202\323\344\223\002C\";/v1/"
+          + "{parent=projects/*/locations/*/apis/*/versions/*}/specs:\004spec\022\233\001\n"
+          + "\007GetSpec\022&.google.cloud.apihub.v1.GetSpecRequest\032\034.goog"
+          + "le.cloud.apihub.v1.Spec\"J\332A\004name\202\323\344\223\002=\022;"
+          + "/v1/{name=projects/*/locations/*/apis/*/versions/*/specs/*}\022\274\001\n"
+          + "\017GetSpecContents\022..google.cloud.apihub.v1.GetSpecContents"
+          + "Request\032$.google.cloud.apihub.v1.SpecCon"
+          + "tents\"S\332A\004name\202\323\344\223\002F\022D/v1/{name=projects"
+          + "/*/locations/*/apis/*/versions/*/specs/*}:contents\022\256\001\n"
+          + "\tListSpecs\022(.google.cloud.apihub.v1.ListSpecsRequest\032).google.clou"
+          + "d.apihub.v1.ListSpecsResponse\"L\332A\006parent"
+          + "\202\323\344\223\002=\022;/v1/{parent=projects/*/locations/*/apis/*/versions/*}/specs\022\270\001\n\n"
+          + "UpdateSpec\022).google.cloud.apihub.v1.UpdateSpecRe"
+          + "quest\032\034.google.cloud.apihub.v1.Spec\"a\332A\020"
+          + "spec,update_mask\202\323\344\223\002H2@/v1/{spec.name=p"
+          + "rojects/*/locations/*/apis/*/versions/*/specs/*}:\004spec\022\233\001\n\n"
+          + "DeleteSpec\022).google.cloud.apihub.v1.DeleteSpecRequest\032\026.googl"
+          + "e.protobuf.Empty\"J\332A\004name\202\323\344\223\002=*;/v1/{na"
+          + "me=projects/*/locations/*/apis/*/versions/*/specs/*}\022\356\001\n"
+          + "\022CreateApiOperation\0221.google.cloud.apihub.v1.CreateApiOperationR"
+          + "equest\032$.google.cloud.apihub.v1.ApiOpera"
+          + "tion\"\177\332A%parent,api_operation,api_operat"
+          + "ion_id\202\323\344\223\002Q\"@/v1/{parent=projects/*/locations/*/apis/*/versions/*}/operations:\r"
+          + "api_operation\022\270\001\n"
+          + "\017GetApiOperation\022..google.cloud.apihub.v1.GetApiOperationReques"
+          + "t\032$.google.cloud.apihub.v1.ApiOperation\""
+          + "O\332A\004name\202\323\344\223\002B\022@/v1/{name=projects/*/loc"
+          + "ations/*/apis/*/versions/*/operations/*}\022\313\001\n"
+          + "\021ListApiOperations\0220.google.cloud.apihub.v1.ListApiOperationsRequest\0321.googl"
+          + "e.cloud.apihub.v1.ListApiOperationsRespo"
+          + "nse\"Q\332A\006parent\202\323\344\223\002B\022@/v1/{parent=projec"
+          + "ts/*/locations/*/apis/*/versions/*}/operations\022\361\001\n"
+          + "\022UpdateApiOperation\0221.google.cloud.apihub.v1.UpdateApiOperationRequest"
+          + "\032$.google.cloud.apihub.v1.ApiOperation\"\201"
+          + "\001\332A\031api_operation,update_mask\202\323\344\223\002_2N/v1"
+          + "/{api_operation.name=projects/*/locations/*/apis/*/versions/*/operations/*}:\r"
+          + "api_operation\022\260\001\n"
+          + "\022DeleteApiOperation\0221.google.cloud.apihub.v1.DeleteApiOperationReq"
+          + "uest\032\026.google.protobuf.Empty\"O\332A\004name\202\323\344"
+          + "\223\002B*@/v1/{name=projects/*/locations/*/apis/*/versions/*/operations/*}\022\263\001\n\r"
+          + "GetDefinition\022,.google.cloud.apihub.v1.GetDefi"
+          + "nitionRequest\032\".google.cloud.apihub.v1.D"
+          + "efinition\"P\332A\004name\202\323\344\223\002C\022A/v1/{name=proj"
+          + "ects/*/locations/*/apis/*/versions/*/definitions/*}\022\316\001\n"
+          + "\020CreateDeployment\022/.google.cloud.apihub.v1.CreateDeploymentReques"
+          + "t\032\".google.cloud.apihub.v1.Deployment\"e\332"
+          + "A\037parent,deployment,deployment_id\202\323\344\223\002=\""
+          + "//v1/{parent=projects/*/locations/*}/deployments:\n"
           + "deployment\022\241\001\n\r"
-          + "GetDeployment\022,.google.cloud.apihub.v1.GetDeploymentRequest\032\".g"
-          + "oogle.cloud.apihub.v1.Deployment\">\332A\004nam"
-          + "e\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/deployments/*}\022\264\001\n"
-          + "\017ListDeployments\022..google.cloud.apihub.v1.ListDeploymentsReq"
-          + "uest\032/.google.cloud.apihub.v1.ListDeploy"
-          + "mentsResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{par"
-          + "ent=projects/*/locations/*}/deployments\022\320\001\n"
-          + "\020UpdateDeployment\022/.google.cloud.apih"
-          + "ub.v1.UpdateDeploymentRequest\032\".google.c"
-          + "loud.apihub.v1.Deployment\"g\332A\026deployment"
-          + ",update_mask\202\323\344\223\002H2:/v1/{deployment.name=projects/*/locations/*/deployments/*}:\n"
+          + "GetDeployment\022,.google.cloud.apihub.v1.GetDeploymentReq"
+          + "uest\032\".google.cloud.apihub.v1.Deployment"
+          + "\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/deployments/*}\022\264\001\n"
+          + "\017ListDeployments\022..google.cloud.apihub.v1.ListDeploy"
+          + "mentsRequest\032/.google.cloud.apihub.v1.Li"
+          + "stDeploymentsResponse\"@\332A\006parent\202\323\344\223\0021\022/"
+          + "/v1/{parent=projects/*/locations/*}/deployments\022\320\001\n"
+          + "\020UpdateDeployment\022/.google.cloud.apihub.v1.UpdateDeploymentRequest\032\"."
+          + "google.cloud.apihub.v1.Deployment\"g\332A\026de"
+          + "ployment,update_mask\202\323\344\223\002H2:/v1/{deploym"
+          + "ent.name=projects/*/locations/*/deployments/*}:\n"
           + "deployment\022\233\001\n"
-          + "\020DeleteDeployment\022/.google.cloud.apihub.v1.DeleteDeploymentRequest"
-          + "\032\026.google.protobuf.Empty\">\332A\004name\202\323\344\223\0021*"
-          + "//v1/{name=projects/*/locations/*/deployments/*}\022\307\001\n"
-          + "\017CreateAttribute\022..google.cloud.apihub.v1.CreateAttributeRequest\032!.g"
-          + "oogle.cloud.apihub.v1.Attribute\"a\332A\035pare"
-          + "nt,attribute,attribute_id\202\323\344\223\002;\"./v1/{pa"
-          + "rent=projects/*/locations/*}/attributes:\tattribute\022\235\001\n"
-          + "\014GetAttribute\022+.google.cloud.apihub.v1.GetAttributeRequest\032!.googl"
-          + "e.cloud.apihub.v1.Attribute\"=\332A\004name\202\323\344\223"
-          + "\0020\022./v1/{name=projects/*/locations/*/attributes/*}\022\311\001\n"
-          + "\017UpdateAttribute\022..google.cloud.apihub.v1.UpdateAttributeRequest\032!"
-          + ".google.cloud.apihub.v1.Attribute\"c\332A\025at"
-          + "tribute,update_mask\202\323\344\223\002E28/v1/{attribut"
-          + "e.name=projects/*/locations/*/attributes/*}:\tattribute\022\230\001\n"
-          + "\017DeleteAttribute\022..google.cloud.apihub.v1.DeleteAttributeReque"
-          + "st\032\026.google.protobuf.Empty\"=\332A\004name\202\323\344\223\002"
-          + "0*./v1/{name=projects/*/locations/*/attributes/*}\022\260\001\n"
-          + "\016ListAttributes\022-.google.cloud.apihub.v1.ListAttributesRequest\032..go"
-          + "ogle.cloud.apihub.v1.ListAttributesRespo"
-          + "nse\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/attributes\022\305\001\n"
-          + "\017SearchResources\022..google.cloud.apihub.v1.Search"
-          + "ResourcesRequest\032/.google.cloud.apihub.v"
-          + "1.SearchResourcesResponse\"Q\332A\016location,q"
-          + "uery\202\323\344\223\002:\"5/v1/{location=projects/*/locations/*}:searchResources:\001*\022\330\001\n"
-          + "\021CreateExternalApi\0220.google.cloud.apihub.v1.Crea"
-          + "teExternalApiRequest\032#.google.cloud.apih"
-          + "ub.v1.ExternalApi\"l\332A#parent,external_ap"
-          + "i,external_api_id\202\323\344\223\002@\"0/v1/{parent=pro"
-          + "jects/*/locations/*}/externalApis:\014external_api\022\245\001\n"
-          + "\016GetExternalApi\022-.google.cloud.apihub.v1.GetExternalApiRequest\032#.goog"
-          + "le.cloud.apihub.v1.ExternalApi\"?\332A\004name\202"
-          + "\323\344\223\0022\0220/v1/{name=projects/*/locations/*/externalApis/*}\022\332\001\n"
-          + "\021UpdateExternalApi\0220.google.cloud.apihub.v1.UpdateExternalApi"
-          + "Request\032#.google.cloud.apihub.v1.Externa"
-          + "lApi\"n\332A\030external_api,update_mask\202\323\344\223\002M2"
-          + "=/v1/{external_api.name=projects/*/locations/*/externalApis/*}:\014external_api\022\236\001\n"
-          + "\021DeleteExternalApi\0220.google.cloud.apihub"
-          + ".v1.DeleteExternalApiRequest\032\026.google.pr"
-          + "otobuf.Empty\"?\332A\004name\202\323\344\223\0022*0/v1/{name=p"
-          + "rojects/*/locations/*/externalApis/*}\022\270\001\n"
-          + "\020ListExternalApis\022/.google.cloud.apihub"
-          + ".v1.ListExternalApisRequest\0320.google.clo"
-          + "ud.apihub.v1.ListExternalApisResponse\"A\332"
-          + "A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/l"
-          + "ocations/*}/externalApis\032I\312A\025apihub.goog"
-          + "leapis.com\322A.https://www.googleapis.com/auth/cloud-platform2\204\010\n"
+          + "\020DeleteDeployment\022/.google.cloud.apihub.v1.DeleteDeploymen"
+          + "tRequest\032\026.google.protobuf.Empty\">\332A\004nam"
+          + "e\202\323\344\223\0021*//v1/{name=projects/*/locations/*/deployments/*}\022\307\001\n"
+          + "\017CreateAttribute\022..google.cloud.apihub.v1.CreateAttributeReq"
+          + "uest\032!.google.cloud.apihub.v1.Attribute\""
+          + "a\332A\035parent,attribute,attribute_id\202\323\344\223\002;\""
+          + "./v1/{parent=projects/*/locations/*}/attributes:\tattribute\022\235\001\n"
+          + "\014GetAttribute\022+.google.cloud.apihub.v1.GetAttributeRequest"
+          + "\032!.google.cloud.apihub.v1.Attribute\"=\332A\004"
+          + "name\202\323\344\223\0020\022./v1/{name=projects/*/locations/*/attributes/*}\022\311\001\n"
+          + "\017UpdateAttribute\022..google.cloud.apihub.v1.UpdateAttributeR"
+          + "equest\032!.google.cloud.apihub.v1.Attribut"
+          + "e\"c\332A\025attribute,update_mask\202\323\344\223\002E28/v1/{"
+          + "attribute.name=projects/*/locations/*/attributes/*}:\tattribute\022\230\001\n"
+          + "\017DeleteAttribute\022..google.cloud.apihub.v1.DeleteAttrib"
+          + "uteRequest\032\026.google.protobuf.Empty\"=\332A\004n"
+          + "ame\202\323\344\223\0020*./v1/{name=projects/*/locations/*/attributes/*}\022\260\001\n"
+          + "\016ListAttributes\022-.google.cloud.apihub.v1.ListAttributesRequ"
+          + "est\032..google.cloud.apihub.v1.ListAttribu"
+          + "tesResponse\"?\332A\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/locations/*}/attributes\022\305\001\n"
+          + "\017SearchResources\022..google.cloud.apihub.v"
+          + "1.SearchResourcesRequest\032/.google.cloud."
+          + "apihub.v1.SearchResourcesResponse\"Q\332A\016lo"
+          + "cation,query\202\323\344\223\002:\"5/v1/{location=projects/*/locations/*}:searchResources:\001*\022\330\001\n"
+          + "\021CreateExternalApi\0220.google.cloud.apihub"
+          + ".v1.CreateExternalApiRequest\032#.google.cl"
+          + "oud.apihub.v1.ExternalApi\"l\332A#parent,ext"
+          + "ernal_api,external_api_id\202\323\344\223\002@\"0/v1/{pa"
+          + "rent=projects/*/locations/*}/externalApis:\014external_api\022\245\001\n"
+          + "\016GetExternalApi\022-.google.cloud.apihub.v1.GetExternalApiReques"
+          + "t\032#.google.cloud.apihub.v1.ExternalApi\"?"
+          + "\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/locations/*/externalApis/*}\022\332\001\n"
+          + "\021UpdateExternalApi\0220.google.cloud.apihub.v1.UpdateExt"
+          + "ernalApiRequest\032#.google.cloud.apihub.v1"
+          + ".ExternalApi\"n\332A\030external_api,update_mas"
+          + "k\202\323\344\223\002M2=/v1/{external_api.name=projects"
+          + "/*/locations/*/externalApis/*}:\014external_api\022\236\001\n"
+          + "\021DeleteExternalApi\0220.google.cloud.apihub.v1.DeleteExternalApiRequest\032\026.g"
+          + "oogle.protobuf.Empty\"?\332A\004name\202\323\344\223\0022*0/v1"
+          + "/{name=projects/*/locations/*/externalApis/*}\022\270\001\n"
+          + "\020ListExternalApis\022/.google.cloud.apihub.v1.ListExternalApisRequest\0320.go"
+          + "ogle.cloud.apihub.v1.ListExternalApisRes"
+          + "ponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{parent=proj"
+          + "ects/*/locations/*}/externalApis\032I\312A\025api"
+          + "hub.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platform2\204\010\n"
           + "\022ApiHubDependencies\022\317\001\n"
-          + "\020CreateDependency\022/.google.cloud.apihub.v1.CreateDependencyRequest\032\".googl"
-          + "e.cloud.apihub.v1.Dependency\"f\332A\037parent,"
-          + "dependency,dependency_id\202\323\344\223\002>\"0/v1/{par"
-          + "ent=projects/*/locations/*}/dependencies:\n"
+          + "\020CreateDependency\022/.google.cloud.apihub.v1.CreateDependencyRequest"
+          + "\032\".google.cloud.apihub.v1.Dependency\"f\332A"
+          + "\037parent,dependency,dependency_id\202\323\344\223\002>\"0"
+          + "/v1/{parent=projects/*/locations/*}/dependencies:\n"
           + "dependency\022\242\001\n\r"
-          + "GetDependency\022,.google.cloud.apihub.v1.GetDependencyRequest\032\".g"
-          + "oogle.cloud.apihub.v1.Dependency\"?\332A\004nam"
-          + "e\202\323\344\223\0022\0220/v1/{name=projects/*/locations/*/dependencies/*}\022\321\001\n"
-          + "\020UpdateDependency\022/.google.cloud.apihub.v1.UpdateDependency"
-          + "Request\032\".google.cloud.apihub.v1.Depende"
-          + "ncy\"h\332A\026dependency,update_mask\202\323\344\223\002I2;/v"
-          + "1/{dependency.name=projects/*/locations/*/dependencies/*}:\n"
+          + "GetDependency\022,.google.cloud.apihub.v1.GetDependencyReq"
+          + "uest\032\".google.cloud.apihub.v1.Dependency"
+          + "\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/locations/*/dependencies/*}\022\321\001\n"
+          + "\020UpdateDependency\022/.google.cloud.apihub.v1.UpdateDe"
+          + "pendencyRequest\032\".google.cloud.apihub.v1"
+          + ".Dependency\"h\332A\026dependency,update_mask\202\323"
+          + "\344\223\002I2;/v1/{dependency.name=projects/*/locations/*/dependencies/*}:\n"
           + "dependency\022\234\001\n"
-          + "\020DeleteDependency\022/.google.cloud.apihub.v1.Dele"
-          + "teDependencyRequest\032\026.google.protobuf.Em"
-          + "pty\"?\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/dependencies/*}\022\270\001\n"
-          + "\020ListDependencies\022/.google.cloud.apihub.v1.ListD"
-          + "ependenciesRequest\0320.google.cloud.apihub"
-          + ".v1.ListDependenciesResponse\"A\332A\006parent\202"
-          + "\323\344\223\0022\0220/v1/{parent=projects/*/locations/"
-          + "*}/dependencies\032I\312A\025apihub.googleapis.co"
-          + "m\322A.https://www.googleapis.com/auth/cloud-platformB\264\001\n"
-          + "\032com.google.cloud.apihub.v1B\022ApiHubServiceProtoP\001Z2cloud.google.co"
-          + "m/go/apihub/apiv1/apihubpb;apihubpb\252\002\026Go"
-          + "ogle.Cloud.ApiHub.V1\312\002\026Google\\Cloud\\ApiH"
-          + "ub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
+          + "\020DeleteDependency\022/.google.cloud.apihub"
+          + ".v1.DeleteDependencyRequest\032\026.google.pro"
+          + "tobuf.Empty\"?\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/dependencies/*}\022\270\001\n"
+          + "\020ListDependencies\022/.google.cloud.apihub."
+          + "v1.ListDependenciesRequest\0320.google.clou"
+          + "d.apihub.v1.ListDependenciesResponse\"A\332A"
+          + "\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/lo"
+          + "cations/*}/dependencies\032I\312A\025apihub.googl"
+          + "eapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\264\001\n"
+          + "\032com.google.cloud.apihub.v1B\022ApiHubServiceProtoP\001Z2cloud.g"
+          + "oogle.com/go/apihub/apiv1/apihubpb;apihu"
+          + "bpb\252\002\026Google.Cloud.ApiHub.V1\312\002\026Google\\Cl"
+          + "oud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -771,16 +809,40 @@ public final class ApiHubServiceProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_apihub_v1_GetApiOperationRequest_descriptor =
+    internal_static_google_cloud_apihub_v1_CreateApiOperationRequest_descriptor =
         getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_apihub_v1_CreateApiOperationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_CreateApiOperationRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ApiOperationId", "ApiOperation",
+            });
+    internal_static_google_cloud_apihub_v1_GetApiOperationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_apihub_v1_GetApiOperationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetApiOperationRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_apihub_v1_UpdateApiOperationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_apihub_v1_UpdateApiOperationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_UpdateApiOperationRequest_descriptor,
+            new java.lang.String[] {
+              "ApiOperation", "UpdateMask",
+            });
+    internal_static_google_cloud_apihub_v1_DeleteApiOperationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_apihub_v1_DeleteApiOperationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_DeleteApiOperationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_apihub_v1_ListApiOperationsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_apihub_v1_ListApiOperationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListApiOperationsRequest_descriptor,
@@ -788,7 +850,7 @@ public final class ApiHubServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ListApiOperationsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_apihub_v1_ListApiOperationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListApiOperationsResponse_descriptor,
@@ -796,7 +858,7 @@ public final class ApiHubServiceProto {
               "ApiOperations", "NextPageToken",
             });
     internal_static_google_cloud_apihub_v1_GetDefinitionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_apihub_v1_GetDefinitionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetDefinitionRequest_descriptor,
@@ -804,7 +866,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_CreateDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_apihub_v1_CreateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_CreateDeploymentRequest_descriptor,
@@ -812,7 +874,7 @@ public final class ApiHubServiceProto {
               "Parent", "DeploymentId", "Deployment",
             });
     internal_static_google_cloud_apihub_v1_GetDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_apihub_v1_GetDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetDeploymentRequest_descriptor,
@@ -820,7 +882,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_UpdateDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_apihub_v1_UpdateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_UpdateDeploymentRequest_descriptor,
@@ -828,7 +890,7 @@ public final class ApiHubServiceProto {
               "Deployment", "UpdateMask",
             });
     internal_static_google_cloud_apihub_v1_DeleteDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_apihub_v1_DeleteDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DeleteDeploymentRequest_descriptor,
@@ -836,7 +898,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_ListDeploymentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_apihub_v1_ListDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListDeploymentsRequest_descriptor,
@@ -844,7 +906,7 @@ public final class ApiHubServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ListDeploymentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_apihub_v1_ListDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListDeploymentsResponse_descriptor,
@@ -852,7 +914,7 @@ public final class ApiHubServiceProto {
               "Deployments", "NextPageToken",
             });
     internal_static_google_cloud_apihub_v1_CreateAttributeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_apihub_v1_CreateAttributeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_CreateAttributeRequest_descriptor,
@@ -860,7 +922,7 @@ public final class ApiHubServiceProto {
               "Parent", "AttributeId", "Attribute",
             });
     internal_static_google_cloud_apihub_v1_GetAttributeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_apihub_v1_GetAttributeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetAttributeRequest_descriptor,
@@ -868,7 +930,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_UpdateAttributeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_apihub_v1_UpdateAttributeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_UpdateAttributeRequest_descriptor,
@@ -876,7 +938,7 @@ public final class ApiHubServiceProto {
               "Attribute", "UpdateMask",
             });
     internal_static_google_cloud_apihub_v1_DeleteAttributeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_apihub_v1_DeleteAttributeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DeleteAttributeRequest_descriptor,
@@ -884,7 +946,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_ListAttributesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_apihub_v1_ListAttributesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListAttributesRequest_descriptor,
@@ -892,7 +954,7 @@ public final class ApiHubServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ListAttributesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_apihub_v1_ListAttributesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListAttributesResponse_descriptor,
@@ -900,7 +962,7 @@ public final class ApiHubServiceProto {
               "Attributes", "NextPageToken",
             });
     internal_static_google_cloud_apihub_v1_SearchResourcesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_apihub_v1_SearchResourcesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SearchResourcesRequest_descriptor,
@@ -908,7 +970,7 @@ public final class ApiHubServiceProto {
               "Location", "Query", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ApiHubResource_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_apihub_v1_ApiHubResource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ApiHubResource_descriptor,
@@ -916,7 +978,7 @@ public final class ApiHubServiceProto {
               "Api", "Operation", "Deployment", "Spec", "Definition", "Version", "Resource",
             });
     internal_static_google_cloud_apihub_v1_SearchResult_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_apihub_v1_SearchResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SearchResult_descriptor,
@@ -924,7 +986,7 @@ public final class ApiHubServiceProto {
               "Resource",
             });
     internal_static_google_cloud_apihub_v1_SearchResourcesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_apihub_v1_SearchResourcesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_SearchResourcesResponse_descriptor,
@@ -932,7 +994,7 @@ public final class ApiHubServiceProto {
               "SearchResults", "NextPageToken",
             });
     internal_static_google_cloud_apihub_v1_CreateDependencyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_apihub_v1_CreateDependencyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_CreateDependencyRequest_descriptor,
@@ -940,7 +1002,7 @@ public final class ApiHubServiceProto {
               "Parent", "DependencyId", "Dependency",
             });
     internal_static_google_cloud_apihub_v1_GetDependencyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_apihub_v1_GetDependencyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetDependencyRequest_descriptor,
@@ -948,7 +1010,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_UpdateDependencyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_apihub_v1_UpdateDependencyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_UpdateDependencyRequest_descriptor,
@@ -956,7 +1018,7 @@ public final class ApiHubServiceProto {
               "Dependency", "UpdateMask",
             });
     internal_static_google_cloud_apihub_v1_DeleteDependencyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_apihub_v1_DeleteDependencyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DeleteDependencyRequest_descriptor,
@@ -964,7 +1026,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_ListDependenciesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_apihub_v1_ListDependenciesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListDependenciesRequest_descriptor,
@@ -972,7 +1034,7 @@ public final class ApiHubServiceProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ListDependenciesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_apihub_v1_ListDependenciesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListDependenciesResponse_descriptor,
@@ -980,7 +1042,7 @@ public final class ApiHubServiceProto {
               "Dependencies", "NextPageToken",
             });
     internal_static_google_cloud_apihub_v1_CreateExternalApiRequest_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_apihub_v1_CreateExternalApiRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_CreateExternalApiRequest_descriptor,
@@ -988,7 +1050,7 @@ public final class ApiHubServiceProto {
               "Parent", "ExternalApiId", "ExternalApi",
             });
     internal_static_google_cloud_apihub_v1_GetExternalApiRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_apihub_v1_GetExternalApiRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetExternalApiRequest_descriptor,
@@ -996,7 +1058,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_UpdateExternalApiRequest_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_apihub_v1_UpdateExternalApiRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_UpdateExternalApiRequest_descriptor,
@@ -1004,7 +1066,7 @@ public final class ApiHubServiceProto {
               "ExternalApi", "UpdateMask",
             });
     internal_static_google_cloud_apihub_v1_DeleteExternalApiRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_apihub_v1_DeleteExternalApiRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DeleteExternalApiRequest_descriptor,
@@ -1012,7 +1074,7 @@ public final class ApiHubServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_ListExternalApisRequest_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_apihub_v1_ListExternalApisRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListExternalApisRequest_descriptor,
@@ -1020,7 +1082,7 @@ public final class ApiHubServiceProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_apihub_v1_ListExternalApisResponse_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_apihub_v1_ListExternalApisResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_ListExternalApisResponse_descriptor,

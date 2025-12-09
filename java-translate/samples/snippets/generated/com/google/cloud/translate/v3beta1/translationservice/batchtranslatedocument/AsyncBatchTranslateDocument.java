@@ -54,6 +54,7 @@ public class AsyncBatchTranslateDocument {
               .setCustomizedAttribution("customizedAttribution557650238")
               .setEnableShadowRemovalNativePdf(true)
               .setEnableRotationCorrection(true)
+              .setPdfNativeOnly(true)
               .build();
       ApiFuture<Operation> future =
           translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

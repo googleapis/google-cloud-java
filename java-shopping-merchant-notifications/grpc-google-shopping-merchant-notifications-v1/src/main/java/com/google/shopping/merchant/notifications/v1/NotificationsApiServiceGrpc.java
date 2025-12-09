@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage notification subscriptions for merchants
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/notifications/v1/notificationsapi.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotificationsApiServiceGrpc {
 
@@ -742,8 +739,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1.NotificationSubscription
         getNotificationSubscription(
             com.google.shopping.merchant.notifications.v1.GetNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -771,8 +769,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1.NotificationSubscription
         createNotificationSubscription(
             com.google.shopping.merchant.notifications.v1.CreateNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -786,8 +785,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1.NotificationSubscription
         updateNotificationSubscription(
             com.google.shopping.merchant.notifications.v1.UpdateNotificationSubscriptionRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -799,9 +799,9 @@ public final class NotificationsApiServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNotificationSubscription(
-        com.google.shopping.merchant.notifications.v1.DeleteNotificationSubscriptionRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.notifications.v1.DeleteNotificationSubscriptionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNotificationSubscriptionMethod(), getCallOptions(), request);
     }
 
@@ -815,8 +815,9 @@ public final class NotificationsApiServiceGrpc {
     public com.google.shopping.merchant.notifications.v1.ListNotificationSubscriptionsResponse
         listNotificationSubscriptions(
             com.google.shopping.merchant.notifications.v1.ListNotificationSubscriptionsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationSubscriptionsMethod(), getCallOptions(), request);
     }
 
@@ -833,8 +834,9 @@ public final class NotificationsApiServiceGrpc {
         getNotificationSubscriptionHealthMetrics(
             com.google.shopping.merchant.notifications.v1
                     .GetNotificationSubscriptionHealthMetricsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetNotificationSubscriptionHealthMetricsMethod(),
           getCallOptions(),

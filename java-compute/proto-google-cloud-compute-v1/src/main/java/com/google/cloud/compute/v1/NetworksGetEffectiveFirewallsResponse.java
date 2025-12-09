@@ -77,7 +77,9 @@ public final class NetworksGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global
+   * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+   * Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -95,7 +97,9 @@ public final class NetworksGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global
+   * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+   * Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -115,7 +119,9 @@ public final class NetworksGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global
+   * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+   * Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -131,7 +137,9 @@ public final class NetworksGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global
+   * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+   * Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -148,7 +156,9 @@ public final class NetworksGetEffectiveFirewallsResponse
    *
    *
    * <pre>
-   * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+   * [Output Only] Effective firewalls from firewall policy. It returns Global
+   * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+   * Regional Network Firewall Policies as well.
    * </pre>
    *
    * <code>
@@ -739,7 +749,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -761,7 +773,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -780,7 +794,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -800,7 +816,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -828,7 +846,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -854,7 +874,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -881,7 +903,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -909,7 +933,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -934,7 +960,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -960,7 +988,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -987,7 +1017,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1009,7 +1041,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1031,7 +1065,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1048,7 +1084,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1069,7 +1107,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1092,7 +1132,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1113,7 +1155,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>
@@ -1135,7 +1179,9 @@ public final class NetworksGetEffectiveFirewallsResponse
      *
      *
      * <pre>
-     * [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
+     * [Output Only] Effective firewalls from firewall policy. It returns Global
+     * Network Firewall Policies and Hierarchical Firewall Policies. UseregionNetworkFirewallPolicies.getEffectiveFirewalls to get
+     * Regional Network Firewall Policies as well.
      * </pre>
      *
      * <code>

@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Route resource. A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview.
+ * Represents a Route resource.
+ *
+ * A route defines a path from VM instances in the VPC network to a specific
+ * destination. This destination can be inside or outside the VPC network.
+ * For more information, read theRoutes overview.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Route}
@@ -88,7 +92,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * [Output Only] Indicates the origin of the route. Can be IGP
+   * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+   * or INCOMPLETE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Route.NextHopOrigin}
@@ -222,7 +228,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the route.
+   * [Output only] The status of the route. This status only applies to
+   * dynamic routes learned by Cloud Routers. This status is not applicable
+   * to static routes.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Route.RouteStatus}
@@ -252,7 +260,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route is dropped due to the VPC exceeding the dynamic route limit. For dynamic route limit, please refer to the Learned route example
+     * The route is dropped due to the VPC exceeding the dynamic route limit.
+     *  For dynamic route limit, please refer to the
+     * Learned route example
      * </pre>
      *
      * <code>DROPPED = 496235424;</code>
@@ -262,7 +272,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This route is processed but inactive due to failure from the backend. The backend may have rejected the route
+     * This route is processed but inactive due to failure from the backend. The
+     * backend may have rejected the route
      * </pre>
      *
      * <code>INACTIVE = 270421099;</code>
@@ -272,7 +283,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This route is being processed internally. The status will change once processed.
+     * This route is being processed internally. The status will change once
+     * processed.
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -307,7 +319,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The route is dropped due to the VPC exceeding the dynamic route limit. For dynamic route limit, please refer to the Learned route example
+     * The route is dropped due to the VPC exceeding the dynamic route limit.
+     *  For dynamic route limit, please refer to the
+     * Learned route example
      * </pre>
      *
      * <code>DROPPED = 496235424;</code>
@@ -318,7 +332,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This route is processed but inactive due to failure from the backend. The backend may have rejected the route
+     * This route is processed but inactive due to failure from the backend. The
+     * backend may have rejected the route
      * </pre>
      *
      * <code>INACTIVE = 270421099;</code>
@@ -329,7 +344,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This route is being processed internally. The status will change once processed.
+     * This route is being processed internally. The status will change once
+     * processed.
      * </pre>
      *
      * <code>PENDING = 35394935;</code>
@@ -427,7 +443,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * [Output Only] The type of this route, which can be one of the following
+   * values:
+   * - 'TRANSIT' for a transit route that this router learned from
+   * another Cloud Router and will readvertise to one of its BGP peers
+   * - 'SUBNET' for a route from a subnet of the VPC
+   * - 'BGP' for a route learned from a BGP peer of this router
+   * - 'STATIC' for a static route
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Route.RouteType}
@@ -650,7 +672,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -666,7 +689,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -690,7 +714,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -719,7 +744,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this field when you create the resource.
+   * An optional description of this resource. Provide this field when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -735,7 +761,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this field when you create the resource.
+   * An optional description of this resource. Provide this field when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -759,7 +786,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this field when you create the resource.
+   * An optional description of this resource. Provide this field when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -788,7 +816,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+   * The destination range of outgoing packets that this route applies to. Both
+   * IPv4 and IPv6 are supported.
+   * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+   * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+   * compressed format.
    * </pre>
    *
    * <code>optional string dest_range = 381327712;</code>
@@ -804,7 +836,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+   * The destination range of outgoing packets that this route applies to. Both
+   * IPv4 and IPv6 are supported.
+   * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+   * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+   * compressed format.
    * </pre>
    *
    * <code>optional string dest_range = 381327712;</code>
@@ -828,7 +864,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+   * The destination range of outgoing packets that this route applies to. Both
+   * IPv4 and IPv6 are supported.
+   * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+   * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+   * compressed format.
    * </pre>
    *
    * <code>optional string dest_range = 381327712;</code>
@@ -855,7 +895,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -871,7 +912,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -892,7 +934,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for Route resources.
+   * [Output Only] Type of this resource. Always compute#routes for
+   * Route resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -908,7 +951,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for Route resources.
+   * [Output Only] Type of this resource. Always compute#routes for
+   * Route resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -932,7 +976,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for Route resources.
+   * [Output Only] Type of this resource. Always compute#routes for
+   * Route resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -961,7 +1006,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all following characters (except for the last
+   * character) must be a dash, lowercase letter, or digit. The last character
+   * must be a lowercase letter or digit.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -977,7 +1028,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all following characters (except for the last
+   * character) must be a dash, lowercase letter, or digit. The last character
+   * must be a lowercase letter or digit.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1001,7 +1058,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+   * lowercase letter, and all following characters (except for the last
+   * character) must be a dash, lowercase letter, or digit. The last character
+   * must be a lowercase letter or digit.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1099,7 +1162,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets.
+   * You can only specify the internet gateway using a full or
+   * partial valid URL: projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>optional string next_hop_gateway = 377175298;</code>
@@ -1115,7 +1180,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets.
+   * You can only specify the internet gateway using a full or
+   * partial valid URL: projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>optional string next_hop_gateway = 377175298;</code>
@@ -1139,7 +1206,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+   * The URL to a gateway that should handle matching packets.
+   * You can only specify the internet gateway using a full or
+   * partial valid URL: projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
    * <code>optional string next_hop_gateway = 377175298;</code>
@@ -1168,7 +1237,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * that will handle matching packets.
    * </pre>
    *
    * <code>optional string next_hop_hub = 198679219;</code>
@@ -1184,7 +1254,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * that will handle matching packets.
    * </pre>
    *
    * <code>optional string next_hop_hub = 198679219;</code>
@@ -1208,7 +1279,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * that will handle matching packets.
    * </pre>
    *
    * <code>optional string next_hop_hub = 198679219;</code>
@@ -1237,7 +1309,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+   * packets or the IP address of the forwarding Rule.
+   * For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   *    - regions/region/forwardingRules/forwardingRule
+   *
+   *
+   * If an IP address is provided, must specify an IPv4 address in dot-decimal
+   * notation or an IPv6 address in RFC 4291 format. For example, the following
+   * are all valid IP addresses:
+   *
+   *
+   *       - 10.128.0.56
+   *       - 2001:db8::2d9:51:0:0
+   *       - 2001:db8:0:0:2d9:51:0:0
+   *
+   *
+   * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+   * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1253,7 +1345,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+   * packets or the IP address of the forwarding Rule.
+   * For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   *    - regions/region/forwardingRules/forwardingRule
+   *
+   *
+   * If an IP address is provided, must specify an IPv4 address in dot-decimal
+   * notation or an IPv6 address in RFC 4291 format. For example, the following
+   * are all valid IP addresses:
+   *
+   *
+   *       - 10.128.0.56
+   *       - 2001:db8::2d9:51:0:0
+   *       - 2001:db8:0:0:2d9:51:0:0
+   *
+   *
+   * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+   * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1277,7 +1389,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+   * packets or the IP address of the forwarding Rule.
+   * For example, the following are all valid URLs:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   *    - regions/region/forwardingRules/forwardingRule
+   *
+   *
+   * If an IP address is provided, must specify an IPv4 address in dot-decimal
+   * notation or an IPv6 address in RFC 4291 format. For example, the following
+   * are all valid IP addresses:
+   *
+   *
+   *       - 10.128.0.56
+   *       - 2001:db8::2d9:51:0:0
+   *       - 2001:db8:0:0:2d9:51:0:0
+   *
+   *
+   * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+   * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ilb = 198679901;</code>
@@ -1306,7 +1438,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify
+   * this as a full or partial URL.
+   * For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>optional string next_hop_instance = 393508247;</code>
@@ -1322,7 +1457,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify
+   * this as a full or partial URL.
+   * For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>optional string next_hop_instance = 393508247;</code>
@@ -1346,7 +1484,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   * The URL to an instance that should handle matching packets. You can specify
+   * this as a full or partial URL.
+   * For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
    * <code>optional string next_hop_instance = 393508247;</code>
@@ -1373,7 +1514,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * [Output only] Internal fixed region-to-region cost that Google Cloud
+   * calculates based on factors such as network performance, distance, and
+   * available bandwidth between regions.
    * </pre>
    *
    * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -1389,7 +1532,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+   * [Output only] Internal fixed region-to-region cost that Google Cloud
+   * calculates based on factors such as network performance, distance, and
+   * available bandwidth between regions.
    * </pre>
    *
    * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -1410,7 +1555,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The network IP address of an instance that should handle matching packets.
+   * Both IPv6 address and IPv4 addresses are supported.
+   * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+   * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+   * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+   * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+   * IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ip = 110319529;</code>
@@ -1426,7 +1577,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The network IP address of an instance that should handle matching packets.
+   * Both IPv6 address and IPv4 addresses are supported.
+   * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+   * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+   * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+   * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+   * IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ip = 110319529;</code>
@@ -1450,7 +1607,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+   * The network IP address of an instance that should handle matching packets.
+   * Both IPv6 address and IPv4 addresses are supported.
+   * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+   * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+   * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+   * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+   * IPv4-mapped IPv6 address.
    * </pre>
    *
    * <code>optional string next_hop_ip = 110319529;</code>
@@ -1477,7 +1640,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+   * the desirability of a particular route in a network.
    * </pre>
    *
    * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -1493,7 +1657,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+   * the desirability of a particular route in a network.
    * </pre>
    *
    * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -1583,7 +1748,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * [Output Only] Indicates the origin of the route. Can be IGP
+   * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+   * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
    * </pre>
    *
@@ -1600,7 +1767,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * [Output Only] Indicates the origin of the route. Can be IGP
+   * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+   * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
    * </pre>
    *
@@ -1625,7 +1794,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+   * [Output Only] Indicates the origin of the route. Can be IGP
+   * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+   * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
    * </pre>
    *
@@ -1655,7 +1826,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+   * [Output Only] The network peering name that should handle matching packets,
+   * which should conform to RFC1035.
    * </pre>
    *
    * <code>optional string next_hop_peering = 412682750;</code>
@@ -1671,7 +1843,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+   * [Output Only] The network peering name that should handle matching packets,
+   * which should conform to RFC1035.
    * </pre>
    *
    * <code>optional string next_hop_peering = 412682750;</code>
@@ -1695,7 +1868,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+   * [Output Only] The network peering name that should handle matching packets,
+   * which should conform to RFC1035.
    * </pre>
    *
    * <code>optional string next_hop_peering = 412682750;</code>
@@ -1791,7 +1965,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -1807,7 +1982,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -1823,7 +1999,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -1840,7 +2017,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+   * The priority of this route. Priority is used to break ties in cases
+   * where there is more than one matching route of equal prefix length. In
+   * cases where multiple routes have equal prefix length, the one with the
+   * lowest-numbered priority value wins. The default value is `1000`. The
+   * priority value must be from `0` to `65535`, inclusive.
    * </pre>
    *
    * <code>optional uint32 priority = 445151652;</code>
@@ -1856,7 +2037,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+   * The priority of this route. Priority is used to break ties in cases
+   * where there is more than one matching route of equal prefix length. In
+   * cases where multiple routes have equal prefix length, the one with the
+   * lowest-numbered priority value wins. The default value is `1000`. The
+   * priority value must be from `0` to `65535`, inclusive.
    * </pre>
    *
    * <code>optional uint32 priority = 445151652;</code>
@@ -1877,7 +2062,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the route.
+   * [Output only] The status of the route. This status only applies to
+   * dynamic routes learned by Cloud Routers. This status is not applicable
+   * to static routes.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -1894,7 +2081,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the route.
+   * [Output only] The status of the route. This status only applies to
+   * dynamic routes learned by Cloud Routers. This status is not applicable
+   * to static routes.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -1919,7 +2108,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] The status of the route.
+   * [Output only] The status of the route. This status only applies to
+   * dynamic routes learned by Cloud Routers. This status is not applicable
+   * to static routes.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -1949,7 +2140,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * [Output Only] The type of this route, which can be one of the following
+   * values:
+   * - 'TRANSIT' for a transit route that this router learned from
+   * another Cloud Router and will readvertise to one of its BGP peers
+   * - 'SUBNET' for a route from a subnet of the VPC
+   * - 'BGP' for a route learned from a BGP peer of this router
+   * - 'STATIC' for a static route
    * Check the RouteType enum for the list of possible values.
    * </pre>
    *
@@ -1966,7 +2163,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * [Output Only] The type of this route, which can be one of the following
+   * values:
+   * - 'TRANSIT' for a transit route that this router learned from
+   * another Cloud Router and will readvertise to one of its BGP peers
+   * - 'SUBNET' for a route from a subnet of the VPC
+   * - 'BGP' for a route learned from a BGP peer of this router
+   * - 'STATIC' for a static route
    * Check the RouteType enum for the list of possible values.
    * </pre>
    *
@@ -1991,7 +2194,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * [Output Only] The type of this route, which can be one of the following
+   * values:
+   * - 'TRANSIT' for a transit route that this router learned from
+   * another Cloud Router and will readvertise to one of its BGP peers
+   * - 'SUBNET' for a route from a subnet of the VPC
+   * - 'BGP' for a route learned from a BGP peer of this router
+   * - 'STATIC' for a static route
    * Check the RouteType enum for the list of possible values.
    * </pre>
    *
@@ -2158,7 +2367,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+   * [Output Only] If potential misconfigurations are detected for this
+   * route, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -2172,7 +2382,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+   * [Output Only] If potential misconfigurations are detected for this
+   * route, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -2187,7 +2398,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+   * [Output Only] If potential misconfigurations are detected for this
+   * route, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -2201,7 +2413,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+   * [Output Only] If potential misconfigurations are detected for this
+   * route, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -2215,7 +2428,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+   * [Output Only] If potential misconfigurations are detected for this
+   * route, this field will be populated with warning messages.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -2742,7 +2956,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Route resource. A route defines a path from VM instances in the VPC network to a specific destination. This destination can be inside or outside the VPC network. For more information, read the Routes overview.
+   * Represents a Route resource.
+   *
+   * A route defines a path from VM instances in the VPC network to a specific
+   * destination. This destination can be inside or outside the VPC network.
+   * For more information, read theRoutes overview.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Route}
@@ -3788,7 +4006,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3803,7 +4022,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3826,7 +4046,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3849,7 +4070,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3871,7 +4093,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3889,7 +4112,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -3914,7 +4138,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3929,7 +4154,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3952,7 +4178,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3975,7 +4202,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3997,7 +4225,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4015,7 +4244,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this field when you create the resource.
+     * An optional description of this resource. Provide this field when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4040,7 +4270,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4055,7 +4289,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4078,7 +4316,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4101,7 +4343,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4123,7 +4369,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4141,7 +4391,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format.
+     * The destination range of outgoing packets that this route applies to. Both
+     * IPv4 and IPv6 are supported.
+     * Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291
+     * format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952
+     * compressed format.
      * </pre>
      *
      * <code>optional string dest_range = 381327712;</code>
@@ -4166,7 +4420,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4182,7 +4437,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4198,7 +4454,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4218,7 +4475,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -4238,7 +4496,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4253,7 +4512,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4276,7 +4536,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4299,7 +4560,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4321,7 +4583,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4339,7 +4602,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of this resource. Always compute#routes for Route resources.
+     * [Output Only] Type of this resource. Always compute#routes for
+     * Route resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4364,7 +4628,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4379,7 +4649,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4402,7 +4678,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4425,7 +4707,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4447,7 +4735,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4465,7 +4759,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
+     * Name of the resource. Provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a
+     * lowercase letter, and all following characters (except for the last
+     * character) must be a dash, lowercase letter, or digit. The last character
+     * must be a lowercase letter or digit.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4616,7 +4916,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4631,7 +4933,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4654,7 +4958,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4677,7 +4983,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4699,7 +5007,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4717,7 +5027,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/ project/global/gateways/default-internet-gateway
+     * The URL to a gateway that should handle matching packets.
+     * You can only specify the internet gateway using a full or
+     * partial valid URL: projects/project/global/gateways/default-internet-gateway
      * </pre>
      *
      * <code>optional string next_hop_gateway = 377175298;</code>
@@ -4742,7 +5054,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4757,7 +5070,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4780,7 +5094,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4803,7 +5118,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4825,7 +5141,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4843,7 +5160,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets.
+     * [Output Only] The full resource name of the Network Connectivity Center hub
+     * that will handle matching packets.
      * </pre>
      *
      * <code>optional string next_hop_hub = 198679219;</code>
@@ -4868,7 +5186,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4883,7 +5221,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4906,7 +5264,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4929,7 +5307,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4951,7 +5349,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4969,7 +5387,27 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region /forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching
+     * packets or the IP address of the forwarding Rule.
+     * For example, the following are all valid URLs:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     *    - regions/region/forwardingRules/forwardingRule
+     *
+     *
+     * If an IP address is provided, must specify an IPv4 address in dot-decimal
+     * notation or an IPv6 address in RFC 4291 format. For example, the following
+     * are all valid IP addresses:
+     *
+     *
+     *       - 10.128.0.56
+     *       - 2001:db8::2d9:51:0:0
+     *       - 2001:db8:0:0:2d9:51:0:0
+     *
+     *
+     * IPv6 addresses will be displayed using RFC 5952 compressed format (e.g.
+     * 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ilb = 198679901;</code>
@@ -4994,7 +5432,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5009,7 +5450,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5032,7 +5476,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5055,7 +5502,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5077,7 +5527,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5095,7 +5548,10 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     * The URL to an instance that should handle matching packets. You can specify
+     * this as a full or partial URL.
+     * For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
      * </pre>
      *
      * <code>optional string next_hop_instance = 393508247;</code>
@@ -5120,7 +5576,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * [Output only] Internal fixed region-to-region cost that Google Cloud
+     * calculates based on factors such as network performance, distance, and
+     * available bandwidth between regions.
      * </pre>
      *
      * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -5136,7 +5594,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * [Output only] Internal fixed region-to-region cost that Google Cloud
+     * calculates based on factors such as network performance, distance, and
+     * available bandwidth between regions.
      * </pre>
      *
      * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -5152,7 +5612,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * [Output only] Internal fixed region-to-region cost that Google Cloud
+     * calculates based on factors such as network performance, distance, and
+     * available bandwidth between regions.
      * </pre>
      *
      * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -5172,7 +5634,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions.
+     * [Output only] Internal fixed region-to-region cost that Google Cloud
+     * calculates based on factors such as network performance, distance, and
+     * available bandwidth between regions.
      * </pre>
      *
      * <code>optional uint32 next_hop_inter_region_cost = 24442003;</code>
@@ -5192,7 +5656,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5207,7 +5677,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5230,7 +5706,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5253,7 +5735,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5275,7 +5763,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5293,7 +5787,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address.
+     * The network IP address of an instance that should handle matching packets.
+     * Both IPv6 address and IPv4 addresses are supported.
+     * Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or
+     * an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or
+     * 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952
+     * compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an
+     * IPv4-mapped IPv6 address.
      * </pre>
      *
      * <code>optional string next_hop_ip = 110319529;</code>
@@ -5318,7 +5818,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+     * the desirability of a particular route in a network.
      * </pre>
      *
      * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -5334,7 +5835,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+     * the desirability of a particular route in a network.
      * </pre>
      *
      * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -5350,7 +5852,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+     * the desirability of a particular route in a network.
      * </pre>
      *
      * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -5370,7 +5873,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network.
+     * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+     * the desirability of a particular route in a network.
      * </pre>
      *
      * <code>optional uint32 next_hop_med = 198683530;</code>
@@ -5516,7 +6020,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5532,7 +6038,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5556,7 +6064,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5580,7 +6090,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5603,7 +6115,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5622,7 +6136,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE.
+     * [Output Only] Indicates the origin of the route. Can be IGP
+     * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
+     * or INCOMPLETE.
      * Check the NextHopOrigin enum for the list of possible values.
      * </pre>
      *
@@ -5648,7 +6164,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5663,7 +6180,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5686,7 +6204,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5709,7 +6228,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5731,7 +6251,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5749,7 +6270,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
+     * [Output Only] The network peering name that should handle matching packets,
+     * which should conform to RFC1035.
      * </pre>
      *
      * <code>optional string next_hop_peering = 412682750;</code>
@@ -5905,7 +6427,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -5920,7 +6443,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -5941,7 +6465,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -5964,7 +6489,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -5984,7 +6510,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -6012,7 +6539,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -6032,7 +6560,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -6047,7 +6576,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -6066,7 +6596,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.RouteParams params = 78313862;</code>
@@ -6094,7 +6625,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+     * The priority of this route. Priority is used to break ties in cases
+     * where there is more than one matching route of equal prefix length. In
+     * cases where multiple routes have equal prefix length, the one with the
+     * lowest-numbered priority value wins. The default value is `1000`. The
+     * priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -6110,7 +6645,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+     * The priority of this route. Priority is used to break ties in cases
+     * where there is more than one matching route of equal prefix length. In
+     * cases where multiple routes have equal prefix length, the one with the
+     * lowest-numbered priority value wins. The default value is `1000`. The
+     * priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -6126,7 +6665,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+     * The priority of this route. Priority is used to break ties in cases
+     * where there is more than one matching route of equal prefix length. In
+     * cases where multiple routes have equal prefix length, the one with the
+     * lowest-numbered priority value wins. The default value is `1000`. The
+     * priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -6146,7 +6689,11 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
+     * The priority of this route. Priority is used to break ties in cases
+     * where there is more than one matching route of equal prefix length. In
+     * cases where multiple routes have equal prefix length, the one with the
+     * lowest-numbered priority value wins. The default value is `1000`. The
+     * priority value must be from `0` to `65535`, inclusive.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -6166,7 +6713,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6182,7 +6731,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6206,7 +6757,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6230,7 +6783,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6253,7 +6808,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6272,7 +6829,9 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] The status of the route.
+     * [Output only] The status of the route. This status only applies to
+     * dynamic routes learned by Cloud Routers. This status is not applicable
+     * to static routes.
      * Check the RouteStatus enum for the list of possible values.
      * </pre>
      *
@@ -6298,7 +6857,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6314,7 +6879,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6338,7 +6909,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6362,7 +6939,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6385,7 +6968,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6404,7 +6993,13 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * [Output Only] The type of this route, which can be one of the following
+     * values:
+     * - 'TRANSIT' for a transit route that this router learned from
+     * another Cloud Router and will readvertise to one of its BGP peers
+     * - 'SUBNET' for a route from a subnet of the VPC
+     * - 'BGP' for a route learned from a BGP peer of this router
+     * - 'STATIC' for a static route
      * Check the RouteType enum for the list of possible values.
      * </pre>
      *
@@ -6753,7 +7348,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6770,7 +7366,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6787,7 +7384,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6804,7 +7402,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6827,7 +7426,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6848,7 +7448,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6871,7 +7472,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6894,7 +7496,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6914,7 +7517,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6935,7 +7539,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6956,7 +7561,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6976,7 +7582,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -6996,7 +7603,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -7009,7 +7617,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -7026,7 +7635,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -7044,7 +7654,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -7058,7 +7669,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
@@ -7072,7 +7684,8 @@ public final class Route extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
+     * [Output Only] If potential misconfigurations are detected for this
+     * route, this field will be populated with warning messages.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * REST API for services dealing with conference records.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/apps/meet/v2/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConferenceRecordsServiceGrpc {
 
@@ -1152,8 +1149,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ConferenceRecord getConferenceRecord(
-        com.google.apps.meet.v2.GetConferenceRecordRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetConferenceRecordRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConferenceRecordMethod(), getCallOptions(), request);
     }
 
@@ -1166,8 +1163,9 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListConferenceRecordsResponse listConferenceRecords(
-        com.google.apps.meet.v2.ListConferenceRecordsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListConferenceRecordsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConferenceRecordsMethod(), getCallOptions(), request);
     }
 
@@ -1179,8 +1177,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.Participant getParticipant(
-        com.google.apps.meet.v2.GetParticipantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetParticipantRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParticipantMethod(), getCallOptions(), request);
     }
 
@@ -1196,8 +1194,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListParticipantsResponse listParticipants(
-        com.google.apps.meet.v2.ListParticipantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListParticipantsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParticipantsMethod(), getCallOptions(), request);
     }
 
@@ -1209,8 +1207,9 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ParticipantSession getParticipantSession(
-        com.google.apps.meet.v2.GetParticipantSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetParticipantSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetParticipantSessionMethod(), getCallOptions(), request);
     }
 
@@ -1226,8 +1225,9 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListParticipantSessionsResponse listParticipantSessions(
-        com.google.apps.meet.v2.ListParticipantSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListParticipantSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListParticipantSessionsMethod(), getCallOptions(), request);
     }
 
@@ -1239,8 +1239,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.Recording getRecording(
-        com.google.apps.meet.v2.GetRecordingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetRecordingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRecordingMethod(), getCallOptions(), request);
     }
 
@@ -1253,8 +1253,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListRecordingsResponse listRecordings(
-        com.google.apps.meet.v2.ListRecordingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListRecordingsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRecordingsMethod(), getCallOptions(), request);
     }
 
@@ -1266,8 +1266,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.Transcript getTranscript(
-        com.google.apps.meet.v2.GetTranscriptRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetTranscriptRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTranscriptMethod(), getCallOptions(), request);
     }
 
@@ -1280,8 +1280,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListTranscriptsResponse listTranscripts(
-        com.google.apps.meet.v2.ListTranscriptsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListTranscriptsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTranscriptsMethod(), getCallOptions(), request);
     }
 
@@ -1296,8 +1296,8 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.TranscriptEntry getTranscriptEntry(
-        com.google.apps.meet.v2.GetTranscriptEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.GetTranscriptEntryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTranscriptEntryMethod(), getCallOptions(), request);
     }
 
@@ -1313,8 +1313,9 @@ public final class ConferenceRecordsServiceGrpc {
      * </pre>
      */
     public com.google.apps.meet.v2.ListTranscriptEntriesResponse listTranscriptEntries(
-        com.google.apps.meet.v2.ListTranscriptEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.apps.meet.v2.ListTranscriptEntriesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTranscriptEntriesMethod(), getCallOptions(), request);
     }
   }

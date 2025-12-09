@@ -1689,6 +1689,98 @@ public interface AutonomousDatabasePropertiesOrBuilder
    *
    *
    * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataGuardRoleChangedTime field is set.
+   */
+  boolean hasDataGuardRoleChangedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataGuardRoleChangedTime.
+   */
+  com.google.protobuf.Timestamp getDataGuardRoleChangedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Autonomous Data Guard role was changed
+   * for the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp data_guard_role_changed_time = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDataGuardRoleChangedTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the disasterRecoveryRoleChangedTime field is set.
+   */
+  boolean hasDisasterRecoveryRoleChangedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The disasterRecoveryRoleChangedTime.
+   */
+  com.google.protobuf.Timestamp getDisasterRecoveryRoleChangedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time the Disaster Recovery role was changed for
+   * the standby Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disaster_recovery_role_changed_time = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDisasterRecoveryRoleChangedTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The date and time when maintenance will begin.
    * </pre>
    *
@@ -1770,4 +1862,209 @@ public interface AutonomousDatabasePropertiesOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getMaintenanceEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the allowlistedIps.
+   */
+  java.util.List<java.lang.String> getAllowlistedIpsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of allowlistedIps.
+   */
+  int getAllowlistedIpsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowlistedIps at the given index.
+   */
+  java.lang.String getAllowlistedIps(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The list of allowlisted IP addresses for the Autonomous Database.
+   * </pre>
+   *
+   * <code>repeated string allowlisted_ips = 67 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the allowlistedIps at the given index.
+   */
+  com.google.protobuf.ByteString getAllowlistedIpsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionKey field is set.
+   */
+  boolean hasEncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionKey.
+   */
+  com.google.cloud.oracledatabase.v1.EncryptionKey getEncryptionKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption key used to encrypt the Autonomous Database.
+   * Updating this field will add a new entry in the
+   * `encryption_key_history_entries` field with the former version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.EncryptionKey encryption_key = 68 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.EncryptionKeyOrBuilder getEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry>
+      getEncryptionKeyHistoryEntriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry getEncryptionKeyHistoryEntries(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getEncryptionKeyHistoryEntriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder>
+      getEncryptionKeyHistoryEntriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The history of the encryption keys used to encrypt the
+   * Autonomous Database.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntry encryption_key_history_entries = 69 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.oracledatabase.v1.EncryptionKeyHistoryEntryOrBuilder
+      getEncryptionKeyHistoryEntriesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An Oracle-managed Google Cloud service account on which
+   * customers can grant roles to access resources in the customer project.
+   * </pre>
+   *
+   * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAgentEmail.
+   */
+  java.lang.String getServiceAgentEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An Oracle-managed Google Cloud service account on which
+   * customers can grant roles to access resources in the customer project.
+   * </pre>
+   *
+   * <code>string service_agent_email = 70 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAgentEmail.
+   */
+  com.google.protobuf.ByteString getServiceAgentEmailBytes();
 }

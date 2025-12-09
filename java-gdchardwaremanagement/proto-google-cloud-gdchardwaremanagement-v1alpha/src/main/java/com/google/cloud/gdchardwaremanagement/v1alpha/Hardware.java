@@ -6605,6 +6605,65 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     return machineInfos_.get(index);
   }
 
+  public static final int ESTIMATED_DELIVERY_DATE_FIELD_NUMBER = 21;
+  private com.google.type.Date estimatedDeliveryDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedDeliveryDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasEstimatedDeliveryDate() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedDeliveryDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getEstimatedDeliveryDate() {
+    return estimatedDeliveryDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedDeliveryDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder() {
+    return estimatedDeliveryDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedDeliveryDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6673,6 +6732,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < machineInfos_.size(); i++) {
       output.writeMessage(20, machineInfos_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(21, getEstimatedDeliveryDate());
     }
     getUnknownFields().writeTo(output);
   }
@@ -6751,6 +6813,10 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < machineInfos_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, machineInfos_.get(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEstimatedDeliveryDate());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6811,6 +6877,10 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
       if (!getActualInstallationDate().equals(other.getActualInstallationDate())) return false;
     }
     if (!getMachineInfosList().equals(other.getMachineInfosList())) return false;
+    if (hasEstimatedDeliveryDate() != other.hasEstimatedDeliveryDate()) return false;
+    if (hasEstimatedDeliveryDate()) {
+      if (!getEstimatedDeliveryDate().equals(other.getEstimatedDeliveryDate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6877,6 +6947,10 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
     if (getMachineInfosCount() > 0) {
       hash = (37 * hash) + MACHINE_INFOS_FIELD_NUMBER;
       hash = (53 * hash) + getMachineInfosList().hashCode();
+    }
+    if (hasEstimatedDeliveryDate()) {
+      hash = (37 * hash) + ESTIMATED_DELIVERY_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEstimatedDeliveryDate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7051,6 +7125,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         getRequestedInstallationDateFieldBuilder();
         getActualInstallationDateFieldBuilder();
         getMachineInfosFieldBuilder();
+        getEstimatedDeliveryDateFieldBuilder();
       }
     }
 
@@ -7114,6 +7189,11 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         machineInfosBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00020000);
+      estimatedDeliveryDate_ = null;
+      if (estimatedDeliveryDateBuilder_ != null) {
+        estimatedDeliveryDateBuilder_.dispose();
+        estimatedDeliveryDateBuilder_ = null;
+      }
       return this;
     }
 
@@ -7235,6 +7315,13 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
                 ? actualInstallationDate_
                 : actualInstallationDateBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.estimatedDeliveryDate_ =
+            estimatedDeliveryDateBuilder_ == null
+                ? estimatedDeliveryDate_
+                : estimatedDeliveryDateBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7375,6 +7462,9 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
             machineInfosBuilder_.addAllMessages(other.machineInfos_);
           }
         }
+      }
+      if (other.hasEstimatedDeliveryDate()) {
+        mergeEstimatedDeliveryDate(other.getEstimatedDeliveryDate());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7529,6 +7619,13 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getEstimatedDeliveryDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10852,6 +10949,212 @@ public final class Hardware extends com.google.protobuf.GeneratedMessageV3
         machineInfos_ = null;
       }
       return machineInfosBuilder_;
+    }
+
+    private com.google.type.Date estimatedDeliveryDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        estimatedDeliveryDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the estimatedDeliveryDate field is set.
+     */
+    public boolean hasEstimatedDeliveryDate() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The estimatedDeliveryDate.
+     */
+    public com.google.type.Date getEstimatedDeliveryDate() {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        return estimatedDeliveryDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedDeliveryDate_;
+      } else {
+        return estimatedDeliveryDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedDeliveryDate(com.google.type.Date value) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        estimatedDeliveryDate_ = value;
+      } else {
+        estimatedDeliveryDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedDeliveryDate(com.google.type.Date.Builder builderForValue) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        estimatedDeliveryDate_ = builderForValue.build();
+      } else {
+        estimatedDeliveryDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEstimatedDeliveryDate(com.google.type.Date value) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && estimatedDeliveryDate_ != null
+            && estimatedDeliveryDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEstimatedDeliveryDateBuilder().mergeFrom(value);
+        } else {
+          estimatedDeliveryDate_ = value;
+        }
+      } else {
+        estimatedDeliveryDateBuilder_.mergeFrom(value);
+      }
+      if (estimatedDeliveryDate_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEstimatedDeliveryDate() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      estimatedDeliveryDate_ = null;
+      if (estimatedDeliveryDateBuilder_ != null) {
+        estimatedDeliveryDateBuilder_.dispose();
+        estimatedDeliveryDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getEstimatedDeliveryDateBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getEstimatedDeliveryDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder() {
+      if (estimatedDeliveryDateBuilder_ != null) {
+        return estimatedDeliveryDateBuilder_.getMessageOrBuilder();
+      } else {
+        return estimatedDeliveryDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedDeliveryDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The estimated delivery date of the hardware.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getEstimatedDeliveryDateFieldBuilder() {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        estimatedDeliveryDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getEstimatedDeliveryDate(), getParentForChildren(), isClean());
+        estimatedDeliveryDate_ = null;
+      }
+      return estimatedDeliveryDateBuilder_;
     }
 
     @java.lang.Override

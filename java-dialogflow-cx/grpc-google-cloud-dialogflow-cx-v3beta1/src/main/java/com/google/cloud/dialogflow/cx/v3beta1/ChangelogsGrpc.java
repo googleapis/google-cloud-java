@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Changelogs][google.cloud.dialogflow.cx.v3beta1.Changelog].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/changelog.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ChangelogsGrpc {
 
@@ -320,8 +317,9 @@ public final class ChangelogsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListChangelogsResponse listChangelogs(
-        com.google.cloud.dialogflow.cx.v3beta1.ListChangelogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListChangelogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChangelogsMethod(), getCallOptions(), request);
     }
 
@@ -333,8 +331,9 @@ public final class ChangelogsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Changelog getChangelog(
-        com.google.cloud.dialogflow.cx.v3beta1.GetChangelogRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetChangelogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChangelogMethod(), getCallOptions(), request);
     }
   }

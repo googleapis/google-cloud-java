@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support `TermsOfService` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/termsofservice.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TermsOfServiceServiceGrpc {
 
@@ -419,8 +416,9 @@ public final class TermsOfServiceServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.TermsOfService getTermsOfService(
-        com.google.shopping.merchant.accounts.v1.GetTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetTermsOfServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTermsOfServiceMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +431,9 @@ public final class TermsOfServiceServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.TermsOfService retrieveLatestTermsOfService(
-        com.google.shopping.merchant.accounts.v1.RetrieveLatestTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.RetrieveLatestTermsOfServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRetrieveLatestTermsOfServiceMethod(), getCallOptions(), request);
     }
 
@@ -447,8 +446,9 @@ public final class TermsOfServiceServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.AcceptTermsOfServiceResponse
         acceptTermsOfService(
-            com.google.shopping.merchant.accounts.v1.AcceptTermsOfServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.AcceptTermsOfServiceRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAcceptTermsOfServiceMethod(), getCallOptions(), request);
     }
   }

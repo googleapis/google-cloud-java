@@ -28,7 +28,9 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A local certificate file. The certificate must be in
+   * PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -41,7 +43,9 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A local certificate file. The certificate must be in
+   * PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -54,7 +58,9 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A local certificate file. The certificate must be in
+   * PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -67,7 +73,8 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A write-only private key in PEM format. Only insert requests will include this field.
+   * A write-only private key in PEM format. Only insert
+   * requests will include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>
@@ -80,7 +87,8 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A write-only private key in PEM format. Only insert requests will include this field.
+   * A write-only private key in PEM format. Only insert
+   * requests will include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>
@@ -93,7 +101,8 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * A write-only private key in PEM format. Only insert requests will include this field.
+   * A write-only private key in PEM format. Only insert
+   * requests will include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>

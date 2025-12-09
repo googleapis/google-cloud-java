@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The API Gateway Service is the interface for managing API Gateways.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/apigateway/v1/apigateway_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ApiGatewayServiceGrpc {
 
@@ -1256,8 +1253,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.ListGatewaysResponse listGateways(
-        com.google.cloud.apigateway.v1.ListGatewaysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.ListGatewaysRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGatewaysMethod(), getCallOptions(), request);
     }
 
@@ -1269,8 +1266,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.Gateway getGateway(
-        com.google.cloud.apigateway.v1.GetGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.GetGatewayRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGatewayMethod(), getCallOptions(), request);
     }
 
@@ -1282,8 +1279,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createGateway(
-        com.google.cloud.apigateway.v1.CreateGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.CreateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateGatewayMethod(), getCallOptions(), request);
     }
 
@@ -1295,8 +1293,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateGateway(
-        com.google.cloud.apigateway.v1.UpdateGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.UpdateGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGatewayMethod(), getCallOptions(), request);
     }
 
@@ -1308,8 +1307,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteGateway(
-        com.google.cloud.apigateway.v1.DeleteGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.DeleteGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteGatewayMethod(), getCallOptions(), request);
     }
 
@@ -1321,8 +1321,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.ListApisResponse listApis(
-        com.google.cloud.apigateway.v1.ListApisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.ListApisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApisMethod(), getCallOptions(), request);
     }
 
@@ -1334,8 +1334,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.Api getApi(
-        com.google.cloud.apigateway.v1.GetApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.GetApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiMethod(), getCallOptions(), request);
     }
 
@@ -1347,8 +1347,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApi(
-        com.google.cloud.apigateway.v1.CreateApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.CreateApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiMethod(), getCallOptions(), request);
     }
 
@@ -1360,8 +1360,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApi(
-        com.google.cloud.apigateway.v1.UpdateApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.UpdateApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiMethod(), getCallOptions(), request);
     }
 
@@ -1373,8 +1373,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteApi(
-        com.google.cloud.apigateway.v1.DeleteApiRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.DeleteApiRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiMethod(), getCallOptions(), request);
     }
 
@@ -1386,8 +1386,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.ListApiConfigsResponse listApiConfigs(
-        com.google.cloud.apigateway.v1.ListApiConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.ListApiConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApiConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1399,8 +1400,8 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.cloud.apigateway.v1.ApiConfig getApiConfig(
-        com.google.cloud.apigateway.v1.GetApiConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.GetApiConfigRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApiConfigMethod(), getCallOptions(), request);
     }
 
@@ -1412,8 +1413,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createApiConfig(
-        com.google.cloud.apigateway.v1.CreateApiConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.CreateApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateApiConfigMethod(), getCallOptions(), request);
     }
 
@@ -1425,8 +1427,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateApiConfig(
-        com.google.cloud.apigateway.v1.UpdateApiConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.UpdateApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateApiConfigMethod(), getCallOptions(), request);
     }
 
@@ -1438,8 +1441,9 @@ public final class ApiGatewayServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteApiConfig(
-        com.google.cloud.apigateway.v1.DeleteApiConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.apigateway.v1.DeleteApiConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApiConfigMethod(), getCallOptions(), request);
     }
   }

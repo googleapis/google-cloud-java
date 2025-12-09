@@ -17,6 +17,7 @@
 package com.google.cloud.networkservices.v1;
 
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -230,6 +231,57 @@ public class DepServiceSettings extends ClientSettings<DepServiceSettings> {
   public OperationCallSettings<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
       deleteLbRouteExtensionOperationSettings() {
     return ((DepServiceStubSettings) getStubSettings()).deleteLbRouteExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLbEdgeExtensions. */
+  public PagedCallSettings<
+          ListLbEdgeExtensionsRequest,
+          ListLbEdgeExtensionsResponse,
+          ListLbEdgeExtensionsPagedResponse>
+      listLbEdgeExtensionsSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).listLbEdgeExtensionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLbEdgeExtension. */
+  public UnaryCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
+      getLbEdgeExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).getLbEdgeExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLbEdgeExtension. */
+  public UnaryCallSettings<CreateLbEdgeExtensionRequest, Operation>
+      createLbEdgeExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).createLbEdgeExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createLbEdgeExtension. */
+  public OperationCallSettings<CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      createLbEdgeExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).createLbEdgeExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLbEdgeExtension. */
+  public UnaryCallSettings<UpdateLbEdgeExtensionRequest, Operation>
+      updateLbEdgeExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).updateLbEdgeExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateLbEdgeExtension. */
+  public OperationCallSettings<UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+      updateLbEdgeExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).updateLbEdgeExtensionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLbEdgeExtension. */
+  public UnaryCallSettings<DeleteLbEdgeExtensionRequest, Operation>
+      deleteLbEdgeExtensionSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).deleteLbEdgeExtensionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteLbEdgeExtension. */
+  public OperationCallSettings<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+      deleteLbEdgeExtensionOperationSettings() {
+    return ((DepServiceStubSettings) getStubSettings()).deleteLbEdgeExtensionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listAuthzExtensions. */
@@ -519,6 +571,59 @@ public class DepServiceSettings extends ClientSettings<DepServiceSettings> {
     public OperationCallSettings.Builder<DeleteLbRouteExtensionRequest, Empty, OperationMetadata>
         deleteLbRouteExtensionOperationSettings() {
       return getStubSettingsBuilder().deleteLbRouteExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLbEdgeExtensions. */
+    public PagedCallSettings.Builder<
+            ListLbEdgeExtensionsRequest,
+            ListLbEdgeExtensionsResponse,
+            ListLbEdgeExtensionsPagedResponse>
+        listLbEdgeExtensionsSettings() {
+      return getStubSettingsBuilder().listLbEdgeExtensionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLbEdgeExtension. */
+    public UnaryCallSettings.Builder<GetLbEdgeExtensionRequest, LbEdgeExtension>
+        getLbEdgeExtensionSettings() {
+      return getStubSettingsBuilder().getLbEdgeExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLbEdgeExtension. */
+    public UnaryCallSettings.Builder<CreateLbEdgeExtensionRequest, Operation>
+        createLbEdgeExtensionSettings() {
+      return getStubSettingsBuilder().createLbEdgeExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createLbEdgeExtension. */
+    public OperationCallSettings.Builder<
+            CreateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        createLbEdgeExtensionOperationSettings() {
+      return getStubSettingsBuilder().createLbEdgeExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLbEdgeExtension. */
+    public UnaryCallSettings.Builder<UpdateLbEdgeExtensionRequest, Operation>
+        updateLbEdgeExtensionSettings() {
+      return getStubSettingsBuilder().updateLbEdgeExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateLbEdgeExtension. */
+    public OperationCallSettings.Builder<
+            UpdateLbEdgeExtensionRequest, LbEdgeExtension, OperationMetadata>
+        updateLbEdgeExtensionOperationSettings() {
+      return getStubSettingsBuilder().updateLbEdgeExtensionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLbEdgeExtension. */
+    public UnaryCallSettings.Builder<DeleteLbEdgeExtensionRequest, Operation>
+        deleteLbEdgeExtensionSettings() {
+      return getStubSettingsBuilder().deleteLbEdgeExtensionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLbEdgeExtension. */
+    public OperationCallSettings.Builder<DeleteLbEdgeExtensionRequest, Empty, OperationMetadata>
+        deleteLbEdgeExtensionOperationSettings() {
+      return getStubSettingsBuilder().deleteLbEdgeExtensionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listAuthzExtensions. */

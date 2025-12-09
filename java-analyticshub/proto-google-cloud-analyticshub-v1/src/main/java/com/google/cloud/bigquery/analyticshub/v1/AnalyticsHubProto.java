@@ -33,6 +33,46 @@ public final class AnalyticsHubProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_DataExchange_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_QueryTemplate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_QueryTemplate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_Routine_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_Routine_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_CreateQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_CreateQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_GetQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_GetQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_UpdateQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_UpdateQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_DeleteQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_DeleteQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_SubmitQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_SubmitQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_ApproveQueryTemplateRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_ApproveQueryTemplateRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_fieldAccessorTable;
@@ -85,6 +125,10 @@ public final class AnalyticsHubProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_fieldAccessorTable;
@@ -100,6 +144,10 @@ public final class AnalyticsHubProto {
       internal_static_google_cloud_bigquery_analyticshub_v1_Listing_CommercialInfo_GoogleCloudMarketplaceInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_analyticshub_v1_Listing_CommercialInfo_GoogleCloudMarketplaceInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_bigquery_analyticshub_v1_StoredProcedureConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_analyticshub_v1_StoredProcedureConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_bigquery_analyticshub_v1_Subscription_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -273,12 +321,74 @@ public final class AnalyticsHubProto {
           + "(analyticshub.googleapis.com/DataExchange\022Eprojects/{project}/"
           + "locations/{location}/dataExchanges/{data_exchange}B\021\n"
           + "\017_discovery_typeB&\n"
-          + "$_log_linked_dataset_query_user_email\"\224\004\n"
+          + "$_log_linked_dataset_query_user_email\"\267\005\n\r"
+          + "QueryTemplate\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
+          + "\013description\030\003 \001(\tB\003\340A\001\022\025\n"
+          + "\010proposer\030\004 \001(\tB\003\340A\001\022\034\n"
+          + "\017primary_contact\030\n"
+          + " \001(\tB\003\340A\001\022\032\n\r"
+          + "documentation\030\005 \001(\tB\003\340A\001\022N\n"
+          + "\005state\030\006 \001(\0162:.google.cloud.bigquery."
+          + "analyticshub.v1.QueryTemplate.StateB\003\340A\003\022D\n"
+          + "\007routine\030\007"
+          + " \001(\0132..google.cloud.bigquery.analyticshub.v1.RoutineB\003\340A\001\0224\n"
+          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"S\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007DRAFTED\020\001\022\013\n"
+          + "\007PENDING\020\002\022\013\n"
+          + "\007DELETED\020\003\022\014\n"
+          + "\010APPROVED\020\004:\265\001\352A\261\001\n"
+          + ")analyticshub.googleapis.com/QueryTemplate\022eproje"
+          + "cts/{project}/locations/{location}/dataE"
+          + "xchanges/{data_exchange}/queryTemplates/{query_template}*\016queryTemplates2\r"
+          + "queryTemplate\"\306\001\n"
+          + "\007Routine\022U\n"
+          + "\014routine_type\030\001 \001("
+          + "\0162:.google.cloud.bigquery.analyticshub.v1.Routine.RoutineTypeB\003\340A\002\022\034\n"
+          + "\017definition_body\030\002 \001(\tB\003\340A\001\"F\n"
+          + "\013RoutineType\022\034\n"
+          + "\030ROUTINE_TYPE_UNSPECIFIED\020\000\022\031\n"
+          + "\025TABLE_VALUED_FUNCTION\020\001\"\321\001\n"
+          + "\032CreateQueryTemplateRequest\022@\n"
+          + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(analyticshub.googleapis.com/DataExchange\022\036\n"
+          + "\021query_template_id\030\002 \001(\tB\003\340A\002\022Q\n"
+          + "\016query_template\030\003 \001("
+          + "\01324.google.cloud.bigquery.analyticshub.v1.QueryTemplateB\003\340A\002\"Z\n"
+          + "\027GetQueryTemplateRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")analyticshub.googleapis.com/QueryTemplate\"\216\001\n"
+          + "\031ListQueryTemplatesRequest\022@\n"
+          + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
+          + "(analyticshub.googleapis.com/DataExchange\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\204\001\n"
+          + "\032ListQueryTemplatesResponse\022M\n"
+          + "\017query_templates\030\001 \003(\01324.goog"
+          + "le.cloud.bigquery.analyticshub.v1.QueryTemplate\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\245\001\n"
+          + "\032UpdateQueryTemplateRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022Q\n"
+          + "\016query_template\030\002 \001(\01324.google.cloud.big"
+          + "query.analyticshub.v1.QueryTemplateB\003\340A\002\"]\n"
+          + "\032DeleteQueryTemplateRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")analyticshub.googleapis.com/QueryTemplate\"]\n"
+          + "\032SubmitQueryTemplateRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")analyticshub.googleapis.com/QueryTemplate\"^\n"
+          + "\033ApproveQueryTemplateRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")analyticshub.googleapis.com/QueryTemplate\"\224\004\n"
           + "\030SharingEnvironmentConfig\022x\n"
-          + "\027default_exchange_config\030\001 \001(\0132U.google.cloud.bigquery.anal"
-          + "yticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfigH\000\022p\n"
-          + "\023dcr_exchange_config\030\002 \001(\0132Q.google.cloud.bigquery.analyt"
-          + "icshub.v1.SharingEnvironmentConfig.DcrExchangeConfigH\000\032\027\n"
+          + "\027default_exchange_config\030\001 \001(\0132U.google.cl"
+          + "oud.bigquery.analyticshub.v1.SharingEnvironmentConfig.DefaultExchangeConfigH\000\022p\n"
+          + "\023dcr_exchange_config\030\002 \001(\0132Q.google.clou"
+          + "d.bigquery.analyticshub.v1.SharingEnvironmentConfig.DcrExchangeConfigH\000\032\027\n"
           + "\025DefaultExchangeConfig\032\343\001\n"
           + "\021DcrExchangeConfig\022>\n"
           + ",single_selected_resource_sharing_restriction\030\001"
@@ -296,64 +406,69 @@ public final class AnalyticsHubProto {
           + "\017primary_contact\030\002 \001(\tB\003\340A\001\"O\n"
           + "\033DestinationDatasetReference\022\027\n\n"
           + "dataset_id\030\001 \001(\tB\003\340A\002\022\027\n\n"
-          + "project_id\030\002 \001(\tB\003\340A\002\"\214\003\n"
+          + "project_id\030\002 \001(\tB\003\340A\002\"\254\003\n"
           + "\022DestinationDataset\022b\n"
-          + "\021dataset_reference\030\001 \001(\0132B.google.cloud.bi"
-          + "gquery.analyticshub.v1.DestinationDatasetReferenceB\003\340A\002\0228\n\r"
+          + "\021dataset_reference\030\001 \001(\0132"
+          + "B.google.cloud.bigquery.analyticshub.v1.DestinationDatasetReferenceB\003\340A\002\0228\n\r"
           + "friendly_name\030\002 \001(\0132\034.google.protobuf.StringValueB\003\340A\001\0226\n"
           + "\013description\030\003"
           + " \001(\0132\034.google.protobuf.StringValueB\003\340A\001\022Z\n"
-          + "\006labels\030\004 \003(\0132E.google.cloud"
-          + ".bigquery.analyticshub.v1.DestinationDataset.LabelsEntryB\003\340A\001\022\025\n"
-          + "\010location\030\005 \001(\tB\003\340A\002\032-\n"
+          + "\006labels\030\004 \003(\0132E.google.cloud.bigquery.analyticshub."
+          + "v1.DestinationDataset.LabelsEntryB\003\340A\001\022\025\n"
+          + "\010location\030\005 \001(\tB\003\340A\002\022\036\n"
+          + "\021replica_locations\030\006 \003(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"|\n"
           + "\035DestinationPubSubSubscription\022[\n"
-          + "\023pubsub_subscription\030\001 \001(\01329.goog"
-          + "le.cloud.bigquery.analyticshub.v1.PubSubSubscriptionB\003\340A\002\"\264\033\n"
+          + "\023pubsub_subscription\030\001 \001"
+          + "(\01329.google.cloud.bigquery.analyticshub.v1.PubSubSubscriptionB\003\340A\002\"\207!\n"
           + "\007Listing\022`\n"
-          + "\020bigquery_dataset\030\006 \001(\0132D.google.cloud.bigquery."
-          + "analyticshub.v1.Listing.BigQueryDatasetSourceH\000\022X\n"
-          + "\014pubsub_topic\030\020 \001(\0132@.google.c"
-          + "loud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceH\000\022\021\n"
+          + "\020bigquery_dataset\030\006 \001(\0132D.google.cloud."
+          + "bigquery.analyticshub.v1.Listing.BigQueryDatasetSourceH\000\022X\n"
+          + "\014pubsub_topic\030\020 \001(\0132@"
+          + ".google.cloud.bigquery.analyticshub.v1.Listing.PubSubTopicSourceH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022\034\n"
           + "\017primary_contact\030\004 \001(\tB\003\340A\001\022\032\n\r"
           + "documentation\030\005 \001(\tB\003\340A\001\022H\n"
-          + "\005state\030\007 \001"
-          + "(\01624.google.cloud.bigquery.analyticshub.v1.Listing.StateB\003\340A\003\022\021\n"
+          + "\005state\030\007"
+          + " \001(\01624.google.cloud.bigquery.analyticshub.v1.Listing.StateB\003\340A\003\022\021\n"
           + "\004icon\030\010 \001(\014B\003\340A\001\022O\n\r"
-          + "data_provider\030\t \001(\01323.google.cloud.b"
-          + "igquery.analyticshub.v1.DataProviderB\003\340A\001\022P\n\n"
+          + "data_provider\030\t \001(\01323.googl"
+          + "e.cloud.bigquery.analyticshub.v1.DataProviderB\003\340A\001\022P\n\n"
           + "categories\030\n"
-          + " \003(\01627.google.cloud.big"
-          + "query.analyticshub.v1.Listing.CategoryB\003\340A\001\022H\n"
-          + "\tpublisher\030\013"
-          + " \001(\01320.google.cloud.bigquery.analyticshub.v1.PublisherB\003\340A\001\022\033\n"
+          + " \003(\01627.google."
+          + "cloud.bigquery.analyticshub.v1.Listing.CategoryB\003\340A\001\022H\n"
+          + "\tpublisher\030\013 \001(\01320.google"
+          + ".cloud.bigquery.analyticshub.v1.PublisherB\003\340A\001\022\033\n"
           + "\016request_access\030\014 \001(\tB\003\340A\001\022l\n"
           + "\030restricted_export_config\030\r"
-          + " \001(\0132E.google.cloud.bigq"
-          + "uery.analyticshub.v1.Listing.RestrictedExportConfigB\003\340A\001\022V\n"
-          + "\016discovery_type\030\016 \001(\016"
-          + "24.google.cloud.bigquery.analyticshub.v1.DiscoveryTypeB\003\340A\001H\001\210\001\001\022U\n\r"
-          + "resource_type\030\017"
-          + " \001(\01629.google.cloud.bigquery.analyticshub.v1.SharedResourceTypeB\003\340A\003\022`\n"
-          + "\017commercial_info\030\021 \001(\0132=.google.cloud.bigquery"
-          + ".analyticshub.v1.Listing.CommercialInfoB\003\340A\003H\002\210\001\001\0225\n"
+          + " \001(\0132E.google.c"
+          + "loud.bigquery.analyticshub.v1.Listing.RestrictedExportConfigB\003\340A\001\022b\n"
+          + "\027stored_procedure_config\030\024 \001(\0132<.google.cloud.bigque"
+          + "ry.analyticshub.v1.StoredProcedureConfigB\003\340A\001\022V\n"
+          + "\016discovery_type\030\016 \001(\01624.google.c"
+          + "loud.bigquery.analyticshub.v1.DiscoveryTypeB\003\340A\001H\001\210\001\001\022U\n\r"
+          + "resource_type\030\017 \001(\01629.g"
+          + "oogle.cloud.bigquery.analyticshub.v1.SharedResourceTypeB\003\340A\003\022`\n"
+          + "\017commercial_info\030\021 \001(\0132=.google.cloud.bigquery.analyticsh"
+          + "ub.v1.Listing.CommercialInfoB\003\340A\003H\002\210\001\001\0225\n"
           + "#log_linked_dataset_query_user_email\030\022"
           + " \001(\010B\003\340A\001H\003\210\001\001\022-\n"
           + "\033allow_only_metadata_sharing\030\023"
-          + " \001(\010B\003\340A\001H\004\210\001\001\032\267\005\n"
+          + " \001(\010B\003\340A\001H\004\210\001\001\032\204\n\n"
           + "\025BigQueryDatasetSource\0228\n"
           + "\007dataset\030\001 \001(\tB\'\340A\001\372A!\n"
           + "\037bigquery.googleapis.com/Dataset\022v\n"
-          + "\022selected_resources\030\002 \003(\0132U.google.cloud.b"
-          + "igquery.analyticshub.v1.Listing.BigQueryDatasetSource.SelectedResourceB\003\340A\001\022\202\001\n"
-          + "\030restricted_export_policy\030\003 \001(\0132[.google."
-          + "cloud.bigquery.analyticshub.v1.Listing.B"
-          + "igQueryDatasetSource.RestrictedExportPolicyB\003\340A\001\032\222\001\n"
+          + "\022selected_resources\030\002 \003(\0132U.google.cloud.bigquery.ana"
+          + "lyticshub.v1.Listing.BigQueryDatasetSource.SelectedResourceB\003\340A\001\022\202\001\n"
+          + "\030restricted_export_policy\030\003 \001(\0132[.google.cloud.bigqu"
+          + "ery.analyticshub.v1.Listing.BigQueryDatasetSource.RestrictedExportPolicyB\003\340A\001\022\036\n"
+          + "\021replica_locations\030\005 \003(\tB\003\340A\001\022m\n"
+          + "\022effective_replicas\030\006 \003(\0132L.google.cloud.bigquer"
+          + "y.analyticshub.v1.Listing.BigQueryDatasetSource.ReplicaB\003\340A\003\032\222\001\n"
           + "\020SelectedResource\0226\n"
           + "\005table\030\001 \001(\tB%\340A\001\372A\037\n"
           + "\035bigquery.googleapis.com/TableH\000\022:\n"
@@ -365,7 +480,21 @@ public final class AnalyticsHubProto {
           + "\034restrict_direct_table_access\030\002"
           + " \001(\0132\032.google.protobuf.BoolValueB\003\340A\001\022>\n"
           + "\025restrict_query_result\030\003"
-          + " \001(\0132\032.google.protobuf.BoolValueB\003\340A\001\032k\n"
+          + " \001(\0132\032.google.protobuf.BoolValueB\003\340A\001\032\273\003\n"
+          + "\007Replica\022\025\n"
+          + "\010location\030\001 \001(\tB\003\340A\003\022u\n\r"
+          + "replica_state\030\002 \001(\0162Y.google.cloud.bigquery.analyticshub.v1."
+          + "Listing.BigQueryDatasetSource.Replica.ReplicaStateB\003\340A\003\022z\n\r"
+          + "primary_state\030\003 \001(\0162Y.google.cloud.bigquery.analyticshub.v1.L"
+          + "isting.BigQueryDatasetSource.Replica.PrimaryStateB\003\340A\003H\000\210\001\001\"P\n"
+          + "\014ReplicaState\022\035\n"
+          + "\031REPLICA_STATE_UNSPECIFIED\020\000\022\020\n"
+          + "\014READY_TO_USE\020\001\022\017\n"
+          + "\013UNAVAILABLE\020\002\"B\n"
+          + "\014PrimaryState\022\035\n"
+          + "\031PRIMARY_STATE_UNSPECIFIED\020\000\022\023\n"
+          + "\017PRIMARY_REPLICA\020\001B\020\n"
+          + "\016_primary_state\032k\n"
           + "\021PubSubTopicSource\0222\n"
           + "\005topic\030\001 \001(\tB#\340A\002\372A\035\n"
           + "\033pubsub.googleapis.com/Topic\022\"\n"
@@ -375,14 +504,15 @@ public final class AnalyticsHubProto {
           + "\034restrict_direct_table_access\030\001 \001(\010B\003\340A\003\022\"\n"
           + "\025restrict_query_result\030\002 \001(\010B\003\340A\001\032\224\004\n"
           + "\016CommercialInfo\022}\n"
-          + "\021cloud_marketplace\030\001 \001(\0132X.google.cloud.bigquery.anal"
-          + "yticshub.v1.Listing.CommercialInfo.GoogleCloudMarketplaceInfoB\003\340A\003H\000\210\001\001\032\354\002\n"
+          + "\021cloud_marketplace\030\001 \001(\0132X.google.c"
+          + "loud.bigquery.analyticshub.v1.Listing.Co"
+          + "mmercialInfo.GoogleCloudMarketplaceInfoB\003\340A\003H\000\210\001\001\032\354\002\n"
           + "\032GoogleCloudMarketplaceInfo\022M\n"
           + "\007service\030\001 \001(\tB7\340A\003\372A1\n"
           + "/servicemanagement.googleapis.com/ManagedServiceH\000\210\001\001\022\214\001\n"
-          + "\020commercial_state\030\003 \001(\0162h.google.cloud.bigquery.analyti"
-          + "cshub.v1.Listing.CommercialInfo.GoogleCl"
-          + "oudMarketplaceInfo.CommercialStateB\003\340A\003H\001\210\001\001\"O\n"
+          + "\020commercial_state\030\003 \001(\0162h.google.clou"
+          + "d.bigquery.analyticshub.v1.Listing.Comme"
+          + "rcialInfo.GoogleCloudMarketplaceInfo.CommercialStateB\003\340A\003H\001\210\001\001\"O\n"
           + "\017CommercialState\022 \n"
           + "\034COMMERCIAL_STATE_UNSPECIFIED\020\000\022\016\n\n"
           + "ONBOARDING\020\001\022\n\n"
@@ -392,7 +522,7 @@ public final class AnalyticsHubProto {
           + "\022_cloud_marketplace\"*\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\n\n"
-          + "\006ACTIVE\020\001\"\267\004\n"
+          + "\006ACTIVE\020\001\"\331\004\n"
           + "\010Category\022\030\n"
           + "\024CATEGORY_UNSPECIFIED\020\000\022\023\n"
           + "\017CATEGORY_OTHERS\020\001\022&\n"
@@ -415,16 +545,25 @@ public final class AnalyticsHubProto {
           + "\017CATEGORY_SPORTS\020\020\022!\n"
           + "\035CATEGORY_SCIENCE_AND_RESEARCH\020\021\022)\n"
           + "%CATEGORY_TRANSPORTATION_AND_LOGISTICS\020\022\022\037\n"
-          + "\033CATEGORY_TRAVEL_AND_TOURISM\020\023:\202\001\352A\177\n"
-          + "#analyticshub.googleapis.com/Listing\022Xprojects/{project}/locations/{location}/d"
-          + "ataExchanges/{data_exchange}/listings/{listing}B\010\n"
+          + "\033CATEGORY_TRAVEL_AND_TOURISM\020\023\022 \n"
+          + "\034CATEGORY_GOOGLE_EARTH_ENGINE\020\024:\202\001\352A\177\n"
+          + "#analyticshub.googleapis.com/Listing\022Xprojects/{project}/locations/"
+          + "{location}/dataExchanges/{data_exchange}/listings/{listing}B\010\n"
           + "\006sourceB\021\n"
           + "\017_discovery_typeB\022\n"
           + "\020_commercial_infoB&\n"
           + "$_log_linked_dataset_query_user_emailB\036\n"
-          + "\034_allow_only_metadata_sharing\"\230\r\n"
+          + "\034_allow_only_metadata_sharing\"\375\001\n"
+          + "\025StoredProcedureConfig\022\024\n"
+          + "\007enabled\030\001 \001(\010B\003\340A\001\022}\n"
+          + "\036allowed_stored_procedure_types\030\002 \003(\0162P.google.cl"
+          + "oud.bigquery.analyticshub.v1.StoredProcedureConfig.StoredProcedureTypeB\003\340A\003\"O\n"
+          + "\023StoredProcedureType\022%\n"
+          + "!STORED_PROCEDURE_TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "SQL_PROCEDURE\020\001\"\230\r\n"
           + "\014Subscription\022\026\n"
-          + "\007listing\030\005 \001(\tB\003\340A\003H\000\022\034\n\r"
+          + "\007listing\030\005 \001(\tB\003\340A\003H\000\022\034\n"
+          + "\r"
           + "data_exchange\030\006 \001(\tB\003\340A\003H\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\0226\n\r"
           + "creation_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0229\n"
@@ -433,45 +572,44 @@ public final class AnalyticsHubProto {
           + "\017organization_id\030\004 \001(\tB\003\340A\003\022&\n"
           + "\031organization_display_name\030\n"
           + " \001(\tB\003\340A\003\022M\n"
-          + "\005state\030\007 \001(\01629.google.cloud.bigque"
-          + "ry.analyticshub.v1.Subscription.StateB\003\340A\003\022j\n"
-          + "\022linked_dataset_map\030\010 \003(\0132I.google."
-          + "cloud.bigquery.analyticshub.v1.Subscription.LinkedDatasetMapEntryB\003\340A\003\022\037\n"
+          + "\005state\030\007"
+          + " \001(\01629.google.cloud.bigquery.analyticshub.v1.Subscription.StateB\003\340A\003\022j\n"
+          + "\022linked_dataset_map\030\010 \003(\0132I.google.cloud.bigque"
+          + "ry.analyticshub.v1.Subscription.LinkedDatasetMapEntryB\003\340A\003\022\037\n"
           + "\022subscriber_contact\030\t \001(\tB\003\340A\003\022a\n"
-          + "\020linked_resources\030\013 \003(\0132B.google.cloud.bigquery.analyt"
-          + "icshub.v1.Subscription.LinkedResourceB\003\340A\003\022U\n\r"
-          + "resource_type\030\014 \001(\01629.google.cloud"
-          + ".bigquery.analyticshub.v1.SharedResourceTypeB\003\340A\003\022`\n"
+          + "\020linked_resources\030\013 \003(\0132B."
+          + "google.cloud.bigquery.analyticshub.v1.Subscription.LinkedResourceB\003\340A\003\022U\n\r"
+          + "resource_type\030\014"
+          + " \001(\01629.google.cloud.bigquery.analyticshub.v1.SharedResourceTypeB\003\340A\003\022`\n"
           + "\017commercial_info\030\r"
-          + " \001(\0132B.goo"
-          + "gle.cloud.bigquery.analyticshub.v1.Subscription.CommercialInfoB\003\340A\003\0225\n"
+          + " \001(\0132B.google.cloud.bi"
+          + "gquery.analyticshub.v1.Subscription.CommercialInfoB\003\340A\003\0225\n"
           + "#log_linked_dataset_query_user_email\030\016"
           + " \001(\010B\003\340A\003H\001\210\001\001\022[\n"
-          + "\023destination_dataset\030\017 \001(\01329.google"
-          + ".cloud.bigquery.analyticshub.v1.DestinationDatasetB\003\340A\001\032}\n"
+          + "\023destination_dataset\030\017 \001(\01329.google.cloud.bigqu"
+          + "ery.analyticshub.v1.DestinationDatasetB\003\340A\001\032}\n"
           + "\016LinkedResource\022\035\n"
           + "\016linked_dataset\030\001 \001(\tB\003\340A\003H\000\022)\n"
           + "\032linked_pubsub_subscription\030\003 \001(\tB\003\340A\003H\000\022\024\n"
           + "\007listing\030\002 \001(\tB\003\340A\003B\013\n"
           + "\treference\032\370\001\n"
           + "\016CommercialInfo\022}\n"
-          + "\021cloud_marketplace\030\001 \001(\0132].google.cl"
-          + "oud.bigquery.analyticshub.v1.Subscriptio"
-          + "n.CommercialInfo.GoogleCloudMarketplaceInfoB\003\340A\003\032g\n"
+          + "\021cloud_marketplace\030\001 \001(\0132].google.cloud.bigquery"
+          + ".analyticshub.v1.Subscription.CommercialInfo.GoogleCloudMarketplaceInfoB\003\340A\003\032g\n"
           + "\032GoogleCloudMarketplaceInfo\022I\n"
           + "\005order\030\001 \001(\tB:\372A7\n"
           + "5cloudcommerceconsumerprocurement.googleapis.com/Order\032{\n"
           + "\025LinkedDatasetMapEntry\022\013\n"
           + "\003key\030\001 \001(\t\022Q\n"
-          + "\005value\030\002 \001(\0132B.google.cloud.bigquery.analytics"
-          + "hub.v1.Subscription.LinkedResource:\0028\001\"U\n"
+          + "\005value\030\002 \001(\0132B.goo"
+          + "gle.cloud.bigquery.analyticshub.v1.Subscription.LinkedResource:\0028\001\"U\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
           + "\014STATE_ACTIVE\020\001\022\017\n"
           + "\013STATE_STALE\020\002\022\022\n"
           + "\016STATE_INACTIVE\020\003:s\352Ap\n"
-          + "(analyticshub.googleapis.com/Subscription\022Dprojects/{project}/locatio"
-          + "ns/{location}/subscriptions/{subscription}B\017\n\r"
+          + "(analyticshub.googleapis.com/Subscription"
+          + "\022Dprojects/{project}/locations/{location}/subscriptions/{subscription}B\017\n\r"
           + "resource_nameB&\n"
           + "$_log_linked_dataset_query_user_email\"\203\001\n"
           + "\030ListDataExchangesRequest\022@\n"
@@ -480,16 +618,16 @@ public final class AnalyticsHubProto {
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\201\001\n"
           + "\031ListDataExchangesResponse\022K\n"
-          + "\016data_exchanges\030\001"
-          + " \003(\01323.google.cloud.bigquery.analyticshub.v1.DataExchange\022\027\n"
+          + "\016data_exchanges\030\001 \003(\01323.go"
+          + "ogle.cloud.bigquery.analyticshub.v1.DataExchange\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"_\n"
           + "\033ListOrgDataExchangesRequest\022\031\n"
           + "\014organization\030\001 \001(\tB\003\340A\002\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"\204\001\n"
           + "\034ListOrgDataExchangesResponse\022K\n"
-          + "\016data_exchanges\030\001 \003(\0132"
-          + "3.google.cloud.bigquery.analyticshub.v1.DataExchange\022\027\n"
+          + "\016data_exchanges\030\001 \003(\01323.google.clo"
+          + "ud.bigquery.analyticshub.v1.DataExchange\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"X\n"
           + "\026GetDataExchangeRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
@@ -498,13 +636,13 @@ public final class AnalyticsHubProto {
           + "\006parent\030\001 \001("
           + "\tB0\340A\002\372A*\022(analyticshub.googleapis.com/DataExchange\022\035\n"
           + "\020data_exchange_id\030\002 \001(\tB\003\340A\002\022O\n\r"
-          + "data_exchange\030\003 \001(\01323."
-          + "google.cloud.bigquery.analyticshub.v1.DataExchangeB\003\340A\002\"\242\001\n"
+          + "data_exchange\030\003 \001(\01323.google.cloud"
+          + ".bigquery.analyticshub.v1.DataExchangeB\003\340A\002\"\242\001\n"
           + "\031UpdateDataExchangeRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022O\n\r"
-          + "data_exchange\030\002 \001"
-          + "(\01323.google.cloud.bigquery.analyticshub.v1.DataExchangeB\003\340A\002\"[\n"
+          + "data_exchange\030\002 \001(\01323.google."
+          + "cloud.bigquery.analyticshub.v1.DataExchangeB\003\340A\002\"[\n"
           + "\031DeleteDataExchangeRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(analyticshub.googleapis.com/DataExchange\"~\n"
@@ -514,8 +652,8 @@ public final class AnalyticsHubProto {
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\"q\n"
           + "\024ListListingsResponse\022@\n"
-          + "\010listings\030\001 "
-          + "\003(\0132..google.cloud.bigquery.analyticshub.v1.Listing\022\027\n"
+          + "\010listings\030\001 \003(\0132..google"
+          + ".cloud.bigquery.analyticshub.v1.Listing\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"N\n"
           + "\021GetListingRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
@@ -524,45 +662,45 @@ public final class AnalyticsHubProto {
           + "\006parent\030\001 \001(\tB0\340A\002\372A*\n"
           + "(analyticshub.googleapis.com/DataExchange\022\027\n\n"
           + "listing_id\030\002 \001(\tB\003\340A\002\022D\n"
-          + "\007listing\030\003"
-          + " \001(\0132..google.cloud.bigquery.analyticshub.v1.ListingB\003\340A\002\"\222\001\n"
+          + "\007listing\030\003 \001(\0132.."
+          + "google.cloud.bigquery.analyticshub.v1.ListingB\003\340A\002\"\222\001\n"
           + "\024UpdateListingRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022D\n"
-          + "\007listing\030\002 \001(\0132."
-          + ".google.cloud.bigquery.analyticshub.v1.ListingB\003\340A\002\"q\n"
+          + "\007listing\030\002 \001(\0132..google.clou"
+          + "d.bigquery.analyticshub.v1.ListingB\003\340A\002\"q\n"
           + "\024DeleteListingRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#analyticshub.googleapis.com/Listing\022\036\n"
           + "\021delete_commercial\030\002 \001(\010B\003\340A\001\"\270\002\n"
           + "\027SubscribeListingRequest\022]\n"
-          + "\023destination_dataset\030\003 \001(\01329.google.cloud.b"
-          + "igquery.analyticshub.v1.DestinationDatasetB\003\340A\004H\000\022t\n"
-          + "\037destination_pubsub_subscription\030\005 \001(\0132D.google.cloud.bigquery.analy"
-          + "ticshub.v1.DestinationPubSubSubscriptionB\003\340A\004H\000\0229\n"
+          + "\023destination_dataset\030\003"
+          + " \001(\01329.google.cloud.bigquery.analyticshub.v1.DestinationDatasetB\003\340A\004H\000\022t\n"
+          + "\037destination_pubsub_subscription\030\005 \001(\0132D"
+          + ".google.cloud.bigquery.analyticshub.v1.DestinationPubSubSubscriptionB\003\340A\004H\000\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#analyticshub.googleapis.com/ListingB\r\n"
           + "\013destination\"e\n"
           + "\030SubscribeListingResponse\022I\n"
-          + "\014subscription\030\001"
-          + " \001(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\"\262\002\n"
+          + "\014subscription\030\001 \001(\0132"
+          + "3.google.cloud.bigquery.analyticshub.v1.Subscription\"\262\002\n"
           + "\034SubscribeDataExchangeRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(analyticshub.googleapis.com/DataExchange\022>\n"
           + "\013destination\030\002 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022[\n"
-          + "\023destination_dataset\030\005 \001(\01329.google.cloud.bigquery.a"
-          + "nalyticshub.v1.DestinationDatasetB\003\340A\001\022\031\n"
+          + "\023destination_dataset\030\005 \001"
+          + "(\01329.google.cloud.bigquery.analyticshub.v1.DestinationDatasetB\003\340A\001\022\031\n"
           + "\014subscription\030\004 \001(\tB\003\340A\002\022\032\n"
           + "\022subscriber_contact\030\003 \001(\t\"j\n"
           + "\035SubscribeDataExchangeResponse\022I\n"
-          + "\014subscription\030\001 \001(\01323.google.cl"
-          + "oud.bigquery.analyticshub.v1.Subscription\"\\\n"
+          + "\014subscription\030\001"
+          + " \001(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\"\\\n"
           + "\032RefreshSubscriptionRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(analyticshub.googleapis.com/Subscription\"h\n"
           + "\033RefreshSubscriptionResponse\022I\n"
-          + "\014subscription\030\001 \001(\01323.google.cl"
-          + "oud.bigquery.analyticshub.v1.Subscription\"X\n"
+          + "\014subscription\030\001"
+          + " \001(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\"X\n"
           + "\026GetSubscriptionRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(analyticshub.googleapis.com/Subscription\"\223\001\n"
@@ -573,8 +711,8 @@ public final class AnalyticsHubProto {
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
           + "page_token\030\004 \001(\t\"\200\001\n"
           + "\031ListSubscriptionsResponse\022J\n\r"
-          + "subscriptions\030\001"
-          + " \003(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\022\027\n"
+          + "subscriptions\030\001 \003"
+          + "(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\223\001\n"
           + "&ListSharedResourceSubscriptionsRequest\022\033\n"
           + "\010resource\030\001 \001(\tB\t\340A\002\372A\003\n"
@@ -583,8 +721,8 @@ public final class AnalyticsHubProto {
           + "\tpage_size\030\003 \001(\005\022\022\n\n"
           + "page_token\030\004 \001(\t\"\236\001\n"
           + "\'ListSharedResourceSubscriptionsResponse\022Z\n"
-          + "\035shared_resource_subscriptions\030\001"
-          + " \003(\01323.google.cloud.bigquery.analyticshub.v1.Subscription\022\027\n"
+          + "\035shared_resource_subscriptions\030\001 \003(\01323.goog"
+          + "le.cloud.bigquery.analyticshub.v1.Subscription\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"{\n"
           + "\031RevokeSubscriptionRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
@@ -609,139 +747,197 @@ public final class AnalyticsHubProto {
           + "\022SharedResourceType\022$\n"
           + " SHARED_RESOURCE_TYPE_UNSPECIFIED\020\000\022\024\n"
           + "\020BIGQUERY_DATASET\020\001\022\020\n"
-          + "\014PUBSUB_TOPIC\020\0022\332*\n"
+          + "\014PUBSUB_TOPIC\020\0022\2008\n"
           + "\023AnalyticsHubService\022\332\001\n"
-          + "\021ListDataExchanges\022?.google.cloud.bigquery.analyticshub.v1"
-          + ".ListDataExchangesRequest\032@.google.cloud.bigquery.analyticshub.v1.ListDataExchan"
-          + "gesResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{paren"
-          + "t=projects/*/locations/*}/dataExchanges\022\364\001\n"
-          + "\024ListOrgDataExchanges\022B.google.cloud.bigquery.analyticshub.v1.ListOrgDataExch"
-          + "angesRequest\032C.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRespons"
-          + "e\"S\332A\014organization\202\323\344\223\002>\022</v1/{organizat"
-          + "ion=organizations/*/locations/*}/dataExchanges\022\307\001\n"
-          + "\017GetDataExchange\022=.google.cloud.bigquery.analyticshub.v1.GetDataExchan"
-          + "geRequest\0323.google.cloud.bigquery.analyt"
-          + "icshub.v1.DataExchange\"@\332A\004name\202\323\344\223\0023\0221/"
-          + "v1/{name=projects/*/locations/*/dataExchanges/*}\022\354\001\n"
-          + "\022CreateDataExchange\022@.google.cloud.bigquery.analyticshub.v1.CreateDa"
-          + "taExchangeRequest\0323.google.cloud.bigquer"
-          + "y.analyticshub.v1.DataExchange\"_\332A\024paren"
-          + "t,data_exchange\202\323\344\223\002B\"1/v1/{parent=projects/*/locations/*}/dataExchanges:\r"
+          + "\021ListDataExchanges\022?.google.cloud.bigquery.analyticshub.v1.ListDataExc"
+          + "hangesRequest\032@.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse\""
+          + "B\332A\006parent\202\323\344\223\0023\0221/v1/{parent=projects/*/locations/*}/dataExchanges\022\364\001\n"
+          + "\024ListOrgDataExchanges\022B.google.cloud.bigquery.ana"
+          + "lyticshub.v1.ListOrgDataExchangesRequest\032C.google.cloud.bigquery.analyticshub.v1"
+          + ".ListOrgDataExchangesResponse\"S\332A\014organi"
+          + "zation\202\323\344\223\002>\022</v1/{organization=organizations/*/locations/*}/dataExchanges\022\307\001\n"
+          + "\017GetDataExchange\022=.google.cloud.bigquery.a"
+          + "nalyticshub.v1.GetDataExchangeRequest\0323.google.cloud.bigquery.analyticshub.v1.Da"
+          + "taExchange\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=projects/*/locations/*/dataExchanges/*}\022\354\001\n"
+          + "\022CreateDataExchange\022@.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRe"
+          + "quest\0323.google.cloud.bigquery.analyticsh"
+          + "ub.v1.DataExchange\"_\332A\024parent,data_excha"
+          + "nge\202\323\344\223\002B\"1/v1/{parent=projects/*/locations/*}/dataExchanges:\r"
           + "data_exchange\022\377\001\n"
-          + "\022UpdateDataExchange\022@.google.cloud.bigquery.analyticshub.v1.UpdateDat"
-          + "aExchangeRequest\0323.google.cloud.bigquery"
-          + ".analyticshub.v1.DataExchange\"r\332A\031data_e"
-          + "xchange,update_mask\202\323\344\223\002P2?/v1/{data_exc"
-          + "hange.name=projects/*/locations/*/dataExchanges/*}:\r"
+          + "\022UpdateDataExchange\022@.google.cloud.bigque"
+          + "ry.analyticshub.v1.UpdateDataExchangeRequest\0323.google.cloud.bigquery.analyticshu"
+          + "b.v1.DataExchange\"r\332A\031data_exchange,upda"
+          + "te_mask\202\323\344\223\002P2?/v1/{data_exchange.name=projects/*/locations/*/dataExchanges/*}:\r"
           + "data_exchange\022\260\001\n"
-          + "\022DeleteDataExchange\022@.google.cloud.bigquery.analyti"
-          + "cshub.v1.DeleteDataExchangeRequest\032\026.goo"
-          + "gle.protobuf.Empty\"@\332A\004name\202\323\344\223\0023*1/v1/{"
-          + "name=projects/*/locations/*/dataExchanges/*}\022\326\001\n"
-          + "\014ListListings\022:.google.cloud.bigquery.analyticshub.v1.ListListingsReques"
-          + "t\032;.google.cloud.bigquery.analyticshub.v"
-          + "1.ListListingsResponse\"M\332A\006parent\202\323\344\223\002>\022"
-          + "</v1/{parent=projects/*/locations/*/dataExchanges/*}/listings\022\303\001\n\n"
-          + "GetListing\0228.google.cloud.bigquery.analyticshub.v1.Get"
-          + "ListingRequest\032..google.cloud.bigquery.a"
-          + "nalyticshub.v1.Listing\"K\332A\004name\202\323\344\223\002>\022</"
-          + "v1/{name=projects/*/locations/*/dataExchanges/*/listings/*}\022\334\001\n\r"
-          + "CreateListing\022;.google.cloud.bigquery.analyticshub.v1.Cr"
-          + "eateListingRequest\032..google.cloud.bigque"
-          + "ry.analyticshub.v1.Listing\"^\332A\016parent,li"
-          + "sting\202\323\344\223\002G\"</v1/{parent=projects/*/loca"
-          + "tions/*/dataExchanges/*}/listings:\007listing\022\351\001\n\r"
-          + "UpdateListing\022;.google.cloud.bigquery.analyticshub.v1.UpdateListingReques"
-          + "t\032..google.cloud.bigquery.analyticshub.v"
-          + "1.Listing\"k\332A\023listing,update_mask\202\323\344\223\002O2"
-          + "D/v1/{listing.name=projects/*/locations/"
-          + "*/dataExchanges/*/listings/*}:\007listing\022\261\001\n\r"
-          + "DeleteListing\022;.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest\032\026."
-          + "google.protobuf.Empty\"K\332A\004name\202\323\344\223\002>*</v"
-          + "1/{name=projects/*/locations/*/dataExchanges/*/listings/*}\022\355\001\n"
-          + "\020SubscribeListing\022>.google.cloud.bigquery.analyticshub.v1."
-          + "SubscribeListingRequest\032?.google.cloud.bigquery.analyticshub.v1.SubscribeListing"
-          + "Response\"X\332A\004name\202\323\344\223\002K\"F/v1/{name=proje"
-          + "cts/*/locations/*/dataExchanges/*/listings/*}:subscribe:\001*\022\200\002\n"
-          + "\025SubscribeDataExchange\022C.google.cloud.bigquery.analyticshu"
-          + "b.v1.SubscribeDataExchangeRequest\032\035.google.longrunning.Operation\"\202\001\312A2\n"
-          + "\035SubscribeDataExchangeResponse\022\021OperationMetadata"
-          + "\332A\004name\202\323\344\223\002@\";/v1/{name=projects/*/loca"
-          + "tions/*/dataExchanges/*}:subscribe:\001*\022\367\001\n"
-          + "\023RefreshSubscription\022A.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptio"
-          + "nRequest\032\035.google.longrunning.Operation\"~\312A0\n"
-          + "\033RefreshSubscriptionResponse\022\021Opera"
-          + "tionMetadata\332A\004name\202\323\344\223\002>\"9/v1/{name=pro"
-          + "jects/*/locations/*/subscriptions/*}:refresh:\001*\022\307\001\n"
-          + "\017GetSubscription\022=.google.cloud.bigquery.analyticshub.v1.GetSubscript"
-          + "ionRequest\0323.google.cloud.bigquery.analy"
-          + "ticshub.v1.Subscription\"@\332A\004name\202\323\344\223\0023\0221"
-          + "/v1/{name=projects/*/locations/*/subscriptions/*}\022\332\001\n"
-          + "\021ListSubscriptions\022?.google.cloud.bigquery.analyticshub.v1.ListSubs"
-          + "criptionsRequest\032@.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRespon"
-          + "se\"B\332A\006parent\202\323\344\223\0023\0221/v1/{parent=projects/*/locations/*}/subscriptions\022\364\002\n"
-          + "\037ListSharedResourceSubscriptions\022M.google.clou"
-          + "d.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest\032N.google.cloud"
-          + ".bigquery.analyticshub.v1.ListSharedReso"
-          + "urceSubscriptionsResponse\"\261\001\332A\010resource\202"
-          + "\323\344\223\002\237\001\022G/v1/{resource=projects/*/locatio"
-          + "ns/*/dataExchanges/*}:listSubscriptionsZT\022R/v1/{resource=projects/*/locations/*/"
-          + "dataExchanges/*/listings/*}:listSubscriptions\022\345\001\n"
-          + "\022RevokeSubscription\022@.google.cloud.bigquery.analyticshub.v1.RevokeSubsc"
-          + "riptionRequest\032A.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRespons"
-          + "e\"J\332A\004name\202\323\344\223\002=\"8/v1/{name=projects/*/l",
-      "ocations/*/subscriptions/*}:revoke:\001*\022\344\001"
-          + "\n\022DeleteSubscription\022@.google.cloud.bigq"
-          + "uery.analyticshub.v1.DeleteSubscriptionR"
-          + "equest\032\035.google.longrunning.Operation\"m\312"
-          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\0023*1/v1/{name=projects/*/"
-          + "locations/*/subscriptions/*}\022\267\002\n\014GetIamP"
-          + "olicy\022\".google.iam.v1.GetIamPolicyReques"
-          + "t\032\025.google.iam.v1.Policy\"\353\001\202\323\344\223\002\344\001\"B/v1/"
-          + "{resource=projects/*/locations/*/dataExc"
-          + "hanges/*}:getIamPolicy:\001*ZR\"M/v1/{resour"
-          + "ce=projects/*/locations/*/dataExchanges/"
-          + "*/listings/*}:getIamPolicy:\001*ZG\"B/v1/{re"
-          + "source=projects/*/locations/*/subscripti"
-          + "ons/*}:getIamPolicy:\001*\022\267\002\n\014SetIamPolicy\022"
-          + "\".google.iam.v1.SetIamPolicyRequest\032\025.go"
-          + "ogle.iam.v1.Policy\"\353\001\202\323\344\223\002\344\001\"B/v1/{resou"
-          + "rce=projects/*/locations/*/dataExchanges"
-          + "/*}:setIamPolicy:\001*ZR\"M/v1/{resource=pro"
+          + "\022DeleteDataExchange\022@.g",
+      "oogle.cloud.bigquery.analyticshub.v1.Del"
+          + "eteDataExchangeRequest\032\026.google.protobuf"
+          + ".Empty\"@\332A\004name\202\323\344\223\0023*1/v1/{name=project"
+          + "s/*/locations/*/dataExchanges/*}\022\326\001\n\014Lis"
+          + "tListings\022:.google.cloud.bigquery.analyt"
+          + "icshub.v1.ListListingsRequest\032;.google.c"
+          + "loud.bigquery.analyticshub.v1.ListListin"
+          + "gsResponse\"M\332A\006parent\202\323\344\223\002>\022</v1/{parent"
+          + "=projects/*/locations/*/dataExchanges/*}"
+          + "/listings\022\303\001\n\nGetListing\0228.google.cloud."
+          + "bigquery.analyticshub.v1.GetListingReque"
+          + "st\032..google.cloud.bigquery.analyticshub."
+          + "v1.Listing\"K\332A\004name\202\323\344\223\002>\022</v1/{name=pro"
           + "jects/*/locations/*/dataExchanges/*/list"
-          + "ings/*}:setIamPolicy:\001*ZG\"B/v1/{resource"
-          + "=projects/*/locations/*/subscriptions/*}"
-          + ":setIamPolicy:\001*\022\232\002\n\022TestIamPermissions\022"
-          + "(.google.iam.v1.TestIamPermissionsReques"
-          + "t\032).google.iam.v1.TestIamPermissionsResp"
-          + "onse\"\256\001\202\323\344\223\002\247\001\"H/v1/{resource=projects/*"
-          + "/locations/*/dataExchanges/*}:testIamPer"
-          + "missions:\001*ZX\"S/v1/{resource=projects/*/"
-          + "locations/*/dataExchanges/*/listings/*}:"
-          + "testIamPermissions:\001*\032x\312A\033analyticshub.g"
-          + "oogleapis.com\322AWhttps://www.googleapis.c"
-          + "om/auth/bigquery,https://www.googleapis."
-          + "com/auth/cloud-platformB\364\005\n)com.google.c"
-          + "loud.bigquery.analyticshub.v1B\021Analytics"
-          + "HubProtoP\001ZMcloud.google.com/go/bigquery"
-          + "/analyticshub/apiv1/analyticshubpb;analy"
-          + "ticshubpb\252\002%Google.Cloud.BigQuery.Analyt"
-          + "icsHub.V1\312\002%Google\\Cloud\\BigQuery\\Analyt"
-          + "icsHub\\V1\352\002)Google::Cloud::Bigquery::Ana"
-          + "lyticsHub::V1\352AH\n\037bigquery.googleapis.co"
-          + "m/Dataset\022%projects/{project}/datasets/{"
-          + "dataset}\352AU\n\035bigquery.googleapis.com/Tab"
-          + "le\0224projects/{project}/datasets/{dataset"
-          + "}/tables/{table}\352A@\n\033pubsub.googleapis.c"
-          + "om/Topic\022!projects/{project}/topics/{top"
-          + "ic}\352A[\n\037bigquery.googleapis.com/Routine\022"
-          + "8projects/{project}/datasets/{dataset}/r"
-          + "outines/{routine}\352AE\n/servicemanagement."
-          + "googleapis.com/ManagedService\022\022services/"
-          + "{service}\352AZ\n5cloudcommerceconsumerprocu"
-          + "rement.googleapis.com/Order\022!projects/{p"
-          + "roject}/orders/{order}b\006proto3"
+          + "ings/*}\022\334\001\n\rCreateListing\022;.google.cloud"
+          + ".bigquery.analyticshub.v1.CreateListingR"
+          + "equest\032..google.cloud.bigquery.analytics"
+          + "hub.v1.Listing\"^\332A\016parent,listing\202\323\344\223\002G\""
+          + "</v1/{parent=projects/*/locations/*/data"
+          + "Exchanges/*}/listings:\007listing\022\351\001\n\rUpdat"
+          + "eListing\022;.google.cloud.bigquery.analyti"
+          + "cshub.v1.UpdateListingRequest\032..google.c"
+          + "loud.bigquery.analyticshub.v1.Listing\"k\332"
+          + "A\023listing,update_mask\202\323\344\223\002O2D/v1/{listin"
+          + "g.name=projects/*/locations/*/dataExchan"
+          + "ges/*/listings/*}:\007listing\022\261\001\n\rDeleteLis"
+          + "ting\022;.google.cloud.bigquery.analyticshu"
+          + "b.v1.DeleteListingRequest\032\026.google.proto"
+          + "buf.Empty\"K\332A\004name\202\323\344\223\002>*</v1/{name=proj"
+          + "ects/*/locations/*/dataExchanges/*/listi"
+          + "ngs/*}\022\355\001\n\020SubscribeListing\022>.google.clo"
+          + "ud.bigquery.analyticshub.v1.SubscribeLis"
+          + "tingRequest\032?.google.cloud.bigquery.anal"
+          + "yticshub.v1.SubscribeListingResponse\"X\332A"
+          + "\004name\202\323\344\223\002K\"F/v1/{name=projects/*/locati"
+          + "ons/*/dataExchanges/*/listings/*}:subscr"
+          + "ibe:\001*\022\200\002\n\025SubscribeDataExchange\022C.googl"
+          + "e.cloud.bigquery.analyticshub.v1.Subscri"
+          + "beDataExchangeRequest\032\035.google.longrunni"
+          + "ng.Operation\"\202\001\312A2\n\035SubscribeDataExchang"
+          + "eResponse\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "@\";/v1/{name=projects/*/locations/*/data"
+          + "Exchanges/*}:subscribe:\001*\022\367\001\n\023RefreshSub"
+          + "scription\022A.google.cloud.bigquery.analyt"
+          + "icshub.v1.RefreshSubscriptionRequest\032\035.g"
+          + "oogle.longrunning.Operation\"~\312A0\n\033Refres"
+          + "hSubscriptionResponse\022\021OperationMetadata"
+          + "\332A\004name\202\323\344\223\002>\"9/v1/{name=projects/*/loca"
+          + "tions/*/subscriptions/*}:refresh:\001*\022\307\001\n\017"
+          + "GetSubscription\022=.google.cloud.bigquery."
+          + "analyticshub.v1.GetSubscriptionRequest\0323"
+          + ".google.cloud.bigquery.analyticshub.v1.S"
+          + "ubscription\"@\332A\004name\202\323\344\223\0023\0221/v1/{name=pr"
+          + "ojects/*/locations/*/subscriptions/*}\022\332\001"
+          + "\n\021ListSubscriptions\022?.google.cloud.bigqu"
+          + "ery.analyticshub.v1.ListSubscriptionsReq"
+          + "uest\032@.google.cloud.bigquery.analyticshu"
+          + "b.v1.ListSubscriptionsResponse\"B\332A\006paren"
+          + "t\202\323\344\223\0023\0221/v1/{parent=projects/*/location"
+          + "s/*}/subscriptions\022\364\002\n\037ListSharedResourc"
+          + "eSubscriptions\022M.google.cloud.bigquery.a"
+          + "nalyticshub.v1.ListSharedResourceSubscri"
+          + "ptionsRequest\032N.google.cloud.bigquery.an"
+          + "alyticshub.v1.ListSharedResourceSubscrip"
+          + "tionsResponse\"\261\001\332A\010resource\202\323\344\223\002\237\001\022G/v1/"
+          + "{resource=projects/*/locations/*/dataExc"
+          + "hanges/*}:listSubscriptionsZT\022R/v1/{reso"
+          + "urce=projects/*/locations/*/dataExchange"
+          + "s/*/listings/*}:listSubscriptions\022\345\001\n\022Re"
+          + "vokeSubscription\022@.google.cloud.bigquery"
+          + ".analyticshub.v1.RevokeSubscriptionReque"
+          + "st\032A.google.cloud.bigquery.analyticshub."
+          + "v1.RevokeSubscriptionResponse\"J\332A\004name\202\323"
+          + "\344\223\002=\"8/v1/{name=projects/*/locations/*/s"
+          + "ubscriptions/*}:revoke:\001*\022\344\001\n\022DeleteSubs"
+          + "cription\022@.google.cloud.bigquery.analyti"
+          + "cshub.v1.DeleteSubscriptionRequest\032\035.goo"
+          + "gle.longrunning.Operation\"m\312A*\n\025google.p"
+          + "rotobuf.Empty\022\021OperationMetadata\332A\004name\202"
+          + "\323\344\223\0023*1/v1/{name=projects/*/locations/*/"
+          + "subscriptions/*}\022\267\002\n\014GetIamPolicy\022\".goog"
+          + "le.iam.v1.GetIamPolicyRequest\032\025.google.i"
+          + "am.v1.Policy\"\353\001\202\323\344\223\002\344\001\"B/v1/{resource=pr"
+          + "ojects/*/locations/*/dataExchanges/*}:ge"
+          + "tIamPolicy:\001*ZR\"M/v1/{resource=projects/"
+          + "*/locations/*/dataExchanges/*/listings/*"
+          + "}:getIamPolicy:\001*ZG\"B/v1/{resource=proje"
+          + "cts/*/locations/*/subscriptions/*}:getIa"
+          + "mPolicy:\001*\022\267\002\n\014SetIamPolicy\022\".google.iam"
+          + ".v1.SetIamPolicyRequest\032\025.google.iam.v1."
+          + "Policy\"\353\001\202\323\344\223\002\344\001\"B/v1/{resource=projects"
+          + "/*/locations/*/dataExchanges/*}:setIamPo"
+          + "licy:\001*ZR\"M/v1/{resource=projects/*/loca"
+          + "tions/*/dataExchanges/*/listings/*}:setI"
+          + "amPolicy:\001*ZG\"B/v1/{resource=projects/*/"
+          + "locations/*/subscriptions/*}:setIamPolic"
+          + "y:\001*\022\232\002\n\022TestIamPermissions\022(.google.iam"
+          + ".v1.TestIamPermissionsRequest\032).google.i"
+          + "am.v1.TestIamPermissionsResponse\"\256\001\202\323\344\223\002"
+          + "\247\001\"H/v1/{resource=projects/*/locations/*"
+          + "/dataExchanges/*}:testIamPermissions:\001*Z"
+          + "X\"S/v1/{resource=projects/*/locations/*/"
+          + "dataExchanges/*/listings/*}:testIamPermi"
+          + "ssions:\001*\022\225\002\n\023CreateQueryTemplate\022A.goog"
+          + "le.cloud.bigquery.analyticshub.v1.Create"
+          + "QueryTemplateRequest\0324.google.cloud.bigq"
+          + "uery.analyticshub.v1.QueryTemplate\"\204\001\332A\'"
+          + "parent,query_template,query_template_id\202"
+          + "\323\344\223\002T\"B/v1/{parent=projects/*/locations/"
+          + "*/dataExchanges/*}/queryTemplates:\016query"
+          + "_template\022\333\001\n\020GetQueryTemplate\022>.google."
+          + "cloud.bigquery.analyticshub.v1.GetQueryT"
+          + "emplateRequest\0324.google.cloud.bigquery.a"
+          + "nalyticshub.v1.QueryTemplate\"Q\332A\004name\202\323\344"
+          + "\223\002D\022B/v1/{name=projects/*/locations/*/da"
+          + "taExchanges/*/queryTemplates/*}\022\356\001\n\022List"
+          + "QueryTemplates\022@.google.cloud.bigquery.a"
+          + "nalyticshub.v1.ListQueryTemplatesRequest"
+          + "\032A.google.cloud.bigquery.analyticshub.v1"
+          + ".ListQueryTemplatesResponse\"S\332A\006parent\202\323"
+          + "\344\223\002D\022B/v1/{parent=projects/*/locations/*"
+          + "/dataExchanges/*}/queryTemplates\022\227\002\n\023Upd"
+          + "ateQueryTemplate\022A.google.cloud.bigquery"
+          + ".analyticshub.v1.UpdateQueryTemplateRequ"
+          + "est\0324.google.cloud.bigquery.analyticshub"
+          + ".v1.QueryTemplate\"\206\001\332A\032query_template,up"
+          + "date_mask\202\323\344\223\002c2Q/v1/{query_template.nam"
+          + "e=projects/*/locations/*/dataExchanges/*"
+          + "/queryTemplates/*}:\016query_template\022\303\001\n\023D"
+          + "eleteQueryTemplate\022A.google.cloud.bigque"
+          + "ry.analyticshub.v1.DeleteQueryTemplateRe"
+          + "quest\032\026.google.protobuf.Empty\"Q\332A\004name\202\323"
+          + "\344\223\002D*B/v1/{name=projects/*/locations/*/d"
+          + "ataExchanges/*/queryTemplates/*}\022\353\001\n\023Sub"
+          + "mitQueryTemplate\022A.google.cloud.bigquery"
+          + ".analyticshub.v1.SubmitQueryTemplateRequ"
+          + "est\0324.google.cloud.bigquery.analyticshub"
+          + ".v1.QueryTemplate\"[\332A\004name\202\323\344\223\002N\"I/v1/{n"
+          + "ame=projects/*/locations/*/dataExchanges"
+          + "/*/queryTemplates/*}:submit:\001*\022\356\001\n\024Appro"
+          + "veQueryTemplate\022B.google.cloud.bigquery."
+          + "analyticshub.v1.ApproveQueryTemplateRequ"
+          + "est\0324.google.cloud.bigquery.analyticshub"
+          + ".v1.QueryTemplate\"\\\332A\004name\202\323\344\223\002O\"J/v1/{n"
+          + "ame=projects/*/locations/*/dataExchanges"
+          + "/*/queryTemplates/*}:approve:\001*\032x\312A\033anal"
+          + "yticshub.googleapis.com\322AWhttps://www.go"
+          + "ogleapis.com/auth/bigquery,https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\364\005\n)co"
+          + "m.google.cloud.bigquery.analyticshub.v1B"
+          + "\021AnalyticsHubProtoP\001ZMcloud.google.com/g"
+          + "o/bigquery/analyticshub/apiv1/analyticsh"
+          + "ubpb;analyticshubpb\252\002%Google.Cloud.BigQu"
+          + "ery.AnalyticsHub.V1\312\002%Google\\Cloud\\BigQu"
+          + "ery\\AnalyticsHub\\V1\352\002)Google::Cloud::Big"
+          + "query::AnalyticsHub::V1\352AH\n\037bigquery.goo"
+          + "gleapis.com/Dataset\022%projects/{project}/"
+          + "datasets/{dataset}\352AU\n\035bigquery.googleap"
+          + "is.com/Table\0224projects/{project}/dataset"
+          + "s/{dataset}/tables/{table}\352A@\n\033pubsub.go"
+          + "ogleapis.com/Topic\022!projects/{project}/t"
+          + "opics/{topic}\352A[\n\037bigquery.googleapis.co"
+          + "m/Routine\0228projects/{project}/datasets/{"
+          + "dataset}/routines/{routine}\352AE\n/servicem"
+          + "anagement.googleapis.com/ManagedService\022"
+          + "\022services/{service}\352AZ\n5cloudcommercecon"
+          + "sumerprocurement.googleapis.com/Order\022!p"
+          + "rojects/{project}/orders/{order}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -777,8 +973,97 @@ public final class AnalyticsHubProto {
               "DiscoveryType",
               "LogLinkedDatasetQueryUserEmail",
             });
-    internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_descriptor =
+    internal_static_google_cloud_bigquery_analyticshub_v1_QueryTemplate_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_bigquery_analyticshub_v1_QueryTemplate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_QueryTemplate_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "Description",
+              "Proposer",
+              "PrimaryContact",
+              "Documentation",
+              "State",
+              "Routine",
+              "CreateTime",
+              "UpdateTime",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_Routine_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_bigquery_analyticshub_v1_Routine_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_Routine_descriptor,
+            new java.lang.String[] {
+              "RoutineType", "DefinitionBody",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_CreateQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_bigquery_analyticshub_v1_CreateQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_CreateQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "QueryTemplateId", "QueryTemplate",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_GetQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_bigquery_analyticshub_v1_GetQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_GetQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_ListQueryTemplatesResponse_descriptor,
+            new java.lang.String[] {
+              "QueryTemplates", "NextPageToken",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_UpdateQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_bigquery_analyticshub_v1_UpdateQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_UpdateQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "QueryTemplate",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_DeleteQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_bigquery_analyticshub_v1_DeleteQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_DeleteQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_SubmitQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_bigquery_analyticshub_v1_SubmitQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_SubmitQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_ApproveQueryTemplateRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_bigquery_analyticshub_v1_ApproveQueryTemplateRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_ApproveQueryTemplateRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_descriptor =
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_SharingEnvironmentConfig_descriptor,
@@ -804,7 +1089,7 @@ public final class AnalyticsHubProto {
               "SingleSelectedResourceSharingRestriction", "SingleLinkedDatasetPerCleanroom",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DataProvider_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_bigquery_analyticshub_v1_DataProvider_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DataProvider_descriptor,
@@ -812,7 +1097,7 @@ public final class AnalyticsHubProto {
               "Name", "PrimaryContact",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_Publisher_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_bigquery_analyticshub_v1_Publisher_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_Publisher_descriptor,
@@ -820,7 +1105,7 @@ public final class AnalyticsHubProto {
               "Name", "PrimaryContact",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDatasetReference_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDatasetReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDatasetReference_descriptor,
@@ -828,12 +1113,17 @@ public final class AnalyticsHubProto {
               "DatasetId", "ProjectId",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_descriptor,
             new java.lang.String[] {
-              "DatasetReference", "FriendlyName", "Description", "Labels", "Location",
+              "DatasetReference",
+              "FriendlyName",
+              "Description",
+              "Labels",
+              "Location",
+              "ReplicaLocations",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_LabelsEntry_descriptor =
         internal_static_google_cloud_bigquery_analyticshub_v1_DestinationDataset_descriptor
@@ -846,7 +1136,7 @@ public final class AnalyticsHubProto {
               "Key", "Value",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationPubSubSubscription_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_bigquery_analyticshub_v1_DestinationPubSubSubscription_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DestinationPubSubSubscription_descriptor,
@@ -854,7 +1144,7 @@ public final class AnalyticsHubProto {
               "PubsubSubscription",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_Listing_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_bigquery_analyticshub_v1_Listing_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_Listing_descriptor,
@@ -873,6 +1163,7 @@ public final class AnalyticsHubProto {
               "Publisher",
               "RequestAccess",
               "RestrictedExportConfig",
+              "StoredProcedureConfig",
               "DiscoveryType",
               "ResourceType",
               "CommercialInfo",
@@ -888,7 +1179,11 @@ public final class AnalyticsHubProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_descriptor,
             new java.lang.String[] {
-              "Dataset", "SelectedResources", "RestrictedExportPolicy",
+              "Dataset",
+              "SelectedResources",
+              "RestrictedExportPolicy",
+              "ReplicaLocations",
+              "EffectiveReplicas",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_SelectedResource_descriptor =
         internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_descriptor
@@ -909,6 +1204,16 @@ public final class AnalyticsHubProto {
             internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_RestrictedExportPolicy_descriptor,
             new java.lang.String[] {
               "Enabled", "RestrictDirectTableAccess", "RestrictQueryResult",
+            });
+    internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor =
+        internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor,
+            new java.lang.String[] {
+              "Location", "ReplicaState", "PrimaryState",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_Listing_PubSubTopicSource_descriptor =
         internal_static_google_cloud_bigquery_analyticshub_v1_Listing_descriptor
@@ -950,8 +1255,16 @@ public final class AnalyticsHubProto {
             new java.lang.String[] {
               "Service", "CommercialState",
             });
+    internal_static_google_cloud_bigquery_analyticshub_v1_StoredProcedureConfig_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_bigquery_analyticshub_v1_StoredProcedureConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_analyticshub_v1_StoredProcedureConfig_descriptor,
+            new java.lang.String[] {
+              "Enabled", "AllowedStoredProcedureTypes",
+            });
     internal_static_google_cloud_bigquery_analyticshub_v1_Subscription_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_bigquery_analyticshub_v1_Subscription_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_Subscription_descriptor,
@@ -1014,7 +1327,7 @@ public final class AnalyticsHubProto {
               "Key", "Value",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesRequest_descriptor,
@@ -1022,7 +1335,7 @@ public final class AnalyticsHubProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListDataExchangesResponse_descriptor,
@@ -1030,7 +1343,7 @@ public final class AnalyticsHubProto {
               "DataExchanges", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesRequest_descriptor,
@@ -1038,7 +1351,7 @@ public final class AnalyticsHubProto {
               "Organization", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListOrgDataExchangesResponse_descriptor,
@@ -1046,7 +1359,7 @@ public final class AnalyticsHubProto {
               "DataExchanges", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_GetDataExchangeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_bigquery_analyticshub_v1_GetDataExchangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_GetDataExchangeRequest_descriptor,
@@ -1054,7 +1367,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_CreateDataExchangeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_bigquery_analyticshub_v1_CreateDataExchangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_CreateDataExchangeRequest_descriptor,
@@ -1062,7 +1375,7 @@ public final class AnalyticsHubProto {
               "Parent", "DataExchangeId", "DataExchange",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_UpdateDataExchangeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_bigquery_analyticshub_v1_UpdateDataExchangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_UpdateDataExchangeRequest_descriptor,
@@ -1070,7 +1383,7 @@ public final class AnalyticsHubProto {
               "UpdateMask", "DataExchange",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteDataExchangeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteDataExchangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DeleteDataExchangeRequest_descriptor,
@@ -1078,7 +1391,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsRequest_descriptor,
@@ -1086,7 +1399,7 @@ public final class AnalyticsHubProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListListingsResponse_descriptor,
@@ -1094,7 +1407,7 @@ public final class AnalyticsHubProto {
               "Listings", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_GetListingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_bigquery_analyticshub_v1_GetListingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_GetListingRequest_descriptor,
@@ -1102,7 +1415,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_CreateListingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_bigquery_analyticshub_v1_CreateListingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_CreateListingRequest_descriptor,
@@ -1110,7 +1423,7 @@ public final class AnalyticsHubProto {
               "Parent", "ListingId", "Listing",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_UpdateListingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_bigquery_analyticshub_v1_UpdateListingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_UpdateListingRequest_descriptor,
@@ -1118,7 +1431,7 @@ public final class AnalyticsHubProto {
               "UpdateMask", "Listing",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteListingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteListingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DeleteListingRequest_descriptor,
@@ -1126,7 +1439,7 @@ public final class AnalyticsHubProto {
               "Name", "DeleteCommercial",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingRequest_descriptor,
@@ -1134,7 +1447,7 @@ public final class AnalyticsHubProto {
               "DestinationDataset", "DestinationPubsubSubscription", "Name", "Destination",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeListingResponse_descriptor,
@@ -1142,7 +1455,7 @@ public final class AnalyticsHubProto {
               "Subscription",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeRequest_descriptor,
@@ -1150,7 +1463,7 @@ public final class AnalyticsHubProto {
               "Name", "Destination", "DestinationDataset", "Subscription", "SubscriberContact",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_SubscribeDataExchangeResponse_descriptor,
@@ -1158,7 +1471,7 @@ public final class AnalyticsHubProto {
               "Subscription",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionRequest_descriptor,
@@ -1166,7 +1479,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_RefreshSubscriptionResponse_descriptor,
@@ -1174,7 +1487,7 @@ public final class AnalyticsHubProto {
               "Subscription",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_GetSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_bigquery_analyticshub_v1_GetSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_GetSubscriptionRequest_descriptor,
@@ -1182,7 +1495,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsRequest_descriptor,
@@ -1190,7 +1503,7 @@ public final class AnalyticsHubProto {
               "Parent", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListSubscriptionsResponse_descriptor,
@@ -1198,7 +1511,7 @@ public final class AnalyticsHubProto {
               "Subscriptions", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsRequest_descriptor,
@@ -1206,7 +1519,7 @@ public final class AnalyticsHubProto {
               "Resource", "IncludeDeletedSubscriptions", "PageSize", "PageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_ListSharedResourceSubscriptionsResponse_descriptor,
@@ -1214,7 +1527,7 @@ public final class AnalyticsHubProto {
               "SharedResourceSubscriptions", "NextPageToken",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionRequest_descriptor,
@@ -1222,13 +1535,13 @@ public final class AnalyticsHubProto {
               "Name", "RevokeCommercial",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionResponse_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_RevokeSubscriptionResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteSubscriptionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_bigquery_analyticshub_v1_DeleteSubscriptionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_DeleteSubscriptionRequest_descriptor,
@@ -1236,7 +1549,7 @@ public final class AnalyticsHubProto {
               "Name",
             });
     internal_static_google_cloud_bigquery_analyticshub_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_bigquery_analyticshub_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_bigquery_analyticshub_v1_OperationMetadata_descriptor,

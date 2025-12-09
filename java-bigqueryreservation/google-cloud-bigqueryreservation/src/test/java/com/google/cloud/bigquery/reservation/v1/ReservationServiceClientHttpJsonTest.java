@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1;
 
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListCapacityCommitmentsPagedResponse;
+import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationGroupsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.ListReservationsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAllAssignmentsPagedResponse;
 import static com.google.cloud.bigquery.reservation.v1.ReservationServiceClient.SearchAssignmentsPagedResponse;
@@ -31,8 +32,15 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.bigquery.reservation.v1.stub.HttpJsonReservationServiceStub;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -40,6 +48,7 @@ import com.google.rpc.Status;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -101,7 +110,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -162,7 +174,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -323,7 +338,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -380,7 +398,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -517,7 +538,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -536,7 +560,10 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -581,7 +608,10 @@ public class ReservationServiceClientHttpJsonTest {
               .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setMaxSlots(-234568806)
+              .putAllLabels(new HashMap<String, String>())
+              .setReservationGroup("reservationGroup-1892204013")
               .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+              .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReservation(reservation, updateMask);
@@ -608,13 +638,17 @@ public class ReservationServiceClientHttpJsonTest {
             .setSecondaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setOriginalPrimaryLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .setMaxSlots(-234568806)
+            .putAllLabels(new HashMap<String, String>())
+            .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
     FailoverReservationRequest request =
         FailoverReservationRequest.newBuilder()
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+            .setFailoverMode(FailoverMode.forNumber(0))
             .build();
 
     Reservation actualResponse = client.failoverReservation(request);
@@ -646,6 +680,7 @@ public class ReservationServiceClientHttpJsonTest {
       FailoverReservationRequest request =
           FailoverReservationRequest.newBuilder()
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setFailoverMode(FailoverMode.forNumber(0))
               .build();
       client.failoverReservation(request);
       Assert.fail("No exception raised");
@@ -1359,6 +1394,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1409,6 +1445,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1853,6 +1890,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1906,6 +1944,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1958,6 +1997,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2011,6 +2051,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2063,6 +2104,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2073,6 +2115,7 @@ public class ReservationServiceClientHttpJsonTest {
                     .toString())
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
+            .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2109,6 +2152,7 @@ public class ReservationServiceClientHttpJsonTest {
                       .toString())
               .setAssignee("assignee-369881649")
               .setEnableGeminiInBigquery(true)
+              .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAssignment(assignment, updateMask);
@@ -2267,6 +2311,594 @@ public class ReservationServiceClientHttpJsonTest {
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBiReservation(biReservation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource =
+          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource = "projects/project-9700/locations/location-9700/reservations/reservation-9700";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-9700/locations/location-9700/reservations/reservation-9700";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource =
+          AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource = "projects/project-9700/locations/location-9700/reservations/reservation-9700";
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-9700/locations/location-9700/reservations/reservation-9700";
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestIamPermissionsResponse expectedResponse =
+        TestIamPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(
+                AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+                    .toString())
+            .addAllPermissions(new ArrayList<String>())
+            .build();
+
+    TestIamPermissionsResponse actualResponse = client.testIamPermissions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TestIamPermissionsRequest request =
+          TestIamPermissionsRequest.newBuilder()
+              .setResource(
+                  AssignmentName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]")
+                      .toString())
+              .addAllPermissions(new ArrayList<String>())
+              .build();
+      client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createReservationGroupTest() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CreateReservationGroupRequest request =
+        CreateReservationGroupRequest.newBuilder()
+            .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setReservationGroupId("reservationGroupId-1636887922")
+            .setReservationGroup(ReservationGroup.newBuilder().build())
+            .build();
+
+    ReservationGroup actualResponse = client.createReservationGroup(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createReservationGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CreateReservationGroupRequest request =
+          CreateReservationGroupRequest.newBuilder()
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setReservationGroupId("reservationGroupId-1636887922")
+              .setReservationGroup(ReservationGroup.newBuilder().build())
+              .build();
+      client.createReservationGroup(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReservationGroupTest() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReservationGroupName name =
+        ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+
+    ReservationGroup actualResponse = client.getReservationGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReservationGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReservationGroupName name =
+          ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+      client.getReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReservationGroupTest2() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4394/locations/location-4394/reservationGroups/reservationGroup-4394";
+
+    ReservationGroup actualResponse = client.getReservationGroup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReservationGroupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4394/locations/location-4394/reservationGroups/reservationGroup-4394";
+      client.getReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReservationGroupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ReservationGroupName name =
+        ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+
+    client.deleteReservationGroup(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteReservationGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReservationGroupName name =
+          ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]");
+      client.deleteReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteReservationGroupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-4394/locations/location-4394/reservationGroups/reservationGroup-4394";
+
+    client.deleteReservationGroup(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteReservationGroupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-4394/locations/location-4394/reservationGroups/reservationGroup-4394";
+      client.deleteReservationGroup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReservationGroupsTest() throws Exception {
+    ReservationGroup responsesElement = ReservationGroup.newBuilder().build();
+    ListReservationGroupsResponse expectedResponse =
+        ListReservationGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReservationGroups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListReservationGroupsPagedResponse pagedListResponse = client.listReservationGroups(parent);
+
+    List<ReservationGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReservationGroupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReservationGroupsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listReservationGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listReservationGroupsTest2() throws Exception {
+    ReservationGroup responsesElement = ReservationGroup.newBuilder().build();
+    ListReservationGroupsResponse expectedResponse =
+        ListReservationGroupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllReservationGroups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListReservationGroupsPagedResponse pagedListResponse = client.listReservationGroups(parent);
+
+    List<ReservationGroup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getReservationGroupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listReservationGroupsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listReservationGroups(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

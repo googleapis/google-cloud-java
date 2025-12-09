@@ -299,6 +299,7 @@ public class RoutersClientTest {
             .setName("name3373707")
             .addAllNats(new ArrayList<RouterNat>())
             .setNetwork("network1843485230")
+            .setParams(RouterParams.newBuilder().build())
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .build();

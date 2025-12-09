@@ -46,6 +46,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     displayName_ = "";
     etag_ = "";
+    dataClassification_ = 0;
     transferStatus_ = 0;
   }
 
@@ -82,6 +83,145 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dataplex.v1.AspectType.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Classifies the data stored by the aspect.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.AspectType.DataClassification}
+   */
+  public enum DataClassification implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Denotes that the aspect contains only metadata.
+     * </pre>
+     *
+     * <code>DATA_CLASSIFICATION_UNSPECIFIED = 0;</code>
+     */
+    DATA_CLASSIFICATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Metadata and data classification.
+     * </pre>
+     *
+     * <code>METADATA_AND_DATA = 1;</code>
+     */
+    METADATA_AND_DATA(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Denotes that the aspect contains only metadata.
+     * </pre>
+     *
+     * <code>DATA_CLASSIFICATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATA_CLASSIFICATION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata and data classification.
+     * </pre>
+     *
+     * <code>METADATA_AND_DATA = 1;</code>
+     */
+    public static final int METADATA_AND_DATA_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DataClassification valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DataClassification forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATA_CLASSIFICATION_UNSPECIFIED;
+        case 1:
+          return METADATA_AND_DATA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DataClassification>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataClassification>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataClassification>() {
+              public DataClassification findValueByNumber(int number) {
+                return DataClassification.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.AspectType.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final DataClassification[] VALUES = values();
+
+    public static DataClassification valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DataClassification(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.AspectType.DataClassification)
+  }
+
   public interface AuthorizationOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.AspectType.Authorization)
@@ -92,8 +232,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -107,8 +247,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -122,7 +262,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Autorization for an AspectType.
+   * Authorization for an AspectType.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -173,8 +313,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -199,8 +339,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -387,7 +527,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Autorization for an AspectType.
+     * Authorization for an AspectType.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -576,8 +716,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -602,8 +742,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -628,8 +768,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -653,8 +793,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -674,8 +814,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -817,8 +957,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -846,8 +986,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -4833,8 +4973,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -4873,8 +5013,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6402,8 +6542,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6441,8 +6581,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6480,8 +6620,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6518,8 +6658,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6552,8 +6692,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -9219,6 +9359,49 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DATA_CLASSIFICATION_FIELD_NUMBER = 9;
+  private int dataClassification_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Stores data classification of the aspect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dataClassification.
+   */
+  @java.lang.Override
+  public int getDataClassificationValue() {
+    return dataClassification_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Stores data classification of the aspect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The dataClassification.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.AspectType.DataClassification getDataClassification() {
+    com.google.cloud.dataplex.v1.AspectType.DataClassification result =
+        com.google.cloud.dataplex.v1.AspectType.DataClassification.forNumber(dataClassification_);
+    return result == null
+        ? com.google.cloud.dataplex.v1.AspectType.DataClassification.UNRECOGNIZED
+        : result;
+  }
+
   public static final int AUTHORIZATION_FIELD_NUMBER = 52;
   private com.google.cloud.dataplex.v1.AspectType.Authorization authorization_;
 
@@ -9419,6 +9602,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, etag_);
     }
+    if (dataClassification_
+        != com.google.cloud.dataplex.v1.AspectType.DataClassification
+            .DATA_CLASSIFICATION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, dataClassification_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(52, getAuthorization());
     }
@@ -9469,6 +9658,12 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, etag_);
     }
+    if (dataClassification_
+        != com.google.cloud.dataplex.v1.AspectType.DataClassification
+            .DATA_CLASSIFICATION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, dataClassification_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getAuthorization());
     }
@@ -9508,6 +9703,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (dataClassification_ != other.dataClassification_) return false;
     if (hasAuthorization() != other.hasAuthorization()) return false;
     if (hasAuthorization()) {
       if (!getAuthorization().equals(other.getAuthorization())) return false;
@@ -9550,6 +9746,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DATA_CLASSIFICATION_FIELD_NUMBER;
+    hash = (53 * hash) + dataClassification_;
     if (hasAuthorization()) {
       hash = (37 * hash) + AUTHORIZATION_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorization().hashCode();
@@ -9751,6 +9949,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       internalGetMutableLabels().clear();
       etag_ = "";
+      dataClassification_ = 0;
       authorization_ = null;
       if (authorizationBuilder_ != null) {
         authorizationBuilder_.dispose();
@@ -9827,16 +10026,19 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
         result.etag_ = etag_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dataClassification_ = dataClassification_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.authorization_ =
             authorizationBuilder_ == null ? authorization_ : authorizationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.metadataTemplate_ =
             metadataTemplateBuilder_ == null ? metadataTemplate_ : metadataTemplateBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.transferStatus_ = transferStatus_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -9919,6 +10121,9 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
         etag_ = other.etag_;
         bitField0_ |= 0x00000080;
         onChanged();
+      }
+      if (other.dataClassification_ != 0) {
+        setDataClassificationValue(other.getDataClassificationValue());
       }
       if (other.hasAuthorization()) {
         mergeAuthorization(other.getAuthorization());
@@ -10009,23 +10214,29 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 72:
+              {
+                dataClassification_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             case 418:
               {
                 input.readMessage(getAuthorizationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 418
             case 426:
               {
                 input.readMessage(
                     getMetadataTemplateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 426
             case 1616:
               {
                 transferStatus_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 1616
             default:
@@ -11228,6 +11439,114 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int dataClassification_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Stores data classification of the aspect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataClassification.
+     */
+    @java.lang.Override
+    public int getDataClassificationValue() {
+      return dataClassification_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Stores data classification of the aspect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dataClassification to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataClassificationValue(int value) {
+      dataClassification_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Stores data classification of the aspect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The dataClassification.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.AspectType.DataClassification getDataClassification() {
+      com.google.cloud.dataplex.v1.AspectType.DataClassification result =
+          com.google.cloud.dataplex.v1.AspectType.DataClassification.forNumber(dataClassification_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.AspectType.DataClassification.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Stores data classification of the aspect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The dataClassification to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDataClassification(
+        com.google.cloud.dataplex.v1.AspectType.DataClassification value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      dataClassification_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Stores data classification of the aspect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.AspectType.DataClassification data_classification = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDataClassification() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      dataClassification_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.dataplex.v1.AspectType.Authorization authorization_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.AspectType.Authorization,
@@ -11249,7 +11568,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the authorization field is set.
      */
     public boolean hasAuthorization() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -11295,7 +11614,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       } else {
         authorizationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -11318,7 +11637,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       } else {
         authorizationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -11336,7 +11655,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeAuthorization(com.google.cloud.dataplex.v1.AspectType.Authorization value) {
       if (authorizationBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && authorization_ != null
             && authorization_
                 != com.google.cloud.dataplex.v1.AspectType.Authorization.getDefaultInstance()) {
@@ -11348,7 +11667,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
         authorizationBuilder_.mergeFrom(value);
       }
       if (authorization_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -11366,7 +11685,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearAuthorization() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       authorization_ = null;
       if (authorizationBuilder_ != null) {
         authorizationBuilder_.dispose();
@@ -11388,7 +11707,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.dataplex.v1.AspectType.Authorization.Builder getAuthorizationBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getAuthorizationFieldBuilder().getBuilder();
     }
@@ -11464,7 +11783,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the metadataTemplate field is set.
      */
     public boolean hasMetadataTemplate() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -11511,7 +11830,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       } else {
         metadataTemplateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11534,7 +11853,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       } else {
         metadataTemplateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11553,7 +11872,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeMetadataTemplate(
         com.google.cloud.dataplex.v1.AspectType.MetadataTemplate value) {
       if (metadataTemplateBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && metadataTemplate_ != null
             && metadataTemplate_
                 != com.google.cloud.dataplex.v1.AspectType.MetadataTemplate.getDefaultInstance()) {
@@ -11565,7 +11884,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
         metadataTemplateBuilder_.mergeFrom(value);
       }
       if (metadataTemplate_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -11583,7 +11902,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearMetadataTemplate() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       metadataTemplate_ = null;
       if (metadataTemplateBuilder_ != null) {
         metadataTemplateBuilder_.dispose();
@@ -11606,7 +11925,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dataplex.v1.AspectType.MetadataTemplate.Builder
         getMetadataTemplateBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getMetadataTemplateFieldBuilder().getBuilder();
     }
@@ -11699,7 +12018,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTransferStatusValue(int value) {
       transferStatus_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11744,7 +12063,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       transferStatus_ = value.getNumber();
       onChanged();
       return this;
@@ -11765,7 +12084,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTransferStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       transferStatus_ = 0;
       onChanged();
       return this;

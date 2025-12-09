@@ -68,7 +68,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AddInstances</td>
- *      <td><p> Adds a list of instances to the specified instance group. All of the instances in the instance group must be in the same network/subnetwork. Read Adding instances for more information.</td>
+ *      <td><p> Adds a list of instances to the specified instance group.  All of the instances in the instance group must be in the same network/subnetwork. Read Adding instances for more information.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves the list of instance groups and sorts them by zone. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves the list of instance groups and sorts them by zone.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +126,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Returns the specified zonal instance group. Get a list of available zonal instance groups by making a list() request. For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods instead.</td>
+ *      <td><p> Returns the specified zonal instance group. Get a list of available zonal instance groups by making a list() request.
+ * <p>  For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers methods instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -162,7 +164,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> List</td>
- *      <td><p> Retrieves the list of zonal instance group resources contained within the specified zone. For managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods instead.</td>
+ *      <td><p> Retrieves the list of zonal instance group resources contained within the specified zone.
+ * <p>  For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers methods instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -200,7 +203,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> RemoveInstances</td>
- *      <td><p> Removes one or more instances from the specified instance group, but does not delete those instances. If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.</td>
+ *      <td><p> Removes one or more instances from the specified instance group, but does not delete those instances.
+ * <p>  If the group is part of a backend service that has enabled connection draining, it can take up to 60 seconds after the connection draining duration before the VM instance is removed or deleted.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -233,6 +237,24 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> setNamedPortsOperationCallable()
  *           <li><p> setNamedPortsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsInstanceGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(String project, String zone, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -480,8 +502,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of instance groups and sorts them by zone. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of instance groups and sorts them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -511,8 +535,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of instance groups and sorts them by zone. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of instance groups and sorts them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -551,8 +577,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of instance groups and sorts them by zone. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of instance groups and sorts them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -590,8 +618,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of instance groups and sorts them by zone. To prevent failure, Google
-   * recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Retrieves the list of instance groups and sorts them by zone.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -775,8 +805,10 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request. For managed instance groups, use the instanceGroupManagers or
-   * regionInstanceGroupManagers methods instead.
+   * making a list() request.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -812,8 +844,10 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request. For managed instance groups, use the instanceGroupManagers or
-   * regionInstanceGroupManagers methods instead.
+   * making a list() request.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -844,8 +878,10 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the specified zonal instance group. Get a list of available zonal instance groups by
-   * making a list() request. For managed instance groups, use the instanceGroupManagers or
-   * regionInstanceGroupManagers methods instead.
+   * making a list() request.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -1009,9 +1045,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone. For
-   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
-   * instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -1031,7 +1068,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param zone The name of the zone where the instance group is located.
+   * @param zone The name of thezone where the instance group is located.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPagedResponse list(String project, String zone) {
@@ -1042,9 +1079,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone. For
-   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
-   * instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -1080,9 +1118,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone. For
-   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
-   * instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -1118,9 +1157,10 @@ public class InstanceGroupsClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves the list of zonal instance group resources contained within the specified zone. For
-   * managed instance groups, use the instanceGroupManagers or regionInstanceGroupManagers methods
-   * instead.
+   * Retrieves the list of zonal instance group resources contained within the specified zone.
+   *
+   * <p>For managed instance groups, use theinstanceGroupManagers or regionInstanceGroupManagers
+   * methods instead.
    *
    * <p>Sample code:
    *
@@ -1350,9 +1390,11 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances. If the group is part of a backend service that has enabled connection draining, it
-   * can take up to 60 seconds after the connection draining duration before the VM instance is
-   * removed or deleted.
+   * instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -1402,9 +1444,11 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances. If the group is part of a backend service that has enabled connection draining, it
-   * can take up to 60 seconds after the connection draining duration before the VM instance is
-   * removed or deleted.
+   * instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -1439,9 +1483,11 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances. If the group is part of a backend service that has enabled connection draining, it
-   * can take up to 60 seconds after the connection draining duration before the VM instance is
-   * removed or deleted.
+   * instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -1476,9 +1522,11 @@ public class InstanceGroupsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Removes one or more instances from the specified instance group, but does not delete those
-   * instances. If the group is part of a backend service that has enabled connection draining, it
-   * can take up to 60 seconds after the connection draining duration before the VM instance is
-   * removed or deleted.
+   * instances.
+   *
+   * <p>If the group is part of a backend service that has enabled connection draining, it can take
+   * up to 60 seconds after the connection draining duration before the VM instance is removed or
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -1657,6 +1705,115 @@ public class InstanceGroupsClient implements BackgroundResource {
    */
   public final UnaryCallable<SetNamedPortsInstanceGroupRequest, Operation> setNamedPortsCallable() {
     return stub.setNamedPortsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       instanceGroupsClient.testIamPermissions(
+   *           project, zone, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project,
+      String zone,
+      String resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsInstanceGroupRequest request =
+        TestIamPermissionsInstanceGroupRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   TestIamPermissionsInstanceGroupRequest request =
+   *       TestIamPermissionsInstanceGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   TestPermissionsResponse response = instanceGroupsClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsInstanceGroupRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   TestIamPermissionsInstanceGroupRequest request =
+   *       TestIamPermissionsInstanceGroupRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       instanceGroupsClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

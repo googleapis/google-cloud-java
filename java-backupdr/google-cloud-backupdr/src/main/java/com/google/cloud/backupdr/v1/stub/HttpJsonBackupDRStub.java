@@ -17,6 +17,7 @@
 package com.google.cloud.backupdr.v1.stub;
 
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssociationsForResourceTypePagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
@@ -24,6 +25,7 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevision
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListManagementServersPagedResponse;
@@ -62,6 +64,8 @@ import com.google.cloud.backupdr.v1.DeleteBackupVaultRequest;
 import com.google.cloud.backupdr.v1.DeleteManagementServerRequest;
 import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeRequest;
 import com.google.cloud.backupdr.v1.FetchBackupPlanAssociationsForResourceTypeResponse;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeRequest;
+import com.google.cloud.backupdr.v1.FetchBackupsForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequest;
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
@@ -86,6 +90,8 @@ import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.ListBackupsRequest;
 import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
+import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
 import com.google.cloud.backupdr.v1.ListDataSourcesResponse;
 import com.google.cloud.backupdr.v1.ListManagementServersRequest;
@@ -711,6 +717,49 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListBackupsResponse>newBuilder()
                       .setDefaultInstance(ListBackupsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/FetchBackupsForResourceType")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchBackupsForResourceTypeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/backupVaults/*/dataSources/*}/backups:fetchForResourceType",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchBackupsForResourceTypeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "resourceType", request.getResourceType());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchBackupsForResourceTypeResponse>newBuilder()
+                      .setDefaultInstance(FetchBackupsForResourceTypeResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1469,6 +1518,46 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .build();
 
   private static final ApiMethodDescriptor<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListDataSourceReferences")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDataSourceReferencesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/dataSourceReferences",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDataSourceReferencesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDataSourceReferencesResponse>newBuilder()
+                      .setDefaultInstance(ListDataSourceReferencesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
           FetchDataSourceReferencesForResourceTypeRequest,
           FetchDataSourceReferencesForResourceTypeResponse>
       fetchDataSourceReferencesForResourceTypeMethodDescriptor =
@@ -1777,6 +1866,12 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
       listBackupsPagedCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable;
+  private final UnaryCallable<
+          FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable;
   private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
   private final UnaryCallable<UpdateBackupRequest, Operation> updateBackupCallable;
   private final OperationCallable<UpdateBackupRequest, Backup, OperationMetadata>
@@ -1841,6 +1936,11 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
       triggerBackupOperationCallable;
   private final UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
       getDataSourceReferenceCallable;
+  private final UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable;
+  private final UnaryCallable<
+          ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable;
   private final UnaryCallable<
           FetchDataSourceReferencesForResourceTypeRequest,
           FetchDataSourceReferencesForResourceTypeResponse>
@@ -2096,6 +2196,20 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+        fetchBackupsForResourceTypeTransportSettings =
+            HttpJsonCallSettings
+                .<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchBackupsForResourceTypeMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(getBackupMethodDescriptor)
@@ -2326,6 +2440,19 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+        listDataSourceReferencesTransportSettings =
+            HttpJsonCallSettings
+                .<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>newBuilder()
+                .setMethodDescriptor(listDataSourceReferencesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<
             FetchDataSourceReferencesForResourceTypeRequest,
             FetchDataSourceReferencesForResourceTypeResponse>
@@ -2525,6 +2652,16 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     this.listBackupsPagedCallable =
         callableFactory.createPagedCallable(
             listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.fetchBackupsForResourceTypeCallable =
+        callableFactory.createUnaryCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
+    this.fetchBackupsForResourceTypePagedCallable =
+        callableFactory.createPagedCallable(
+            fetchBackupsForResourceTypeTransportSettings,
+            settings.fetchBackupsForResourceTypeSettings(),
+            clientContext);
     this.getBackupCallable =
         callableFactory.createUnaryCallable(
             getBackupTransportSettings, settings.getBackupSettings(), clientContext);
@@ -2678,6 +2815,16 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             getDataSourceReferenceTransportSettings,
             settings.getDataSourceReferenceSettings(),
             clientContext);
+    this.listDataSourceReferencesCallable =
+        callableFactory.createUnaryCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
+    this.listDataSourceReferencesPagedCallable =
+        callableFactory.createPagedCallable(
+            listDataSourceReferencesTransportSettings,
+            settings.listDataSourceReferencesSettings(),
+            clientContext);
     this.fetchDataSourceReferencesForResourceTypeCallable =
         callableFactory.createUnaryCallable(
             fetchDataSourceReferencesForResourceTypeTransportSettings,
@@ -2741,6 +2888,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(getDataSourceMethodDescriptor);
     methodDescriptors.add(updateDataSourceMethodDescriptor);
     methodDescriptors.add(listBackupsMethodDescriptor);
+    methodDescriptors.add(fetchBackupsForResourceTypeMethodDescriptor);
     methodDescriptors.add(getBackupMethodDescriptor);
     methodDescriptors.add(updateBackupMethodDescriptor);
     methodDescriptors.add(deleteBackupMethodDescriptor);
@@ -2760,6 +2908,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(deleteBackupPlanAssociationMethodDescriptor);
     methodDescriptors.add(triggerBackupMethodDescriptor);
     methodDescriptors.add(getDataSourceReferenceMethodDescriptor);
+    methodDescriptors.add(listDataSourceReferencesMethodDescriptor);
     methodDescriptors.add(fetchDataSourceReferencesForResourceTypeMethodDescriptor);
     methodDescriptors.add(initializeServiceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -2910,6 +3059,18 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   @Override
   public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
     return listBackupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse>
+      fetchBackupsForResourceTypeCallable() {
+    return fetchBackupsForResourceTypeCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypePagedResponse>
+      fetchBackupsForResourceTypePagedCallable() {
+    return fetchBackupsForResourceTypePagedCallable;
   }
 
   @Override
@@ -3104,6 +3265,18 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public UnaryCallable<GetDataSourceReferenceRequest, DataSourceReference>
       getDataSourceReferenceCallable() {
     return getDataSourceReferenceCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesResponse>
+      listDataSourceReferencesCallable() {
+    return listDataSourceReferencesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDataSourceReferencesRequest, ListDataSourceReferencesPagedResponse>
+      listDataSourceReferencesPagedCallable() {
+    return listDataSourceReferencesPagedCallable;
   }
 
   @Override

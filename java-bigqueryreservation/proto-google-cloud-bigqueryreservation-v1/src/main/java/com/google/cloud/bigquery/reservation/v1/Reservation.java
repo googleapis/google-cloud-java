@@ -46,6 +46,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     secondaryLocation_ = "";
     originalPrimaryLocation_ = "";
     scalingMode_ = 0;
+    reservationGroup_ = "";
   }
 
   @java.lang.Override
@@ -57,6 +58,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.bigquery.reservation.v1.ReservationProto
         .internal_static_google_cloud_bigquery_reservation_v1_Reservation_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 23:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -102,7 +115,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * slots and no idle slots will be used.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * true.
+     * true. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>AUTOSCALE_ONLY = 1;</code>
@@ -129,7 +143,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * to max_slots.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * false.
+     * false. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>IDLE_SLOTS_ONLY = 2;</code>
@@ -154,7 +169,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * scale up to 1000 slots with 200 baseline and 800 autoscaling slots.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * false.
+     * false. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>ALL_SLOTS = 3;</code>
@@ -186,7 +202,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * slots and no idle slots will be used.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * true.
+     * true. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>AUTOSCALE_ONLY = 1;</code>
@@ -214,7 +231,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * to max_slots.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * false.
+     * false. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>IDLE_SLOTS_ONLY = 2;</code>
@@ -240,7 +258,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * scale up to 1000 slots with 200 baseline and 800 autoscaling slots.
      *
      * Please note, in this mode, the ignore_idle_slots field must be set to
-     * false.
+     * false. Otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>ALL_SLOTS = 3;</code>
@@ -360,10 +379,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of slots to be scaled when needed.
+     * Optional. Number of slots to be scaled when needed.
      * </pre>
      *
-     * <code>int64 max_slots = 2;</code>
+     * <code>int64 max_slots = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxSlots.
      */
@@ -443,10 +462,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of slots to be scaled when needed.
+     * Optional. Number of slots to be scaled when needed.
      * </pre>
      *
-     * <code>int64 max_slots = 2;</code>
+     * <code>int64 max_slots = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The maxSlots.
      */
@@ -901,10 +920,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Number of slots to be scaled when needed.
+       * Optional. Number of slots to be scaled when needed.
        * </pre>
        *
-       * <code>int64 max_slots = 2;</code>
+       * <code>int64 max_slots = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The maxSlots.
        */
@@ -917,10 +936,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Number of slots to be scaled when needed.
+       * Optional. Number of slots to be scaled when needed.
        * </pre>
        *
-       * <code>int64 max_slots = 2;</code>
+       * <code>int64 max_slots = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The maxSlots to set.
        * @return This builder for chaining.
@@ -937,10 +956,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Number of slots to be scaled when needed.
+       * Optional. Number of slots to be scaled when needed.
        * </pre>
        *
-       * <code>int64 max_slots = 2;</code>
+       * <code>int64 max_slots = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -1160,6 +1179,61 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.protobuf.TimestampOrBuilder getLastReplicationTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the softFailoverStartTime field is set.
+     */
+    boolean hasSoftFailoverStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The softFailoverStartTime.
+     */
+    com.google.protobuf.Timestamp getSoftFailoverStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder();
   }
 
   /**
@@ -1388,6 +1462,77 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           : lastReplicationTime_;
     }
 
+    public static final int SOFT_FAILOVER_START_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp softFailoverStartTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the softFailoverStartTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasSoftFailoverStartTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The softFailoverStartTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getSoftFailoverStartTime() {
+      return softFailoverStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : softFailoverStartTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder() {
+      return softFailoverStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : softFailoverStartTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1411,6 +1556,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getLastReplicationTime());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(4, getSoftFailoverStartTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1429,6 +1577,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastReplicationTime());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSoftFailoverStartTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1459,6 +1611,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (hasLastReplicationTime()) {
         if (!getLastReplicationTime().equals(other.getLastReplicationTime())) return false;
       }
+      if (hasSoftFailoverStartTime() != other.hasSoftFailoverStartTime()) return false;
+      if (hasSoftFailoverStartTime()) {
+        if (!getSoftFailoverStartTime().equals(other.getSoftFailoverStartTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1481,6 +1637,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (hasLastReplicationTime()) {
         hash = (37 * hash) + LAST_REPLICATION_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastReplicationTime().hashCode();
+      }
+      if (hasSoftFailoverStartTime()) {
+        hash = (37 * hash) + SOFT_FAILOVER_START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftFailoverStartTime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1632,6 +1792,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           getErrorFieldBuilder();
           getLastErrorTimeFieldBuilder();
           getLastReplicationTimeFieldBuilder();
+          getSoftFailoverStartTimeFieldBuilder();
         }
       }
 
@@ -1653,6 +1814,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         if (lastReplicationTimeBuilder_ != null) {
           lastReplicationTimeBuilder_.dispose();
           lastReplicationTimeBuilder_ = null;
+        }
+        softFailoverStartTime_ = null;
+        if (softFailoverStartTimeBuilder_ != null) {
+          softFailoverStartTimeBuilder_.dispose();
+          softFailoverStartTimeBuilder_ = null;
         }
         return this;
       }
@@ -1710,6 +1876,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                   ? lastReplicationTime_
                   : lastReplicationTimeBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.softFailoverStartTime_ =
+              softFailoverStartTimeBuilder_ == null
+                  ? softFailoverStartTime_
+                  : softFailoverStartTimeBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1775,6 +1948,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         if (other.hasLastReplicationTime()) {
           mergeLastReplicationTime(other.getLastReplicationTime());
         }
+        if (other.hasSoftFailoverStartTime()) {
+          mergeSoftFailoverStartTime(other.getSoftFailoverStartTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1820,6 +1996,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSoftFailoverStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2493,6 +2676,255 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         return lastReplicationTimeBuilder_;
       }
 
+      private com.google.protobuf.Timestamp softFailoverStartTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          softFailoverStartTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the softFailoverStartTime field is set.
+       */
+      public boolean hasSoftFailoverStartTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The softFailoverStartTime.
+       */
+      public com.google.protobuf.Timestamp getSoftFailoverStartTime() {
+        if (softFailoverStartTimeBuilder_ == null) {
+          return softFailoverStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : softFailoverStartTime_;
+        } else {
+          return softFailoverStartTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSoftFailoverStartTime(com.google.protobuf.Timestamp value) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          softFailoverStartTime_ = value;
+        } else {
+          softFailoverStartTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSoftFailoverStartTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          softFailoverStartTime_ = builderForValue.build();
+        } else {
+          softFailoverStartTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeSoftFailoverStartTime(com.google.protobuf.Timestamp value) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && softFailoverStartTime_ != null
+              && softFailoverStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSoftFailoverStartTimeBuilder().mergeFrom(value);
+          } else {
+            softFailoverStartTime_ = value;
+          }
+        } else {
+          softFailoverStartTimeBuilder_.mergeFrom(value);
+        }
+        if (softFailoverStartTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSoftFailoverStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        softFailoverStartTime_ = null;
+        if (softFailoverStartTimeBuilder_ != null) {
+          softFailoverStartTimeBuilder_.dispose();
+          softFailoverStartTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSoftFailoverStartTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getSoftFailoverStartTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder() {
+        if (softFailoverStartTimeBuilder_ != null) {
+          return softFailoverStartTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return softFailoverStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : softFailoverStartTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getSoftFailoverStartTimeFieldBuilder() {
+        if (softFailoverStartTimeBuilder_ == null) {
+          softFailoverStartTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSoftFailoverStartTime(), getParentForChildren(), isClean());
+          softFailoverStartTime_ = null;
+        }
+        return softFailoverStartTimeBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2571,14 +3003,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the reservation, e.g.,
+   * Identifier. The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * The reservation_id must only contain lower case alphanumeric characters or
    * dashes. It must start with a letter and must not end with a dash. Its
    * maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -2599,14 +3031,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The resource name of the reservation, e.g.,
+   * Identifier. The resource name of the reservation, e.g.,
    * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
    * The reservation_id must only contain lower case alphanumeric characters or
    * dashes. It must start with a letter and must not end with a dash. Its
    * maximum length is 64 characters.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -2630,7 +3062,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Baseline slots available to this reservation. A slot is a unit of
+   * Optional. Baseline slots available to this reservation. A slot is a unit of
    * computational power in BigQuery, and serves as the unit of parallelism.
    *
    * Queries using this reservation might use more slots during runtime if
@@ -2646,7 +3078,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * baseline slots every few minutes.
    * </pre>
    *
-   * <code>int64 slot_capacity = 2;</code>
+   * <code>int64 slot_capacity = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The slotCapacity.
    */
@@ -2662,13 +3094,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * If false, any query or pipeline job using this reservation will use idle
-   * slots from other reservations within the same admin project. If true, a
-   * query or pipeline job using this reservation will execute with the slot
-   * capacity specified in the slot_capacity field at most.
+   * Optional. If false, any query or pipeline job using this reservation will
+   * use idle slots from other reservations within the same admin project. If
+   * true, a query or pipeline job using this reservation will execute with the
+   * slot capacity specified in the slot_capacity field at most.
    * </pre>
    *
-   * <code>bool ignore_idle_slots = 4;</code>
+   * <code>bool ignore_idle_slots = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The ignoreIdleSlots.
    */
@@ -2684,10 +3116,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the autoscale field is set.
    */
@@ -2700,10 +3134,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The autoscale.
    */
@@ -2718,10 +3154,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The configuration parameters for the auto scaling feature.
+   * Optional. The configuration parameters for the auto scaling feature.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder
@@ -2738,17 +3176,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Job concurrency target which sets a soft upper bound on the number of jobs
-   * that can run concurrently in this reservation. This is a soft target due to
-   * asynchronous nature of the system and various optimizations for small
-   * queries.
-   * Default value is 0 which means that concurrency target will be
-   * automatically computed by the system.
-   * NOTE: this field is exposed as target job concurrency in the Information
-   * Schema, DDL and BigQuery CLI.
+   * Optional. Job concurrency target which sets a soft upper bound on the
+   * number of jobs that can run concurrently in this reservation. This is a
+   * soft target due to asynchronous nature of the system and various
+   * optimizations for small queries. Default value is 0 which means that
+   * concurrency target will be automatically computed by the system. NOTE: this
+   * field is exposed as target job concurrency in the Information Schema, DDL
+   * and BigQuery CLI.
    * </pre>
    *
-   * <code>int64 concurrency = 16;</code>
+   * <code>int64 concurrency = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The concurrency.
    */
@@ -2886,11 +3323,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * set this field.
    * </pre>
    *
-   * <code>bool multi_region_auxiliary = 14;</code>
+   * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getMultiRegionAuxiliary() {
     return multiRegionAuxiliary_;
   }
@@ -2902,10 +3342,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Edition of the reservation.
+   * Optional. Edition of the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The enum numeric value on the wire for edition.
    */
@@ -2918,10 +3360,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Edition of the reservation.
+   * Optional. Edition of the reservation.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The edition.
    */
@@ -3136,10 +3580,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * will never exceed the max_slots - baseline.
    *
    *
-   * This field must be set together with the scaling_mode enum value.
+   * This field must be set together with the scaling_mode enum value,
+   * otherwise the request will be rejected with error code
+   * `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * If the max_slots and scaling_mode are set, the autoscale or
-   * autoscale.max_slots field must be unset. However, the
+   * autoscale.max_slots field must be unset. Otherwise the request will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
    * autoscale field may still be in the output. The autopscale.max_slots will
    * always show as 0 and the autoscaler.current_slots will represent the
    * current slots from autoscaler excluding idle slots.
@@ -3156,12 +3603,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
    * must be aligned with the scaling_mode enum value.(See details in
-   * ScalingMode comments).
+   * ScalingMode comments). Otherwise the request will be rejected with
+   * error code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note,  the max_slots is for user to manage the part of slots greater
    * than the baseline. Therefore, we don't allow users to set max_slots smaller
    * or equal to the baseline as it will not be meaningful. If the field is
-   * present and slot_capacity&gt;=max_slots.
+   * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+   * code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note that if max_slots is set to 0, we will treat it as unset.
    * Customers can set max_slots to 0 and set scaling_mode to
@@ -3191,10 +3640,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    * will never exceed the max_slots - baseline.
    *
    *
-   * This field must be set together with the scaling_mode enum value.
+   * This field must be set together with the scaling_mode enum value,
+   * otherwise the request will be rejected with error code
+   * `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * If the max_slots and scaling_mode are set, the autoscale or
-   * autoscale.max_slots field must be unset. However, the
+   * autoscale.max_slots field must be unset. Otherwise the request will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
    * autoscale field may still be in the output. The autopscale.max_slots will
    * always show as 0 and the autoscaler.current_slots will represent the
    * current slots from autoscaler excluding idle slots.
@@ -3211,12 +3663,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
    * must be aligned with the scaling_mode enum value.(See details in
-   * ScalingMode comments).
+   * ScalingMode comments). Otherwise the request will be rejected with
+   * error code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note,  the max_slots is for user to manage the part of slots greater
    * than the baseline. Therefore, we don't allow users to set max_slots smaller
    * or equal to the baseline as it will not be meaningful. If the field is
-   * present and slot_capacity&gt;=max_slots.
+   * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+   * code `google.rpc.Code.INVALID_ARGUMENT`.
    *
    * Please note that if max_slots is set to 0, we will treat it as unset.
    * Customers can set max_slots to 0 and set scaling_mode to
@@ -3240,7 +3694,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The scaling mode for the reservation.
-   * If the field is present but max_slots is not present.
+   * If the field is present but max_slots is not present, requests will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -3259,7 +3714,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The scaling mode for the reservation.
-   * If the field is present but max_slots is not present.
+   * If the field is present but max_slots is not present, requests will be
+   * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
    * </pre>
    *
    * <code>
@@ -3275,6 +3731,184 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.bigquery.reservation.v1.Reservation.ScalingMode.UNRECOGNIZED
         : result;
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 23;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.bigquery.reservation.v1.ReservationProto
+                .internal_static_google_cloud_bigquery_reservation_v1_Reservation_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels associated with this reservation. You can use these
+   * to organize and group your reservations.
+   * You can set this property when you create or update a reservation.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int RESERVATION_GROUP_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object reservationGroup_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reservation group that this reservation belongs to.
+   * You can set this property when you create or update a reservation.
+   * Reservations do not need to belong to a reservation group.
+   * Format:
+   * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+   * or just {reservation_group}
+   * </pre>
+   *
+   * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The reservationGroup.
+   */
+  @java.lang.Override
+  public java.lang.String getReservationGroup() {
+    java.lang.Object ref = reservationGroup_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      reservationGroup_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The reservation group that this reservation belongs to.
+   * You can set this property when you create or update a reservation.
+   * Reservations do not need to belong to a reservation group.
+   * Format:
+   * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+   * or just {reservation_group}
+   * </pre>
+   *
+   * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for reservationGroup.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getReservationGroupBytes() {
+    java.lang.Object ref = reservationGroup_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      reservationGroup_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REPLICATION_STATUS_FIELD_NUMBER = 24;
@@ -3361,6 +3995,78 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         : replicationStatus_;
   }
 
+  public static final int SCHEDULING_POLICY_FIELD_NUMBER = 27;
+  private com.google.cloud.bigquery.reservation.v1.SchedulingPolicy schedulingPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schedulingPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchedulingPolicy() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schedulingPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy() {
+    return schedulingPolicy_ == null
+        ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+        : schedulingPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scheduling policy to use for jobs and queries running under
+   * this reservation. The scheduling policy controls how the reservation's
+   * resources are distributed.
+   *
+   * This feature is not yet generally available.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder
+      getSchedulingPolicyOrBuilder() {
+    return schedulingPolicy_ == null
+        ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+        : schedulingPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3420,8 +4126,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(22, scalingMode_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 23);
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(24, getReplicationStatus());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationGroup_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, reservationGroup_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(27, getSchedulingPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3478,8 +4192,24 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, scalingMode_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, labels__);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReplicationStatus());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservationGroup_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, reservationGroup_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getSchedulingPolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3523,9 +4253,15 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (getMaxSlots() != other.getMaxSlots()) return false;
     }
     if (scalingMode_ != other.scalingMode_) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getReservationGroup().equals(other.getReservationGroup())) return false;
     if (hasReplicationStatus() != other.hasReplicationStatus()) return false;
     if (hasReplicationStatus()) {
       if (!getReplicationStatus().equals(other.getReplicationStatus())) return false;
+    }
+    if (hasSchedulingPolicy() != other.hasSchedulingPolicy()) return false;
+    if (hasSchedulingPolicy()) {
+      if (!getSchedulingPolicy().equals(other.getSchedulingPolicy())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -3574,9 +4310,19 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SCALING_MODE_FIELD_NUMBER;
     hash = (53 * hash) + scalingMode_;
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + RESERVATION_GROUP_FIELD_NUMBER;
+    hash = (53 * hash) + getReservationGroup().hashCode();
     if (hasReplicationStatus()) {
       hash = (37 * hash) + REPLICATION_STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getReplicationStatus().hashCode();
+    }
+    if (hasSchedulingPolicy()) {
+      hash = (37 * hash) + SCHEDULING_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getSchedulingPolicy().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3697,6 +4443,28 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_bigquery_reservation_v1_Reservation_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 23:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 23:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3723,6 +4491,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         getCreationTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
         getReplicationStatusFieldBuilder();
+        getSchedulingPolicyFieldBuilder();
       }
     }
 
@@ -3756,10 +4525,17 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       originalPrimaryLocation_ = "";
       maxSlots_ = 0L;
       scalingMode_ = 0;
+      internalGetMutableLabels().clear();
+      reservationGroup_ = "";
       replicationStatus_ = null;
       if (replicationStatusBuilder_ != null) {
         replicationStatusBuilder_.dispose();
         replicationStatusBuilder_ = null;
+      }
+      schedulingPolicy_ = null;
+      if (schedulingPolicyBuilder_ != null) {
+        schedulingPolicyBuilder_.dispose();
+        schedulingPolicyBuilder_ = null;
       }
       return this;
     }
@@ -3846,11 +4622,23 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         result.scalingMode_ = scalingMode_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.reservationGroup_ = reservationGroup_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.replicationStatus_ =
             replicationStatusBuilder_ == null
                 ? replicationStatus_
                 : replicationStatusBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.schedulingPolicy_ =
+            schedulingPolicyBuilder_ == null ? schedulingPolicy_ : schedulingPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3951,8 +4739,18 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (other.scalingMode_ != 0) {
         setScalingModeValue(other.getScalingModeValue());
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00004000;
+      if (!other.getReservationGroup().isEmpty()) {
+        reservationGroup_ = other.reservationGroup_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
       if (other.hasReplicationStatus()) {
         mergeReplicationStatus(other.getReplicationStatus());
+      }
+      if (other.hasSchedulingPolicy()) {
+        mergeSchedulingPolicy(other.getSchedulingPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4064,13 +4862,38 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00002000;
                 break;
               } // case 176
+            case 186:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 186
             case 194:
               {
                 input.readMessage(
                     getReplicationStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 194
+            case 202:
+              {
+                reservationGroup_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 202
+            case 218:
+              {
+                input.readMessage(
+                    getSchedulingPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4096,14 +4919,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reservation, e.g.,
+     * Identifier. The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
      * The reservation_id must only contain lower case alphanumeric characters or
      * dashes. It must start with a letter and must not end with a dash. Its
      * maximum length is 64 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -4123,14 +4946,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reservation, e.g.,
+     * Identifier. The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
      * The reservation_id must only contain lower case alphanumeric characters or
      * dashes. It must start with a letter and must not end with a dash. Its
      * maximum length is 64 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -4150,14 +4973,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reservation, e.g.,
+     * Identifier. The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
      * The reservation_id must only contain lower case alphanumeric characters or
      * dashes. It must start with a letter and must not end with a dash. Its
      * maximum length is 64 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -4176,14 +4999,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reservation, e.g.,
+     * Identifier. The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
      * The reservation_id must only contain lower case alphanumeric characters or
      * dashes. It must start with a letter and must not end with a dash. Its
      * maximum length is 64 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -4198,14 +5021,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The resource name of the reservation, e.g.,
+     * Identifier. The resource name of the reservation, e.g.,
      * `projects/&#42;&#47;locations/&#42;&#47;reservations/team1-prod`.
      * The reservation_id must only contain lower case alphanumeric characters or
      * dashes. It must start with a letter and must not end with a dash. Its
      * maximum length is 64 characters.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4227,7 +5050,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Baseline slots available to this reservation. A slot is a unit of
+     * Optional. Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
@@ -4243,7 +5066,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * baseline slots every few minutes.
      * </pre>
      *
-     * <code>int64 slot_capacity = 2;</code>
+     * <code>int64 slot_capacity = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The slotCapacity.
      */
@@ -4256,7 +5079,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Baseline slots available to this reservation. A slot is a unit of
+     * Optional. Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
@@ -4272,7 +5095,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * baseline slots every few minutes.
      * </pre>
      *
-     * <code>int64 slot_capacity = 2;</code>
+     * <code>int64 slot_capacity = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The slotCapacity to set.
      * @return This builder for chaining.
@@ -4289,7 +5112,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Baseline slots available to this reservation. A slot is a unit of
+     * Optional. Baseline slots available to this reservation. A slot is a unit of
      * computational power in BigQuery, and serves as the unit of parallelism.
      *
      * Queries using this reservation might use more slots during runtime if
@@ -4305,7 +5128,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * baseline slots every few minutes.
      * </pre>
      *
-     * <code>int64 slot_capacity = 2;</code>
+     * <code>int64 slot_capacity = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4322,13 +5145,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query or pipeline job using this reservation will use idle
-     * slots from other reservations within the same admin project. If true, a
-     * query or pipeline job using this reservation will execute with the slot
-     * capacity specified in the slot_capacity field at most.
+     * Optional. If false, any query or pipeline job using this reservation will
+     * use idle slots from other reservations within the same admin project. If
+     * true, a query or pipeline job using this reservation will execute with the
+     * slot capacity specified in the slot_capacity field at most.
      * </pre>
      *
-     * <code>bool ignore_idle_slots = 4;</code>
+     * <code>bool ignore_idle_slots = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The ignoreIdleSlots.
      */
@@ -4341,13 +5164,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query or pipeline job using this reservation will use idle
-     * slots from other reservations within the same admin project. If true, a
-     * query or pipeline job using this reservation will execute with the slot
-     * capacity specified in the slot_capacity field at most.
+     * Optional. If false, any query or pipeline job using this reservation will
+     * use idle slots from other reservations within the same admin project. If
+     * true, a query or pipeline job using this reservation will execute with the
+     * slot capacity specified in the slot_capacity field at most.
      * </pre>
      *
-     * <code>bool ignore_idle_slots = 4;</code>
+     * <code>bool ignore_idle_slots = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The ignoreIdleSlots to set.
      * @return This builder for chaining.
@@ -4364,13 +5187,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * If false, any query or pipeline job using this reservation will use idle
-     * slots from other reservations within the same admin project. If true, a
-     * query or pipeline job using this reservation will execute with the slot
-     * capacity specified in the slot_capacity field at most.
+     * Optional. If false, any query or pipeline job using this reservation will
+     * use idle slots from other reservations within the same admin project. If
+     * true, a query or pipeline job using this reservation will execute with the
+     * slot capacity specified in the slot_capacity field at most.
      * </pre>
      *
-     * <code>bool ignore_idle_slots = 4;</code>
+     * <code>bool ignore_idle_slots = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4392,10 +5215,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the autoscale field is set.
      */
@@ -4407,10 +5232,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The autoscale.
      */
@@ -4428,10 +5255,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoscale(
         com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale value) {
@@ -4452,10 +5281,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setAutoscale(
         com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder builderForValue) {
@@ -4473,10 +5304,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeAutoscale(
         com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale value) {
@@ -4504,10 +5337,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearAutoscale() {
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -4524,10 +5359,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale.Builder
         getAutoscaleBuilder() {
@@ -4540,10 +5377,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation.AutoscaleOrBuilder
         getAutoscaleOrBuilder() {
@@ -4560,10 +5399,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The configuration parameters for the auto scaling feature.
+     * Optional. The configuration parameters for the auto scaling feature.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Reservation.Autoscale autoscale = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.bigquery.reservation.v1.Reservation.Autoscale,
@@ -4588,17 +5429,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job concurrency target which sets a soft upper bound on the number of jobs
-     * that can run concurrently in this reservation. This is a soft target due to
-     * asynchronous nature of the system and various optimizations for small
-     * queries.
-     * Default value is 0 which means that concurrency target will be
-     * automatically computed by the system.
-     * NOTE: this field is exposed as target job concurrency in the Information
-     * Schema, DDL and BigQuery CLI.
+     * Optional. Job concurrency target which sets a soft upper bound on the
+     * number of jobs that can run concurrently in this reservation. This is a
+     * soft target due to asynchronous nature of the system and various
+     * optimizations for small queries. Default value is 0 which means that
+     * concurrency target will be automatically computed by the system. NOTE: this
+     * field is exposed as target job concurrency in the Information Schema, DDL
+     * and BigQuery CLI.
      * </pre>
      *
-     * <code>int64 concurrency = 16;</code>
+     * <code>int64 concurrency = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The concurrency.
      */
@@ -4611,17 +5451,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job concurrency target which sets a soft upper bound on the number of jobs
-     * that can run concurrently in this reservation. This is a soft target due to
-     * asynchronous nature of the system and various optimizations for small
-     * queries.
-     * Default value is 0 which means that concurrency target will be
-     * automatically computed by the system.
-     * NOTE: this field is exposed as target job concurrency in the Information
-     * Schema, DDL and BigQuery CLI.
+     * Optional. Job concurrency target which sets a soft upper bound on the
+     * number of jobs that can run concurrently in this reservation. This is a
+     * soft target due to asynchronous nature of the system and various
+     * optimizations for small queries. Default value is 0 which means that
+     * concurrency target will be automatically computed by the system. NOTE: this
+     * field is exposed as target job concurrency in the Information Schema, DDL
+     * and BigQuery CLI.
      * </pre>
      *
-     * <code>int64 concurrency = 16;</code>
+     * <code>int64 concurrency = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The concurrency to set.
      * @return This builder for chaining.
@@ -4638,17 +5477,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job concurrency target which sets a soft upper bound on the number of jobs
-     * that can run concurrently in this reservation. This is a soft target due to
-     * asynchronous nature of the system and various optimizations for small
-     * queries.
-     * Default value is 0 which means that concurrency target will be
-     * automatically computed by the system.
-     * NOTE: this field is exposed as target job concurrency in the Information
-     * Schema, DDL and BigQuery CLI.
+     * Optional. Job concurrency target which sets a soft upper bound on the
+     * number of jobs that can run concurrently in this reservation. This is a
+     * soft target due to asynchronous nature of the system and various
+     * optimizations for small queries. Default value is 0 which means that
+     * concurrency target will be automatically computed by the system. NOTE: this
+     * field is exposed as target job concurrency in the Information Schema, DDL
+     * and BigQuery CLI.
      * </pre>
      *
-     * <code>int64 concurrency = 16;</code>
+     * <code>int64 concurrency = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5100,11 +5938,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 14;</code>
+     * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
      * @return The multiRegionAuxiliary.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getMultiRegionAuxiliary() {
       return multiRegionAuxiliary_;
     }
@@ -5124,11 +5965,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 14;</code>
+     * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
      * @param value The multiRegionAuxiliary to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setMultiRegionAuxiliary(boolean value) {
 
       multiRegionAuxiliary_ = value;
@@ -5152,10 +5996,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * set this field.
      * </pre>
      *
-     * <code>bool multi_region_auxiliary = 14;</code>
+     * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearMultiRegionAuxiliary() {
       bitField0_ = (bitField0_ & ~0x00000080);
       multiRegionAuxiliary_ = false;
@@ -5169,10 +6016,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Edition of the reservation.
+     * Optional. Edition of the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The enum numeric value on the wire for edition.
      */
@@ -5185,10 +6034,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Edition of the reservation.
+     * Optional. Edition of the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The enum numeric value on the wire for edition to set.
      * @return This builder for chaining.
@@ -5204,10 +6055,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Edition of the reservation.
+     * Optional. Edition of the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The edition.
      */
@@ -5224,10 +6077,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Edition of the reservation.
+     * Optional. Edition of the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @param value The edition to set.
      * @return This builder for chaining.
@@ -5246,10 +6101,12 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Edition of the reservation.
+     * Optional. Edition of the reservation.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.reservation.v1.Edition edition = 17;</code>
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.Edition edition = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5679,10 +6536,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * will never exceed the max_slots - baseline.
      *
      *
-     * This field must be set together with the scaling_mode enum value.
+     * This field must be set together with the scaling_mode enum value,
+     * otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * If the max_slots and scaling_mode are set, the autoscale or
-     * autoscale.max_slots field must be unset. However, the
+     * autoscale.max_slots field must be unset. Otherwise the request will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
      * autoscale field may still be in the output. The autopscale.max_slots will
      * always show as 0 and the autoscaler.current_slots will represent the
      * current slots from autoscaler excluding idle slots.
@@ -5699,12 +6559,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
      * must be aligned with the scaling_mode enum value.(See details in
-     * ScalingMode comments).
+     * ScalingMode comments). Otherwise the request will be rejected with
+     * error code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note,  the max_slots is for user to manage the part of slots greater
      * than the baseline. Therefore, we don't allow users to set max_slots smaller
      * or equal to the baseline as it will not be meaningful. If the field is
-     * present and slot_capacity&gt;=max_slots.
+     * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+     * code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note that if max_slots is set to 0, we will treat it as unset.
      * Customers can set max_slots to 0 and set scaling_mode to
@@ -5734,10 +6596,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * will never exceed the max_slots - baseline.
      *
      *
-     * This field must be set together with the scaling_mode enum value.
+     * This field must be set together with the scaling_mode enum value,
+     * otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * If the max_slots and scaling_mode are set, the autoscale or
-     * autoscale.max_slots field must be unset. However, the
+     * autoscale.max_slots field must be unset. Otherwise the request will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
      * autoscale field may still be in the output. The autopscale.max_slots will
      * always show as 0 and the autoscaler.current_slots will represent the
      * current slots from autoscaler excluding idle slots.
@@ -5754,12 +6619,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
      * must be aligned with the scaling_mode enum value.(See details in
-     * ScalingMode comments).
+     * ScalingMode comments). Otherwise the request will be rejected with
+     * error code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note,  the max_slots is for user to manage the part of slots greater
      * than the baseline. Therefore, we don't allow users to set max_slots smaller
      * or equal to the baseline as it will not be meaningful. If the field is
-     * present and slot_capacity&gt;=max_slots.
+     * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+     * code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note that if max_slots is set to 0, we will treat it as unset.
      * Customers can set max_slots to 0 and set scaling_mode to
@@ -5789,10 +6656,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * will never exceed the max_slots - baseline.
      *
      *
-     * This field must be set together with the scaling_mode enum value.
+     * This field must be set together with the scaling_mode enum value,
+     * otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * If the max_slots and scaling_mode are set, the autoscale or
-     * autoscale.max_slots field must be unset. However, the
+     * autoscale.max_slots field must be unset. Otherwise the request will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
      * autoscale field may still be in the output. The autopscale.max_slots will
      * always show as 0 and the autoscaler.current_slots will represent the
      * current slots from autoscaler excluding idle slots.
@@ -5809,12 +6679,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
      * must be aligned with the scaling_mode enum value.(See details in
-     * ScalingMode comments).
+     * ScalingMode comments). Otherwise the request will be rejected with
+     * error code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note,  the max_slots is for user to manage the part of slots greater
      * than the baseline. Therefore, we don't allow users to set max_slots smaller
      * or equal to the baseline as it will not be meaningful. If the field is
-     * present and slot_capacity&gt;=max_slots.
+     * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+     * code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note that if max_slots is set to 0, we will treat it as unset.
      * Customers can set max_slots to 0 and set scaling_mode to
@@ -5848,10 +6720,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * will never exceed the max_slots - baseline.
      *
      *
-     * This field must be set together with the scaling_mode enum value.
+     * This field must be set together with the scaling_mode enum value,
+     * otherwise the request will be rejected with error code
+     * `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * If the max_slots and scaling_mode are set, the autoscale or
-     * autoscale.max_slots field must be unset. However, the
+     * autoscale.max_slots field must be unset. Otherwise the request will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. However, the
      * autoscale field may still be in the output. The autopscale.max_slots will
      * always show as 0 and the autoscaler.current_slots will represent the
      * current slots from autoscaler excluding idle slots.
@@ -5868,12 +6743,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * If the max_slots and scaling_mode are set, then the ignore_idle_slots field
      * must be aligned with the scaling_mode enum value.(See details in
-     * ScalingMode comments).
+     * ScalingMode comments). Otherwise the request will be rejected with
+     * error code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note,  the max_slots is for user to manage the part of slots greater
      * than the baseline. Therefore, we don't allow users to set max_slots smaller
      * or equal to the baseline as it will not be meaningful. If the field is
-     * present and slot_capacity&gt;=max_slots.
+     * present and slot_capacity&gt;=max_slots, requests will be rejected with error
+     * code `google.rpc.Code.INVALID_ARGUMENT`.
      *
      * Please note that if max_slots is set to 0, we will treat it as unset.
      * Customers can set max_slots to 0 and set scaling_mode to
@@ -5898,7 +6775,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The scaling mode for the reservation.
-     * If the field is present but max_slots is not present.
+     * If the field is present but max_slots is not present, requests will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>
@@ -5917,7 +6795,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The scaling mode for the reservation.
-     * If the field is present but max_slots is not present.
+     * If the field is present but max_slots is not present, requests will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>
@@ -5939,7 +6818,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The scaling mode for the reservation.
-     * If the field is present but max_slots is not present.
+     * If the field is present but max_slots is not present, requests will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>
@@ -5962,7 +6842,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The scaling mode for the reservation.
-     * If the field is present but max_slots is not present.
+     * If the field is present but max_slots is not present, requests will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>
@@ -5988,7 +6869,8 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The scaling mode for the reservation.
-     * If the field is present but max_slots is not present.
+     * If the field is present but max_slots is not present, requests will be
+     * rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
      * </pre>
      *
      * <code>
@@ -6000,6 +6882,328 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder clearScalingMode() {
       bitField0_ = (bitField0_ & ~0x00002000);
       scalingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00004000;
+      return internalGetMutableLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The labels associated with this reservation. You can use these
+     * to organize and group your reservations.
+     * You can set this property when you create or update a reservation.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00004000;
+      return this;
+    }
+
+    private java.lang.Object reservationGroup_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reservation group that this reservation belongs to.
+     * You can set this property when you create or update a reservation.
+     * Reservations do not need to belong to a reservation group.
+     * Format:
+     * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+     * or just {reservation_group}
+     * </pre>
+     *
+     * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The reservationGroup.
+     */
+    public java.lang.String getReservationGroup() {
+      java.lang.Object ref = reservationGroup_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservationGroup_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reservation group that this reservation belongs to.
+     * You can set this property when you create or update a reservation.
+     * Reservations do not need to belong to a reservation group.
+     * Format:
+     * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+     * or just {reservation_group}
+     * </pre>
+     *
+     * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for reservationGroup.
+     */
+    public com.google.protobuf.ByteString getReservationGroupBytes() {
+      java.lang.Object ref = reservationGroup_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservationGroup_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reservation group that this reservation belongs to.
+     * You can set this property when you create or update a reservation.
+     * Reservations do not need to belong to a reservation group.
+     * Format:
+     * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+     * or just {reservation_group}
+     * </pre>
+     *
+     * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The reservationGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationGroup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      reservationGroup_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reservation group that this reservation belongs to.
+     * You can set this property when you create or update a reservation.
+     * Reservations do not need to belong to a reservation group.
+     * Format:
+     * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+     * or just {reservation_group}
+     * </pre>
+     *
+     * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationGroup() {
+      reservationGroup_ = getDefaultInstance().getReservationGroup();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The reservation group that this reservation belongs to.
+     * You can set this property when you create or update a reservation.
+     * Reservations do not need to belong to a reservation group.
+     * Format:
+     * projects/{project}/locations/{location}/reservationGroups/{reservation_group}
+     * or just {reservation_group}
+     * </pre>
+     *
+     * <code>string reservation_group = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for reservationGroup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationGroupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      reservationGroup_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6033,7 +7237,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the replicationStatus field is set.
      */
     public boolean hasReplicationStatus() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6096,7 +7300,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         replicationStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6127,7 +7331,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       } else {
         replicationStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6153,7 +7357,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeReplicationStatus(
         com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus value) {
       if (replicationStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && replicationStatus_ != null
             && replicationStatus_
                 != com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus
@@ -6166,7 +7370,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         replicationStatusBuilder_.mergeFrom(value);
       }
       if (replicationStatus_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -6191,7 +7395,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearReplicationStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       replicationStatus_ = null;
       if (replicationStatusBuilder_ != null) {
         replicationStatusBuilder_.dispose();
@@ -6221,7 +7425,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.bigquery.reservation.v1.Reservation.ReplicationStatus.Builder
         getReplicationStatusBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getReplicationStatusFieldBuilder().getBuilder();
     }
@@ -6289,6 +7493,260 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         replicationStatus_ = null;
       }
       return replicationStatusBuilder_;
+    }
+
+    private com.google.cloud.bigquery.reservation.v1.SchedulingPolicy schedulingPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>
+        schedulingPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schedulingPolicy field is set.
+     */
+    public boolean hasSchedulingPolicy() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schedulingPolicy.
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy getSchedulingPolicy() {
+      if (schedulingPolicyBuilder_ == null) {
+        return schedulingPolicy_ == null
+            ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+            : schedulingPolicy_;
+      } else {
+        return schedulingPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy value) {
+      if (schedulingPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schedulingPolicy_ = value;
+      } else {
+        schedulingPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder builderForValue) {
+      if (schedulingPolicyBuilder_ == null) {
+        schedulingPolicy_ = builderForValue.build();
+      } else {
+        schedulingPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSchedulingPolicy(
+        com.google.cloud.bigquery.reservation.v1.SchedulingPolicy value) {
+      if (schedulingPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && schedulingPolicy_ != null
+            && schedulingPolicy_
+                != com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()) {
+          getSchedulingPolicyBuilder().mergeFrom(value);
+        } else {
+          schedulingPolicy_ = value;
+        }
+      } else {
+        schedulingPolicyBuilder_.mergeFrom(value);
+      }
+      if (schedulingPolicy_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchedulingPolicy() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      schedulingPolicy_ = null;
+      if (schedulingPolicyBuilder_ != null) {
+        schedulingPolicyBuilder_.dispose();
+        schedulingPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder
+        getSchedulingPolicyBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getSchedulingPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder
+        getSchedulingPolicyOrBuilder() {
+      if (schedulingPolicyBuilder_ != null) {
+        return schedulingPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return schedulingPolicy_ == null
+            ? com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.getDefaultInstance()
+            : schedulingPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scheduling policy to use for jobs and queries running under
+     * this reservation. The scheduling policy controls how the reservation's
+     * resources are distributed.
+     *
+     * This feature is not yet generally available.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.SchedulingPolicy scheduling_policy = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+            com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>
+        getSchedulingPolicyFieldBuilder() {
+      if (schedulingPolicyBuilder_ == null) {
+        schedulingPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicy,
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicy.Builder,
+                com.google.cloud.bigquery.reservation.v1.SchedulingPolicyOrBuilder>(
+                getSchedulingPolicy(), getParentForChildren(), isClean());
+        schedulingPolicy_ = null;
+      }
+      return schedulingPolicyBuilder_;
     }
 
     @java.lang.Override

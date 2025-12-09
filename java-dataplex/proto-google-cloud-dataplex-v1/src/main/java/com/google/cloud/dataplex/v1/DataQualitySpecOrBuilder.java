@@ -193,4 +193,18 @@ public interface DataQualitySpecOrBuilder
    */
   com.google.cloud.dataplex.v1.DataQualitySpec.PostScanActionsOrBuilder
       getPostScanActionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the latest DataScan job result will be published as
+   * Dataplex Universal Catalog metadata.
+   * </pre>
+   *
+   * <code>bool catalog_publishing_enabled = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The catalogPublishingEnabled.
+   */
+  boolean getCatalogPublishingEnabled();
 }

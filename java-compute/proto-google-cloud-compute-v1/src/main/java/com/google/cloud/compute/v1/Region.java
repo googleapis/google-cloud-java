@@ -23,7 +23,11 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Region resource. A region is a geographical area where a resource is located. For more information, read Regions and Zones.
+ * Represents a Region resource.
+ *
+ * A region is a geographical area where a resource is located. For more
+ * information, readRegions
+ * and Zones.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Region}
@@ -75,7 +79,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Region.Status}
@@ -208,7 +212,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -224,7 +229,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -248,7 +254,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -397,7 +404,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -413,7 +421,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -434,7 +443,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -450,7 +460,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -474,7 +485,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for regions.
+   * [Output Only] Type of the resource. Always compute#region for
+   * regions.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -570,7 +582,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -587,7 +600,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -606,7 +620,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -773,7 +788,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -790,7 +805,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -815,7 +830,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the region, either UP or DOWN.
+   * [Output Only] Status of the region, either UP orDOWN.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -881,7 +896,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -896,7 +912,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -911,7 +928,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -927,7 +945,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of zones available in this region, in the form of resource URLs.
+   * [Output Only] A list of zones available in this region, in the form of
+   * resource URLs.
    * </pre>
    *
    * <code>repeated string zones = 116085319;</code>
@@ -1262,7 +1281,11 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Region resource. A region is a geographical area where a resource is located. For more information, read Regions and Zones.
+   * Represents a Region resource.
+   *
+   * A region is a geographical area where a resource is located. For more
+   * information, readRegions
+   * and Zones.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Region}
@@ -1689,7 +1712,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1704,7 +1728,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1727,7 +1752,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1750,7 +1776,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1772,7 +1799,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1790,7 +1818,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2136,7 +2165,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2152,7 +2182,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2168,7 +2199,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2188,7 +2220,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2208,7 +2241,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2223,7 +2257,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2246,7 +2281,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2269,7 +2305,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2291,7 +2328,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2309,7 +2347,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#region for regions.
+     * [Output Only] Type of the resource. Always compute#region for
+     * regions.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2465,7 +2504,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2481,7 +2521,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2503,7 +2544,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2527,7 +2569,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2549,7 +2592,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2579,7 +2623,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2600,7 +2645,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2616,7 +2662,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -2637,7 +2684,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
+     * [Output Only] Warning of fetching the `quotas` field for this region. This
+     * field is populated only if fetching of the `quotas` field fails.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.QuotaStatusWarning quota_status_warning = 302941430;
@@ -3155,7 +3203,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3171,7 +3219,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3195,7 +3243,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3219,7 +3267,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3242,7 +3290,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3261,7 +3309,7 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the region, either UP or DOWN.
+     * [Output Only] Status of the region, either UP orDOWN.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3367,7 +3415,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3383,7 +3432,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3398,7 +3448,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3414,7 +3465,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3430,7 +3482,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3454,7 +3507,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3477,7 +3531,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3497,7 +3552,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>
@@ -3516,7 +3572,8 @@ public final class Region extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of zones available in this region, in the form of resource URLs.
+     * [Output Only] A list of zones available in this region, in the form of
+     * resource URLs.
      * </pre>
      *
      * <code>repeated string zones = 116085319;</code>

@@ -66,6 +66,7 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.GetServiceAttachmentRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
 
   @SuppressWarnings("serial")
@@ -225,6 +226,41 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
     }
   }
 
+  public static final int SHOW_NAT_IPS_FIELD_NUMBER = 485502156;
+  private boolean showNatIps_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether NAT IPs should be included in the response.
+   * </pre>
+   *
+   * <code>optional bool show_nat_ips = 485502156;</code>
+   *
+   * @return Whether the showNatIps field is set.
+   */
+  @java.lang.Override
+  public boolean hasShowNatIps() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether NAT IPs should be included in the response.
+   * </pre>
+   *
+   * <code>optional bool show_nat_ips = 485502156;</code>
+   *
+   * @return The showNatIps.
+   */
+  @java.lang.Override
+  public boolean getShowNatIps() {
+    return showNatIps_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -248,6 +284,9 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 338957549, serviceAttachment_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(485502156, showNatIps_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -266,6 +305,9 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(338957549, serviceAttachment_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(485502156, showNatIps_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -286,6 +328,10 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getServiceAttachment().equals(other.getServiceAttachment())) return false;
+    if (hasShowNatIps() != other.hasShowNatIps()) return false;
+    if (hasShowNatIps()) {
+      if (getShowNatIps() != other.getShowNatIps()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -303,6 +349,10 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
     hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + SERVICE_ATTACHMENT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAttachment().hashCode();
+    if (hasShowNatIps()) {
+      hash = (37 * hash) + SHOW_NAT_IPS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getShowNatIps());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -447,6 +497,7 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
       project_ = "";
       region_ = "";
       serviceAttachment_ = "";
+      showNatIps_ = false;
       return this;
     }
 
@@ -492,6 +543,12 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.serviceAttachment_ = serviceAttachment_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.showNatIps_ = showNatIps_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -555,6 +612,9 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasShowNatIps()) {
+        setShowNatIps(other.getShowNatIps());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -599,6 +659,12 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000004;
                 break;
               } // case -1583306902
+            case -410950048:
+              {
+                showNatIps_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case -410950048
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -947,6 +1013,78 @@ public final class GetServiceAttachmentRequest extends com.google.protobuf.Gener
       checkByteStringIsUtf8(value);
       serviceAttachment_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean showNatIps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether NAT IPs should be included in the response.
+     * </pre>
+     *
+     * <code>optional bool show_nat_ips = 485502156;</code>
+     *
+     * @return Whether the showNatIps field is set.
+     */
+    @java.lang.Override
+    public boolean hasShowNatIps() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether NAT IPs should be included in the response.
+     * </pre>
+     *
+     * <code>optional bool show_nat_ips = 485502156;</code>
+     *
+     * @return The showNatIps.
+     */
+    @java.lang.Override
+    public boolean getShowNatIps() {
+      return showNatIps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether NAT IPs should be included in the response.
+     * </pre>
+     *
+     * <code>optional bool show_nat_ips = 485502156;</code>
+     *
+     * @param value The showNatIps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShowNatIps(boolean value) {
+
+      showNatIps_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether NAT IPs should be included in the response.
+     * </pre>
+     *
+     * <code>optional bool show_nat_ips = 485502156;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShowNatIps() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      showNatIps_ = false;
       onChanged();
       return this;
     }

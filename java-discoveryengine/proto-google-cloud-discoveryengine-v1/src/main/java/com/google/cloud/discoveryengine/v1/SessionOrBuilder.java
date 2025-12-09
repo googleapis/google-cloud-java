@@ -196,6 +196,64 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the labels.
+   */
+  java.util.List<java.lang.String> getLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of labels.
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The labels at the given index.
+   */
+  java.lang.String getLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The labels for the session.
+   * Can be set as filter in ListSessionsRequest.
+   * </pre>
+   *
+   * <code>repeated string labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the labels at the given index.
+   */
+  com.google.protobuf.ByteString getLabelsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the session started.
    * </pre>
    *

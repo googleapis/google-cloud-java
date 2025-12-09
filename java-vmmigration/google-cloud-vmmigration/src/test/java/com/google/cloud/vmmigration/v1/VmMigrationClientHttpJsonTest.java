@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -207,6 +211,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,6 +260,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -303,6 +309,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -360,6 +367,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -417,6 +425,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -433,6 +442,7 @@ public class VmMigrationClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -469,6 +479,7 @@ public class VmMigrationClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setDescription("description-1724546052")
+              .setEncryption(Encryption.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSourceAsync(source, updateMask).get();
@@ -645,6 +656,116 @@ public class VmMigrationClientHttpJsonTest {
     try {
       String source = "projects/project-3586/locations/location-3586/sources/source-3586";
       client.fetchInventory(source);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStorageInventoryTest() throws Exception {
+    SourceStorageResource responsesElement = SourceStorageResource.newBuilder().build();
+    FetchStorageInventoryResponse expectedResponse =
+        FetchStorageInventoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SourceName source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+    FetchStorageInventoryRequest.StorageType type =
+        FetchStorageInventoryRequest.StorageType.forNumber(0);
+
+    FetchStorageInventoryPagedResponse pagedListResponse =
+        client.fetchStorageInventory(source, type);
+
+    List<SourceStorageResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchStorageInventoryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SourceName source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      FetchStorageInventoryRequest.StorageType type =
+          FetchStorageInventoryRequest.StorageType.forNumber(0);
+      client.fetchStorageInventory(source, type);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStorageInventoryTest2() throws Exception {
+    SourceStorageResource responsesElement = SourceStorageResource.newBuilder().build();
+    FetchStorageInventoryResponse expectedResponse =
+        FetchStorageInventoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String source = "projects/project-3586/locations/location-3586/sources/source-3586";
+    FetchStorageInventoryRequest.StorageType type =
+        FetchStorageInventoryRequest.StorageType.forNumber(0);
+
+    FetchStorageInventoryPagedResponse pagedListResponse =
+        client.fetchStorageInventory(source, type);
+
+    List<SourceStorageResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchStorageInventoryExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String source = "projects/project-3586/locations/location-3586/sources/source-3586";
+      FetchStorageInventoryRequest.StorageType type =
+          FetchStorageInventoryRequest.StorageType.forNumber(0);
+      client.fetchStorageInventory(source, type);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1627,11 +1748,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1697,11 +1821,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1867,11 +1994,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1929,11 +2059,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1991,11 +2124,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2019,11 +2155,14 @@ public class VmMigrationClientHttpJsonTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2067,11 +2206,14 @@ public class VmMigrationClientHttpJsonTest {
               .setLastSync(ReplicationSync.newBuilder().build())
               .setStateTime(Timestamp.newBuilder().build())
               .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+              .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
               .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .putAllLabels(new HashMap<String, String>())
               .addAllRecentCloneJobs(new ArrayList<CloneJob>())
               .setError(Status.newBuilder().build())
               .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+              .setCutoverForecast(CutoverForecast.newBuilder().build())
+              .setExpiration(MigratingVm.Expiration.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateMigratingVmAsync(migratingVm, updateMask).get();
@@ -2473,6 +2615,62 @@ public class VmMigrationClientHttpJsonTest {
       String migratingVm =
           "projects/project-6708/locations/location-6708/sources/source-6708/migratingVms/migratingVm-6708";
       client.finalizeMigrationAsync(migratingVm).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void extendMigrationTest() throws Exception {
+    ExtendMigrationResponse expectedResponse = ExtendMigrationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("extendMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExtendMigrationRequest request =
+        ExtendMigrationRequest.newBuilder()
+            .setMigratingVm(
+                MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+                    .toString())
+            .build();
+
+    ExtendMigrationResponse actualResponse = client.extendMigrationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void extendMigrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExtendMigrationRequest request =
+          ExtendMigrationRequest.newBuilder()
+              .setMigratingVm(
+                  MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+                      .toString())
+              .build();
+      client.extendMigrationAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -4610,6 +4808,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .addAllSteps(new ArrayList<CycleStep>())
             .setError(Status.newBuilder().build())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4672,6 +4871,7 @@ public class VmMigrationClientHttpJsonTest {
             .setProgressPercent(-2137894861)
             .addAllSteps(new ArrayList<CycleStep>())
             .setError(Status.newBuilder().build())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4710,6 +4910,1370 @@ public class VmMigrationClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportsTest() throws Exception {
+    ImageImport responsesElement = ImageImport.newBuilder().build();
+    ListImageImportsResponse expectedResponse =
+        ListImageImportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImports(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListImageImportsPagedResponse pagedListResponse = client.listImageImports(parent);
+
+    List<ImageImport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listImageImportsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listImageImports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportsTest2() throws Exception {
+    ImageImport responsesElement = ImageImport.newBuilder().build();
+    ListImageImportsResponse expectedResponse =
+        ListImageImportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImports(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListImageImportsPagedResponse pagedListResponse = client.listImageImports(parent);
+
+    List<ImageImport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listImageImportsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listImageImports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportTest() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    ImageImport actualResponse = client.getImageImport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getImageImportExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.getImageImport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportTest2() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-995/locations/location-995/imageImports/imageImport-995";
+
+    ImageImport actualResponse = client.getImageImport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getImageImportExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-995/locations/location-995/imageImports/imageImport-995";
+      client.getImageImport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createImageImportTest() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ImageImport imageImport = ImageImport.newBuilder().build();
+    String imageImportId = "imageImportId943893019";
+
+    ImageImport actualResponse =
+        client.createImageImportAsync(parent, imageImport, imageImportId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createImageImportExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ImageImport imageImport = ImageImport.newBuilder().build();
+      String imageImportId = "imageImportId943893019";
+      client.createImageImportAsync(parent, imageImport, imageImportId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createImageImportTest2() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ImageImport imageImport = ImageImport.newBuilder().build();
+    String imageImportId = "imageImportId943893019";
+
+    ImageImport actualResponse =
+        client.createImageImportAsync(parent, imageImport, imageImportId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createImageImportExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ImageImport imageImport = ImageImport.newBuilder().build();
+      String imageImportId = "imageImportId943893019";
+      client.createImageImportAsync(parent, imageImport, imageImportId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteImageImportTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    client.deleteImageImportAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteImageImportExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.deleteImageImportAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteImageImportTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-995/locations/location-995/imageImports/imageImport-995";
+
+    client.deleteImageImportAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteImageImportExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-995/locations/location-995/imageImports/imageImport-995";
+      client.deleteImageImportAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listImageImportJobsTest() throws Exception {
+    ImageImportJob responsesElement = ImageImportJob.newBuilder().build();
+    ListImageImportJobsResponse expectedResponse =
+        ListImageImportJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImportJobs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ImageImportName parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    ListImageImportJobsPagedResponse pagedListResponse = client.listImageImportJobs(parent);
+
+    List<ImageImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportJobsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listImageImportJobsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImageImportName parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.listImageImportJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportJobsTest2() throws Exception {
+    ImageImportJob responsesElement = ImageImportJob.newBuilder().build();
+    ListImageImportJobsResponse expectedResponse =
+        ListImageImportJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImportJobs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-476/locations/location-476/imageImports/imageImport-476";
+
+    ListImageImportJobsPagedResponse pagedListResponse = client.listImageImportJobs(parent);
+
+    List<ImageImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportJobsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listImageImportJobsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-476/locations/location-476/imageImports/imageImport-476";
+      client.listImageImportJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportJobTest() throws Exception {
+    ImageImportJob expectedResponse =
+        ImageImportJob.newBuilder()
+            .setName(
+                ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+            .addAllCreatedResources(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
+            .addAllSteps(new ArrayList<ImageImportStep>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ImageImportJobName name = ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+
+    ImageImportJob actualResponse = client.getImageImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getImageImportJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImageImportJobName name =
+          ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+      client.getImageImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportJobTest2() throws Exception {
+    ImageImportJob expectedResponse =
+        ImageImportJob.newBuilder()
+            .setName(
+                ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+            .addAllCreatedResources(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
+            .addAllSteps(new ArrayList<ImageImportStep>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3077/locations/location-3077/imageImports/imageImport-3077/imageImportJobs/imageImportJob-3077";
+
+    ImageImportJob actualResponse = client.getImageImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getImageImportJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3077/locations/location-3077/imageImports/imageImport-3077/imageImportJobs/imageImportJob-3077";
+      client.getImageImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelImageImportJobTest() throws Exception {
+    CancelImageImportJobResponse expectedResponse =
+        CancelImageImportJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelImageImportJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ImageImportJobName name = ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+
+    CancelImageImportJobResponse actualResponse = client.cancelImageImportJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelImageImportJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImageImportJobName name =
+          ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+      client.cancelImageImportJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelImageImportJobTest2() throws Exception {
+    CancelImageImportJobResponse expectedResponse =
+        CancelImageImportJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelImageImportJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3077/locations/location-3077/imageImports/imageImport-3077/imageImportJobs/imageImportJob-3077";
+
+    CancelImageImportJobResponse actualResponse = client.cancelImageImportJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelImageImportJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3077/locations/location-3077/imageImports/imageImport-3077/imageImportJobs/imageImportJob-3077";
+      client.cancelImageImportJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+    DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+    String diskMigrationJobId = "diskMigrationJobId-173409913";
+
+    DiskMigrationJob actualResponse =
+        client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+      String diskMigrationJobId = "diskMigrationJobId-173409913";
+      client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDiskMigrationJobTest2() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-8435/locations/location-8435/sources/source-8435";
+    DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+    String diskMigrationJobId = "diskMigrationJobId-173409913";
+
+    DiskMigrationJob actualResponse =
+        client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDiskMigrationJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8435/locations/location-8435/sources/source-8435";
+      DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+      String diskMigrationJobId = "diskMigrationJobId-173409913";
+      client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listDiskMigrationJobsTest() throws Exception {
+    DiskMigrationJob responsesElement = DiskMigrationJob.newBuilder().build();
+    ListDiskMigrationJobsResponse expectedResponse =
+        ListDiskMigrationJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiskMigrationJobs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+
+    ListDiskMigrationJobsPagedResponse pagedListResponse = client.listDiskMigrationJobs(parent);
+
+    List<DiskMigrationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiskMigrationJobsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDiskMigrationJobsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      client.listDiskMigrationJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiskMigrationJobsTest2() throws Exception {
+    DiskMigrationJob responsesElement = DiskMigrationJob.newBuilder().build();
+    ListDiskMigrationJobsResponse expectedResponse =
+        ListDiskMigrationJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiskMigrationJobs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-8435/locations/location-8435/sources/source-8435";
+
+    ListDiskMigrationJobsPagedResponse pagedListResponse = client.listDiskMigrationJobs(parent);
+
+    List<DiskMigrationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiskMigrationJobsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDiskMigrationJobsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8435/locations/location-8435/sources/source-8435";
+      client.listDiskMigrationJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    DiskMigrationJob actualResponse = client.getDiskMigrationJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.getDiskMigrationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiskMigrationJobTest2() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+
+    DiskMigrationJob actualResponse = client.getDiskMigrationJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDiskMigrationJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+      client.getDiskMigrationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DiskMigrationJob diskMigrationJob =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiskMigrationJob actualResponse =
+        client.updateDiskMigrationJobAsync(diskMigrationJob, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiskMigrationJob diskMigrationJob =
+          DiskMigrationJob.newBuilder()
+              .setName(
+                  DiskMigrationJobName.of(
+                          "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                      .toString())
+              .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .addAllErrors(new ArrayList<Status>())
+              .addAllSteps(new ArrayList<DiskMigrationStep>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiskMigrationJobAsync(diskMigrationJob, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDiskMigrationJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    client.deleteDiskMigrationJobAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.deleteDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDiskMigrationJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+
+    client.deleteDiskMigrationJobAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDiskMigrationJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+      client.deleteDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runDiskMigrationJobTest() throws Exception {
+    RunDiskMigrationJobResponse expectedResponse = RunDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    RunDiskMigrationJobResponse actualResponse = client.runDiskMigrationJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.runDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void runDiskMigrationJobTest2() throws Exception {
+    RunDiskMigrationJobResponse expectedResponse = RunDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+
+    RunDiskMigrationJobResponse actualResponse = client.runDiskMigrationJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void runDiskMigrationJobExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6865/locations/location-6865/sources/source-6865/diskMigrationJobs/diskMigrationJob-6865";
+      client.runDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelDiskMigrationJobTest() throws Exception {
+    CancelDiskMigrationJobResponse expectedResponse =
+        CancelDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    CancelDiskMigrationJobRequest request =
+        CancelDiskMigrationJobRequest.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .build();
+
+    CancelDiskMigrationJobResponse actualResponse =
+        client.cancelDiskMigrationJobAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelDiskMigrationJobExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CancelDiskMigrationJobRequest request =
+          CancelDiskMigrationJobRequest.newBuilder()
+              .setName(
+                  DiskMigrationJobName.of(
+                          "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                      .toString())
+              .build();
+      client.cancelDiskMigrationJobAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

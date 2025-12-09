@@ -168,6 +168,12 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
     return ((GlobalAddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((GlobalAddressesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final GlobalAddressesSettings create(GlobalAddressesStubSettings stub)
       throws IOException {
     return new GlobalAddressesSettings.Builder(stub.toBuilder()).build();
@@ -318,6 +324,13 @@ public class GlobalAddressesSettings extends ClientSettings<GlobalAddressesSetti
     public OperationCallSettings.Builder<SetLabelsGlobalAddressRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return getStubSettingsBuilder().setLabelsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsGlobalAddressRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

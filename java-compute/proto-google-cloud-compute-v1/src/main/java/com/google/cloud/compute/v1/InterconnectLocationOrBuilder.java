@@ -28,7 +28,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -41,7 +42,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -54,7 +56,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -67,7 +70,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
+   * [Output Only] Availability zone for this InterconnectLocation. Within a
+   * metropolitan area (metro), maintenance will not be simultaneously scheduled
+   * in more than one availability zone.  Example: "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string availability_zone = 158459920;</code>
@@ -80,7 +85,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
+   * [Output Only] Availability zone for this InterconnectLocation. Within a
+   * metropolitan area (metro), maintenance will not be simultaneously scheduled
+   * in more than one availability zone.  Example: "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string availability_zone = 158459920;</code>
@@ -93,7 +100,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
+   * [Output Only] Availability zone for this InterconnectLocation. Within a
+   * metropolitan area (metro), maintenance will not be simultaneously scheduled
+   * in more than one availability zone.  Example: "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string availability_zone = 158459920;</code>
@@ -106,7 +115,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
+   * [Output only] List of features available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC
+   *    - IF_CROSS_SITE_NETWORK
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -120,7 +133,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
+   * [Output only] List of features available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC
+   *    - IF_CROSS_SITE_NETWORK
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -134,7 +151,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
+   * [Output only] List of features available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC
+   *    - IF_CROSS_SITE_NETWORK
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -149,7 +170,11 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC
+   * [Output only] List of features available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - IF_MACSEC
+   *    - IF_CROSS_SITE_NETWORK
    * Check the AvailableFeatures enum for the list of possible values.
    * </pre>
    *
@@ -164,7 +189,12 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
+   * [Output only] List of link types available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR
+   *    - LINK_TYPE_ETHERNET_100G_LR
+   *    - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -178,7 +208,12 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
+   * [Output only] List of link types available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR
+   *    - LINK_TYPE_ETHERNET_100G_LR
+   *    - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -192,7 +227,12 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
+   * [Output only] List of link types available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR
+   *    - LINK_TYPE_ETHERNET_100G_LR
+   *    - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -207,7 +247,12 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
+   * [Output only] List of link types available at this InterconnectLocation,
+   * which can take one of the following values:
+   *
+   *    - LINK_TYPE_ETHERNET_10G_LR
+   *    - LINK_TYPE_ETHERNET_100G_LR
+   *    - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -222,7 +267,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -235,7 +282,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -248,7 +297,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -261,7 +312,14 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -275,7 +333,14 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -289,7 +354,14 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -303,7 +375,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -316,7 +389,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -329,7 +403,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -337,6 +412,92 @@ public interface InterconnectLocationOrBuilder
    * @return The bytes for creationTimestamp.
    */
   com.google.protobuf.ByteString getCreationTimestampBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of InterconnectLocation.CrossSiteInterconnectInfo
+   * objects, that describe where Cross-Site Interconnect wires may connect to
+   * from this location and associated connection parameters. Cross-Site
+   * Interconnect isn't allowed to locations which are not listed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo cross_site_interconnect_infos = 248573837;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo>
+      getCrossSiteInterconnectInfosList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of InterconnectLocation.CrossSiteInterconnectInfo
+   * objects, that describe where Cross-Site Interconnect wires may connect to
+   * from this location and associated connection parameters. Cross-Site
+   * Interconnect isn't allowed to locations which are not listed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo cross_site_interconnect_infos = 248573837;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo
+      getCrossSiteInterconnectInfos(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of InterconnectLocation.CrossSiteInterconnectInfo
+   * objects, that describe where Cross-Site Interconnect wires may connect to
+   * from this location and associated connection parameters. Cross-Site
+   * Interconnect isn't allowed to locations which are not listed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo cross_site_interconnect_infos = 248573837;
+   * </code>
+   */
+  int getCrossSiteInterconnectInfosCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of InterconnectLocation.CrossSiteInterconnectInfo
+   * objects, that describe where Cross-Site Interconnect wires may connect to
+   * from this location and associated connection parameters. Cross-Site
+   * Interconnect isn't allowed to locations which are not listed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo cross_site_interconnect_infos = 248573837;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfoOrBuilder>
+      getCrossSiteInterconnectInfosOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] A list of InterconnectLocation.CrossSiteInterconnectInfo
+   * objects, that describe where Cross-Site Interconnect wires may connect to
+   * from this location and associated connection parameters. Cross-Site
+   * Interconnect isn't allowed to locations which are not listed.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfo cross_site_interconnect_infos = 248573837;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InterconnectLocationCrossSiteInterconnectInfoOrBuilder
+      getCrossSiteInterconnectInfosOrBuilder(int index);
 
   /**
    *
@@ -420,7 +581,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -433,7 +595,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -446,7 +609,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -459,7 +623,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -472,7 +637,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -485,7 +651,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
+   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -498,7 +664,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
+   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -511,7 +677,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect locations.
+   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -563,7 +729,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -576,7 +743,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -589,7 +757,8 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -602,7 +771,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * describe parameters pertaining to the relation between this
+   * InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
    * <code>
@@ -615,7 +786,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * describe parameters pertaining to the relation between this
+   * InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
    * <code>
@@ -628,7 +801,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * describe parameters pertaining to the relation between this
+   * InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
    * <code>
@@ -641,7 +816,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * describe parameters pertaining to the relation between this
+   * InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
    * <code>
@@ -655,7 +832,9 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * describe parameters pertaining to the relation between this
+   * InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
    * <code>
@@ -708,7 +887,75 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] URLs of the other locations that can pair up with this
+   * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
+   * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return A list containing the singleRegionProductionCriticalPeerLocations.
+   */
+  java.util.List<java.lang.String> getSingleRegionProductionCriticalPeerLocationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this
+   * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
+   * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return The count of singleRegionProductionCriticalPeerLocations.
+   */
+  int getSingleRegionProductionCriticalPeerLocationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this
+   * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
+   * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  java.lang.String getSingleRegionProductionCriticalPeerLocations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this
+   * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
+   * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  com.google.protobuf.ByteString getSingleRegionProductionCriticalPeerLocationsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The status of this InterconnectLocation, which can take one
+   * of the following values:
+   *
+   *    - CLOSED: The InterconnectLocation is closed and is unavailable for
+   *    provisioning new Interconnects.
+   *    - AVAILABLE: The InterconnectLocation is available for provisioning new
+   *    Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -722,7 +969,13 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one
+   * of the following values:
+   *
+   *    - CLOSED: The InterconnectLocation is closed and is unavailable for
+   *    provisioning new Interconnects.
+   *    - AVAILABLE: The InterconnectLocation is available for provisioning new
+   *    Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -736,7 +989,13 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * [Output Only] The status of this InterconnectLocation, which can take one
+   * of the following values:
+   *
+   *    - CLOSED: The InterconnectLocation is closed and is unavailable for
+   *    provisioning new Interconnects.
+   *    - AVAILABLE: The InterconnectLocation is available for provisioning new
+   *    Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

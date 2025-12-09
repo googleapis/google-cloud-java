@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * budget plan and rules to execute as we track spend against that plan.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/billing/budgets/v1/budget_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class BudgetServiceGrpc {
 
@@ -570,8 +567,9 @@ public final class BudgetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1.Budget createBudget(
-        com.google.cloud.billing.budgets.v1.CreateBudgetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.budgets.v1.CreateBudgetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBudgetMethod(), getCallOptions(), request);
     }
 
@@ -586,8 +584,9 @@ public final class BudgetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1.Budget updateBudget(
-        com.google.cloud.billing.budgets.v1.UpdateBudgetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.budgets.v1.UpdateBudgetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBudgetMethod(), getCallOptions(), request);
     }
 
@@ -603,8 +602,9 @@ public final class BudgetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1.Budget getBudget(
-        com.google.cloud.billing.budgets.v1.GetBudgetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.budgets.v1.GetBudgetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBudgetMethod(), getCallOptions(), request);
     }
 
@@ -620,8 +620,9 @@ public final class BudgetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.billing.budgets.v1.ListBudgetsResponse listBudgets(
-        com.google.cloud.billing.budgets.v1.ListBudgetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.budgets.v1.ListBudgetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBudgetsMethod(), getCallOptions(), request);
     }
 
@@ -633,8 +634,9 @@ public final class BudgetServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBudget(
-        com.google.cloud.billing.budgets.v1.DeleteBudgetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.billing.budgets.v1.DeleteBudgetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBudgetMethod(), getCallOptions(), request);
     }
   }

@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Live Video Analytics (LVA) on the streaming inputs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/visionai/v1/lva_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LiveVideoAnalyticsGrpc {
 
@@ -1514,8 +1511,9 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListPublicOperatorsResponse listPublicOperators(
-        com.google.cloud.visionai.v1.ListPublicOperatorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListPublicOperatorsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPublicOperatorsMethod(), getCallOptions(), request);
     }
 
@@ -1527,8 +1525,9 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ResolveOperatorInfoResponse resolveOperatorInfo(
-        com.google.cloud.visionai.v1.ResolveOperatorInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ResolveOperatorInfoRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResolveOperatorInfoMethod(), getCallOptions(), request);
     }
 
@@ -1540,8 +1539,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListOperatorsResponse listOperators(
-        com.google.cloud.visionai.v1.ListOperatorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListOperatorsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOperatorsMethod(), getCallOptions(), request);
     }
 
@@ -1553,8 +1552,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Operator getOperator(
-        com.google.cloud.visionai.v1.GetOperatorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetOperatorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOperatorMethod(), getCallOptions(), request);
     }
 
@@ -1566,8 +1565,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOperator(
-        com.google.cloud.visionai.v1.CreateOperatorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateOperatorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOperatorMethod(), getCallOptions(), request);
     }
 
@@ -1579,8 +1578,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateOperator(
-        com.google.cloud.visionai.v1.UpdateOperatorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateOperatorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOperatorMethod(), getCallOptions(), request);
     }
 
@@ -1592,8 +1591,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOperator(
-        com.google.cloud.visionai.v1.DeleteOperatorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteOperatorRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOperatorMethod(), getCallOptions(), request);
     }
 
@@ -1605,8 +1604,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListAnalysesResponse listAnalyses(
-        com.google.cloud.visionai.v1.ListAnalysesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListAnalysesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnalysesMethod(), getCallOptions(), request);
     }
 
@@ -1618,8 +1617,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Analysis getAnalysis(
-        com.google.cloud.visionai.v1.GetAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetAnalysisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -1631,8 +1630,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAnalysis(
-        com.google.cloud.visionai.v1.CreateAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateAnalysisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -1644,8 +1643,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateAnalysis(
-        com.google.cloud.visionai.v1.UpdateAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateAnalysisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -1657,8 +1656,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAnalysis(
-        com.google.cloud.visionai.v1.DeleteAnalysisRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteAnalysisRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAnalysisMethod(), getCallOptions(), request);
     }
 
@@ -1670,8 +1669,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.ListProcessesResponse listProcesses(
-        com.google.cloud.visionai.v1.ListProcessesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.ListProcessesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProcessesMethod(), getCallOptions(), request);
     }
 
@@ -1683,8 +1682,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.Process getProcess(
-        com.google.cloud.visionai.v1.GetProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.GetProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProcessMethod(), getCallOptions(), request);
     }
 
@@ -1696,8 +1695,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createProcess(
-        com.google.cloud.visionai.v1.CreateProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.CreateProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateProcessMethod(), getCallOptions(), request);
     }
 
@@ -1709,8 +1708,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateProcess(
-        com.google.cloud.visionai.v1.UpdateProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.UpdateProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateProcessMethod(), getCallOptions(), request);
     }
 
@@ -1722,8 +1721,8 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteProcess(
-        com.google.cloud.visionai.v1.DeleteProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.DeleteProcessRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteProcessMethod(), getCallOptions(), request);
     }
 
@@ -1736,8 +1735,9 @@ public final class LiveVideoAnalyticsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchRunProcess(
-        com.google.cloud.visionai.v1.BatchRunProcessRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.BatchRunProcessRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchRunProcessMethod(), getCallOptions(), request);
     }
   }

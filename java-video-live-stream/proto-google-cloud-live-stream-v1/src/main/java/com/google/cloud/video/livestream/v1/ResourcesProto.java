@@ -105,6 +105,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_InputAttachment_AutomaticFailover_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_AutoTranscriptionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_AutoTranscriptionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_Event_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_Event_fieldAccessorTable;
@@ -132,6 +136,10 @@ public final class ResourcesProto {
       internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_Event_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -233,6 +241,10 @@ public final class ResourcesProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_Encryption_MpegCommonEncryption_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_EncryptionUpdate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_EncryptionUpdate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_Pool_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_Pool_fieldAccessorTable;
@@ -259,7 +271,7 @@ public final class ResourcesProto {
           + "oogle/api/resource.proto\032.google/cloud/v"
           + "ideo/livestream/v1/outputs.proto\032\036google"
           + "/protobuf/duration.proto\032\037google/protobu"
-          + "f/timestamp.proto\032\027google/rpc/status.proto\"\360\006\n"
+          + "f/timestamp.proto\032\027google/rpc/status.proto\"\230\007\n"
           + "\005Input\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -283,14 +295,17 @@ public final class ResourcesProto {
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tRTMP_PUSH\020\001\022\014\n"
-          + "\010SRT_PUSH\020\002\"5\n"
+          + "\010SRT_PUSH\020\002\"]\n"
           + "\004Tier\022\024\n"
           + "\020TIER_UNSPECIFIED\020\000\022\006\n"
           + "\002SD\020\001\022\006\n"
           + "\002HD\020\002\022\007\n"
-          + "\003UHD\020\003:\\\352AY\n"
+          + "\003UHD\020\003\022\013\n"
+          + "\007SD_H265\020\004\022\013\n"
+          + "\007HD_H265\020\005\022\014\n"
+          + "\010UHD_H265\020\006:\\\352AY\n"
           + "\037livestream.googleapis.com/Input\0226projects/"
-          + "{project}/locations/{location}/inputs/{input}\"\247\014\n"
+          + "{project}/locations/{location}/inputs/{input}\"\264\016\n"
           + "\007Channel\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
@@ -305,22 +320,29 @@ public final class ResourcesProto {
           + "\022elementary_streams\030\n"
           + " \003(\01322.google.cloud.video.livestream.v1.ElementaryStream\022@\n"
           + "\013mux_streams\030\013 \003(\0132+.google.cloud.video.livestream.v1.MuxStream\022=\n"
-          + "\tmanifests\030\014 \003(\0132*.google.cloud.video.livestream.v1.Manifest\022D\n\r"
+          + "\tmanifests\030\014 \003(\0132*.google.cloud.video.livestream.v1.Manifest\022W\n"
+          + "\024distribution_streams\030\034 \003(\01324.google.cloud"
+          + ".video.livestream.v1.DistributionStreamB\003\340A\001\022J\n\r"
+          + "distributions\030\035 \003(\0132..google.clo"
+          + "ud.video.livestream.v1.DistributionB\003\340A\001\022D\n\r"
           + "sprite_sheets\030\r"
           + " \003(\0132-.google.cloud.video.livestream.v1.SpriteSheet\022V\n"
-          + "\017streaming_state\030\016"
-          + " \001(\01628.google.cloud.video.livestream.v1.Channel.StreamingStateB\003\340A\003\0220\n"
+          + "\017streaming_state\030\016 \001(\01628.google.cloud.video.liv"
+          + "estream.v1.Channel.StreamingStateB\003\340A\003\0220\n"
           + "\017streaming_error\030\022 \001(\0132\022.google.rpc.StatusB\003\340A\003\022?\n\n"
           + "log_config\030\023 \001(\0132+.google.cloud.video.livestream.v1.LogConfig\022I\n"
           + "\017timecode_config\030\025"
-          + " \001(\01320.google.cloud.video.livestream.v1.TimecodeConfig\022A\n"
-          + "\013encryptions\030\030 \003(\0132,.google.cloud.video.livestream.v1.Encryption\022C\n"
-          + "\014input_config\030\031 \001(\0132-.googl"
-          + "e.cloud.video.livestream.v1.InputConfig\022P\n"
-          + "\020retention_config\030\032 \001(\01321.google.cloud"
-          + ".video.livestream.v1.RetentionConfigB\003\340A\001\022M\n"
-          + "\017static_overlays\030\033 \003(\0132/.google.clou"
-          + "d.video.livestream.v1.StaticOverlayB\003\340A\001\032\025\n"
+          + " \001(\01320.google.cloud.video.livestream.v1.TimecodeConfig\022F\n"
+          + "\013encryptions\030\030"
+          + " \003(\0132,.google.cloud.video.livestream.v1.EncryptionB\003\340A\001\022C\n"
+          + "\014input_config\030\031 \001"
+          + "(\0132-.google.cloud.video.livestream.v1.InputConfig\022P\n"
+          + "\020retention_config\030\032 \001(\01321.go"
+          + "ogle.cloud.video.livestream.v1.RetentionConfigB\003\340A\001\022M\n"
+          + "\017static_overlays\030\033 \003(\0132/.g"
+          + "oogle.cloud.video.livestream.v1.StaticOverlayB\003\340A\001\022a\n"
+          + "\031auto_transcription_config\030\036"
+          + " \001(\01329.google.cloud.video.livestream.v1.AutoTranscriptionConfigB\003\340A\001\032\025\n"
           + "\006Output\022\013\n"
           + "\003uri\030\001 \001(\t\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -335,8 +357,8 @@ public final class ResourcesProto {
           + "\007STOPPED\020\006\022\014\n"
           + "\010STARTING\020\007\022\014\n"
           + "\010STOPPING\020\010:b\352A_\n"
-          + "!livestream.googleapis.com/Chan"
-          + "nel\022:projects/{project}/locations/{location}/channels/{channel}\"6\n"
+          + "!livestream.googleapis.com/Channel\022:projec"
+          + "ts/{project}/locations/{location}/channels/{channel}\"6\n"
           + "\024NormalizedCoordinate\022\016\n"
           + "\001x\030\001 \001(\001B\003\340A\001\022\016\n"
           + "\001y\030\002 \001(\001B\003\340A\001\"6\n"
@@ -346,21 +368,21 @@ public final class ResourcesProto {
           + "StaticOverlay\0226\n"
           + "\005asset\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037livestream.googleapis.com/Asset\022O\n\n"
-          + "resolution\030\002 \001(\01326.google.c"
-          + "loud.video.livestream.v1.NormalizedResolutionB\003\340A\001\022M\n"
-          + "\010position\030\003 \001(\01326.google.cl"
-          + "oud.video.livestream.v1.NormalizedCoordinateB\003\340A\001\022\024\n"
+          + "resolution\030\002 \001(\01326.google.cloud.video."
+          + "livestream.v1.NormalizedResolutionB\003\340A\001\022M\n"
+          + "\010position\030\003 \001(\01326.google.cloud.video.l"
+          + "ivestream.v1.NormalizedCoordinateB\003\340A\001\022\024\n"
           + "\007opacity\030\004 \001(\001B\003\340A\001\"\306\001\n"
           + "\013InputConfig\022X\n"
-          + "\021input_switch_mode\030\001 \001(\0162=.goo"
-          + "gle.cloud.video.livestream.v1.InputConfig.InputSwitchMode\"]\n"
+          + "\021input_switch_mode\030\001 \001(\0162=.google.cloud.v"
+          + "ideo.livestream.v1.InputConfig.InputSwitchMode\"]\n"
           + "\017InputSwitchMode\022!\n"
           + "\035INPUT_SWITCH_MODE_UNSPECIFIED\020\000\022\033\n"
           + "\027FAILOVER_PREFER_PRIMARY\020\001\022\n\n"
           + "\006MANUAL\020\003\"\300\001\n"
           + "\tLogConfig\022M\n"
-          + "\014log_severity\030\001 \001(\01627.google.cl"
-          + "oud.video.livestream.v1.LogConfig.LogSeverity\"d\n"
+          + "\014log_severity\030\001"
+          + " \001(\01627.google.cloud.video.livestream.v1.LogConfig.LogSeverity\"d\n"
           + "\013LogSeverity\022\034\n"
           + "\030LOG_SEVERITY_UNSPECIFIED\020\000\022\007\n"
           + "\003OFF\020\001\022\t\n"
@@ -373,10 +395,10 @@ public final class ResourcesProto {
           + " \001(\0132\031.google.protobuf.Duration\"\352\001\n"
           + "\023InputStreamProperty\0227\n"
           + "\023last_establish_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022L\n\r"
-          + "video_streams\030\002"
-          + " \003(\01325.google.cloud.video.livestream.v1.VideoStreamProperty\022L\n\r"
-          + "audio_streams\030\003"
-          + " \003(\01325.google.cloud.video.livestream.v1.AudioStreamProperty\"i\n"
+          + "video_streams\030\002 \003("
+          + "\01325.google.cloud.video.livestream.v1.VideoStreamProperty\022L\n\r"
+          + "audio_streams\030\003 \003(\0132"
+          + "5.google.cloud.video.livestream.v1.AudioStreamProperty\"i\n"
           + "\023VideoStreamProperty\022\r\n"
           + "\005index\030\001 \001(\005\022C\n"
           + "\014video_format\030\002 \001(\0132-.google.cloud.video.livestream.v1.VideoFormat\"]\n"
@@ -396,33 +418,49 @@ public final class ResourcesProto {
           + "\003key\030\001 \001(\t\0223\n"
           + "\005input\030\002 \001(\tB$\372A!\n"
           + "\037livestream.googleapis.com/Input\022_\n"
-          + "\022automatic_failover\030\003"
-          + " \001(\0132C.google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover\032\'\n"
+          + "\022automatic_failover\030\003 \001(\0132C.goo"
+          + "gle.cloud.video.livestream.v1.InputAttachment.AutomaticFailover\032\'\n"
           + "\021AutomaticFailover\022\022\n\n"
-          + "input_keys\030\001 \003(\t\"\202\013\n"
+          + "input_keys\030\001 \003(\t\"\231\003\n"
+          + "\027AutoTranscriptionConfig\022d\n"
+          + "\016display_timing\030\001 \001(\0162G.g"
+          + "oogle.cloud.video.livestream.v1.AutoTranscriptionConfig.DisplayTimingB\003\340A\001\022d\n"
+          + "\016quality_preset\030\002 \001(\0162G.google.cloud.video."
+          + "livestream.v1.AutoTranscriptionConfig.QualityPresetB\003\340A\001\"D\n\r"
+          + "DisplayTiming\022\036\n"
+          + "\032DISPLAY_TIMING_UNSPECIFIED\020\000\022\t\n"
+          + "\005ASYNC\020\001\022\010\n"
+          + "\004SYNC\020\002\"l\n\r"
+          + "QualityPreset\022\036\n"
+          + "\032QUALITY_PRESET_UNSPECIFIED\020\000\022\017\n"
+          + "\013LOW_LATENCY\020\001\022\024\n"
+          + "\020BALANCED_QUALITY\020\002\022\024\n"
+          + "\020IMPROVED_QUALITY\020\003\"\306\014\n"
           + "\005Event\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022C\n"
           + "\006labels\030\004"
           + " \003(\01323.google.cloud.video.livestream.v1.Event.LabelsEntry\022O\n"
-          + "\014input_switch\030\005"
-          + " \001(\01327.google.cloud.video.livestream.v1.Event.InputSwitchTaskH\000\022G\n"
+          + "\014input_switch\030\005 \001(\01327.google.cloud.video"
+          + ".livestream.v1.Event.InputSwitchTaskH\000\022G\n"
           + "\010ad_break\030\006"
           + " \001(\01323.google.cloud.video.livestream.v1.Event.AdBreakTaskH\000\022X\n"
           + "\021return_to_program\030\r"
           + " \001(\0132;.google.cloud.video.livestream.v1.Event.ReturnToProgramTaskH\000\022B\n"
           + "\005slate\030\016"
           + " \001(\01321.google.cloud.video.livestream.v1.Event.SlateTaskH\000\022@\n"
-          + "\004mute\030\017 \001"
-          + "(\01320.google.cloud.video.livestream.v1.Event.MuteTaskH\000\022D\n"
-          + "\006unmute\030\020 \001(\01322.google."
-          + "cloud.video.livestream.v1.Event.UnmuteTaskH\000\022\023\n"
+          + "\004mute\030\017 "
+          + "\001(\01320.google.cloud.video.livestream.v1.Event.MuteTaskH\000\022D\n"
+          + "\006unmute\030\020 \001(\01322.google"
+          + ".cloud.video.livestream.v1.Event.UnmuteTaskH\000\022[\n"
+          + "\022update_encryptions\030\021 \001(\0132=.goog"
+          + "le.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskH\000\022\023\n"
           + "\013execute_now\030\t \001(\010\0222\n"
           + "\016execution_time\030\n"
           + " \001(\0132\032.google.protobuf.Timestamp\022A\n"
-          + "\005state\030\013"
-          + " \001(\0162-.google.cloud.video.livestream.v1.Event.StateB\003\340A\003\022&\n"
+          + "\005state\030\013 \001(\0162-.google.clou"
+          + "d.video.livestream.v1.Event.StateB\003\340A\003\022&\n"
           + "\005error\030\014 \001(\0132\022.google.rpc.StatusB\003\340A\003\032$\n"
           + "\017InputSwitchTask\022\021\n"
           + "\tinput_key\030\001 \001(\t\032:\n"
@@ -435,7 +473,10 @@ public final class ResourcesProto {
           + "\023ReturnToProgramTask\0327\n"
           + "\010MuteTask\022+\n"
           + "\010duration\030\001 \001(\0132\031.google.protobuf.Duration\032\014\n\n"
-          + "UnmuteTask\032-\n"
+          + "UnmuteTask\032e\n"
+          + "\025UpdateEncryptionsTask\022L\n"
+          + "\013encryptions\030\001 \003(\01322.google.clo"
+          + "ud.video.livestream.v1.EncryptionUpdateB\003\340A\002\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"o\n"
@@ -447,8 +488,8 @@ public final class ResourcesProto {
           + "\006FAILED\020\004\022\013\n"
           + "\007PENDING\020\005\022\013\n"
           + "\007STOPPED\020\006:o\352Al\n"
-          + "\037livestream.googleapis.com/Event\022Iprojects/{project}/locations/{loc"
-          + "ation}/channels/{channel}/events/{event}B\006\n"
+          + "\037livestream.googleapis.com/Eve"
+          + "nt\022Iprojects/{project}/locations/{location}/channels/{channel}/events/{event}B\006\n"
           + "\004task\"\226\t\n"
           + "\004Clip\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
@@ -458,22 +499,22 @@ public final class ResourcesProto {
           + "\013update_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022B\n"
           + "\006labels\030\005"
           + " \003(\01322.google.cloud.video.livestream.v1.Clip.LabelsEntry\022@\n"
-          + "\005state\030\006 \001(\0162,.go"
-          + "ogle.cloud.video.livestream.v1.Clip.StateB\003\340A\003\022\022\n\n"
+          + "\005state\030\006 \001(\0162,.googl"
+          + "e.cloud.video.livestream.v1.Clip.StateB\003\340A\003\022\022\n\n"
           + "output_uri\030\007 \001(\t\022&\n"
           + "\005error\030\t \001(\0132\022.google.rpc.StatusB\003\340A\003\022<\n"
           + "\006slices\030\n"
           + " \003(\0132,.google.cloud.video.livestream.v1.Clip.Slice\022P\n"
-          + "\016clip_manifests\030\014 \003(\01323.googl"
-          + "e.cloud.video.livestream.v1.Clip.ClipManifestB\003\340A\002\022K\n"
+          + "\016clip_manifests\030\014 \003(\01323.google.c"
+          + "loud.video.livestream.v1.Clip.ClipManifestB\003\340A\002\022K\n"
           + "\013output_type\030\r"
           + " \001(\01621.google.cloud.video.livestream.v1.Clip.OutputTypeB\003\340A\001\032n\n"
           + "\tTimeSlice\022/\n"
           + "\013markin_time\030\001 \001(\0132\032.google.protobuf.Timestamp\0220\n"
           + "\014markout_time\030\002 \001(\0132\032.google.protobuf.Timestamp\032W\n"
           + "\005Slice\022F\n\n"
-          + "time_slice\030\001 \001(\01320.google.cl"
-          + "oud.video.livestream.v1.Clip.TimeSliceH\000B\006\n"
+          + "time_slice\030\001"
+          + " \001(\01320.google.cloud.video.livestream.v1.Clip.TimeSliceH\000B\006\n"
           + "\004kind\032B\n"
           + "\014ClipManifest\022\031\n"
           + "\014manifest_key\030\001 \001(\tB\003\340A\002\022\027\n\n"
@@ -491,8 +532,8 @@ public final class ResourcesProto {
           + "\027OUTPUT_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010MANIFEST\020\001\022\007\n"
           + "\003MP4\020\002:l\352Ai\n"
-          + "\036livestream.googleapis.com/Clip\022Gprojec"
-          + "ts/{project}/locations/{location}/channels/{channel}/clips/{clip}\"v\n"
+          + "\036livestream.googleapis.com/Clip\022Gprojects/"
+          + "{project}/locations/{location}/channels/{channel}/clips/{clip}\"v\n"
           + "\014TimeInterval\0223\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\0221\n"
           + "\010end_time\030\002"
@@ -501,21 +542,21 @@ public final class ResourcesProto {
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022M\n"
-          + "\006labels\030\004 \003(\01328.google.cloud.v"
-          + "ideo.livestream.v1.DvrSession.LabelsEntryB\003\340A\001\022F\n"
-          + "\005state\030\005 \001(\01622.google.cloud.vid"
-          + "eo.livestream.v1.DvrSession.StateB\003\340A\003\022&\n"
+          + "\006labels\030\004 \003(\01328.google.cloud.vide"
+          + "o.livestream.v1.DvrSession.LabelsEntryB\003\340A\001\022F\n"
+          + "\005state\030\005"
+          + " \001(\01622.google.cloud.video.livestream.v1.DvrSession.StateB\003\340A\003\022&\n"
           + "\005error\030\006 \001(\0132\022.google.rpc.StatusB\003\340A\003\022T\n\r"
-          + "dvr_manifests\030\007 \003(\01328.google.cloud.vid"
-          + "eo.livestream.v1.DvrSession.DvrManifestB\003\340A\002\022P\n"
-          + "\013dvr_windows\030\010 \003(\01326.google.cloud"
-          + ".video.livestream.v1.DvrSession.DvrWindowB\003\340A\002\032A\n"
+          + "dvr_manifests\030\007 \003(\01328.google.cloud.video."
+          + "livestream.v1.DvrSession.DvrManifestB\003\340A\002\022P\n"
+          + "\013dvr_windows\030\010 \003(\01326.google.cloud.vi"
+          + "deo.livestream.v1.DvrSession.DvrWindowB\003\340A\002\032A\n"
           + "\013DvrManifest\022\031\n"
           + "\014manifest_key\030\001 \001(\tB\003\340A\002\022\027\n\n"
           + "output_uri\030\002 \001(\tB\003\340A\003\032\\\n"
           + "\tDvrWindow\022G\n\r"
-          + "time_interval\030\001 \001(\0132..google.c"
-          + "loud.video.livestream.v1.TimeIntervalH\000B\006\n"
+          + "time_interval\030\001"
+          + " \001(\0132..google.cloud.video.livestream.v1.TimeIntervalH\000B\006\n"
           + "\004kind\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -533,9 +574,9 @@ public final class ResourcesProto {
           + "\010COOLDOWN\020\t\022\014\n"
           + "\010STOPPING\020\n"
           + ":\231\001\352A\225\001\n"
-          + "$livestream.googleapis.com/DvrSession\022Tproje"
-          + "cts/{project}/locations/{location}/chann"
-          + "els/{channel}/dvrSessions/{dvr_session}*\013dvrSessions2\n"
+          + "$livestream.googleapis.com/DvrSession\022Tprojects"
+          + "/{project}/locations/{location}/channels"
+          + "/{channel}/dvrSessions/{dvr_session}*\013dvrSessions2\n"
           + "dvrSession\"\355\005\n"
           + "\005Asset\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
@@ -543,13 +584,13 @@ public final class ResourcesProto {
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022C\n"
           + "\006labels\030\004"
           + " \003(\01323.google.cloud.video.livestream.v1.Asset.LabelsEntry\022C\n"
-          + "\005video\030\005 \001(\013"
-          + "22.google.cloud.video.livestream.v1.Asset.VideoAssetH\000\022C\n"
-          + "\005image\030\006 \001(\01322.google.c"
-          + "loud.video.livestream.v1.Asset.ImageAssetH\000\022\016\n"
+          + "\005video\030\005 \001(\01322."
+          + "google.cloud.video.livestream.v1.Asset.VideoAssetH\000\022C\n"
+          + "\005image\030\006 \001(\01322.google.clou"
+          + "d.video.livestream.v1.Asset.ImageAssetH\000\022\016\n"
           + "\006crc32c\030\007 \001(\t\022A\n"
-          + "\005state\030\010 \001(\0162-.goo"
-          + "gle.cloud.video.livestream.v1.Asset.StateB\003\340A\003\022&\n"
+          + "\005state\030\010 \001(\0162-.google"
+          + ".cloud.video.livestream.v1.Asset.StateB\003\340A\003\022&\n"
           + "\005error\030\t \001(\0132\022.google.rpc.StatusB\003\340A\003\032\031\n\n"
           + "VideoAsset\022\013\n"
           + "\003uri\030\001 \001(\t\032\031\n\n"
@@ -564,63 +605,69 @@ public final class ResourcesProto {
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\t\n"
           + "\005ERROR\020\004:\\\352AY\n"
-          + "\037livestream.googleapis.com/Asset\0226projects/{"
-          + "project}/locations/{location}/assets/{asset}B\n\n"
-          + "\010resource\"\235\010\n\n"
+          + "\037livestream.googleapis.com/Asset\0226projects/{pro"
+          + "ject}/locations/{location}/assets/{asset}B\n\n"
+          + "\010resource\"\261\010\n\n"
           + "Encryption\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\002\022e\n"
-          + "\031secret_manager_key_source\030\007 "
-          + "\001(\0132@.google.cloud.video.livestream.v1.Encryption.SecretManagerSourceH\000\022Q\n"
+          + "\031secret_manager_key_source\030\007 \001(\013"
+          + "2@.google.cloud.video.livestream.v1.Encryption.SecretManagerSourceH\000\022Q\n"
           + "\013drm_systems\030\003"
           + " \001(\01327.google.cloud.video.livestream.v1.Encryption.DrmSystemsB\003\340A\002\022O\n"
           + "\006aes128\030\004"
           + " \001(\0132=.google.cloud.video.livestream.v1.Encryption.Aes128EncryptionH\001\022V\n\n"
-          + "sample_aes\030\005 \001(\0132@.google.cloud.video.liv"
-          + "estream.v1.Encryption.SampleAesEncryptionH\001\022V\n"
-          + "\tmpeg_cenc\030\006 \001(\0132A.google.cloud.vi"
-          + "deo.livestream.v1.Encryption.MpegCommonEncryptionH\001\032a\n"
+          + "sample_aes\030\005 \001(\0132@.google.cloud.video.livest"
+          + "ream.v1.Encryption.SampleAesEncryptionH\001\022V\n"
+          + "\tmpeg_cenc\030\006 \001(\0132A.google.cloud.video"
+          + ".livestream.v1.Encryption.MpegCommonEncryptionH\001\032a\n"
           + "\023SecretManagerSource\022J\n"
           + "\016secret_version\030\001 \001(\tB2\340A\002\372A,\n"
           + "*secretmanager.googleapis.com/SecretVersion\032\n\n"
           + "\010Widevine\032\n\n"
           + "\010Fairplay\032\013\n"
           + "\tPlayready\032\n\n"
-          + "\010Clearkey\032\262\002\n\n"
-          + "DrmSystems\022G\n"
-          + "\010widevine\030\001 \001(\01325.googl"
-          + "e.cloud.video.livestream.v1.Encryption.Widevine\022G\n"
-          + "\010fairplay\030\002 \001(\01325.google.cloud"
-          + ".video.livestream.v1.Encryption.Fairplay\022I\n"
-          + "\tplayready\030\003"
-          + " \001(\01326.google.cloud.video.livestream.v1.Encryption.Playready\022G\n"
-          + "\010clearkey\030\004"
-          + " \001(\01325.google.cloud.video.livestream.v1.Encryption.Clearkey\032\022\n"
+          + "\010Clearkey\032\306\002\n"
+          + "\n"
+          + "DrmSystems\022L\n"
+          + "\010widevine\030\001 \001(\01325.google.c"
+          + "loud.video.livestream.v1.Encryption.WidevineB\003\340A\001\022L\n"
+          + "\010fairplay\030\002 \001(\01325.google.clo"
+          + "ud.video.livestream.v1.Encryption.FairplayB\003\340A\001\022N\n"
+          + "\tplayready\030\003 \001(\01326.google.clou"
+          + "d.video.livestream.v1.Encryption.PlayreadyB\003\340A\001\022L\n"
+          + "\010clearkey\030\004 \001(\01325.google.cloud"
+          + ".video.livestream.v1.Encryption.ClearkeyB\003\340A\001\032\022\n"
           + "\020Aes128Encryption\032\025\n"
           + "\023SampleAesEncryption\032+\n"
           + "\024MpegCommonEncryption\022\023\n"
           + "\006scheme\030\001 \001(\tB\003\340A\002B\017\n\r"
           + "secret_sourceB\021\n"
-          + "\017encryption_mode\"\352\003\n"
+          + "\017encryption_mode\"\233\001\n"
+          + "\020EncryptionUpdate\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\002\022e\n"
+          + "\031secret_manager_key_source\030\002 \001"
+          + "(\0132@.google.cloud.video.livestream.v1.Encryption.SecretManagerSourceH\000B\017\n\r"
+          + "secret_source\"\352\003\n"
           + "\004Pool\022\014\n"
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022B\n"
-          + "\006labels\030\004"
-          + " \003(\01322.google.cloud.video.livestream.v1.Pool.LabelsEntry\022L\n"
-          + "\016network_config\030\005"
-          + " \001(\01324.google.cloud.video.livestream.v1.Pool.NetworkConfig\032L\n\r"
+          + "\006labels\030\004 \003(\01322.goo"
+          + "gle.cloud.video.livestream.v1.Pool.LabelsEntry\022L\n"
+          + "\016network_config\030\005 \001(\01324.google."
+          + "cloud.video.livestream.v1.Pool.NetworkConfig\032L\n\r"
           + "NetworkConfig\022;\n"
           + "\016peered_network\030\001 \001(\tB#\372A \n"
           + "\036compute.googleapis.com/Network\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:Y\352AV\n"
-          + "\036livestream.googleapis.com/Pool\0224project"
-          + "s/{project}/locations/{location}/pools/{pool}B\353\001\n"
-          + "$com.google.cloud.video.livestream.v1B\016ResourcesProtoP\001ZDcloud.google.c"
-          + "om/go/video/livestream/apiv1/livestreampb;livestreampb\252\002"
-          + " Google.Cloud.Video.LiveStream.V1\312\002 Google\\Cloud\\Video\\LiveStrea"
-          + "m\\V1\352\002$Google::Cloud::Video::LiveStream::V1b\006proto3"
+          + "\036livestream.googleapis.co"
+          + "m/Pool\0224projects/{project}/locations/{location}/pools/{pool}B\353\001\n"
+          + "$com.google.cloud.video.livestream.v1B\016ResourcesProtoP\001Z"
+          + "Dcloud.google.com/go/video/livestream/apiv1/livestreampb;livestreampb\252\002"
+          + " Google.Cloud.Video.LiveStream.V1\312\002 Google\\Cloud\\"
+          + "Video\\LiveStream\\V1\352\002$Google::Cloud::Video::LiveStream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -682,6 +729,8 @@ public final class ResourcesProto {
               "ElementaryStreams",
               "MuxStreams",
               "Manifests",
+              "DistributionStreams",
+              "Distributions",
               "SpriteSheets",
               "StreamingState",
               "StreamingError",
@@ -691,6 +740,7 @@ public final class ResourcesProto {
               "InputConfig",
               "RetentionConfig",
               "StaticOverlays",
+              "AutoTranscriptionConfig",
             });
     internal_static_google_cloud_video_livestream_v1_Channel_Output_descriptor =
         internal_static_google_cloud_video_livestream_v1_Channel_descriptor.getNestedTypes().get(0);
@@ -814,8 +864,16 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "InputKeys",
             });
-    internal_static_google_cloud_video_livestream_v1_Event_descriptor =
+    internal_static_google_cloud_video_livestream_v1_AutoTranscriptionConfig_descriptor =
         getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_video_livestream_v1_AutoTranscriptionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_AutoTranscriptionConfig_descriptor,
+            new java.lang.String[] {
+              "DisplayTiming", "QualityPreset",
+            });
+    internal_static_google_cloud_video_livestream_v1_Event_descriptor =
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_video_livestream_v1_Event_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Event_descriptor,
@@ -830,6 +888,7 @@ public final class ResourcesProto {
               "Slate",
               "Mute",
               "Unmute",
+              "UpdateEncryptions",
               "ExecuteNow",
               "ExecutionTime",
               "State",
@@ -880,8 +939,16 @@ public final class ResourcesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Event_UnmuteTask_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_video_livestream_v1_Event_LabelsEntry_descriptor =
+    internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor =
         internal_static_google_cloud_video_livestream_v1_Event_descriptor.getNestedTypes().get(6);
+    internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_Event_UpdateEncryptionsTask_descriptor,
+            new java.lang.String[] {
+              "Encryptions",
+            });
+    internal_static_google_cloud_video_livestream_v1_Event_LabelsEntry_descriptor =
+        internal_static_google_cloud_video_livestream_v1_Event_descriptor.getNestedTypes().get(7);
     internal_static_google_cloud_video_livestream_v1_Event_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Event_LabelsEntry_descriptor,
@@ -889,7 +956,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_video_livestream_v1_Clip_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_video_livestream_v1_Clip_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Clip_descriptor,
@@ -939,7 +1006,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_video_livestream_v1_TimeInterval_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_video_livestream_v1_TimeInterval_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_TimeInterval_descriptor,
@@ -947,7 +1014,7 @@ public final class ResourcesProto {
               "StartTime", "EndTime",
             });
     internal_static_google_cloud_video_livestream_v1_DvrSession_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_video_livestream_v1_DvrSession_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_DvrSession_descriptor,
@@ -992,7 +1059,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_video_livestream_v1_Asset_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_video_livestream_v1_Asset_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Asset_descriptor,
@@ -1033,7 +1100,7 @@ public final class ResourcesProto {
               "Key", "Value",
             });
     internal_static_google_cloud_video_livestream_v1_Encryption_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_video_livestream_v1_Encryption_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Encryption_descriptor,
@@ -1125,8 +1192,16 @@ public final class ResourcesProto {
             new java.lang.String[] {
               "Scheme",
             });
+    internal_static_google_cloud_video_livestream_v1_EncryptionUpdate_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_video_livestream_v1_EncryptionUpdate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_EncryptionUpdate_descriptor,
+            new java.lang.String[] {
+              "Id", "SecretManagerKeySource", "SecretSource",
+            });
     internal_static_google_cloud_video_livestream_v1_Pool_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_video_livestream_v1_Pool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_Pool_descriptor,

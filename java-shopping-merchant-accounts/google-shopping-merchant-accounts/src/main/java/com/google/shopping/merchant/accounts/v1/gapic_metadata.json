@@ -172,6 +172,9 @@
         "grpc": {
           "libraryClient": "DeveloperRegistrationServiceClient",
           "rpcs": {
+            "GetAccountForGcpRegistration": {
+              "methods": ["getAccountForGcpRegistration", "getAccountForGcpRegistrationCallable"]
+            },
             "GetDeveloperRegistration": {
               "methods": ["getDeveloperRegistration", "getDeveloperRegistration", "getDeveloperRegistration", "getDeveloperRegistrationCallable"]
             },
@@ -322,6 +325,15 @@
         "grpc": {
           "libraryClient": "RegionsServiceClient",
           "rpcs": {
+            "BatchCreateRegions": {
+              "methods": ["batchCreateRegions", "batchCreateRegionsCallable"]
+            },
+            "BatchDeleteRegions": {
+              "methods": ["batchDeleteRegions", "batchDeleteRegionsCallable"]
+            },
+            "BatchUpdateRegions": {
+              "methods": ["batchUpdateRegions", "batchUpdateRegionsCallable"]
+            },
             "CreateRegion": {
               "methods": ["createRegion", "createRegion", "createRegion", "createRegionCallable"]
             },
@@ -408,6 +420,9 @@
             },
             "UpdateUser": {
               "methods": ["updateUser", "updateUser", "updateUserCallable"]
+            },
+            "VerifySelf": {
+              "methods": ["verifySelf", "verifySelf", "verifySelf", "verifySelfCallable"]
             }
           }
         }

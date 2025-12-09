@@ -75,7 +75,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -91,7 +92,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -115,7 +117,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -144,7 +147,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+   * Resource URL to the forwarding rule representing the ILB
+   * configured as destination of the mirrored traffic.
    * </pre>
    *
    * <code>optional string url = 116079;</code>
@@ -160,7 +164,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+   * Resource URL to the forwarding rule representing the ILB
+   * configured as destination of the mirrored traffic.
    * </pre>
    *
    * <code>optional string url = 116079;</code>
@@ -184,7 +189,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+   * Resource URL to the forwarding rule representing the ILB
+   * configured as destination of the mirrored traffic.
    * </pre>
    *
    * <code>optional string url = 116079;</code>
@@ -594,7 +600,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -609,7 +616,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -632,7 +640,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -655,7 +664,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -677,7 +687,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -695,7 +706,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the server.
+     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * server.
      * </pre>
      *
      * <code>optional string canonical_url = 512294820;</code>
@@ -720,7 +732,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>
@@ -735,7 +748,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>
@@ -758,7 +772,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>
@@ -781,7 +796,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>
@@ -803,7 +819,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>
@@ -821,7 +838,8 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * Resource URL to the forwarding rule representing the ILB configured as destination of the mirrored traffic.
+     * Resource URL to the forwarding rule representing the ILB
+     * configured as destination of the mirrored traffic.
      * </pre>
      *
      * <code>optional string url = 116079;</code>

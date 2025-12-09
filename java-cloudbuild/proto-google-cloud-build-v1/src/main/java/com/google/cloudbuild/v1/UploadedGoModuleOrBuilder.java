@@ -129,4 +129,30 @@ public interface UploadedGoModuleOrBuilder
    * </code>
    */
   com.google.cloudbuild.v1.TimeSpanOrBuilder getPushTimingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Path to the artifact in Artifact Registry.
+   * </pre>
+   *
+   * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The artifactRegistryPackage.
+   */
+  java.lang.String getArtifactRegistryPackage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Path to the artifact in Artifact Registry.
+   * </pre>
+   *
+   * <code>string artifact_registry_package = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for artifactRegistryPackage.
+   */
+  com.google.protobuf.ByteString getArtifactRegistryPackageBytes();
 }

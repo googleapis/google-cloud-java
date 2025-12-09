@@ -268,6 +268,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   private com.google.cloud.aiplatform.v1beta1.PostStartupScriptConfig postStartupScriptConfig_;
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -280,6 +286,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -294,6 +306,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. Post-startup script config.
+   * </pre>
+   *
    * <code>
    * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
@@ -1482,6 +1500,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
         postStartupScriptConfigBuilder_;
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1493,6 +1517,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1511,6 +1541,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1531,6 +1567,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1548,6 +1590,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1575,6 +1623,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1591,6 +1645,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1603,6 +1663,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
@@ -1619,6 +1685,12 @@ public final class NotebookSoftwareConfig extends com.google.protobuf.GeneratedM
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Optional. Post-startup script config.
+     * </pre>
+     *
      * <code>
      * .google.cloud.aiplatform.v1beta1.PostStartupScriptConfig post_startup_script_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>

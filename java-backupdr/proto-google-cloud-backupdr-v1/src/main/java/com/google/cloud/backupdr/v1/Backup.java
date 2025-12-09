@@ -42,11 +42,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   private Backup() {
     name_ = "";
     description_ = "";
+    backupRetentionInheritance_ = 0;
     etag_ = "";
     state_ = 0;
     serviceLocks_ = java.util.Collections.emptyList();
     backupApplianceLocks_ = java.util.Collections.emptyList();
     backupType_ = 0;
+    kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -1969,6 +1971,53 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return PlanInfoCase.forNumber(planInfoCase_);
   }
 
+  private int sourceResourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object sourceResource_;
+
+  public enum SourceResourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCP_RESOURCE(31),
+    SOURCERESOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceResourceCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceResourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceResourceCase forNumber(int value) {
+      switch (value) {
+        case 31:
+          return GCP_RESOURCE;
+        case 0:
+          return SOURCERESOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceResourceCase getSourceResourceCase() {
+    return SourceResourceCase.forNumber(sourceResourceCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -2384,6 +2433,72 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         : enforcedRetentionEndTime_;
   }
 
+  public static final int BACKUP_RETENTION_INHERITANCE_FIELD_NUMBER = 30;
+  private int backupRetentionInheritance_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the backupRetentionInheritance field is set.
+   */
+  @java.lang.Override
+  public boolean hasBackupRetentionInheritance() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for backupRetentionInheritance.
+   */
+  @java.lang.Override
+  public int getBackupRetentionInheritanceValue() {
+    return backupRetentionInheritance_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupRetentionInheritance.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance
+      getBackupRetentionInheritance() {
+    com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance result =
+        com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance.forNumber(
+            backupRetentionInheritance_);
+    return result == null
+        ? com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance.UNRECOGNIZED
+        : result;
+  }
+
   public static final int EXPIRE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp expireTime_;
 
@@ -2402,7 +2517,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasExpireTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -2458,7 +2573,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasConsistencyTime() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -2520,7 +2635,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEtag() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -3178,7 +3293,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzs() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -3217,7 +3332,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSatisfiesPzi() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -3236,6 +3351,149 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getSatisfiesPzi() {
     return satisfiesPzi_;
+  }
+
+  public static final int GCP_RESOURCE_FIELD_NUMBER = 31;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcpResource field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcpResource() {
+    return sourceResourceCase_ == 31;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcpResource.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource() {
+    if (sourceResourceCase_ == 31) {
+      return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+    }
+    return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder() {
+    if (sourceResourceCase_ == 31) {
+      return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+    }
+    return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+  }
+
+  public static final int KMS_KEY_VERSIONS_FIELD_NUMBER = 33;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList kmsKeyVersions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the kmsKeyVersions.
+   */
+  public com.google.protobuf.ProtocolStringList getKmsKeyVersionsList() {
+    return kmsKeyVersions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of kmsKeyVersions.
+   */
+  public int getKmsKeyVersionsCount() {
+    return kmsKeyVersions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The kmsKeyVersions at the given index.
+   */
+  public java.lang.String getKmsKeyVersions(int index) {
+    return kmsKeyVersions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the kmsKeyVersions at the given index.
+   */
+  public com.google.protobuf.ByteString getKmsKeyVersionsBytes(int index) {
+    return kmsKeyVersions_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3269,13 +3527,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getEnforcedRetentionEndTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(7, getExpireTime());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(9, getConsistencyTime());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
     }
     if (state_ != com.google.cloud.backupdr.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
@@ -3305,10 +3563,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (resourceSizeBytes_ != 0L) {
       output.writeInt64(23, resourceSizeBytes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeBool(24, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(25, satisfiesPzi_);
     }
     if (backupPropertiesCase_ == 26) {
@@ -3318,6 +3576,15 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (backupPropertiesCase_ == 28) {
       output.writeMessage(
           28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeEnum(30, backupRetentionInheritance_);
+    }
+    if (sourceResourceCase_ == 31) {
+      output.writeMessage(31, (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_);
+    }
+    for (int i = 0; i < kmsKeyVersions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 33, kmsKeyVersions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -3355,13 +3622,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getEnforcedRetentionEndTime());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getExpireTime());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getConsistencyTime());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
     }
     if (state_ != com.google.cloud.backupdr.v1.Backup.State.STATE_UNSPECIFIED.getNumber()) {
@@ -3397,10 +3664,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (resourceSizeBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(23, resourceSizeBytes_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, satisfiesPzs_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(25, satisfiesPzi_);
     }
     if (backupPropertiesCase_ == 26) {
@@ -3413,6 +3680,23 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               28, (com.google.cloud.backupdr.v1.DiskBackupProperties) backupProperties_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(30, backupRetentionInheritance_);
+    }
+    if (sourceResourceCase_ == 31) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              31, (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < kmsKeyVersions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(kmsKeyVersions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getKmsKeyVersionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3447,6 +3731,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasEnforcedRetentionEndTime()) {
       if (!getEnforcedRetentionEndTime().equals(other.getEnforcedRetentionEndTime())) return false;
     }
+    if (hasBackupRetentionInheritance() != other.hasBackupRetentionInheritance()) return false;
+    if (hasBackupRetentionInheritance()) {
+      if (backupRetentionInheritance_ != other.backupRetentionInheritance_) return false;
+    }
     if (hasExpireTime() != other.hasExpireTime()) return false;
     if (hasExpireTime()) {
       if (!getExpireTime().equals(other.getExpireTime())) return false;
@@ -3472,6 +3760,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasSatisfiesPzi()) {
       if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
+    if (!getKmsKeyVersionsList().equals(other.getKmsKeyVersionsList())) return false;
     if (!getBackupPropertiesCase().equals(other.getBackupPropertiesCase())) return false;
     switch (backupPropertiesCase_) {
       case 19:
@@ -3496,6 +3785,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     switch (planInfoCase_) {
       case 22:
         if (!getGcpBackupPlanInfo().equals(other.getGcpBackupPlanInfo())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getSourceResourceCase().equals(other.getSourceResourceCase())) return false;
+    switch (sourceResourceCase_) {
+      case 31:
+        if (!getGcpResource().equals(other.getGcpResource())) return false;
         break;
       case 0:
       default:
@@ -3533,6 +3830,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ENFORCED_RETENTION_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEnforcedRetentionEndTime().hashCode();
     }
+    if (hasBackupRetentionInheritance()) {
+      hash = (37 * hash) + BACKUP_RETENTION_INHERITANCE_FIELD_NUMBER;
+      hash = (53 * hash) + backupRetentionInheritance_;
+    }
     if (hasExpireTime()) {
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
@@ -3567,6 +3868,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
+    if (getKmsKeyVersionsCount() > 0) {
+      hash = (37 * hash) + KMS_KEY_VERSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getKmsKeyVersionsList().hashCode();
+    }
     switch (backupPropertiesCase_) {
       case 19:
         hash = (37 * hash) + COMPUTE_INSTANCE_BACKUP_PROPERTIES_FIELD_NUMBER;
@@ -3591,6 +3896,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       case 22:
         hash = (37 * hash) + GCP_BACKUP_PLAN_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getGcpBackupPlanInfo().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (sourceResourceCase_) {
+      case 31:
+        hash = (37 * hash) + GCP_RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getGcpResource().hashCode();
         break;
       case 0:
       default:
@@ -3789,6 +4102,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         enforcedRetentionEndTimeBuilder_.dispose();
         enforcedRetentionEndTimeBuilder_ = null;
       }
+      backupRetentionInheritance_ = 0;
       expireTime_ = null;
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.dispose();
@@ -3807,14 +4121,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         serviceLocks_ = null;
         serviceLocksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (backupApplianceLocksBuilder_ == null) {
         backupApplianceLocks_ = java.util.Collections.emptyList();
       } else {
         backupApplianceLocks_ = null;
         backupApplianceLocksBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       if (computeInstanceBackupPropertiesBuilder_ != null) {
         computeInstanceBackupPropertiesBuilder_.clear();
       }
@@ -3834,10 +4148,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       resourceSizeBytes_ = 0L;
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      if (gcpResourceBuilder_ != null) {
+        gcpResourceBuilder_.clear();
+      }
+      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       backupPropertiesCase_ = 0;
       backupProperties_ = null;
       planInfoCase_ = 0;
       planInfo_ = null;
+      sourceResourceCase_ = 0;
+      sourceResource_ = null;
       return this;
     }
 
@@ -3875,18 +4195,18 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.backupdr.v1.Backup result) {
       if (serviceLocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           serviceLocks_ = java.util.Collections.unmodifiableList(serviceLocks_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.serviceLocks_ = serviceLocks_;
       } else {
         result.serviceLocks_ = serviceLocksBuilder_.build();
       }
       if (backupApplianceLocksBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           backupApplianceLocks_ = java.util.Collections.unmodifiableList(backupApplianceLocks_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.backupApplianceLocks_ = backupApplianceLocks_;
       } else {
@@ -3924,34 +4244,42 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+        result.backupRetentionInheritance_ = backupRetentionInheritance_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.consistencyTime_ =
-            consistencyTimeBuilder_ == null ? consistencyTime_ : consistencyTimeBuilder_.build();
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.etag_ = etag_;
+        result.consistencyTime_ =
+            consistencyTimeBuilder_ == null ? consistencyTime_ : consistencyTimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.state_ = state_;
-      }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.backupType_ = backupType_;
-      }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.resourceSizeBytes_ = resourceSizeBytes_;
-      }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.satisfiesPzs_ = satisfiesPzs_;
+        result.etag_ = etag_;
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.backupType_ = backupType_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.resourceSizeBytes_ = resourceSizeBytes_;
+      }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.satisfiesPzi_ = satisfiesPzi_;
+        result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        kmsKeyVersions_.makeImmutable();
+        result.kmsKeyVersions_ = kmsKeyVersions_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3975,6 +4303,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       result.planInfo_ = this.planInfo_;
       if (planInfoCase_ == 22 && gcpBackupPlanInfoBuilder_ != null) {
         result.planInfo_ = gcpBackupPlanInfoBuilder_.build();
+      }
+      result.sourceResourceCase_ = sourceResourceCase_;
+      result.sourceResource_ = this.sourceResource_;
+      if (sourceResourceCase_ == 31 && gcpResourceBuilder_ != null) {
+        result.sourceResource_ = gcpResourceBuilder_.build();
       }
     }
 
@@ -4044,6 +4377,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnforcedRetentionEndTime()) {
         mergeEnforcedRetentionEndTime(other.getEnforcedRetentionEndTime());
       }
+      if (other.hasBackupRetentionInheritance()) {
+        setBackupRetentionInheritance(other.getBackupRetentionInheritance());
+      }
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
       }
@@ -4052,7 +4388,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEtag()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -4062,7 +4398,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         if (!other.serviceLocks_.isEmpty()) {
           if (serviceLocks_.isEmpty()) {
             serviceLocks_ = other.serviceLocks_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureServiceLocksIsMutable();
             serviceLocks_.addAll(other.serviceLocks_);
@@ -4075,7 +4411,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             serviceLocksBuilder_.dispose();
             serviceLocksBuilder_ = null;
             serviceLocks_ = other.serviceLocks_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             serviceLocksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getServiceLocksFieldBuilder()
@@ -4089,7 +4425,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         if (!other.backupApplianceLocks_.isEmpty()) {
           if (backupApplianceLocks_.isEmpty()) {
             backupApplianceLocks_ = other.backupApplianceLocks_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureBackupApplianceLocksIsMutable();
             backupApplianceLocks_.addAll(other.backupApplianceLocks_);
@@ -4102,7 +4438,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             backupApplianceLocksBuilder_.dispose();
             backupApplianceLocksBuilder_ = null;
             backupApplianceLocks_ = other.backupApplianceLocks_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             backupApplianceLocksBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getBackupApplianceLocksFieldBuilder()
@@ -4123,6 +4459,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSatisfiesPzi()) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (!other.kmsKeyVersions_.isEmpty()) {
+        if (kmsKeyVersions_.isEmpty()) {
+          kmsKeyVersions_ = other.kmsKeyVersions_;
+          bitField0_ |= 0x00800000;
+        } else {
+          ensureKmsKeyVersionsIsMutable();
+          kmsKeyVersions_.addAll(other.kmsKeyVersions_);
+        }
+        onChanged();
       }
       switch (other.getBackupPropertiesCase()) {
         case COMPUTE_INSTANCE_BACKUP_PROPERTIES:
@@ -4157,6 +4503,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             break;
           }
         case PLANINFO_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getSourceResourceCase()) {
+        case GCP_RESOURCE:
+          {
+            mergeGcpResource(other.getGcpResource());
+            break;
+          }
+        case SOURCERESOURCE_NOT_SET:
           {
             break;
           }
@@ -4233,25 +4590,25 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 74:
               {
                 input.readMessage(getConsistencyTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 74
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 120:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 120
             case 138:
@@ -4291,7 +4648,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 backupType_ = input.readEnum();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 160
             case 170:
@@ -4312,19 +4669,19 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
             case 184:
               {
                 resourceSizeBytes_ = input.readInt64();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 184
             case 192:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 192
             case 200:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 200
             case 210:
@@ -4342,6 +4699,25 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 backupPropertiesCase_ = 28;
                 break;
               } // case 226
+            case 240:
+              {
+                backupRetentionInheritance_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 240
+            case 250:
+              {
+                input.readMessage(getGcpResourceFieldBuilder().getBuilder(), extensionRegistry);
+                sourceResourceCase_ = 31;
+                break;
+              } // case 250
+            case 266:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureKmsKeyVersionsIsMutable();
+                kmsKeyVersions_.add(s);
+                break;
+              } // case 266
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4383,6 +4759,20 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPlanInfo() {
       planInfoCase_ = 0;
       planInfo_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int sourceResourceCase_ = 0;
+    private java.lang.Object sourceResource_;
+
+    public SourceResourceCase getSourceResourceCase() {
+      return SourceResourceCase.forNumber(sourceResourceCase_);
+    }
+
+    public Builder clearSourceResource() {
+      sourceResourceCase_ = 0;
+      sourceResource_ = null;
       onChanged();
       return this;
     }
@@ -5473,6 +5863,140 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       return enforcedRetentionEndTimeBuilder_;
     }
 
+    private int backupRetentionInheritance_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the backupRetentionInheritance field is set.
+     */
+    @java.lang.Override
+    public boolean hasBackupRetentionInheritance() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for backupRetentionInheritance.
+     */
+    @java.lang.Override
+    public int getBackupRetentionInheritanceValue() {
+      return backupRetentionInheritance_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for backupRetentionInheritance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRetentionInheritanceValue(int value) {
+      backupRetentionInheritance_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupRetentionInheritance.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance
+        getBackupRetentionInheritance() {
+      com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance result =
+          com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance.forNumber(
+              backupRetentionInheritance_);
+      return result == null
+          ? com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupRetentionInheritance to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupRetentionInheritance(
+        com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      backupRetentionInheritance_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Setting for how the enforced retention end time is inherited.
+     * This value is copied from this backup's BackupVault.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupRetentionInheritance() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      backupRetentionInheritance_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.Timestamp expireTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -5494,7 +6018,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the expireTime field is set.
      */
     public boolean hasExpireTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -5540,7 +6064,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       } else {
         expireTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5562,7 +6086,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       } else {
         expireTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -5580,7 +6104,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
       if (expireTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && expireTime_ != null
             && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getExpireTimeBuilder().mergeFrom(value);
@@ -5591,7 +6115,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         expireTimeBuilder_.mergeFrom(value);
       }
       if (expireTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -5609,7 +6133,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearExpireTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       expireTime_ = null;
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.dispose();
@@ -5631,7 +6155,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
@@ -5707,7 +6231,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the consistencyTime field is set.
      */
     public boolean hasConsistencyTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -5755,7 +6279,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       } else {
         consistencyTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5778,7 +6302,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       } else {
         consistencyTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5797,7 +6321,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeConsistencyTime(com.google.protobuf.Timestamp value) {
       if (consistencyTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && consistencyTime_ != null
             && consistencyTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getConsistencyTimeBuilder().mergeFrom(value);
@@ -5808,7 +6332,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         consistencyTimeBuilder_.mergeFrom(value);
       }
       if (consistencyTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -5827,7 +6351,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConsistencyTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       consistencyTime_ = null;
       if (consistencyTimeBuilder_ != null) {
         consistencyTimeBuilder_.dispose();
@@ -5850,7 +6374,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getConsistencyTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getConsistencyTimeFieldBuilder().getBuilder();
     }
@@ -5921,7 +6445,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the etag field is set.
      */
     public boolean hasEtag() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -5990,7 +6514,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6009,7 +6533,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -6033,7 +6557,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6074,7 +6598,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6117,7 +6641,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -6137,7 +6661,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       state_ = 0;
       onChanged();
       return this;
@@ -6147,10 +6671,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureServiceLocksIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         serviceLocks_ =
             new java.util.ArrayList<com.google.cloud.backupdr.v1.BackupLock>(serviceLocks_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -6409,7 +6933,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearServiceLocks() {
       if (serviceLocksBuilder_ == null) {
         serviceLocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         serviceLocksBuilder_.clear();
@@ -6559,7 +7083,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.backupdr.v1.BackupLock,
                 com.google.cloud.backupdr.v1.BackupLock.Builder,
                 com.google.cloud.backupdr.v1.BackupLockOrBuilder>(
-                serviceLocks_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                serviceLocks_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
         serviceLocks_ = null;
       }
       return serviceLocksBuilder_;
@@ -6569,10 +7093,10 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureBackupApplianceLocksIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         backupApplianceLocks_ =
             new java.util.ArrayList<com.google.cloud.backupdr.v1.BackupLock>(backupApplianceLocks_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -6822,7 +7346,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearBackupApplianceLocks() {
       if (backupApplianceLocksBuilder_ == null) {
         backupApplianceLocks_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         backupApplianceLocksBuilder_.clear();
@@ -6969,7 +7493,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.backupdr.v1.BackupLock.Builder,
                 com.google.cloud.backupdr.v1.BackupLockOrBuilder>(
                 backupApplianceLocks_,
-                ((bitField0_ & 0x00000800) != 0),
+                ((bitField0_ & 0x00001000) != 0),
                 getParentForChildren(),
                 isClean());
         backupApplianceLocks_ = null;
@@ -7990,7 +8514,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setBackupTypeValue(int value) {
       backupType_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -8033,7 +8557,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       backupType_ = value.getNumber();
       onChanged();
       return this;
@@ -8053,7 +8577,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackupType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       backupType_ = 0;
       onChanged();
       return this;
@@ -8333,7 +8857,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder setResourceSizeBytes(long value) {
 
       resourceSizeBytes_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8350,7 +8874,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearResourceSizeBytes() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       resourceSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -8373,7 +8897,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -8411,7 +8935,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -8430,7 +8954,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -8453,7 +8977,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -8491,7 +9015,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -8510,8 +9034,464 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       satisfiesPzi_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.BackupGcpResource,
+            com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+            com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>
+        gcpResourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the gcpResource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcpResource() {
+      return sourceResourceCase_ == 31;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The gcpResource.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource() {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31) {
+          return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          return gcpResourceBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcpResource(com.google.cloud.backupdr.v1.BackupGcpResource value) {
+      if (gcpResourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceResource_ = value;
+        onChanged();
+      } else {
+        gcpResourceBuilder_.setMessage(value);
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGcpResource(
+        com.google.cloud.backupdr.v1.BackupGcpResource.Builder builderForValue) {
+      if (gcpResourceBuilder_ == null) {
+        sourceResource_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcpResourceBuilder_.setMessage(builderForValue.build());
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGcpResource(com.google.cloud.backupdr.v1.BackupGcpResource value) {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31
+            && sourceResource_
+                != com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance()) {
+          sourceResource_ =
+              com.google.cloud.backupdr.v1.BackupGcpResource.newBuilder(
+                      (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceResource_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          gcpResourceBuilder_.mergeFrom(value);
+        } else {
+          gcpResourceBuilder_.setMessage(value);
+        }
+      }
+      sourceResourceCase_ = 31;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGcpResource() {
+      if (gcpResourceBuilder_ == null) {
+        if (sourceResourceCase_ == 31) {
+          sourceResourceCase_ = 0;
+          sourceResource_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceResourceCase_ == 31) {
+          sourceResourceCase_ = 0;
+          sourceResource_ = null;
+        }
+        gcpResourceBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.BackupGcpResource.Builder getGcpResourceBuilder() {
+      return getGcpResourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder() {
+      if ((sourceResourceCase_ == 31) && (gcpResourceBuilder_ != null)) {
+        return gcpResourceBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceResourceCase_ == 31) {
+          return (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_;
+        }
+        return com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Unique identifier of the GCP resource that is being backed
+     * up.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.BackupGcpResource,
+            com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+            com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>
+        getGcpResourceFieldBuilder() {
+      if (gcpResourceBuilder_ == null) {
+        if (!(sourceResourceCase_ == 31)) {
+          sourceResource_ = com.google.cloud.backupdr.v1.BackupGcpResource.getDefaultInstance();
+        }
+        gcpResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.BackupGcpResource,
+                com.google.cloud.backupdr.v1.BackupGcpResource.Builder,
+                com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder>(
+                (com.google.cloud.backupdr.v1.BackupGcpResource) sourceResource_,
+                getParentForChildren(),
+                isClean());
+        sourceResource_ = null;
+      }
+      sourceResourceCase_ = 31;
+      onChanged();
+      return gcpResourceBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList kmsKeyVersions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureKmsKeyVersionsIsMutable() {
+      if (!kmsKeyVersions_.isModifiable()) {
+        kmsKeyVersions_ = new com.google.protobuf.LazyStringArrayList(kmsKeyVersions_);
+      }
+      bitField0_ |= 0x00800000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the kmsKeyVersions.
+     */
+    public com.google.protobuf.ProtocolStringList getKmsKeyVersionsList() {
+      kmsKeyVersions_.makeImmutable();
+      return kmsKeyVersions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of kmsKeyVersions.
+     */
+    public int getKmsKeyVersionsCount() {
+      return kmsKeyVersions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The kmsKeyVersions at the given index.
+     */
+    public java.lang.String getKmsKeyVersions(int index) {
+      return kmsKeyVersions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the kmsKeyVersions at the given index.
+     */
+    public com.google.protobuf.ByteString getKmsKeyVersionsBytes(int index) {
+      return kmsKeyVersions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The kmsKeyVersions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKmsKeyVersions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureKmsKeyVersionsIsMutable();
+      kmsKeyVersions_.set(index, value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The kmsKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addKmsKeyVersions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureKmsKeyVersionsIsMutable();
+      kmsKeyVersions_.add(value);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The kmsKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllKmsKeyVersions(java.lang.Iterable<java.lang.String> values) {
+      ensureKmsKeyVersionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kmsKeyVersions_);
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKmsKeyVersions() {
+      kmsKeyVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The list of KMS key versions used to encrypt the
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the kmsKeyVersions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addKmsKeyVersionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureKmsKeyVersionsIsMutable();
+      kmsKeyVersions_.add(value);
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }

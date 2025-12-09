@@ -74,6 +74,63 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.InstanceParams.Builder.class);
   }
 
+  private int bitField0_;
+  public static final int REQUEST_VALID_FOR_DURATION_FIELD_NUMBER = 116247389;
+  private com.google.cloud.compute.v1.Duration requestValidForDuration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   *
+   * @return Whether the requestValidForDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestValidForDuration() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   *
+   * @return The requestValidForDuration.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getRequestValidForDuration() {
+    return requestValidForDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : requestValidForDuration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for
+   * Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getRequestValidForDurationOrBuilder() {
+    return requestValidForDuration_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : requestValidForDuration_;
+  }
+
   public static final int RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 377671164;
 
   private static final class ResourceManagerTagsDefaultEntryHolder {
@@ -107,7 +164,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -131,7 +192,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -145,7 +210,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -167,7 +236,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the instance. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+   * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -199,6 +272,9 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(116247389, getRequestValidForDuration());
+    }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output,
         internalGetResourceManagerTags(),
@@ -213,6 +289,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              116247389, getRequestValidForDuration());
+    }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetResourceManagerTags().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceManagerTags__ =
@@ -241,6 +322,10 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.InstanceParams other =
         (com.google.cloud.compute.v1.InstanceParams) obj;
 
+    if (hasRequestValidForDuration() != other.hasRequestValidForDuration()) return false;
+    if (hasRequestValidForDuration()) {
+      if (!getRequestValidForDuration().equals(other.getRequestValidForDuration())) return false;
+    }
     if (!internalGetResourceManagerTags().equals(other.internalGetResourceManagerTags()))
       return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -254,6 +339,10 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasRequestValidForDuration()) {
+      hash = (37 * hash) + REQUEST_VALID_FOR_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestValidForDuration().hashCode();
+    }
     if (!internalGetResourceManagerTags().getMap().isEmpty()) {
       hash = (37 * hash) + RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetResourceManagerTags().hashCode();
@@ -410,16 +499,30 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.InstanceParams.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRequestValidForDurationFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      requestValidForDuration_ = null;
+      if (requestValidForDurationBuilder_ != null) {
+        requestValidForDurationBuilder_.dispose();
+        requestValidForDurationBuilder_ = null;
+      }
       internalGetMutableResourceManagerTags().clear();
       return this;
     }
@@ -457,10 +560,19 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.compute.v1.InstanceParams result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.requestValidForDuration_ =
+            requestValidForDurationBuilder_ == null
+                ? requestValidForDuration_
+                : requestValidForDurationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.resourceManagerTags_ = internalGetResourceManagerTags();
         result.resourceManagerTags_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -508,8 +620,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceParams other) {
       if (other == com.google.cloud.compute.v1.InstanceParams.getDefaultInstance()) return this;
+      if (other.hasRequestValidForDuration()) {
+        mergeRequestValidForDuration(other.getRequestValidForDuration());
+      }
       internalGetMutableResourceManagerTags().mergeFrom(other.internalGetResourceManagerTags());
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -536,6 +651,13 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 929979114:
+              {
+                input.readMessage(
+                    getRequestValidForDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 929979114
             case -1273597982:
               {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -546,7 +668,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableResourceManagerTags()
                     .getMutableMap()
                     .put(resourceManagerTags__.getKey(), resourceManagerTags__.getValue());
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1273597982
             default:
@@ -567,6 +689,220 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private com.google.cloud.compute.v1.Duration requestValidForDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        requestValidForDurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     *
+     * @return Whether the requestValidForDuration field is set.
+     */
+    public boolean hasRequestValidForDuration() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     *
+     * @return The requestValidForDuration.
+     */
+    public com.google.cloud.compute.v1.Duration getRequestValidForDuration() {
+      if (requestValidForDurationBuilder_ == null) {
+        return requestValidForDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : requestValidForDuration_;
+      } else {
+        return requestValidForDurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public Builder setRequestValidForDuration(com.google.cloud.compute.v1.Duration value) {
+      if (requestValidForDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestValidForDuration_ = value;
+      } else {
+        requestValidForDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public Builder setRequestValidForDuration(
+        com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (requestValidForDurationBuilder_ == null) {
+        requestValidForDuration_ = builderForValue.build();
+      } else {
+        requestValidForDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public Builder mergeRequestValidForDuration(com.google.cloud.compute.v1.Duration value) {
+      if (requestValidForDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && requestValidForDuration_ != null
+            && requestValidForDuration_
+                != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          getRequestValidForDurationBuilder().mergeFrom(value);
+        } else {
+          requestValidForDuration_ = value;
+        }
+      } else {
+        requestValidForDurationBuilder_.mergeFrom(value);
+      }
+      if (requestValidForDuration_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public Builder clearRequestValidForDuration() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      requestValidForDuration_ = null;
+      if (requestValidForDurationBuilder_ != null) {
+        requestValidForDurationBuilder_.dispose();
+        requestValidForDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getRequestValidForDurationBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getRequestValidForDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getRequestValidForDurationOrBuilder() {
+      if (requestValidForDurationBuilder_ != null) {
+        return requestValidForDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return requestValidForDuration_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : requestValidForDuration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Relative deadline for waiting for capacity. Relevant only for
+     * Instances.Insert API.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getRequestValidForDurationFieldBuilder() {
+      if (requestValidForDurationBuilder_ == null) {
+        requestValidForDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getRequestValidForDuration(), getParentForChildren(), isClean());
+        requestValidForDuration_ = null;
+      }
+      return requestValidForDurationBuilder_;
+    }
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceManagerTags_;
 
@@ -589,7 +925,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
       if (!resourceManagerTags_.isMutable()) {
         resourceManagerTags_ = resourceManagerTags_.copy();
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return resourceManagerTags_;
     }
@@ -602,7 +938,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -626,7 +966,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -640,7 +984,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -662,7 +1010,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -681,7 +1033,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearResourceManagerTags() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       internalGetMutableResourceManagerTags().getMutableMap().clear();
       return this;
     }
@@ -690,7 +1042,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -706,7 +1062,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableResourceManagerTags() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return internalGetMutableResourceManagerTags().getMutableMap();
     }
 
@@ -714,7 +1070,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -727,7 +1087,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableResourceManagerTags().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
 
@@ -735,7 +1095,11 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+     * Resource manager tags to be bound to the instance. Tag keys and values
+     * have the same definition as resource
+     * manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and
+     * values are in the format `tagValues/456`. The field is ignored (both PUT &amp;
+     * PATCH) when empty.
      * </pre>
      *
      * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -743,7 +1107,7 @@ public final class InstanceParams extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllResourceManagerTags(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableResourceManagerTags().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       return this;
     }
 

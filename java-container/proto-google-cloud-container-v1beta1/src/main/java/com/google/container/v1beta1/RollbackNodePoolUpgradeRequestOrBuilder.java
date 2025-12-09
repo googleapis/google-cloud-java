@@ -36,7 +36,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5334
+   *     See google/container/v1beta1/cluster_service.proto;l=5522
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.project_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5334
+   *     See google/container/v1beta1/cluster_service.proto;l=5522
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=5340
+   *     google/container/v1beta1/cluster_service.proto;l=5528
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=5340
+   *     google/container/v1beta1/cluster_service.proto;l=5528
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5344
+   *     See google/container/v1beta1/cluster_service.proto;l=5532
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.cluster_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5344
+   *     See google/container/v1beta1/cluster_service.proto;l=5532
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5348
+   *     See google/container/v1beta1/cluster_service.proto;l=5536
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface RollbackNodePoolUpgradeRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.RollbackNodePoolUpgradeRequest.node_pool_id is deprecated.
-   *     See google/container/v1beta1/cluster_service.proto;l=5348
+   *     See google/container/v1beta1/cluster_service.proto;l=5536
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated

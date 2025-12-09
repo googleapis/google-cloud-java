@@ -28,7 +28,8 @@ public interface LocationPolicyLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+   * Maximum number of items that are allowed to be placed in this zone.
+   * The value must be non-negative.
    * </pre>
    *
    * <code>optional int32 max_count = 287620724;</code>
@@ -41,7 +42,8 @@ public interface LocationPolicyLocationConstraintsOrBuilder
    *
    *
    * <pre>
-   * Maximum number of items that are allowed to be placed in this zone. The value must be non-negative.
+   * Maximum number of items that are allowed to be placed in this zone.
+   * The value must be non-negative.
    * </pre>
    *
    * <code>optional int32 max_count = 287620724;</code>

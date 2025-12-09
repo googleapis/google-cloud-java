@@ -54,6 +54,7 @@
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
     <module>java-channel</module>
     <module>java-chat</module>
@@ -62,6 +63,7 @@
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
+    <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
@@ -72,11 +74,13 @@
     <module>java-containeranalysis</module>
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
+    <module>java-databasecenter</module>
     <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
     <module>java-datalabeling</module>
     <module>java-datalineage</module>
+    <module>java-datamanager</module>
     <module>java-dataplex</module>
     <module>java-dataproc</module>
     <module>java-dataproc-metastore</module>
@@ -124,6 +128,7 @@
     <module>java-language</module>
     <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>
@@ -219,6 +224,7 @@
     <module>java-trace</module>
     <module>java-translate</module>
     <module>java-valkey</module>
+    <module>java-vectorsearch</module>
     <module>java-vertexai</module>
     <module>java-video-intelligence</module>
     <module>java-video-live-stream</module>

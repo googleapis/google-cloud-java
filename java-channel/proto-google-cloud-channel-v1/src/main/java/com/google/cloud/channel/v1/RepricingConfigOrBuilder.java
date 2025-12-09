@@ -28,7 +28,7 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -45,7 +45,7 @@ public interface RepricingConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the entitlementGranularity field is set.
@@ -56,7 +56,7 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -73,7 +73,7 @@ public interface RepricingConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The entitlementGranularity.
@@ -84,7 +84,7 @@ public interface RepricingConfigOrBuilder
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level.
+   * Required. Applies the repricing configuration at the entitlement level.
    *
    * Note: If a
    * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
@@ -101,7 +101,7 @@ public interface RepricingConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4;
+   * .google.cloud.channel.v1.RepricingConfig.EntitlementGranularity entitlement_granularity = 4 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.channel.v1.RepricingConfig.EntitlementGranularityOrBuilder
@@ -124,7 +124,7 @@ public interface RepricingConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
-   *     See google/cloud/channel/v1/repricing.proto;l=139
+   *     See google/cloud/channel/v1/repricing.proto;l=140
    * @return Whether the channelPartnerGranularity field is set.
    */
   @java.lang.Deprecated
@@ -147,7 +147,7 @@ public interface RepricingConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
-   *     See google/cloud/channel/v1/repricing.proto;l=139
+   *     See google/cloud/channel/v1/repricing.proto;l=140
    * @return The channelPartnerGranularity.
    */
   @java.lang.Deprecated

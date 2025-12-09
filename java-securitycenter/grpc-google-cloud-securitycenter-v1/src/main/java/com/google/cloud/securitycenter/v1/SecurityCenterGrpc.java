@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * V1 APIs for Security Center service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/securitycenter/v1/securitycenter_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SecurityCenterGrpc {
 
@@ -5548,8 +5545,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation bulkMuteFindings(
-        com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.BulkMuteFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBulkMuteFindingsMethod(), getCallOptions(), request);
     }
 
@@ -5566,8 +5564,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
         createSecurityHealthAnalyticsCustomModule(
             com.google.cloud.securitycenter.v1.CreateSecurityHealthAnalyticsCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getCreateSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -5582,8 +5581,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Source createSource(
-        com.google.cloud.securitycenter.v1.CreateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.CreateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSourceMethod(), getCallOptions(), request);
     }
 
@@ -5596,8 +5596,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Finding createFinding(
-        com.google.cloud.securitycenter.v1.CreateFindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.CreateFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFindingMethod(), getCallOptions(), request);
     }
 
@@ -5609,8 +5610,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.MuteConfig createMuteConfig(
-        com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.CreateMuteConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateMuteConfigMethod(), getCallOptions(), request);
     }
 
@@ -5622,8 +5624,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.NotificationConfig createNotificationConfig(
-        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.CreateNotificationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -5635,8 +5638,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMuteConfig(
-        com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteMuteConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMuteConfigMethod(), getCallOptions(), request);
     }
 
@@ -5648,8 +5652,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNotificationConfig(
-        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteNotificationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -5663,9 +5668,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSecurityHealthAnalyticsCustomModule(
-        com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest
-            request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteSecurityHealthAnalyticsCustomModuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getDeleteSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -5681,8 +5686,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Simulation getSimulation(
-        com.google.cloud.securitycenter.v1.GetSimulationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetSimulationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSimulationMethod(), getCallOptions(), request);
     }
 
@@ -5694,8 +5700,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ValuedResource getValuedResource(
-        com.google.cloud.securitycenter.v1.GetValuedResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetValuedResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetValuedResourceMethod(), getCallOptions(), request);
     }
 
@@ -5707,8 +5714,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.BigQueryExport getBigQueryExport(
-        com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetBigQueryExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBigQueryExportMethod(), getCallOptions(), request);
     }
 
@@ -5719,8 +5727,9 @@ public final class SecurityCenterGrpc {
      * Gets the access control policy on the specified Source.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -5732,8 +5741,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.MuteConfig getMuteConfig(
-        com.google.cloud.securitycenter.v1.GetMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetMuteConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMuteConfigMethod(), getCallOptions(), request);
     }
 
@@ -5745,8 +5755,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.NotificationConfig getNotificationConfig(
-        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetNotificationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -5758,8 +5769,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings getOrganizationSettings(
-        com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetOrganizationSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationSettingsMethod(), getCallOptions(), request);
     }
 
@@ -5774,8 +5786,9 @@ public final class SecurityCenterGrpc {
         getEffectiveSecurityHealthAnalyticsCustomModule(
             com.google.cloud.securitycenter.v1
                     .GetEffectiveSecurityHealthAnalyticsCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetEffectiveSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -5792,8 +5805,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
         getSecurityHealthAnalyticsCustomModule(
             com.google.cloud.securitycenter.v1.GetSecurityHealthAnalyticsCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -5808,8 +5822,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Source getSource(
-        com.google.cloud.securitycenter.v1.GetSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSourceMethod(), getCallOptions(), request);
     }
 
@@ -5823,8 +5838,9 @@ public final class SecurityCenterGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.GroupAssetsResponse groupAssets(
-        com.google.cloud.securitycenter.v1.GroupAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GroupAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGroupAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5841,8 +5857,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.GroupFindingsResponse groupFindings(
-        com.google.cloud.securitycenter.v1.GroupFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GroupFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGroupFindingsMethod(), getCallOptions(), request);
     }
 
@@ -5855,8 +5872,9 @@ public final class SecurityCenterGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.securitycenter.v1.ListAssetsResponse listAssets(
-        com.google.cloud.securitycenter.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -5873,8 +5891,9 @@ public final class SecurityCenterGrpc {
         listDescendantSecurityHealthAnalyticsCustomModules(
             com.google.cloud.securitycenter.v1
                     .ListDescendantSecurityHealthAnalyticsCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListDescendantSecurityHealthAnalyticsCustomModulesMethod(),
           getCallOptions(),
@@ -5891,8 +5910,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListFindingsResponse listFindings(
-        com.google.cloud.securitycenter.v1.ListFindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFindingsMethod(), getCallOptions(), request);
     }
 
@@ -5904,8 +5924,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListMuteConfigsResponse listMuteConfigs(
-        com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListMuteConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMuteConfigsMethod(), getCallOptions(), request);
     }
 
@@ -5918,8 +5939,9 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1.ListNotificationConfigsResponse
         listNotificationConfigs(
-            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securitycenter.v1.ListNotificationConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationConfigsMethod(), getCallOptions(), request);
     }
 
@@ -5937,8 +5959,9 @@ public final class SecurityCenterGrpc {
         listEffectiveSecurityHealthAnalyticsCustomModules(
             com.google.cloud.securitycenter.v1
                     .ListEffectiveSecurityHealthAnalyticsCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListEffectiveSecurityHealthAnalyticsCustomModulesMethod(),
           getCallOptions(),
@@ -5957,8 +5980,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesResponse
         listSecurityHealthAnalyticsCustomModules(
             com.google.cloud.securitycenter.v1.ListSecurityHealthAnalyticsCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListSecurityHealthAnalyticsCustomModulesMethod(),
           getCallOptions(),
@@ -5973,8 +5997,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListSourcesResponse listSources(
-        com.google.cloud.securitycenter.v1.ListSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSourcesMethod(), getCallOptions(), request);
     }
 
@@ -5991,8 +6016,9 @@ public final class SecurityCenterGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation runAssetDiscovery(
-        com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.RunAssetDiscoveryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunAssetDiscoveryMethod(), getCallOptions(), request);
     }
 
@@ -6004,8 +6030,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Finding setFindingState(
-        com.google.cloud.securitycenter.v1.SetFindingStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.SetFindingStateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetFindingStateMethod(), getCallOptions(), request);
     }
 
@@ -6017,8 +6044,8 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Finding setMute(
-        com.google.cloud.securitycenter.v1.SetMuteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.SetMuteRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetMuteMethod(), getCallOptions(), request);
     }
 
@@ -6029,8 +6056,9 @@ public final class SecurityCenterGrpc {
      * Sets the access control policy on the specified Source.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -6042,8 +6070,8 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -6057,8 +6085,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleResponse
         simulateSecurityHealthAnalyticsCustomModule(
             com.google.cloud.securitycenter.v1.SimulateSecurityHealthAnalyticsCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getSimulateSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -6073,8 +6102,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ExternalSystem updateExternalSystem(
-        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateExternalSystemRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExternalSystemMethod(), getCallOptions(), request);
     }
 
@@ -6087,8 +6117,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Finding updateFinding(
-        com.google.cloud.securitycenter.v1.UpdateFindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFindingMethod(), getCallOptions(), request);
     }
 
@@ -6100,8 +6131,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.MuteConfig updateMuteConfig(
-        com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateMuteConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateMuteConfigMethod(), getCallOptions(), request);
     }
 
@@ -6114,8 +6146,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.NotificationConfig updateNotificationConfig(
-        com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateNotificationConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNotificationConfigMethod(), getCallOptions(), request);
     }
 
@@ -6127,8 +6160,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.OrganizationSettings updateOrganizationSettings(
-        com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateOrganizationSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOrganizationSettingsMethod(), getCallOptions(), request);
     }
 
@@ -6146,8 +6180,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.SecurityHealthAnalyticsCustomModule
         updateSecurityHealthAnalyticsCustomModule(
             com.google.cloud.securitycenter.v1.UpdateSecurityHealthAnalyticsCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getUpdateSecurityHealthAnalyticsCustomModuleMethod(),
           getCallOptions(),
@@ -6162,8 +6197,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.Source updateSource(
-        com.google.cloud.securitycenter.v1.UpdateSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSourceMethod(), getCallOptions(), request);
     }
 
@@ -6175,8 +6211,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.SecurityMarks updateSecurityMarks(
-        com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateSecurityMarksRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSecurityMarksMethod(), getCallOptions(), request);
     }
 
@@ -6188,8 +6225,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.BigQueryExport createBigQueryExport(
-        com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.CreateBigQueryExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBigQueryExportMethod(), getCallOptions(), request);
     }
 
@@ -6201,8 +6239,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBigQueryExport(
-        com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteBigQueryExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBigQueryExportMethod(), getCallOptions(), request);
     }
 
@@ -6214,8 +6253,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.BigQueryExport updateBigQueryExport(
-        com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateBigQueryExportRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBigQueryExportMethod(), getCallOptions(), request);
     }
 
@@ -6231,8 +6271,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListBigQueryExportsResponse listBigQueryExports(
-        com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListBigQueryExportsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBigQueryExportsMethod(), getCallOptions(), request);
     }
 
@@ -6249,8 +6290,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule
         createEventThreatDetectionCustomModule(
             com.google.cloud.securitycenter.v1.CreateEventThreatDetectionCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getCreateEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
@@ -6267,8 +6309,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEventThreatDetectionCustomModule(
-        com.google.cloud.securitycenter.v1.DeleteEventThreatDetectionCustomModuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteEventThreatDetectionCustomModuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getDeleteEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
@@ -6284,8 +6327,9 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule
         getEventThreatDetectionCustomModule(
-            com.google.cloud.securitycenter.v1.GetEventThreatDetectionCustomModuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securitycenter.v1.GetEventThreatDetectionCustomModuleRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEventThreatDetectionCustomModuleMethod(), getCallOptions(), request);
     }
 
@@ -6302,8 +6346,9 @@ public final class SecurityCenterGrpc {
         listDescendantEventThreatDetectionCustomModules(
             com.google.cloud.securitycenter.v1
                     .ListDescendantEventThreatDetectionCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListDescendantEventThreatDetectionCustomModulesMethod(),
           getCallOptions(),
@@ -6321,9 +6366,9 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesResponse
         listEventThreatDetectionCustomModules(
-            com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securitycenter.v1.ListEventThreatDetectionCustomModulesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListEventThreatDetectionCustomModulesMethod(),
           getCallOptions(),
@@ -6345,8 +6390,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModule
         updateEventThreatDetectionCustomModule(
             com.google.cloud.securitycenter.v1.UpdateEventThreatDetectionCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getUpdateEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
@@ -6363,8 +6409,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleResponse
         validateEventThreatDetectionCustomModule(
             com.google.cloud.securitycenter.v1.ValidateEventThreatDetectionCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getValidateEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
@@ -6381,8 +6428,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.EffectiveEventThreatDetectionCustomModule
         getEffectiveEventThreatDetectionCustomModule(
             com.google.cloud.securitycenter.v1.GetEffectiveEventThreatDetectionCustomModuleRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetEffectiveEventThreatDetectionCustomModuleMethod(),
           getCallOptions(),
@@ -6401,8 +6449,9 @@ public final class SecurityCenterGrpc {
     public com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesResponse
         listEffectiveEventThreatDetectionCustomModules(
             com.google.cloud.securitycenter.v1.ListEffectiveEventThreatDetectionCustomModulesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getListEffectiveEventThreatDetectionCustomModulesMethod(),
           getCallOptions(),
@@ -6419,8 +6468,9 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsResponse
         batchCreateResourceValueConfigs(
-            com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securitycenter.v1.BatchCreateResourceValueConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchCreateResourceValueConfigsMethod(), getCallOptions(), request);
     }
 
@@ -6432,8 +6482,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteResourceValueConfig(
-        com.google.cloud.securitycenter.v1.DeleteResourceValueConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.DeleteResourceValueConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteResourceValueConfigMethod(), getCallOptions(), request);
     }
 
@@ -6445,8 +6496,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ResourceValueConfig getResourceValueConfig(
-        com.google.cloud.securitycenter.v1.GetResourceValueConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.GetResourceValueConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceValueConfigMethod(), getCallOptions(), request);
     }
 
@@ -6459,8 +6511,9 @@ public final class SecurityCenterGrpc {
      */
     public com.google.cloud.securitycenter.v1.ListResourceValueConfigsResponse
         listResourceValueConfigs(
-            com.google.cloud.securitycenter.v1.ListResourceValueConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.securitycenter.v1.ListResourceValueConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceValueConfigsMethod(), getCallOptions(), request);
     }
 
@@ -6472,8 +6525,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ResourceValueConfig updateResourceValueConfig(
-        com.google.cloud.securitycenter.v1.UpdateResourceValueConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.UpdateResourceValueConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateResourceValueConfigMethod(), getCallOptions(), request);
     }
 
@@ -6485,8 +6539,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListValuedResourcesResponse listValuedResources(
-        com.google.cloud.securitycenter.v1.ListValuedResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListValuedResourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListValuedResourcesMethod(), getCallOptions(), request);
     }
 
@@ -6499,8 +6554,9 @@ public final class SecurityCenterGrpc {
      * </pre>
      */
     public com.google.cloud.securitycenter.v1.ListAttackPathsResponse listAttackPaths(
-        com.google.cloud.securitycenter.v1.ListAttackPathsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.securitycenter.v1.ListAttackPathsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAttackPathsMethod(), getCallOptions(), request);
     }
   }

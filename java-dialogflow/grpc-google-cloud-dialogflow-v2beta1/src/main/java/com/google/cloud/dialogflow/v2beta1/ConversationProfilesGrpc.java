@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [ConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfile].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/conversation_profile.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConversationProfilesGrpc {
 
@@ -817,8 +814,9 @@ public final class ConversationProfilesGrpc {
      */
     public com.google.cloud.dialogflow.v2beta1.ListConversationProfilesResponse
         listConversationProfiles(
-            com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.dialogflow.v2beta1.ListConversationProfilesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConversationProfilesMethod(), getCallOptions(), request);
     }
 
@@ -830,8 +828,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile getConversationProfile(
-        com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.GetConversationProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -847,8 +846,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile createConversationProfile(
-        com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.CreateConversationProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -864,8 +864,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ConversationProfile updateConversationProfile(
-        com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdateConversationProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -877,8 +878,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteConversationProfile(
-        com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeleteConversationProfileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConversationProfileMethod(), getCallOptions(), request);
     }
 
@@ -904,8 +906,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation setSuggestionFeatureConfig(
-        com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.SetSuggestionFeatureConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetSuggestionFeatureConfigMethod(), getCallOptions(), request);
     }
 
@@ -925,8 +928,9 @@ public final class ConversationProfilesGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation clearSuggestionFeatureConfig(
-        com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ClearSuggestionFeatureConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClearSuggestionFeatureConfigMethod(), getCallOptions(), request);
     }
   }

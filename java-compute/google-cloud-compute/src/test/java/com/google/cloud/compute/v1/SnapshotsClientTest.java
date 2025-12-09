@@ -173,6 +173,7 @@ public class SnapshotsClientTest {
             .addAllLicenses(new ArrayList<String>())
             .setLocationHint("locationHint-58650660")
             .setName("name3373707")
+            .setParams(SnapshotParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")

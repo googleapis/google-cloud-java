@@ -85,6 +85,7 @@ import javax.annotation.Generated;
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+ *           .setRankingExpression("rankingExpression2110320494")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -291,6 +292,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -357,6 +359,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -423,6 +426,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -505,6 +509,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   for (SearchResponse.SearchResult element :
    *       searchServiceClient.searchLite(request).iterateAll()) {
@@ -582,6 +587,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchLitePagedCallable().futureCall(request);
@@ -658,6 +664,7 @@ public class SearchServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
    *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setRankingExpression("rankingExpression2110320494")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);

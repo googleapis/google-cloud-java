@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This service lets you manage document schema.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/document_schema_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DocumentSchemaServiceGrpc {
 
@@ -593,8 +590,9 @@ public final class DocumentSchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentSchema createDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.CreateDocumentSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDocumentSchemaMethod(), getCallOptions(), request);
     }
 
@@ -612,8 +610,9 @@ public final class DocumentSchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentSchema updateDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.UpdateDocumentSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDocumentSchemaMethod(), getCallOptions(), request);
     }
 
@@ -626,8 +625,9 @@ public final class DocumentSchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.DocumentSchema getDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.GetDocumentSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDocumentSchemaMethod(), getCallOptions(), request);
     }
 
@@ -641,8 +641,9 @@ public final class DocumentSchemaServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDocumentSchema(
-        com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.DeleteDocumentSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDocumentSchemaMethod(), getCallOptions(), request);
     }
 
@@ -654,8 +655,9 @@ public final class DocumentSchemaServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.ListDocumentSchemasResponse listDocumentSchemas(
-        com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.ListDocumentSchemasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDocumentSchemasMethod(), getCallOptions(), request);
     }
   }

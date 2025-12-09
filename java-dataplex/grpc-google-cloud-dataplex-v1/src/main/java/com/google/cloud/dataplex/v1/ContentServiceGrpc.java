@@ -21,12 +21,10 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * ContentService manages Notebook and SQL Scripts for Dataplex.
+ * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+ * Catalog.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataplex/v1/content.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ContentServiceGrpc {
 
@@ -431,7 +429,8 @@ public final class ContentServiceGrpc {
    *
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public interface AsyncService {
@@ -568,7 +567,8 @@ public final class ContentServiceGrpc {
    * Base class for the server implementation of the service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public abstract static class ContentServiceImplBase
@@ -584,7 +584,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceStub
@@ -745,7 +746,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceBlockingV2Stub
@@ -768,8 +770,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Content createContent(
-        com.google.cloud.dataplex.v1.CreateContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.CreateContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateContentMethod(), getCallOptions(), request);
     }
 
@@ -781,8 +783,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Content updateContent(
-        com.google.cloud.dataplex.v1.UpdateContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.UpdateContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateContentMethod(), getCallOptions(), request);
     }
 
@@ -794,8 +796,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteContent(
-        com.google.cloud.dataplex.v1.DeleteContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.DeleteContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteContentMethod(), getCallOptions(), request);
     }
 
@@ -807,8 +809,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.Content getContent(
-        com.google.cloud.dataplex.v1.GetContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.GetContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetContentMethod(), getCallOptions(), request);
     }
 
@@ -823,8 +825,9 @@ public final class ContentServiceGrpc {
      * on the resource.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -838,8 +841,9 @@ public final class ContentServiceGrpc {
      * on the resource.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -858,8 +862,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
 
@@ -871,8 +875,8 @@ public final class ContentServiceGrpc {
      * </pre>
      */
     public com.google.cloud.dataplex.v1.ListContentResponse listContent(
-        com.google.cloud.dataplex.v1.ListContentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataplex.v1.ListContentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListContentMethod(), getCallOptions(), request);
     }
   }
@@ -881,7 +885,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceBlockingStub
@@ -1017,7 +1022,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceFutureStub

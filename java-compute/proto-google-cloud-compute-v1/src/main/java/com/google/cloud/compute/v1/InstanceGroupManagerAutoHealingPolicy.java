@@ -142,7 +142,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
    *
    *
    * <pre>
-   * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+   * The initial delay is the number of seconds that a new VM takes to
+   * initialize and run its startup script. During a VM's initial delay
+   * period, the MIG ignores unsuccessful health checks because the VM might
+   * be in the startup process. This prevents the MIG from prematurely
+   * recreating a VM. If the health check receives a healthy response during
+   * the initial delay, it indicates that the startup process is complete and
+   * the VM is ready. The value of initial delay must be between 0 and 3600
+   * seconds. The default value is 0.
    * </pre>
    *
    * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -158,7 +165,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
    *
    *
    * <pre>
-   * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+   * The initial delay is the number of seconds that a new VM takes to
+   * initialize and run its startup script. During a VM's initial delay
+   * period, the MIG ignores unsuccessful health checks because the VM might
+   * be in the startup process. This prevents the MIG from prematurely
+   * recreating a VM. If the health check receives a healthy response during
+   * the initial delay, it indicates that the startup process is complete and
+   * the VM is ready. The value of initial delay must be between 0 and 3600
+   * seconds. The default value is 0.
    * </pre>
    *
    * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -687,7 +701,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
      *
      *
      * <pre>
-     * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * The initial delay is the number of seconds that a new VM takes to
+     * initialize and run its startup script. During a VM's initial delay
+     * period, the MIG ignores unsuccessful health checks because the VM might
+     * be in the startup process. This prevents the MIG from prematurely
+     * recreating a VM. If the health check receives a healthy response during
+     * the initial delay, it indicates that the startup process is complete and
+     * the VM is ready. The value of initial delay must be between 0 and 3600
+     * seconds. The default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -703,7 +724,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
      *
      *
      * <pre>
-     * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * The initial delay is the number of seconds that a new VM takes to
+     * initialize and run its startup script. During a VM's initial delay
+     * period, the MIG ignores unsuccessful health checks because the VM might
+     * be in the startup process. This prevents the MIG from prematurely
+     * recreating a VM. If the health check receives a healthy response during
+     * the initial delay, it indicates that the startup process is complete and
+     * the VM is ready. The value of initial delay must be between 0 and 3600
+     * seconds. The default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -719,7 +747,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
      *
      *
      * <pre>
-     * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * The initial delay is the number of seconds that a new VM takes to
+     * initialize and run its startup script. During a VM's initial delay
+     * period, the MIG ignores unsuccessful health checks because the VM might
+     * be in the startup process. This prevents the MIG from prematurely
+     * recreating a VM. If the health check receives a healthy response during
+     * the initial delay, it indicates that the startup process is complete and
+     * the VM is ready. The value of initial delay must be between 0 and 3600
+     * seconds. The default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>
@@ -739,7 +774,14 @@ public final class InstanceGroupManagerAutoHealingPolicy
      *
      *
      * <pre>
-     * The initial delay is the number of seconds that a new VM takes to initialize and run its startup script. During a VM's initial delay period, the MIG ignores unsuccessful health checks because the VM might be in the startup process. This prevents the MIG from prematurely recreating a VM. If the health check receives a healthy response during the initial delay, it indicates that the startup process is complete and the VM is ready. The value of initial delay must be between 0 and 3600 seconds. The default value is 0.
+     * The initial delay is the number of seconds that a new VM takes to
+     * initialize and run its startup script. During a VM's initial delay
+     * period, the MIG ignores unsuccessful health checks because the VM might
+     * be in the startup process. This prevents the MIG from prematurely
+     * recreating a VM. If the health check receives a healthy response during
+     * the initial delay, it indicates that the startup process is complete and
+     * the VM is ready. The value of initial delay must be between 0 and 3600
+     * seconds. The default value is 0.
      * </pre>
      *
      * <code>optional int32 initial_delay_sec = 263207002;</code>

@@ -24,10 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing licenses.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/cloud/commerce/consumer/procurement/v1/license_management_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LicenseManagementServiceGrpc {
 
@@ -574,8 +570,9 @@ public final class LicenseManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1.LicensePool getLicensePool(
-        com.google.cloud.commerce.consumer.procurement.v1.GetLicensePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1.GetLicensePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLicensePoolMethod(), getCallOptions(), request);
     }
 
@@ -587,8 +584,9 @@ public final class LicenseManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1.LicensePool updateLicensePool(
-        com.google.cloud.commerce.consumer.procurement.v1.UpdateLicensePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1.UpdateLicensePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLicensePoolMethod(), getCallOptions(), request);
     }
 
@@ -600,8 +598,9 @@ public final class LicenseManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1.AssignResponse assign(
-        com.google.cloud.commerce.consumer.procurement.v1.AssignRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1.AssignRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAssignMethod(), getCallOptions(), request);
     }
 
@@ -613,8 +612,9 @@ public final class LicenseManagementServiceGrpc {
      * </pre>
      */
     public com.google.cloud.commerce.consumer.procurement.v1.UnassignResponse unassign(
-        com.google.cloud.commerce.consumer.procurement.v1.UnassignRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.commerce.consumer.procurement.v1.UnassignRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnassignMethod(), getCallOptions(), request);
     }
 
@@ -627,9 +627,9 @@ public final class LicenseManagementServiceGrpc {
      */
     public com.google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersResponse
         enumerateLicensedUsers(
-            com.google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.commerce.consumer.procurement.v1.EnumerateLicensedUsersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnumerateLicensedUsersMethod(), getCallOptions(), request);
     }
   }

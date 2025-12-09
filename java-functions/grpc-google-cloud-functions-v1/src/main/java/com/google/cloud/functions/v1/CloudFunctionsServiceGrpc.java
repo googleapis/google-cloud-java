@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service that application uses to manipulate triggers and functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/functions/v1/functions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudFunctionsServiceGrpc {
 
@@ -1065,8 +1062,8 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v1.ListFunctionsResponse listFunctions(
-        com.google.cloud.functions.v1.ListFunctionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.ListFunctionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFunctionsMethod(), getCallOptions(), request);
     }
 
@@ -1078,8 +1075,8 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v1.CloudFunction getFunction(
-        com.google.cloud.functions.v1.GetFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.GetFunctionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFunctionMethod(), getCallOptions(), request);
     }
 
@@ -1093,8 +1090,9 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFunction(
-        com.google.cloud.functions.v1.CreateFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.CreateFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFunctionMethod(), getCallOptions(), request);
     }
 
@@ -1106,8 +1104,9 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFunction(
-        com.google.cloud.functions.v1.UpdateFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.UpdateFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFunctionMethod(), getCallOptions(), request);
     }
 
@@ -1121,8 +1120,9 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFunction(
-        com.google.cloud.functions.v1.DeleteFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.DeleteFunctionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFunctionMethod(), getCallOptions(), request);
     }
 
@@ -1137,8 +1137,8 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v1.CallFunctionResponse callFunction(
-        com.google.cloud.functions.v1.CallFunctionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.CallFunctionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCallFunctionMethod(), getCallOptions(), request);
     }
 
@@ -1168,8 +1168,9 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v1.GenerateUploadUrlResponse generateUploadUrl(
-        com.google.cloud.functions.v1.GenerateUploadUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.GenerateUploadUrlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateUploadUrlMethod(), getCallOptions(), request);
     }
 
@@ -1185,8 +1186,9 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.cloud.functions.v1.GenerateDownloadUrlResponse generateDownloadUrl(
-        com.google.cloud.functions.v1.GenerateDownloadUrlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.functions.v1.GenerateDownloadUrlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateDownloadUrlMethod(), getCallOptions(), request);
     }
 
@@ -1198,8 +1200,9 @@ public final class CloudFunctionsServiceGrpc {
      * Replaces any existing policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1212,8 +1215,9 @@ public final class CloudFunctionsServiceGrpc {
      * set.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1228,8 +1232,8 @@ public final class CloudFunctionsServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

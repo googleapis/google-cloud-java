@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The `SessionController` provides methods to manage interactive sessions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dataproc/v1/sessions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SessionControllerGrpc {
 
@@ -532,8 +529,8 @@ public final class SessionControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSession(
-        com.google.cloud.dataproc.v1.CreateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.CreateSessionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSessionMethod(), getCallOptions(), request);
     }
 
@@ -545,8 +542,8 @@ public final class SessionControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.Session getSession(
-        com.google.cloud.dataproc.v1.GetSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.GetSessionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSessionMethod(), getCallOptions(), request);
     }
 
@@ -558,8 +555,8 @@ public final class SessionControllerGrpc {
      * </pre>
      */
     public com.google.cloud.dataproc.v1.ListSessionsResponse listSessions(
-        com.google.cloud.dataproc.v1.ListSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.ListSessionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSessionsMethod(), getCallOptions(), request);
     }
 
@@ -571,8 +568,9 @@ public final class SessionControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation terminateSession(
-        com.google.cloud.dataproc.v1.TerminateSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.TerminateSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTerminateSessionMethod(), getCallOptions(), request);
     }
 
@@ -585,8 +583,8 @@ public final class SessionControllerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSession(
-        com.google.cloud.dataproc.v1.DeleteSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dataproc.v1.DeleteSessionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
     }
   }

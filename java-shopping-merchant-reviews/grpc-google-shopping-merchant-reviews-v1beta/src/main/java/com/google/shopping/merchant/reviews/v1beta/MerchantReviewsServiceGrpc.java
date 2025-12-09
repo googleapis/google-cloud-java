@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage merchant reviews.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/reviews/v1beta/merchantreviews.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MerchantReviewsServiceGrpc {
 
@@ -496,8 +493,9 @@ public final class MerchantReviewsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.reviews.v1beta.MerchantReview getMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.GetMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.GetMerchantReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetMerchantReviewMethod(), getCallOptions(), request);
     }
 
@@ -510,8 +508,9 @@ public final class MerchantReviewsServiceGrpc {
      */
     public com.google.shopping.merchant.reviews.v1beta.ListMerchantReviewsResponse
         listMerchantReviews(
-            com.google.shopping.merchant.reviews.v1beta.ListMerchantReviewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.reviews.v1beta.ListMerchantReviewsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListMerchantReviewsMethod(), getCallOptions(), request);
     }
 
@@ -524,8 +523,9 @@ public final class MerchantReviewsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.reviews.v1beta.MerchantReview insertMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.InsertMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.InsertMerchantReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertMerchantReviewMethod(), getCallOptions(), request);
     }
 
@@ -537,8 +537,9 @@ public final class MerchantReviewsServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteMerchantReview(
-        com.google.shopping.merchant.reviews.v1beta.DeleteMerchantReviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.reviews.v1beta.DeleteMerchantReviewRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteMerchantReviewMethod(), getCallOptions(), request);
     }
   }

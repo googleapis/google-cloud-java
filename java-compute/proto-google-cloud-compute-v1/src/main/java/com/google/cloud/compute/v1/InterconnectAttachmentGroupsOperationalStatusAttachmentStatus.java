@@ -75,7 +75,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+   * Whether this Attachment is participating in the redundant configuration.
+   * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+   * Any INACTIVE Attachments are excluded from the analysis that generates
+   * operational.availabilitySLA.
    * </pre>
    *
    * Protobuf enum {@code
@@ -213,7 +216,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * </pre>
    *
    * Protobuf enum {@code
@@ -439,7 +442,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+   * Whether this Attachment is enabled. This becomes false when the customer
+   * drains their Attachment.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -455,7 +459,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+   * Whether this Attachment is enabled. This becomes false when the customer
+   * drains their Attachment.
    * </pre>
    *
    * <code>optional bool admin_enabled = 445675089;</code>
@@ -545,7 +550,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+   * Whether this Attachment is participating in the redundant configuration.
+   * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+   * Any INACTIVE Attachments are excluded from the analysis that generates
+   * operational.availabilitySLA.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -562,7 +570,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+   * Whether this Attachment is participating in the redundant configuration.
+   * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+   * Any INACTIVE Attachments are excluded from the analysis that generates
+   * operational.availabilitySLA.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -587,7 +598,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+   * Whether this Attachment is participating in the redundant configuration.
+   * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+   * Any INACTIVE Attachments are excluded from the analysis that generates
+   * operational.availabilitySLA.
    * Check the IsActive enum for the list of possible values.
    * </pre>
    *
@@ -617,7 +631,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -634,7 +648,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -659,7 +673,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+   * Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1175,7 +1189,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+     * Whether this Attachment is enabled. This becomes false when the customer
+     * drains their Attachment.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -1191,7 +1206,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+     * Whether this Attachment is enabled. This becomes false when the customer
+     * drains their Attachment.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -1207,7 +1223,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+     * Whether this Attachment is enabled. This becomes false when the customer
+     * drains their Attachment.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -1227,7 +1244,8 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is enabled. This becomes false when the customer drains their Attachment.
+     * Whether this Attachment is enabled. This becomes false when the customer
+     * drains their Attachment.
      * </pre>
      *
      * <code>optional bool admin_enabled = 445675089;</code>
@@ -1373,7 +1391,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1389,7 +1410,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1413,7 +1437,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1437,7 +1464,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1460,7 +1490,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1479,7 +1512,10 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is participating in the redundant configuration. This will be ACTIVE if and only if the status below is CONNECTION_UP. Any INACTIVE Attachments are excluded from the analysis that generates operational.availabilitySLA.
+     * Whether this Attachment is participating in the redundant configuration.
+     * This will be ACTIVE if and only if the status below is CONNECTION_UP.
+     * Any INACTIVE Attachments are excluded from the analysis that generates
+     * operational.availabilitySLA.
      * Check the IsActive enum for the list of possible values.
      * </pre>
      *
@@ -1505,7 +1541,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1521,7 +1557,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1545,7 +1581,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1569,7 +1605,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1592,7 +1628,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1611,7 +1647,7 @@ public final class InterconnectAttachmentGroupsOperationalStatusAttachmentStatus
      *
      *
      * <pre>
-     * Whether this Attachment is active, and if so, whether BGP is up. This is based on the statuses available in the Pantheon UI here: http://google3/java/com/google/cloud/boq/clientapi/gce/hybrid/api/interconnect_models.proto
+     * Whether this Attachment is active, and if so, whether BGP is up.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

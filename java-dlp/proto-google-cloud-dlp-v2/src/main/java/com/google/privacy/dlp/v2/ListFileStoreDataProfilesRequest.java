@@ -315,20 +315,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values:
-   *     - `project_id` - The Google Cloud project ID.
-   *     - `account_id` - The AWS account ID.
-   *     - `file_store_path` - The path like "gs://bucket".
-   *     - `data_source_type` - The profile's data source type, like
-   *     "google/storage/bucket".
-   *     - `data_storage_location` - The location where the file store's data is
-   *     stored, like "us-central1".
-   *     - `sensitivity_level` - HIGH|MODERATE|LOW
-   *     - `data_risk_level` - HIGH|MODERATE|LOW
+   * * Supported fields:
+   *     - `project_id`: The Google Cloud project ID
+   *     - `account_id`: The AWS account ID
+   *     - `file_store_path`: The path like "gs://bucket"
+   *     - `data_source_type`: The profile's data source type, like
+   *     "google/storage/bucket"
+   *     - `data_storage_location`: The location where the file store's data is
+   *     stored, like "us-central1"
+   *     - `sensitivity_level`: HIGH|MODERATE|LOW
+   *     - `data_risk_level`: HIGH|MODERATE|LOW
    *     - `resource_visibility`: PUBLIC|RESTRICTED
-   *     - `status_code` - an RPC status code as defined in
+   *     - `status_code`: an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-   * * The operator must be `=` or `!=`.
+   *     - `profile_last_generated`: Date and time the profile was last
+   *       generated
+   *
+   * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+   *   also supports `&lt;` and `&gt;`.
+   *
+   * The syntax is based on https://google.aip.dev/160.
    *
    * Examples:
    *
@@ -336,6 +342,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
    * * `project_id = 12345 AND sensitivity_level = HIGH`
    * * `project_id = 12345 AND resource_visibility = PUBLIC`
    * * `file_store_path = "gs://mybucket"`
+   * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
    *
    * The length of this field should be no more than 500 characters.
    * </pre>
@@ -369,20 +376,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
    * * Restrictions can be combined by `AND` or `OR` logical operators. A
    * sequence of restrictions implicitly uses `AND`.
    * * A restriction has the form of `{field} {operator} {value}`.
-   * * Supported fields/values:
-   *     - `project_id` - The Google Cloud project ID.
-   *     - `account_id` - The AWS account ID.
-   *     - `file_store_path` - The path like "gs://bucket".
-   *     - `data_source_type` - The profile's data source type, like
-   *     "google/storage/bucket".
-   *     - `data_storage_location` - The location where the file store's data is
-   *     stored, like "us-central1".
-   *     - `sensitivity_level` - HIGH|MODERATE|LOW
-   *     - `data_risk_level` - HIGH|MODERATE|LOW
+   * * Supported fields:
+   *     - `project_id`: The Google Cloud project ID
+   *     - `account_id`: The AWS account ID
+   *     - `file_store_path`: The path like "gs://bucket"
+   *     - `data_source_type`: The profile's data source type, like
+   *     "google/storage/bucket"
+   *     - `data_storage_location`: The location where the file store's data is
+   *     stored, like "us-central1"
+   *     - `sensitivity_level`: HIGH|MODERATE|LOW
+   *     - `data_risk_level`: HIGH|MODERATE|LOW
    *     - `resource_visibility`: PUBLIC|RESTRICTED
-   *     - `status_code` - an RPC status code as defined in
+   *     - `status_code`: an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-   * * The operator must be `=` or `!=`.
+   *     - `profile_last_generated`: Date and time the profile was last
+   *       generated
+   *
+   * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+   *   also supports `&lt;` and `&gt;`.
+   *
+   * The syntax is based on https://google.aip.dev/160.
    *
    * Examples:
    *
@@ -390,6 +403,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
    * * `project_id = 12345 AND sensitivity_level = HIGH`
    * * `project_id = 12345 AND resource_visibility = PUBLIC`
    * * `file_store_path = "gs://mybucket"`
+   * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
    *
    * The length of this field should be no more than 500 characters.
    * </pre>
@@ -1381,20 +1395,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values:
-     *     - `project_id` - The Google Cloud project ID.
-     *     - `account_id` - The AWS account ID.
-     *     - `file_store_path` - The path like "gs://bucket".
-     *     - `data_source_type` - The profile's data source type, like
-     *     "google/storage/bucket".
-     *     - `data_storage_location` - The location where the file store's data is
-     *     stored, like "us-central1".
-     *     - `sensitivity_level` - HIGH|MODERATE|LOW
-     *     - `data_risk_level` - HIGH|MODERATE|LOW
+     * * Supported fields:
+     *     - `project_id`: The Google Cloud project ID
+     *     - `account_id`: The AWS account ID
+     *     - `file_store_path`: The path like "gs://bucket"
+     *     - `data_source_type`: The profile's data source type, like
+     *     "google/storage/bucket"
+     *     - `data_storage_location`: The location where the file store's data is
+     *     stored, like "us-central1"
+     *     - `sensitivity_level`: HIGH|MODERATE|LOW
+     *     - `data_risk_level`: HIGH|MODERATE|LOW
      *     - `resource_visibility`: PUBLIC|RESTRICTED
-     *     - `status_code` - an RPC status code as defined in
+     *     - `status_code`: an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-     * * The operator must be `=` or `!=`.
+     *     - `profile_last_generated`: Date and time the profile was last
+     *       generated
+     *
+     * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+     *   also supports `&lt;` and `&gt;`.
+     *
+     * The syntax is based on https://google.aip.dev/160.
      *
      * Examples:
      *
@@ -1402,6 +1422,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * `project_id = 12345 AND sensitivity_level = HIGH`
      * * `project_id = 12345 AND resource_visibility = PUBLIC`
      * * `file_store_path = "gs://mybucket"`
+     * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
      *
      * The length of this field should be no more than 500 characters.
      * </pre>
@@ -1434,20 +1455,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values:
-     *     - `project_id` - The Google Cloud project ID.
-     *     - `account_id` - The AWS account ID.
-     *     - `file_store_path` - The path like "gs://bucket".
-     *     - `data_source_type` - The profile's data source type, like
-     *     "google/storage/bucket".
-     *     - `data_storage_location` - The location where the file store's data is
-     *     stored, like "us-central1".
-     *     - `sensitivity_level` - HIGH|MODERATE|LOW
-     *     - `data_risk_level` - HIGH|MODERATE|LOW
+     * * Supported fields:
+     *     - `project_id`: The Google Cloud project ID
+     *     - `account_id`: The AWS account ID
+     *     - `file_store_path`: The path like "gs://bucket"
+     *     - `data_source_type`: The profile's data source type, like
+     *     "google/storage/bucket"
+     *     - `data_storage_location`: The location where the file store's data is
+     *     stored, like "us-central1"
+     *     - `sensitivity_level`: HIGH|MODERATE|LOW
+     *     - `data_risk_level`: HIGH|MODERATE|LOW
      *     - `resource_visibility`: PUBLIC|RESTRICTED
-     *     - `status_code` - an RPC status code as defined in
+     *     - `status_code`: an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-     * * The operator must be `=` or `!=`.
+     *     - `profile_last_generated`: Date and time the profile was last
+     *       generated
+     *
+     * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+     *   also supports `&lt;` and `&gt;`.
+     *
+     * The syntax is based on https://google.aip.dev/160.
      *
      * Examples:
      *
@@ -1455,6 +1482,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * `project_id = 12345 AND sensitivity_level = HIGH`
      * * `project_id = 12345 AND resource_visibility = PUBLIC`
      * * `file_store_path = "gs://mybucket"`
+     * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
      *
      * The length of this field should be no more than 500 characters.
      * </pre>
@@ -1487,20 +1515,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values:
-     *     - `project_id` - The Google Cloud project ID.
-     *     - `account_id` - The AWS account ID.
-     *     - `file_store_path` - The path like "gs://bucket".
-     *     - `data_source_type` - The profile's data source type, like
-     *     "google/storage/bucket".
-     *     - `data_storage_location` - The location where the file store's data is
-     *     stored, like "us-central1".
-     *     - `sensitivity_level` - HIGH|MODERATE|LOW
-     *     - `data_risk_level` - HIGH|MODERATE|LOW
+     * * Supported fields:
+     *     - `project_id`: The Google Cloud project ID
+     *     - `account_id`: The AWS account ID
+     *     - `file_store_path`: The path like "gs://bucket"
+     *     - `data_source_type`: The profile's data source type, like
+     *     "google/storage/bucket"
+     *     - `data_storage_location`: The location where the file store's data is
+     *     stored, like "us-central1"
+     *     - `sensitivity_level`: HIGH|MODERATE|LOW
+     *     - `data_risk_level`: HIGH|MODERATE|LOW
      *     - `resource_visibility`: PUBLIC|RESTRICTED
-     *     - `status_code` - an RPC status code as defined in
+     *     - `status_code`: an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-     * * The operator must be `=` or `!=`.
+     *     - `profile_last_generated`: Date and time the profile was last
+     *       generated
+     *
+     * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+     *   also supports `&lt;` and `&gt;`.
+     *
+     * The syntax is based on https://google.aip.dev/160.
      *
      * Examples:
      *
@@ -1508,6 +1542,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * `project_id = 12345 AND sensitivity_level = HIGH`
      * * `project_id = 12345 AND resource_visibility = PUBLIC`
      * * `file_store_path = "gs://mybucket"`
+     * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
      *
      * The length of this field should be no more than 500 characters.
      * </pre>
@@ -1539,20 +1574,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values:
-     *     - `project_id` - The Google Cloud project ID.
-     *     - `account_id` - The AWS account ID.
-     *     - `file_store_path` - The path like "gs://bucket".
-     *     - `data_source_type` - The profile's data source type, like
-     *     "google/storage/bucket".
-     *     - `data_storage_location` - The location where the file store's data is
-     *     stored, like "us-central1".
-     *     - `sensitivity_level` - HIGH|MODERATE|LOW
-     *     - `data_risk_level` - HIGH|MODERATE|LOW
+     * * Supported fields:
+     *     - `project_id`: The Google Cloud project ID
+     *     - `account_id`: The AWS account ID
+     *     - `file_store_path`: The path like "gs://bucket"
+     *     - `data_source_type`: The profile's data source type, like
+     *     "google/storage/bucket"
+     *     - `data_storage_location`: The location where the file store's data is
+     *     stored, like "us-central1"
+     *     - `sensitivity_level`: HIGH|MODERATE|LOW
+     *     - `data_risk_level`: HIGH|MODERATE|LOW
      *     - `resource_visibility`: PUBLIC|RESTRICTED
-     *     - `status_code` - an RPC status code as defined in
+     *     - `status_code`: an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-     * * The operator must be `=` or `!=`.
+     *     - `profile_last_generated`: Date and time the profile was last
+     *       generated
+     *
+     * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+     *   also supports `&lt;` and `&gt;`.
+     *
+     * The syntax is based on https://google.aip.dev/160.
      *
      * Examples:
      *
@@ -1560,6 +1601,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * `project_id = 12345 AND sensitivity_level = HIGH`
      * * `project_id = 12345 AND resource_visibility = PUBLIC`
      * * `file_store_path = "gs://mybucket"`
+     * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
      *
      * The length of this field should be no more than 500 characters.
      * </pre>
@@ -1587,20 +1629,26 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * Restrictions can be combined by `AND` or `OR` logical operators. A
      * sequence of restrictions implicitly uses `AND`.
      * * A restriction has the form of `{field} {operator} {value}`.
-     * * Supported fields/values:
-     *     - `project_id` - The Google Cloud project ID.
-     *     - `account_id` - The AWS account ID.
-     *     - `file_store_path` - The path like "gs://bucket".
-     *     - `data_source_type` - The profile's data source type, like
-     *     "google/storage/bucket".
-     *     - `data_storage_location` - The location where the file store's data is
-     *     stored, like "us-central1".
-     *     - `sensitivity_level` - HIGH|MODERATE|LOW
-     *     - `data_risk_level` - HIGH|MODERATE|LOW
+     * * Supported fields:
+     *     - `project_id`: The Google Cloud project ID
+     *     - `account_id`: The AWS account ID
+     *     - `file_store_path`: The path like "gs://bucket"
+     *     - `data_source_type`: The profile's data source type, like
+     *     "google/storage/bucket"
+     *     - `data_storage_location`: The location where the file store's data is
+     *     stored, like "us-central1"
+     *     - `sensitivity_level`: HIGH|MODERATE|LOW
+     *     - `data_risk_level`: HIGH|MODERATE|LOW
      *     - `resource_visibility`: PUBLIC|RESTRICTED
-     *     - `status_code` - an RPC status code as defined in
+     *     - `status_code`: an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
-     * * The operator must be `=` or `!=`.
+     *     - `profile_last_generated`: Date and time the profile was last
+     *       generated
+     *
+     * * The operator must be `=` or `!=`. The `profile_last_generated` filter
+     *   also supports `&lt;` and `&gt;`.
+     *
+     * The syntax is based on https://google.aip.dev/160.
      *
      * Examples:
      *
@@ -1608,6 +1656,7 @@ public final class ListFileStoreDataProfilesRequest extends com.google.protobuf.
      * * `project_id = 12345 AND sensitivity_level = HIGH`
      * * `project_id = 12345 AND resource_visibility = PUBLIC`
      * * `file_store_path = "gs://mybucket"`
+     * * `profile_last_generated &lt; "2025-01-01T00:00:00.000Z"`
      *
      * The length of this field should be no more than 500 characters.
      * </pre>

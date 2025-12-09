@@ -92,8 +92,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -121,8 +120,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -150,8 +148,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -180,8 +177,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * persistent storage on your nodes.
    * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
    * communicating with **gcr.io**
-   * (the [Google Container
-   * Registry](https://cloud.google.com/container-registry/)).
+   * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
    *
    * If unspecified, no scopes are added, unless Cloud Logging or Cloud
    * Monitoring are enabled, in which case their required scopes will be added.
@@ -385,7 +381,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
    * @return The minCpuPlatform.
    */
   @java.lang.Override
@@ -422,7 +418,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
    * <code>string min_cpu_platform = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+   *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
    * @return The bytes for minCpuPlatform.
    */
   @java.lang.Override
@@ -1408,8 +1404,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1438,8 +1433,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1467,8 +1461,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1497,8 +1490,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1527,8 +1519,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1565,8 +1556,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1602,8 +1592,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1636,8 +1625,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -1669,8 +1657,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * persistent storage on your nodes.
      * * `https://www.googleapis.com/auth/devstorage.read_only` is required for
      * communicating with **gcr.io**
-     * (the [Google Container
-     * Registry](https://cloud.google.com/container-registry/)).
+     * (the [Artifact Registry](https://cloud.google.com/artifact-registry/)).
      *
      * If unspecified, no scopes are added, unless Cloud Logging or Cloud
      * Monitoring are enabled, in which case their required scopes will be added.
@@ -2230,7 +2217,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
      * @return The minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2266,7 +2253,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
      * @return The bytes for minCpuPlatform.
      */
     @java.lang.Deprecated
@@ -2302,7 +2289,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
      * @param value The minCpuPlatform to set.
      * @return This builder for chaining.
      */
@@ -2337,7 +2324,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2368,7 +2355,7 @@ public final class AutoprovisioningNodePoolDefaults extends com.google.protobuf.
      * <code>string min_cpu_platform = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AutoprovisioningNodePoolDefaults.min_cpu_platform is
-     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5448
+     *     deprecated. See google/container/v1beta1/cluster_service.proto;l=5635
      * @param value The bytes for minCpuPlatform to set.
      * @return This builder for chaining.
      */

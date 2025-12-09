@@ -612,10 +612,10 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelayDuration(Duration.ofMillis(10000L))
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(60000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(60000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(60000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

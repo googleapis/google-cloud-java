@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Unified Maintenance service
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/maintenance/api/v1beta/maintenance_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MaintenanceGrpc {
 
@@ -411,8 +408,9 @@ public final class MaintenanceGrpc {
      */
     public com.google.cloud.maintenance.api.v1beta.SummarizeMaintenancesResponse
         summarizeMaintenances(
-            com.google.cloud.maintenance.api.v1beta.SummarizeMaintenancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.maintenance.api.v1beta.SummarizeMaintenancesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSummarizeMaintenancesMethod(), getCallOptions(), request);
     }
 
@@ -425,8 +423,9 @@ public final class MaintenanceGrpc {
      */
     public com.google.cloud.maintenance.api.v1beta.ListResourceMaintenancesResponse
         listResourceMaintenances(
-            com.google.cloud.maintenance.api.v1beta.ListResourceMaintenancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.maintenance.api.v1beta.ListResourceMaintenancesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceMaintenancesMethod(), getCallOptions(), request);
     }
 
@@ -438,8 +437,9 @@ public final class MaintenanceGrpc {
      * </pre>
      */
     public com.google.cloud.maintenance.api.v1beta.ResourceMaintenance getResourceMaintenance(
-        com.google.cloud.maintenance.api.v1beta.GetResourceMaintenanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.maintenance.api.v1beta.GetResourceMaintenanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceMaintenanceMethod(), getCallOptions(), request);
     }
   }

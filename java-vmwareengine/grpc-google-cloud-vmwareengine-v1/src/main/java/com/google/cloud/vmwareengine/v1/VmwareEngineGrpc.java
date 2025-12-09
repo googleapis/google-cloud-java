@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * VMwareEngine manages VMware's private clusters in the Cloud.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vmwareengine/v1/vmwareengine.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class VmwareEngineGrpc {
 
@@ -6241,8 +6238,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListPrivateCloudsResponse listPrivateClouds(
-        com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListPrivateCloudsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrivateCloudsMethod(), getCallOptions(), request);
     }
 
@@ -6254,8 +6252,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.PrivateCloud getPrivateCloud(
-        com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetPrivateCloudRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPrivateCloudMethod(), getCallOptions(), request);
     }
 
@@ -6273,8 +6272,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPrivateCloud(
-        com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreatePrivateCloudRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePrivateCloudMethod(), getCallOptions(), request);
     }
 
@@ -6292,8 +6292,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePrivateCloud(
-        com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdatePrivateCloudRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePrivateCloudMethod(), getCallOptions(), request);
     }
 
@@ -6318,8 +6319,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePrivateCloud(
-        com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeletePrivateCloudRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePrivateCloudMethod(), getCallOptions(), request);
     }
 
@@ -6334,8 +6336,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeletePrivateCloud(
-        com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UndeletePrivateCloudRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeletePrivateCloudMethod(), getCallOptions(), request);
     }
 
@@ -6347,8 +6350,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListClustersResponse listClusters(
-        com.google.cloud.vmwareengine.v1.ListClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClustersMethod(), getCallOptions(), request);
     }
 
@@ -6360,8 +6364,8 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.Cluster getCluster(
-        com.google.cloud.vmwareengine.v1.GetClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetClusterRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClusterMethod(), getCallOptions(), request);
     }
 
@@ -6376,8 +6380,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(
-        com.google.cloud.vmwareengine.v1.CreateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClusterMethod(), getCallOptions(), request);
     }
 
@@ -6394,8 +6399,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(
-        com.google.cloud.vmwareengine.v1.UpdateClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
     }
 
@@ -6410,8 +6416,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(
-        com.google.cloud.vmwareengine.v1.DeleteClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
     }
 
@@ -6423,8 +6430,8 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListNodesResponse listNodes(
-        com.google.cloud.vmwareengine.v1.ListNodesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListNodesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNodesMethod(), getCallOptions(), request);
     }
 
@@ -6436,8 +6443,8 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.Node getNode(
-        com.google.cloud.vmwareengine.v1.GetNodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetNodeRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodeMethod(), getCallOptions(), request);
     }
 
@@ -6450,8 +6457,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListExternalAddressesResponse listExternalAddresses(
-        com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListExternalAddressesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExternalAddressesMethod(), getCallOptions(), request);
     }
 
@@ -6465,8 +6473,9 @@ public final class VmwareEngineGrpc {
      */
     public com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesResponse
         fetchNetworkPolicyExternalAddresses(
-            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vmwareengine.v1.FetchNetworkPolicyExternalAddressesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchNetworkPolicyExternalAddressesMethod(), getCallOptions(), request);
     }
 
@@ -6478,8 +6487,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ExternalAddress getExternalAddress(
-        com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetExternalAddressRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExternalAddressMethod(), getCallOptions(), request);
     }
 
@@ -6493,8 +6503,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createExternalAddress(
-        com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateExternalAddressRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExternalAddressMethod(), getCallOptions(), request);
     }
 
@@ -6511,8 +6522,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateExternalAddress(
-        com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAddressRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExternalAddressMethod(), getCallOptions(), request);
     }
 
@@ -6526,8 +6538,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExternalAddress(
-        com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAddressRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExternalAddressMethod(), getCallOptions(), request);
     }
 
@@ -6539,8 +6552,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListSubnetsResponse listSubnets(
-        com.google.cloud.vmwareengine.v1.ListSubnetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListSubnetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSubnetsMethod(), getCallOptions(), request);
     }
 
@@ -6552,8 +6566,8 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.Subnet getSubnet(
-        com.google.cloud.vmwareengine.v1.GetSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetSubnetRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSubnetMethod(), getCallOptions(), request);
     }
 
@@ -6569,8 +6583,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSubnet(
-        com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateSubnetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSubnetMethod(), getCallOptions(), request);
     }
 
@@ -6582,8 +6597,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListExternalAccessRulesResponse listExternalAccessRules(
-        com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListExternalAccessRulesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExternalAccessRulesMethod(), getCallOptions(), request);
     }
 
@@ -6595,8 +6611,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ExternalAccessRule getExternalAccessRule(
-        com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetExternalAccessRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExternalAccessRuleMethod(), getCallOptions(), request);
     }
 
@@ -6608,8 +6625,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createExternalAccessRule(
-        com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateExternalAccessRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExternalAccessRuleMethod(), getCallOptions(), request);
     }
 
@@ -6622,8 +6640,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateExternalAccessRule(
-        com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateExternalAccessRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExternalAccessRuleMethod(), getCallOptions(), request);
     }
 
@@ -6635,8 +6654,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExternalAccessRule(
-        com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteExternalAccessRuleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExternalAccessRuleMethod(), getCallOptions(), request);
     }
 
@@ -6649,8 +6669,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListLoggingServersResponse listLoggingServers(
-        com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListLoggingServersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListLoggingServersMethod(), getCallOptions(), request);
     }
 
@@ -6662,8 +6683,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.LoggingServer getLoggingServer(
-        com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetLoggingServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetLoggingServerMethod(), getCallOptions(), request);
     }
 
@@ -6675,8 +6697,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createLoggingServer(
-        com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateLoggingServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateLoggingServerMethod(), getCallOptions(), request);
     }
 
@@ -6689,8 +6712,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateLoggingServer(
-        com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateLoggingServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateLoggingServerMethod(), getCallOptions(), request);
     }
 
@@ -6702,8 +6726,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteLoggingServer(
-        com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteLoggingServerRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteLoggingServerMethod(), getCallOptions(), request);
     }
 
@@ -6715,8 +6740,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListNodeTypesResponse listNodeTypes(
-        com.google.cloud.vmwareengine.v1.ListNodeTypesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListNodeTypesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNodeTypesMethod(), getCallOptions(), request);
     }
 
@@ -6728,8 +6754,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.NodeType getNodeType(
-        com.google.cloud.vmwareengine.v1.GetNodeTypeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetNodeTypeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNodeTypeMethod(), getCallOptions(), request);
     }
 
@@ -6741,8 +6768,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.Credentials showNsxCredentials(
-        com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ShowNsxCredentialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getShowNsxCredentialsMethod(), getCallOptions(), request);
     }
 
@@ -6754,8 +6782,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.Credentials showVcenterCredentials(
-        com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ShowVcenterCredentialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getShowVcenterCredentialsMethod(), getCallOptions(), request);
     }
 
@@ -6767,8 +6796,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resetNsxCredentials(
-        com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ResetNsxCredentialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetNsxCredentialsMethod(), getCallOptions(), request);
     }
 
@@ -6780,8 +6810,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation resetVcenterCredentials(
-        com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ResetVcenterCredentialsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResetVcenterCredentialsMethod(), getCallOptions(), request);
     }
 
@@ -6793,8 +6824,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.DnsForwarding getDnsForwarding(
-        com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetDnsForwardingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDnsForwardingMethod(), getCallOptions(), request);
     }
 
@@ -6807,8 +6839,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDnsForwarding(
-        com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateDnsForwardingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDnsForwardingMethod(), getCallOptions(), request);
     }
 
@@ -6823,8 +6856,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.NetworkPeering getNetworkPeering(
-        com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetNetworkPeeringRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNetworkPeeringMethod(), getCallOptions(), request);
     }
 
@@ -6837,8 +6871,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListNetworkPeeringsResponse listNetworkPeerings(
-        com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListNetworkPeeringsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNetworkPeeringsMethod(), getCallOptions(), request);
     }
 
@@ -6852,8 +6887,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNetworkPeering(
-        com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateNetworkPeeringRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNetworkPeeringMethod(), getCallOptions(), request);
     }
 
@@ -6868,8 +6904,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNetworkPeering(
-        com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteNetworkPeeringRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNetworkPeeringMethod(), getCallOptions(), request);
     }
 
@@ -6883,8 +6920,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateNetworkPeering(
-        com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateNetworkPeeringRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNetworkPeeringMethod(), getCallOptions(), request);
     }
 
@@ -6897,8 +6935,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListPeeringRoutesResponse listPeeringRoutes(
-        com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListPeeringRoutesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPeeringRoutesMethod(), getCallOptions(), request);
     }
 
@@ -6910,8 +6949,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createHcxActivationKey(
-        com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateHcxActivationKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHcxActivationKeyMethod(), getCallOptions(), request);
     }
 
@@ -6923,8 +6963,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListHcxActivationKeysResponse listHcxActivationKeys(
-        com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListHcxActivationKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHcxActivationKeysMethod(), getCallOptions(), request);
     }
 
@@ -6936,8 +6977,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.HcxActivationKey getHcxActivationKey(
-        com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetHcxActivationKeyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHcxActivationKeyMethod(), getCallOptions(), request);
     }
 
@@ -6949,8 +6991,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.NetworkPolicy getNetworkPolicy(
-        com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetNetworkPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -6962,8 +7005,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListNetworkPoliciesResponse listNetworkPolicies(
-        com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListNetworkPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNetworkPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -6977,8 +7021,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createNetworkPolicy(
-        com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateNetworkPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -7000,8 +7045,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateNetworkPolicy(
-        com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateNetworkPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -7015,8 +7061,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteNetworkPolicy(
-        com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteNetworkPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNetworkPolicyMethod(), getCallOptions(), request);
     }
 
@@ -7029,8 +7076,9 @@ public final class VmwareEngineGrpc {
      */
     public com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsResponse
         listManagementDnsZoneBindings(
-            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vmwareengine.v1.ListManagementDnsZoneBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListManagementDnsZoneBindingsMethod(), getCallOptions(), request);
     }
 
@@ -7042,8 +7090,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ManagementDnsZoneBinding getManagementDnsZoneBinding(
-        com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetManagementDnsZoneBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
@@ -7061,8 +7110,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createManagementDnsZoneBinding(
-        com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateManagementDnsZoneBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
@@ -7075,8 +7125,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateManagementDnsZoneBinding(
-        com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateManagementDnsZoneBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
@@ -7090,8 +7141,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteManagementDnsZoneBinding(
-        com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteManagementDnsZoneBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
@@ -7104,8 +7156,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation repairManagementDnsZoneBinding(
-        com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.RepairManagementDnsZoneBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRepairManagementDnsZoneBindingMethod(), getCallOptions(), request);
     }
 
@@ -7117,8 +7170,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createVmwareEngineNetwork(
-        com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreateVmwareEngineNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateVmwareEngineNetworkMethod(), getCallOptions(), request);
     }
 
@@ -7132,8 +7186,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateVmwareEngineNetwork(
-        com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdateVmwareEngineNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateVmwareEngineNetworkMethod(), getCallOptions(), request);
     }
 
@@ -7148,8 +7203,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteVmwareEngineNetwork(
-        com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeleteVmwareEngineNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteVmwareEngineNetworkMethod(), getCallOptions(), request);
     }
 
@@ -7164,8 +7220,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.VmwareEngineNetwork getVmwareEngineNetwork(
-        com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetVmwareEngineNetworkRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetVmwareEngineNetworkMethod(), getCallOptions(), request);
     }
 
@@ -7178,8 +7235,9 @@ public final class VmwareEngineGrpc {
      */
     public com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksResponse
         listVmwareEngineNetworks(
-            com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vmwareengine.v1.ListVmwareEngineNetworksRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVmwareEngineNetworksMethod(), getCallOptions(), request);
     }
 
@@ -7192,8 +7250,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPrivateConnection(
-        com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.CreatePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -7207,8 +7266,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.PrivateConnection getPrivateConnection(
-        com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetPrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -7220,8 +7280,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.ListPrivateConnectionsResponse listPrivateConnections(
-        com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.ListPrivateConnectionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrivateConnectionsMethod(), getCallOptions(), request);
     }
 
@@ -7235,8 +7296,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePrivateConnection(
-        com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.UpdatePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -7250,8 +7312,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePrivateConnection(
-        com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.DeletePrivateConnectionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePrivateConnectionMethod(), getCallOptions(), request);
     }
 
@@ -7264,8 +7327,9 @@ public final class VmwareEngineGrpc {
      */
     public com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesResponse
         listPrivateConnectionPeeringRoutes(
-            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.vmwareengine.v1.ListPrivateConnectionPeeringRoutesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPrivateConnectionPeeringRoutesMethod(), getCallOptions(), request);
     }
 
@@ -7280,8 +7344,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation grantDnsBindPermission(
-        com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GrantDnsBindPermissionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGrantDnsBindPermissionMethod(), getCallOptions(), request);
     }
 
@@ -7295,8 +7360,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.cloud.vmwareengine.v1.DnsBindPermission getDnsBindPermission(
-        com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.GetDnsBindPermissionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDnsBindPermissionMethod(), getCallOptions(), request);
     }
 
@@ -7310,8 +7376,9 @@ public final class VmwareEngineGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation revokeDnsBindPermission(
-        com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vmwareengine.v1.RevokeDnsBindPermissionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRevokeDnsBindPermissionMethod(), getCallOptions(), request);
     }
   }

@@ -181,4 +181,34 @@ public interface GroupOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The target type of this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for migrationTargetType.
+   */
+  int getMigrationTargetTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The target type of this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The migrationTargetType.
+   */
+  com.google.cloud.vmmigration.v1.Group.MigrationTargetType getMigrationTargetType();
 }

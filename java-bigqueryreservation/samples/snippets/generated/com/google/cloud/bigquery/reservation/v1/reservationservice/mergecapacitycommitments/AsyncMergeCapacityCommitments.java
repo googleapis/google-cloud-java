@@ -41,6 +41,7 @@ public class AsyncMergeCapacityCommitments {
           MergeCapacityCommitmentsRequest.newBuilder()
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .addAllCapacityCommitmentIds(new ArrayList<String>())
+              .setCapacityCommitmentId("capacityCommitmentId1185645802")
               .build();
       ApiFuture<CapacityCommitment> future =
           reservationServiceClient.mergeCapacityCommitmentsCallable().futureCall(request);

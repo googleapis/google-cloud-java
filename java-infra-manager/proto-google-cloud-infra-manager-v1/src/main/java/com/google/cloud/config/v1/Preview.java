@@ -2151,6 +2151,65 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int PROVIDER_CONFIG_FIELD_NUMBER = 21;
+  private com.google.cloud.config.v1.ProviderConfig providerConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the providerConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasProviderConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The providerConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.ProviderConfig getProviderConfig() {
+    return providerConfig_ == null
+        ? com.google.cloud.config.v1.ProviderConfig.getDefaultInstance()
+        : providerConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder() {
+    return providerConfig_ == null
+        ? com.google.cloud.config.v1.ProviderConfig.getDefaultInstance()
+        : providerConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2225,6 +2284,9 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 20);
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(21, getProviderConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2312,6 +2374,9 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, annotations__);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getProviderConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2364,6 +2429,10 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
       if (!getTfVersionConstraint().equals(other.getTfVersionConstraint())) return false;
     }
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (hasProviderConfig() != other.hasProviderConfig()) return false;
+    if (hasProviderConfig()) {
+      if (!getProviderConfig().equals(other.getProviderConfig())) return false;
+    }
     if (!getBlueprintCase().equals(other.getBlueprintCase())) return false;
     switch (blueprintCase_) {
       case 6:
@@ -2438,6 +2507,10 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAnnotations().getMap().isEmpty()) {
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
+    }
+    if (hasProviderConfig()) {
+      hash = (37 * hash) + PROVIDER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getProviderConfig().hashCode();
     }
     switch (blueprintCase_) {
       case 6:
@@ -2619,6 +2692,7 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
         getErrorStatusFieldBuilder();
         getTfErrorsFieldBuilder();
         getPreviewArtifactsFieldBuilder();
+        getProviderConfigFieldBuilder();
       }
     }
 
@@ -2666,6 +2740,11 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
       tfVersion_ = "";
       tfVersionConstraint_ = "";
       internalGetMutableAnnotations().clear();
+      providerConfig_ = null;
+      if (providerConfigBuilder_ != null) {
+        providerConfigBuilder_.dispose();
+        providerConfigBuilder_ = null;
+      }
       blueprintCase_ = 0;
       blueprint_ = null;
       return this;
@@ -2781,6 +2860,11 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.providerConfig_ =
+            providerConfigBuilder_ == null ? providerConfig_ : providerConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2937,6 +3021,9 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00080000;
+      if (other.hasProviderConfig()) {
+        mergeProviderConfig(other.getProviderConfig());
+      }
       switch (other.getBlueprintCase()) {
         case TERRAFORM_BLUEPRINT:
           {
@@ -3115,6 +3202,12 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00080000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(getProviderConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6434,6 +6527,219 @@ public final class Preview extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableAnnotations().getMutableMap().putAll(values);
       bitField0_ |= 0x00080000;
       return this;
+    }
+
+    private com.google.cloud.config.v1.ProviderConfig providerConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.config.v1.ProviderConfig,
+            com.google.cloud.config.v1.ProviderConfig.Builder,
+            com.google.cloud.config.v1.ProviderConfigOrBuilder>
+        providerConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the providerConfig field is set.
+     */
+    public boolean hasProviderConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The providerConfig.
+     */
+    public com.google.cloud.config.v1.ProviderConfig getProviderConfig() {
+      if (providerConfigBuilder_ == null) {
+        return providerConfig_ == null
+            ? com.google.cloud.config.v1.ProviderConfig.getDefaultInstance()
+            : providerConfig_;
+      } else {
+        return providerConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProviderConfig(com.google.cloud.config.v1.ProviderConfig value) {
+      if (providerConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        providerConfig_ = value;
+      } else {
+        providerConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setProviderConfig(
+        com.google.cloud.config.v1.ProviderConfig.Builder builderForValue) {
+      if (providerConfigBuilder_ == null) {
+        providerConfig_ = builderForValue.build();
+      } else {
+        providerConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeProviderConfig(com.google.cloud.config.v1.ProviderConfig value) {
+      if (providerConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && providerConfig_ != null
+            && providerConfig_ != com.google.cloud.config.v1.ProviderConfig.getDefaultInstance()) {
+          getProviderConfigBuilder().mergeFrom(value);
+        } else {
+          providerConfig_ = value;
+        }
+      } else {
+        providerConfigBuilder_.mergeFrom(value);
+      }
+      if (providerConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearProviderConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      providerConfig_ = null;
+      if (providerConfigBuilder_ != null) {
+        providerConfigBuilder_.dispose();
+        providerConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.config.v1.ProviderConfig.Builder getProviderConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getProviderConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder() {
+      if (providerConfigBuilder_ != null) {
+        return providerConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return providerConfig_ == null
+            ? com.google.cloud.config.v1.ProviderConfig.getDefaultInstance()
+            : providerConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field specifies the provider configurations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.config.v1.ProviderConfig,
+            com.google.cloud.config.v1.ProviderConfig.Builder,
+            com.google.cloud.config.v1.ProviderConfigOrBuilder>
+        getProviderConfigFieldBuilder() {
+      if (providerConfigBuilder_ == null) {
+        providerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.config.v1.ProviderConfig,
+                com.google.cloud.config.v1.ProviderConfig.Builder,
+                com.google.cloud.config.v1.ProviderConfigOrBuilder>(
+                getProviderConfig(), getParentForChildren(), isClean());
+        providerConfig_ = null;
+      }
+      return providerConfigBuilder_;
     }
 
     @java.lang.Override

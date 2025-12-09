@@ -130,6 +130,60 @@ public class ReservationSubBlocksClientTest {
   }
 
   @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag("etag3123477")
+            .setIamOwned(true)
+            .setVersion(351608024)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String parentResource = "parentResource-6766";
+    String resource = "resource-756";
+
+    Policy actualResponse = client.getIamPolicy(project, zone, parentResource, resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String parentResource = "parentResource-6766";
+      String resource = "resource-756";
+      client.getIamPolicy(project, zone, parentResource, resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listTest() throws Exception {
     ReservationSubBlock responsesElement = ReservationSubBlock.newBuilder().build();
     ReservationSubBlocksListResponse expectedResponse =
@@ -257,6 +311,217 @@ public class ReservationSubBlocksClientTest {
       client.performMaintenanceAsync(project, zone, parentName, reservationSubBlock).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void reportFaultyTest() throws Exception {
+    Operation expectedResponse =
+        Operation.newBuilder()
+            .setClientOperationId("clientOperationId-1230366697")
+            .setCreationTimestamp("creationTimestamp-370203401")
+            .setDescription("description-1724546052")
+            .setEndTime("endTime-1607243192")
+            .setError(Error.newBuilder().build())
+            .setHttpErrorMessage("httpErrorMessage1577303431")
+            .setHttpErrorStatusCode(0)
+            .setId(3355)
+            .setInsertTime("insertTime966165798")
+            .setInstancesBulkInsertOperationMetadata(
+                InstancesBulkInsertOperationMetadata.newBuilder().build())
+            .setKind("kind3292052")
+            .setName("name3373707")
+            .setOperationGroupId("operationGroupId1716161683")
+            .setOperationType("operationType91999553")
+            .setProgress(-1001078227)
+            .setRegion("region-934795532")
+            .setSelfLink("selfLink1191800166")
+            .setSetCommonInstanceMetadataOperationMetadata(
+                SetCommonInstanceMetadataOperationMetadata.newBuilder().build())
+            .setStartTime("startTime-2129294769")
+            .setStatus(Status.DONE)
+            .setStatusMessage("statusMessage-958704715")
+            .setTargetId(-815576439)
+            .setTargetLink("targetLink486368555")
+            .setUser("user3599307")
+            .addAllWarnings(new ArrayList<Warnings>())
+            .setZone("zone3744684")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String parentName = "parentName-6933";
+    String reservationSubBlock = "reservationSubBlock-8367";
+    ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource =
+        ReservationSubBlocksReportFaultyRequest.newBuilder().build();
+
+    Operation actualResponse =
+        client
+            .reportFaultyAsync(
+                project,
+                zone,
+                parentName,
+                reservationSubBlock,
+                reservationSubBlocksReportFaultyRequestResource)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void reportFaultyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String parentName = "parentName-6933";
+      String reservationSubBlock = "reservationSubBlock-8367";
+      ReservationSubBlocksReportFaultyRequest reservationSubBlocksReportFaultyRequestResource =
+          ReservationSubBlocksReportFaultyRequest.newBuilder().build();
+      client
+          .reportFaultyAsync(
+              project,
+              zone,
+              parentName,
+              reservationSubBlock,
+              reservationSubBlocksReportFaultyRequestResource)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .addAllBindings(new ArrayList<Binding>())
+            .setEtag("etag3123477")
+            .setIamOwned(true)
+            .setVersion(351608024)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String parentResource = "parentResource-6766";
+    String resource = "resource-756";
+    ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource =
+        ZoneSetNestedPolicyRequest.newBuilder().build();
+
+    Policy actualResponse =
+        client.setIamPolicy(
+            project, zone, parentResource, resource, zoneSetNestedPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String parentResource = "parentResource-6766";
+      String resource = "resource-756";
+      ZoneSetNestedPolicyRequest zoneSetNestedPolicyRequestResource =
+          ZoneSetNestedPolicyRequest.newBuilder().build();
+      client.setIamPolicy(
+          project, zone, parentResource, resource, zoneSetNestedPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void testIamPermissionsTest() throws Exception {
+    TestPermissionsResponse expectedResponse =
+        TestPermissionsResponse.newBuilder().addAllPermissions(new ArrayList<String>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+    String zone = "zone-5246";
+    String parentResource = "parentResource-6766";
+    String resource = "resource-756";
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissions(
+            project, zone, parentResource, resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void testIamPermissionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      String zone = "zone-5246";
+      String parentResource = "parentResource-6766";
+      String resource = "resource-756";
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+      client.testIamPermissions(
+          project, zone, parentResource, resource, testPermissionsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

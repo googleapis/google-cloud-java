@@ -84,6 +84,50 @@ public interface EvaluateDatasetRunOrBuilder
    *
    *
    * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the evaluateDatasetResponse field is set.
+   */
+  boolean hasEvaluateDatasetResponse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The evaluateDatasetResponse.
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse getEvaluateDatasetResponse();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder
+      getEvaluateDatasetResponseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The error of the evaluation run if any.
    * </pre>
    *

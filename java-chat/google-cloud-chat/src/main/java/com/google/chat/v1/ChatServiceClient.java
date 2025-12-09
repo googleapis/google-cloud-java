@@ -2232,6 +2232,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>- `cards_v2` (Requires [app authentication](/chat/api/guides/auth/service-accounts).)
    *     <p>- `accessory_widgets` (Requires [app
    *     authentication](/chat/api/guides/auth/service-accounts).)
+   *     <p>- `quoted_message_metadata` (Only allows removal of the quoted message.)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Message updateMessage(Message message, FieldMask updateMask) {

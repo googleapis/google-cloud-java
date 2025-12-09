@@ -80,7 +80,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -96,7 +97,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -120,7 +122,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -272,7 +275,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -288,7 +292,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -309,7 +314,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -325,7 +330,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -349,7 +354,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -491,6 +496,62 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROFILE_TYPE_FIELD_NUMBER = 150167568;
+  private com.google.cloud.compute.v1.NetworkProfileProfileType profileType_;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   *
+   * @return Whether the profileType field is set.
+   */
+  @java.lang.Override
+  public boolean hasProfileType() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   *
+   * @return The profileType.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkProfileProfileType getProfileType() {
+    return profileType_ == null
+        ? com.google.cloud.compute.v1.NetworkProfileProfileType.getDefaultInstance()
+        : profileType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder getProfileTypeOrBuilder() {
+    return profileType_ == null
+        ? com.google.cloud.compute.v1.NetworkProfileProfileType.getDefaultInstance()
+        : profileType_;
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
 
   @SuppressWarnings("serial")
@@ -509,7 +570,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -578,7 +639,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -641,7 +702,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -703,14 +764,17 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(150167568, getProfileType());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(246211645, getFeatures());
@@ -721,7 +785,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     getUnknownFields().writeTo(output);
@@ -742,15 +806,18 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(150167568, getProfileType());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(246211645, getFeatures());
@@ -761,7 +828,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -807,6 +874,10 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasProfileType() != other.hasProfileType()) return false;
+    if (hasProfileType()) {
+      if (!getProfileType().equals(other.getProfileType())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -858,6 +929,10 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasProfileType()) {
+      hash = (37 * hash) + PROFILE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getProfileType().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1014,6 +1089,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFeaturesFieldBuilder();
         getLocationFieldBuilder();
+        getProfileTypeFieldBuilder();
       }
     }
 
@@ -1036,6 +1112,11 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         locationBuilder_ = null;
       }
       name_ = "";
+      profileType_ = null;
+      if (profileTypeBuilder_ != null) {
+        profileTypeBuilder_.dispose();
+        profileTypeBuilder_ = null;
+      }
       selfLink_ = "";
       selfLinkWithId_ = "";
       zone_ = "";
@@ -1105,16 +1186,21 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.profileType_ =
+            profileTypeBuilder_ == null ? profileType_ : profileTypeBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.zone_ = zone_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1193,19 +1279,22 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasProfileType()) {
+        mergeProfileType(other.getProfileType());
+      }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1255,7 +1344,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 29957474
             case 244202930:
@@ -1267,9 +1356,15 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 356167698
+            case 1201340546:
+              {
+                input.readMessage(getProfileTypeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 1201340546
             case 1969693162:
               {
                 input.readMessage(getFeaturesFieldBuilder().getBuilder(), extensionRegistry);
@@ -1291,7 +1386,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -645248918
             default:
@@ -1319,7 +1414,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1334,7 +1430,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1357,7 +1454,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1380,7 +1478,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1402,7 +1501,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1420,7 +1520,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1777,7 +1878,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1793,7 +1895,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1809,7 +1912,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1829,7 +1933,8 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1849,7 +1954,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1864,7 +1969,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1887,7 +1992,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1910,7 +2015,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1932,7 +2037,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1950,7 +2055,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#networkProfile for network profiles.
+     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2291,6 +2396,212 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.NetworkProfileProfileType profileType_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkProfileProfileType,
+            com.google.cloud.compute.v1.NetworkProfileProfileType.Builder,
+            com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder>
+        profileTypeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     *
+     * @return Whether the profileType field is set.
+     */
+    public boolean hasProfileType() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     *
+     * @return The profileType.
+     */
+    public com.google.cloud.compute.v1.NetworkProfileProfileType getProfileType() {
+      if (profileTypeBuilder_ == null) {
+        return profileType_ == null
+            ? com.google.cloud.compute.v1.NetworkProfileProfileType.getDefaultInstance()
+            : profileType_;
+      } else {
+        return profileTypeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public Builder setProfileType(com.google.cloud.compute.v1.NetworkProfileProfileType value) {
+      if (profileTypeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        profileType_ = value;
+      } else {
+        profileTypeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public Builder setProfileType(
+        com.google.cloud.compute.v1.NetworkProfileProfileType.Builder builderForValue) {
+      if (profileTypeBuilder_ == null) {
+        profileType_ = builderForValue.build();
+      } else {
+        profileTypeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public Builder mergeProfileType(com.google.cloud.compute.v1.NetworkProfileProfileType value) {
+      if (profileTypeBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && profileType_ != null
+            && profileType_
+                != com.google.cloud.compute.v1.NetworkProfileProfileType.getDefaultInstance()) {
+          getProfileTypeBuilder().mergeFrom(value);
+        } else {
+          profileType_ = value;
+        }
+      } else {
+        profileTypeBuilder_.mergeFrom(value);
+      }
+      if (profileType_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public Builder clearProfileType() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      profileType_ = null;
+      if (profileTypeBuilder_ != null) {
+        profileTypeBuilder_.dispose();
+        profileTypeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkProfileProfileType.Builder getProfileTypeBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getProfileTypeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder
+        getProfileTypeOrBuilder() {
+      if (profileTypeBuilder_ != null) {
+        return profileTypeBuilder_.getMessageOrBuilder();
+      } else {
+        return profileType_ == null
+            ? com.google.cloud.compute.v1.NetworkProfileProfileType.getDefaultInstance()
+            : profileType_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Type of the network profile.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NetworkProfileProfileType,
+            com.google.cloud.compute.v1.NetworkProfileProfileType.Builder,
+            com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder>
+        getProfileTypeFieldBuilder() {
+      if (profileTypeBuilder_ == null) {
+        profileTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.NetworkProfileProfileType,
+                com.google.cloud.compute.v1.NetworkProfileProfileType.Builder,
+                com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder>(
+                getProfileType(), getParentForChildren(), isClean());
+        profileType_ = null;
+      }
+      return profileTypeBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
 
     /**
@@ -2305,7 +2616,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2371,7 +2682,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2389,7 +2700,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2412,7 +2723,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2431,7 +2742,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2497,7 +2808,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2515,7 +2826,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2538,7 +2849,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2551,7 +2862,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2599,7 +2910,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2611,7 +2922,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2628,7 +2939,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

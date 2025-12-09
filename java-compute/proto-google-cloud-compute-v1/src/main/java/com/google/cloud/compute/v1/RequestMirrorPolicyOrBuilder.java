@@ -28,7 +28,15 @@ public interface RequestMirrorPolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -41,7 +49,15 @@ public interface RequestMirrorPolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -54,7 +70,15 @@ public interface RequestMirrorPolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendService resource being mirrored to. The backend service configured for a mirroring policy must reference backends that are of the same type as the original backend service matched in the URL map. Serverless NEG backends are not currently supported as a mirrored backend service.
+   * The full or partial URL to the BackendService resource being
+   * mirrored to.
+   *
+   * The backend service configured for a mirroring
+   * policy must reference backends that are of the same type as the original
+   * backend service matched in the URL map.
+   *
+   * Serverless NEG backends are not currently supported as a mirrored
+   * backend service.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -62,4 +86,30 @@ public interface RequestMirrorPolicyOrBuilder
    * @return The bytes for backendService.
    */
   com.google.protobuf.ByteString getBackendServiceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return Whether the mirrorPercent field is set.
+   */
+  boolean hasMirrorPercent();
+
+  /**
+   *
+   *
+   * <pre>
+   * The percentage of requests to be mirrored to `backend_service`.
+   * </pre>
+   *
+   * <code>optional double mirror_percent = 277432261;</code>
+   *
+   * @return The mirrorPercent.
+   */
+  double getMirrorPercent();
 }

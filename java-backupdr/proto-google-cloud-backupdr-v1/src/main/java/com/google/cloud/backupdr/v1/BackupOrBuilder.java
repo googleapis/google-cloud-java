@@ -303,6 +303,55 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the backupRetentionInheritance field is set.
+   */
+  boolean hasBackupRetentionInheritance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for backupRetentionInheritance.
+   */
+  int getBackupRetentionInheritanceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Setting for how the enforced retention end time is inherited.
+   * This value is copied from this backup's BackupVault.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance backup_retention_inheritance = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupRetentionInheritance.
+   */
+  com.google.cloud.backupdr.v1.BackupVault.BackupRetentionInheritance
+      getBackupRetentionInheritance();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. When this backup is automatically expired.
    * </pre>
    *
@@ -919,7 +968,121 @@ public interface BackupOrBuilder
    */
   boolean getSatisfiesPzi();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcpResource field is set.
+   */
+  boolean hasGcpResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcpResource.
+   */
+  com.google.cloud.backupdr.v1.BackupGcpResource getGcpResource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Unique identifier of the GCP resource that is being backed
+   * up.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.BackupGcpResource gcp_resource = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.backupdr.v1.BackupGcpResourceOrBuilder getGcpResourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the kmsKeyVersions.
+   */
+  java.util.List<java.lang.String> getKmsKeyVersionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of kmsKeyVersions.
+   */
+  int getKmsKeyVersionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The kmsKeyVersions at the given index.
+   */
+  java.lang.String getKmsKeyVersions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The list of KMS key versions used to encrypt the
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * repeated string kms_key_versions = 33 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the kmsKeyVersions at the given index.
+   */
+  com.google.protobuf.ByteString getKmsKeyVersionsBytes(int index);
+
   com.google.cloud.backupdr.v1.Backup.BackupPropertiesCase getBackupPropertiesCase();
 
   com.google.cloud.backupdr.v1.Backup.PlanInfoCase getPlanInfoCase();
+
+  com.google.cloud.backupdr.v1.Backup.SourceResourceCase getSourceResourceCase();
 }

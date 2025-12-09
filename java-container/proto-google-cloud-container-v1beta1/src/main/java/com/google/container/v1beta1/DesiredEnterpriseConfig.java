@@ -24,10 +24,14 @@ package com.google.container.v1beta1;
  *
  * <pre>
  * DesiredEnterpriseConfig is a wrapper used for updating enterprise_config.
+ *
+ * Deprecated: GKE Enterprise features are now available without an Enterprise
+ * tier.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.DesiredEnterpriseConfig}
  */
+@java.lang.Deprecated
 public final class DesiredEnterpriseConfig extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.DesiredEnterpriseConfig)
@@ -272,6 +276,9 @@ public final class DesiredEnterpriseConfig extends com.google.protobuf.Generated
    *
    * <pre>
    * DesiredEnterpriseConfig is a wrapper used for updating enterprise_config.
+   *
+   * Deprecated: GKE Enterprise features are now available without an Enterprise
+   * tier.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.DesiredEnterpriseConfig}

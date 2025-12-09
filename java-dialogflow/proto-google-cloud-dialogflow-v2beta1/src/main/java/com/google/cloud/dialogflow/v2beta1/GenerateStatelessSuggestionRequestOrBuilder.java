@@ -355,6 +355,46 @@ public interface GenerateStatelessSuggestionRequestOrBuilder
    */
   int getTriggerEventsValue(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the CX SecuritySettings which is used to redact generated
+   * response. If this field is empty, try to fetch v2 security_settings, which
+   * is a project level setting. If this field is empty and no v2
+   * security_settings set up in this project, no redaction will be done.
+   *
+   * Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+   * Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The securitySettings.
+   */
+  java.lang.String getSecuritySettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the CX SecuritySettings which is used to redact generated
+   * response. If this field is empty, try to fetch v2 security_settings, which
+   * is a project level setting. If this field is empty and no v2
+   * security_settings set up in this project, no redaction will be done.
+   *
+   * Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+   * Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  com.google.protobuf.ByteString getSecuritySettingsBytes();
+
   com.google.cloud.dialogflow.v2beta1.GenerateStatelessSuggestionRequest.GeneratorResourceCase
       getGeneratorResourceCase();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The service for validating addresses.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/addressvalidation/v1/address_validation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AddressValidationGrpc {
 
@@ -338,8 +335,9 @@ public final class AddressValidationGrpc {
      * </pre>
      */
     public com.google.maps.addressvalidation.v1.ValidateAddressResponse validateAddress(
-        com.google.maps.addressvalidation.v1.ValidateAddressRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.addressvalidation.v1.ValidateAddressRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getValidateAddressMethod(), getCallOptions(), request);
     }
 
@@ -356,8 +354,9 @@ public final class AddressValidationGrpc {
      */
     public com.google.maps.addressvalidation.v1.ProvideValidationFeedbackResponse
         provideValidationFeedback(
-            com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.maps.addressvalidation.v1.ProvideValidationFeedbackRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProvideValidationFeedbackMethod(), getCallOptions(), request);
     }
   }

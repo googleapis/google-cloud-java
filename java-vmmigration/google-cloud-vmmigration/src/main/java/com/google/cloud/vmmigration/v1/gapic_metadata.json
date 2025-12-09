@@ -19,6 +19,12 @@
             "CancelCutoverJob": {
               "methods": ["cancelCutoverJobAsync", "cancelCutoverJobAsync", "cancelCutoverJobAsync", "cancelCutoverJobOperationCallable", "cancelCutoverJobCallable"]
             },
+            "CancelDiskMigrationJob": {
+              "methods": ["cancelDiskMigrationJobAsync", "cancelDiskMigrationJobOperationCallable", "cancelDiskMigrationJobCallable"]
+            },
+            "CancelImageImportJob": {
+              "methods": ["cancelImageImportJobAsync", "cancelImageImportJobAsync", "cancelImageImportJobAsync", "cancelImageImportJobOperationCallable", "cancelImageImportJobCallable"]
+            },
             "CreateCloneJob": {
               "methods": ["createCloneJobAsync", "createCloneJobAsync", "createCloneJobAsync", "createCloneJobOperationCallable", "createCloneJobCallable"]
             },
@@ -28,8 +34,14 @@
             "CreateDatacenterConnector": {
               "methods": ["createDatacenterConnectorAsync", "createDatacenterConnectorAsync", "createDatacenterConnectorAsync", "createDatacenterConnectorOperationCallable", "createDatacenterConnectorCallable"]
             },
+            "CreateDiskMigrationJob": {
+              "methods": ["createDiskMigrationJobAsync", "createDiskMigrationJobAsync", "createDiskMigrationJobAsync", "createDiskMigrationJobOperationCallable", "createDiskMigrationJobCallable"]
+            },
             "CreateGroup": {
               "methods": ["createGroupAsync", "createGroupAsync", "createGroupAsync", "createGroupOperationCallable", "createGroupCallable"]
+            },
+            "CreateImageImport": {
+              "methods": ["createImageImportAsync", "createImageImportAsync", "createImageImportAsync", "createImageImportOperationCallable", "createImageImportCallable"]
             },
             "CreateMigratingVm": {
               "methods": ["createMigratingVmAsync", "createMigratingVmAsync", "createMigratingVmAsync", "createMigratingVmOperationCallable", "createMigratingVmCallable"]
@@ -46,8 +58,14 @@
             "DeleteDatacenterConnector": {
               "methods": ["deleteDatacenterConnectorAsync", "deleteDatacenterConnectorAsync", "deleteDatacenterConnectorAsync", "deleteDatacenterConnectorOperationCallable", "deleteDatacenterConnectorCallable"]
             },
+            "DeleteDiskMigrationJob": {
+              "methods": ["deleteDiskMigrationJobAsync", "deleteDiskMigrationJobAsync", "deleteDiskMigrationJobAsync", "deleteDiskMigrationJobOperationCallable", "deleteDiskMigrationJobCallable"]
+            },
             "DeleteGroup": {
               "methods": ["deleteGroupAsync", "deleteGroupAsync", "deleteGroupAsync", "deleteGroupOperationCallable", "deleteGroupCallable"]
+            },
+            "DeleteImageImport": {
+              "methods": ["deleteImageImportAsync", "deleteImageImportAsync", "deleteImageImportAsync", "deleteImageImportOperationCallable", "deleteImageImportCallable"]
             },
             "DeleteMigratingVm": {
               "methods": ["deleteMigratingVmAsync", "deleteMigratingVmAsync", "deleteMigratingVmAsync", "deleteMigratingVmOperationCallable", "deleteMigratingVmCallable"]
@@ -61,8 +79,14 @@
             "DeleteUtilizationReport": {
               "methods": ["deleteUtilizationReportAsync", "deleteUtilizationReportAsync", "deleteUtilizationReportAsync", "deleteUtilizationReportOperationCallable", "deleteUtilizationReportCallable"]
             },
+            "ExtendMigration": {
+              "methods": ["extendMigrationAsync", "extendMigrationOperationCallable", "extendMigrationCallable"]
+            },
             "FetchInventory": {
               "methods": ["fetchInventory", "fetchInventory", "fetchInventory", "fetchInventoryCallable"]
+            },
+            "FetchStorageInventory": {
+              "methods": ["fetchStorageInventory", "fetchStorageInventory", "fetchStorageInventory", "fetchStorageInventoryPagedCallable", "fetchStorageInventoryCallable"]
             },
             "FinalizeMigration": {
               "methods": ["finalizeMigrationAsync", "finalizeMigrationAsync", "finalizeMigrationAsync", "finalizeMigrationOperationCallable", "finalizeMigrationCallable"]
@@ -76,8 +100,17 @@
             "GetDatacenterConnector": {
               "methods": ["getDatacenterConnector", "getDatacenterConnector", "getDatacenterConnector", "getDatacenterConnectorCallable"]
             },
+            "GetDiskMigrationJob": {
+              "methods": ["getDiskMigrationJob", "getDiskMigrationJob", "getDiskMigrationJob", "getDiskMigrationJobCallable"]
+            },
             "GetGroup": {
               "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
+            "GetImageImport": {
+              "methods": ["getImageImport", "getImageImport", "getImageImport", "getImageImportCallable"]
+            },
+            "GetImageImportJob": {
+              "methods": ["getImageImportJob", "getImageImportJob", "getImageImportJob", "getImageImportJobCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -106,8 +139,17 @@
             "ListDatacenterConnectors": {
               "methods": ["listDatacenterConnectors", "listDatacenterConnectors", "listDatacenterConnectors", "listDatacenterConnectorsPagedCallable", "listDatacenterConnectorsCallable"]
             },
+            "ListDiskMigrationJobs": {
+              "methods": ["listDiskMigrationJobs", "listDiskMigrationJobs", "listDiskMigrationJobs", "listDiskMigrationJobsPagedCallable", "listDiskMigrationJobsCallable"]
+            },
             "ListGroups": {
               "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
+            },
+            "ListImageImportJobs": {
+              "methods": ["listImageImportJobs", "listImageImportJobs", "listImageImportJobs", "listImageImportJobsPagedCallable", "listImageImportJobsCallable"]
+            },
+            "ListImageImports": {
+              "methods": ["listImageImports", "listImageImports", "listImageImports", "listImageImportsPagedCallable", "listImageImportsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
@@ -136,8 +178,14 @@
             "ResumeMigration": {
               "methods": ["resumeMigrationAsync", "resumeMigrationOperationCallable", "resumeMigrationCallable"]
             },
+            "RunDiskMigrationJob": {
+              "methods": ["runDiskMigrationJobAsync", "runDiskMigrationJobAsync", "runDiskMigrationJobAsync", "runDiskMigrationJobOperationCallable", "runDiskMigrationJobCallable"]
+            },
             "StartMigration": {
               "methods": ["startMigrationAsync", "startMigrationAsync", "startMigrationAsync", "startMigrationOperationCallable", "startMigrationCallable"]
+            },
+            "UpdateDiskMigrationJob": {
+              "methods": ["updateDiskMigrationJobAsync", "updateDiskMigrationJobAsync", "updateDiskMigrationJobOperationCallable", "updateDiskMigrationJobCallable"]
             },
             "UpdateGroup": {
               "methods": ["updateGroupAsync", "updateGroupAsync", "updateGroupOperationCallable", "updateGroupCallable"]

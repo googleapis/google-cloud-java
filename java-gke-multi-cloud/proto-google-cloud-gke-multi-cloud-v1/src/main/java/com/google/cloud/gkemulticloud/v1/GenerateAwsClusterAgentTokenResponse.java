@@ -20,6 +20,7 @@
 package com.google.cloud.gkemulticloud.v1;
 
 /** Protobuf type {@code google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse} */
+@java.lang.Deprecated
 public final class GenerateAwsClusterAgentTokenResponse
     extends com.google.protobuf.GeneratedMessageV3
     implements
@@ -65,7 +66,7 @@ public final class GenerateAwsClusterAgentTokenResponse
   private volatile java.lang.Object accessToken_ = "";
 
   /**
-   * <code>string access_token = 1;</code>
+   * <code>string access_token = 1 [json_name = "access_token"];</code>
    *
    * @return The accessToken.
    */
@@ -83,7 +84,7 @@ public final class GenerateAwsClusterAgentTokenResponse
   }
 
   /**
-   * <code>string access_token = 1;</code>
+   * <code>string access_token = 1 [json_name = "access_token"];</code>
    *
    * @return The bytes for accessToken.
    */
@@ -104,7 +105,7 @@ public final class GenerateAwsClusterAgentTokenResponse
   private int expiresIn_ = 0;
 
   /**
-   * <code>int32 expires_in = 2;</code>
+   * <code>int32 expires_in = 2 [json_name = "expires_in"];</code>
    *
    * @return The expiresIn.
    */
@@ -119,7 +120,7 @@ public final class GenerateAwsClusterAgentTokenResponse
   private volatile java.lang.Object tokenType_ = "";
 
   /**
-   * <code>string token_type = 3;</code>
+   * <code>string token_type = 3 [json_name = "token_type"];</code>
    *
    * @return The tokenType.
    */
@@ -137,7 +138,7 @@ public final class GenerateAwsClusterAgentTokenResponse
   }
 
   /**
-   * <code>string token_type = 3;</code>
+   * <code>string token_type = 3 [json_name = "token_type"];</code>
    *
    * @return The bytes for tokenType.
    */
@@ -548,7 +549,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     private java.lang.Object accessToken_ = "";
 
     /**
-     * <code>string access_token = 1;</code>
+     * <code>string access_token = 1 [json_name = "access_token"];</code>
      *
      * @return The accessToken.
      */
@@ -565,7 +566,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string access_token = 1;</code>
+     * <code>string access_token = 1 [json_name = "access_token"];</code>
      *
      * @return The bytes for accessToken.
      */
@@ -582,7 +583,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string access_token = 1;</code>
+     * <code>string access_token = 1 [json_name = "access_token"];</code>
      *
      * @param value The accessToken to set.
      * @return This builder for chaining.
@@ -598,7 +599,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string access_token = 1;</code>
+     * <code>string access_token = 1 [json_name = "access_token"];</code>
      *
      * @return This builder for chaining.
      */
@@ -610,7 +611,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string access_token = 1;</code>
+     * <code>string access_token = 1 [json_name = "access_token"];</code>
      *
      * @param value The bytes for accessToken to set.
      * @return This builder for chaining.
@@ -629,7 +630,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     private int expiresIn_;
 
     /**
-     * <code>int32 expires_in = 2;</code>
+     * <code>int32 expires_in = 2 [json_name = "expires_in"];</code>
      *
      * @return The expiresIn.
      */
@@ -639,7 +640,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>int32 expires_in = 2;</code>
+     * <code>int32 expires_in = 2 [json_name = "expires_in"];</code>
      *
      * @param value The expiresIn to set.
      * @return This builder for chaining.
@@ -653,7 +654,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>int32 expires_in = 2;</code>
+     * <code>int32 expires_in = 2 [json_name = "expires_in"];</code>
      *
      * @return This builder for chaining.
      */
@@ -667,7 +668,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     private java.lang.Object tokenType_ = "";
 
     /**
-     * <code>string token_type = 3;</code>
+     * <code>string token_type = 3 [json_name = "token_type"];</code>
      *
      * @return The tokenType.
      */
@@ -684,7 +685,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string token_type = 3;</code>
+     * <code>string token_type = 3 [json_name = "token_type"];</code>
      *
      * @return The bytes for tokenType.
      */
@@ -701,7 +702,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string token_type = 3;</code>
+     * <code>string token_type = 3 [json_name = "token_type"];</code>
      *
      * @param value The tokenType to set.
      * @return This builder for chaining.
@@ -717,7 +718,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string token_type = 3;</code>
+     * <code>string token_type = 3 [json_name = "token_type"];</code>
      *
      * @return This builder for chaining.
      */
@@ -729,7 +730,7 @@ public final class GenerateAwsClusterAgentTokenResponse
     }
 
     /**
-     * <code>string token_type = 3;</code>
+     * <code>string token_type = 3 [json_name = "token_type"];</code>
      *
      * @param value The bytes for tokenType to set.
      * @return This builder for chaining.

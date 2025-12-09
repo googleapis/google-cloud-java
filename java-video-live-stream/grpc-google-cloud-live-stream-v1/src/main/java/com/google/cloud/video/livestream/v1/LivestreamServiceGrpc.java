@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Protocol (RTMP) and Secure Reliable Transport (SRT).
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/video/livestream/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LivestreamServiceGrpc {
 
@@ -362,6 +359,99 @@ public final class LivestreamServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.StartDistributionRequest,
+          com.google.longrunning.Operation>
+      getStartDistributionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StartDistribution",
+      requestType = com.google.cloud.video.livestream.v1.StartDistributionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.StartDistributionRequest,
+          com.google.longrunning.Operation>
+      getStartDistributionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.StartDistributionRequest,
+            com.google.longrunning.Operation>
+        getStartDistributionMethod;
+    if ((getStartDistributionMethod = LivestreamServiceGrpc.getStartDistributionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getStartDistributionMethod = LivestreamServiceGrpc.getStartDistributionMethod)
+            == null) {
+          LivestreamServiceGrpc.getStartDistributionMethod =
+              getStartDistributionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.StartDistributionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StartDistribution"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.StartDistributionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("StartDistribution"))
+                      .build();
+        }
+      }
+    }
+    return getStartDistributionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.StopDistributionRequest,
+          com.google.longrunning.Operation>
+      getStopDistributionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StopDistribution",
+      requestType = com.google.cloud.video.livestream.v1.StopDistributionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.StopDistributionRequest,
+          com.google.longrunning.Operation>
+      getStopDistributionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.StopDistributionRequest,
+            com.google.longrunning.Operation>
+        getStopDistributionMethod;
+    if ((getStopDistributionMethod = LivestreamServiceGrpc.getStopDistributionMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getStopDistributionMethod = LivestreamServiceGrpc.getStopDistributionMethod) == null) {
+          LivestreamServiceGrpc.getStopDistributionMethod =
+              getStopDistributionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.StopDistributionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StopDistribution"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.StopDistributionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("StopDistribution"))
+                      .build();
+        }
+      }
+    }
+    return getStopDistributionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.video.livestream.v1.CreateInputRequest, com.google.longrunning.Operation>
       getCreateInputMethod;
 
@@ -584,6 +674,53 @@ public final class LivestreamServiceGrpc {
       }
     }
     return getUpdateInputMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.PreviewInputRequest,
+          com.google.cloud.video.livestream.v1.PreviewInputResponse>
+      getPreviewInputMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PreviewInput",
+      requestType = com.google.cloud.video.livestream.v1.PreviewInputRequest.class,
+      responseType = com.google.cloud.video.livestream.v1.PreviewInputResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.video.livestream.v1.PreviewInputRequest,
+          com.google.cloud.video.livestream.v1.PreviewInputResponse>
+      getPreviewInputMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.video.livestream.v1.PreviewInputRequest,
+            com.google.cloud.video.livestream.v1.PreviewInputResponse>
+        getPreviewInputMethod;
+    if ((getPreviewInputMethod = LivestreamServiceGrpc.getPreviewInputMethod) == null) {
+      synchronized (LivestreamServiceGrpc.class) {
+        if ((getPreviewInputMethod = LivestreamServiceGrpc.getPreviewInputMethod) == null) {
+          LivestreamServiceGrpc.getPreviewInputMethod =
+              getPreviewInputMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.video.livestream.v1.PreviewInputRequest,
+                          com.google.cloud.video.livestream.v1.PreviewInputResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PreviewInput"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.PreviewInputRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.video.livestream.v1.PreviewInputResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new LivestreamServiceMethodDescriptorSupplier("PreviewInput"))
+                      .build();
+        }
+      }
+    }
+    return getPreviewInputMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1622,6 +1759,35 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Starts distribution which delivers outputs to the destination indicated by
+     * the Distribution configuration.
+     * </pre>
+     */
+    default void startDistribution(
+        com.google.cloud.video.livestream.v1.StartDistributionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStartDistributionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified distribution.
+     * </pre>
+     */
+    default void stopDistribution(
+        com.google.cloud.video.livestream.v1.StopDistributionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStopDistributionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an input with the provided unique ID in the specified region.
      * </pre>
      */
@@ -1685,6 +1851,21 @@ public final class LivestreamServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateInputMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview the streaming content of the specified input.
+     * </pre>
+     */
+    default void previewInput(
+        com.google.cloud.video.livestream.v1.PreviewInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.PreviewInputResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getPreviewInputMethod(), responseObserver);
     }
 
     /**
@@ -2113,6 +2294,39 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Starts distribution which delivers outputs to the destination indicated by
+     * the Distribution configuration.
+     * </pre>
+     */
+    public void startDistribution(
+        com.google.cloud.video.livestream.v1.StartDistributionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStartDistributionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified distribution.
+     * </pre>
+     */
+    public void stopDistribution(
+        com.google.cloud.video.livestream.v1.StopDistributionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStopDistributionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an input with the provided unique ID in the specified region.
      * </pre>
      */
@@ -2182,6 +2396,23 @@ public final class LivestreamServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateInputMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview the streaming content of the specified input.
+     * </pre>
+     */
+    public void previewInput(
+        com.google.cloud.video.livestream.v1.PreviewInputRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.video.livestream.v1.PreviewInputResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPreviewInputMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2511,8 +2742,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createChannel(
-        com.google.cloud.video.livestream.v1.CreateChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateChannelMethod(), getCallOptions(), request);
     }
 
@@ -2524,8 +2756,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListChannelsResponse listChannels(
-        com.google.cloud.video.livestream.v1.ListChannelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListChannelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChannelsMethod(), getCallOptions(), request);
     }
 
@@ -2537,8 +2770,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Channel getChannel(
-        com.google.cloud.video.livestream.v1.GetChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChannelMethod(), getCallOptions(), request);
     }
 
@@ -2550,8 +2784,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteChannel(
-        com.google.cloud.video.livestream.v1.DeleteChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
     }
 
@@ -2563,8 +2798,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateChannel(
-        com.google.cloud.video.livestream.v1.UpdateChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.UpdateChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
     }
 
@@ -2577,8 +2813,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startChannel(
-        com.google.cloud.video.livestream.v1.StartChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.StartChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartChannelMethod(), getCallOptions(), request);
     }
 
@@ -2591,9 +2828,39 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation stopChannel(
-        com.google.cloud.video.livestream.v1.StopChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.StopChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStopChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts distribution which delivers outputs to the destination indicated by
+     * the Distribution configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startDistribution(
+        com.google.cloud.video.livestream.v1.StartDistributionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStartDistributionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified distribution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopDistribution(
+        com.google.cloud.video.livestream.v1.StopDistributionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getStopDistributionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2604,8 +2871,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createInput(
-        com.google.cloud.video.livestream.v1.CreateInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateInputMethod(), getCallOptions(), request);
     }
 
@@ -2617,8 +2885,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListInputsResponse listInputs(
-        com.google.cloud.video.livestream.v1.ListInputsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListInputsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInputsMethod(), getCallOptions(), request);
     }
 
@@ -2630,8 +2899,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Input getInput(
-        com.google.cloud.video.livestream.v1.GetInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInputMethod(), getCallOptions(), request);
     }
 
@@ -2643,8 +2913,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteInput(
-        com.google.cloud.video.livestream.v1.DeleteInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteInputMethod(), getCallOptions(), request);
     }
 
@@ -2656,9 +2927,24 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateInput(
-        com.google.cloud.video.livestream.v1.UpdateInputRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.UpdateInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview the streaming content of the specified input.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.PreviewInputResponse previewInput(
+        com.google.cloud.video.livestream.v1.PreviewInputRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getPreviewInputMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2669,8 +2955,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Event createEvent(
-        com.google.cloud.video.livestream.v1.CreateEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEventMethod(), getCallOptions(), request);
     }
 
@@ -2682,8 +2969,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListEventsResponse listEvents(
-        com.google.cloud.video.livestream.v1.ListEventsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListEventsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEventsMethod(), getCallOptions(), request);
     }
 
@@ -2695,8 +2983,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Event getEvent(
-        com.google.cloud.video.livestream.v1.GetEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEventMethod(), getCallOptions(), request);
     }
 
@@ -2708,8 +2997,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEvent(
-        com.google.cloud.video.livestream.v1.DeleteEventRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteEventRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEventMethod(), getCallOptions(), request);
     }
 
@@ -2721,8 +3011,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListClipsResponse listClips(
-        com.google.cloud.video.livestream.v1.ListClipsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListClipsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListClipsMethod(), getCallOptions(), request);
     }
 
@@ -2734,8 +3025,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Clip getClip(
-        com.google.cloud.video.livestream.v1.GetClipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetClipRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetClipMethod(), getCallOptions(), request);
     }
 
@@ -2747,8 +3039,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createClip(
-        com.google.cloud.video.livestream.v1.CreateClipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateClipRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateClipMethod(), getCallOptions(), request);
     }
 
@@ -2761,8 +3054,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteClip(
-        com.google.cloud.video.livestream.v1.DeleteClipRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteClipRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteClipMethod(), getCallOptions(), request);
     }
 
@@ -2774,8 +3068,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDvrSession(
-        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateDvrSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDvrSessionMethod(), getCallOptions(), request);
     }
 
@@ -2787,8 +3082,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListDvrSessionsResponse listDvrSessions(
-        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListDvrSessionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDvrSessionsMethod(), getCallOptions(), request);
     }
 
@@ -2800,8 +3096,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.DvrSession getDvrSession(
-        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetDvrSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDvrSessionMethod(), getCallOptions(), request);
     }
 
@@ -2813,8 +3110,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDvrSession(
-        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteDvrSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDvrSessionMethod(), getCallOptions(), request);
     }
 
@@ -2826,8 +3124,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDvrSession(
-        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDvrSessionMethod(), getCallOptions(), request);
     }
 
@@ -2840,8 +3139,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAsset(
-        com.google.cloud.video.livestream.v1.CreateAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.CreateAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAssetMethod(), getCallOptions(), request);
     }
 
@@ -2853,8 +3153,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAsset(
-        com.google.cloud.video.livestream.v1.DeleteAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.DeleteAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAssetMethod(), getCallOptions(), request);
     }
 
@@ -2866,8 +3167,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Asset getAsset(
-        com.google.cloud.video.livestream.v1.GetAssetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetAssetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAssetMethod(), getCallOptions(), request);
     }
 
@@ -2879,8 +3181,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.ListAssetsResponse listAssets(
-        com.google.cloud.video.livestream.v1.ListAssetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.ListAssetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAssetsMethod(), getCallOptions(), request);
     }
 
@@ -2892,8 +3195,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.cloud.video.livestream.v1.Pool getPool(
-        com.google.cloud.video.livestream.v1.GetPoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.GetPoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPoolMethod(), getCallOptions(), request);
     }
 
@@ -2905,8 +3209,9 @@ public final class LivestreamServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updatePool(
-        com.google.cloud.video.livestream.v1.UpdatePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.video.livestream.v1.UpdatePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePoolMethod(), getCallOptions(), request);
     }
   }
@@ -3033,6 +3338,33 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Starts distribution which delivers outputs to the destination indicated by
+     * the Distribution configuration.
+     * </pre>
+     */
+    public com.google.longrunning.Operation startDistribution(
+        com.google.cloud.video.livestream.v1.StartDistributionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartDistributionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified distribution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation stopDistribution(
+        com.google.cloud.video.livestream.v1.StopDistributionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopDistributionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an input with the provided unique ID in the specified region.
      * </pre>
      */
@@ -3092,6 +3424,19 @@ public final class LivestreamServiceGrpc {
         com.google.cloud.video.livestream.v1.UpdateInputRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview the streaming content of the specified input.
+     * </pre>
+     */
+    public com.google.cloud.video.livestream.v1.PreviewInputResponse previewInput(
+        com.google.cloud.video.livestream.v1.PreviewInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPreviewInputMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3467,6 +3812,33 @@ public final class LivestreamServiceGrpc {
      *
      *
      * <pre>
+     * Starts distribution which delivers outputs to the destination indicated by
+     * the Distribution configuration.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        startDistribution(com.google.cloud.video.livestream.v1.StartDistributionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStartDistributionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified distribution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        stopDistribution(com.google.cloud.video.livestream.v1.StopDistributionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStopDistributionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an input with the provided unique ID in the specified region.
      * </pre>
      */
@@ -3528,6 +3900,20 @@ public final class LivestreamServiceGrpc {
         updateInput(com.google.cloud.video.livestream.v1.UpdateInputRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateInputMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Preview the streaming content of the specified input.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.video.livestream.v1.PreviewInputResponse>
+        previewInput(com.google.cloud.video.livestream.v1.PreviewInputRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPreviewInputMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3797,30 +4183,33 @@ public final class LivestreamServiceGrpc {
   private static final int METHODID_UPDATE_CHANNEL = 4;
   private static final int METHODID_START_CHANNEL = 5;
   private static final int METHODID_STOP_CHANNEL = 6;
-  private static final int METHODID_CREATE_INPUT = 7;
-  private static final int METHODID_LIST_INPUTS = 8;
-  private static final int METHODID_GET_INPUT = 9;
-  private static final int METHODID_DELETE_INPUT = 10;
-  private static final int METHODID_UPDATE_INPUT = 11;
-  private static final int METHODID_CREATE_EVENT = 12;
-  private static final int METHODID_LIST_EVENTS = 13;
-  private static final int METHODID_GET_EVENT = 14;
-  private static final int METHODID_DELETE_EVENT = 15;
-  private static final int METHODID_LIST_CLIPS = 16;
-  private static final int METHODID_GET_CLIP = 17;
-  private static final int METHODID_CREATE_CLIP = 18;
-  private static final int METHODID_DELETE_CLIP = 19;
-  private static final int METHODID_CREATE_DVR_SESSION = 20;
-  private static final int METHODID_LIST_DVR_SESSIONS = 21;
-  private static final int METHODID_GET_DVR_SESSION = 22;
-  private static final int METHODID_DELETE_DVR_SESSION = 23;
-  private static final int METHODID_UPDATE_DVR_SESSION = 24;
-  private static final int METHODID_CREATE_ASSET = 25;
-  private static final int METHODID_DELETE_ASSET = 26;
-  private static final int METHODID_GET_ASSET = 27;
-  private static final int METHODID_LIST_ASSETS = 28;
-  private static final int METHODID_GET_POOL = 29;
-  private static final int METHODID_UPDATE_POOL = 30;
+  private static final int METHODID_START_DISTRIBUTION = 7;
+  private static final int METHODID_STOP_DISTRIBUTION = 8;
+  private static final int METHODID_CREATE_INPUT = 9;
+  private static final int METHODID_LIST_INPUTS = 10;
+  private static final int METHODID_GET_INPUT = 11;
+  private static final int METHODID_DELETE_INPUT = 12;
+  private static final int METHODID_UPDATE_INPUT = 13;
+  private static final int METHODID_PREVIEW_INPUT = 14;
+  private static final int METHODID_CREATE_EVENT = 15;
+  private static final int METHODID_LIST_EVENTS = 16;
+  private static final int METHODID_GET_EVENT = 17;
+  private static final int METHODID_DELETE_EVENT = 18;
+  private static final int METHODID_LIST_CLIPS = 19;
+  private static final int METHODID_GET_CLIP = 20;
+  private static final int METHODID_CREATE_CLIP = 21;
+  private static final int METHODID_DELETE_CLIP = 22;
+  private static final int METHODID_CREATE_DVR_SESSION = 23;
+  private static final int METHODID_LIST_DVR_SESSIONS = 24;
+  private static final int METHODID_GET_DVR_SESSION = 25;
+  private static final int METHODID_DELETE_DVR_SESSION = 26;
+  private static final int METHODID_UPDATE_DVR_SESSION = 27;
+  private static final int METHODID_CREATE_ASSET = 28;
+  private static final int METHODID_DELETE_ASSET = 29;
+  private static final int METHODID_GET_ASSET = 30;
+  private static final int METHODID_LIST_ASSETS = 31;
+  private static final int METHODID_GET_POOL = 32;
+  private static final int METHODID_UPDATE_POOL = 33;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3877,6 +4266,16 @@ public final class LivestreamServiceGrpc {
               (com.google.cloud.video.livestream.v1.StopChannelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_START_DISTRIBUTION:
+          serviceImpl.startDistribution(
+              (com.google.cloud.video.livestream.v1.StartDistributionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_STOP_DISTRIBUTION:
+          serviceImpl.stopDistribution(
+              (com.google.cloud.video.livestream.v1.StopDistributionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_CREATE_INPUT:
           serviceImpl.createInput(
               (com.google.cloud.video.livestream.v1.CreateInputRequest) request,
@@ -3903,6 +4302,13 @@ public final class LivestreamServiceGrpc {
           serviceImpl.updateInput(
               (com.google.cloud.video.livestream.v1.UpdateInputRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PREVIEW_INPUT:
+          serviceImpl.previewInput(
+              (com.google.cloud.video.livestream.v1.PreviewInputRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.video.livestream.v1.PreviewInputResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_EVENT:
           serviceImpl.createEvent(
@@ -4072,6 +4478,18 @@ public final class LivestreamServiceGrpc {
                     com.google.cloud.video.livestream.v1.StopChannelRequest,
                     com.google.longrunning.Operation>(service, METHODID_STOP_CHANNEL)))
         .addMethod(
+            getStartDistributionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.StartDistributionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_START_DISTRIBUTION)))
+        .addMethod(
+            getStopDistributionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.StopDistributionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_STOP_DISTRIBUTION)))
+        .addMethod(
             getCreateInputMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4102,6 +4520,13 @@ public final class LivestreamServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.video.livestream.v1.UpdateInputRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_INPUT)))
+        .addMethod(
+            getPreviewInputMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.video.livestream.v1.PreviewInputRequest,
+                    com.google.cloud.video.livestream.v1.PreviewInputResponse>(
+                    service, METHODID_PREVIEW_INPUT)))
         .addMethod(
             getCreateEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4279,11 +4704,14 @@ public final class LivestreamServiceGrpc {
                       .addMethod(getUpdateChannelMethod())
                       .addMethod(getStartChannelMethod())
                       .addMethod(getStopChannelMethod())
+                      .addMethod(getStartDistributionMethod())
+                      .addMethod(getStopDistributionMethod())
                       .addMethod(getCreateInputMethod())
                       .addMethod(getListInputsMethod())
                       .addMethod(getGetInputMethod())
                       .addMethod(getDeleteInputMethod())
                       .addMethod(getUpdateInputMethod())
+                      .addMethod(getPreviewInputMethod())
                       .addMethod(getCreateEventMethod())
                       .addMethod(getListEventsMethod())
                       .addMethod(getGetEventMethod())

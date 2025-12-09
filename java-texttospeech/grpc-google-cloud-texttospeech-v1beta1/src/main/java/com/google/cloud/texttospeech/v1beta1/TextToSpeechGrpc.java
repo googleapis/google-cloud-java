@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service that implements Google Cloud Text-to-Speech API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/texttospeech/v1beta1/cloud_tts.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TextToSpeechGrpc {
 
@@ -403,8 +400,9 @@ public final class TextToSpeechGrpc {
      * </pre>
      */
     public com.google.cloud.texttospeech.v1beta1.ListVoicesResponse listVoices(
-        com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.texttospeech.v1beta1.ListVoicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListVoicesMethod(), getCallOptions(), request);
     }
 
@@ -417,8 +415,9 @@ public final class TextToSpeechGrpc {
      * </pre>
      */
     public com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechResponse synthesizeSpeech(
-        com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.texttospeech.v1beta1.SynthesizeSpeechRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSynthesizeSpeechMethod(), getCallOptions(), request);
     }
 

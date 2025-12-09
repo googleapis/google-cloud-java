@@ -51,6 +51,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
 import com.google.cloud.apihub.v1.CreateDeploymentRequest;
@@ -58,6 +59,7 @@ import com.google.cloud.apihub.v1.CreateExternalApiRequest;
 import com.google.cloud.apihub.v1.CreateSpecRequest;
 import com.google.cloud.apihub.v1.CreateVersionRequest;
 import com.google.cloud.apihub.v1.Definition;
+import com.google.cloud.apihub.v1.DeleteApiOperationRequest;
 import com.google.cloud.apihub.v1.DeleteApiRequest;
 import com.google.cloud.apihub.v1.DeleteAttributeRequest;
 import com.google.cloud.apihub.v1.DeleteDeploymentRequest;
@@ -94,6 +96,7 @@ import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.SearchResult;
 import com.google.cloud.apihub.v1.Spec;
 import com.google.cloud.apihub.v1.SpecContents;
+import com.google.cloud.apihub.v1.UpdateApiOperationRequest;
 import com.google.cloud.apihub.v1.UpdateApiRequest;
 import com.google.cloud.apihub.v1.UpdateAttributeRequest;
 import com.google.cloud.apihub.v1.UpdateDeploymentRequest;
@@ -190,10 +193,15 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       listSpecsSettings;
   private final UnaryCallSettings<UpdateSpecRequest, Spec> updateSpecSettings;
   private final UnaryCallSettings<DeleteSpecRequest, Empty> deleteSpecSettings;
+  private final UnaryCallSettings<CreateApiOperationRequest, ApiOperation>
+      createApiOperationSettings;
   private final UnaryCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationSettings;
   private final PagedCallSettings<
           ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
       listApiOperationsSettings;
+  private final UnaryCallSettings<UpdateApiOperationRequest, ApiOperation>
+      updateApiOperationSettings;
+  private final UnaryCallSettings<DeleteApiOperationRequest, Empty> deleteApiOperationSettings;
   private final UnaryCallSettings<GetDefinitionRequest, Definition> getDefinitionSettings;
   private final UnaryCallSettings<CreateDeploymentRequest, Deployment> createDeploymentSettings;
   private final UnaryCallSettings<GetDeploymentRequest, Deployment> getDeploymentSettings;
@@ -788,6 +796,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     return deleteSpecSettings;
   }
 
+  /** Returns the object with the settings used for calls to createApi. */
+  public UnaryCallSettings<CreateApiOperationRequest, ApiOperation> createApiOperationSettings() {
+    return createApiOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to getApi. */
   public UnaryCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationSettings() {
     return getApiOperationSettings;
@@ -798,6 +811,16 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
           ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
       listApiOperationsSettings() {
     return listApiOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateApi. */
+  public UnaryCallSettings<UpdateApiOperationRequest, ApiOperation> updateApiOperationSettings() {
+    return updateApiOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteApi. */
+  public UnaryCallSettings<DeleteApiOperationRequest, Empty> deleteApiOperationSettings() {
+    return deleteApiOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getDefinition. */
@@ -1001,8 +1024,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     listSpecsSettings = settingsBuilder.listSpecsSettings().build();
     updateSpecSettings = settingsBuilder.updateSpecSettings().build();
     deleteSpecSettings = settingsBuilder.deleteSpecSettings().build();
+    createApiOperationSettings = settingsBuilder.createApiOperationSettings().build();
     getApiOperationSettings = settingsBuilder.getApiOperationSettings().build();
     listApiOperationsSettings = settingsBuilder.listApiOperationsSettings().build();
+    updateApiOperationSettings = settingsBuilder.updateApiOperationSettings().build();
+    deleteApiOperationSettings = settingsBuilder.deleteApiOperationSettings().build();
     getDefinitionSettings = settingsBuilder.getDefinitionSettings().build();
     createDeploymentSettings = settingsBuilder.createDeploymentSettings().build();
     getDeploymentSettings = settingsBuilder.getDeploymentSettings().build();
@@ -1050,11 +1076,17 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
         listSpecsSettings;
     private final UnaryCallSettings.Builder<UpdateSpecRequest, Spec> updateSpecSettings;
     private final UnaryCallSettings.Builder<DeleteSpecRequest, Empty> deleteSpecSettings;
+    private final UnaryCallSettings.Builder<CreateApiOperationRequest, ApiOperation>
+        createApiOperationSettings;
     private final UnaryCallSettings.Builder<GetApiOperationRequest, ApiOperation>
         getApiOperationSettings;
     private final PagedCallSettings.Builder<
             ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
         listApiOperationsSettings;
+    private final UnaryCallSettings.Builder<UpdateApiOperationRequest, ApiOperation>
+        updateApiOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteApiOperationRequest, Empty>
+        deleteApiOperationSettings;
     private final UnaryCallSettings.Builder<GetDefinitionRequest, Definition> getDefinitionSettings;
     private final UnaryCallSettings.Builder<CreateDeploymentRequest, Deployment>
         createDeploymentSettings;
@@ -1104,6 +1136,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -1132,6 +1166,14 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               .setTotalTimeoutDuration(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+              .build();
+      definitions.put("no_retry_2_params", settings);
       settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
       definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
@@ -1160,8 +1202,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       listSpecsSettings = PagedCallSettings.newBuilder(LIST_SPECS_PAGE_STR_FACT);
       updateSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSpecSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createApiOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getApiOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listApiOperationsSettings = PagedCallSettings.newBuilder(LIST_API_OPERATIONS_PAGE_STR_FACT);
+      updateApiOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteApiOperationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDefinitionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getDeploymentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1200,8 +1245,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               listSpecsSettings,
               updateSpecSettings,
               deleteSpecSettings,
+              createApiOperationSettings,
               getApiOperationSettings,
               listApiOperationsSettings,
+              updateApiOperationSettings,
+              deleteApiOperationSettings,
               getDefinitionSettings,
               createDeploymentSettings,
               getDeploymentSettings,
@@ -1243,8 +1291,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       listSpecsSettings = settings.listSpecsSettings.toBuilder();
       updateSpecSettings = settings.updateSpecSettings.toBuilder();
       deleteSpecSettings = settings.deleteSpecSettings.toBuilder();
+      createApiOperationSettings = settings.createApiOperationSettings.toBuilder();
       getApiOperationSettings = settings.getApiOperationSettings.toBuilder();
       listApiOperationsSettings = settings.listApiOperationsSettings.toBuilder();
+      updateApiOperationSettings = settings.updateApiOperationSettings.toBuilder();
+      deleteApiOperationSettings = settings.deleteApiOperationSettings.toBuilder();
       getDefinitionSettings = settings.getDefinitionSettings.toBuilder();
       createDeploymentSettings = settings.createDeploymentSettings.toBuilder();
       getDeploymentSettings = settings.getDeploymentSettings.toBuilder();
@@ -1283,8 +1334,11 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
               listSpecsSettings,
               updateSpecSettings,
               deleteSpecSettings,
+              createApiOperationSettings,
               getApiOperationSettings,
               listApiOperationsSettings,
+              updateApiOperationSettings,
+              deleteApiOperationSettings,
               getDefinitionSettings,
               createDeploymentSettings,
               getDeploymentSettings,
@@ -1341,8 +1395,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
       builder
           .deleteApiSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createVersionSettings()
@@ -1366,8 +1420,8 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
       builder
           .deleteVersionSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
 
       builder
           .createSpecSettings()
@@ -1396,8 +1450,13 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
 
       builder
           .deleteSpecSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_2_params"));
+
+      builder
+          .createApiOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getApiOperationSettings()
@@ -1408,6 +1467,16 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
           .listApiOperationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateApiOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteApiOperationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .getDefinitionSettings()
@@ -1607,6 +1676,12 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
       return deleteSpecSettings;
     }
 
+    /** Returns the builder for the settings used for calls to createApi. */
+    public UnaryCallSettings.Builder<CreateApiOperationRequest, ApiOperation>
+        createApiOperationSettings() {
+      return createApiOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getApi. */
     public UnaryCallSettings.Builder<GetApiOperationRequest, ApiOperation>
         getApiOperationSettings() {
@@ -1618,6 +1693,18 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
             ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
         listApiOperationsSettings() {
       return listApiOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateApi. */
+    public UnaryCallSettings.Builder<UpdateApiOperationRequest, ApiOperation>
+        updateApiOperationSettings() {
+      return updateApiOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApi. */
+    public UnaryCallSettings.Builder<DeleteApiOperationRequest, Empty>
+        deleteApiOperationSettings() {
+      return deleteApiOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getDefinition. */

@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Enable Retail Search on Cloud Console before using this feature.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2/search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SearchServiceGrpc {
 
@@ -245,8 +242,8 @@ public final class SearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2.SearchResponse search(
-        com.google.cloud.retail.v2.SearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2.SearchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
     }
   }

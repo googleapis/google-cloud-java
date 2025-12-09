@@ -210,7 +210,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    * <pre>
    * Optional. Returned conversations will match criteria specified within the
    * filter. ListConversations allows filtering by:
-   *  * agent_id
+   *  * agents
    *  * labels
    * </pre>
    *
@@ -237,7 +237,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
    * <pre>
    * Optional. Returned conversations will match criteria specified within the
    * filter. ListConversations allows filtering by:
-   *  * agent_id
+   *  * agents
    *  * labels
    * </pre>
    *
@@ -987,7 +987,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * <pre>
      * Optional. Returned conversations will match criteria specified within the
      * filter. ListConversations allows filtering by:
-     *  * agent_id
+     *  * agents
      *  * labels
      * </pre>
      *
@@ -1013,7 +1013,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * <pre>
      * Optional. Returned conversations will match criteria specified within the
      * filter. ListConversations allows filtering by:
-     *  * agent_id
+     *  * agents
      *  * labels
      * </pre>
      *
@@ -1039,7 +1039,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * <pre>
      * Optional. Returned conversations will match criteria specified within the
      * filter. ListConversations allows filtering by:
-     *  * agent_id
+     *  * agents
      *  * labels
      * </pre>
      *
@@ -1064,7 +1064,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * <pre>
      * Optional. Returned conversations will match criteria specified within the
      * filter. ListConversations allows filtering by:
-     *  * agent_id
+     *  * agents
      *  * labels
      * </pre>
      *
@@ -1085,7 +1085,7 @@ public final class ListConversationsRequest extends com.google.protobuf.Generate
      * <pre>
      * Optional. Returned conversations will match criteria specified within the
      * filter. ListConversations allows filtering by:
-     *  * agent_id
+     *  * agents
      *  * labels
      * </pre>
      *

@@ -42,6 +42,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
   private Fleet() {
     project_ = "";
     membership_ = "";
+    membershipType_ = 0;
   }
 
   @java.lang.Override
@@ -62,6 +63,143 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_container_v1_Fleet_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.Fleet.class, com.google.container.v1.Fleet.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MembershipType describes if the membership supports all features or only
+   * lightweight compatible ones.
+   * </pre>
+   *
+   * Protobuf enum {@code google.container.v1.Fleet.MembershipType}
+   */
+  public enum MembershipType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The MembershipType is not set.
+     * </pre>
+     *
+     * <code>MEMBERSHIP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    MEMBERSHIP_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The membership supports only lightweight compatible features.
+     * </pre>
+     *
+     * <code>LIGHTWEIGHT = 1;</code>
+     */
+    LIGHTWEIGHT(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The MembershipType is not set.
+     * </pre>
+     *
+     * <code>MEMBERSHIP_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MEMBERSHIP_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The membership supports only lightweight compatible features.
+     * </pre>
+     *
+     * <code>LIGHTWEIGHT = 1;</code>
+     */
+    public static final int LIGHTWEIGHT_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MembershipType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MembershipType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MEMBERSHIP_TYPE_UNSPECIFIED;
+        case 1:
+          return LIGHTWEIGHT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MembershipType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MembershipType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MembershipType>() {
+          public MembershipType findValueByNumber(int number) {
+            return MembershipType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.container.v1.Fleet.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final MembershipType[] VALUES = values();
+
+    public static MembershipType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MembershipType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.container.v1.Fleet.MembershipType)
   }
 
   public static final int PROJECT_FIELD_NUMBER = 1;
@@ -198,6 +336,43 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     return preRegistered_;
   }
 
+  public static final int MEMBERSHIP_TYPE_FIELD_NUMBER = 4;
+  private int membershipType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the cluster's fleet membership.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for membershipType.
+   */
+  @java.lang.Override
+  public int getMembershipTypeValue() {
+    return membershipType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of the cluster's fleet membership.
+   * </pre>
+   *
+   * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+   *
+   * @return The membershipType.
+   */
+  @java.lang.Override
+  public com.google.container.v1.Fleet.MembershipType getMembershipType() {
+    com.google.container.v1.Fleet.MembershipType result =
+        com.google.container.v1.Fleet.MembershipType.forNumber(membershipType_);
+    return result == null ? com.google.container.v1.Fleet.MembershipType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -221,6 +396,10 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     if (preRegistered_ != false) {
       output.writeBool(3, preRegistered_);
     }
+    if (membershipType_
+        != com.google.container.v1.Fleet.MembershipType.MEMBERSHIP_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, membershipType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -238,6 +417,10 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     }
     if (preRegistered_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, preRegistered_);
+    }
+    if (membershipType_
+        != com.google.container.v1.Fleet.MembershipType.MEMBERSHIP_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, membershipType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -257,6 +440,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     if (!getProject().equals(other.getProject())) return false;
     if (!getMembership().equals(other.getMembership())) return false;
     if (getPreRegistered() != other.getPreRegistered()) return false;
+    if (membershipType_ != other.membershipType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -274,6 +458,8 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getMembership().hashCode();
     hash = (37 * hash) + PRE_REGISTERED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPreRegistered());
+    hash = (37 * hash) + MEMBERSHIP_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + membershipType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -415,6 +601,7 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       project_ = "";
       membership_ = "";
       preRegistered_ = false;
+      membershipType_ = 0;
       return this;
     }
 
@@ -458,6 +645,9 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.preRegistered_ = preRegistered_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.membershipType_ = membershipType_;
       }
     }
 
@@ -519,6 +709,9 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
       if (other.getPreRegistered() != false) {
         setPreRegistered(other.getPreRegistered());
       }
+      if (other.membershipType_ != 0) {
+        setMembershipTypeValue(other.getMembershipTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -563,6 +756,12 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                membershipType_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -879,6 +1078,101 @@ public final class Fleet extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPreRegistered() {
       bitField0_ = (bitField0_ & ~0x00000004);
       preRegistered_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int membershipType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the cluster's fleet membership.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+     *
+     * @return The enum numeric value on the wire for membershipType.
+     */
+    @java.lang.Override
+    public int getMembershipTypeValue() {
+      return membershipType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the cluster's fleet membership.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+     *
+     * @param value The enum numeric value on the wire for membershipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMembershipTypeValue(int value) {
+      membershipType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the cluster's fleet membership.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+     *
+     * @return The membershipType.
+     */
+    @java.lang.Override
+    public com.google.container.v1.Fleet.MembershipType getMembershipType() {
+      com.google.container.v1.Fleet.MembershipType result =
+          com.google.container.v1.Fleet.MembershipType.forNumber(membershipType_);
+      return result == null ? com.google.container.v1.Fleet.MembershipType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the cluster's fleet membership.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+     *
+     * @param value The membershipType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMembershipType(com.google.container.v1.Fleet.MembershipType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      membershipType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the cluster's fleet membership.
+     * </pre>
+     *
+     * <code>.google.container.v1.Fleet.MembershipType membership_type = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMembershipType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      membershipType_ = 0;
       onChanged();
       return this;
     }

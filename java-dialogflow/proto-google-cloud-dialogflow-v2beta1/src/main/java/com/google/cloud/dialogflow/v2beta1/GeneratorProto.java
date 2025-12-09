@@ -77,6 +77,10 @@ public final class GeneratorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_InferenceParameter_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_fieldAccessorTable;
@@ -105,9 +109,49 @@ public final class GeneratorProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_SummarySuggestion_SummarySection_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_Sources_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_Sources_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_DuplicateSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_DuplicateSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_AgentActionSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_AgentActionSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_SampleResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_SampleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_ToolCallInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_ToolCallInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestionDedupingConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SuggestionDedupingConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_RaiCategoryConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_RaiCategoryConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -121,13 +165,15 @@ public final class GeneratorProto {
           + "/google/cloud/dialogflow/v2beta1/generator.proto\022\037google.cloud.dialogflow.v2bet"
           + "a1\032\034google/api/annotations.proto\032\027google"
           + "/api/client.proto\032\037google/api/field_beha"
-          + "vior.proto\032\031google/api/resource.proto\032\033google/protobuf/empty.proto\032"
+          + "vior.proto\032\031google/api/resource.proto\032@g"
+          + "oogle/cloud/dialogflow/v2beta1/agent_coaching_instruction.proto\032/google/cloud/di"
+          + "alogflow/v2beta1/tool_call.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\274\001\n"
           + "\026CreateGeneratorRequest\022C\n"
           + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
           + "+cloudresourcemanager.googleapis.com/Project\022B\n"
-          + "\tgenerator\030\002"
-          + " \001(\0132*.google.cloud.dialogflow.v2beta1.GeneratorB\003\340A\002\022\031\n"
+          + "\tgenerator\030\002 "
+          + "\001(\0132*.google.cloud.dialogflow.v2beta1.GeneratorB\003\340A\002\022\031\n"
           + "\014generator_id\030\003 \001(\tB\003\340A\001\"P\n"
           + "\023GetGeneratorRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
@@ -144,8 +190,8 @@ public final class GeneratorProto {
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#dialogflow.googleapis.com/Generator\"\222\001\n"
           + "\026UpdateGeneratorRequest\022B\n"
-          + "\tgenerator\030\001 \001(\0132*.g"
-          + "oogle.cloud.dialogflow.v2beta1.GeneratorB\003\340A\002\0224\n"
+          + "\tgenerator\030\001 \001(\0132*.google"
+          + ".cloud.dialogflow.v2beta1.GeneratorB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\214\002\n"
           + "\014MessageEntry\022E\n"
@@ -166,14 +212,14 @@ public final class GeneratorProto {
           + "\026summarization_sections\030\001"
           + " \003(\01325.google.cloud.dialogflow.v2beta1.SummarizationSectionB\003\340A\001\"\264\003\n"
           + "\016FewShotExample\022W\n"
-          + "\024conversation_context\030\003 \001(\0132"
-          + "4.google.cloud.dialogflow.v2beta1.ConversationContextB\003\340A\001\022W\n\n"
-          + "extra_info\030\004 \003(\0132>"
-          + ".google.cloud.dialogflow.v2beta1.FewShotExample.ExtraInfoEntryB\003\340A\001\022_\n"
-          + "\032summarization_section_list\030\006 \001(\01329.google.cloud.d"
-          + "ialogflow.v2beta1.SummarizationSectionListH\000\022I\n"
-          + "\006output\030\007 \001(\01324.google.cloud.dial"
-          + "ogflow.v2beta1.GeneratorSuggestionB\003\340A\002\0320\n"
+          + "\024conversation_context\030\003 \001(\01324.goo"
+          + "gle.cloud.dialogflow.v2beta1.ConversationContextB\003\340A\001\022W\n\n"
+          + "extra_info\030\004 \003(\0132>.goog"
+          + "le.cloud.dialogflow.v2beta1.FewShotExample.ExtraInfoEntryB\003\340A\001\022_\n"
+          + "\032summarization_section_list\030\006 \001(\01329.google.cloud.dialog"
+          + "flow.v2beta1.SummarizationSectionListH\000\022I\n"
+          + "\006output\030\007"
+          + " \001(\01324.google.cloud.dialogflow.v2beta1.GeneratorSuggestionB\003\340A\002\0320\n"
           + "\016ExtraInfoEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\022\n"
@@ -186,12 +232,18 @@ public final class GeneratorProto {
           + "\022_max_output_tokensB\016\n"
           + "\014_temperatureB\010\n"
           + "\006_top_kB\010\n"
-          + "\006_top_p\"\341\002\n"
+          + "\006_top_p\"\310\001\n"
+          + "\024AgentCoachingContext\022!\n"
+          + "\024overarching_guidance\030\007 \001(\tB\003\340A\001\022T\n"
+          + "\014instructions\030\001 \003(\01329.google.cloud"
+          + ".dialogflow.v2beta1.AgentCoachingInstructionB\003\340A\001\022\024\n"
+          + "\007version\030\002 \001(\tB\003\340A\001\022!\n"
+          + "\024output_language_code\030\t \001(\tB\003\340A\001\"\341\002\n"
           + "\024SummarizationSection\022\020\n"
           + "\003key\030\001 \001(\tB\003\340A\001\022\027\n\n"
           + "definition\030\002 \001(\tB\003\340A\001\022M\n"
-          + "\004type\030\003 \001(\0162:.google."
-          + "cloud.dialogflow.v2beta1.SummarizationSection.TypeB\003\340A\001\"\316\001\n"
+          + "\004type\030\003 \001(\0162:.google.cl"
+          + "oud.dialogflow.v2beta1.SummarizationSection.TypeB\003\340A\001\"\316\001\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tSITUATION\020\001\022\n\n"
@@ -205,48 +257,116 @@ public final class GeneratorProto {
           + "\016ACTION_CONCISE\020\n"
           + "\"\374\001\n"
           + "\024SummarizationContext\022Z\n"
-          + "\026summarization_sections\030\001 \003("
-          + "\01325.google.cloud.dialogflow.v2beta1.SummarizationSectionB\003\340A\001\022O\n"
+          + "\026summarization_sections\030\001 \003(\0132"
+          + "5.google.cloud.dialogflow.v2beta1.SummarizationSectionB\003\340A\001\022O\n"
           + "\021few_shot_examples\030\002"
           + " \003(\0132/.google.cloud.dialogflow.v2beta1.FewShotExampleB\003\340A\001\022\024\n"
           + "\007version\030\003 \001(\tB\003\340A\001\022!\n"
           + "\024output_language_code\030\006 \001(\tB\003\340A\001\"$\n"
           + "\017FreeFormContext\022\021\n"
-          + "\004text\030\001 \001(\tB\003\340A\001\"\260\005\n"
+          + "\004text\030\001 \001(\tB\003\340A\001\"\244\007\n"
           + "\tGenerator\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022\030\n"
           + "\013description\030\002 \001(\tB\003\340A\001\022M\n"
           + "\021free_form_context\030\013"
-          + " \001(\01320.google.cloud.dialogflow.v2beta1.FreeFormContextH\000\022V\n"
+          + " \001(\01320.google.cloud.dialogflow.v2beta1.FreeFormContextH\000\022W\n"
+          + "\026agent_coaching_context\030\014"
+          + " \001(\01325.google.cloud.dialogflow.v2beta1.AgentCoachingContextH\000\022V\n"
           + "\025summarization_context\030\r"
           + " \001(\01325.google.cloud.dialogflow.v2beta1.SummarizationContextH\000\022U\n"
-          + "\023inference_parameter\030\004"
-          + " \001(\01323.google.cloud.dialogflow.v2beta1.InferenceParameterB\003\340A\001\022I\n\r"
+          + "\023inference_parameter\030\004 \001(\01323.google.cloud.di"
+          + "alogflow.v2beta1.InferenceParameterB\003\340A\001\022I\n\r"
           + "trigger_event\030\005"
           + " \001(\0162-.google.cloud.dialogflow.v2beta1.TriggerEventB\003\340A\001\022\036\n"
           + "\017published_model\030\017 \001(\tB\003\340A\001H\001\0224\n"
           + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\t"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:\177\352A|\n"
-          + "#dialogflow.googleapis.com"
-          + "/Generator\022>projects/{project}/locations/{location}/generators/{generator}*\n"
+          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0225\n"
+          + "\005tools\030\016 \003(\tB&\340A\001\372A \n"
+          + "\036dialogflow.googleapis.com/Tool\022b\n"
+          + "\032suggestion_deduping_config\030\027 \001(\01329.google.clou"
+          + "d.dialogflow.v2beta1.SuggestionDedupingConfigB\003\340A\001:\177\352A|\n"
+          + "#dialogflow.googleapis.c"
+          + "om/Generator\022>projects/{project}/locations/{location}/generators/{generator}*\n"
           + "generators2\tgeneratorB\t\n"
           + "\007contextB\022\n"
           + "\020foundation_model\"+\n"
           + "\022FreeFormSuggestion\022\025\n"
           + "\010response\030\001 \001(\tB\003\340A\002\"\263\001\n"
           + "\021SummarySuggestion\022`\n"
-          + "\020summary_sections\030\001 \003(\0132A.google.cloud.dia"
-          + "logflow.v2beta1.SummarySuggestion.SummarySectionB\003\340A\002\032<\n"
+          + "\020summary_sections\030\001 \003(\0132A.google.cloud.d"
+          + "ialogflow.v2beta1.SummarySuggestion.SummarySectionB\003\340A\002\032<\n"
           + "\016SummarySection\022\024\n"
           + "\007section\030\001 \001(\tB\003\340A\002\022\024\n"
-          + "\007summary\030\002 \001(\tB\003\340A\002\"\324\001\n"
+          + "\007summary\030\002 \001(\tB\003\340A\002\"\355\t\n"
+          + "\027AgentCoachingSuggestion\022_\n"
+          + "\027applicable_instructions\030\001 \003(\01329.google.cloud.dialog"
+          + "flow.v2beta1.AgentCoachingInstructionB\003\340A\001\022u\n"
+          + "\030agent_action_suggestions\030\002 \003(\0132N.g"
+          + "oogle.cloud.dialogflow.v2beta1.AgentCoac"
+          + "hingSuggestion.AgentActionSuggestionB\003\340A\001\022f\n"
+          + "\020sample_responses\030\003 \003(\0132G.google.clo"
+          + "ud.dialogflow.v2beta1.AgentCoachingSuggestion.SampleResponseB\003\340A\001\032+\n"
+          + "\007Sources\022 \n"
+          + "\023instruction_indexes\030\002 \003(\005B\003\340A\003\032\350\002\n"
+          + "\024DuplicateCheckResult\022\205\001\n"
+          + "\025duplicate_suggestions\030\001 \003(\0132a.google.cloud.dialogflow.v2beta"
+          + "1.AgentCoachingSuggestion.DuplicateCheckResult.DuplicateSuggestionB\003\340A\003\032\307\001\n"
+          + "\023DuplicateSuggestion\022\032\n\r"
+          + "answer_record\030\001 \001(\tB\003\340A\003\022V\n"
+          + "\007sources\030\002 \001(\0132@.google.cloud.dial"
+          + "ogflow.v2beta1.AgentCoachingSuggestion.SourcesB\003\340A\003\022\035\n"
+          + "\020suggestion_index\030\003 \001(\005B\003\340A\003\022\035\n"
+          + "\020similarity_score\030\004 \001(\002B\003\340A\003\032\376\001\n"
+          + "\025AgentActionSuggestion\022\031\n"
+          + "\014agent_action\030\001 \001(\tB\003\340A\001\022V\n"
+          + "\007sources\030\002 \001(\0132@.google.cloud.d"
+          + "ialogflow.v2beta1.AgentCoachingSuggestion.SourcesB\003\340A\003\022r\n"
+          + "\026duplicate_check_result\030\003 \001(\0132M.google.cloud.dialogflow.v2beta1"
+          + ".AgentCoachingSuggestion.DuplicateCheckResultB\003\340A\003\032\370\001\n"
+          + "\016SampleResponse\022\032\n\r"
+          + "response_text\030\001 \001(\tB\003\340A\001\022V\n"
+          + "\007sources\030\002 \001(\0132@.goo"
+          + "gle.cloud.dialogflow.v2beta1.AgentCoachingSuggestion.SourcesB\003\340A\003\022r\n"
+          + "\026duplicate_check_result\030\003 \001(\0132M.google.cloud.dialogf"
+          + "low.v2beta1.AgentCoachingSuggestion.DuplicateCheckResultB\003\340A\003\"\274\004\n"
           + "\023GeneratorSuggestion\022X\n"
-          + "\024free_form_suggestion\030\001"
-          + " \001(\01323.google.cloud.dialogflow.v2beta1.FreeFormSuggestionB\003\340A\001H\000\022U\n"
-          + "\022summary_suggestion\030\002"
-          + " \001(\01322.google.cloud.dialogflow.v2beta1.SummarySuggestionB\003\340A\001H\000B\014\n\n"
-          + "suggestion*}\n"
+          + "\024free_form_suggestion\030\001 \001(\01323.go"
+          + "ogle.cloud.dialogflow.v2beta1.FreeFormSuggestionB\003\340A\001H\000\022U\n"
+          + "\022summary_suggestion\030\002 "
+          + "\001(\01322.google.cloud.dialogflow.v2beta1.SummarySuggestionB\003\340A\001H\000\022b\n"
+          + "\031agent_coaching_suggestion\030\003 \001(\01328.google.cloud.dialogf"
+          + "low.v2beta1.AgentCoachingSuggestionB\003\340A\001H\000\022^\n"
+          + "\016tool_call_info\030\t \003(\0132A.google.clou"
+          + "d.dialogflow.v2beta1.GeneratorSuggestion.ToolCallInfoB\003\340A\001\032\241\001\n"
+          + "\014ToolCallInfo\022A\n"
+          + "\ttool_call\030\001"
+          + " \001(\0132).google.cloud.dialogflow.v2beta1.ToolCallB\003\340A\002\022N\n"
+          + "\020tool_call_result\030\002"
+          + " \001(\0132/.google.cloud.dialogflow.v2beta1.ToolCallResultB\003\340A\002B\014\n\n"
+          + "suggestion\"[\n"
+          + "\030SuggestionDedupingConfig\022\034\n"
+          + "\017enable_deduping\030\001 \001(\010B\003\340A\001\022!\n"
+          + "\024similarity_threshold\030\002 \001(\002B\003\340A\001\"\307\004\n"
+          + "\013RaiSettings\022\\\n"
+          + "\024rai_category_configs\030\001 \003(\0132>.google.cloud.dialogflo"
+          + "w.v2beta1.RaiSettings.RaiCategoryConfig\032\331\003\n"
+          + "\021RaiCategoryConfig\022a\n"
+          + "\010category\030\001 \001(\0162J.google.cloud.dialogflow.v2beta1.RaiSet"
+          + "tings.RaiCategoryConfig.RaiCategoryB\003\340A\001\022o\n"
+          + "\021sensitivity_level\030\002 \001(\0162O.google.clo"
+          + "ud.dialogflow.v2beta1.RaiSettings.RaiCategoryConfig.SensitivityLevelB\003\340A\001\"z\n"
+          + "\013RaiCategory\022\034\n"
+          + "\030RAI_CATEGORY_UNSPECIFIED\020\000\022\025\n"
+          + "\021DANGEROUS_CONTENT\020\001\022\025\n"
+          + "\021SEXUALLY_EXPLICIT\020\002\022\016\n\n"
+          + "HARASSMENT\020\003\022\017\n"
+          + "\013HATE_SPEECH\020\004\"t\n"
+          + "\020SensitivityLevel\022!\n"
+          + "\035SENSITIVITY_LEVEL_UNSPECIFIED\020\000\022\016\n\n"
+          + "BLOCK_MOST\020\001\022\016\n\n"
+          + "BLOCK_SOME\020\002\022\r\n"
+          + "\tBLOCK_FEW\020\003\022\016\n\n"
+          + "BLOCK_NONE\020\004*}\n"
           + "\014TriggerEvent\022\035\n"
           + "\031TRIGGER_EVENT_UNSPECIFIED\020\000\022\024\n"
           + "\020END_OF_UTTERANCE\020\001\022\017\n"
@@ -254,36 +374,35 @@ public final class GeneratorProto {
           + "\020CUSTOMER_MESSAGE\020\003\022\021\n\r"
           + "AGENT_MESSAGE\020\0042\326\t\n\n"
           + "Generators\022\225\002\n"
-          + "\017CreateGenerator\0227.google.cloud.dialogflow.v"
-          + "2beta1.CreateGeneratorRequest\032*.google.c"
-          + "loud.dialogflow.v2beta1.Generator\"\234\001\332A\035p"
-          + "arent,generator,generator_id\202\323\344\223\002v\"3/v2b"
-          + "eta1/{parent=projects/*/locations/*}/generators:"
+          + "\017CreateGenerator\0227.google.cloud.dialogflow.v2beta1.CreateGe"
+          + "neratorRequest\032*.google.cloud.dialogflow"
+          + ".v2beta1.Generator\"\234\001\332A\035parent,generator"
+          + ",generator_id\202\323\344\223\002v\"3/v2beta1/{parent=projects/*/locations/*}/generators:"
           + "\tgeneratorZ4\"\'/v2beta1/{parent=projects/*}/generators:\tgenerator\022\264\001\n"
-          + "\014GetGenerator\0224.google.cloud.dialogflow.v2be"
-          + "ta1.GetGeneratorRequest\032*.google.cloud.d"
-          + "ialogflow.v2beta1.Generator\"B\332A\004name\202\323\344\223"
-          + "\0025\0223/v2beta1/{name=projects/*/locations/*/generators/*}\022\362\001\n"
-          + "\016ListGenerators\0226.google.cloud.dialogflow.v2beta1.ListGenerat"
-          + "orsRequest\0327.google.cloud.dialogflow.v2b"
-          + "eta1.ListGeneratorsResponse\"o\332A\006parent\202\323"
-          + "\344\223\002`\0223/v2beta1/{parent=projects/*/locati"
-          + "ons/*}/generatorsZ)\022\'/v2beta1/{parent=projects/*}/generators\022\246\001\n"
-          + "\017DeleteGenerator\0227.google.cloud.dialogflow.v2beta1.Delet"
-          + "eGeneratorRequest\032\026.google.protobuf.Empt"
-          + "y\"B\332A\004name\202\323\344\223\0025*3/v2beta1/{name=projects/*/locations/*/generators/*}\022\340\001\n"
-          + "\017UpdateGenerator\0227.google.cloud.dialogflow.v2be"
-          + "ta1.UpdateGeneratorRequest\032*.google.clou"
-          + "d.dialogflow.v2beta1.Generator\"h\332A\025gener"
-          + "ator,update_mask\202\323\344\223\002J2=/v2beta1/{genera"
-          + "tor.name=projects/*/locations/*/generators/*}:"
-          + "\tgenerator\032x\312A\031dialogflow.googleap"
-          + "is.com\322AYhttps://www.googleapis.com/auth"
-          + "/cloud-platform,https://www.googleapis.com/auth/dialogflowB\243\001\n"
-          + "#com.google.cloud.dialogflow.v2beta1B\016GeneratorProtoP\001ZCcl"
-          + "oud.google.com/go/dialogflow/apiv2beta1/"
-          + "dialogflowpb;dialogflowpb\242\002\002DF\252\002\037Google."
-          + "Cloud.Dialogflow.V2Beta1b\006proto3"
+          + "\014GetGenerator\0224.google.cloud.dialogflow.v2beta1.GetGenerato"
+          + "rRequest\032*.google.cloud.dialogflow.v2bet"
+          + "a1.Generator\"B\332A\004name\202\323\344\223\0025\0223/v2beta1/{n"
+          + "ame=projects/*/locations/*/generators/*}\022\362\001\n"
+          + "\016ListGenerators\0226.google.cloud.dialogflow.v2beta1.ListGeneratorsRequest\0327.go"
+          + "ogle.cloud.dialogflow.v2beta1.ListGenera"
+          + "torsResponse\"o\332A\006parent\202\323\344\223\002`\0223/v2beta1/"
+          + "{parent=projects/*/locations/*}/generato"
+          + "rsZ)\022\'/v2beta1/{parent=projects/*}/generators\022\246\001\n"
+          + "\017DeleteGenerator\0227.google.cloud.dialogflow.v2beta1.DeleteGeneratorReque"
+          + "st\032\026.google.protobuf.Empty\"B\332A\004name\202\323\344\223\002"
+          + "5*3/v2beta1/{name=projects/*/locations/*/generators/*}\022\340\001\n"
+          + "\017UpdateGenerator\0227.google.cloud.dialogflow.v2beta1.UpdateGener"
+          + "atorRequest\032*.google.cloud.dialogflow.v2"
+          + "beta1.Generator\"h\332A\025generator,update_mas"
+          + "k\202\323\344\223\002J2=/v2beta1/{generator.name=projects/*/locations/*/generators/*}:"
+          + "\tgenerator\032x\312A\031dialogflow.googleapis.com\322AYhttps:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + ",https://www.googleapis.com/auth/dialogflowB\240\002\n"
+          + "#com.google.cloud.dialogflow.v2beta1B\016GeneratorProtoP\001ZCcloud.google.com/"
+          + "go/dialogflow/apiv2beta1/dialogflowpb;di"
+          + "alogflowpb\242\002\002DF\252\002\037Google.Cloud.Dialogflow.V2Beta1\352Az\n"
+          + "%discoveryengine.googleapis.com/Engine\022Qprojects/{project}/location"
+          + "s/{location}/collections/{collection}/engines/{engine}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -293,6 +412,8 @@ public final class GeneratorProto {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2beta1.AgentCoachingInstructionProto.getDescriptor(),
+              com.google.cloud.dialogflow.v2beta1.ToolCallProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -399,8 +520,16 @@ public final class GeneratorProto {
             new java.lang.String[] {
               "MaxOutputTokens", "Temperature", "TopK", "TopP",
             });
-    internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_descriptor =
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingContext_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingContext_descriptor,
+            new java.lang.String[] {
+              "OverarchingGuidance", "Instructions", "Version", "OutputLanguageCode",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SummarizationSection_descriptor,
@@ -408,7 +537,7 @@ public final class GeneratorProto {
               "Key", "Definition", "Type",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SummarizationContext_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_dialogflow_v2beta1_SummarizationContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SummarizationContext_descriptor,
@@ -416,7 +545,7 @@ public final class GeneratorProto {
               "SummarizationSections", "FewShotExamples", "Version", "OutputLanguageCode",
             });
     internal_static_google_cloud_dialogflow_v2beta1_FreeFormContext_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dialogflow_v2beta1_FreeFormContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_FreeFormContext_descriptor,
@@ -424,7 +553,7 @@ public final class GeneratorProto {
               "Text",
             });
     internal_static_google_cloud_dialogflow_v2beta1_Generator_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_dialogflow_v2beta1_Generator_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_Generator_descriptor,
@@ -432,17 +561,20 @@ public final class GeneratorProto {
               "Name",
               "Description",
               "FreeFormContext",
+              "AgentCoachingContext",
               "SummarizationContext",
               "InferenceParameter",
               "TriggerEvent",
               "PublishedModel",
               "CreateTime",
               "UpdateTime",
+              "Tools",
+              "SuggestionDedupingConfig",
               "Context",
               "FoundationModel",
             });
     internal_static_google_cloud_dialogflow_v2beta1_FreeFormSuggestion_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_dialogflow_v2beta1_FreeFormSuggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_FreeFormSuggestion_descriptor,
@@ -450,7 +582,7 @@ public final class GeneratorProto {
               "Response",
             });
     internal_static_google_cloud_dialogflow_v2beta1_SummarySuggestion_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dialogflow_v2beta1_SummarySuggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SummarySuggestion_descriptor,
@@ -467,13 +599,111 @@ public final class GeneratorProto {
             new java.lang.String[] {
               "Section", "Summary",
             });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor,
+            new java.lang.String[] {
+              "ApplicableInstructions", "AgentActionSuggestions", "SampleResponses",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_Sources_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_Sources_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_Sources_descriptor,
+            new java.lang.String[] {
+              "InstructionIndexes",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_descriptor,
+            new java.lang.String[] {
+              "DuplicateSuggestions",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_DuplicateSuggestion_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_DuplicateSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_DuplicateCheckResult_DuplicateSuggestion_descriptor,
+            new java.lang.String[] {
+              "AnswerRecord", "Sources", "SuggestionIndex", "SimilarityScore",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_AgentActionSuggestion_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_AgentActionSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_AgentActionSuggestion_descriptor,
+            new java.lang.String[] {
+              "AgentAction", "Sources", "DuplicateCheckResult",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_SampleResponse_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_SampleResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_AgentCoachingSuggestion_SampleResponse_descriptor,
+            new java.lang.String[] {
+              "ResponseText", "Sources", "DuplicateCheckResult",
+            });
     internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_descriptor,
             new java.lang.String[] {
-              "FreeFormSuggestion", "SummarySuggestion", "Suggestion",
+              "FreeFormSuggestion",
+              "SummarySuggestion",
+              "AgentCoachingSuggestion",
+              "ToolCallInfo",
+              "Suggestion",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_ToolCallInfo_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_ToolCallInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_GeneratorSuggestion_ToolCallInfo_descriptor,
+            new java.lang.String[] {
+              "ToolCall", "ToolCallResult",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestionDedupingConfig_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_dialogflow_v2beta1_SuggestionDedupingConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SuggestionDedupingConfig_descriptor,
+            new java.lang.String[] {
+              "EnableDeduping", "SimilarityThreshold",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_descriptor,
+            new java.lang.String[] {
+              "RaiCategoryConfigs",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_RaiCategoryConfig_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_RaiCategoryConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_RaiSettings_RaiCategoryConfig_descriptor,
+            new java.lang.String[] {
+              "Category", "SensitivityLevel",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -483,6 +713,7 @@ public final class GeneratorProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
@@ -490,6 +721,8 @@ public final class GeneratorProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.dialogflow.v2beta1.AgentCoachingInstructionProto.getDescriptor();
+    com.google.cloud.dialogflow.v2beta1.ToolCallProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

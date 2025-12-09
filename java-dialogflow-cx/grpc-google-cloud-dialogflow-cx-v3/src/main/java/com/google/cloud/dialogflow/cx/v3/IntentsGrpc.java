@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Intents][google.cloud.dialogflow.cx.v3.Intent].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3/intent.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IntentsGrpc {
 
@@ -722,8 +719,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListIntentsResponse listIntents(
-        com.google.cloud.dialogflow.cx.v3.ListIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ListIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIntentsMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +733,8 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Intent getIntent(
-        com.google.cloud.dialogflow.cx.v3.GetIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.GetIntentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIntentMethod(), getCallOptions(), request);
     }
 
@@ -751,8 +749,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Intent createIntent(
-        com.google.cloud.dialogflow.cx.v3.CreateIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.CreateIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIntentMethod(), getCallOptions(), request);
     }
 
@@ -767,8 +766,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.Intent updateIntent(
-        com.google.cloud.dialogflow.cx.v3.UpdateIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.UpdateIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIntentMethod(), getCallOptions(), request);
     }
 
@@ -783,8 +783,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(
-        com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
     }
 
@@ -803,8 +804,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importIntents(
-        com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportIntentsMethod(), getCallOptions(), request);
     }
 
@@ -823,8 +825,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportIntents(
-        com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportIntentsMethod(), getCallOptions(), request);
     }
   }

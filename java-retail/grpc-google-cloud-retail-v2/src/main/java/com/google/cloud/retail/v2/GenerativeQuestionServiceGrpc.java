@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing LLM generated questions in search serving.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2/generative_question_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GenerativeQuestionServiceGrpc {
 
@@ -605,8 +602,9 @@ public final class GenerativeQuestionServiceGrpc {
      */
     public com.google.cloud.retail.v2.GenerativeQuestionsFeatureConfig
         updateGenerativeQuestionsFeatureConfig(
-            com.google.cloud.retail.v2.UpdateGenerativeQuestionsFeatureConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2.UpdateGenerativeQuestionsFeatureConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getUpdateGenerativeQuestionsFeatureConfigMethod(),
           getCallOptions(),
@@ -623,8 +621,9 @@ public final class GenerativeQuestionServiceGrpc {
      */
     public com.google.cloud.retail.v2.GenerativeQuestionsFeatureConfig
         getGenerativeQuestionsFeatureConfig(
-            com.google.cloud.retail.v2.GetGenerativeQuestionsFeatureConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2.GetGenerativeQuestionsFeatureConfigRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetGenerativeQuestionsFeatureConfigMethod(), getCallOptions(), request);
     }
 
@@ -637,8 +636,9 @@ public final class GenerativeQuestionServiceGrpc {
      */
     public com.google.cloud.retail.v2.ListGenerativeQuestionConfigsResponse
         listGenerativeQuestionConfigs(
-            com.google.cloud.retail.v2.ListGenerativeQuestionConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2.ListGenerativeQuestionConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListGenerativeQuestionConfigsMethod(), getCallOptions(), request);
     }
 
@@ -650,8 +650,9 @@ public final class GenerativeQuestionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2.GenerativeQuestionConfig updateGenerativeQuestionConfig(
-        com.google.cloud.retail.v2.UpdateGenerativeQuestionConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2.UpdateGenerativeQuestionConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateGenerativeQuestionConfigMethod(), getCallOptions(), request);
     }
 
@@ -664,8 +665,9 @@ public final class GenerativeQuestionServiceGrpc {
      */
     public com.google.cloud.retail.v2.BatchUpdateGenerativeQuestionConfigsResponse
         batchUpdateGenerativeQuestionConfigs(
-            com.google.cloud.retail.v2.BatchUpdateGenerativeQuestionConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.retail.v2.BatchUpdateGenerativeQuestionConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchUpdateGenerativeQuestionConfigsMethod(), getCallOptions(), request);
     }
   }

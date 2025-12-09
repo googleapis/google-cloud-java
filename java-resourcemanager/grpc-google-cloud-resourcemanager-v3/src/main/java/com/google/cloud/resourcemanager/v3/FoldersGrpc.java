@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * organization and to control the policies applied to groups of resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/folders.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FoldersGrpc {
 
@@ -1168,8 +1165,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.Folder getFolder(
-        com.google.cloud.resourcemanager.v3.GetFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.GetFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetFolderMethod(), getCallOptions(), request);
     }
 
@@ -1187,8 +1185,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.ListFoldersResponse listFolders(
-        com.google.cloud.resourcemanager.v3.ListFoldersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.ListFoldersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListFoldersMethod(), getCallOptions(), request);
     }
 
@@ -1204,8 +1203,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.SearchFoldersResponse searchFolders(
-        com.google.cloud.resourcemanager.v3.SearchFoldersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.SearchFoldersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchFoldersMethod(), getCallOptions(), request);
     }
 
@@ -1239,8 +1239,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createFolder(
-        com.google.cloud.resourcemanager.v3.CreateFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.CreateFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateFolderMethod(), getCallOptions(), request);
     }
 
@@ -1266,8 +1267,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateFolder(
-        com.google.cloud.resourcemanager.v3.UpdateFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.UpdateFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateFolderMethod(), getCallOptions(), request);
     }
 
@@ -1295,8 +1297,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation moveFolder(
-        com.google.cloud.resourcemanager.v3.MoveFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.MoveFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveFolderMethod(), getCallOptions(), request);
     }
 
@@ -1318,8 +1321,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteFolder(
-        com.google.cloud.resourcemanager.v3.DeleteFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.DeleteFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteFolderMethod(), getCallOptions(), request);
     }
 
@@ -1341,8 +1345,9 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeleteFolder(
-        com.google.cloud.resourcemanager.v3.UndeleteFolderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.UndeleteFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeleteFolderMethod(), getCallOptions(), request);
     }
 
@@ -1357,8 +1362,9 @@ public final class FoldersGrpc {
      * on the identified folder.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1373,8 +1379,9 @@ public final class FoldersGrpc {
      * on the identified folder.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1389,8 +1396,8 @@ public final class FoldersGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

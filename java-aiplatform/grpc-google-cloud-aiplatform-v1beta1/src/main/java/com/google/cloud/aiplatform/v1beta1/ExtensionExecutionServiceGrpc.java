@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for Extension execution.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1beta1/extension_execution_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExtensionExecutionServiceGrpc {
 
@@ -326,8 +323,9 @@ public final class ExtensionExecutionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ExecuteExtensionResponse executeExtension(
-        com.google.cloud.aiplatform.v1beta1.ExecuteExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.ExecuteExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExecuteExtensionMethod(), getCallOptions(), request);
     }
 
@@ -339,8 +337,9 @@ public final class ExtensionExecutionServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.QueryExtensionResponse queryExtension(
-        com.google.cloud.aiplatform.v1beta1.QueryExtensionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1beta1.QueryExtensionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryExtensionMethod(), getCallOptions(), request);
     }
   }

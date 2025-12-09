@@ -50,6 +50,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     elementaryStreams_ = java.util.Collections.emptyList();
     muxStreams_ = java.util.Collections.emptyList();
     manifests_ = java.util.Collections.emptyList();
+    distributionStreams_ = java.util.Collections.emptyList();
+    distributions_ = java.util.Collections.emptyList();
     spriteSheets_ = java.util.Collections.emptyList();
     streamingState_ = 0;
     encryptions_ = java.util.Collections.emptyList();
@@ -1739,6 +1741,182 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     return manifests_.get(index);
   }
 
+  public static final int DISTRIBUTION_STREAMS_FIELD_NUMBER = 28;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.livestream.v1.DistributionStream>
+      distributionStreams_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.livestream.v1.DistributionStream>
+      getDistributionStreamsList() {
+    return distributionStreams_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>
+      getDistributionStreamsOrBuilderList() {
+    return distributionStreams_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDistributionStreamsCount() {
+    return distributionStreams_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.DistributionStream getDistributionStreams(int index) {
+    return distributionStreams_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder
+      getDistributionStreamsOrBuilder(int index) {
+    return distributionStreams_.get(index);
+  }
+
+  public static final int DISTRIBUTIONS_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.livestream.v1.Distribution> distributions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.livestream.v1.Distribution> getDistributionsList() {
+    return distributions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.video.livestream.v1.DistributionOrBuilder>
+      getDistributionsOrBuilderList() {
+    return distributions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDistributionsCount() {
+    return distributions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.Distribution getDistributions(int index) {
+    return distributions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.DistributionOrBuilder getDistributionsOrBuilder(
+      int index) {
+    return distributions_.get(index);
+  }
+
   public static final int SPRITE_SHEETS_FIELD_NUMBER = 13;
 
   @SuppressWarnings("serial")
@@ -2038,12 +2216,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList() {
@@ -2054,12 +2234,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
@@ -2071,12 +2253,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public int getEncryptionsCount() {
@@ -2087,12 +2271,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index) {
@@ -2103,12 +2289,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
@@ -2325,6 +2513,66 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     return staticOverlays_.get(index);
   }
 
+  public static final int AUTO_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 30;
+  private com.google.cloud.video.livestream.v1.AutoTranscriptionConfig autoTranscriptionConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoTranscriptionConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoTranscriptionConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoTranscriptionConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.AutoTranscriptionConfig getAutoTranscriptionConfig() {
+    return autoTranscriptionConfig_ == null
+        ? com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.getDefaultInstance()
+        : autoTranscriptionConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder
+      getAutoTranscriptionConfigOrBuilder() {
+    return autoTranscriptionConfig_ == null
+        ? com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.getDefaultInstance()
+        : autoTranscriptionConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2396,6 +2644,15 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < staticOverlays_.size(); i++) {
       output.writeMessage(27, staticOverlays_.get(i));
+    }
+    for (int i = 0; i < distributionStreams_.size(); i++) {
+      output.writeMessage(28, distributionStreams_.get(i));
+    }
+    for (int i = 0; i < distributions_.size(); i++) {
+      output.writeMessage(29, distributions_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(30, getAutoTranscriptionConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2474,6 +2731,18 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < staticOverlays_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, staticOverlays_.get(i));
     }
+    for (int i = 0; i < distributionStreams_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(28, distributionStreams_.get(i));
+    }
+    for (int i = 0; i < distributions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, distributions_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, getAutoTranscriptionConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2509,6 +2778,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (!getElementaryStreamsList().equals(other.getElementaryStreamsList())) return false;
     if (!getMuxStreamsList().equals(other.getMuxStreamsList())) return false;
     if (!getManifestsList().equals(other.getManifestsList())) return false;
+    if (!getDistributionStreamsList().equals(other.getDistributionStreamsList())) return false;
+    if (!getDistributionsList().equals(other.getDistributionsList())) return false;
     if (!getSpriteSheetsList().equals(other.getSpriteSheetsList())) return false;
     if (streamingState_ != other.streamingState_) return false;
     if (hasStreamingError() != other.hasStreamingError()) return false;
@@ -2533,6 +2804,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (!getRetentionConfig().equals(other.getRetentionConfig())) return false;
     }
     if (!getStaticOverlaysList().equals(other.getStaticOverlaysList())) return false;
+    if (hasAutoTranscriptionConfig() != other.hasAutoTranscriptionConfig()) return false;
+    if (hasAutoTranscriptionConfig()) {
+      if (!getAutoTranscriptionConfig().equals(other.getAutoTranscriptionConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2580,6 +2855,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MANIFESTS_FIELD_NUMBER;
       hash = (53 * hash) + getManifestsList().hashCode();
     }
+    if (getDistributionStreamsCount() > 0) {
+      hash = (37 * hash) + DISTRIBUTION_STREAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getDistributionStreamsList().hashCode();
+    }
+    if (getDistributionsCount() > 0) {
+      hash = (37 * hash) + DISTRIBUTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDistributionsList().hashCode();
+    }
     if (getSpriteSheetsCount() > 0) {
       hash = (37 * hash) + SPRITE_SHEETS_FIELD_NUMBER;
       hash = (53 * hash) + getSpriteSheetsList().hashCode();
@@ -2613,6 +2896,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     if (getStaticOverlaysCount() > 0) {
       hash = (37 * hash) + STATIC_OVERLAYS_FIELD_NUMBER;
       hash = (53 * hash) + getStaticOverlaysList().hashCode();
+    }
+    if (hasAutoTranscriptionConfig()) {
+      hash = (37 * hash) + AUTO_TRANSCRIPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoTranscriptionConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2788,6 +3075,8 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         getElementaryStreamsFieldBuilder();
         getMuxStreamsFieldBuilder();
         getManifestsFieldBuilder();
+        getDistributionStreamsFieldBuilder();
+        getDistributionsFieldBuilder();
         getSpriteSheetsFieldBuilder();
         getStreamingErrorFieldBuilder();
         getLogConfigFieldBuilder();
@@ -2796,6 +3085,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         getInputConfigFieldBuilder();
         getRetentionConfigFieldBuilder();
         getStaticOverlaysFieldBuilder();
+        getAutoTranscriptionConfigFieldBuilder();
       }
     }
 
@@ -2849,13 +3139,27 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         manifestsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      if (distributionStreamsBuilder_ == null) {
+        distributionStreams_ = java.util.Collections.emptyList();
+      } else {
+        distributionStreams_ = null;
+        distributionStreamsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000400);
+      if (distributionsBuilder_ == null) {
+        distributions_ = java.util.Collections.emptyList();
+      } else {
+        distributions_ = null;
+        distributionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000800);
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
       } else {
         spriteSheets_ = null;
         spriteSheetsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       streamingState_ = 0;
       streamingError_ = null;
       if (streamingErrorBuilder_ != null) {
@@ -2878,7 +3182,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         encryptions_ = null;
         encryptionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       inputConfig_ = null;
       if (inputConfigBuilder_ != null) {
         inputConfigBuilder_.dispose();
@@ -2895,7 +3199,12 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         staticOverlays_ = null;
         staticOverlaysBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
+      autoTranscriptionConfig_ = null;
+      if (autoTranscriptionConfigBuilder_ != null) {
+        autoTranscriptionConfigBuilder_.dispose();
+        autoTranscriptionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2968,28 +3277,46 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.manifests_ = manifestsBuilder_.build();
       }
-      if (spriteSheetsBuilder_ == null) {
+      if (distributionStreamsBuilder_ == null) {
         if (((bitField0_ & 0x00000400) != 0)) {
-          spriteSheets_ = java.util.Collections.unmodifiableList(spriteSheets_);
+          distributionStreams_ = java.util.Collections.unmodifiableList(distributionStreams_);
           bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.distributionStreams_ = distributionStreams_;
+      } else {
+        result.distributionStreams_ = distributionStreamsBuilder_.build();
+      }
+      if (distributionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)) {
+          distributions_ = java.util.Collections.unmodifiableList(distributions_);
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.distributions_ = distributions_;
+      } else {
+        result.distributions_ = distributionsBuilder_.build();
+      }
+      if (spriteSheetsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          spriteSheets_ = java.util.Collections.unmodifiableList(spriteSheets_);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.spriteSheets_ = spriteSheets_;
       } else {
         result.spriteSheets_ = spriteSheetsBuilder_.build();
       }
       if (encryptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           encryptions_ = java.util.Collections.unmodifiableList(encryptions_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.encryptions_ = encryptions_;
       } else {
         result.encryptions_ = encryptionsBuilder_.build();
       }
       if (staticOverlaysBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)) {
+        if (((bitField0_ & 0x00100000) != 0)) {
           staticOverlays_ = java.util.Collections.unmodifiableList(staticOverlays_);
-          bitField0_ = (bitField0_ & ~0x00040000);
+          bitField0_ = (bitField0_ & ~0x00100000);
         }
         result.staticOverlays_ = staticOverlays_;
       } else {
@@ -3022,32 +3349,39 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         result.output_ = outputBuilder_ == null ? output_ : outputBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.streamingState_ = streamingState_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.streamingError_ =
             streamingErrorBuilder_ == null ? streamingError_ : streamingErrorBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.timecodeConfig_ =
             timecodeConfigBuilder_ == null ? timecodeConfig_ : timecodeConfigBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.inputConfig_ =
             inputConfigBuilder_ == null ? inputConfig_ : inputConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.retentionConfig_ =
             retentionConfigBuilder_ == null ? retentionConfig_ : retentionConfigBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.autoTranscriptionConfig_ =
+            autoTranscriptionConfigBuilder_ == null
+                ? autoTranscriptionConfig_
+                : autoTranscriptionConfigBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3226,11 +3560,65 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (distributionStreamsBuilder_ == null) {
+        if (!other.distributionStreams_.isEmpty()) {
+          if (distributionStreams_.isEmpty()) {
+            distributionStreams_ = other.distributionStreams_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureDistributionStreamsIsMutable();
+            distributionStreams_.addAll(other.distributionStreams_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.distributionStreams_.isEmpty()) {
+          if (distributionStreamsBuilder_.isEmpty()) {
+            distributionStreamsBuilder_.dispose();
+            distributionStreamsBuilder_ = null;
+            distributionStreams_ = other.distributionStreams_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+            distributionStreamsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDistributionStreamsFieldBuilder()
+                    : null;
+          } else {
+            distributionStreamsBuilder_.addAllMessages(other.distributionStreams_);
+          }
+        }
+      }
+      if (distributionsBuilder_ == null) {
+        if (!other.distributions_.isEmpty()) {
+          if (distributions_.isEmpty()) {
+            distributions_ = other.distributions_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureDistributionsIsMutable();
+            distributions_.addAll(other.distributions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.distributions_.isEmpty()) {
+          if (distributionsBuilder_.isEmpty()) {
+            distributionsBuilder_.dispose();
+            distributionsBuilder_ = null;
+            distributions_ = other.distributions_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+            distributionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDistributionsFieldBuilder()
+                    : null;
+          } else {
+            distributionsBuilder_.addAllMessages(other.distributions_);
+          }
+        }
+      }
       if (spriteSheetsBuilder_ == null) {
         if (!other.spriteSheets_.isEmpty()) {
           if (spriteSheets_.isEmpty()) {
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureSpriteSheetsIsMutable();
             spriteSheets_.addAll(other.spriteSheets_);
@@ -3243,7 +3631,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             spriteSheetsBuilder_.dispose();
             spriteSheetsBuilder_ = null;
             spriteSheets_ = other.spriteSheets_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00001000);
             spriteSheetsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpriteSheetsFieldBuilder()
@@ -3269,7 +3657,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.encryptions_.isEmpty()) {
           if (encryptions_.isEmpty()) {
             encryptions_ = other.encryptions_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureEncryptionsIsMutable();
             encryptions_.addAll(other.encryptions_);
@@ -3282,7 +3670,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             encryptionsBuilder_.dispose();
             encryptionsBuilder_ = null;
             encryptions_ = other.encryptions_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             encryptionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEncryptionsFieldBuilder()
@@ -3302,7 +3690,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         if (!other.staticOverlays_.isEmpty()) {
           if (staticOverlays_.isEmpty()) {
             staticOverlays_ = other.staticOverlays_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00100000);
           } else {
             ensureStaticOverlaysIsMutable();
             staticOverlays_.addAll(other.staticOverlays_);
@@ -3315,7 +3703,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             staticOverlaysBuilder_.dispose();
             staticOverlaysBuilder_ = null;
             staticOverlays_ = other.staticOverlays_;
-            bitField0_ = (bitField0_ & ~0x00040000);
+            bitField0_ = (bitField0_ & ~0x00100000);
             staticOverlaysBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getStaticOverlaysFieldBuilder()
@@ -3324,6 +3712,9 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             staticOverlaysBuilder_.addAllMessages(other.staticOverlays_);
           }
         }
+      }
+      if (other.hasAutoTranscriptionConfig()) {
+        mergeAutoTranscriptionConfig(other.getAutoTranscriptionConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3450,7 +3841,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 112:
               {
                 streamingState_ = input.readEnum();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 112
             case 130:
@@ -3470,19 +3861,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 input.readMessage(getStreamingErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 154
             case 170:
               {
                 input.readMessage(getTimecodeConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 170
             case 194:
@@ -3502,13 +3893,13 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
             case 202:
               {
                 input.readMessage(getInputConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 202
             case 210:
               {
                 input.readMessage(getRetentionConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 210
             case 218:
@@ -3525,6 +3916,41 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 218
+            case 226:
+              {
+                com.google.cloud.video.livestream.v1.DistributionStream m =
+                    input.readMessage(
+                        com.google.cloud.video.livestream.v1.DistributionStream.parser(),
+                        extensionRegistry);
+                if (distributionStreamsBuilder_ == null) {
+                  ensureDistributionStreamsIsMutable();
+                  distributionStreams_.add(m);
+                } else {
+                  distributionStreamsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 226
+            case 234:
+              {
+                com.google.cloud.video.livestream.v1.Distribution m =
+                    input.readMessage(
+                        com.google.cloud.video.livestream.v1.Distribution.parser(),
+                        extensionRegistry);
+                if (distributionsBuilder_ == null) {
+                  ensureDistributionsIsMutable();
+                  distributions_.add(m);
+                } else {
+                  distributionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getAutoTranscriptionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6181,15 +6607,852 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       return manifestsBuilder_;
     }
 
+    private java.util.List<com.google.cloud.video.livestream.v1.DistributionStream>
+        distributionStreams_ = java.util.Collections.emptyList();
+
+    private void ensureDistributionStreamsIsMutable() {
+      if (!((bitField0_ & 0x00000400) != 0)) {
+        distributionStreams_ =
+            new java.util.ArrayList<com.google.cloud.video.livestream.v1.DistributionStream>(
+                distributionStreams_);
+        bitField0_ |= 0x00000400;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.DistributionStream,
+            com.google.cloud.video.livestream.v1.DistributionStream.Builder,
+            com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>
+        distributionStreamsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.DistributionStream>
+        getDistributionStreamsList() {
+      if (distributionStreamsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(distributionStreams_);
+      } else {
+        return distributionStreamsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDistributionStreamsCount() {
+      if (distributionStreamsBuilder_ == null) {
+        return distributionStreams_.size();
+      } else {
+        return distributionStreamsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionStream getDistributionStreams(
+        int index) {
+      if (distributionStreamsBuilder_ == null) {
+        return distributionStreams_.get(index);
+      } else {
+        return distributionStreamsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDistributionStreams(
+        int index, com.google.cloud.video.livestream.v1.DistributionStream value) {
+      if (distributionStreamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.set(index, value);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDistributionStreams(
+        int index,
+        com.google.cloud.video.livestream.v1.DistributionStream.Builder builderForValue) {
+      if (distributionStreamsBuilder_ == null) {
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributionStreams(
+        com.google.cloud.video.livestream.v1.DistributionStream value) {
+      if (distributionStreamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.add(value);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributionStreams(
+        int index, com.google.cloud.video.livestream.v1.DistributionStream value) {
+      if (distributionStreamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.add(index, value);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributionStreams(
+        com.google.cloud.video.livestream.v1.DistributionStream.Builder builderForValue) {
+      if (distributionStreamsBuilder_ == null) {
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.add(builderForValue.build());
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributionStreams(
+        int index,
+        com.google.cloud.video.livestream.v1.DistributionStream.Builder builderForValue) {
+      if (distributionStreamsBuilder_ == null) {
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDistributionStreams(
+        java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.DistributionStream>
+            values) {
+      if (distributionStreamsBuilder_ == null) {
+        ensureDistributionStreamsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, distributionStreams_);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDistributionStreams() {
+      if (distributionStreamsBuilder_ == null) {
+        distributionStreams_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDistributionStreams(int index) {
+      if (distributionStreamsBuilder_ == null) {
+        ensureDistributionStreamsIsMutable();
+        distributionStreams_.remove(index);
+        onChanged();
+      } else {
+        distributionStreamsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionStream.Builder
+        getDistributionStreamsBuilder(int index) {
+      return getDistributionStreamsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder
+        getDistributionStreamsOrBuilder(int index) {
+      if (distributionStreamsBuilder_ == null) {
+        return distributionStreams_.get(index);
+      } else {
+        return distributionStreamsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>
+        getDistributionStreamsOrBuilderList() {
+      if (distributionStreamsBuilder_ != null) {
+        return distributionStreamsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(distributionStreams_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionStream.Builder
+        addDistributionStreamsBuilder() {
+      return getDistributionStreamsFieldBuilder()
+          .addBuilder(com.google.cloud.video.livestream.v1.DistributionStream.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionStream.Builder
+        addDistributionStreamsBuilder(int index) {
+      return getDistributionStreamsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.video.livestream.v1.DistributionStream.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of multiplexing settings of streams for distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.DistributionStream.Builder>
+        getDistributionStreamsBuilderList() {
+      return getDistributionStreamsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.DistributionStream,
+            com.google.cloud.video.livestream.v1.DistributionStream.Builder,
+            com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>
+        getDistributionStreamsFieldBuilder() {
+      if (distributionStreamsBuilder_ == null) {
+        distributionStreamsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.DistributionStream,
+                com.google.cloud.video.livestream.v1.DistributionStream.Builder,
+                com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>(
+                distributionStreams_,
+                ((bitField0_ & 0x00000400) != 0),
+                getParentForChildren(),
+                isClean());
+        distributionStreams_ = null;
+      }
+      return distributionStreamsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.video.livestream.v1.Distribution> distributions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDistributionsIsMutable() {
+      if (!((bitField0_ & 0x00000800) != 0)) {
+        distributions_ =
+            new java.util.ArrayList<com.google.cloud.video.livestream.v1.Distribution>(
+                distributions_);
+        bitField0_ |= 0x00000800;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Distribution,
+            com.google.cloud.video.livestream.v1.Distribution.Builder,
+            com.google.cloud.video.livestream.v1.DistributionOrBuilder>
+        distributionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.Distribution>
+        getDistributionsList() {
+      if (distributionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(distributions_);
+      } else {
+        return distributionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDistributionsCount() {
+      if (distributionsBuilder_ == null) {
+        return distributions_.size();
+      } else {
+        return distributionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Distribution getDistributions(int index) {
+      if (distributionsBuilder_ == null) {
+        return distributions_.get(index);
+      } else {
+        return distributionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDistributions(
+        int index, com.google.cloud.video.livestream.v1.Distribution value) {
+      if (distributionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionsIsMutable();
+        distributions_.set(index, value);
+        onChanged();
+      } else {
+        distributionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDistributions(
+        int index, com.google.cloud.video.livestream.v1.Distribution.Builder builderForValue) {
+      if (distributionsBuilder_ == null) {
+        ensureDistributionsIsMutable();
+        distributions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        distributionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributions(com.google.cloud.video.livestream.v1.Distribution value) {
+      if (distributionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionsIsMutable();
+        distributions_.add(value);
+        onChanged();
+      } else {
+        distributionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributions(
+        int index, com.google.cloud.video.livestream.v1.Distribution value) {
+      if (distributionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDistributionsIsMutable();
+        distributions_.add(index, value);
+        onChanged();
+      } else {
+        distributionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributions(
+        com.google.cloud.video.livestream.v1.Distribution.Builder builderForValue) {
+      if (distributionsBuilder_ == null) {
+        ensureDistributionsIsMutable();
+        distributions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        distributionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDistributions(
+        int index, com.google.cloud.video.livestream.v1.Distribution.Builder builderForValue) {
+      if (distributionsBuilder_ == null) {
+        ensureDistributionsIsMutable();
+        distributions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        distributionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDistributions(
+        java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.Distribution> values) {
+      if (distributionsBuilder_ == null) {
+        ensureDistributionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, distributions_);
+        onChanged();
+      } else {
+        distributionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDistributions() {
+      if (distributionsBuilder_ == null) {
+        distributions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+      } else {
+        distributionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDistributions(int index) {
+      if (distributionsBuilder_ == null) {
+        ensureDistributionsIsMutable();
+        distributions_.remove(index);
+        onChanged();
+      } else {
+        distributionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Distribution.Builder getDistributionsBuilder(
+        int index) {
+      return getDistributionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.DistributionOrBuilder getDistributionsOrBuilder(
+        int index) {
+      if (distributionsBuilder_ == null) {
+        return distributions_.get(index);
+      } else {
+        return distributionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.video.livestream.v1.DistributionOrBuilder>
+        getDistributionsOrBuilderList() {
+      if (distributionsBuilder_ != null) {
+        return distributionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(distributions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Distribution.Builder addDistributionsBuilder() {
+      return getDistributionsFieldBuilder()
+          .addBuilder(com.google.cloud.video.livestream.v1.Distribution.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.Distribution.Builder addDistributionsBuilder(
+        int index) {
+      return getDistributionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.video.livestream.v1.Distribution.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of distributions.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.Distribution.Builder>
+        getDistributionsBuilderList() {
+      return getDistributionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.Distribution,
+            com.google.cloud.video.livestream.v1.Distribution.Builder,
+            com.google.cloud.video.livestream.v1.DistributionOrBuilder>
+        getDistributionsFieldBuilder() {
+      if (distributionsBuilder_ == null) {
+        distributionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.Distribution,
+                com.google.cloud.video.livestream.v1.Distribution.Builder,
+                com.google.cloud.video.livestream.v1.DistributionOrBuilder>(
+                distributions_,
+                ((bitField0_ & 0x00000800) != 0),
+                getParentForChildren(),
+                isClean());
+        distributions_ = null;
+      }
+      return distributionsBuilder_;
+    }
+
     private java.util.List<com.google.cloud.video.livestream.v1.SpriteSheet> spriteSheets_ =
         java.util.Collections.emptyList();
 
     private void ensureSpriteSheetsIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         spriteSheets_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.SpriteSheet>(
                 spriteSheets_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -6417,7 +7680,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSpriteSheets() {
       if (spriteSheetsBuilder_ == null) {
         spriteSheets_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         spriteSheetsBuilder_.clear();
@@ -6549,7 +7812,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.SpriteSheet,
                 com.google.cloud.video.livestream.v1.SpriteSheet.Builder,
                 com.google.cloud.video.livestream.v1.SpriteSheetOrBuilder>(
-                spriteSheets_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
+                spriteSheets_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         spriteSheets_ = null;
       }
       return spriteSheetsBuilder_;
@@ -6591,7 +7854,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStreamingStateValue(int value) {
       streamingState_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6637,7 +7900,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       streamingState_ = value.getNumber();
       onChanged();
       return this;
@@ -6657,7 +7920,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearStreamingState() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       streamingState_ = 0;
       onChanged();
       return this;
@@ -6685,7 +7948,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the streamingError field is set.
      */
     public boolean hasStreamingError() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6737,7 +8000,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         streamingErrorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6762,7 +8025,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         streamingErrorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6783,7 +8046,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStreamingError(com.google.rpc.Status value) {
       if (streamingErrorBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && streamingError_ != null
             && streamingError_ != com.google.rpc.Status.getDefaultInstance()) {
           getStreamingErrorBuilder().mergeFrom(value);
@@ -6794,7 +8057,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         streamingErrorBuilder_.mergeFrom(value);
       }
       if (streamingError_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -6815,7 +8078,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStreamingError() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       streamingError_ = null;
       if (streamingErrorBuilder_ != null) {
         streamingErrorBuilder_.dispose();
@@ -6840,7 +8103,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.rpc.Status.Builder getStreamingErrorBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getStreamingErrorFieldBuilder().getBuilder();
     }
@@ -6917,7 +8180,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6959,7 +8222,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6980,7 +8243,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6996,7 +8259,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.video.livestream.v1.LogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && logConfig_ != null
             && logConfig_ != com.google.cloud.video.livestream.v1.LogConfig.getDefaultInstance()) {
           getLogConfigBuilder().mergeFrom(value);
@@ -7007,7 +8270,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         logConfigBuilder_.mergeFrom(value);
       }
       if (logConfig_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -7023,7 +8286,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.LogConfig log_config = 19;</code>
      */
     public Builder clearLogConfig() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       logConfig_ = null;
       if (logConfigBuilder_ != null) {
         logConfigBuilder_.dispose();
@@ -7043,7 +8306,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.LogConfig log_config = 19;</code>
      */
     public com.google.cloud.video.livestream.v1.LogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -7112,7 +8375,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timecodeConfig field is set.
      */
     public boolean hasTimecodeConfig() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -7154,7 +8417,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         timecodeConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7175,7 +8438,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         timecodeConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -7191,7 +8454,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimecodeConfig(com.google.cloud.video.livestream.v1.TimecodeConfig value) {
       if (timecodeConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && timecodeConfig_ != null
             && timecodeConfig_
                 != com.google.cloud.video.livestream.v1.TimecodeConfig.getDefaultInstance()) {
@@ -7203,7 +8466,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         timecodeConfigBuilder_.mergeFrom(value);
       }
       if (timecodeConfig_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -7219,7 +8482,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
      */
     public Builder clearTimecodeConfig() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       timecodeConfig_ = null;
       if (timecodeConfigBuilder_ != null) {
         timecodeConfigBuilder_.dispose();
@@ -7239,7 +8502,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.TimecodeConfig timecode_config = 21;</code>
      */
     public com.google.cloud.video.livestream.v1.TimecodeConfig.Builder getTimecodeConfigBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getTimecodeConfigFieldBuilder().getBuilder();
     }
@@ -7294,10 +8557,10 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEncryptionsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         encryptions_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.Encryption>(encryptions_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -7311,12 +8574,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList() {
       if (encryptionsBuilder_ == null) {
@@ -7330,12 +8595,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public int getEncryptionsCount() {
       if (encryptionsBuilder_ == null) {
@@ -7349,12 +8616,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index) {
       if (encryptionsBuilder_ == null) {
@@ -7368,12 +8637,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEncryptions(
         int index, com.google.cloud.video.livestream.v1.Encryption value) {
@@ -7394,12 +8665,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setEncryptions(
         int index, com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
@@ -7417,12 +8690,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEncryptions(com.google.cloud.video.livestream.v1.Encryption value) {
       if (encryptionsBuilder_ == null) {
@@ -7442,12 +8717,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEncryptions(
         int index, com.google.cloud.video.livestream.v1.Encryption value) {
@@ -7468,12 +8745,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEncryptions(
         com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
@@ -7491,12 +8770,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addEncryptions(
         int index, com.google.cloud.video.livestream.v1.Encryption.Builder builderForValue) {
@@ -7514,12 +8795,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder addAllEncryptions(
         java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.Encryption> values) {
@@ -7537,17 +8820,19 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearEncryptions() {
       if (encryptionsBuilder_ == null) {
         encryptions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         encryptionsBuilder_.clear();
@@ -7559,12 +8844,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeEncryptions(int index) {
       if (encryptionsBuilder_ == null) {
@@ -7581,12 +8868,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.video.livestream.v1.Encryption.Builder getEncryptionsBuilder(
         int index) {
@@ -7597,12 +8886,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(
         int index) {
@@ -7617,12 +8908,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
         getEncryptionsOrBuilderList() {
@@ -7637,12 +8930,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.video.livestream.v1.Encryption.Builder addEncryptionsBuilder() {
       return getEncryptionsFieldBuilder()
@@ -7653,12 +8948,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.video.livestream.v1.Encryption.Builder addEncryptionsBuilder(
         int index) {
@@ -7670,12 +8967,14 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Encryption configurations for this channel. Each configuration has an ID
-     * which is referred to by each MuxStream to indicate which configuration is
-     * used for that output.
+     * Optional. Encryption configurations for this channel. Each configuration
+     * has an ID which is referred to by each MuxStream to indicate which
+     * configuration is used for that output.
      * </pre>
      *
-     * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public java.util.List<com.google.cloud.video.livestream.v1.Encryption.Builder>
         getEncryptionsBuilderList() {
@@ -7693,7 +8992,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.Encryption,
                 com.google.cloud.video.livestream.v1.Encryption.Builder,
                 com.google.cloud.video.livestream.v1.EncryptionOrBuilder>(
-                encryptions_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+                encryptions_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
         encryptions_ = null;
       }
       return encryptionsBuilder_;
@@ -7719,7 +9018,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputConfig field is set.
      */
     public boolean hasInputConfig() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -7763,7 +9062,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7785,7 +9084,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         inputConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -7802,7 +9101,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeInputConfig(com.google.cloud.video.livestream.v1.InputConfig value) {
       if (inputConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && inputConfig_ != null
             && inputConfig_
                 != com.google.cloud.video.livestream.v1.InputConfig.getDefaultInstance()) {
@@ -7814,7 +9113,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         inputConfigBuilder_.mergeFrom(value);
       }
       if (inputConfig_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -7831,7 +9130,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
      */
     public Builder clearInputConfig() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       inputConfig_ = null;
       if (inputConfigBuilder_ != null) {
         inputConfigBuilder_.dispose();
@@ -7852,7 +9151,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.video.livestream.v1.InputConfig input_config = 25;</code>
      */
     public com.google.cloud.video.livestream.v1.InputConfig.Builder getInputConfigBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
@@ -7925,7 +9224,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the retentionConfig field is set.
      */
     public boolean hasRetentionConfig() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -7971,7 +9270,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         retentionConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -7994,7 +9293,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
       } else {
         retentionConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -8013,7 +9312,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeRetentionConfig(
         com.google.cloud.video.livestream.v1.RetentionConfig value) {
       if (retentionConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && retentionConfig_ != null
             && retentionConfig_
                 != com.google.cloud.video.livestream.v1.RetentionConfig.getDefaultInstance()) {
@@ -8025,7 +9324,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         retentionConfigBuilder_.mergeFrom(value);
       }
       if (retentionConfig_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -8043,7 +9342,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearRetentionConfig() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       retentionConfig_ = null;
       if (retentionConfigBuilder_ != null) {
         retentionConfigBuilder_.dispose();
@@ -8066,7 +9365,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.video.livestream.v1.RetentionConfig.Builder
         getRetentionConfigBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getRetentionConfigFieldBuilder().getBuilder();
     }
@@ -8125,11 +9424,11 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureStaticOverlaysIsMutable() {
-      if (!((bitField0_ & 0x00040000) != 0)) {
+      if (!((bitField0_ & 0x00100000) != 0)) {
         staticOverlays_ =
             new java.util.ArrayList<com.google.cloud.video.livestream.v1.StaticOverlay>(
                 staticOverlays_);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
       }
     }
 
@@ -8391,7 +9690,7 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
     public Builder clearStaticOverlays() {
       if (staticOverlaysBuilder_ == null) {
         staticOverlays_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
       } else {
         staticOverlaysBuilder_.clear();
@@ -8546,12 +9845,232 @@ public final class Channel extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.video.livestream.v1.StaticOverlay.Builder,
                 com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder>(
                 staticOverlays_,
-                ((bitField0_ & 0x00040000) != 0),
+                ((bitField0_ & 0x00100000) != 0),
                 getParentForChildren(),
                 isClean());
         staticOverlays_ = null;
       }
       return staticOverlaysBuilder_;
+    }
+
+    private com.google.cloud.video.livestream.v1.AutoTranscriptionConfig autoTranscriptionConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfig,
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.Builder,
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder>
+        autoTranscriptionConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoTranscriptionConfig field is set.
+     */
+    public boolean hasAutoTranscriptionConfig() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoTranscriptionConfig.
+     */
+    public com.google.cloud.video.livestream.v1.AutoTranscriptionConfig
+        getAutoTranscriptionConfig() {
+      if (autoTranscriptionConfigBuilder_ == null) {
+        return autoTranscriptionConfig_ == null
+            ? com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.getDefaultInstance()
+            : autoTranscriptionConfig_;
+      } else {
+        return autoTranscriptionConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoTranscriptionConfig(
+        com.google.cloud.video.livestream.v1.AutoTranscriptionConfig value) {
+      if (autoTranscriptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoTranscriptionConfig_ = value;
+      } else {
+        autoTranscriptionConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoTranscriptionConfig(
+        com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.Builder builderForValue) {
+      if (autoTranscriptionConfigBuilder_ == null) {
+        autoTranscriptionConfig_ = builderForValue.build();
+      } else {
+        autoTranscriptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoTranscriptionConfig(
+        com.google.cloud.video.livestream.v1.AutoTranscriptionConfig value) {
+      if (autoTranscriptionConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && autoTranscriptionConfig_ != null
+            && autoTranscriptionConfig_
+                != com.google.cloud.video.livestream.v1.AutoTranscriptionConfig
+                    .getDefaultInstance()) {
+          getAutoTranscriptionConfigBuilder().mergeFrom(value);
+        } else {
+          autoTranscriptionConfig_ = value;
+        }
+      } else {
+        autoTranscriptionConfigBuilder_.mergeFrom(value);
+      }
+      if (autoTranscriptionConfig_ != null) {
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoTranscriptionConfig() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      autoTranscriptionConfig_ = null;
+      if (autoTranscriptionConfigBuilder_ != null) {
+        autoTranscriptionConfigBuilder_.dispose();
+        autoTranscriptionConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.Builder
+        getAutoTranscriptionConfigBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getAutoTranscriptionConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder
+        getAutoTranscriptionConfigOrBuilder() {
+      if (autoTranscriptionConfigBuilder_ != null) {
+        return autoTranscriptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return autoTranscriptionConfig_ == null
+            ? com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.getDefaultInstance()
+            : autoTranscriptionConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Advanced configurations for auto-generated text streams.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfig,
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.Builder,
+            com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder>
+        getAutoTranscriptionConfigFieldBuilder() {
+      if (autoTranscriptionConfigBuilder_ == null) {
+        autoTranscriptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.AutoTranscriptionConfig,
+                com.google.cloud.video.livestream.v1.AutoTranscriptionConfig.Builder,
+                com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder>(
+                getAutoTranscriptionConfig(), getParentForChildren(), isClean());
+        autoTranscriptionConfig_ = null;
+      }
+      return autoTranscriptionConfigBuilder_;
     }
 
     @java.lang.Override

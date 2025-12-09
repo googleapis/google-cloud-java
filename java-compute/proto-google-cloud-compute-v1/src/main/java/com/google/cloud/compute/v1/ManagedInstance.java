@@ -72,7 +72,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * STOPPING
    * SUSPENDING
@@ -95,7 +120,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * The managed instance group is abandoning this instance. The instance
+     * will be removed from the instance group and from any target pools that
+     * are associated with this group.
      * </pre>
      *
      * <code>ABANDONING = 388244813;</code>
@@ -105,7 +132,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * The managed instance group is creating this instance. If the group
+     * fails to create this instance, it will try again until it is
+     * successful.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -115,7 +144,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * The managed instance group is attempting to create this instance
+     * only once. If the group fails to create this instance, it does
+     * not try again and the group's targetSize value is
+     * decreased.
      * </pre>
      *
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
@@ -135,7 +167,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group has not scheduled any actions for this instance.
+     * The managed instance group has not scheduled any actions for this
+     * instance.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -155,7 +188,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * The managed instance group is applying configuration changes to the
+     * instance without stopping it. For example, the group can update the
+     * target pool list for an instance without stopping that instance.
      * </pre>
      *
      * <code>REFRESHING = 163266343;</code>
@@ -195,7 +230,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * The managed instance group is verifying this already created instance.
+     * Verification happens every time the instance is (re)created or restarted
+     * and consists of:
+     *  1. Waiting until health check specified as part of this managed instance
+     *     group's autohealing policy reports HEALTHY.
+     *     Note: Applies only if autohealing policy has a health check specified
+     *  2. Waiting for addition verification steps performed as post-instance
+     *     creation (subject to future extensions).
      * </pre>
      *
      * <code>VERIFYING = 16982185;</code>
@@ -219,7 +261,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group.
+     * The managed instance group is abandoning this instance. The instance
+     * will be removed from the instance group and from any target pools that
+     * are associated with this group.
      * </pre>
      *
      * <code>ABANDONING = 388244813;</code>
@@ -230,7 +274,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful.
+     * The managed instance group is creating this instance. If the group
+     * fails to create this instance, it will try again until it is
+     * successful.
      * </pre>
      *
      * <code>CREATING = 455564985;</code>
@@ -241,7 +287,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased.
+     * The managed instance group is attempting to create this instance
+     * only once. If the group fails to create this instance, it does
+     * not try again and the group's targetSize value is
+     * decreased.
      * </pre>
      *
      * <code>CREATING_WITHOUT_RETRIES = 428843785;</code>
@@ -263,7 +312,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group has not scheduled any actions for this instance.
+     * The managed instance group has not scheduled any actions for this
+     * instance.
      * </pre>
      *
      * <code>NONE = 2402104;</code>
@@ -285,7 +335,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance.
+     * The managed instance group is applying configuration changes to the
+     * instance without stopping it. For example, the group can update the
+     * target pool list for an instance without stopping that instance.
      * </pre>
      *
      * <code>REFRESHING = 163266343;</code>
@@ -329,7 +381,14 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The managed instance group is verifying this already created instance. Verification happens every time the instance is (re)created or restarted and consists of: 1. Waiting until health check specified as part of this managed instance group's autohealing policy reports HEALTHY. Note: Applies only if autohealing policy has a health check specified 2. Waiting for addition verification steps performed as post-instance creation (subject to future extensions).
+     * The managed instance group is verifying this already created instance.
+     * Verification happens every time the instance is (re)created or restarted
+     * and consists of:
+     *  1. Waiting until health check specified as part of this managed instance
+     *     group's autohealing policy reports HEALTHY.
+     *     Note: Applies only if autohealing policy has a health check specified
+     *  2. Waiting for addition verification steps performed as post-instance
+     *     creation (subject to future extensions).
      * </pre>
      *
      * <code>VERIFYING = 16982185;</code>
@@ -441,7 +500,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * STOPPING
    * SUSPENDING
@@ -464,12 +524,24 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
      */
     DEPROVISIONING(428935662),
+    /**
+     *
+     *
+     * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    PENDING(35394935),
     /**
      *
      *
@@ -504,7 +576,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -538,7 +611,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -562,12 +636,25 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The instance is halted and we are performing tear down tasks like network deprogramming, releasing quota, IP, tearing down disks etc.
+     * The instance is halted and we are performing tear down tasks like network
+     * deprogramming, releasing quota, IP, tearing down disks etc.
      * </pre>
      *
      * <code>DEPROVISIONING = 428935662;</code>
      */
     public static final int DEPROVISIONING_VALUE = 428935662;
+
+    /**
+     *
+     *
+     * <pre>
+     * For Flex Start provisioning instance is waiting for available capacity
+     * from Dynamic Workload Scheduler (DWS).
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
+    public static final int PENDING_VALUE = 35394935;
 
     /**
      *
@@ -606,7 +693,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * All required resources have been allocated and the instance is being started.
+     * All required resources have been allocated and the instance
+     * is being started.
      * </pre>
      *
      * <code>STAGING = 431072283;</code>
@@ -645,7 +733,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The instance has stopped (either by explicit action or underlying failure).
+     * The instance has stopped (either by explicit action or underlying
+     * failure).
      * </pre>
      *
      * <code>TERMINATED = 250018339;</code>
@@ -680,6 +769,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
           return UNDEFINED_INSTANCE_STATUS;
         case 428935662:
           return DEPROVISIONING;
+        case 35394935:
+          return PENDING;
         case 290896621:
           return PROVISIONING;
         case 413483285:
@@ -761,7 +852,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -778,7 +894,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -803,7 +944,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * [Output Only] The current action that the managed instance group has
+   * scheduled for the instance. Possible values:
+   *
+   *    - NONE The instance is running, and the managed
+   *    instance group does not have any scheduled actions for this instance.
+   *    - CREATING The managed instance group is creating this
+   *    instance. If the group fails to create this instance, it will try again
+   *    until it is successful.
+   *    - CREATING_WITHOUT_RETRIES The managed instance group
+   *    is attempting to create this instance only once. If the group fails
+   *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+   *    - RECREATING The managed instance group is recreating
+   *    this instance.
+   *    - DELETING The managed instance group is permanently
+   *    deleting this instance.
+   *    - ABANDONING The managed instance group is abandoning
+   *    this instance. The instance will be removed from the instance group
+   *    and from any target pools that are associated with this group.
+   *    - RESTARTING The managed instance group is restarting
+   *    the instance.
+   *    - REFRESHING The managed instance group is applying
+   *    configuration changes to the instance without stopping it. For example,
+   *    the group can update the target pool list for an instance without
+   *    stopping that instance.
+   *    - VERIFYING The managed instance group has created the
+   *    instance and it is in the process of being verified.
    * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
@@ -831,7 +997,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * [Output only] The unique identifier for this resource. This field is empty
+   * when instance does not exist.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -847,7 +1014,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+   * [Output only] The unique identifier for this resource. This field is empty
+   * when instance does not exist.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -868,7 +1036,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -884,7 +1053,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -908,7 +1078,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+   * [Output Only] The URL of the instance. The URL can exist even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -1026,7 +1197,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -1043,7 +1215,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -1068,7 +1241,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * [Output Only] The status of the instance. This field is empty when
+   * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
@@ -1096,7 +1270,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -1113,7 +1288,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -1132,7 +1308,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete the instance.
+   * [Output Only] Information about the last attempt to create or delete
+   * the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -1154,7 +1331,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1170,7 +1348,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1194,7 +1373,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+   * [Output Only] The name of the instance. The name always exists even if the
+   * instance has not yet been created.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1221,7 +1401,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -1238,7 +1419,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -1257,7 +1439,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config for this instance.
+   * [Output Only] Preserved state applied from per-instance config
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_config = 98661858;
@@ -1278,7 +1461,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -1295,7 +1479,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -1314,7 +1499,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy for this instance.
+   * [Output Only] Preserved state generated based on stateful policy
+   * for this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;
@@ -1336,7 +1522,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -1354,7 +1541,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -1376,7 +1564,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+   * [Output Only] Instance properties selected for this instance resulting from
+   * InstanceFlexibilityPolicy.
    * </pre>
    *
    * <code>
@@ -2189,7 +2378,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2205,7 +2419,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2229,7 +2468,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2253,7 +2517,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2276,7 +2565,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2295,7 +2609,32 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * [Output Only] The current action that the managed instance group has
+     * scheduled for the instance. Possible values:
+     *
+     *    - NONE The instance is running, and the managed
+     *    instance group does not have any scheduled actions for this instance.
+     *    - CREATING The managed instance group is creating this
+     *    instance. If the group fails to create this instance, it will try again
+     *    until it is successful.
+     *    - CREATING_WITHOUT_RETRIES The managed instance group
+     *    is attempting to create this instance only once. If the group fails
+     *    to create this instance, it does not try again and the group'stargetSize value is decreased instead.
+     *    - RECREATING The managed instance group is recreating
+     *    this instance.
+     *    - DELETING The managed instance group is permanently
+     *    deleting this instance.
+     *    - ABANDONING The managed instance group is abandoning
+     *    this instance. The instance will be removed from the instance group
+     *    and from any target pools that are associated with this group.
+     *    - RESTARTING The managed instance group is restarting
+     *    the instance.
+     *    - REFRESHING The managed instance group is applying
+     *    configuration changes to the instance without stopping it. For example,
+     *    the group can update the target pool list for an instance without
+     *    stopping that instance.
+     *    - VERIFYING The managed instance group has created the
+     *    instance and it is in the process of being verified.
      * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
@@ -2321,7 +2660,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+     * [Output only] The unique identifier for this resource. This field is empty
+     * when instance does not exist.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2337,7 +2677,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+     * [Output only] The unique identifier for this resource. This field is empty
+     * when instance does not exist.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2353,7 +2694,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+     * [Output only] The unique identifier for this resource. This field is empty
+     * when instance does not exist.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2373,7 +2715,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
+     * [Output only] The unique identifier for this resource. This field is empty
+     * when instance does not exist.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2393,7 +2736,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2408,7 +2752,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2431,7 +2776,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2454,7 +2800,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2476,7 +2823,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2494,7 +2842,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
+     * [Output Only] The URL of the instance. The URL can exist even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string instance = 18257045;</code>
@@ -2942,7 +3291,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -2958,7 +3308,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -2982,7 +3333,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -3006,7 +3358,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -3029,7 +3382,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -3048,7 +3402,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * [Output Only] The status of the instance. This field is empty when
+     * the instance does not exist.
      * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
@@ -3079,7 +3434,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3095,7 +3451,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3117,7 +3474,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3141,7 +3499,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3163,7 +3522,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3193,7 +3553,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3214,7 +3575,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3230,7 +3592,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3251,7 +3614,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Information about the last attempt to create or delete the instance.
+     * [Output Only] Information about the last attempt to create or delete
+     * the instance.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;
@@ -3280,7 +3644,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3295,7 +3660,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3318,7 +3684,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3341,7 +3708,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3363,7 +3731,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3381,7 +3750,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
+     * [Output Only] The name of the instance. The name always exists even if the
+     * instance has not yet been created.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3411,7 +3781,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3428,7 +3799,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3451,7 +3823,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3476,7 +3849,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3499,7 +3873,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3530,7 +3905,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3552,7 +3928,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3569,7 +3946,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3591,7 +3969,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state applied from per-instance config for this instance.
+     * [Output Only] Preserved state applied from per-instance config
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3626,7 +4005,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3643,7 +4023,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3666,7 +4047,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3691,7 +4073,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3714,7 +4097,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3745,7 +4129,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3767,7 +4152,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3784,7 +4170,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3806,7 +4193,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Preserved state generated based on stateful policy for this instance.
+     * [Output Only] Preserved state generated based on stateful policy
+     * for this instance.
      * </pre>
      *
      * <code>
@@ -3842,7 +4230,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3859,7 +4248,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3884,7 +4274,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3910,7 +4301,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3934,7 +4326,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3967,7 +4360,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -3989,7 +4383,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -4007,7 +4402,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>
@@ -4030,7 +4426,8 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
+     * [Output Only] Instance properties selected for this instance resulting from
+     * InstanceFlexibilityPolicy.
      * </pre>
      *
      * <code>

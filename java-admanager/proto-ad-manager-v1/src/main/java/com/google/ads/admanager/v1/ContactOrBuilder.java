@@ -56,41 +56,428 @@ public interface ContactOrBuilder
    *
    *
    * <pre>
-   * Output only. The display name of the Company.
+   * Required. The name of the contact. This attribute has a maximum length of
+   * 127 characters.
    * </pre>
    *
-   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return Whether the companyDisplayName field is set.
+   * @return Whether the displayName field is set.
    */
-  boolean hasCompanyDisplayName();
+  boolean hasDisplayName();
 
   /**
    *
    *
    * <pre>
-   * Output only. The display name of the Company.
+   * Required. The name of the contact. This attribute has a maximum length of
+   * 127 characters.
    * </pre>
    *
-   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    *
-   * @return The companyDisplayName.
+   * @return The displayName.
    */
-  java.lang.String getCompanyDisplayName();
+  java.lang.String getDisplayName();
 
   /**
    *
    *
    * <pre>
-   * Output only. The display name of the Company.
+   * Required. The name of the contact. This attribute has a maximum length of
+   * 127 characters.
    * </pre>
    *
-   * <code>optional string company_display_name = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The resource name of the Company.
+   * Format: "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string company = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for companyDisplayName.
+   * @return Whether the company field is set.
    */
-  com.google.protobuf.ByteString getCompanyDisplayNameBytes();
+  boolean hasCompany();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The resource name of the Company.
+   * Format: "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string company = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The company.
+   */
+  java.lang.String getCompany();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Immutable. The resource name of the Company.
+   * Format: "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string company = 5 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for company.
+   */
+  com.google.protobuf.ByteString getCompanyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the contact. This attribute is assigned by
+   * Google.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContactStatusEnum.ContactStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the contact. This attribute is assigned by
+   * Google.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContactStatusEnum.ContactStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the contact. This attribute is assigned by
+   * Google.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContactStatusEnum.ContactStatus status = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.ContactStatusEnum.ContactStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The address of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string address = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the address field is set.
+   */
+  boolean hasAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The address of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string address = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The address.
+   */
+  java.lang.String getAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The address of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string address = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for address.
+   */
+  com.google.protobuf.ByteString getAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cell phone number where the contact can be reached.
+   * </pre>
+   *
+   * <code>optional string cell_phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the cellPhone field is set.
+   */
+  boolean hasCellPhone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cell phone number where the contact can be reached.
+   * </pre>
+   *
+   * <code>optional string cell_phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cellPhone.
+   */
+  java.lang.String getCellPhone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The cell phone number where the contact can be reached.
+   * </pre>
+   *
+   * <code>optional string cell_phone = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for cellPhone.
+   */
+  com.google.protobuf.ByteString getCellPhoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A free-form text comment for the contact. This attribute has a
+   * maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string comment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the comment field is set.
+   */
+  boolean hasComment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A free-form text comment for the contact. This attribute has a
+   * maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string comment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The comment.
+   */
+  java.lang.String getComment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A free-form text comment for the contact. This attribute has a
+   * maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string comment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for comment.
+   */
+  com.google.protobuf.ByteString getCommentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The e-mail address where the contact can be reached. This
+   * attribute has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the email field is set.
+   */
+  boolean hasEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The e-mail address where the contact can be reached. This
+   * attribute has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The email.
+   */
+  java.lang.String getEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The e-mail address where the contact can be reached. This
+   * attribute has a maximum length of 128 characters.
+   * </pre>
+   *
+   * <code>optional string email = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for email.
+   */
+  com.google.protobuf.ByteString getEmailBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fax number where the contact can be reached. This attribute
+   * has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string fax = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the fax field is set.
+   */
+  boolean hasFax();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fax number where the contact can be reached. This attribute
+   * has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string fax = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fax.
+   */
+  java.lang.String getFax();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The fax number where the contact can be reached. This attribute
+   * has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string fax = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for fax.
+   */
+  com.google.protobuf.ByteString getFaxBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job title of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string title = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the title field is set.
+   */
+  boolean hasTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job title of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string title = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The title.
+   */
+  java.lang.String getTitle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The job title of the contact. This attribute has a maximum length
+   * of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string title = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for title.
+   */
+  com.google.protobuf.ByteString getTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The work phone number where the contact can be reached. This
+   * attribute has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string work_phone = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the workPhone field is set.
+   */
+  boolean hasWorkPhone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The work phone number where the contact can be reached. This
+   * attribute has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string work_phone = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The workPhone.
+   */
+  java.lang.String getWorkPhone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The work phone number where the contact can be reached. This
+   * attribute has a maximum length of 1024 characters.
+   * </pre>
+   *
+   * <code>optional string work_phone = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for workPhone.
+   */
+  com.google.protobuf.ByteString getWorkPhoneBytes();
 }

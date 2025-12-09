@@ -520,6 +520,140 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.video.livestream.v1.DistributionStream>
+      getDistributionStreamsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.DistributionStream getDistributionStreams(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDistributionStreamsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder>
+      getDistributionStreamsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of multiplexing settings of streams for distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.DistributionStream distribution_streams = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.DistributionStreamOrBuilder getDistributionStreamsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.video.livestream.v1.Distribution> getDistributionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Distribution getDistributions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDistributionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.video.livestream.v1.DistributionOrBuilder>
+      getDistributionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of distributions.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Distribution distributions = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.DistributionOrBuilder getDistributionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * List of output sprite sheets.
    * </pre>
    *
@@ -732,12 +866,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<com.google.cloud.video.livestream.v1.Encryption> getEncryptionsList();
 
@@ -745,12 +881,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.video.livestream.v1.Encryption getEncryptions(int index);
 
@@ -758,12 +896,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getEncryptionsCount();
 
@@ -771,12 +911,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.List<? extends com.google.cloud.video.livestream.v1.EncryptionOrBuilder>
       getEncryptionsOrBuilderList();
@@ -785,12 +927,14 @@ public interface ChannelOrBuilder
    *
    *
    * <pre>
-   * Encryption configurations for this channel. Each configuration has an ID
-   * which is referred to by each MuxStream to indicate which configuration is
-   * used for that output.
+   * Optional. Encryption configurations for this channel. Each configuration
+   * has an ID which is referred to by each MuxStream to indicate which
+   * configuration is used for that output.
    * </pre>
    *
-   * <code>repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24;</code>
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.Encryption encryptions = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.video.livestream.v1.EncryptionOrBuilder getEncryptionsOrBuilder(int index);
 
@@ -947,4 +1091,48 @@ public interface ChannelOrBuilder
    * </code>
    */
   com.google.cloud.video.livestream.v1.StaticOverlayOrBuilder getStaticOverlaysOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoTranscriptionConfig field is set.
+   */
+  boolean hasAutoTranscriptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoTranscriptionConfig.
+   */
+  com.google.cloud.video.livestream.v1.AutoTranscriptionConfig getAutoTranscriptionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced configurations for auto-generated text streams.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.livestream.v1.AutoTranscriptionConfig auto_transcription_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.AutoTranscriptionConfigOrBuilder
+      getAutoTranscriptionConfigOrBuilder();
 }

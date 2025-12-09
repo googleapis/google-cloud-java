@@ -75,7 +75,15 @@ public final class InstanceGroupManagerResourcePolicies
    *
    *
    * <pre>
-   * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the workload policy that is specified for this managed
+   * instance group.
+   * It can be a full or partial URL. For example, the following are
+   * all valid URLs to a workload policy:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string workload_policy = 114721530;</code>
@@ -91,7 +99,15 @@ public final class InstanceGroupManagerResourcePolicies
    *
    *
    * <pre>
-   * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the workload policy that is specified for this managed
+   * instance group.
+   * It can be a full or partial URL. For example, the following are
+   * all valid URLs to a workload policy:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string workload_policy = 114721530;</code>
@@ -115,7 +131,15 @@ public final class InstanceGroupManagerResourcePolicies
    *
    *
    * <pre>
-   * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+   * The URL of the workload policy that is specified for this managed
+   * instance group.
+   * It can be a full or partial URL. For example, the following are
+   * all valid URLs to a workload policy:
+   *
+   *
+   *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+   *       - regions/region/resourcePolicies/resourcePolicy
    * </pre>
    *
    * <code>optional string workload_policy = 114721530;</code>
@@ -496,7 +520,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>
@@ -511,7 +543,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>
@@ -534,7 +574,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>
@@ -557,7 +605,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>
@@ -579,7 +635,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>
@@ -597,7 +661,15 @@ public final class InstanceGroupManagerResourcePolicies
      *
      *
      * <pre>
-     * The URL of the workload policy that is specified for this managed instance group. It can be a full or partial URL. For example, the following are all valid URLs to a workload policy: - https://www.googleapis.com/compute/v1/projects/project/regions/region /resourcePolicies/resourcePolicy - projects/project/regions/region/resourcePolicies/resourcePolicy - regions/region/resourcePolicies/resourcePolicy
+     * The URL of the workload policy that is specified for this managed
+     * instance group.
+     * It can be a full or partial URL. For example, the following are
+     * all valid URLs to a workload policy:
+     *
+     *
+     *       - https://www.googleapis.com/compute/v1/projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - projects/project/regions/region/resourcePolicies/resourcePolicy
+     *       - regions/region/resourcePolicies/resourcePolicy
      * </pre>
      *
      * <code>optional string workload_policy = 114721530;</code>

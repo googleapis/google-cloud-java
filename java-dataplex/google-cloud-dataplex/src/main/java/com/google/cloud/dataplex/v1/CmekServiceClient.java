@@ -45,7 +45,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Dataplex Cmek Service
+ * Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

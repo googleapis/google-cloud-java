@@ -56,12 +56,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Charset for the database.
+   * Optional. Immutable. Charset for the database.
    * This field can contain any PostgreSQL supported charset name.
    * Example values include "UTF8", "SQL_ASCII", etc.
    * </pre>
    *
-   * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The charset.
    */
@@ -71,12 +73,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Charset for the database.
+   * Optional. Immutable. Charset for the database.
    * This field can contain any PostgreSQL supported charset name.
    * Example values include "UTF8", "SQL_ASCII", etc.
    * </pre>
    *
-   * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for charset.
    */
@@ -86,12 +90,14 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Collation for the database.
-   * Name of the custom or native collation for postgres.
-   * Example values include "C", "POSIX", etc
+   * Optional. Immutable. lc_collate for the database.
+   * String sort order.
+   * Example values include "C", "POSIX", etc.
    * </pre>
    *
-   * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The collation.
    */
@@ -101,14 +107,108 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
-   * Optional. Collation for the database.
-   * Name of the custom or native collation for postgres.
-   * Example values include "C", "POSIX", etc
+   * Optional. Immutable. lc_collate for the database.
+   * String sort order.
+   * Example values include "C", "POSIX", etc.
    * </pre>
    *
-   * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for collation.
    */
   com.google.protobuf.ByteString getCollationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. lc_ctype for the database.
+   * Character classification (What is a letter? The upper-case equivalent?).
+   * Example values include "C", "POSIX", etc.
+   * </pre>
+   *
+   * <code>
+   * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The characterType.
+   */
+  java.lang.String getCharacterType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. lc_ctype for the database.
+   * Character classification (What is a letter? The upper-case equivalent?).
+   * Example values include "C", "POSIX", etc.
+   * </pre>
+   *
+   * <code>
+   * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for characterType.
+   */
+  com.google.protobuf.ByteString getCharacterTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Template of the database to be used for creating a
+   * new database.
+   * </pre>
+   *
+   * <code>
+   * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseTemplate.
+   */
+  java.lang.String getDatabaseTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Template of the database to be used for creating a
+   * new database.
+   * </pre>
+   *
+   * <code>
+   * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for databaseTemplate.
+   */
+  com.google.protobuf.ByteString getDatabaseTemplateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the database is a template database.
+   * </pre>
+   *
+   * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the isTemplateDatabase field is set.
+   */
+  boolean hasIsTemplateDatabase();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the database is a template database.
+   * </pre>
+   *
+   * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isTemplateDatabase.
+   */
+  boolean getIsTemplateDatabase();
 }

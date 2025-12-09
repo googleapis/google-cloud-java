@@ -23,7 +23,12 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Subnetwork resource. A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read Virtual Private Cloud (VPC) Network.
+ * Represents a Subnetwork resource.
+ *
+ * A subnetwork (also known as a subnet) is a logical partition of a Virtual
+ * Private Cloud network with one primary IP range and zero or more secondary
+ * IP ranges. For more information, read
+ * Virtual Private Cloud (VPC) Network.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Subnetwork}
@@ -92,7 +97,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Ipv6AccessType}
@@ -112,7 +119,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs on this subnet will be assigned IPv6 addresses that are accessible via the Internet, as well as the VPC network.
+     * VMs on this subnet will be assigned IPv6 addresses that are accessible
+     * via the Internet, as well as the VPC network.
      * </pre>
      *
      * <code>EXTERNAL = 35607499;</code>
@@ -122,7 +130,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs on this subnet will be assigned IPv6 addresses that are only accessible over the VPC network.
+     * VMs on this subnet will be assigned IPv6 addresses that are only
+     * accessible over the VPC network.
      * </pre>
      *
      * <code>INTERNAL = 279295677;</code>
@@ -148,7 +157,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs on this subnet will be assigned IPv6 addresses that are accessible via the Internet, as well as the VPC network.
+     * VMs on this subnet will be assigned IPv6 addresses that are accessible
+     * via the Internet, as well as the VPC network.
      * </pre>
      *
      * <code>EXTERNAL = 35607499;</code>
@@ -159,7 +169,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs on this subnet will be assigned IPv6 addresses that are only accessible over the VPC network.
+     * VMs on this subnet will be assigned IPv6 addresses that are only
+     * accessible over the VPC network.
      * </pre>
      *
      * <code>INTERNAL = 279295677;</code>
@@ -258,7 +269,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Ipv6GceEndpoint}
@@ -387,7 +407,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess}
@@ -601,7 +623,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy
+     * purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -611,7 +634,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnetwork will be used for Migration from one peered VPC to another. (a transient state of subnetwork while migrating resources from one project to another).
+     * Subnetwork will be used for Migration from one peered VPC to another.
+     * (a transient state of subnetwork
+     * while migrating resources from one project to another).
      * </pre>
      *
      * <code>PEER_MIGRATION = 491902225;</code>
@@ -696,7 +721,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy purpose, please use REGIONAL_MANAGED_PROXY instead.
+     * Subnet reserved for Internal HTTP(S) Load Balancing. This is a legacy
+     * purpose, please use REGIONAL_MANAGED_PROXY instead.
      * </pre>
      *
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
@@ -707,7 +733,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Subnetwork will be used for Migration from one peered VPC to another. (a transient state of subnetwork while migrating resources from one project to another).
+     * Subnetwork will be used for Migration from one peered VPC to another.
+     * (a transient state of subnetwork
+     * while migrating resources from one project to another).
      * </pre>
      *
      * <code>PEER_MIGRATION = 491902225;</code>
@@ -868,7 +896,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.Role}
@@ -1027,7 +1060,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.StackType}
@@ -1067,7 +1104,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * New VMs in this subnet will only  be assigned IPv6 addresses.
      * </pre>
      *
      * <code>IPV6_ONLY = 79632100;</code>
@@ -1115,7 +1152,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * New VMs in this subnet will only be assigned IPv6 addresses.
+     * New VMs in this subnet will only  be assigned IPv6 addresses.
      * </pre>
      *
      * <code>IPV6_ONLY = 79632100;</code>
@@ -1216,7 +1253,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.State}
@@ -1381,7 +1422,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1397,7 +1439,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1421,7 +1464,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1450,7 +1494,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1466,7 +1511,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1490,7 +1536,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+   * An optional description of this resource. Provide this property when you
+   * create the resource. This field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1517,7 +1564,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * Whether to enable flow logging for this subnetwork. If this field is not
+   * explicitly set, it will not appear in get listings. If not set
+   * the default behavior is determined by the org policy, if there is no org
+   * policy specified, then it will default to disabled. This field isn't
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -1533,7 +1584,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+   * Whether to enable flow logging for this subnetwork. If this field is not
+   * explicitly set, it will not appear in get listings. If not set
+   * the default behavior is determined by the org policy, if there is no org
+   * policy specified, then it will default to disabled. This field isn't
+   * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
    * </pre>
    *
    * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -1554,7 +1609,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -1570,7 +1626,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -1594,7 +1651,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The external IPv6 address range that is owned by this subnetwork.
+   * The external IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -1623,7 +1681,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1639,7 +1704,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1663,7 +1735,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   * Fingerprint of this resource. A hash of the contents stored in this object.
+   * This field is used in optimistic locking. This field will be ignored when
+   * inserting a Subnetwork. An up-to-date fingerprint must be
+   * provided in order to update the Subnetwork, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a Subnetwork.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -1692,7 +1771,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -1708,7 +1788,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -1732,7 +1813,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+   * [Output Only] The gateway address for default routes to reach destination
+   * addresses outside this subnetwork.
    * </pre>
    *
    * <code>optional string gateway_address = 459867385;</code>
@@ -1759,7 +1841,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1775,7 +1858,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -1796,7 +1880,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -1812,7 +1897,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -1836,7 +1922,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The internal IPv6 address range that is owned by this subnetwork.
+   * The internal IPv6 address range that is owned by this
+   * subnetwork.
    * </pre>
    *
    * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -1865,7 +1952,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1881,7 +1973,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1905,7 +2002,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+   * The range of internal addresses that are owned by this subnetwork.
+   * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+   * be unique and non-overlapping within a network. Only IPv4 is supported.
+   * This field is set at resource creation time. The range can be any range
+   * listed in theValid
+   * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
    * </pre>
    *
    * <code>optional string ip_cidr_range = 98117322;</code>
@@ -1934,7 +2036,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -1950,7 +2067,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -1974,7 +2106,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+   * Reference to the source of IP, like a PublicDelegatedPrefix
+   * (PDP) for BYOIP. The PDP must be a sub-PDP in
+   * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+   * mode.
+   *
+   * Use one of the following formats to specify a sub-PDP when creating a dual
+   * stack or IPv6-only subnetwork with external access using BYOIP:
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+   *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
    * </pre>
    *
    * <code>optional string ip_collection = 176818358;</code>
@@ -2003,7 +2150,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -2020,7 +2169,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -2045,7 +2196,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+   * The access type of IPv6 address this subnet holds. It's immutable and can
+   * only be specified during creation or the first time the subnet is updated
+   * into IPV4_IPV6 dual stack.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
@@ -2144,7 +2297,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -2161,7 +2323,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -2186,7 +2357,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * following:
+   *
+   *    - VM_ONLY: The subnetwork can be used for creating instances and
+   *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+   *    ranges from a public delegated prefix and cannot be used to create NetLb.
+   *    - VM_AND_FR: The subnetwork can be used for creating both VM
+   *    instances and Forwarding Rules. It can also be used to reserve IPv6
+   *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+   *    IPv6 range from Google IP Pool directly.
    * Check the Ipv6GceEndpoint enum for the list of possible values.
    * </pre>
    *
@@ -2216,7 +2396,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2232,7 +2413,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2256,7 +2438,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+   * [Output Only] Type of the resource. Always compute#subnetwork
+   * for Subnetwork resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2283,7 +2466,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -2299,7 +2483,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -2317,7 +2502,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+   * This field denotes the VPC flow logging options for this subnetwork.
+   * If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -2338,7 +2524,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2354,7 +2546,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2378,7 +2576,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -2407,7 +2611,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -2423,7 +2629,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -2447,7 +2655,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+   * The URL of the network to which this subnetwork belongs, provided by the
+   * client when initially creating the subnetwork. This field can be set only
+   * at resource creation time.
    * </pre>
    *
    * <code>optional string network = 232872494;</code>
@@ -2474,7 +2684,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -2490,7 +2701,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -2508,7 +2720,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * Input only. [Input Only] Additional params passed with the request, but not persisted
+   * as part of resource payload.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -2527,7 +2740,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+   * Whether the VMs in this subnet can access Google services without assigned
+   * external IP addresses. This field can be both set at resource creation
+   * time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
    * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -2543,7 +2758,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+   * Whether the VMs in this subnet can access Google services without assigned
+   * external IP addresses. This field can be both set at resource creation
+   * time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
    * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -2564,7 +2781,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2581,7 +2800,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2606,7 +2827,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+   * This field is for internal use.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
@@ -2708,7 +2931,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -2724,7 +2948,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -2748,7 +2973,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+   * URL of the region where the Subnetwork resides. This
+   * field can be set only at resource creation time.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -2846,7 +3072,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2863,7 +3094,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2888,7 +3124,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * The role of subnetwork. Currently, this field is only used when
+   * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+   * subnetwork is one that is currently being used for Envoy-based load
+   * balancers in a region. A BACKUP subnetwork is one that is
+   * ready to be promoted to ACTIVE or is currently draining.
+   * This field can be updated with a patch request.
    * Check the Role enum for the list of possible values.
    * </pre>
    *
@@ -2918,7 +3159,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -2935,7 +3179,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -2952,7 +3199,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -2968,7 +3218,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -2984,7 +3237,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+   * An array of configurations for secondary IP ranges for VM instances
+   * contained in this subnetwork. The primary IP of such VM must belong to the
+   * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+   * primary or secondary ranges. This field can be updated with apatch request.
    * </pre>
    *
    * <code>
@@ -3075,7 +3331,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -3092,7 +3352,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -3117,7 +3381,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+   * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+   * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+   * IPv6 addresses. If not specified, IPV4_ONLY is used.
+   *
+   * This field can be both set at resource creation time and updated usingpatch.
    * Check the StackType enum for the list of possible values.
    * </pre>
    *
@@ -3147,7 +3415,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3164,7 +3436,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3189,7 +3465,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * [Output Only] The state of the subnetwork, which can be one of the
+   * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+   * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+   * connections to the load balancer are being drained. A subnetwork that is
+   * draining cannot be used or modified until it reaches a status ofREADY
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -3220,7 +3500,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -3235,7 +3516,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -3250,7 +3532,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -3266,7 +3549,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+   * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+   * the subnetwork's external IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -3288,7 +3572,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -3303,7 +3588,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -3318,7 +3604,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -3334,7 +3621,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+   * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+   * the subnetwork's internal IPv6 range for system use.
    * </pre>
    *
    * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -3344,6 +3632,69 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    */
   public com.google.protobuf.ByteString getSystemReservedInternalIpv6RangesBytes(int index) {
     return systemReservedInternalIpv6Ranges_.getByteString(index);
+  }
+
+  public static final int UTILIZATION_DETAILS_FIELD_NUMBER = 125404453;
+  private com.google.cloud.compute.v1.SubnetworkUtilizationDetails utilizationDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return Whether the utilizationDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasUtilizationDetails() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return The utilizationDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkUtilizationDetails getUtilizationDetails() {
+    return utilizationDetails_ == null
+        ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+        : utilizationDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+   * the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder
+      getUtilizationDetailsOrBuilder() {
+    return utilizationDetails_ == null
+        ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+        : utilizationDetails_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3391,6 +3742,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeMessage(125404453, getUtilizationDetails());
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(136658915, secondaryIpRanges_.get(i));
@@ -3499,6 +3853,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              125404453, getUtilizationDetails());
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       size +=
@@ -3700,6 +4059,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         .equals(other.getSystemReservedExternalIpv6RangesList())) return false;
     if (!getSystemReservedInternalIpv6RangesList()
         .equals(other.getSystemReservedInternalIpv6RangesList())) return false;
+    if (hasUtilizationDetails() != other.hasUtilizationDetails()) return false;
+    if (hasUtilizationDetails()) {
+      if (!getUtilizationDetails().equals(other.getUtilizationDetails())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3831,6 +4194,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SYSTEM_RESERVED_INTERNAL_IPV6_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSystemReservedInternalIpv6RangesList().hashCode();
     }
+    if (hasUtilizationDetails()) {
+      hash = (37 * hash) + UTILIZATION_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getUtilizationDetails().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3936,7 +4303,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Subnetwork resource. A subnetwork (also known as a subnet) is a logical partition of a Virtual Private Cloud network with one primary IP range and zero or more secondary IP ranges. For more information, read Virtual Private Cloud (VPC) Network.
+   * Represents a Subnetwork resource.
+   *
+   * A subnetwork (also known as a subnet) is a logical partition of a Virtual
+   * Private Cloud network with one primary IP range and zero or more secondary
+   * IP ranges. For more information, read
+   * Virtual Private Cloud (VPC) Network.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Subnetwork}
@@ -3975,6 +4347,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         getLogConfigFieldBuilder();
         getParamsFieldBuilder();
         getSecondaryIpRangesFieldBuilder();
+        getUtilizationDetailsFieldBuilder();
       }
     }
 
@@ -4026,6 +4399,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       state_ = "";
       systemReservedExternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       systemReservedInternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      utilizationDetails_ = null;
+      if (utilizationDetailsBuilder_ != null) {
+        utilizationDetailsBuilder_.dispose();
+        utilizationDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4191,6 +4569,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x20000000) != 0)) {
         systemReservedInternalIpv6Ranges_.makeImmutable();
         result.systemReservedInternalIpv6Ranges_ = systemReservedInternalIpv6Ranges_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.utilizationDetails_ =
+            utilizationDetailsBuilder_ == null
+                ? utilizationDetails_
+                : utilizationDetailsBuilder_.build();
+        to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4412,6 +4797,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasUtilizationDetails()) {
+        mergeUtilizationDetails(other.getUtilizationDetails());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4499,6 +4887,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 878060682
+            case 1003235626:
+              {
+                input.readMessage(
+                    getUtilizationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 1003235626
             case 1093271322:
               {
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange m =
@@ -4653,7 +5048,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4668,7 +5064,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4691,7 +5088,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4714,7 +5112,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4736,7 +5135,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4754,7 +5154,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -4779,7 +5180,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4794,7 +5196,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4817,7 +5220,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4840,7 +5244,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4862,7 +5267,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4880,7 +5286,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
+     * An optional description of this resource. Provide this property when you
+     * create the resource. This field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -4905,7 +5312,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * Whether to enable flow logging for this subnetwork. If this field is not
+     * explicitly set, it will not appear in get listings. If not set
+     * the default behavior is determined by the org policy, if there is no org
+     * policy specified, then it will default to disabled. This field isn't
+     * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -4921,7 +5332,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * Whether to enable flow logging for this subnetwork. If this field is not
+     * explicitly set, it will not appear in get listings. If not set
+     * the default behavior is determined by the org policy, if there is no org
+     * policy specified, then it will default to disabled. This field isn't
+     * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -4937,7 +5352,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * Whether to enable flow logging for this subnetwork. If this field is not
+     * explicitly set, it will not appear in get listings. If not set
+     * the default behavior is determined by the org policy, if there is no org
+     * policy specified, then it will default to disabled. This field isn't
+     * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -4957,7 +5376,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
+     * Whether to enable flow logging for this subnetwork. If this field is not
+     * explicitly set, it will not appear in get listings. If not set
+     * the default behavior is determined by the org policy, if there is no org
+     * policy specified, then it will default to disabled. This field isn't
+     * supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY.
      * </pre>
      *
      * <code>optional bool enable_flow_logs = 151544420;</code>
@@ -4977,7 +5400,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -4992,7 +5416,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -5015,7 +5440,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -5038,7 +5464,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -5060,7 +5487,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -5078,7 +5506,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The external IPv6 address range that is owned by this subnetwork.
+     * The external IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string external_ipv6_prefix = 139299190;</code>
@@ -5103,7 +5532,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5118,7 +5554,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5141,7 +5584,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5164,7 +5614,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5186,7 +5643,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5204,7 +5668,14 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     * Fingerprint of this resource. A hash of the contents stored in this object.
+     * This field is used in optimistic locking. This field will be ignored when
+     * inserting a Subnetwork. An up-to-date fingerprint must be
+     * provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * To see the latest fingerprint, make a get() request to
+     * retrieve a Subnetwork.
      * </pre>
      *
      * <code>optional string fingerprint = 234678500;</code>
@@ -5229,7 +5700,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5244,7 +5716,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5267,7 +5740,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5290,7 +5764,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5312,7 +5787,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5330,7 +5806,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
+     * [Output Only] The gateway address for default routes to reach destination
+     * addresses outside this subnetwork.
      * </pre>
      *
      * <code>optional string gateway_address = 459867385;</code>
@@ -5355,7 +5832,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5371,7 +5849,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5387,7 +5866,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5407,7 +5887,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -5427,7 +5908,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5442,7 +5924,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5465,7 +5948,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5488,7 +5972,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5510,7 +5995,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5528,7 +6014,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The internal IPv6 address range that is owned by this subnetwork.
+     * The internal IPv6 address range that is owned by this
+     * subnetwork.
      * </pre>
      *
      * <code>optional string internal_ipv6_prefix = 506270056;</code>
@@ -5553,7 +6040,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5568,7 +6060,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5591,7 +6088,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5614,7 +6116,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5636,7 +6143,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5654,7 +6166,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
+     * The range of internal addresses that are owned by this subnetwork.
+     * Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must
+     * be unique and non-overlapping within a network. Only IPv4 is supported.
+     * This field is set at resource creation time. The range can be any range
+     * listed in theValid
+     * ranges list. The range can be expanded after creation usingexpandIpCidrRange.
      * </pre>
      *
      * <code>optional string ip_cidr_range = 98117322;</code>
@@ -5679,7 +6196,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5694,7 +6226,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5717,7 +6264,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5740,7 +6302,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5762,7 +6339,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5780,7 +6372,22 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Reference to the source of IP, like a PublicDelegatedPrefix (PDP) for BYOIP. The PDP must be a sub-PDP in EXTERNAL_IPV6_SUBNETWORK_CREATION mode. Use one of the following formats to specify a sub-PDP when creating a dual stack subnetwork with external access using BYOIP: - Full resource URL, as in https://www.googleapis.com/compute/v1/projects/projectId/regions/region /publicDelegatedPrefixes/sub-pdp-name - Partial URL, as in - projects/projectId/regions/region/publicDelegatedPrefixes/ sub-pdp-name - regions/region/publicDelegatedPrefixes/sub-pdp-name
+     * Reference to the source of IP, like a PublicDelegatedPrefix
+     * (PDP) for BYOIP. The PDP must be a sub-PDP in
+     * EXTERNAL_IPV6_SUBNETWORK_CREATION or INTERNAL_IPV6_SUBNETWORK_CREATION
+     * mode.
+     *
+     * Use one of the following formats to specify a sub-PDP when creating a dual
+     * stack or IPv6-only subnetwork with external access using BYOIP:
+     *
+     *    -
+     *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *    -
+     *    Partial URL, as in
+     *
+     *
+     *           - projects/projectId/regions/region/publicDelegatedPrefixes/sub-pdp-name
+     *           - regions/region/publicDelegatedPrefixes/sub-pdp-name
      * </pre>
      *
      * <code>optional string ip_collection = 176818358;</code>
@@ -5805,7 +6412,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -5821,7 +6430,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -5845,7 +6456,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -5869,7 +6482,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -5892,7 +6507,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -5911,7 +6528,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
+     * The access type of IPv6 address this subnet holds. It's immutable and can
+     * only be specified during creation or the first time the subnet is updated
+     * into IPV4_IPV6 dual stack.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
@@ -6063,7 +6682,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6079,7 +6707,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6103,7 +6740,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6127,7 +6773,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6150,7 +6805,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6169,7 +6833,16 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
+     * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+     * following:
+     *
+     *    - VM_ONLY: The subnetwork can be used for creating instances and
+     *    IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6
+     *    ranges from a public delegated prefix and cannot be used to create NetLb.
+     *    - VM_AND_FR: The subnetwork can be used for creating both VM
+     *    instances and Forwarding Rules. It can also be used to reserve IPv6
+     *    addresses with both VM and FR endpoint types. Such a subnetwork gets its
+     *    IPv6 range from Google IP Pool directly.
      * Check the Ipv6GceEndpoint enum for the list of possible values.
      * </pre>
      *
@@ -6195,7 +6868,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6210,7 +6884,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6233,7 +6908,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6256,7 +6932,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6278,7 +6955,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6296,7 +6974,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
+     * [Output Only] Type of the resource. Always compute#subnetwork
+     * for Subnetwork resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -6326,7 +7005,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6341,7 +7021,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6362,7 +7043,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6385,7 +7067,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6406,7 +7089,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6434,7 +7118,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6454,7 +7139,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6469,7 +7155,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6488,7 +7175,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
+     * This field denotes the VPC flow logging options for this subnetwork.
+     * If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
@@ -6516,7 +7204,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6531,7 +7225,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6554,7 +7254,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6577,7 +7283,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6599,7 +7311,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6617,7 +7335,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must
+     * be a dash, lowercase letter, or digit, except the last character, which
+     * cannot be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -6642,7 +7366,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6657,7 +7383,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6680,7 +7408,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6703,7 +7433,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6725,7 +7457,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6743,7 +7477,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
+     * The URL of the network to which this subnetwork belongs, provided by the
+     * client when initially creating the subnetwork. This field can be set only
+     * at resource creation time.
      * </pre>
      *
      * <code>optional string network = 232872494;</code>
@@ -6773,7 +7509,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6788,7 +7525,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6809,7 +7547,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6832,7 +7571,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6852,7 +7592,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6880,7 +7621,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6900,7 +7642,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6915,7 +7658,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6934,7 +7678,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+     * Input only. [Input Only] Additional params passed with the request, but not persisted
+     * as part of resource payload.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SubnetworkParams params = 78313862;</code>
@@ -6962,7 +7707,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+     * Whether the VMs in this subnet can access Google services without assigned
+     * external IP addresses. This field can be both set at resource creation
+     * time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
      * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -6978,7 +7725,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+     * Whether the VMs in this subnet can access Google services without assigned
+     * external IP addresses. This field can be both set at resource creation
+     * time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
      * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -6994,7 +7743,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+     * Whether the VMs in this subnet can access Google services without assigned
+     * external IP addresses. This field can be both set at resource creation
+     * time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
      * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -7014,7 +7765,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
+     * Whether the VMs in this subnet can access Google services without assigned
+     * external IP addresses. This field can be both set at resource creation
+     * time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
      * <code>optional bool private_ip_google_access = 421491790;</code>
@@ -7034,7 +7787,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7050,7 +7805,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7074,7 +7831,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7098,7 +7857,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7121,7 +7882,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7140,7 +7903,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is for internal use. This field can be both set at resource creation time and updated using patch.
+     * This field is for internal use.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
@@ -7298,7 +8063,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7313,7 +8079,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7336,7 +8103,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7359,7 +8127,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7381,7 +8150,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7399,7 +8169,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
+     * URL of the region where the Subnetwork resides. This
+     * field can be set only at resource creation time.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -7550,7 +8321,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7566,7 +8342,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7590,7 +8371,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7614,7 +8400,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7637,7 +8428,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7656,7 +8452,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * The role of subnetwork. Currently, this field is only used when
+     * purpose is set to GLOBAL_MANAGED_PROXY orREGIONAL_MANAGED_PROXY. The value can be set toACTIVE or BACKUP. An ACTIVE
+     * subnetwork is one that is currently being used for Envoy-based load
+     * balancers in a region. A BACKUP subnetwork is one that is
+     * ready to be promoted to ACTIVE or is currently draining.
+     * This field can be updated with a patch request.
      * Check the Role enum for the list of possible values.
      * </pre>
      *
@@ -7698,7 +8499,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7718,7 +8522,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7737,7 +8544,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7756,7 +8566,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7782,7 +8595,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7805,7 +8621,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7831,7 +8650,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7857,7 +8679,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7880,7 +8705,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7903,7 +8731,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7926,7 +8757,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7948,7 +8782,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7970,7 +8807,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -7986,7 +8826,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -8006,7 +8849,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -8026,7 +8872,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -8043,7 +8892,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -8061,7 +8913,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
+     * An array of configurations for secondary IP ranges for VM instances
+     * contained in this subnetwork. The primary IP of such VM must belong to the
+     * primary ipCidrRange of the subnetwork. The alias IPs may belong to either
+     * primary or secondary ranges. This field can be updated with apatch request.
      * </pre>
      *
      * <code>
@@ -8225,7 +9080,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8241,7 +9100,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8265,7 +9128,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8289,7 +9156,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8312,7 +9183,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8331,7 +9206,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
+     * The stack type for the subnet. If set to IPV4_ONLY, new VMs
+     * in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and
+     * IPv6 addresses. If not specified, IPV4_ONLY is used.
+     *
+     * This field can be both set at resource creation time and updated usingpatch.
      * Check the StackType enum for the list of possible values.
      * </pre>
      *
@@ -8357,7 +9236,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8373,7 +9256,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8397,7 +9284,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8421,7 +9312,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8444,7 +9339,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8463,7 +9362,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * [Output Only] The state of the subnetwork, which can be one of the
+     * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
+     * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
+     * connections to the load balancer are being drained. A subnetwork that is
+     * draining cannot be used or modified until it reaches a status ofREADY
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -8498,7 +9401,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8514,7 +9418,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8529,7 +9434,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8545,7 +9451,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8561,7 +9468,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8585,7 +9493,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8608,7 +9517,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8630,7 +9540,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8649,7 +9560,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
+     * Output only. [Output Only] The array of external IPv6 network ranges reserved from
+     * the subnetwork's external IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_external_ipv6_ranges = 65324129;</code>
@@ -8684,7 +9596,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8700,7 +9613,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8715,7 +9629,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8731,7 +9646,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8747,7 +9663,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8771,7 +9688,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8794,7 +9712,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8816,7 +9735,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8835,7 +9755,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
+     * Output only. [Output Only] The array of internal IPv6 network ranges reserved from
+     * the subnetwork's internal IPv6 range for system use.
      * </pre>
      *
      * <code>repeated string system_reserved_internal_ipv6_ranges = 432294995;</code>
@@ -8853,6 +9774,233 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x20000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.SubnetworkUtilizationDetails utilizationDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>
+        utilizationDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     *
+     * @return Whether the utilizationDetails field is set.
+     */
+    public boolean hasUtilizationDetails() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     *
+     * @return The utilizationDetails.
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetails getUtilizationDetails() {
+      if (utilizationDetailsBuilder_ == null) {
+        return utilizationDetails_ == null
+            ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+            : utilizationDetails_;
+      } else {
+        return utilizationDetailsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder setUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails value) {
+      if (utilizationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        utilizationDetails_ = value;
+      } else {
+        utilizationDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder setUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder builderForValue) {
+      if (utilizationDetailsBuilder_ == null) {
+        utilizationDetails_ = builderForValue.build();
+      } else {
+        utilizationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder mergeUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails value) {
+      if (utilizationDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && utilizationDetails_ != null
+            && utilizationDetails_
+                != com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()) {
+          getUtilizationDetailsBuilder().mergeFrom(value);
+        } else {
+          utilizationDetails_ = value;
+        }
+      } else {
+        utilizationDetailsBuilder_.mergeFrom(value);
+      }
+      if (utilizationDetails_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder clearUtilizationDetails() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      utilizationDetails_ = null;
+      if (utilizationDetailsBuilder_ != null) {
+        utilizationDetailsBuilder_.dispose();
+        utilizationDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder
+        getUtilizationDetailsBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return getUtilizationDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder
+        getUtilizationDetailsOrBuilder() {
+      if (utilizationDetailsBuilder_ != null) {
+        return utilizationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return utilizationDetails_ == null
+            ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+            : utilizationDetails_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains
+     * the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>
+        getUtilizationDetailsFieldBuilder() {
+      if (utilizationDetailsBuilder_ == null) {
+        utilizationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>(
+                getUtilizationDetails(), getParentForChildren(), isClean());
+        utilizationDetails_ = null;
+      }
+      return utilizationDetailsBuilder_;
     }
 
     @java.lang.Override

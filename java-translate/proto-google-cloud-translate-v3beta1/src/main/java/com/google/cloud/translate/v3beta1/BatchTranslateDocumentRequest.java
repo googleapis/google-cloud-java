@@ -1018,6 +1018,25 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     return enableRotationCorrection_;
   }
 
+  public static final int PDF_NATIVE_ONLY_FIELD_NUMBER = 13;
+  private boolean pdfNativeOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, only native pdf pages will be translated.
+   * </pre>
+   *
+   * <code>bool pdf_native_only = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pdfNativeOnly.
+   */
+  @java.lang.Override
+  public boolean getPdfNativeOnly() {
+    return pdfNativeOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1064,6 +1083,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     }
     if (enableRotationCorrection_ != false) {
       output.writeBool(12, enableRotationCorrection_);
+    }
+    if (pdfNativeOnly_ != false) {
+      output.writeBool(13, pdfNativeOnly_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1137,6 +1159,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (enableRotationCorrection_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableRotationCorrection_);
     }
+    if (pdfNativeOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, pdfNativeOnly_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1167,6 +1192,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     if (!getCustomizedAttribution().equals(other.getCustomizedAttribution())) return false;
     if (getEnableShadowRemovalNativePdf() != other.getEnableShadowRemovalNativePdf()) return false;
     if (getEnableRotationCorrection() != other.getEnableRotationCorrection()) return false;
+    if (getPdfNativeOnly() != other.getPdfNativeOnly()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1213,6 +1239,8 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableShadowRemovalNativePdf());
     hash = (37 * hash) + ENABLE_ROTATION_CORRECTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableRotationCorrection());
+    hash = (37 * hash) + PDF_NATIVE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPdfNativeOnly());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1415,6 +1443,7 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       customizedAttribution_ = "";
       enableShadowRemovalNativePdf_ = false;
       enableRotationCorrection_ = false;
+      pdfNativeOnly_ = false;
       return this;
     }
 
@@ -1503,6 +1532,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.enableRotationCorrection_ = enableRotationCorrection_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.pdfNativeOnly_ = pdfNativeOnly_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1621,6 +1653,9 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
       }
       if (other.getEnableRotationCorrection() != false) {
         setEnableRotationCorrection(other.getEnableRotationCorrection());
+      }
+      if (other.getPdfNativeOnly() != false) {
+        setPdfNativeOnly(other.getPdfNativeOnly());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1745,6 +1780,12 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
                 bitField0_ |= 0x00000400;
                 break;
               } // case 96
+            case 104:
+              {
+                pdfNativeOnly_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4028,6 +4069,62 @@ public final class BatchTranslateDocumentRequest extends com.google.protobuf.Gen
     public Builder clearEnableRotationCorrection() {
       bitField0_ = (bitField0_ & ~0x00000400);
       enableRotationCorrection_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean pdfNativeOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool pdf_native_only = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The pdfNativeOnly.
+     */
+    @java.lang.Override
+    public boolean getPdfNativeOnly() {
+      return pdfNativeOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool pdf_native_only = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The pdfNativeOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPdfNativeOnly(boolean value) {
+
+      pdfNativeOnly_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, only native pdf pages will be translated.
+     * </pre>
+     *
+     * <code>bool pdf_native_only = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPdfNativeOnly() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      pdfNativeOnly_ = false;
       onChanged();
       return this;
     }

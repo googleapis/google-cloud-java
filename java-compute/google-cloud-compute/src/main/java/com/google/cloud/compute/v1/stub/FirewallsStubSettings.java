@@ -52,6 +52,8 @@ import com.google.cloud.compute.v1.InsertFirewallRequest;
 import com.google.cloud.compute.v1.ListFirewallsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchFirewallRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsFirewallRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateFirewallRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -157,6 +159,8 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
   private final UnaryCallSettings<PatchFirewallRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchFirewallRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
   private final UnaryCallSettings<UpdateFirewallRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateFirewallRequest, Operation, Operation>
       updateOperationSettings;
@@ -252,6 +256,12 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
   public OperationCallSettings<PatchFirewallRequest, Operation, Operation>
       patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   /** Returns the object with the settings used for calls to update. */
@@ -354,6 +364,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
   }
@@ -373,6 +384,9 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     private final UnaryCallSettings.Builder<PatchFirewallRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchFirewallRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private final UnaryCallSettings.Builder<UpdateFirewallRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateFirewallRequest, Operation, Operation>
         updateOperationSettings;
@@ -434,6 +448,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
 
@@ -444,6 +459,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
       initDefaults(this);
     }
@@ -459,6 +475,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
 
@@ -469,6 +486,7 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
               insertSettings,
               listSettings,
               patchSettings,
+              testIamPermissionsSettings,
               updateSettings);
     }
 
@@ -507,6 +525,11 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -671,6 +694,12 @@ public class FirewallsStubSettings extends StubSettings<FirewallsStubSettings> {
     public OperationCallSettings.Builder<PatchFirewallRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsFirewallRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to update. */

@@ -85,7 +85,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Deprecate</td>
- *      <td><p> Sets the deprecation status of an image. If an empty request body is given, clears the deprecation status instead.</td>
+ *      <td><p> Sets the deprecation status of an image.
+ * <p>  If an empty request body is given, clears the deprecation status instead.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -122,7 +123,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetFromFamily</td>
- *      <td><p> Returns the latest image that is part of an image family and is not deprecated. For more information on image families, see Public image families documentation.</td>
+ *      <td><p> Returns the latest image that is part of an image family and is not deprecated. For more information on image families, seePublic image families documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -233,7 +234,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on an image. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on an image. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -477,8 +478,9 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image. If an empty request body is given, clears the
-   * deprecation status instead.
+   * Sets the deprecation status of an image.
+   *
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -515,8 +517,9 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image. If an empty request body is given, clears the
-   * deprecation status instead.
+   * Sets the deprecation status of an image.
+   *
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -547,8 +550,9 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image. If an empty request body is given, clears the
-   * deprecation status instead.
+   * Sets the deprecation status of an image.
+   *
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -580,8 +584,9 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the deprecation status of an image. If an empty request body is given, clears the
-   * deprecation status instead.
+   * Sets the deprecation status of an image.
+   *
+   * <p>If an empty request body is given, clears the deprecation status instead.
    *
    * <p>Sample code:
    *
@@ -698,7 +703,7 @@ public class ImagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated. For more
-   * information on image families, see Public image families documentation.
+   * information on image families, seePublic image families documentation.
    *
    * <p>Sample code:
    *
@@ -729,7 +734,7 @@ public class ImagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated. For more
-   * information on image families, see Public image families documentation.
+   * information on image families, seePublic image families documentation.
    *
    * <p>Sample code:
    *
@@ -759,7 +764,7 @@ public class ImagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the latest image that is part of an image family and is not deprecated. For more
-   * information on image families, see Public image families documentation.
+   * information on image families, seePublic image families documentation.
    *
    * <p>Sample code:
    *
@@ -1384,7 +1389,7 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on an image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1423,7 +1428,7 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on an image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1454,7 +1459,7 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on an image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1486,7 +1491,7 @@ public class ImagesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on an image. To learn more about labels, read the Labeling Resources
+   * Sets the labels on an image. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

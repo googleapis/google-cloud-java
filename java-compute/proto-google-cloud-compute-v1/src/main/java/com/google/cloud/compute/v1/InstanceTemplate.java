@@ -23,7 +23,22 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents an Instance Template resource. Google Compute Engine has two Instance Template resources: * [Global](/compute/docs/reference/rest/v1/instanceTemplates) * [Regional](/compute/docs/reference/rest/v1/regionInstanceTemplates) You can reuse a global instance template in different regions whereas you can use a regional instance template in a specified region only. If you want to reduce cross-region dependency or achieve data residency, use a regional instance template. To create VMs, managed instance groups, and reservations, you can use either global or regional instance templates. For more information, read Instance Templates.
+ * Represents an Instance Template resource.
+ *
+ * Google Compute Engine has two Instance Template resources:
+ *
+ * * [Global](/compute/docs/reference/rest/v1/instanceTemplates)
+ * * [Regional](/compute/docs/reference/rest/v1/regionInstanceTemplates)
+ *
+ * You can reuse a global instance template in
+ * different regions whereas you can use a regional instance template in a
+ * specified region only. If you want to reduce cross-region dependency or
+ * achieve data residency, use a regional instance template.
+ *
+ * To create VMs, managed instance groups, and reservations, you can use either
+ * global or regional instance templates.
+ *
+ * For more information, readInstance Templates.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InstanceTemplate}
@@ -80,7 +95,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -96,7 +112,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -120,7 +137,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -149,7 +167,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -165,7 +184,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -189,7 +209,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -216,7 +237,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+   * [Output Only] A unique identifier for this instance template. The server
+   * defines this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -232,7 +254,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+   * [Output Only] A unique identifier for this instance template. The server
+   * defines this identifier.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -253,7 +276,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -269,7 +292,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -293,7 +316,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -322,7 +345,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -338,7 +367,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -362,7 +397,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -444,7 +485,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * [Output Only] URL of the region where the instance template resides. Only
+   * applicable for regional resources.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -460,7 +502,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * [Output Only] URL of the region where the instance template resides. Only
+   * applicable for regional resources.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -484,7 +527,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+   * [Output Only] URL of the region where the instance template resides. Only
+   * applicable for regional resources.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -513,7 +557,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this URL.
+   * [Output Only] The URL for this instance template. The server defines this
+   * URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -529,7 +574,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this URL.
+   * [Output Only] The URL for this instance template. The server defines this
+   * URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -553,7 +599,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this URL.
+   * [Output Only] The URL for this instance template. The server defines this
+   * URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -582,7 +629,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -598,7 +651,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -622,7 +681,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+   * The source instance used to create the template. You can provide this as a
+   * partial or full URL to the resource. For example, the following are valid
+   * values:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+   *    - projects/project/zones/zone/instances/instance
    * </pre>
    *
    * <code>optional string source_instance = 396315705;</code>
@@ -1000,7 +1065,22 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents an Instance Template resource. Google Compute Engine has two Instance Template resources: * [Global](/compute/docs/reference/rest/v1/instanceTemplates) * [Regional](/compute/docs/reference/rest/v1/regionInstanceTemplates) You can reuse a global instance template in different regions whereas you can use a regional instance template in a specified region only. If you want to reduce cross-region dependency or achieve data residency, use a regional instance template. To create VMs, managed instance groups, and reservations, you can use either global or regional instance templates. For more information, read Instance Templates.
+   * Represents an Instance Template resource.
+   *
+   * Google Compute Engine has two Instance Template resources:
+   *
+   * * [Global](/compute/docs/reference/rest/v1/instanceTemplates)
+   * * [Regional](/compute/docs/reference/rest/v1/regionInstanceTemplates)
+   *
+   * You can reuse a global instance template in
+   * different regions whereas you can use a regional instance template in a
+   * specified region only. If you want to reduce cross-region dependency or
+   * achieve data residency, use a regional instance template.
+   *
+   * To create VMs, managed instance groups, and reservations, you can use either
+   * global or regional instance templates.
+   *
+   * For more information, readInstance Templates.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InstanceTemplate}
@@ -1347,7 +1427,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1362,7 +1443,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1385,7 +1467,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1408,7 +1491,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1430,7 +1514,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1448,7 +1533,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this instance template in RFC3339 text format.
+     * [Output Only] The creation timestamp for this instance template inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1473,7 +1559,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1488,7 +1575,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1511,7 +1599,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1534,7 +1623,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1556,7 +1646,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1574,7 +1665,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1599,7 +1691,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+     * [Output Only] A unique identifier for this instance template. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1615,7 +1708,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+     * [Output Only] A unique identifier for this instance template. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1631,7 +1725,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+     * [Output Only] A unique identifier for this instance template. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1651,7 +1746,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this instance template. The server defines this identifier.
+     * [Output Only] A unique identifier for this instance template. The server
+     * defines this identifier.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1671,7 +1767,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1686,7 +1782,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1709,7 +1805,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1732,7 +1828,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1754,7 +1850,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1772,7 +1868,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
+     * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1797,7 +1893,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1812,7 +1914,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1835,7 +1943,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1858,7 +1972,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1880,7 +2000,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -1898,7 +2024,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2118,7 +2250,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2133,7 +2266,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2156,7 +2290,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2179,7 +2314,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2201,7 +2337,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2219,7 +2356,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
+     * [Output Only] URL of the region where the instance template resides. Only
+     * applicable for regional resources.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -2244,7 +2382,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2259,7 +2398,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2282,7 +2422,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2305,7 +2446,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2327,7 +2469,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2345,7 +2488,8 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The URL for this instance template. The server defines this URL.
+     * [Output Only] The URL for this instance template. The server defines this
+     * URL.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2370,7 +2514,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -2385,7 +2535,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -2408,7 +2564,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -2431,7 +2593,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -2453,7 +2621,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>
@@ -2471,7 +2645,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance
+     * The source instance used to create the template. You can provide this as a
+     * partial or full URL to the resource. For example, the following are valid
+     * values:
+     *
+     *
+     *      - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance
+     *    - projects/project/zones/zone/instances/instance
      * </pre>
      *
      * <code>optional string source_instance = 396315705;</code>

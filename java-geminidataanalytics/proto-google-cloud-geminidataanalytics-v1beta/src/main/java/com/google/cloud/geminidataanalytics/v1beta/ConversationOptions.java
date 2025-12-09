@@ -182,6 +182,66 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         : analysis_;
   }
 
+  public static final int DATASOURCE_FIELD_NUMBER = 3;
+  private com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the datasource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatasource() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The datasource.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions getDatasource() {
+    return datasource_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.getDefaultInstance()
+        : datasource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for datasources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder
+      getDatasourceOrBuilder() {
+    return datasource_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.getDefaultInstance()
+        : datasource_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -202,6 +262,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getAnalysis());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getDatasource());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -216,6 +279,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAnalysis());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDatasource());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -241,6 +307,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (hasAnalysis()) {
       if (!getAnalysis().equals(other.getAnalysis())) return false;
     }
+    if (hasDatasource() != other.hasDatasource()) return false;
+    if (hasDatasource()) {
+      if (!getDatasource().equals(other.getDatasource())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -259,6 +329,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
     if (hasAnalysis()) {
       hash = (37 * hash) + ANALYSIS_FIELD_NUMBER;
       hash = (53 * hash) + getAnalysis().hashCode();
+    }
+    if (hasDatasource()) {
+      hash = (37 * hash) + DATASOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatasource().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -404,6 +478,7 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getChartFieldBuilder();
         getAnalysisFieldBuilder();
+        getDatasourceFieldBuilder();
       }
     }
 
@@ -420,6 +495,11 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
       if (analysisBuilder_ != null) {
         analysisBuilder_.dispose();
         analysisBuilder_ = null;
+      }
+      datasource_ = null;
+      if (datasourceBuilder_ != null) {
+        datasourceBuilder_.dispose();
+        datasourceBuilder_ = null;
       }
       return this;
     }
@@ -467,6 +547,10 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.analysis_ = analysisBuilder_ == null ? analysis_ : analysisBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.datasource_ = datasourceBuilder_ == null ? datasource_ : datasourceBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -525,6 +609,9 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
       if (other.hasAnalysis()) {
         mergeAnalysis(other.getAnalysis());
       }
+      if (other.hasDatasource()) {
+        mergeDatasource(other.getDatasource());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -563,6 +650,12 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getDatasourceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1012,6 +1105,225 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
         analysis_ = null;
       }
       return analysisBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions,
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder>
+        datasourceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the datasource field is set.
+     */
+    public boolean hasDatasource() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The datasource.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions getDatasource() {
+      if (datasourceBuilder_ == null) {
+        return datasource_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.getDefaultInstance()
+            : datasource_;
+      } else {
+        return datasourceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatasource(
+        com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions value) {
+      if (datasourceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        datasource_ = value;
+      } else {
+        datasourceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatasource(
+        com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.Builder builderForValue) {
+      if (datasourceBuilder_ == null) {
+        datasource_ = builderForValue.build();
+      } else {
+        datasourceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDatasource(
+        com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions value) {
+      if (datasourceBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && datasource_ != null
+            && datasource_
+                != com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions
+                    .getDefaultInstance()) {
+          getDatasourceBuilder().mergeFrom(value);
+        } else {
+          datasource_ = value;
+        }
+      } else {
+        datasourceBuilder_.mergeFrom(value);
+      }
+      if (datasource_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDatasource() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      datasource_ = null;
+      if (datasourceBuilder_ != null) {
+        datasourceBuilder_.dispose();
+        datasourceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.Builder
+        getDatasourceBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getDatasourceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder
+        getDatasourceOrBuilder() {
+      if (datasourceBuilder_ != null) {
+        return datasourceBuilder_.getMessageOrBuilder();
+      } else {
+        return datasource_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.getDefaultInstance()
+            : datasource_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for datasources.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.DatasourceOptions datasource = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions,
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder>
+        getDatasourceFieldBuilder() {
+      if (datasourceBuilder_ == null) {
+        datasourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions,
+                com.google.cloud.geminidataanalytics.v1beta.DatasourceOptions.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.DatasourceOptionsOrBuilder>(
+                getDatasource(), getParentForChildren(), isClean());
+        datasource_ = null;
+      }
+      return datasourceBuilder_;
     }
 
     @java.lang.Override

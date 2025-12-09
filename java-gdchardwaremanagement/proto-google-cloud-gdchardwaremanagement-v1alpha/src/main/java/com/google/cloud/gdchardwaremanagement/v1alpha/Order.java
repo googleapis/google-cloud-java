@@ -51,6 +51,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     billingId_ = "";
     existingHardware_ = java.util.Collections.emptyList();
     deploymentType_ = 0;
+    vendorNotes_ = "";
   }
 
   @java.lang.Override
@@ -1451,17 +1452,19 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+   *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
    * @return Whether the fulfillmentTime field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasFulfillmentTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -1470,17 +1473,19 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+   *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
    * @return The fulfillmentTime.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.Timestamp getFulfillmentTime() {
     return fulfillmentTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
@@ -1491,19 +1496,78 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.TimestampOrBuilder getFulfillmentTimeOrBuilder() {
     return fulfillmentTime_ == null
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : fulfillmentTime_;
+  }
+
+  public static final int CUSTOMER_REQUESTED_INSTALLATION_DATE_FIELD_NUMBER = 21;
+  private com.google.type.Date customerRequestedInstallationDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerRequestedInstallationDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomerRequestedInstallationDate() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerRequestedInstallationDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getCustomerRequestedInstallationDate() {
+    return customerRequestedInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : customerRequestedInstallationDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getCustomerRequestedInstallationDateOrBuilder() {
+    return customerRequestedInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : customerRequestedInstallationDate_;
   }
 
   public static final int REGION_CODE_FIELD_NUMBER = 10;
@@ -1679,7 +1743,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubmitTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1927,7 +1991,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasActualInstallationDate() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1986,7 +2050,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEstimatedInstallationDate() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -2025,6 +2089,319 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     return estimatedInstallationDate_ == null
         ? com.google.type.Date.getDefaultInstance()
         : estimatedInstallationDate_;
+  }
+
+  public static final int ESTIMATED_DELIVERY_DATE_FIELD_NUMBER = 22;
+  private com.google.type.Date estimatedDeliveryDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedDeliveryDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasEstimatedDeliveryDate() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedDeliveryDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getEstimatedDeliveryDate() {
+    return estimatedDeliveryDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedDeliveryDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder() {
+    return estimatedDeliveryDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedDeliveryDate_;
+  }
+
+  public static final int MIGRATION_FIELD_NUMBER = 23;
+  private boolean migration_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this order is a migration from customer's existing
+   * infrastructure.
+   * </pre>
+   *
+   * <code>bool migration = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The migration.
+   */
+  @java.lang.Override
+  public boolean getMigration() {
+    return migration_;
+  }
+
+  public static final int ACCEPTED_TIME_FIELD_NUMBER = 24;
+  private com.google.protobuf.Timestamp acceptedTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the acceptedTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasAcceptedTime() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The acceptedTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getAcceptedTime() {
+    return acceptedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : acceptedTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getAcceptedTimeOrBuilder() {
+    return acceptedTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : acceptedTime_;
+  }
+
+  public static final int REQUESTED_DATE_CHANGE_FIELD_NUMBER = 25;
+  private com.google.type.Date requestedDateChange_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the requestedDateChange field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestedDateChange() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestedDateChange.
+   */
+  @java.lang.Override
+  public com.google.type.Date getRequestedDateChange() {
+    return requestedDateChange_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : requestedDateChange_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getRequestedDateChangeOrBuilder() {
+    return requestedDateChange_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : requestedDateChange_;
+  }
+
+  public static final int VENDOR_NOTES_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vendorNotes_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Notes for this order, provided by the vendor.
+   * </pre>
+   *
+   * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The vendorNotes.
+   */
+  @java.lang.Override
+  public java.lang.String getVendorNotes() {
+    java.lang.Object ref = vendorNotes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vendorNotes_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Notes for this order, provided by the vendor.
+   * </pre>
+   *
+   * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for vendorNotes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVendorNotesBytes() {
+    java.lang.Object ref = vendorNotes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vendorNotes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VENDOR_CONTACT_FIELD_NUMBER = 27;
+  private com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendorContact_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vendorContact field is set.
+   */
+  @java.lang.Override
+  public boolean hasVendorContact() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vendorContact.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact getVendorContact() {
+    return vendorContact_ == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.getDefaultInstance()
+        : vendorContact_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder
+      getVendorContactOrBuilder() {
+    return vendorContact_ == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.getDefaultInstance()
+        : vendorContact_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2082,7 +2459,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, displayName_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(14, getSubmitTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingId_)) {
@@ -2097,11 +2474,32 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(18, deploymentType_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(19, getActualInstallationDate());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(20, getEstimatedInstallationDate());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(21, getCustomerRequestedInstallationDate());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(22, getEstimatedDeliveryDate());
+    }
+    if (migration_ != false) {
+      output.writeBool(23, migration_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(24, getAcceptedTime());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(25, getRequestedDateChange());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vendorNotes_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, vendorNotes_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(27, getVendorContact());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2166,7 +2564,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, displayName_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getSubmitTime());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingId_)) {
@@ -2182,14 +2580,39 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, deploymentType_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(19, getActualInstallationDate());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, getEstimatedInstallationDate());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21, getCustomerRequestedInstallationDate());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22, getEstimatedDeliveryDate());
+    }
+    if (migration_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, migration_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getAcceptedTime());
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(25, getRequestedDateChange());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vendorNotes_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, vendorNotes_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getVendorContact());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2229,6 +2652,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (hasFulfillmentTime()) {
       if (!getFulfillmentTime().equals(other.getFulfillmentTime())) return false;
     }
+    if (hasCustomerRequestedInstallationDate() != other.hasCustomerRequestedInstallationDate())
+      return false;
+    if (hasCustomerRequestedInstallationDate()) {
+      if (!getCustomerRequestedInstallationDate()
+          .equals(other.getCustomerRequestedInstallationDate())) return false;
+    }
     if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (!getOrderFormUri().equals(other.getOrderFormUri())) return false;
     if (type_ != other.type_) return false;
@@ -2247,6 +2676,24 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (hasEstimatedInstallationDate()) {
       if (!getEstimatedInstallationDate().equals(other.getEstimatedInstallationDate()))
         return false;
+    }
+    if (hasEstimatedDeliveryDate() != other.hasEstimatedDeliveryDate()) return false;
+    if (hasEstimatedDeliveryDate()) {
+      if (!getEstimatedDeliveryDate().equals(other.getEstimatedDeliveryDate())) return false;
+    }
+    if (getMigration() != other.getMigration()) return false;
+    if (hasAcceptedTime() != other.hasAcceptedTime()) return false;
+    if (hasAcceptedTime()) {
+      if (!getAcceptedTime().equals(other.getAcceptedTime())) return false;
+    }
+    if (hasRequestedDateChange() != other.hasRequestedDateChange()) return false;
+    if (hasRequestedDateChange()) {
+      if (!getRequestedDateChange().equals(other.getRequestedDateChange())) return false;
+    }
+    if (!getVendorNotes().equals(other.getVendorNotes())) return false;
+    if (hasVendorContact() != other.hasVendorContact()) return false;
+    if (hasVendorContact()) {
+      if (!getVendorContact().equals(other.getVendorContact())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2291,6 +2738,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FULFILLMENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getFulfillmentTime().hashCode();
     }
+    if (hasCustomerRequestedInstallationDate()) {
+      hash = (37 * hash) + CUSTOMER_REQUESTED_INSTALLATION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerRequestedInstallationDate().hashCode();
+    }
     hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + ORDER_FORM_URI_FIELD_NUMBER;
@@ -2316,6 +2767,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (hasEstimatedInstallationDate()) {
       hash = (37 * hash) + ESTIMATED_INSTALLATION_DATE_FIELD_NUMBER;
       hash = (53 * hash) + getEstimatedInstallationDate().hashCode();
+    }
+    if (hasEstimatedDeliveryDate()) {
+      hash = (37 * hash) + ESTIMATED_DELIVERY_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEstimatedDeliveryDate().hashCode();
+    }
+    hash = (37 * hash) + MIGRATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMigration());
+    if (hasAcceptedTime()) {
+      hash = (37 * hash) + ACCEPTED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceptedTime().hashCode();
+    }
+    if (hasRequestedDateChange()) {
+      hash = (37 * hash) + REQUESTED_DATE_CHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestedDateChange().hashCode();
+    }
+    hash = (37 * hash) + VENDOR_NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getVendorNotes().hashCode();
+    if (hasVendorContact()) {
+      hash = (37 * hash) + VENDOR_CONTACT_FIELD_NUMBER;
+      hash = (53 * hash) + getVendorContact().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2484,10 +2955,15 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getOrganizationContactFieldBuilder();
         getFulfillmentTimeFieldBuilder();
+        getCustomerRequestedInstallationDateFieldBuilder();
         getSubmitTimeFieldBuilder();
         getExistingHardwareFieldBuilder();
         getActualInstallationDateFieldBuilder();
         getEstimatedInstallationDateFieldBuilder();
+        getEstimatedDeliveryDateFieldBuilder();
+        getAcceptedTimeFieldBuilder();
+        getRequestedDateChangeFieldBuilder();
+        getVendorContactFieldBuilder();
       }
     }
 
@@ -2521,6 +2997,11 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         fulfillmentTimeBuilder_.dispose();
         fulfillmentTimeBuilder_ = null;
       }
+      customerRequestedInstallationDate_ = null;
+      if (customerRequestedInstallationDateBuilder_ != null) {
+        customerRequestedInstallationDateBuilder_.dispose();
+        customerRequestedInstallationDateBuilder_ = null;
+      }
       regionCode_ = "";
       orderFormUri_ = "";
       type_ = 0;
@@ -2536,7 +3017,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardware_ = null;
         existingHardwareBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       deploymentType_ = 0;
       actualInstallationDate_ = null;
       if (actualInstallationDateBuilder_ != null) {
@@ -2547,6 +3028,28 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (estimatedInstallationDateBuilder_ != null) {
         estimatedInstallationDateBuilder_.dispose();
         estimatedInstallationDateBuilder_ = null;
+      }
+      estimatedDeliveryDate_ = null;
+      if (estimatedDeliveryDateBuilder_ != null) {
+        estimatedDeliveryDateBuilder_.dispose();
+        estimatedDeliveryDateBuilder_ = null;
+      }
+      migration_ = false;
+      acceptedTime_ = null;
+      if (acceptedTimeBuilder_ != null) {
+        acceptedTimeBuilder_.dispose();
+        acceptedTimeBuilder_ = null;
+      }
+      requestedDateChange_ = null;
+      if (requestedDateChangeBuilder_ != null) {
+        requestedDateChangeBuilder_.dispose();
+        requestedDateChangeBuilder_ = null;
+      }
+      vendorNotes_ = "";
+      vendorContact_ = null;
+      if (vendorContactBuilder_ != null) {
+        vendorContactBuilder_.dispose();
+        vendorContactBuilder_ = null;
       }
       return this;
     }
@@ -2586,9 +3089,9 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.gdchardwaremanagement.v1alpha.Order result) {
       if (existingHardwareBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           existingHardware_ = java.util.Collections.unmodifiableList(existingHardware_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.existingHardware_ = existingHardware_;
       } else {
@@ -2640,37 +3143,74 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.regionCode_ = regionCode_;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.orderFormUri_ = orderFormUri_;
-      }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.type_ = type_;
-      }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+        result.customerRequestedInstallationDate_ =
+            customerRequestedInstallationDateBuilder_ == null
+                ? customerRequestedInstallationDate_
+                : customerRequestedInstallationDateBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.regionCode_ = regionCode_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.orderFormUri_ = orderFormUri_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.type_ = type_;
+      }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.submitTime_ = submitTimeBuilder_ == null ? submitTime_ : submitTimeBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.billingId_ = billingId_;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.deploymentType_ = deploymentType_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.actualInstallationDate_ =
             actualInstallationDateBuilder_ == null
                 ? actualInstallationDate_
                 : actualInstallationDateBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.estimatedInstallationDate_ =
             estimatedInstallationDateBuilder_ == null
                 ? estimatedInstallationDate_
                 : estimatedInstallationDateBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.estimatedDeliveryDate_ =
+            estimatedDeliveryDateBuilder_ == null
+                ? estimatedDeliveryDate_
+                : estimatedDeliveryDateBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.migration_ = migration_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.acceptedTime_ =
+            acceptedTimeBuilder_ == null ? acceptedTime_ : acceptedTimeBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.requestedDateChange_ =
+            requestedDateChangeBuilder_ == null
+                ? requestedDateChange_
+                : requestedDateChangeBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.vendorNotes_ = vendorNotes_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.vendorContact_ =
+            vendorContactBuilder_ == null ? vendorContact_ : vendorContactBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2763,14 +3303,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (other.hasFulfillmentTime()) {
         mergeFulfillmentTime(other.getFulfillmentTime());
       }
+      if (other.hasCustomerRequestedInstallationDate()) {
+        mergeCustomerRequestedInstallationDate(other.getCustomerRequestedInstallationDate());
+      }
       if (!other.getRegionCode().isEmpty()) {
         regionCode_ = other.regionCode_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (!other.getOrderFormUri().isEmpty()) {
         orderFormUri_ = other.orderFormUri_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.type_ != 0) {
@@ -2781,14 +3324,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getBillingId().isEmpty()) {
         billingId_ = other.billingId_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (existingHardwareBuilder_ == null) {
         if (!other.existingHardware_.isEmpty()) {
           if (existingHardware_.isEmpty()) {
             existingHardware_ = other.existingHardware_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureExistingHardwareIsMutable();
             existingHardware_.addAll(other.existingHardware_);
@@ -2801,7 +3344,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             existingHardwareBuilder_.dispose();
             existingHardwareBuilder_ = null;
             existingHardware_ = other.existingHardware_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             existingHardwareBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExistingHardwareFieldBuilder()
@@ -2819,6 +3362,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasEstimatedInstallationDate()) {
         mergeEstimatedInstallationDate(other.getEstimatedInstallationDate());
+      }
+      if (other.hasEstimatedDeliveryDate()) {
+        mergeEstimatedDeliveryDate(other.getEstimatedDeliveryDate());
+      }
+      if (other.getMigration() != false) {
+        setMigration(other.getMigration());
+      }
+      if (other.hasAcceptedTime()) {
+        mergeAcceptedTime(other.getAcceptedTime());
+      }
+      if (other.hasRequestedDateChange()) {
+        mergeRequestedDateChange(other.getRequestedDateChange());
+      }
+      if (!other.getVendorNotes().isEmpty()) {
+        vendorNotes_ = other.vendorNotes_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (other.hasVendorContact()) {
+        mergeVendorContact(other.getVendorContact());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2911,19 +3474,19 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 regionCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 orderFormUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 96:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 96
             case 106:
@@ -2935,13 +3498,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             case 114:
               {
                 input.readMessage(getSubmitTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 114
             case 122:
               {
                 billingId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
             case 130:
@@ -2961,23 +3524,69 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
             case 144:
               {
                 deploymentType_ = input.readEnum();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 144
             case 154:
               {
                 input.readMessage(
                     getActualInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 154
             case 162:
               {
                 input.readMessage(
                     getEstimatedInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    getCustomerRequestedInstallationDateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getEstimatedDeliveryDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 178
+            case 184:
+              {
+                migration_ = input.readBool();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 184
+            case 194:
+              {
+                input.readMessage(getAcceptedTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 194
+            case 202:
+              {
+                input.readMessage(
+                    getRequestedDateChangeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 202
+            case 210:
+              {
+                vendorNotes_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 210
+            case 218:
+              {
+                input.readMessage(getVendorContactFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4497,16 +5106,18 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+     *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
      * @return Whether the fulfillmentTime field is set.
      */
+    @java.lang.Deprecated
     public boolean hasFulfillmentTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -4515,16 +5126,18 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+     *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
      * @return The fulfillmentTime.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp getFulfillmentTime() {
       if (fulfillmentTimeBuilder_ == null) {
         return fulfillmentTime_ == null
@@ -4539,14 +5152,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFulfillmentTime(com.google.protobuf.Timestamp value) {
       if (fulfillmentTimeBuilder_ == null) {
         if (value == null) {
@@ -4565,14 +5178,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setFulfillmentTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (fulfillmentTimeBuilder_ == null) {
         fulfillmentTime_ = builderForValue.build();
@@ -4588,14 +5201,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeFulfillmentTime(com.google.protobuf.Timestamp value) {
       if (fulfillmentTimeBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)
@@ -4619,14 +5232,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearFulfillmentTime() {
       bitField0_ = (bitField0_ & ~0x00000200);
       fulfillmentTime_ = null;
@@ -4642,14 +5255,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.Timestamp.Builder getFulfillmentTimeBuilder() {
       bitField0_ |= 0x00000200;
       onChanged();
@@ -4660,14 +5273,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.protobuf.TimestampOrBuilder getFulfillmentTimeOrBuilder() {
       if (fulfillmentTimeBuilder_ != null) {
         return fulfillmentTimeBuilder_.getMessageOrBuilder();
@@ -4682,12 +5295,11 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Customer specified deadline by when this order should be
-     * fulfilled.
+     * Deprecated: Please use customer_requested_installation_date instead.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+     * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4705,6 +5317,213 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         fulfillmentTime_ = null;
       }
       return fulfillmentTimeBuilder_;
+    }
+
+    private com.google.type.Date customerRequestedInstallationDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        customerRequestedInstallationDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customerRequestedInstallationDate field is set.
+     */
+    public boolean hasCustomerRequestedInstallationDate() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customerRequestedInstallationDate.
+     */
+    public com.google.type.Date getCustomerRequestedInstallationDate() {
+      if (customerRequestedInstallationDateBuilder_ == null) {
+        return customerRequestedInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : customerRequestedInstallationDate_;
+      } else {
+        return customerRequestedInstallationDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomerRequestedInstallationDate(com.google.type.Date value) {
+      if (customerRequestedInstallationDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customerRequestedInstallationDate_ = value;
+      } else {
+        customerRequestedInstallationDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomerRequestedInstallationDate(
+        com.google.type.Date.Builder builderForValue) {
+      if (customerRequestedInstallationDateBuilder_ == null) {
+        customerRequestedInstallationDate_ = builderForValue.build();
+      } else {
+        customerRequestedInstallationDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomerRequestedInstallationDate(com.google.type.Date value) {
+      if (customerRequestedInstallationDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && customerRequestedInstallationDate_ != null
+            && customerRequestedInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
+          getCustomerRequestedInstallationDateBuilder().mergeFrom(value);
+        } else {
+          customerRequestedInstallationDate_ = value;
+        }
+      } else {
+        customerRequestedInstallationDateBuilder_.mergeFrom(value);
+      }
+      if (customerRequestedInstallationDate_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomerRequestedInstallationDate() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      customerRequestedInstallationDate_ = null;
+      if (customerRequestedInstallationDateBuilder_ != null) {
+        customerRequestedInstallationDateBuilder_.dispose();
+        customerRequestedInstallationDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.Date.Builder getCustomerRequestedInstallationDateBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getCustomerRequestedInstallationDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getCustomerRequestedInstallationDateOrBuilder() {
+      if (customerRequestedInstallationDateBuilder_ != null) {
+        return customerRequestedInstallationDateBuilder_.getMessageOrBuilder();
+      } else {
+        return customerRequestedInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : customerRequestedInstallationDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Customer requested installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getCustomerRequestedInstallationDateFieldBuilder() {
+      if (customerRequestedInstallationDateBuilder_ == null) {
+        customerRequestedInstallationDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getCustomerRequestedInstallationDate(), getParentForChildren(), isClean());
+        customerRequestedInstallationDate_ = null;
+      }
+      return customerRequestedInstallationDateBuilder_;
     }
 
     private java.lang.Object regionCode_ = "";
@@ -4781,7 +5600,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       regionCode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4802,7 +5621,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegionCode() {
       regionCode_ = getDefaultInstance().getRegionCode();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4828,7 +5647,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       regionCode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4898,7 +5717,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       orderFormUri_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4916,7 +5735,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOrderFormUri() {
       orderFormUri_ = getDefaultInstance().getOrderFormUri();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4939,7 +5758,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       orderFormUri_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4980,7 +5799,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5025,7 +5844,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -5045,7 +5864,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       type_ = 0;
       onChanged();
       return this;
@@ -5073,7 +5892,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the submitTime field is set.
      */
     public boolean hasSubmitTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5121,7 +5940,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         submitTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5144,7 +5963,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         submitTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5163,7 +5982,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSubmitTime(com.google.protobuf.Timestamp value) {
       if (submitTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && submitTime_ != null
             && submitTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getSubmitTimeBuilder().mergeFrom(value);
@@ -5174,7 +5993,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         submitTimeBuilder_.mergeFrom(value);
       }
       if (submitTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5193,7 +6012,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSubmitTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       submitTime_ = null;
       if (submitTimeBuilder_ != null) {
         submitTimeBuilder_.dispose();
@@ -5216,7 +6035,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
@@ -5337,7 +6156,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       billingId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5355,7 +6174,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearBillingId() {
       billingId_ = getDefaultInstance().getBillingId();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5378,7 +6197,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       billingId_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5387,11 +6206,11 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardware_ = java.util.Collections.emptyList();
 
     private void ensureExistingHardwareIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         existingHardware_ =
             new java.util.ArrayList<
                 com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation>(existingHardware_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -5659,7 +6478,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExistingHardware() {
       if (existingHardwareBuilder_ == null) {
         existingHardware_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         existingHardwareBuilder_.clear();
@@ -5818,7 +6637,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocation.Builder,
                 com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocationOrBuilder>(
                 existingHardware_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00010000) != 0),
                 getParentForChildren(),
                 isClean());
         existingHardware_ = null;
@@ -5862,7 +6681,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setDeploymentTypeValue(int value) {
       deploymentType_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5909,7 +6728,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       deploymentType_ = value.getNumber();
       onChanged();
       return this;
@@ -5929,7 +6748,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearDeploymentType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       deploymentType_ = 0;
       onChanged();
       return this;
@@ -5954,7 +6773,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the actualInstallationDate field is set.
      */
     public boolean hasActualInstallationDate() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6000,7 +6819,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         actualInstallationDateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6022,7 +6841,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         actualInstallationDateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6040,7 +6859,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeActualInstallationDate(com.google.type.Date value) {
       if (actualInstallationDateBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00040000) != 0)
             && actualInstallationDate_ != null
             && actualInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
           getActualInstallationDateBuilder().mergeFrom(value);
@@ -6051,7 +6870,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         actualInstallationDateBuilder_.mergeFrom(value);
       }
       if (actualInstallationDate_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       return this;
@@ -6069,7 +6888,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearActualInstallationDate() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       actualInstallationDate_ = null;
       if (actualInstallationDateBuilder_ != null) {
         actualInstallationDateBuilder_.dispose();
@@ -6091,7 +6910,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.type.Date.Builder getActualInstallationDateBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return getActualInstallationDateFieldBuilder().getBuilder();
     }
@@ -6160,7 +6979,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the estimatedInstallationDate field is set.
      */
     public boolean hasEstimatedInstallationDate() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6206,7 +7025,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         estimatedInstallationDateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6228,7 +7047,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       } else {
         estimatedInstallationDateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6246,7 +7065,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEstimatedInstallationDate(com.google.type.Date value) {
       if (estimatedInstallationDateBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && estimatedInstallationDate_ != null
             && estimatedInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
           getEstimatedInstallationDateBuilder().mergeFrom(value);
@@ -6257,7 +7076,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         estimatedInstallationDateBuilder_.mergeFrom(value);
       }
       if (estimatedInstallationDate_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6275,7 +7094,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEstimatedInstallationDate() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       estimatedInstallationDate_ = null;
       if (estimatedInstallationDateBuilder_ != null) {
         estimatedInstallationDateBuilder_.dispose();
@@ -6297,7 +7116,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.type.Date.Builder getEstimatedInstallationDateBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getEstimatedInstallationDateFieldBuilder().getBuilder();
     }
@@ -6345,6 +7164,1031 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         estimatedInstallationDate_ = null;
       }
       return estimatedInstallationDateBuilder_;
+    }
+
+    private com.google.type.Date estimatedDeliveryDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        estimatedDeliveryDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the estimatedDeliveryDate field is set.
+     */
+    public boolean hasEstimatedDeliveryDate() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The estimatedDeliveryDate.
+     */
+    public com.google.type.Date getEstimatedDeliveryDate() {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        return estimatedDeliveryDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedDeliveryDate_;
+      } else {
+        return estimatedDeliveryDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedDeliveryDate(com.google.type.Date value) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        estimatedDeliveryDate_ = value;
+      } else {
+        estimatedDeliveryDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedDeliveryDate(com.google.type.Date.Builder builderForValue) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        estimatedDeliveryDate_ = builderForValue.build();
+      } else {
+        estimatedDeliveryDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEstimatedDeliveryDate(com.google.type.Date value) {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && estimatedDeliveryDate_ != null
+            && estimatedDeliveryDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEstimatedDeliveryDateBuilder().mergeFrom(value);
+        } else {
+          estimatedDeliveryDate_ = value;
+        }
+      } else {
+        estimatedDeliveryDateBuilder_.mergeFrom(value);
+      }
+      if (estimatedDeliveryDate_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEstimatedDeliveryDate() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      estimatedDeliveryDate_ = null;
+      if (estimatedDeliveryDateBuilder_ != null) {
+        estimatedDeliveryDateBuilder_.dispose();
+        estimatedDeliveryDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getEstimatedDeliveryDateBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getEstimatedDeliveryDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder() {
+      if (estimatedDeliveryDateBuilder_ != null) {
+        return estimatedDeliveryDateBuilder_.getMessageOrBuilder();
+      } else {
+        return estimatedDeliveryDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedDeliveryDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated delivery date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getEstimatedDeliveryDateFieldBuilder() {
+      if (estimatedDeliveryDateBuilder_ == null) {
+        estimatedDeliveryDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getEstimatedDeliveryDate(), getParentForChildren(), isClean());
+        estimatedDeliveryDate_ = null;
+      }
+      return estimatedDeliveryDateBuilder_;
+    }
+
+    private boolean migration_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this order is a migration from customer's existing
+     * infrastructure.
+     * </pre>
+     *
+     * <code>bool migration = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The migration.
+     */
+    @java.lang.Override
+    public boolean getMigration() {
+      return migration_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this order is a migration from customer's existing
+     * infrastructure.
+     * </pre>
+     *
+     * <code>bool migration = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The migration to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMigration(boolean value) {
+
+      migration_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether this order is a migration from customer's existing
+     * infrastructure.
+     * </pre>
+     *
+     * <code>bool migration = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMigration() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      migration_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp acceptedTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        acceptedTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the acceptedTime field is set.
+     */
+    public boolean hasAcceptedTime() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The acceptedTime.
+     */
+    public com.google.protobuf.Timestamp getAcceptedTime() {
+      if (acceptedTimeBuilder_ == null) {
+        return acceptedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : acceptedTime_;
+      } else {
+        return acceptedTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAcceptedTime(com.google.protobuf.Timestamp value) {
+      if (acceptedTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        acceptedTime_ = value;
+      } else {
+        acceptedTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAcceptedTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (acceptedTimeBuilder_ == null) {
+        acceptedTime_ = builderForValue.build();
+      } else {
+        acceptedTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAcceptedTime(com.google.protobuf.Timestamp value) {
+      if (acceptedTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && acceptedTime_ != null
+            && acceptedTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getAcceptedTimeBuilder().mergeFrom(value);
+        } else {
+          acceptedTime_ = value;
+        }
+      } else {
+        acceptedTimeBuilder_.mergeFrom(value);
+      }
+      if (acceptedTime_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAcceptedTime() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      acceptedTime_ = null;
+      if (acceptedTimeBuilder_ != null) {
+        acceptedTimeBuilder_.dispose();
+        acceptedTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getAcceptedTimeBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getAcceptedTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getAcceptedTimeOrBuilder() {
+      if (acceptedTimeBuilder_ != null) {
+        return acceptedTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return acceptedTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : acceptedTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time when the order was moved to ACCEPTED state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getAcceptedTimeFieldBuilder() {
+      if (acceptedTimeBuilder_ == null) {
+        acceptedTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getAcceptedTime(), getParentForChildren(), isClean());
+        acceptedTime_ = null;
+      }
+      return acceptedTimeBuilder_;
+    }
+
+    private com.google.type.Date requestedDateChange_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        requestedDateChangeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the requestedDateChange field is set.
+     */
+    public boolean hasRequestedDateChange() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The requestedDateChange.
+     */
+    public com.google.type.Date getRequestedDateChange() {
+      if (requestedDateChangeBuilder_ == null) {
+        return requestedDateChange_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : requestedDateChange_;
+      } else {
+        return requestedDateChangeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRequestedDateChange(com.google.type.Date value) {
+      if (requestedDateChangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestedDateChange_ = value;
+      } else {
+        requestedDateChangeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRequestedDateChange(com.google.type.Date.Builder builderForValue) {
+      if (requestedDateChangeBuilder_ == null) {
+        requestedDateChange_ = builderForValue.build();
+      } else {
+        requestedDateChangeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRequestedDateChange(com.google.type.Date value) {
+      if (requestedDateChangeBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && requestedDateChange_ != null
+            && requestedDateChange_ != com.google.type.Date.getDefaultInstance()) {
+          getRequestedDateChangeBuilder().mergeFrom(value);
+        } else {
+          requestedDateChange_ = value;
+        }
+      } else {
+        requestedDateChangeBuilder_.mergeFrom(value);
+      }
+      if (requestedDateChange_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRequestedDateChange() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      requestedDateChange_ = null;
+      if (requestedDateChangeBuilder_ != null) {
+        requestedDateChangeBuilder_.dispose();
+        requestedDateChangeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getRequestedDateChangeBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getRequestedDateChangeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getRequestedDateChangeOrBuilder() {
+      if (requestedDateChangeBuilder_ != null) {
+        return requestedDateChangeBuilder_.getMessageOrBuilder();
+      } else {
+        return requestedDateChange_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : requestedDateChange_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date to which the customer or Google wants to set the
+     * scheduled installation date.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getRequestedDateChangeFieldBuilder() {
+      if (requestedDateChangeBuilder_ == null) {
+        requestedDateChangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getRequestedDateChange(), getParentForChildren(), isClean());
+        requestedDateChange_ = null;
+      }
+      return requestedDateChangeBuilder_;
+    }
+
+    private java.lang.Object vendorNotes_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Notes for this order, provided by the vendor.
+     * </pre>
+     *
+     * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The vendorNotes.
+     */
+    public java.lang.String getVendorNotes() {
+      java.lang.Object ref = vendorNotes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vendorNotes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Notes for this order, provided by the vendor.
+     * </pre>
+     *
+     * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for vendorNotes.
+     */
+    public com.google.protobuf.ByteString getVendorNotesBytes() {
+      java.lang.Object ref = vendorNotes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vendorNotes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Notes for this order, provided by the vendor.
+     * </pre>
+     *
+     * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The vendorNotes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVendorNotes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      vendorNotes_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Notes for this order, provided by the vendor.
+     * </pre>
+     *
+     * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVendorNotes() {
+      vendorNotes_ = getDefaultInstance().getVendorNotes();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Notes for this order, provided by the vendor.
+     * </pre>
+     *
+     * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for vendorNotes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVendorNotesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      vendorNotes_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendorContact_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact,
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder>
+        vendorContactBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the vendorContact field is set.
+     */
+    public boolean hasVendorContact() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The vendorContact.
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact getVendorContact() {
+      if (vendorContactBuilder_ == null) {
+        return vendorContact_ == null
+            ? com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact
+                .getDefaultInstance()
+            : vendorContact_;
+      } else {
+        return vendorContactBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVendorContact(
+        com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact value) {
+      if (vendorContactBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vendorContact_ = value;
+      } else {
+        vendorContactBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVendorContact(
+        com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder
+            builderForValue) {
+      if (vendorContactBuilder_ == null) {
+        vendorContact_ = builderForValue.build();
+      } else {
+        vendorContactBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVendorContact(
+        com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact value) {
+      if (vendorContactBuilder_ == null) {
+        if (((bitField0_ & 0x02000000) != 0)
+            && vendorContact_ != null
+            && vendorContact_
+                != com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact
+                    .getDefaultInstance()) {
+          getVendorContactBuilder().mergeFrom(value);
+        } else {
+          vendorContact_ = value;
+        }
+      } else {
+        vendorContactBuilder_.mergeFrom(value);
+      }
+      if (vendorContact_ != null) {
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVendorContact() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      vendorContact_ = null;
+      if (vendorContactBuilder_ != null) {
+        vendorContactBuilder_.dispose();
+        vendorContactBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder
+        getVendorContactBuilder() {
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return getVendorContactFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder
+        getVendorContactOrBuilder() {
+      if (vendorContactBuilder_ != null) {
+        return vendorContactBuilder_.getMessageOrBuilder();
+      } else {
+        return vendorContact_ == null
+            ? com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact
+                .getDefaultInstance()
+            : vendorContact_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contact information of the SI assigned to this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact,
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder,
+            com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder>
+        getVendorContactFieldBuilder() {
+      if (vendorContactBuilder_ == null) {
+        vendorContactBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact,
+                com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact.Builder,
+                com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder>(
+                getVendorContact(), getParentForChildren(), isClean());
+        vendorContact_ = null;
+      }
+      return vendorContactBuilder_;
     }
 
     @java.lang.Override

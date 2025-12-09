@@ -106,6 +106,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BatchCreateRegions</td>
+ *      <td><p> Creates one or more regions in your Merchant Center account. Executing this method requires admin access.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateRegions(BatchCreateRegionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateRegionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> UpdateRegion</td>
  *      <td><p> Updates a region definition in your Merchant Center account. Executing this method requires admin access.</td>
  *      <td>
@@ -120,6 +134,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateRegionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateRegions</td>
+ *      <td><p> Updates one or more regions in your Merchant Center account. Executing this method requires admin access.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateRegions(BatchUpdateRegionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateRegionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -139,6 +167,20 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteRegionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeleteRegions</td>
+ *      <td><p> Deletes multiple regions by name from your Merchant Center account. Executing this method requires admin access.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRegions(BatchDeleteRegionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteRegionsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -514,6 +556,67 @@ public class RegionsServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates one or more regions in your Merchant Center account. Executing this method requires
+   * admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchCreateRegionsRequest request =
+   *       BatchCreateRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<CreateRegionRequest>())
+   *           .build();
+   *   BatchCreateRegionsResponse response = regionsServiceClient.batchCreateRegions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateRegionsResponse batchCreateRegions(BatchCreateRegionsRequest request) {
+    return batchCreateRegionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates one or more regions in your Merchant Center account. Executing this method requires
+   * admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchCreateRegionsRequest request =
+   *       BatchCreateRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<CreateRegionRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateRegionsResponse> future =
+   *       regionsServiceClient.batchCreateRegionsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateRegionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable() {
+    return stub.batchCreateRegionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Updates a region definition in your Merchant Center account. Executing this method requires
    * admin access.
    *
@@ -600,6 +703,67 @@ public class RegionsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable() {
     return stub.updateRegionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates one or more regions in your Merchant Center account. Executing this method requires
+   * admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchUpdateRegionsRequest request =
+   *       BatchUpdateRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<UpdateRegionRequest>())
+   *           .build();
+   *   BatchUpdateRegionsResponse response = regionsServiceClient.batchUpdateRegions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateRegionsResponse batchUpdateRegions(BatchUpdateRegionsRequest request) {
+    return batchUpdateRegionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates one or more regions in your Merchant Center account. Executing this method requires
+   * admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchUpdateRegionsRequest request =
+   *       BatchUpdateRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<UpdateRegionRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateRegionsResponse> future =
+   *       regionsServiceClient.batchUpdateRegionsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateRegionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable() {
+    return stub.batchUpdateRegionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -714,6 +878,66 @@ public class RegionsServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable() {
     return stub.deleteRegionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple regions by name from your Merchant Center account. Executing this method
+   * requires admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchDeleteRegionsRequest request =
+   *       BatchDeleteRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<DeleteRegionRequest>())
+   *           .build();
+   *   regionsServiceClient.batchDeleteRegions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void batchDeleteRegions(BatchDeleteRegionsRequest request) {
+    batchDeleteRegionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes multiple regions by name from your Merchant Center account. Executing this method
+   * requires admin access.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionsServiceClient regionsServiceClient = RegionsServiceClient.create()) {
+   *   BatchDeleteRegionsRequest request =
+   *       BatchDeleteRegionsRequest.newBuilder()
+   *           .setParent(AccountName.of("[ACCOUNT]").toString())
+   *           .addAllRequests(new ArrayList<DeleteRegionRequest>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       regionsServiceClient.batchDeleteRegionsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable() {
+    return stub.batchDeleteRegionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

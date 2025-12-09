@@ -14095,6 +14095,672 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface BigtableMetadataOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The Bigtable App Profile to use for reading from Bigtable.
+     * </pre>
+     *
+     * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The readAppProfile.
+     */
+    java.lang.String getReadAppProfile();
+
+    /**
+     *
+     *
+     * <pre>
+     * The Bigtable App Profile to use for reading from Bigtable.
+     * </pre>
+     *
+     * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for readAppProfile.
+     */
+    com.google.protobuf.ByteString getReadAppProfileBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for the Cloud Bigtable that supports directly interacting Bigtable
+   * instances.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata}
+   */
+  public static final class BigtableMetadata extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)
+      BigtableMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use BigtableMetadata.newBuilder() to construct.
+    private BigtableMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BigtableMetadata() {
+      readAppProfile_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new BigtableMetadata();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_BigtableMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_BigtableMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder.class);
+    }
+
+    public static final int READ_APP_PROFILE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object readAppProfile_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The Bigtable App Profile to use for reading from Bigtable.
+     * </pre>
+     *
+     * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The readAppProfile.
+     */
+    @java.lang.Override
+    public java.lang.String getReadAppProfile() {
+      java.lang.Object ref = readAppProfile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        readAppProfile_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Bigtable App Profile to use for reading from Bigtable.
+     * </pre>
+     *
+     * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for readAppProfile.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReadAppProfileBytes() {
+      java.lang.Object ref = readAppProfile_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        readAppProfile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(readAppProfile_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, readAppProfile_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(readAppProfile_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, readAppProfile_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata) obj;
+
+      if (!getReadAppProfile().equals(other.getReadAppProfile())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + READ_APP_PROFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getReadAppProfile().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for the Cloud Bigtable that supports directly interacting Bigtable
+     * instances.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_BigtableMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_BigtableMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.class,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        readAppProfile_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureViewProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureView_BigtableMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.readAppProfile_ = readAppProfile_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+                .getDefaultInstance()) return this;
+        if (!other.getReadAppProfile().isEmpty()) {
+          readAppProfile_ = other.readAppProfile_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  readAppProfile_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object readAppProfile_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The Bigtable App Profile to use for reading from Bigtable.
+       * </pre>
+       *
+       * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The readAppProfile.
+       */
+      public java.lang.String getReadAppProfile() {
+        java.lang.Object ref = readAppProfile_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          readAppProfile_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Bigtable App Profile to use for reading from Bigtable.
+       * </pre>
+       *
+       * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for readAppProfile.
+       */
+      public com.google.protobuf.ByteString getReadAppProfileBytes() {
+        java.lang.Object ref = readAppProfile_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          readAppProfile_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Bigtable App Profile to use for reading from Bigtable.
+       * </pre>
+       *
+       * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The readAppProfile to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReadAppProfile(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readAppProfile_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Bigtable App Profile to use for reading from Bigtable.
+       * </pre>
+       *
+       * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReadAppProfile() {
+        readAppProfile_ = getDefaultInstance().getReadAppProfile();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Bigtable App Profile to use for reading from Bigtable.
+       * </pre>
+       *
+       * <code>string read_app_profile = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for readAppProfile to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReadAppProfileBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        readAppProfile_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BigtableMetadata> PARSER =
+        new com.google.protobuf.AbstractParser<BigtableMetadata>() {
+          @java.lang.Override
+          public BigtableMetadata parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BigtableMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BigtableMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int sourceCase_ = 0;
 
@@ -15117,6 +15783,66 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int BIGTABLE_METADATA_FIELD_NUMBER = 22;
+  private com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtableMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigtableMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasBigtableMetadata() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigtableMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata getBigtableMetadata() {
+    return bigtableMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.getDefaultInstance()
+        : bigtableMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder
+      getBigtableMetadataOrBuilder() {
+    return bigtableMetadata_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.getDefaultInstance()
+        : bigtableMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -15183,6 +15909,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzi_ != false) {
       output.writeBool(20, satisfiesPzi_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(22, getBigtableMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -15257,6 +15986,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzi_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, satisfiesPzi_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getBigtableMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -15304,6 +16036,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     if (!getServiceAccountEmail().equals(other.getServiceAccountEmail())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (hasBigtableMetadata() != other.hasBigtableMetadata()) return false;
+    if (hasBigtableMetadata()) {
+      if (!getBigtableMetadata().equals(other.getBigtableMetadata())) return false;
+    }
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 6:
@@ -15369,6 +16105,10 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    if (hasBigtableMetadata()) {
+      hash = (37 * hash) + BIGTABLE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getBigtableMetadata().hashCode();
+    }
     switch (sourceCase_) {
       case 6:
         hash = (37 * hash) + BIG_QUERY_SOURCE_FIELD_NUMBER;
@@ -15555,6 +16295,7 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
         getVectorSearchConfigFieldBuilder();
         getIndexConfigFieldBuilder();
         getOptimizedConfigFieldBuilder();
+        getBigtableMetadataFieldBuilder();
       }
     }
 
@@ -15608,6 +16349,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       serviceAccountEmail_ = "";
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      bigtableMetadata_ = null;
+      if (bigtableMetadataBuilder_ != null) {
+        bigtableMetadataBuilder_.dispose();
+        bigtableMetadataBuilder_ = null;
+      }
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -15698,6 +16444,11 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.bigtableMetadata_ =
+            bigtableMetadataBuilder_ == null ? bigtableMetadata_ : bigtableMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -15805,6 +16556,9 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (other.hasBigtableMetadata()) {
+        mergeBigtableMetadata(other.getBigtableMetadata());
       }
       switch (other.getSourceCase()) {
         case BIG_QUERY_SOURCE:
@@ -15957,6 +16711,13 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 160
+            case 178:
+              {
+                input.readMessage(
+                    getBigtableMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18952,6 +19713,225 @@ public final class FeatureView extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtableMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder>
+        bigtableMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the bigtableMetadata field is set.
+     */
+    public boolean hasBigtableMetadata() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bigtableMetadata.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata getBigtableMetadata() {
+      if (bigtableMetadataBuilder_ == null) {
+        return bigtableMetadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.getDefaultInstance()
+            : bigtableMetadata_;
+      } else {
+        return bigtableMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigtableMetadata(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata value) {
+      if (bigtableMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bigtableMetadata_ = value;
+      } else {
+        bigtableMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setBigtableMetadata(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder builderForValue) {
+      if (bigtableMetadataBuilder_ == null) {
+        bigtableMetadata_ = builderForValue.build();
+      } else {
+        bigtableMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeBigtableMetadata(
+        com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata value) {
+      if (bigtableMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && bigtableMetadata_ != null
+            && bigtableMetadata_
+                != com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata
+                    .getDefaultInstance()) {
+          getBigtableMetadataBuilder().mergeFrom(value);
+        } else {
+          bigtableMetadata_ = value;
+        }
+      } else {
+        bigtableMetadataBuilder_.mergeFrom(value);
+      }
+      if (bigtableMetadata_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearBigtableMetadata() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      bigtableMetadata_ = null;
+      if (bigtableMetadataBuilder_ != null) {
+        bigtableMetadataBuilder_.dispose();
+        bigtableMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder
+        getBigtableMetadataBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getBigtableMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder
+        getBigtableMetadataOrBuilder() {
+      if (bigtableMetadataBuilder_ != null) {
+        return bigtableMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return bigtableMetadata_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.getDefaultInstance()
+            : bigtableMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata containing information about the Cloud Bigtable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder>
+        getBigtableMetadataFieldBuilder() {
+      if (bigtableMetadataBuilder_ == null) {
+        bigtableMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadata.Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureView.BigtableMetadataOrBuilder>(
+                getBigtableMetadata(), getParentForChildren(), isClean());
+        bigtableMetadata_ = null;
+      }
+      return bigtableMetadataBuilder_;
     }
 
     @java.lang.Override

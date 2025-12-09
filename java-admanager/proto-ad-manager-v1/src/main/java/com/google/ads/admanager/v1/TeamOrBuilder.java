@@ -51,4 +51,241 @@ public interface TeamOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  boolean hasDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  boolean hasDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all companies.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with a Company.
+   * </pre>
+   *
+   * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allCompaniesAccess field is set.
+   */
+  boolean hasAllCompaniesAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all companies.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with a Company.
+   * </pre>
+   *
+   * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allCompaniesAccess.
+   */
+  boolean getAllCompaniesAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all inventory.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with an AdUnit.
+   * </pre>
+   *
+   * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allInventoryAccess field is set.
+   */
+  boolean hasAllInventoryAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all inventory.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with an AdUnit.
+   * </pre>
+   *
+   * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allInventoryAccess.
+   */
+  boolean getAllInventoryAccess();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessType field is set.
+   */
+  boolean hasAccessType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for accessType.
+   */
+  int getAccessTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessType.
+   */
+  com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType getAccessType();
 }

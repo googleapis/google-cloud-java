@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
@@ -30,14 +31,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.bigquery.analyticshub.v1.ApproveQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.CreateQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
@@ -45,16 +50,20 @@ import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListQueryTemplatesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
 import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.QueryTemplate;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubmitQueryTemplateRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
@@ -62,6 +71,7 @@ import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.UpdateQueryTemplateRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -351,6 +361,91 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateMethodDescriptor =
+          MethodDescriptor.<CreateQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/CreateQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetQueryTemplateRequest, QueryTemplate>
+      getQueryTemplateMethodDescriptor =
+          MethodDescriptor.<GetQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/GetQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesMethodDescriptor =
+          MethodDescriptor.<ListQueryTemplatesRequest, ListQueryTemplatesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListQueryTemplates")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListQueryTemplatesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListQueryTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateMethodDescriptor =
+          MethodDescriptor.<UpdateQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/UpdateQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteQueryTemplateRequest, Empty>
+      deleteQueryTemplateMethodDescriptor =
+          MethodDescriptor.<DeleteQueryTemplateRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/DeleteQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateMethodDescriptor =
+          MethodDescriptor.<SubmitQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/SubmitQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubmitQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateMethodDescriptor =
+          MethodDescriptor.<ApproveQueryTemplateRequest, QueryTemplate>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ApproveQueryTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ApproveQueryTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(QueryTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<ListDataExchangesRequest, ListDataExchangesResponse>
       listDataExchangesCallable;
   private final UnaryCallable<ListDataExchangesRequest, ListDataExchangesPagedResponse>
@@ -401,6 +496,20 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateCallable;
+  private final UnaryCallable<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateCallable;
+  private final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesCallable;
+  private final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesPagedCallable;
+  private final UnaryCallable<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateCallable;
+  private final UnaryCallable<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateCallable;
+  private final UnaryCallable<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateCallable;
+  private final UnaryCallable<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -678,6 +787,83 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateTransportSettings =
+            GrpcCallSettings.<CreateQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(createQueryTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateTransportSettings =
+        GrpcCallSettings.<GetQueryTemplateRequest, QueryTemplate>newBuilder()
+            .setMethodDescriptor(getQueryTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+        listQueryTemplatesTransportSettings =
+            GrpcCallSettings.<ListQueryTemplatesRequest, ListQueryTemplatesResponse>newBuilder()
+                .setMethodDescriptor(listQueryTemplatesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateTransportSettings =
+            GrpcCallSettings.<UpdateQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(updateQueryTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "query_template.name",
+                          String.valueOf(request.getQueryTemplate().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateTransportSettings =
+        GrpcCallSettings.<DeleteQueryTemplateRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteQueryTemplateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateTransportSettings =
+            GrpcCallSettings.<SubmitQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(submitQueryTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateTransportSettings =
+            GrpcCallSettings.<ApproveQueryTemplateRequest, QueryTemplate>newBuilder()
+                .setMethodDescriptor(approveQueryTemplateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.listDataExchangesCallable =
         callableFactory.createUnaryCallable(
@@ -809,6 +995,44 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.createQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            createQueryTemplateTransportSettings,
+            settings.createQueryTemplateSettings(),
+            clientContext);
+    this.getQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getQueryTemplateTransportSettings, settings.getQueryTemplateSettings(), clientContext);
+    this.listQueryTemplatesCallable =
+        callableFactory.createUnaryCallable(
+            listQueryTemplatesTransportSettings,
+            settings.listQueryTemplatesSettings(),
+            clientContext);
+    this.listQueryTemplatesPagedCallable =
+        callableFactory.createPagedCallable(
+            listQueryTemplatesTransportSettings,
+            settings.listQueryTemplatesSettings(),
+            clientContext);
+    this.updateQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            updateQueryTemplateTransportSettings,
+            settings.updateQueryTemplateSettings(),
+            clientContext);
+    this.deleteQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            deleteQueryTemplateTransportSettings,
+            settings.deleteQueryTemplateSettings(),
+            clientContext);
+    this.submitQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            submitQueryTemplateTransportSettings,
+            settings.submitQueryTemplateSettings(),
+            clientContext);
+    this.approveQueryTemplateCallable =
+        callableFactory.createUnaryCallable(
+            approveQueryTemplateTransportSettings,
+            settings.approveQueryTemplateSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -985,6 +1209,48 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateQueryTemplateRequest, QueryTemplate> createQueryTemplateCallable() {
+    return createQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateCallable() {
+    return getQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesCallable() {
+    return listQueryTemplatesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesPagedCallable() {
+    return listQueryTemplatesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateQueryTemplateRequest, QueryTemplate> updateQueryTemplateCallable() {
+    return updateQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateCallable() {
+    return deleteQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubmitQueryTemplateRequest, QueryTemplate> submitQueryTemplateCallable() {
+    return submitQueryTemplateCallable;
+  }
+
+  @Override
+  public UnaryCallable<ApproveQueryTemplateRequest, QueryTemplate> approveQueryTemplateCallable() {
+    return approveQueryTemplateCallable;
   }
 
   @Override

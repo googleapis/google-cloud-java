@@ -87,6 +87,8 @@ public class InterconnectLocationsClientTest {
             .setCity("city3053931")
             .setContinent("continent-403427916")
             .setCreationTimestamp("creationTimestamp-370203401")
+            .addAllCrossSiteInterconnectInfos(
+                new ArrayList<InterconnectLocationCrossSiteInterconnectInfo>())
             .setDescription("description-1724546052")
             .setFacilityProvider("facilityProvider-132020812")
             .setFacilityProviderFacilityId("facilityProviderFacilityId459025394")
@@ -96,6 +98,7 @@ public class InterconnectLocationsClientTest {
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")
             .addAllRegionInfos(new ArrayList<InterconnectLocationRegionInfo>())
             .setSelfLink("selfLink1191800166")
+            .addAllSingleRegionProductionCriticalPeerLocations(new ArrayList<String>())
             .setStatus("status-892481550")
             .setSupportsPzs(true)
             .build();

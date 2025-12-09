@@ -26,6 +26,7 @@ import com.google.ads.admanager.v1.GetReportRequest;
 import com.google.ads.admanager.v1.ListReportsRequest;
 import com.google.ads.admanager.v1.ListReportsResponse;
 import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.ReportDataTable;
 import com.google.ads.admanager.v1.RunReportMetadata;
 import com.google.ads.admanager.v1.RunReportRequest;
 import com.google.ads.admanager.v1.RunReportResponse;
@@ -197,10 +198,10 @@ public class ReportServiceStubSettings extends StubSettings<ReportServiceStubSet
           };
 
   private static final PagedListDescriptor<
-          FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>
+          FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>
       FETCH_REPORT_RESULT_ROWS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              FetchReportResultRowsRequest, FetchReportResultRowsResponse, Report.DataTable.Row>() {
+              FetchReportResultRowsRequest, FetchReportResultRowsResponse, ReportDataTable.Row>() {
             @Override
             public String emptyToken() {
               return "";
@@ -229,7 +230,7 @@ public class ReportServiceStubSettings extends StubSettings<ReportServiceStubSet
             }
 
             @Override
-            public Iterable<Report.DataTable.Row> extractResources(
+            public Iterable<ReportDataTable.Row> extractResources(
                 FetchReportResultRowsResponse payload) {
               return payload.getRowsList();
             }
@@ -270,7 +271,7 @@ public class ReportServiceStubSettings extends StubSettings<ReportServiceStubSet
               PageContext<
                       FetchReportResultRowsRequest,
                       FetchReportResultRowsResponse,
-                      Report.DataTable.Row>
+                      ReportDataTable.Row>
                   pageContext =
                       PageContext.create(
                           callable, FETCH_REPORT_RESULT_ROWS_PAGE_STR_DESC, request, context);

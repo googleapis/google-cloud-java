@@ -50,14 +50,14 @@ public final class ResourcesProto {
           + "B\003\340A\003:\204\001\352A\200\001\n*publicca.googleapis.com/Ex"
           + "ternalAccountKey\022Rprojects/{project}/loc"
           + "ations/{location}/externalAccountKeys/{e"
-          + "xternal_account_key}B\210\002\n*com.google.clou"
+          + "xternal_account_key}B\205\002\n*com.google.clou"
           + "d.security.publicca.v1beta1B\016ResourcesPr"
           + "otoP\001ZFcloud.google.com/go/security/publ"
-          + "icca/apiv1beta1/publiccapb;publiccapb\370\001\001"
-          + "\252\002&Google.Cloud.Security.PublicCA.V1Beta"
-          + "1\312\002&Google\\Cloud\\Security\\PublicCA\\V1bet"
-          + "a1\352\002*Google::Cloud::Security::PublicCA::"
-          + "V1beta1b\006proto3"
+          + "icca/apiv1beta1/publiccapb;publiccapb\252\002&"
+          + "Google.Cloud.Security.PublicCA.V1Beta1\312\002"
+          + "&Google\\Cloud\\Security\\PublicCA\\V1beta1\352"
+          + "\002*Google::Cloud::Security::PublicCA::V1b"
+          + "eta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Comment;
 import com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest;
@@ -77,6 +78,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
 import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -166,6 +168,16 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
           .setFullMethodName(
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/SubmitOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(SubmitOrderRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<CancelOrderRequest, Operation> cancelOrderMethodDescriptor =
+      MethodDescriptor.<CancelOrderRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/CancelOrder")
+          .setRequestMarshaller(ProtoUtils.marshaller(CancelOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
@@ -495,6 +507,18 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeMethodDescriptor =
+          MethodDescriptor.<RequestOrderDateChangeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/RequestOrderDateChange")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RequestOrderDateChangeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -531,6 +555,9 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   private final UnaryCallable<SubmitOrderRequest, Operation> submitOrderCallable;
   private final OperationCallable<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationCallable;
+  private final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable;
+  private final OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable;
   private final UnaryCallable<ListSitesRequest, ListSitesResponse> listSitesCallable;
   private final UnaryCallable<ListSitesRequest, ListSitesPagedResponse> listSitesPagedCallable;
   private final UnaryCallable<GetSiteRequest, Site> getSiteCallable;
@@ -601,6 +628,10 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   private final UnaryCallable<SignalZoneStateRequest, Operation> signalZoneStateCallable;
   private final OperationCallable<SignalZoneStateRequest, Zone, OperationMetadata>
       signalZoneStateOperationCallable;
+  private final UnaryCallable<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeCallable;
+  private final OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -703,6 +734,16 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
     GrpcCallSettings<SubmitOrderRequest, Operation> submitOrderTransportSettings =
         GrpcCallSettings.<SubmitOrderRequest, Operation>newBuilder()
             .setMethodDescriptor(submitOrderMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelOrderRequest, Operation> cancelOrderTransportSettings =
+        GrpcCallSettings.<CancelOrderRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelOrderMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1003,6 +1044,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<RequestOrderDateChangeRequest, Operation>
+        requestOrderDateChangeTransportSettings =
+            GrpcCallSettings.<RequestOrderDateChangeRequest, Operation>newBuilder()
+                .setMethodDescriptor(requestOrderDateChangeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1067,6 +1119,15 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
         callableFactory.createOperationCallable(
             submitOrderTransportSettings,
             settings.submitOrderOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelOrderCallable =
+        callableFactory.createUnaryCallable(
+            cancelOrderTransportSettings, settings.cancelOrderSettings(), clientContext);
+    this.cancelOrderOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelOrderTransportSettings,
+            settings.cancelOrderOperationSettings(),
             clientContext,
             operationsStub);
     this.listSitesCallable =
@@ -1279,6 +1340,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
             settings.signalZoneStateOperationSettings(),
             clientContext,
             operationsStub);
+    this.requestOrderDateChangeCallable =
+        callableFactory.createUnaryCallable(
+            requestOrderDateChangeTransportSettings,
+            settings.requestOrderDateChangeSettings(),
+            clientContext);
+    this.requestOrderDateChangeOperationCallable =
+        callableFactory.createOperationCallable(
+            requestOrderDateChangeTransportSettings,
+            settings.requestOrderDateChangeOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1354,6 +1426,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   public OperationCallable<SubmitOrderRequest, Order, OperationMetadata>
       submitOrderOperationCallable() {
     return submitOrderOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return cancelOrderCallable;
+  }
+
+  @Override
+  public OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable() {
+    return cancelOrderOperationCallable;
   }
 
   @Override
@@ -1622,6 +1705,17 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
   public OperationCallable<SignalZoneStateRequest, Zone, OperationMetadata>
       signalZoneStateOperationCallable() {
     return signalZoneStateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RequestOrderDateChangeRequest, Operation> requestOrderDateChangeCallable() {
+    return requestOrderDateChangeCallable;
+  }
+
+  @Override
+  public OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable() {
+    return requestOrderDateChangeOperationCallable;
   }
 
   @Override

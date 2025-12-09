@@ -28,7 +28,48 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the
+   * IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   *
+   * @return Whether the cipherSuite field is set.
+   */
+  boolean hasCipherSuite();
+
+  /**
+   *
+   *
+   * <pre>
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the
+   * IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   *
+   * @return The cipherSuite.
+   */
+  com.google.cloud.compute.v1.VpnTunnelCipherSuite getCipherSuite();
+
+  /**
+   *
+   *
+   * <pre>
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the
+   * IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   */
+  com.google.cloud.compute.v1.VpnTunnelCipherSuiteOrBuilder getCipherSuiteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -41,7 +82,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -54,7 +96,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -67,7 +110,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -80,7 +124,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -93,7 +138,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -145,7 +191,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -158,7 +205,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -171,7 +219,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
+   * IKE protocol version to use when establishing the VPN tunnel with the peer
+   * VPN gateway. Acceptable IKE versions are 1 or 2.
+   * The default version is 2.
    * </pre>
    *
    * <code>optional int32 ike_version = 218376220;</code>
@@ -184,7 +234,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IKE protocol version to use when establishing the VPN tunnel with the peer VPN gateway. Acceptable IKE versions are 1 or 2. The default version is 2.
+   * IKE protocol version to use when establishing the VPN tunnel with the peer
+   * VPN gateway. Acceptable IKE versions are 1 or 2.
+   * The default version is 2.
    * </pre>
    *
    * <code>optional int32 ike_version = 218376220;</code>
@@ -197,7 +249,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
+   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * VPN tunnels.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -210,7 +263,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
+   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * VPN tunnels.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -223,7 +277,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels.
+   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * VPN tunnels.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -236,7 +291,15 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnTunnel, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnTunnel.
+   * A fingerprint for the labels being applied to this VpnTunnel, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnTunnel.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -249,7 +312,15 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnTunnel, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnTunnel.
+   * A fingerprint for the labels being applied to this VpnTunnel, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnTunnel.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -262,7 +333,15 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * A fingerprint for the labels being applied to this VpnTunnel, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a VpnTunnel.
+   * A fingerprint for the labels being applied to this VpnTunnel, which is
+   * essentially a hash of the labels set used for optimistic locking. The
+   * fingerprint is initially generated by Compute Engine and changes after
+   * every request to modify or update labels. You must always provide an
+   * up-to-date fingerprint hash in order to update or change labels,
+   * otherwise the request will fail with error412 conditionNotMet.
+   *
+   * To see the latest fingerprint, make a get() request to
+   * retrieve a VpnTunnel.
    * </pre>
    *
    * <code>optional string label_fingerprint = 178124825;</code>
@@ -275,7 +354,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -286,7 +366,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -301,7 +382,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -312,7 +394,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -327,7 +410,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
+   * Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035.
+   * Label values may be empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
@@ -338,7 +422,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Local traffic selector to use when establishing the VPN tunnel with the
+   * peer VPN gateway. The value should be a CIDR formatted string, for
+   * example: 192.168.0.0/16. The ranges must be disjoint.
+   * Only IPv4 is supported for Classic VPN tunnels. This field is output only
+   * for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -351,7 +439,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Local traffic selector to use when establishing the VPN tunnel with the
+   * peer VPN gateway. The value should be a CIDR formatted string, for
+   * example: 192.168.0.0/16. The ranges must be disjoint.
+   * Only IPv4 is supported for Classic VPN tunnels. This field is output only
+   * for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -364,7 +456,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Local traffic selector to use when establishing the VPN tunnel with the
+   * peer VPN gateway. The value should be a CIDR formatted string, for
+   * example: 192.168.0.0/16. The ranges must be disjoint.
+   * Only IPv4 is supported for Classic VPN tunnels. This field is output only
+   * for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -378,7 +474,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Local traffic selector to use when establishing the VPN tunnel with the
+   * peer VPN gateway. The value should be a CIDR formatted string, for
+   * example: 192.168.0.0/16. The ranges must be disjoint.
+   * Only IPv4 is supported for Classic VPN tunnels. This field is output only
+   * for HA VPN tunnels.
    * </pre>
    *
    * <code>repeated string local_traffic_selector = 317314613;</code>
@@ -392,7 +492,13 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -405,7 +511,13 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -418,7 +530,13 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -431,7 +549,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
+   * URL of the peer side external VPN gateway to which this VPN tunnel is
+   * connected.
+   * Provided by the client when the VPN tunnel is created.
+   * This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -444,7 +565,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
+   * URL of the peer side external VPN gateway to which this VPN tunnel is
+   * connected.
+   * Provided by the client when the VPN tunnel is created.
+   * This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -457,7 +581,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
+   * URL of the peer side external VPN gateway to which this VPN tunnel is
+   * connected.
+   * Provided by the client when the VPN tunnel is created.
+   * This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
    * <code>optional string peer_external_gateway = 384956173;</code>
@@ -470,7 +597,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
+   * The interface ID of the external VPN gateway to which this VPN tunnel is
+   * connected. Provided by the client when the VPN tunnel is created.
+   * Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use
+   * depends on the external VPN gateway redundancy type.
    * </pre>
    *
    * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -483,7 +613,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use depends on the external VPN gateway redundancy type.
+   * The interface ID of the external VPN gateway to which this VPN tunnel is
+   * connected. Provided by the client when the VPN tunnel is created.
+   * Possible values are: `0`, `1`, `2`, `3`. The number of IDs in use
+   * depends on the external VPN gateway redundancy type.
    * </pre>
    *
    * <code>optional int32 peer_external_gateway_interface = 452768391;</code>
@@ -496,7 +629,12 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
+   * URL of the peer side HA VPN gateway to which this VPN tunnel
+   * is connected. Provided by the client when the VPN tunnel is created.
+   * This field can be used when creating highly available VPN from VPC network
+   * to VPC network, the field is exclusive with the field peerExternalGateway.
+   * If provided, the VPN tunnel will automatically use the same
+   * vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -509,7 +647,12 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
+   * URL of the peer side HA VPN gateway to which this VPN tunnel
+   * is connected. Provided by the client when the VPN tunnel is created.
+   * This field can be used when creating highly available VPN from VPC network
+   * to VPC network, the field is exclusive with the field peerExternalGateway.
+   * If provided, the VPN tunnel will automatically use the same
+   * vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -522,7 +665,12 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the peer side HA VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
+   * URL of the peer side HA VPN gateway to which this VPN tunnel
+   * is connected. Provided by the client when the VPN tunnel is created.
+   * This field can be used when creating highly available VPN from VPC network
+   * to VPC network, the field is exclusive with the field peerExternalGateway.
+   * If provided, the VPN tunnel will automatically use the same
+   * vpnGatewayInterface ID in the peer Google Cloud VPN gateway.
    * </pre>
    *
    * <code>optional string peer_gcp_gateway = 281867452;</code>
@@ -535,7 +683,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can
+   * be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -548,7 +697,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can
+   * be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -561,7 +711,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can be set only for Classic VPN tunnels.
+   * IP address of the peer VPN gateway. Only IPv4 is supported. This field can
+   * be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string peer_ip = 383249700;</code>
@@ -574,7 +725,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the VPN tunnel resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -587,7 +740,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the VPN tunnel resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -600,7 +755,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
+   * [Output Only] URL of the region where the VPN tunnel resides.
+   * You must specify this field as part of the HTTP request URL. It is
+   * not settable as a field in the request body.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -613,7 +770,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Remote traffic selectors to use when establishing the VPN tunnel with
+   * the peer VPN gateway. The value should be a CIDR formatted string,
+   * for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is
+   * supported for Classic VPN tunnels. This field is output only for HA VPN
+   * tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -626,7 +787,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Remote traffic selectors to use when establishing the VPN tunnel with
+   * the peer VPN gateway. The value should be a CIDR formatted string,
+   * for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is
+   * supported for Classic VPN tunnels. This field is output only for HA VPN
+   * tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -639,7 +804,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Remote traffic selectors to use when establishing the VPN tunnel with
+   * the peer VPN gateway. The value should be a CIDR formatted string,
+   * for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is
+   * supported for Classic VPN tunnels. This field is output only for HA VPN
+   * tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -653,7 +822,11 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
+   * Remote traffic selectors to use when establishing the VPN tunnel with
+   * the peer VPN gateway. The value should be a CIDR formatted string,
+   * for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is
+   * supported for Classic VPN tunnels. This field is output only for HA VPN
+   * tunnels.
    * </pre>
    *
    * <code>repeated string remote_traffic_selector = 358887098;</code>
@@ -745,7 +918,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
+   * Shared secret used to set the secure session between the Cloud VPN gateway
+   * and the peer VPN gateway.
    * </pre>
    *
    * <code>optional string shared_secret = 381932490;</code>
@@ -758,7 +932,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
+   * Shared secret used to set the secure session between the Cloud VPN gateway
+   * and the peer VPN gateway.
    * </pre>
    *
    * <code>optional string shared_secret = 381932490;</code>
@@ -771,7 +946,8 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
+   * Shared secret used to set the secure session between the Cloud VPN gateway
+   * and the peer VPN gateway.
    * </pre>
    *
    * <code>optional string shared_secret = 381932490;</code>
@@ -823,7 +999,38 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the
+   * following:
+   *
+   *    - PROVISIONING: Resource is being allocated for the VPN tunnel.
+   *    - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs
+   *    from
+   *      the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route
+   *      resources are needed to setup the VPN tunnel.
+   *    - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
+   *    - ESTABLISHED: Secure session is successfully established with the peer
+   *    VPN.
+   *    - NETWORK_ERROR: Deprecated, replaced by
+   *    NO_INCOMING_PACKETS
+   *    - AUTHORIZATION_ERROR: Auth error (for example,
+   *    bad shared secret).
+   *    - NEGOTIATION_FAILURE: Handshake failed.
+   *    - DEPROVISIONING: Resources are being deallocated for the VPN
+   *    tunnel.
+   *    - FAILED: Tunnel creation has failed and the tunnel is not
+   *    ready to be used.
+   *    - NO_INCOMING_PACKETS: No incoming packets from
+   *    peer.
+   *    - REJECTED: Tunnel configuration was rejected, can be result
+   *    of being denied access.
+   *    - ALLOCATING_RESOURCES: Cloud VPN is in the
+   *    process of allocating all required resources.
+   *    - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted
+   *    for Classic VPN tunnels or the project is in frozen state.
+   *    - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP,
+   *    probably behind NAT.
+   *    - TS_NARROWING_NOT_ALLOWED: Traffic selector
+   *    narrowing not allowed for an HA-VPN tunnel.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -837,7 +1044,38 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the
+   * following:
+   *
+   *    - PROVISIONING: Resource is being allocated for the VPN tunnel.
+   *    - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs
+   *    from
+   *      the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route
+   *      resources are needed to setup the VPN tunnel.
+   *    - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
+   *    - ESTABLISHED: Secure session is successfully established with the peer
+   *    VPN.
+   *    - NETWORK_ERROR: Deprecated, replaced by
+   *    NO_INCOMING_PACKETS
+   *    - AUTHORIZATION_ERROR: Auth error (for example,
+   *    bad shared secret).
+   *    - NEGOTIATION_FAILURE: Handshake failed.
+   *    - DEPROVISIONING: Resources are being deallocated for the VPN
+   *    tunnel.
+   *    - FAILED: Tunnel creation has failed and the tunnel is not
+   *    ready to be used.
+   *    - NO_INCOMING_PACKETS: No incoming packets from
+   *    peer.
+   *    - REJECTED: Tunnel configuration was rejected, can be result
+   *    of being denied access.
+   *    - ALLOCATING_RESOURCES: Cloud VPN is in the
+   *    process of allocating all required resources.
+   *    - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted
+   *    for Classic VPN tunnels or the project is in frozen state.
+   *    - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP,
+   *    probably behind NAT.
+   *    - TS_NARROWING_NOT_ALLOWED: Traffic selector
+   *    narrowing not allowed for an HA-VPN tunnel.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -851,7 +1089,38 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the VPN tunnel, which can be one of the following: - PROVISIONING: Resource is being allocated for the VPN tunnel. - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs from the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route resources are needed to setup the VPN tunnel. - FIRST_HANDSHAKE: Successful first handshake with the peer VPN. - ESTABLISHED: Secure session is successfully established with the peer VPN. - NETWORK_ERROR: Deprecated, replaced by NO_INCOMING_PACKETS - AUTHORIZATION_ERROR: Auth error (for example, bad shared secret). - NEGOTIATION_FAILURE: Handshake failed. - DEPROVISIONING: Resources are being deallocated for the VPN tunnel. - FAILED: Tunnel creation has failed and the tunnel is not ready to be used. - NO_INCOMING_PACKETS: No incoming packets from peer. - REJECTED: Tunnel configuration was rejected, can be result of being denied access. - ALLOCATING_RESOURCES: Cloud VPN is in the process of allocating all required resources. - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted for Classic VPN tunnels or the project is in frozen state. - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP, probably behind NAT. - TS_NARROWING_NOT_ALLOWED: Traffic selector narrowing not allowed for an HA-VPN tunnel.
+   * [Output Only] The status of the VPN tunnel, which can be one of the
+   * following:
+   *
+   *    - PROVISIONING: Resource is being allocated for the VPN tunnel.
+   *    - WAITING_FOR_FULL_CONFIG: Waiting to receive all VPN-related configs
+   *    from
+   *      the user. Network, TargetVpnGateway, VpnTunnel, ForwardingRule, and Route
+   *      resources are needed to setup the VPN tunnel.
+   *    - FIRST_HANDSHAKE: Successful first handshake with the peer VPN.
+   *    - ESTABLISHED: Secure session is successfully established with the peer
+   *    VPN.
+   *    - NETWORK_ERROR: Deprecated, replaced by
+   *    NO_INCOMING_PACKETS
+   *    - AUTHORIZATION_ERROR: Auth error (for example,
+   *    bad shared secret).
+   *    - NEGOTIATION_FAILURE: Handshake failed.
+   *    - DEPROVISIONING: Resources are being deallocated for the VPN
+   *    tunnel.
+   *    - FAILED: Tunnel creation has failed and the tunnel is not
+   *    ready to be used.
+   *    - NO_INCOMING_PACKETS: No incoming packets from
+   *    peer.
+   *    - REJECTED: Tunnel configuration was rejected, can be result
+   *    of being denied access.
+   *    - ALLOCATING_RESOURCES: Cloud VPN is in the
+   *    process of allocating all required resources.
+   *    - STOPPED: Tunnel is stopped due to its Forwarding Rules being deleted
+   *    for Classic VPN tunnels or the project is in frozen state.
+   *    - PEER_IDENTITY_MISMATCH: Peer identity does not match peer IP,
+   *    probably behind NAT.
+   *    - TS_NARROWING_NOT_ALLOWED: Traffic selector
+   *    narrowing not allowed for an HA-VPN tunnel.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -865,7 +1134,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created.
+   * This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>
@@ -878,7 +1149,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created.
+   * This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>
@@ -891,7 +1164,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This field can be set only for Classic VPN tunnels.
+   * URL of the Target VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created.
+   * This field can be set only for Classic VPN tunnels.
    * </pre>
    *
    * <code>optional string target_vpn_gateway = 532512843;</code>
@@ -904,7 +1179,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
+   * URL of the VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created. This must be
+   * used (instead of target_vpn_gateway) if a High Availability VPN gateway
+   * resource is created.
    * </pre>
    *
    * <code>optional string vpn_gateway = 406684153;</code>
@@ -917,7 +1195,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
+   * URL of the VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created. This must be
+   * used (instead of target_vpn_gateway) if a High Availability VPN gateway
+   * resource is created.
    * </pre>
    *
    * <code>optional string vpn_gateway = 406684153;</code>
@@ -930,7 +1211,10 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
+   * URL of the VPN gateway with which this VPN tunnel is associated.
+   * Provided by the client when the VPN tunnel is created. This must be
+   * used (instead of target_vpn_gateway) if a High Availability VPN gateway
+   * resource is created.
    * </pre>
    *
    * <code>optional string vpn_gateway = 406684153;</code>
@@ -943,7 +1227,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
+   * The interface ID of the VPN gateway with which this VPN tunnel is
+   * associated.
+   * Possible values are: `0`, `1`.
    * </pre>
    *
    * <code>optional int32 vpn_gateway_interface = 95979123;</code>
@@ -956,7 +1242,9 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * The interface ID of the VPN gateway with which this VPN tunnel is associated. Possible values are: `0`, `1`.
+   * The interface ID of the VPN gateway with which this VPN tunnel is
+   * associated.
+   * Possible values are: `0`, `1`.
    * </pre>
    *
    * <code>optional int32 vpn_gateway_interface = 95979123;</code>

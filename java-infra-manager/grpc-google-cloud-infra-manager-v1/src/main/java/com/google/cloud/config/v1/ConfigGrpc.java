@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * management of Google Cloud infrastructure resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/config/v1/config.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ConfigGrpc {
 
@@ -2184,8 +2181,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListDeploymentsResponse listDeployments(
-        com.google.cloud.config.v1.ListDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListDeploymentsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -2197,8 +2194,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Deployment getDeployment(
-        com.google.cloud.config.v1.GetDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2210,8 +2207,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createDeployment(
-        com.google.cloud.config.v1.CreateDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.CreateDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2223,8 +2220,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateDeployment(
-        com.google.cloud.config.v1.UpdateDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.UpdateDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2236,8 +2233,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteDeployment(
-        com.google.cloud.config.v1.DeleteDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.DeleteDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2249,8 +2246,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListRevisionsResponse listRevisions(
-        com.google.cloud.config.v1.ListRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListRevisionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -2262,8 +2259,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Revision getRevision(
-        com.google.cloud.config.v1.GetRevisionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetRevisionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRevisionMethod(), getCallOptions(), request);
     }
 
@@ -2276,8 +2273,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Resource getResource(
-        com.google.cloud.config.v1.GetResourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetResourceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceMethod(), getCallOptions(), request);
     }
 
@@ -2289,8 +2286,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListResourcesResponse listResources(
-        com.google.cloud.config.v1.ListResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListResourcesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourcesMethod(), getCallOptions(), request);
     }
 
@@ -2302,8 +2299,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Statefile exportDeploymentStatefile(
-        com.google.cloud.config.v1.ExportDeploymentStatefileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ExportDeploymentStatefileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportDeploymentStatefileMethod(), getCallOptions(), request);
     }
 
@@ -2315,8 +2313,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Statefile exportRevisionStatefile(
-        com.google.cloud.config.v1.ExportRevisionStatefileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ExportRevisionStatefileRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportRevisionStatefileMethod(), getCallOptions(), request);
     }
 
@@ -2329,8 +2328,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Statefile importStatefile(
-        com.google.cloud.config.v1.ImportStatefileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ImportStatefileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportStatefileMethod(), getCallOptions(), request);
     }
 
@@ -2342,8 +2341,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteStatefile(
-        com.google.cloud.config.v1.DeleteStatefileRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.DeleteStatefileRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteStatefileMethod(), getCallOptions(), request);
     }
 
@@ -2355,8 +2354,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation lockDeployment(
-        com.google.cloud.config.v1.LockDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.LockDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLockDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2368,8 +2367,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation unlockDeployment(
-        com.google.cloud.config.v1.UnlockDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.UnlockDeploymentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnlockDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -2381,8 +2380,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.LockInfo exportLockInfo(
-        com.google.cloud.config.v1.ExportLockInfoRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ExportLockInfoRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportLockInfoMethod(), getCallOptions(), request);
     }
 
@@ -2394,8 +2393,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createPreview(
-        com.google.cloud.config.v1.CreatePreviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.CreatePreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreatePreviewMethod(), getCallOptions(), request);
     }
 
@@ -2407,8 +2406,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.Preview getPreview(
-        com.google.cloud.config.v1.GetPreviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetPreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPreviewMethod(), getCallOptions(), request);
     }
 
@@ -2421,8 +2420,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListPreviewsResponse listPreviews(
-        com.google.cloud.config.v1.ListPreviewsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListPreviewsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPreviewsMethod(), getCallOptions(), request);
     }
 
@@ -2434,8 +2433,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deletePreview(
-        com.google.cloud.config.v1.DeletePreviewRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.DeletePreviewRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePreviewMethod(), getCallOptions(), request);
     }
 
@@ -2447,8 +2446,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ExportPreviewResultResponse exportPreviewResult(
-        com.google.cloud.config.v1.ExportPreviewResultRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ExportPreviewResultRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportPreviewResultMethod(), getCallOptions(), request);
     }
 
@@ -2461,8 +2461,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListTerraformVersionsResponse listTerraformVersions(
-        com.google.cloud.config.v1.ListTerraformVersionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListTerraformVersionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTerraformVersionsMethod(), getCallOptions(), request);
     }
 
@@ -2475,8 +2476,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.TerraformVersion getTerraformVersion(
-        com.google.cloud.config.v1.GetTerraformVersionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetTerraformVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTerraformVersionMethod(), getCallOptions(), request);
     }
 
@@ -2488,8 +2490,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListResourceChangesResponse listResourceChanges(
-        com.google.cloud.config.v1.ListResourceChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListResourceChangesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceChangesMethod(), getCallOptions(), request);
     }
 
@@ -2501,8 +2504,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ResourceChange getResourceChange(
-        com.google.cloud.config.v1.GetResourceChangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetResourceChangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceChangeMethod(), getCallOptions(), request);
     }
 
@@ -2514,8 +2518,9 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ListResourceDriftsResponse listResourceDrifts(
-        com.google.cloud.config.v1.ListResourceDriftsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.ListResourceDriftsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListResourceDriftsMethod(), getCallOptions(), request);
     }
 
@@ -2527,8 +2532,8 @@ public final class ConfigGrpc {
      * </pre>
      */
     public com.google.cloud.config.v1.ResourceDrift getResourceDrift(
-        com.google.cloud.config.v1.GetResourceDriftRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.config.v1.GetResourceDriftRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetResourceDriftMethod(), getCallOptions(), request);
     }
   }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Examples][google.cloud.dialogflow.cx.v3beta1.Example].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/example.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExamplesGrpc {
 
@@ -536,8 +533,9 @@ public final class ExamplesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Example createExample(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateExampleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateExampleMethod(), getCallOptions(), request);
     }
 
@@ -549,8 +547,9 @@ public final class ExamplesGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteExample(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteExampleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExampleMethod(), getCallOptions(), request);
     }
 
@@ -562,8 +561,9 @@ public final class ExamplesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListExamplesResponse listExamples(
-        com.google.cloud.dialogflow.cx.v3beta1.ListExamplesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListExamplesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExamplesMethod(), getCallOptions(), request);
     }
 
@@ -575,8 +575,9 @@ public final class ExamplesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Example getExample(
-        com.google.cloud.dialogflow.cx.v3beta1.GetExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetExampleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExampleMethod(), getCallOptions(), request);
     }
 
@@ -588,8 +589,9 @@ public final class ExamplesGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Example updateExample(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateExampleRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateExampleRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateExampleMethod(), getCallOptions(), request);
     }
   }

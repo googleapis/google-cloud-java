@@ -32,9 +32,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * (create/read/update/delete) BeyondCorp AppGateways.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/beyondcorp/appgateways/v1/app_gateways_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AppGatewaysServiceGrpc {
 
@@ -518,8 +515,9 @@ public final class AppGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse listAppGateways(
-        com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAppGatewaysMethod(), getCallOptions(), request);
     }
 
@@ -531,8 +529,9 @@ public final class AppGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateway(
-        com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAppGatewayMethod(), getCallOptions(), request);
     }
 
@@ -544,8 +543,9 @@ public final class AppGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createAppGateway(
-        com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAppGatewayMethod(), getCallOptions(), request);
     }
 
@@ -557,8 +557,9 @@ public final class AppGatewaysServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteAppGateway(
-        com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAppGatewayMethod(), getCallOptions(), request);
     }
   }

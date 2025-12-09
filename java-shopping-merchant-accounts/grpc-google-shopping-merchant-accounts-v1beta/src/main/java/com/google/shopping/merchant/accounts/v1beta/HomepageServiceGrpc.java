@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support an API for a store's homepage.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/homepage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class HomepageServiceGrpc {
 
@@ -503,8 +500,9 @@ public final class HomepageServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Homepage getHomepage(
-        com.google.shopping.merchant.accounts.v1beta.GetHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetHomepageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHomepageMethod(), getCallOptions(), request);
     }
 
@@ -516,8 +514,9 @@ public final class HomepageServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Homepage updateHomepage(
-        com.google.shopping.merchant.accounts.v1beta.UpdateHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateHomepageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHomepageMethod(), getCallOptions(), request);
     }
 
@@ -541,8 +540,9 @@ public final class HomepageServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Homepage claimHomepage(
-        com.google.shopping.merchant.accounts.v1beta.ClaimHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.ClaimHomepageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getClaimHomepageMethod(), getCallOptions(), request);
     }
 
@@ -554,8 +554,9 @@ public final class HomepageServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.Homepage unclaimHomepage(
-        com.google.shopping.merchant.accounts.v1beta.UnclaimHomepageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UnclaimHomepageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnclaimHomepageMethod(), getCallOptions(), request);
     }
   }

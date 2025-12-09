@@ -30,9 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * instead.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/channel/v1/reports_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 @java.lang.Deprecated
 public final class CloudChannelReportsServiceGrpc {
@@ -523,8 +520,8 @@ public final class CloudChannelReportsServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.longrunning.Operation runReportJob(
-        com.google.cloud.channel.v1.RunReportJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.channel.v1.RunReportJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunReportJobMethod(), getCallOptions(), request);
     }
 
@@ -541,8 +538,9 @@ public final class CloudChannelReportsServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.channel.v1.FetchReportResultsResponse fetchReportResults(
-        com.google.cloud.channel.v1.FetchReportResultsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.channel.v1.FetchReportResultsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchReportResultsMethod(), getCallOptions(), request);
     }
 
@@ -559,8 +557,8 @@ public final class CloudChannelReportsServiceGrpc {
      */
     @java.lang.Deprecated
     public com.google.cloud.channel.v1.ListReportsResponse listReports(
-        com.google.cloud.channel.v1.ListReportsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.channel.v1.ListReportsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReportsMethod(), getCallOptions(), request);
     }
   }

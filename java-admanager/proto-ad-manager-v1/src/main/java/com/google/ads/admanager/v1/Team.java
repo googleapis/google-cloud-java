@@ -41,6 +41,10 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
 
   private Team() {
     name_ = "";
+    displayName_ = "";
+    description_ = "";
+    status_ = 0;
+    accessType_ = 0;
   }
 
   @java.lang.Override
@@ -63,6 +67,7 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
             com.google.ads.admanager.v1.Team.class, com.google.ads.admanager.v1.Team.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -118,6 +123,353 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The name of the Team. This value has a maximum length of 127
+   * characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the description field is set.
+   */
+  @java.lang.Override
+  public boolean hasDescription() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the Team. This value has a maximum length of
+   * 255 characters.
+   * </pre>
+   *
+   * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 5;
+  private int status_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override
+  public int getStatusValue() {
+    return status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Team. This value determines the visibility
+   * of the team in the UI.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus getStatus() {
+    com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus result =
+        com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus.forNumber(status_);
+    return result == null
+        ? com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ALL_COMPANIES_ACCESS_FIELD_NUMBER = 6;
+  private boolean allCompaniesAccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all companies.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with a Company.
+   * </pre>
+   *
+   * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allCompaniesAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllCompaniesAccess() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all companies.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with a Company.
+   * </pre>
+   *
+   * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allCompaniesAccess.
+   */
+  @java.lang.Override
+  public boolean getAllCompaniesAccess() {
+    return allCompaniesAccess_;
+  }
+
+  public static final int ALL_INVENTORY_ACCESS_FIELD_NUMBER = 7;
+  private boolean allInventoryAccess_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all inventory.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with an AdUnit.
+   * </pre>
+   *
+   * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the allInventoryAccess field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllInventoryAccess() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether or not users on this team have access to all inventory.
+   * If this value is true, then an error will be thrown if an attempt is made
+   * to associate this team with an AdUnit.
+   * </pre>
+   *
+   * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The allInventoryAccess.
+   */
+  @java.lang.Override
+  public boolean getAllInventoryAccess() {
+    return allInventoryAccess_;
+  }
+
+  public static final int ACCESS_TYPE_FIELD_NUMBER = 8;
+  private int accessType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the accessType field is set.
+   */
+  @java.lang.Override
+  public boolean hasAccessType() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for accessType.
+   */
+  @java.lang.Override
+  public int getAccessTypeValue() {
+    return accessType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The default access to orders for users on this team.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The accessType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType getAccessType() {
+    com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType result =
+        com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType.forNumber(accessType_);
+    return result == null
+        ? com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -135,6 +487,24 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(5, status_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeBool(6, allCompaniesAccess_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(7, allInventoryAccess_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeEnum(8, accessType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -146,6 +516,24 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, status_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, allCompaniesAccess_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, allInventoryAccess_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, accessType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -163,6 +551,30 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Team other = (com.google.ads.admanager.v1.Team) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasDescription() != other.hasDescription()) return false;
+    if (hasDescription()) {
+      if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasAllCompaniesAccess() != other.hasAllCompaniesAccess()) return false;
+    if (hasAllCompaniesAccess()) {
+      if (getAllCompaniesAccess() != other.getAllCompaniesAccess()) return false;
+    }
+    if (hasAllInventoryAccess() != other.hasAllInventoryAccess()) return false;
+    if (hasAllInventoryAccess()) {
+      if (getAllInventoryAccess() != other.getAllInventoryAccess()) return false;
+    }
+    if (hasAccessType() != other.hasAccessType()) return false;
+    if (hasAccessType()) {
+      if (accessType_ != other.accessType_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -176,6 +588,30 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasDescription()) {
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasAllCompaniesAccess()) {
+      hash = (37 * hash) + ALL_COMPANIES_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllCompaniesAccess());
+    }
+    if (hasAllInventoryAccess()) {
+      hash = (37 * hash) + ALL_INVENTORY_ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllInventoryAccess());
+    }
+    if (hasAccessType()) {
+      hash = (37 * hash) + ACCESS_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + accessType_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -316,6 +752,12 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      displayName_ = "";
+      description_ = "";
+      status_ = 0;
+      allCompaniesAccess_ = false;
+      allInventoryAccess_ = false;
+      accessType_ = 0;
       return this;
     }
 
@@ -354,6 +796,32 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.allCompaniesAccess_ = allCompaniesAccess_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.allInventoryAccess_ = allInventoryAccess_;
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.accessType_ = accessType_;
+        to_bitField0_ |= 0x00000020;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -406,6 +874,28 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasDisplayName()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (other.hasDescription()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
+      }
+      if (other.hasAllCompaniesAccess()) {
+        setAllCompaniesAccess(other.getAllCompaniesAccess());
+      }
+      if (other.hasAllInventoryAccess()) {
+        setAllInventoryAccess(other.getAllInventoryAccess());
+      }
+      if (other.hasAccessType()) {
+        setAccessType(other.getAccessType());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -438,6 +928,42 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 40:
+              {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+            case 48:
+              {
+                allCompaniesAccess_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+            case 56:
+              {
+                allInventoryAccess_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+            case 64:
+              {
+                accessType_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -569,6 +1095,695 @@ public final class Team extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the Team. This value has a maximum length of 127
+     * characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the description field is set.
+     */
+    public boolean hasDescription() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the Team. This value has a maximum length of
+     * 255 characters.
+     * </pre>
+     *
+     * <code>optional string description = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      return status_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus getStatus() {
+      com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus result =
+          com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus.forNumber(status_);
+      return result == null
+          ? com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.google.ads.admanager.v1.TeamStatusEnum.TeamStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Team. This value determines the visibility
+     * of the team in the UI.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamStatusEnum.TeamStatus status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allCompaniesAccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all companies.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with a Company.
+     * </pre>
+     *
+     * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the allCompaniesAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllCompaniesAccess() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all companies.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with a Company.
+     * </pre>
+     *
+     * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allCompaniesAccess.
+     */
+    @java.lang.Override
+    public boolean getAllCompaniesAccess() {
+      return allCompaniesAccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all companies.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with a Company.
+     * </pre>
+     *
+     * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The allCompaniesAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllCompaniesAccess(boolean value) {
+
+      allCompaniesAccess_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all companies.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with a Company.
+     * </pre>
+     *
+     * <code>optional bool all_companies_access = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllCompaniesAccess() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      allCompaniesAccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean allInventoryAccess_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all inventory.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with an AdUnit.
+     * </pre>
+     *
+     * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the allInventoryAccess field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllInventoryAccess() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all inventory.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with an AdUnit.
+     * </pre>
+     *
+     * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The allInventoryAccess.
+     */
+    @java.lang.Override
+    public boolean getAllInventoryAccess() {
+      return allInventoryAccess_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all inventory.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with an AdUnit.
+     * </pre>
+     *
+     * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The allInventoryAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllInventoryAccess(boolean value) {
+
+      allInventoryAccess_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether or not users on this team have access to all inventory.
+     * If this value is true, then an error will be thrown if an attempt is made
+     * to associate this team with an AdUnit.
+     * </pre>
+     *
+     * <code>optional bool all_inventory_access = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllInventoryAccess() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      allInventoryAccess_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int accessType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the accessType field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for accessType.
+     */
+    @java.lang.Override
+    public int getAccessTypeValue() {
+      return accessType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for accessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessTypeValue(int value) {
+      accessType_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The accessType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType getAccessType() {
+      com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType result =
+          com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType.forNumber(accessType_);
+      return result == null
+          ? com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The accessType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAccessType(
+        com.google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      accessType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The default access to orders for users on this team.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TeamAccessTypeEnum.TeamAccessType access_type = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAccessType() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      accessType_ = 0;
       onChanged();
       return this;
     }

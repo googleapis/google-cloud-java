@@ -26,9 +26,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [OmnichannelSetting][google.shopping.merchant.accounts.v1.OmnichannelSetting]
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/omnichannelsettings.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OmnichannelSettingsServiceGrpc {
 
@@ -609,8 +606,9 @@ public final class OmnichannelSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.OmnichannelSetting getOmnichannelSetting(
-        com.google.shopping.merchant.accounts.v1.GetOmnichannelSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetOmnichannelSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOmnichannelSettingMethod(), getCallOptions(), request);
     }
 
@@ -623,8 +621,9 @@ public final class OmnichannelSettingsServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.ListOmnichannelSettingsResponse
         listOmnichannelSettings(
-            com.google.shopping.merchant.accounts.v1.ListOmnichannelSettingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.ListOmnichannelSettingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOmnichannelSettingsMethod(), getCallOptions(), request);
     }
 
@@ -636,8 +635,9 @@ public final class OmnichannelSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.OmnichannelSetting createOmnichannelSetting(
-        com.google.shopping.merchant.accounts.v1.CreateOmnichannelSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.CreateOmnichannelSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOmnichannelSettingMethod(), getCallOptions(), request);
     }
 
@@ -649,8 +649,9 @@ public final class OmnichannelSettingsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.OmnichannelSetting updateOmnichannelSetting(
-        com.google.shopping.merchant.accounts.v1.UpdateOmnichannelSettingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UpdateOmnichannelSettingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOmnichannelSettingMethod(), getCallOptions(), request);
     }
 
@@ -663,8 +664,9 @@ public final class OmnichannelSettingsServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.RequestInventoryVerificationResponse
         requestInventoryVerification(
-            com.google.shopping.merchant.accounts.v1.RequestInventoryVerificationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.RequestInventoryVerificationRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRequestInventoryVerificationMethod(), getCallOptions(), request);
     }
   }

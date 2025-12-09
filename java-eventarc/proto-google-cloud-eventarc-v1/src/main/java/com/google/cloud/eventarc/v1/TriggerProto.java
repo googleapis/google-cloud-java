@@ -33,6 +33,10 @@ public final class TriggerProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_Trigger_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_fieldAccessorTable;
@@ -86,7 +90,7 @@ public final class TriggerProto {
           + "\022\030google.cloud.eventarc.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032-google/cloud/eventarc/v1/network"
-          + "_config.proto\032\037google/protobuf/timestamp.proto\032\025google/rpc/code.proto\"\236\007\n"
+          + "_config.proto\032\037google/protobuf/timestamp.proto\032\025google/rpc/code.proto\"\222\010\n"
           + "\007Trigger\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\020\n"
           + "\003uid\030\002 \001(\tB\003\340A\003\0224\n"
@@ -108,17 +112,21 @@ public final class TriggerProto {
           + "conditions\030\017 \003(\013"
           + "21.google.cloud.eventarc.v1.Trigger.ConditionsEntryB\003\340A\003\022$\n"
           + "\027event_data_content_type\030\020 \001(\tB\003\340A\001\022\032\n\r"
-          + "satisfies_pzs\030\023 \001(\010B\003\340A\003\022\021\n"
-          + "\004etag\030c \001(\tB\003\340A\003\032-\n"
+          + "satisfies_pzs\030\023 \001(\010B\003\340A\003\022H\n"
+          + "\014retry_policy\030\024"
+          + " \001(\0132-.google.cloud.eventarc.v1.Trigger.RetryPolicyB\003\340A\001\022\021\n"
+          + "\004etag\030c \001(\tB\003\340A\003\032(\n"
+          + "\013RetryPolicy\022\031\n"
+          + "\014max_attempts\030\001 \001(\005B\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032[\n"
           + "\017ConditionsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0227\n"
-          + "\005value\030\002 \001(\0132(.go"
-          + "ogle.cloud.eventarc.v1.StateCondition:\0028\001:s\352Ap\n"
-          + "\037eventarc.googleapis.com/Trigger\022:projects/{project}/locations/{location}"
-          + "/triggers/{trigger}*\010triggers2\007trigger\"P\n"
+          + "\005value\030\002 \001(\0132(.google"
+          + ".cloud.eventarc.v1.StateCondition:\0028\001:s\352Ap\n"
+          + "\037eventarc.googleapis.com/Trigger\022:pro"
+          + "jects/{project}/locations/{location}/triggers/{trigger}*\010triggers2\007trigger\"P\n"
           + "\013EventFilter\022\026\n"
           + "\tattribute\030\001 \001(\tB\003\340A\002\022\022\n"
           + "\005value\030\002 \001(\tB\003\340A\002\022\025\n"
@@ -155,18 +163,20 @@ public final class TriggerProto {
           + "\005topic\030\001 \001(\tB\003\340A\001\022\031\n"
           + "\014subscription\030\002 \001(\tB\003\340A\003\" \n"
           + "\014HttpEndpoint\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\002B\261\004\n"
-          + "\034com.google.cloud.eventarc.v1B\014TriggerProtoP\001Z8clou"
-          + "d.google.com/go/eventarc/apiv1/eventarcpb;eventarcpb\352Ak\n"
-          + "+cloudfunctions.googleapis.com/CloudFunction\022<projects/{project}"
-          + "/locations/{location}/functions/{function}\352AY\n"
-          + "!iam.googleapis.com/ServiceAccount"
-          + "\0224projects/{project}/serviceAccounts/{service_account}\352A\037\n"
+          + "\003uri\030\001 \001(\tB\003\340A\002B\241\005\n"
+          + "\034com.google.cloud.eventarc.v1B\014TriggerProtoP\001Z8cloud.go"
+          + "ogle.com/go/eventarc/apiv1/eventarcpb;eventarcpb\352Ak\n"
+          + "+cloudfunctions.googleapis.com/CloudFunction\022<projects/{project}/loc"
+          + "ations/{location}/functions/{function}\352AY\n"
+          + "!iam.googleapis.com/ServiceAccount\0224pr"
+          + "ojects/{project}/serviceAccounts/{service_account}\352A\037\n"
           + "\032run.googleapis.com/Service\022\001*\352Aa\n"
-          + "!workflows.googleapis.com/Wo"
-          + "rkflow\022<projects/{project}/locations/{location}/workflows/{workflow}\352Av\n"
-          + "(compute.googleapis.com/NetworkAttachment\022Jproje"
-          + "cts/{project}/regions/{region}/networkAttachments/{networkattachment}b\006proto3"
+          + "!workflows.googleapis.com/Workfl"
+          + "ow\022<projects/{project}/locations/{location}/workflows/{workflow}\352Av\n"
+          + "(compute.googleapis.com/NetworkAttachment\022Jprojects/"
+          + "{project}/regions/{region}/networkAttachments/{networkattachment}\352Am\n"
+          + "\'integrations.googleapis.com/Integration\022Bprojects/"
+          + "{project}/locations/{location}/integrations/{integration}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -197,10 +207,19 @@ public final class TriggerProto {
               "Conditions",
               "EventDataContentType",
               "SatisfiesPzs",
+              "RetryPolicy",
               "Etag",
             });
-    internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_descriptor =
+    internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor =
         internal_static_google_cloud_eventarc_v1_Trigger_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_Trigger_RetryPolicy_descriptor,
+            new java.lang.String[] {
+              "MaxAttempts",
+            });
+    internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_descriptor =
+        internal_static_google_cloud_eventarc_v1_Trigger_descriptor.getNestedTypes().get(1);
     internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_Trigger_LabelsEntry_descriptor,
@@ -208,7 +227,7 @@ public final class TriggerProto {
               "Key", "Value",
             });
     internal_static_google_cloud_eventarc_v1_Trigger_ConditionsEntry_descriptor =
-        internal_static_google_cloud_eventarc_v1_Trigger_descriptor.getNestedTypes().get(1);
+        internal_static_google_cloud_eventarc_v1_Trigger_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_eventarc_v1_Trigger_ConditionsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_eventarc_v1_Trigger_ConditionsEntry_descriptor,

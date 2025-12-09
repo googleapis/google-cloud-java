@@ -2725,7 +2725,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=282
      * @return The dedicatedEndpointEnabled.
      */
     @java.lang.Deprecated
@@ -2735,13 +2735,15 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
-     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
-     * Your request to the dedicated DNS will be isolated from other users'
-     * traffic and will have better performance and reliability. Note: Once you
-     * enabled dedicated endpoint, you won't be able to send request to the
-     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
-     * removed soon.
+     * Optional. By default, if dedicated endpoint is enabled and private
+     * service connect config is not set, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. If private service
+     * connect config is set, the endpoint will be exposed through private
+     * service connect. Your request to the dedicated DNS will be isolated from
+     * other users' traffic and will have better performance and reliability.
+     * Note: Once you enabled dedicated endpoint, you won't be able to send
+     * request to the shared DNS {region}-aiplatform.googleapis.com. The
+     * limitations will be removed soon.
      *
      * If this field is set to true, the dedicated endpoint will be disabled
      * and the deployed model will be exposed through the shared DNS
@@ -2753,6 +2755,54 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * @return The dedicatedEndpointDisabled.
      */
     boolean getDedicatedEndpointDisabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    boolean hasPrivateServiceConnectConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        getPrivateServiceConnectConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder();
 
     /**
      *
@@ -2859,6 +2909,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ENDPOINT_DISPLAY_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -2936,7 +2987,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * @deprecated
      *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
-     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=282
      * @return The dedicatedEndpointEnabled.
      */
     @java.lang.Override
@@ -2952,13 +3003,15 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
-     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
-     * Your request to the dedicated DNS will be isolated from other users'
-     * traffic and will have better performance and reliability. Note: Once you
-     * enabled dedicated endpoint, you won't be able to send request to the
-     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
-     * removed soon.
+     * Optional. By default, if dedicated endpoint is enabled and private
+     * service connect config is not set, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. If private service
+     * connect config is set, the endpoint will be exposed through private
+     * service connect. Your request to the dedicated DNS will be isolated from
+     * other users' traffic and will have better performance and reliability.
+     * Note: Once you enabled dedicated endpoint, you won't be able to send
+     * request to the shared DNS {region}-aiplatform.googleapis.com. The
+     * limitations will be removed soon.
      *
      * If this field is set to true, the dedicated endpoint will be disabled
      * and the deployed model will be exposed through the shared DNS
@@ -2972,6 +3025,71 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public boolean getDedicatedEndpointDisabled() {
       return dedicatedEndpointDisabled_;
+    }
+
+    public static final int PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        privateServiceConnectConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the privateServiceConnectConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPrivateServiceConnectConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The privateServiceConnectConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+        getPrivateServiceConnectConfig() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for private service connect. If set, the endpoint
+     * will be exposed through private service connect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+        getPrivateServiceConnectConfigOrBuilder() {
+      return privateServiceConnectConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+          : privateServiceConnectConfig_;
     }
 
     public static final int ENDPOINT_USER_ID_FIELD_NUMBER = 3;
@@ -3085,6 +3203,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (dedicatedEndpointDisabled_ != false) {
         output.writeBool(4, dedicatedEndpointDisabled_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getPrivateServiceConnectConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3107,6 +3228,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeBoolSize(4, dedicatedEndpointDisabled_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, getPrivateServiceConnectConfig());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3126,6 +3252,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getEndpointDisplayName().equals(other.getEndpointDisplayName())) return false;
       if (getDedicatedEndpointEnabled() != other.getDedicatedEndpointEnabled()) return false;
       if (getDedicatedEndpointDisabled() != other.getDedicatedEndpointDisabled()) return false;
+      if (hasPrivateServiceConnectConfig() != other.hasPrivateServiceConnectConfig()) return false;
+      if (hasPrivateServiceConnectConfig()) {
+        if (!getPrivateServiceConnectConfig().equals(other.getPrivateServiceConnectConfig()))
+          return false;
+      }
       if (!getEndpointUserId().equals(other.getEndpointUserId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -3144,6 +3275,10 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointEnabled());
       hash = (37 * hash) + DEDICATED_ENDPOINT_DISABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointDisabled());
+      if (hasPrivateServiceConnectConfig()) {
+        hash = (37 * hash) + PRIVATE_SERVICE_CONNECT_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPrivateServiceConnectConfig().hashCode();
+      }
       hash = (37 * hash) + ENDPOINT_USER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEndpointUserId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -3281,10 +3416,19 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPrivateServiceConnectConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -3294,6 +3438,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         endpointDisplayName_ = "";
         dedicatedEndpointEnabled_ = false;
         dedicatedEndpointDisabled_ = false;
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
         endpointUserId_ = "";
         return this;
       }
@@ -3343,9 +3492,18 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.dedicatedEndpointDisabled_ = dedicatedEndpointDisabled_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.privateServiceConnectConfig_ =
+              privateServiceConnectConfigBuilder_ == null
+                  ? privateServiceConnectConfig_
+                  : privateServiceConnectConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.endpointUserId_ = endpointUserId_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3410,9 +3568,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.getDedicatedEndpointDisabled() != false) {
           setDedicatedEndpointDisabled(other.getDedicatedEndpointDisabled());
         }
+        if (other.hasPrivateServiceConnectConfig()) {
+          mergePrivateServiceConnectConfig(other.getPrivateServiceConnectConfig());
+        }
         if (!other.getEndpointUserId().isEmpty()) {
           endpointUserId_ = other.endpointUserId_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3456,7 +3617,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
               case 26:
                 {
                   endpointUserId_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 26
               case 32:
@@ -3465,6 +3626,13 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 32
+              case 42:
+                {
+                  input.readMessage(
+                      getPrivateServiceConnectConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3621,7 +3789,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=282
        * @return The dedicatedEndpointEnabled.
        */
       @java.lang.Override
@@ -3649,7 +3817,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=282
        * @param value The dedicatedEndpointEnabled to set.
        * @return This builder for chaining.
        */
@@ -3681,7 +3849,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
-       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=282
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -3698,13 +3866,15 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
-       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
-       * Your request to the dedicated DNS will be isolated from other users'
-       * traffic and will have better performance and reliability. Note: Once you
-       * enabled dedicated endpoint, you won't be able to send request to the
-       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
-       * removed soon.
+       * Optional. By default, if dedicated endpoint is enabled and private
+       * service connect config is not set, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. If private service
+       * connect config is set, the endpoint will be exposed through private
+       * service connect. Your request to the dedicated DNS will be isolated from
+       * other users' traffic and will have better performance and reliability.
+       * Note: Once you enabled dedicated endpoint, you won't be able to send
+       * request to the shared DNS {region}-aiplatform.googleapis.com. The
+       * limitations will be removed soon.
        *
        * If this field is set to true, the dedicated endpoint will be disabled
        * and the deployed model will be exposed through the shared DNS
@@ -3725,13 +3895,15 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
-       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
-       * Your request to the dedicated DNS will be isolated from other users'
-       * traffic and will have better performance and reliability. Note: Once you
-       * enabled dedicated endpoint, you won't be able to send request to the
-       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
-       * removed soon.
+       * Optional. By default, if dedicated endpoint is enabled and private
+       * service connect config is not set, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. If private service
+       * connect config is set, the endpoint will be exposed through private
+       * service connect. Your request to the dedicated DNS will be isolated from
+       * other users' traffic and will have better performance and reliability.
+       * Note: Once you enabled dedicated endpoint, you won't be able to send
+       * request to the shared DNS {region}-aiplatform.googleapis.com. The
+       * limitations will be removed soon.
        *
        * If this field is set to true, the dedicated endpoint will be disabled
        * and the deployed model will be exposed through the shared DNS
@@ -3756,13 +3928,15 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
-       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
-       * Your request to the dedicated DNS will be isolated from other users'
-       * traffic and will have better performance and reliability. Note: Once you
-       * enabled dedicated endpoint, you won't be able to send request to the
-       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
-       * removed soon.
+       * Optional. By default, if dedicated endpoint is enabled and private
+       * service connect config is not set, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. If private service
+       * connect config is set, the endpoint will be exposed through private
+       * service connect. Your request to the dedicated DNS will be isolated from
+       * other users' traffic and will have better performance and reliability.
+       * Note: Once you enabled dedicated endpoint, you won't be able to send
+       * request to the shared DNS {region}-aiplatform.googleapis.com. The
+       * limitations will be removed soon.
        *
        * If this field is set to true, the dedicated endpoint will be disabled
        * and the deployed model will be exposed through the shared DNS
@@ -3779,6 +3953,236 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         dedicatedEndpointDisabled_ = false;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+          privateServiceConnectConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>
+          privateServiceConnectConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the privateServiceConnectConfig field is set.
+       */
+      public boolean hasPrivateServiceConnectConfig() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The privateServiceConnectConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+          getPrivateServiceConnectConfig() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        } else {
+          return privateServiceConnectConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          privateServiceConnectConfig_ = value;
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder builderForValue) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfig_ = builderForValue.build();
+        } else {
+          privateServiceConnectConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePrivateServiceConnectConfig(
+          com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig value) {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && privateServiceConnectConfig_ != null
+              && privateServiceConnectConfig_
+                  != com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig
+                      .getDefaultInstance()) {
+            getPrivateServiceConnectConfigBuilder().mergeFrom(value);
+          } else {
+            privateServiceConnectConfig_ = value;
+          }
+        } else {
+          privateServiceConnectConfigBuilder_.mergeFrom(value);
+        }
+        if (privateServiceConnectConfig_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPrivateServiceConnectConfig() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        privateServiceConnectConfig_ = null;
+        if (privateServiceConnectConfigBuilder_ != null) {
+          privateServiceConnectConfigBuilder_.dispose();
+          privateServiceConnectConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder
+          getPrivateServiceConnectConfigBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getPrivateServiceConnectConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder
+          getPrivateServiceConnectConfigOrBuilder() {
+        if (privateServiceConnectConfigBuilder_ != null) {
+          return privateServiceConnectConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return privateServiceConnectConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.getDefaultInstance()
+              : privateServiceConnectConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for private service connect. If set, the endpoint
+       * will be exposed through private service connect.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig private_service_connect_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>
+          getPrivateServiceConnectConfigFieldBuilder() {
+        if (privateServiceConnectConfigBuilder_ == null) {
+          privateServiceConnectConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig,
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.PrivateServiceConnectConfigOrBuilder>(
+                  getPrivateServiceConnectConfig(), getParentForChildren(), isClean());
+          privateServiceConnectConfig_ = null;
+        }
+        return privateServiceConnectConfigBuilder_;
       }
 
       private java.lang.Object endpointUserId_ = "";
@@ -3894,7 +4298,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           throw new NullPointerException();
         }
         endpointUserId_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3928,7 +4332,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        */
       public Builder clearEndpointUserId() {
         endpointUserId_ = getDefaultInstance().getEndpointUserId();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -3967,7 +4371,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         }
         checkByteStringIsUtf8(value);
         endpointUserId_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }

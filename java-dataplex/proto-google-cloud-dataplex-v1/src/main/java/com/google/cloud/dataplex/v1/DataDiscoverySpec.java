@@ -199,6 +199,42 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
      * @return The bytes for location.
      */
     com.google.protobuf.ByteString getLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project of the BigQuery dataset to publish BigLake external
+     * or non-BigLake external tables to. If not specified, the project of the
+     * Cloud Storage bucket will be used. The format is
+     * "projects/{project_id_or_number}".
+     * </pre>
+     *
+     * <code>
+     * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The project.
+     */
+    java.lang.String getProject();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project of the BigQuery dataset to publish BigLake external
+     * or non-BigLake external tables to. If not specified, the project of the
+     * Cloud Storage bucket will be used. The format is
+     * "projects/{project_id_or_number}".
+     * </pre>
+     *
+     * <code>
+     * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for project.
+     */
+    com.google.protobuf.ByteString getProjectBytes();
   }
 
   /**
@@ -225,6 +261,7 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       tableType_ = 0;
       connection_ = "";
       location_ = "";
+      project_ = "";
     }
 
     @java.lang.Override
@@ -622,6 +659,69 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       }
     }
 
+    public static final int PROJECT_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object project_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project of the BigQuery dataset to publish BigLake external
+     * or non-BigLake external tables to. If not specified, the project of the
+     * Cloud Storage bucket will be used. The format is
+     * "projects/{project_id_or_number}".
+     * </pre>
+     *
+     * <code>
+     * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The project.
+     */
+    @java.lang.Override
+    public java.lang.String getProject() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        project_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project of the BigQuery dataset to publish BigLake external
+     * or non-BigLake external tables to. If not specified, the project of the
+     * Cloud Storage bucket will be used. The format is
+     * "projects/{project_id_or_number}".
+     * </pre>
+     *
+     * <code>
+     * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for project.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getProjectBytes() {
+      java.lang.Object ref = project_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        project_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -648,6 +748,9 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, location_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, project_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -669,6 +772,9 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, location_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(project_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, project_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -689,6 +795,7 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       if (tableType_ != other.tableType_) return false;
       if (!getConnection().equals(other.getConnection())) return false;
       if (!getLocation().equals(other.getLocation())) return false;
+      if (!getProject().equals(other.getProject())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -706,6 +813,8 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getConnection().hashCode();
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
+      hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getProject().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -855,6 +964,7 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         tableType_ = 0;
         connection_ = "";
         location_ = "";
+        project_ = "";
         return this;
       }
 
@@ -904,6 +1014,9 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.location_ = location_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.project_ = project_;
         }
       }
 
@@ -972,6 +1085,11 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (!other.getProject().isEmpty()) {
+          project_ = other.project_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1016,6 +1134,12 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 34
+              case 42:
+                {
+                  project_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1489,6 +1613,142 @@ public final class DataDiscoverySpec extends com.google.protobuf.GeneratedMessag
         checkByteStringIsUtf8(value);
         location_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object project_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project of the BigQuery dataset to publish BigLake external
+       * or non-BigLake external tables to. If not specified, the project of the
+       * Cloud Storage bucket will be used. The format is
+       * "projects/{project_id_or_number}".
+       * </pre>
+       *
+       * <code>
+       * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The project.
+       */
+      public java.lang.String getProject() {
+        java.lang.Object ref = project_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          project_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project of the BigQuery dataset to publish BigLake external
+       * or non-BigLake external tables to. If not specified, the project of the
+       * Cloud Storage bucket will be used. The format is
+       * "projects/{project_id_or_number}".
+       * </pre>
+       *
+       * <code>
+       * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for project.
+       */
+      public com.google.protobuf.ByteString getProjectBytes() {
+        java.lang.Object ref = project_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          project_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project of the BigQuery dataset to publish BigLake external
+       * or non-BigLake external tables to. If not specified, the project of the
+       * Cloud Storage bucket will be used. The format is
+       * "projects/{project_id_or_number}".
+       * </pre>
+       *
+       * <code>
+       * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProject(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        project_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project of the BigQuery dataset to publish BigLake external
+       * or non-BigLake external tables to. If not specified, the project of the
+       * Cloud Storage bucket will be used. The format is
+       * "projects/{project_id_or_number}".
+       * </pre>
+       *
+       * <code>
+       * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProject() {
+        project_ = getDefaultInstance().getProject();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The project of the BigQuery dataset to publish BigLake external
+       * or non-BigLake external tables to. If not specified, the project of the
+       * Cloud Storage bucket will be used. The format is
+       * "projects/{project_id_or_number}".
+       * </pre>
+       *
+       * <code>
+       * string project = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for project to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        project_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }

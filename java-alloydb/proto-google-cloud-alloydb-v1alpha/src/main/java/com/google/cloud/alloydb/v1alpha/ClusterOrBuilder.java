@@ -570,7 +570,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=659
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=675
    * @return The network.
    */
   @java.lang.Deprecated
@@ -592,7 +592,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=659
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=675
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -826,7 +826,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=694
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=710
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -842,7 +842,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1alpha.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=694
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=710
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1303,7 +1303,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=744
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=760
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1322,7 +1322,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=744
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=760
    * @return The geminiConfig.
    */
   @java.lang.Deprecated
@@ -1518,10 +1518,10 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. AlloyDB per-cluster service agent email. This service account
-   * is created per-cluster per-project, and is different from that of the
-   * primary service agent which is created per-project. The service account
-   * naming format is subject to change.
+   * Output only. AlloyDB per-cluster service account. This service account is
+   * created per-cluster per-project, and is different from the per-project
+   * service account. The per-cluster service account naming format is subject
+   * to change.
    * </pre>
    *
    * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1534,10 +1534,10 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. AlloyDB per-cluster service agent email. This service account
-   * is created per-cluster per-project, and is different from that of the
-   * primary service agent which is created per-project. The service account
-   * naming format is subject to change.
+   * Output only. AlloyDB per-cluster service account. This service account is
+   * created per-cluster per-project, and is different from the per-project
+   * service account. The per-cluster service account naming format is subject
+   * to change.
    * </pre>
    *
    * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -102,7 +102,7 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A space manager deleted the message.
+     * An owner or manager deleted the message.
      * </pre>
      *
      * <code>SPACE_OWNER = 2;</code>
@@ -192,7 +192,7 @@ public final class DeletionMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A space manager deleted the message.
+     * An owner or manager deleted the message.
      * </pre>
      *
      * <code>SPACE_OWNER = 2;</code>

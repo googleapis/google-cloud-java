@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * See [Service Usage API](https://cloud.google.com/service-usage/docs/overview)
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/api/serviceusage/v1/serviceusage.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ServiceUsageGrpc {
 
@@ -665,8 +662,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation enableService(
-        com.google.api.serviceusage.v1.EnableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.EnableServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnableServiceMethod(), getCallOptions(), request);
     }
 
@@ -683,8 +681,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation disableService(
-        com.google.api.serviceusage.v1.DisableServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.DisableServiceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDisableServiceMethod(), getCallOptions(), request);
     }
 
@@ -696,8 +695,8 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1.Service getService(
-        com.google.api.serviceusage.v1.GetServiceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.GetServiceRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetServiceMethod(), getCallOptions(), request);
     }
 
@@ -720,8 +719,8 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1.ListServicesResponse listServices(
-        com.google.api.serviceusage.v1.ListServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.ListServicesRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListServicesMethod(), getCallOptions(), request);
     }
 
@@ -735,8 +734,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchEnableServices(
-        com.google.api.serviceusage.v1.BatchEnableServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.BatchEnableServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchEnableServicesMethod(), getCallOptions(), request);
     }
 
@@ -749,8 +749,9 @@ public final class ServiceUsageGrpc {
      * </pre>
      */
     public com.google.api.serviceusage.v1.BatchGetServicesResponse batchGetServices(
-        com.google.api.serviceusage.v1.BatchGetServicesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.api.serviceusage.v1.BatchGetServicesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetServicesMethod(), getCallOptions(), request);
     }
   }

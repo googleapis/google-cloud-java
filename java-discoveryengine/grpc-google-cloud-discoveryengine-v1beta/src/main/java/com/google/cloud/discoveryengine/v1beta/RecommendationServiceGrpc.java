@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for making recommendations.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1beta/recommendation_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecommendationServiceGrpc {
 
@@ -240,8 +237,9 @@ public final class RecommendationServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1beta.RecommendResponse recommend(
-        com.google.cloud.discoveryengine.v1beta.RecommendRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1beta.RecommendRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRecommendMethod(), getCallOptions(), request);
     }
   }

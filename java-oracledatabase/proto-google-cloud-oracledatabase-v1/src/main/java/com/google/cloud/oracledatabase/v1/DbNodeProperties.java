@@ -389,6 +389,7 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.DbNodeProperties.State)
   }
 
+  private int bitField0_;
   public static final int OCID_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -667,6 +668,58 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     return totalCpuCoreCount_;
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp createTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date and time that the database node was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -707,6 +760,9 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     if (totalCpuCoreCount_ != 0) {
       output.writeInt32(10, totalCpuCoreCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(11, getCreateTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -742,6 +798,9 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     if (totalCpuCoreCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, totalCpuCoreCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCreateTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -766,6 +825,10 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     if (!getHostname().equals(other.getHostname())) return false;
     if (state_ != other.state_) return false;
     if (getTotalCpuCoreCount() != other.getTotalCpuCoreCount()) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -793,6 +856,10 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + TOTAL_CPU_CORE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getTotalCpuCoreCount();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -923,10 +990,19 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.oracledatabase.v1.DbNodeProperties.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getCreateTimeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -941,6 +1017,11 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       hostname_ = "";
       state_ = 0;
       totalCpuCoreCount_ = 0;
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -1001,6 +1082,12 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.totalCpuCoreCount_ = totalCpuCoreCount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1079,6 +1166,9 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       if (other.getTotalCpuCoreCount() != 0) {
         setTotalCpuCoreCount(other.getTotalCpuCoreCount());
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1153,6 +1243,12 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 80
+            case 90:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1834,6 +1930,218 @@ public final class DbNodeProperties extends com.google.protobuf.GeneratedMessage
       totalCpuCoreCount_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date and time that the database node was created.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
     }
 
     @java.lang.Override

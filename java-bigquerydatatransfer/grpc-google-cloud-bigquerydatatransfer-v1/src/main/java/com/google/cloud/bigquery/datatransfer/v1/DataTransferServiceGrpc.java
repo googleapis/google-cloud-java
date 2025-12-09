@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * This API allows users to manage their data transfers into BigQuery.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/datatransfer/v1/datatransfer.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataTransferServiceGrpc {
 
@@ -1506,8 +1503,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSource(
-        com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
     }
 
@@ -1519,8 +1517,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse listDataSources(
-        com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
     }
 
@@ -1532,8 +1531,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig createTransferConfig(
-        com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1546,8 +1546,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig updateTransferConfig(
-        com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1560,8 +1561,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransferConfig(
-        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1573,8 +1575,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig(
-        com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTransferConfigMethod(), getCallOptions(), request);
     }
 
@@ -1588,8 +1591,9 @@ public final class DataTransferServiceGrpc {
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse
         listTransferConfigs(
-            com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTransferConfigsMethod(), getCallOptions(), request);
     }
 
@@ -1607,8 +1611,9 @@ public final class DataTransferServiceGrpc {
     @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse
         scheduleTransferRuns(
-            com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getScheduleTransferRunsMethod(), getCallOptions(), request);
     }
 
@@ -1624,8 +1629,9 @@ public final class DataTransferServiceGrpc {
      */
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
         startManualTransferRuns(
-            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartManualTransferRunsMethod(), getCallOptions(), request);
     }
 
@@ -1637,8 +1643,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRun(
-        com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTransferRunMethod(), getCallOptions(), request);
     }
 
@@ -1650,8 +1657,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTransferRun(
-        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTransferRunMethod(), getCallOptions(), request);
     }
 
@@ -1663,8 +1671,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse listTransferRuns(
-        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTransferRunsMethod(), getCallOptions(), request);
     }
 
@@ -1676,8 +1685,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse listTransferLogs(
-        com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTransferLogsMethod(), getCallOptions(), request);
     }
 
@@ -1690,8 +1700,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse checkValidCreds(
-        com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCheckValidCredsMethod(), getCallOptions(), request);
     }
 
@@ -1710,8 +1721,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty enrollDataSources(
-        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.EnrollDataSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getEnrollDataSourcesMethod(), getCallOptions(), request);
     }
 
@@ -1727,8 +1739,9 @@ public final class DataTransferServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty unenrollDataSources(
-        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datatransfer.v1.UnenrollDataSourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnenrollDataSourcesMethod(), getCallOptions(), request);
     }
   }

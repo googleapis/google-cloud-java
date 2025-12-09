@@ -28,9 +28,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/telcoautomation/v1alpha1/telcoautomation.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TelcoAutomationGrpc {
 
@@ -3128,8 +3125,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListOrchestrationClustersResponse
         listOrchestrationClusters(
-            com.google.cloud.telcoautomation.v1alpha1.ListOrchestrationClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ListOrchestrationClustersRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrchestrationClustersMethod(), getCallOptions(), request);
     }
 
@@ -3141,8 +3139,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.OrchestrationCluster getOrchestrationCluster(
-        com.google.cloud.telcoautomation.v1alpha1.GetOrchestrationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrchestrationClusterMethod(), getCallOptions(), request);
     }
 
@@ -3154,8 +3153,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOrchestrationCluster(
-        com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.CreateOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOrchestrationClusterMethod(), getCallOptions(), request);
     }
 
@@ -3167,8 +3167,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOrchestrationCluster(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteOrchestrationClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOrchestrationClusterMethod(), getCallOptions(), request);
     }
 
@@ -3180,8 +3181,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListEdgeSlmsResponse listEdgeSlms(
-        com.google.cloud.telcoautomation.v1alpha1.ListEdgeSlmsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ListEdgeSlmsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEdgeSlmsMethod(), getCallOptions(), request);
     }
 
@@ -3193,8 +3195,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.EdgeSlm getEdgeSlm(
-        com.google.cloud.telcoautomation.v1alpha1.GetEdgeSlmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEdgeSlmMethod(), getCallOptions(), request);
     }
 
@@ -3206,8 +3209,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEdgeSlm(
-        com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.CreateEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEdgeSlmMethod(), getCallOptions(), request);
     }
 
@@ -3219,8 +3223,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEdgeSlm(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteEdgeSlmRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEdgeSlmMethod(), getCallOptions(), request);
     }
 
@@ -3232,8 +3237,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint createBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.CreateBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.CreateBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3245,8 +3251,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint updateBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.UpdateBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3258,8 +3265,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint getBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.GetBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3271,8 +3279,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.DeleteBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3284,8 +3293,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsResponse listBlueprints(
-        com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ListBlueprintsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBlueprintsMethod(), getCallOptions(), request);
     }
 
@@ -3297,8 +3307,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint approveBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.ApproveBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ApproveBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3310,8 +3321,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint proposeBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.ProposeBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ProposeBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProposeBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3323,8 +3335,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Blueprint rejectBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.RejectBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.RejectBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRejectBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3337,8 +3350,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListBlueprintRevisionsResponse
         listBlueprintRevisions(
-            com.google.cloud.telcoautomation.v1alpha1.ListBlueprintRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ListBlueprintRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListBlueprintRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3351,8 +3365,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.SearchBlueprintRevisionsResponse
         searchBlueprintRevisions(
-            com.google.cloud.telcoautomation.v1alpha1.SearchBlueprintRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.SearchBlueprintRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchBlueprintRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3365,8 +3380,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.SearchDeploymentRevisionsResponse
         searchDeploymentRevisions(
-            com.google.cloud.telcoautomation.v1alpha1.SearchDeploymentRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.SearchDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchDeploymentRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3381,8 +3397,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesResponse
         discardBlueprintChanges(
-            com.google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.DiscardBlueprintChangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiscardBlueprintChangesMethod(), getCallOptions(), request);
     }
 
@@ -3396,8 +3413,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListPublicBlueprintsResponse
         listPublicBlueprints(
-            com.google.cloud.telcoautomation.v1alpha1.ListPublicBlueprintsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ListPublicBlueprintsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPublicBlueprintsMethod(), getCallOptions(), request);
     }
 
@@ -3409,8 +3427,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.PublicBlueprint getPublicBlueprint(
-        com.google.cloud.telcoautomation.v1alpha1.GetPublicBlueprintRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetPublicBlueprintRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPublicBlueprintMethod(), getCallOptions(), request);
     }
 
@@ -3422,8 +3441,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Deployment createDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.CreateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3435,8 +3455,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Deployment updateDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.UpdateDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3448,8 +3469,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Deployment getDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.GetDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3462,8 +3484,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty removeDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.RemoveDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3475,8 +3498,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListDeploymentsResponse listDeployments(
-        com.google.cloud.telcoautomation.v1alpha1.ListDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ListDeploymentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -3489,8 +3513,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsResponse
         listDeploymentRevisions(
-            com.google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ListDeploymentRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDeploymentRevisionsMethod(), getCallOptions(), request);
     }
 
@@ -3505,8 +3530,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.DiscardDeploymentChangesResponse
         discardDeploymentChanges(
-            com.google.cloud.telcoautomation.v1alpha1.DiscardDeploymentChangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.DiscardDeploymentChangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDiscardDeploymentChangesMethod(), getCallOptions(), request);
     }
 
@@ -3518,8 +3544,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Deployment applyDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.ApplyDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ApplyDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApplyDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3532,8 +3559,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusResponse
         computeDeploymentStatus(
-            com.google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ComputeDeploymentStatusRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeDeploymentStatusMethod(), getCallOptions(), request);
     }
 
@@ -3546,8 +3574,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.Deployment rollbackDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.RollbackDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.RollbackDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3559,8 +3588,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment getHydratedDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.GetHydratedDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.GetHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHydratedDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3573,8 +3603,9 @@ public final class TelcoAutomationGrpc {
      */
     public com.google.cloud.telcoautomation.v1alpha1.ListHydratedDeploymentsResponse
         listHydratedDeployments(
-            com.google.cloud.telcoautomation.v1alpha1.ListHydratedDeploymentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.telcoautomation.v1alpha1.ListHydratedDeploymentsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHydratedDeploymentsMethod(), getCallOptions(), request);
     }
 
@@ -3586,8 +3617,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment updateHydratedDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.UpdateHydratedDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.UpdateHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHydratedDeploymentMethod(), getCallOptions(), request);
     }
 
@@ -3599,8 +3631,9 @@ public final class TelcoAutomationGrpc {
      * </pre>
      */
     public com.google.cloud.telcoautomation.v1alpha1.HydratedDeployment applyHydratedDeployment(
-        com.google.cloud.telcoautomation.v1alpha1.ApplyHydratedDeploymentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.telcoautomation.v1alpha1.ApplyHydratedDeploymentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApplyHydratedDeploymentMethod(), getCallOptions(), request);
     }
   }

@@ -299,6 +299,96 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.AutoScalingOrBuilder
         getAutoScalingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether direct access to the Bigtable instance is enabled or
+     * not.
+     * </pre>
+     *
+     * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableDirectBigtableAccess.
+     */
+    boolean getEnableDirectBigtableAccess();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the bigtableMetadata field is set.
+     */
+    boolean hasBigtableMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bigtableMetadata.
+     */
+    com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+        getBigtableMetadata();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
+        getBigtableMetadataOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The zone.
+     */
+    java.lang.String getZone();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for zone.
+     */
+    com.google.protobuf.ByteString getZoneBytes();
   }
 
   /** Protobuf type {@code google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable} */
@@ -313,7 +403,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       super(builder);
     }
 
-    private Bigtable() {}
+    private Bigtable() {
+      zone_ = "";
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -1149,6 +1241,1121 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       }
     }
 
+    public interface BigtableMetadataOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Tenant project ID.
+       * </pre>
+       *
+       * <code>string tenant_project_id = 1;</code>
+       *
+       * @return The tenantProjectId.
+       */
+      java.lang.String getTenantProjectId();
+
+      /**
+       *
+       *
+       * <pre>
+       * Tenant project ID.
+       * </pre>
+       *
+       * <code>string tenant_project_id = 1;</code>
+       *
+       * @return The bytes for tenantProjectId.
+       */
+      com.google.protobuf.ByteString getTenantProjectIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable instance id.
+       * </pre>
+       *
+       * <code>string instance_id = 2;</code>
+       *
+       * @return The instanceId.
+       */
+      java.lang.String getInstanceId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable instance id.
+       * </pre>
+       *
+       * <code>string instance_id = 2;</code>
+       *
+       * @return The bytes for instanceId.
+       */
+      com.google.protobuf.ByteString getInstanceIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable table id.
+       * </pre>
+       *
+       * <code>string table_id = 3;</code>
+       *
+       * @return The tableId.
+       */
+      java.lang.String getTableId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable table id.
+       * </pre>
+       *
+       * <code>string table_id = 3;</code>
+       *
+       * @return The bytes for tableId.
+       */
+      com.google.protobuf.ByteString getTableIdBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata of the Bigtable instance. This is used by direct read access to
+     * the Bigtable in tenant project.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata}
+     */
+    public static final class BigtableMetadata extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+        BigtableMetadataOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use BigtableMetadata.newBuilder() to construct.
+      private BigtableMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BigtableMetadata() {
+        tenantProjectId_ = "";
+        instanceId_ = "";
+        tableId_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BigtableMetadata();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1_FeatureOnlineStore_Bigtable_BigtableMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.class,
+                com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder
+                    .class);
+      }
+
+      public static final int TENANT_PROJECT_ID_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object tenantProjectId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Tenant project ID.
+       * </pre>
+       *
+       * <code>string tenant_project_id = 1;</code>
+       *
+       * @return The tenantProjectId.
+       */
+      @java.lang.Override
+      public java.lang.String getTenantProjectId() {
+        java.lang.Object ref = tenantProjectId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tenantProjectId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Tenant project ID.
+       * </pre>
+       *
+       * <code>string tenant_project_id = 1;</code>
+       *
+       * @return The bytes for tenantProjectId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTenantProjectIdBytes() {
+        java.lang.Object ref = tenantProjectId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tenantProjectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int INSTANCE_ID_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object instanceId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable instance id.
+       * </pre>
+       *
+       * <code>string instance_id = 2;</code>
+       *
+       * @return The instanceId.
+       */
+      @java.lang.Override
+      public java.lang.String getInstanceId() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          instanceId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable instance id.
+       * </pre>
+       *
+       * <code>string instance_id = 2;</code>
+       *
+       * @return The bytes for instanceId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getInstanceIdBytes() {
+        java.lang.Object ref = instanceId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          instanceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int TABLE_ID_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object tableId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable table id.
+       * </pre>
+       *
+       * <code>string table_id = 3;</code>
+       *
+       * @return The tableId.
+       */
+      @java.lang.Override
+      public java.lang.String getTableId() {
+        java.lang.Object ref = tableId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Cloud Bigtable table id.
+       * </pre>
+       *
+       * <code>string table_id = 3;</code>
+       *
+       * @return The bytes for tableId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTableIdBytes() {
+        java.lang.Object ref = tableId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tableId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantProjectId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tenantProjectId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, instanceId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableId_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantProjectId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tenantProjectId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(instanceId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, instanceId_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableId_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata other =
+            (com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata) obj;
+
+        if (!getTenantProjectId().equals(other.getTenantProjectId())) return false;
+        if (!getInstanceId().equals(other.getInstanceId())) return false;
+        if (!getTableId().equals(other.getTableId())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TENANT_PROJECT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getTenantProjectId().hashCode();
+        hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getInstanceId().hashCode();
+        hash = (37 * hash) + TABLE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getTableId().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Metadata of the Bigtable instance. This is used by direct read access to
+       * the Bigtable in tenant project.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.FeatureOnlineStoreProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.FeatureOnlineStoreProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureOnlineStore_Bigtable_BigtableMetadata_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.class,
+                  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          tenantProjectId_ = "";
+          instanceId_ = "";
+          tableId_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.FeatureOnlineStoreProto
+              .internal_static_google_cloud_aiplatform_v1_FeatureOnlineStore_Bigtable_BigtableMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata build() {
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata result =
+              new com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.tenantProjectId_ = tenantProjectId_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.instanceId_ = instanceId_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.tableId_ = tableId_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                  .getDefaultInstance()) return this;
+          if (!other.getTenantProjectId().isEmpty()) {
+            tenantProjectId_ = other.tenantProjectId_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getInstanceId().isEmpty()) {
+            instanceId_ = other.instanceId_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getTableId().isEmpty()) {
+            tableId_ = other.tableId_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    tenantProjectId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    instanceId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    tableId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object tenantProjectId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Tenant project ID.
+         * </pre>
+         *
+         * <code>string tenant_project_id = 1;</code>
+         *
+         * @return The tenantProjectId.
+         */
+        public java.lang.String getTenantProjectId() {
+          java.lang.Object ref = tenantProjectId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            tenantProjectId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Tenant project ID.
+         * </pre>
+         *
+         * <code>string tenant_project_id = 1;</code>
+         *
+         * @return The bytes for tenantProjectId.
+         */
+        public com.google.protobuf.ByteString getTenantProjectIdBytes() {
+          java.lang.Object ref = tenantProjectId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            tenantProjectId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Tenant project ID.
+         * </pre>
+         *
+         * <code>string tenant_project_id = 1;</code>
+         *
+         * @param value The tenantProjectId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTenantProjectId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tenantProjectId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Tenant project ID.
+         * </pre>
+         *
+         * <code>string tenant_project_id = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTenantProjectId() {
+          tenantProjectId_ = getDefaultInstance().getTenantProjectId();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Tenant project ID.
+         * </pre>
+         *
+         * <code>string tenant_project_id = 1;</code>
+         *
+         * @param value The bytes for tenantProjectId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTenantProjectIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          tenantProjectId_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object instanceId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable instance id.
+         * </pre>
+         *
+         * <code>string instance_id = 2;</code>
+         *
+         * @return The instanceId.
+         */
+        public java.lang.String getInstanceId() {
+          java.lang.Object ref = instanceId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            instanceId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable instance id.
+         * </pre>
+         *
+         * <code>string instance_id = 2;</code>
+         *
+         * @return The bytes for instanceId.
+         */
+        public com.google.protobuf.ByteString getInstanceIdBytes() {
+          java.lang.Object ref = instanceId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            instanceId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable instance id.
+         * </pre>
+         *
+         * <code>string instance_id = 2;</code>
+         *
+         * @param value The instanceId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInstanceId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          instanceId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable instance id.
+         * </pre>
+         *
+         * <code>string instance_id = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInstanceId() {
+          instanceId_ = getDefaultInstance().getInstanceId();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable instance id.
+         * </pre>
+         *
+         * <code>string instance_id = 2;</code>
+         *
+         * @param value The bytes for instanceId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInstanceIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          instanceId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object tableId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable table id.
+         * </pre>
+         *
+         * <code>string table_id = 3;</code>
+         *
+         * @return The tableId.
+         */
+        public java.lang.String getTableId() {
+          java.lang.Object ref = tableId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            tableId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable table id.
+         * </pre>
+         *
+         * <code>string table_id = 3;</code>
+         *
+         * @return The bytes for tableId.
+         */
+        public com.google.protobuf.ByteString getTableIdBytes() {
+          java.lang.Object ref = tableId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            tableId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable table id.
+         * </pre>
+         *
+         * <code>string table_id = 3;</code>
+         *
+         * @param value The tableId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tableId_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable table id.
+         * </pre>
+         *
+         * <code>string table_id = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTableId() {
+          tableId_ = getDefaultInstance().getTableId();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Cloud Bigtable table id.
+         * </pre>
+         *
+         * <code>string table_id = 3;</code>
+         *
+         * @param value The bytes for tableId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          tableId_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata)
+      private static final com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable
+              .BigtableMetadata
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata();
+      }
+
+      public static com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BigtableMetadata> PARSER =
+          new com.google.protobuf.AbstractParser<BigtableMetadata>() {
+            @java.lang.Override
+            public BigtableMetadata parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BigtableMetadata> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BigtableMetadata> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int AUTO_SCALING_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.AutoScaling autoScaling_;
@@ -1212,6 +2419,148 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           : autoScaling_;
     }
 
+    public static final int ENABLE_DIRECT_BIGTABLE_ACCESS_FIELD_NUMBER = 3;
+    private boolean enableDirectBigtableAccess_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether direct access to the Bigtable instance is enabled or
+     * not.
+     * </pre>
+     *
+     * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableDirectBigtableAccess.
+     */
+    @java.lang.Override
+    public boolean getEnableDirectBigtableAccess() {
+      return enableDirectBigtableAccess_;
+    }
+
+    public static final int BIGTABLE_METADATA_FIELD_NUMBER = 4;
+    private com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+        bigtableMetadata_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the bigtableMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigtableMetadata() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bigtableMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+        getBigtableMetadata() {
+      return bigtableMetadata_ == null
+          ? com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+              .getDefaultInstance()
+          : bigtableMetadata_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata of the Bigtable instance. Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
+        getBigtableMetadataOrBuilder() {
+      return bigtableMetadata_ == null
+          ? com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+              .getDefaultInstance()
+          : bigtableMetadata_;
+    }
+
+    public static final int ZONE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object zone_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The zone.
+     */
+    @java.lang.Override
+    public java.lang.String getZone() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        zone_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zone where the underlying Bigtable cluster for the primary
+     * Bigtable instance will be provisioned. Only the zone must be provided.
+     * For example, only "us-central1-a" should be provided.
+     * </pre>
+     *
+     * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for zone.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getZoneBytes() {
+      java.lang.Object ref = zone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        zone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1229,6 +2578,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(1, getAutoScaling());
       }
+      if (enableDirectBigtableAccess_ != false) {
+        output.writeBool(3, enableDirectBigtableAccess_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getBigtableMetadata());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, zone_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1240,6 +2598,16 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAutoScaling());
+      }
+      if (enableDirectBigtableAccess_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(3, enableDirectBigtableAccess_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBigtableMetadata());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, zone_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1261,6 +2629,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       if (hasAutoScaling()) {
         if (!getAutoScaling().equals(other.getAutoScaling())) return false;
       }
+      if (getEnableDirectBigtableAccess() != other.getEnableDirectBigtableAccess()) return false;
+      if (hasBigtableMetadata() != other.hasBigtableMetadata()) return false;
+      if (hasBigtableMetadata()) {
+        if (!getBigtableMetadata().equals(other.getBigtableMetadata())) return false;
+      }
+      if (!getZone().equals(other.getZone())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1276,6 +2650,15 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + AUTO_SCALING_FIELD_NUMBER;
         hash = (53 * hash) + getAutoScaling().hashCode();
       }
+      hash = (37 * hash) + ENABLE_DIRECT_BIGTABLE_ACCESS_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDirectBigtableAccess());
+      if (hasBigtableMetadata()) {
+        hash = (37 * hash) + BIGTABLE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getBigtableMetadata().hashCode();
+      }
+      hash = (37 * hash) + ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getZone().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1413,6 +2796,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getAutoScalingFieldBuilder();
+          getBigtableMetadataFieldBuilder();
         }
       }
 
@@ -1425,6 +2809,13 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           autoScalingBuilder_.dispose();
           autoScalingBuilder_ = null;
         }
+        enableDirectBigtableAccess_ = false;
+        bigtableMetadata_ = null;
+        if (bigtableMetadataBuilder_ != null) {
+          bigtableMetadataBuilder_.dispose();
+          bigtableMetadataBuilder_ = null;
+        }
+        zone_ = "";
         return this;
       }
 
@@ -1468,6 +2859,19 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           result.autoScaling_ =
               autoScalingBuilder_ == null ? autoScaling_ : autoScalingBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enableDirectBigtableAccess_ = enableDirectBigtableAccess_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.bigtableMetadata_ =
+              bigtableMetadataBuilder_ == null
+                  ? bigtableMetadata_
+                  : bigtableMetadataBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.zone_ = zone_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1524,6 +2928,17 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         if (other.hasAutoScaling()) {
           mergeAutoScaling(other.getAutoScaling());
         }
+        if (other.getEnableDirectBigtableAccess() != false) {
+          setEnableDirectBigtableAccess(other.getEnableDirectBigtableAccess());
+        }
+        if (other.hasBigtableMetadata()) {
+          mergeBigtableMetadata(other.getBigtableMetadata());
+        }
+        if (!other.getZone().isEmpty()) {
+          zone_ = other.zone_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1556,6 +2971,25 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 24:
+                {
+                  enableDirectBigtableAccess_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
+              case 34:
+                {
+                  input.readMessage(
+                      getBigtableMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  zone_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1796,6 +3230,415 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           autoScaling_ = null;
         }
         return autoScalingBuilder_;
+      }
+
+      private boolean enableDirectBigtableAccess_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
+       * </pre>
+       *
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableDirectBigtableAccess.
+       */
+      @java.lang.Override
+      public boolean getEnableDirectBigtableAccess() {
+        return enableDirectBigtableAccess_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
+       * </pre>
+       *
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enableDirectBigtableAccess to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableDirectBigtableAccess(boolean value) {
+
+        enableDirectBigtableAccess_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether direct access to the Bigtable instance is enabled or
+       * not.
+       * </pre>
+       *
+       * <code>bool enable_direct_bigtable_access = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableDirectBigtableAccess() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        enableDirectBigtableAccess_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          bigtableMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata,
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder,
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder>
+          bigtableMetadataBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the bigtableMetadata field is set.
+       */
+      public boolean hasBigtableMetadata() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bigtableMetadata.
+       */
+      public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+          getBigtableMetadata() {
+        if (bigtableMetadataBuilder_ == null) {
+          return bigtableMetadata_ == null
+              ? com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                  .getDefaultInstance()
+              : bigtableMetadata_;
+        } else {
+          return bigtableMetadataBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setBigtableMetadata(
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata value) {
+        if (bigtableMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bigtableMetadata_ = value;
+        } else {
+          bigtableMetadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setBigtableMetadata(
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder
+              builderForValue) {
+        if (bigtableMetadataBuilder_ == null) {
+          bigtableMetadata_ = builderForValue.build();
+        } else {
+          bigtableMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeBigtableMetadata(
+          com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata value) {
+        if (bigtableMetadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && bigtableMetadata_ != null
+              && bigtableMetadata_
+                  != com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                      .getDefaultInstance()) {
+            getBigtableMetadataBuilder().mergeFrom(value);
+          } else {
+            bigtableMetadata_ = value;
+          }
+        } else {
+          bigtableMetadataBuilder_.mergeFrom(value);
+        }
+        if (bigtableMetadata_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearBigtableMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        bigtableMetadata_ = null;
+        if (bigtableMetadataBuilder_ != null) {
+          bigtableMetadataBuilder_.dispose();
+          bigtableMetadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder
+          getBigtableMetadataBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getBigtableMetadataFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder
+          getBigtableMetadataOrBuilder() {
+        if (bigtableMetadataBuilder_ != null) {
+          return bigtableMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return bigtableMetadata_ == null
+              ? com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                  .getDefaultInstance()
+              : bigtableMetadata_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Metadata of the Bigtable instance. Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata bigtable_metadata = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata,
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata.Builder,
+              com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadataOrBuilder>
+          getBigtableMetadataFieldBuilder() {
+        if (bigtableMetadataBuilder_ == null) {
+          bigtableMetadataBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata,
+                  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable.BigtableMetadata
+                      .Builder,
+                  com.google.cloud.aiplatform.v1.FeatureOnlineStore.Bigtable
+                      .BigtableMetadataOrBuilder>(
+                  getBigtableMetadata(), getParentForChildren(), isClean());
+          bigtableMetadata_ = null;
+        }
+        return bigtableMetadataBuilder_;
+      }
+
+      private java.lang.Object zone_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The zone.
+       */
+      public java.lang.String getZone() {
+        java.lang.Object ref = zone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          zone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for zone.
+       */
+      public com.google.protobuf.ByteString getZoneBytes() {
+        java.lang.Object ref = zone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          zone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The zone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZone(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        zone_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearZone() {
+        zone_ = getDefaultInstance().getZone();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zone where the underlying Bigtable cluster for the primary
+       * Bigtable instance will be provisioned. Only the zone must be provided.
+       * For example, only "us-central1-a" should be provided.
+       * </pre>
+       *
+       * <code>string zone = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for zone to set.
+       * @return This builder for chaining.
+       */
+      public Builder setZoneBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        zone_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

@@ -89,6 +89,7 @@ public class RouteOptimizationClientTest {
             .setRequestLabel("requestLabel1285152165")
             .addAllSkippedShipments(new ArrayList<SkippedShipment>())
             .addAllValidationErrors(new ArrayList<OptimizeToursValidationError>())
+            .setProcessedRequest(OptimizeToursRequest.newBuilder().build())
             .setMetrics(OptimizeToursResponse.Metrics.newBuilder().build())
             .build();
     mockRouteOptimization.addResponse(expectedResponse);
@@ -227,6 +228,173 @@ public class RouteOptimizationClientTest {
               .addAllModelConfigs(new ArrayList<BatchOptimizeToursRequest.AsyncModelConfig>())
               .build();
       client.batchOptimizeToursAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void optimizeToursLongRunningTest() throws Exception {
+    OptimizeToursResponse expectedResponse =
+        OptimizeToursResponse.newBuilder()
+            .addAllRoutes(new ArrayList<ShipmentRoute>())
+            .setRequestLabel("requestLabel1285152165")
+            .addAllSkippedShipments(new ArrayList<SkippedShipment>())
+            .addAllValidationErrors(new ArrayList<OptimizeToursValidationError>())
+            .setProcessedRequest(OptimizeToursRequest.newBuilder().build())
+            .setMetrics(OptimizeToursResponse.Metrics.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("optimizeToursLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockRouteOptimization.addResponse(resultOperation);
+
+    OptimizeToursRequest request =
+        OptimizeToursRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setTimeout(Duration.newBuilder().build())
+            .setModel(ShipmentModel.newBuilder().build())
+            .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+            .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+            .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+            .setInterpretInjectedSolutionsUsingLabels(true)
+            .setConsiderRoadTraffic(true)
+            .setPopulatePolylines(true)
+            .setPopulateTransitionPolylines(true)
+            .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+            .setUseGeodesicDistances(true)
+            .setGeodesicMetersPerSecond(-2129658905)
+            .setMaxValidationErrors(-1367418922)
+            .setLabel("label102727412")
+            .build();
+
+    OptimizeToursResponse actualResponse = client.optimizeToursLongRunningAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRouteOptimization.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    OptimizeToursRequest actualRequest = ((OptimizeToursRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getTimeout(), actualRequest.getTimeout());
+    Assert.assertEquals(request.getModel(), actualRequest.getModel());
+    Assert.assertEquals(request.getSolvingMode(), actualRequest.getSolvingMode());
+    Assert.assertEquals(request.getSearchMode(), actualRequest.getSearchMode());
+    Assert.assertEquals(
+        request.getInjectedFirstSolutionRoutesList(),
+        actualRequest.getInjectedFirstSolutionRoutesList());
+    Assert.assertEquals(
+        request.getInjectedSolutionConstraint(), actualRequest.getInjectedSolutionConstraint());
+    Assert.assertEquals(
+        request.getRefreshDetailsRoutesList(), actualRequest.getRefreshDetailsRoutesList());
+    Assert.assertEquals(
+        request.getInterpretInjectedSolutionsUsingLabels(),
+        actualRequest.getInterpretInjectedSolutionsUsingLabels());
+    Assert.assertEquals(request.getConsiderRoadTraffic(), actualRequest.getConsiderRoadTraffic());
+    Assert.assertEquals(request.getPopulatePolylines(), actualRequest.getPopulatePolylines());
+    Assert.assertEquals(
+        request.getPopulateTransitionPolylines(), actualRequest.getPopulateTransitionPolylines());
+    Assert.assertEquals(
+        request.getAllowLargeDeadlineDespiteInterruptionRisk(),
+        actualRequest.getAllowLargeDeadlineDespiteInterruptionRisk());
+    Assert.assertEquals(request.getUseGeodesicDistances(), actualRequest.getUseGeodesicDistances());
+    Assert.assertEquals(
+        request.getGeodesicMetersPerSecond(), actualRequest.getGeodesicMetersPerSecond(), 0.0001);
+    Assert.assertEquals(request.getMaxValidationErrors(), actualRequest.getMaxValidationErrors());
+    Assert.assertEquals(request.getLabel(), actualRequest.getLabel());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void optimizeToursLongRunningExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRouteOptimization.addException(exception);
+
+    try {
+      OptimizeToursRequest request =
+          OptimizeToursRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setTimeout(Duration.newBuilder().build())
+              .setModel(ShipmentModel.newBuilder().build())
+              .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
+              .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
+              .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
+              .setInterpretInjectedSolutionsUsingLabels(true)
+              .setConsiderRoadTraffic(true)
+              .setPopulatePolylines(true)
+              .setPopulateTransitionPolylines(true)
+              .setAllowLargeDeadlineDespiteInterruptionRisk(true)
+              .setUseGeodesicDistances(true)
+              .setGeodesicMetersPerSecond(-2129658905)
+              .setMaxValidationErrors(-1367418922)
+              .setLabel("label102727412")
+              .build();
+      client.optimizeToursLongRunningAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void optimizeToursUriTest() throws Exception {
+    OptimizeToursUriResponse expectedResponse =
+        OptimizeToursUriResponse.newBuilder().setOutput(Uri.newBuilder().build()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("optimizeToursUriTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockRouteOptimization.addResponse(resultOperation);
+
+    OptimizeToursUriRequest request =
+        OptimizeToursUriRequest.newBuilder()
+            .setParent("parent-995424086")
+            .setInput(Uri.newBuilder().build())
+            .setOutput(Uri.newBuilder().build())
+            .build();
+
+    OptimizeToursUriResponse actualResponse = client.optimizeToursUriAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRouteOptimization.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    OptimizeToursUriRequest actualRequest = ((OptimizeToursUriRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getInput(), actualRequest.getInput());
+    Assert.assertEquals(request.getOutput(), actualRequest.getOutput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void optimizeToursUriExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRouteOptimization.addException(exception);
+
+    try {
+      OptimizeToursUriRequest request =
+          OptimizeToursUriRequest.newBuilder()
+              .setParent("parent-995424086")
+              .setInput(Uri.newBuilder().build())
+              .setOutput(Uri.newBuilder().build())
+              .build();
+      client.optimizeToursUriAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

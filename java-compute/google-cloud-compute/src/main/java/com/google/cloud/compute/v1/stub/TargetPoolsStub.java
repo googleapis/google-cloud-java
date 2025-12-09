@@ -39,6 +39,8 @@ import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetPoolRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -148,6 +150,11 @@ public abstract class TargetPoolsStub implements BackgroundResource {
 
   public UnaryCallable<SetSecurityPolicyTargetPoolRequest, Operation> setSecurityPolicyCallable() {
     throw new UnsupportedOperationException("Not implemented: setSecurityPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

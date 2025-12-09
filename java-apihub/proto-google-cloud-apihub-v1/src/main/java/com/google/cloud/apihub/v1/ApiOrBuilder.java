@@ -785,4 +785,284 @@ public interface ApiOrBuilder
    * @return The bytes for selectedVersion.
    */
   com.google.protobuf.ByteString getSelectedVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiRequirements field is set.
+   */
+  boolean hasApiRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiRequirements.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getApiRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiRequirementsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fingerprint of the API resource.
+   * </pre>
+   *
+   * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fingerprint.
+   */
+  java.lang.String getFingerprint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fingerprint of the API resource.
+   * </pre>
+   *
+   * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for fingerprint.
+   */
+  com.google.protobuf.ByteString getFingerprintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getSourceMetadataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiFunctionalRequirements field is set.
+   */
+  boolean hasApiFunctionalRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiFunctionalRequirements.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getApiFunctionalRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiFunctionalRequirementsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiTechnicalRequirements field is set.
+   */
+  boolean hasApiTechnicalRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiTechnicalRequirements.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getApiTechnicalRequirements();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiTechnicalRequirementsOrBuilder();
 }

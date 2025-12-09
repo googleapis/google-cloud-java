@@ -22,12 +22,23 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutono
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListAutonomousDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudExadataInfrastructuresPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListCloudVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabaseCharacterSetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDatabasesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbNodesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbServersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemInitialStorageSizesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemShapesPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbSystemsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListDbVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListEntitlementsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExadbVmClustersPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListExascaleDbStorageVaultsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGiVersionsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -72,18 +83,43 @@ import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.CreateExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.Database;
+import com.google.cloud.oracledatabase.v1.DatabaseCharacterSet;
 import com.google.cloud.oracledatabase.v1.DbNode;
 import com.google.cloud.oracledatabase.v1.DbServer;
+import com.google.cloud.oracledatabase.v1.DbSystem;
+import com.google.cloud.oracledatabase.v1.DbSystemInitialStorageSize;
 import com.google.cloud.oracledatabase.v1.DbSystemShape;
+import com.google.cloud.oracledatabase.v1.DbVersion;
 import com.google.cloud.oracledatabase.v1.DeleteAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.DeleteCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Entitlement;
+import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
+import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
+import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.GetDbSystemRequest;
+import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
+import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
+import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GiVersion;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
@@ -97,21 +133,51 @@ import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresRequest
 import com.google.cloud.oracledatabase.v1.ListCloudExadataInfrastructuresResponse;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest;
 import com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabaseCharacterSetsResponse;
+import com.google.cloud.oracledatabase.v1.ListDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbNodesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbNodesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbServersRequest;
 import com.google.cloud.oracledatabase.v1.ListDbServersResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemInitialStorageSizesResponse;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesRequest;
 import com.google.cloud.oracledatabase.v1.ListDbSystemShapesResponse;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbSystemsResponse;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListDbVersionsResponse;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsRequest;
 import com.google.cloud.oracledatabase.v1.ListEntitlementsResponse;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest;
+import com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsRequest;
+import com.google.cloud.oracledatabase.v1.ListExascaleDbStorageVaultsResponse;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListGiVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
+import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
+import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.MinorVersion;
+import com.google.cloud.oracledatabase.v1.OdbNetwork;
+import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
+import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.StopAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.SwitchoverAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateAutonomousDatabaseRequest;
+import com.google.cloud.oracledatabase.v1.UpdateExadbVmClusterRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -249,6 +315,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           ListGiVersionsRequest, ListGiVersionsResponse, ListGiVersionsPagedResponse>
       listGiVersionsSettings;
   private final PagedCallSettings<
+          ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+      listMinorVersionsSettings;
+  private final PagedCallSettings<
           ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
       listDbSystemShapesSettings;
   private final PagedCallSettings<
@@ -263,6 +332,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       createAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationSettings;
   private final UnaryCallSettings<DeleteAutonomousDatabaseRequest, Operation>
       deleteAutonomousDatabaseSettings;
   private final OperationCallSettings<DeleteAutonomousDatabaseRequest, Empty, OperationMetadata>
@@ -305,6 +379,110 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       restartAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationSettings;
+  private final PagedCallSettings<
+          ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+      listOdbNetworksSettings;
+  private final UnaryCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings;
+  private final UnaryCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkSettings;
+  private final OperationCallSettings<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationSettings;
+  private final UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings;
+  private final OperationCallSettings<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationSettings;
+  private final PagedCallSettings<
+          ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsSettings;
+  private final UnaryCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings;
+  private final UnaryCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings;
+  private final OperationCallSettings<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationSettings;
+  private final UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings;
+  private final OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationSettings;
+  private final PagedCallSettings<
+          ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersSettings;
+  private final UnaryCallSettings<GetExadbVmClusterRequest, ExadbVmCluster>
+      getExadbVmClusterSettings;
+  private final UnaryCallSettings<CreateExadbVmClusterRequest, Operation>
+      createExadbVmClusterSettings;
+  private final OperationCallSettings<
+          CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationSettings;
+  private final UnaryCallSettings<DeleteExadbVmClusterRequest, Operation>
+      deleteExadbVmClusterSettings;
+  private final OperationCallSettings<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationSettings;
+  private final UnaryCallSettings<UpdateExadbVmClusterRequest, Operation>
+      updateExadbVmClusterSettings;
+  private final OperationCallSettings<
+          UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationSettings;
+  private final UnaryCallSettings<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterSettings;
+  private final OperationCallSettings<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationSettings;
+  private final PagedCallSettings<
+          ListExascaleDbStorageVaultsRequest,
+          ListExascaleDbStorageVaultsResponse,
+          ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsSettings;
+  private final UnaryCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultSettings;
+  private final UnaryCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultSettings;
+  private final OperationCallSettings<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationSettings;
+  private final UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultSettings;
+  private final OperationCallSettings<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationSettings;
+  private final PagedCallSettings<
+          ListDbSystemInitialStorageSizesRequest,
+          ListDbSystemInitialStorageSizesResponse,
+          ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesSettings;
+  private final PagedCallSettings<
+          ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings;
+  private final UnaryCallSettings<GetDatabaseRequest, Database> getDatabaseSettings;
+  private final PagedCallSettings<
+          ListPluggableDatabasesRequest,
+          ListPluggableDatabasesResponse,
+          ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesSettings;
+  private final UnaryCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseSettings;
+  private final PagedCallSettings<
+          ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+      listDbSystemsSettings;
+  private final UnaryCallSettings<GetDbSystemRequest, DbSystem> getDbSystemSettings;
+  private final UnaryCallSettings<CreateDbSystemRequest, Operation> createDbSystemSettings;
+  private final OperationCallSettings<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationSettings;
+  private final UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings;
+  private final OperationCallSettings<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationSettings;
+  private final PagedCallSettings<
+          ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+      listDbVersionsSettings;
+  private final PagedCallSettings<
+          ListDatabaseCharacterSetsRequest,
+          ListDatabaseCharacterSetsResponse,
+          ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -537,6 +715,44 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListDescriptor<
+          ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>
+      LIST_MINOR_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMinorVersionsRequest injectToken(
+                ListMinorVersionsRequest payload, String token) {
+              return ListMinorVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMinorVersionsRequest injectPageSize(
+                ListMinorVersionsRequest payload, int pageSize) {
+              return ListMinorVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMinorVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMinorVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MinorVersion> extractResources(ListMinorVersionsResponse payload) {
+              return payload.getMinorVersionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListDbSystemShapesRequest, ListDbSystemShapesResponse, DbSystemShape>
       LIST_DB_SYSTEM_SHAPES_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -756,6 +972,399 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork>
+      LIST_ODB_NETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOdbNetworksRequest injectToken(
+                ListOdbNetworksRequest payload, String token) {
+              return ListOdbNetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListOdbNetworksRequest injectPageSize(
+                ListOdbNetworksRequest payload, int pageSize) {
+              return ListOdbNetworksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOdbNetworksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOdbNetworksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<OdbNetwork> extractResources(ListOdbNetworksResponse payload) {
+              return payload.getOdbNetworksList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet>
+      LIST_ODB_SUBNETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOdbSubnetsRequest injectToken(ListOdbSubnetsRequest payload, String token) {
+              return ListOdbSubnetsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListOdbSubnetsRequest injectPageSize(
+                ListOdbSubnetsRequest payload, int pageSize) {
+              return ListOdbSubnetsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOdbSubnetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOdbSubnetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<OdbSubnet> extractResources(ListOdbSubnetsResponse payload) {
+              return payload.getOdbSubnetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
+      LIST_EXADB_VM_CLUSTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExadbVmClustersRequest injectToken(
+                ListExadbVmClustersRequest payload, String token) {
+              return ListExadbVmClustersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListExadbVmClustersRequest injectPageSize(
+                ListExadbVmClustersRequest payload, int pageSize) {
+              return ListExadbVmClustersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExadbVmClustersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExadbVmClustersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ExadbVmCluster> extractResources(ListExadbVmClustersResponse payload) {
+              return payload.getExadbVmClustersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListExascaleDbStorageVaultsRequest,
+          ListExascaleDbStorageVaultsResponse,
+          ExascaleDbStorageVault>
+      LIST_EXASCALE_DB_STORAGE_VAULTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListExascaleDbStorageVaultsRequest,
+              ListExascaleDbStorageVaultsResponse,
+              ExascaleDbStorageVault>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListExascaleDbStorageVaultsRequest injectToken(
+                ListExascaleDbStorageVaultsRequest payload, String token) {
+              return ListExascaleDbStorageVaultsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListExascaleDbStorageVaultsRequest injectPageSize(
+                ListExascaleDbStorageVaultsRequest payload, int pageSize) {
+              return ListExascaleDbStorageVaultsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListExascaleDbStorageVaultsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListExascaleDbStorageVaultsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ExascaleDbStorageVault> extractResources(
+                ListExascaleDbStorageVaultsResponse payload) {
+              return payload.getExascaleDbStorageVaultsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDbSystemInitialStorageSizesRequest,
+          ListDbSystemInitialStorageSizesResponse,
+          DbSystemInitialStorageSize>
+      LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDbSystemInitialStorageSizesRequest,
+              ListDbSystemInitialStorageSizesResponse,
+              DbSystemInitialStorageSize>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDbSystemInitialStorageSizesRequest injectToken(
+                ListDbSystemInitialStorageSizesRequest payload, String token) {
+              return ListDbSystemInitialStorageSizesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDbSystemInitialStorageSizesRequest injectPageSize(
+                ListDbSystemInitialStorageSizesRequest payload, int pageSize) {
+              return ListDbSystemInitialStorageSizesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDbSystemInitialStorageSizesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDbSystemInitialStorageSizesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DbSystemInitialStorageSize> extractResources(
+                ListDbSystemInitialStorageSizesResponse payload) {
+              return payload.getDbSystemInitialStorageSizesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDatabasesRequest, ListDatabasesResponse, Database>
+      LIST_DATABASES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDatabasesRequest, ListDatabasesResponse, Database>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatabasesRequest injectToken(ListDatabasesRequest payload, String token) {
+              return ListDatabasesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatabasesRequest injectPageSize(ListDatabasesRequest payload, int pageSize) {
+              return ListDatabasesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatabasesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatabasesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Database> extractResources(ListDatabasesResponse payload) {
+              return payload.getDatabasesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListPluggableDatabasesRequest, ListPluggableDatabasesResponse, PluggableDatabase>
+      LIST_PLUGGABLE_DATABASES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListPluggableDatabasesRequest, ListPluggableDatabasesResponse, PluggableDatabase>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListPluggableDatabasesRequest injectToken(
+                ListPluggableDatabasesRequest payload, String token) {
+              return ListPluggableDatabasesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListPluggableDatabasesRequest injectPageSize(
+                ListPluggableDatabasesRequest payload, int pageSize) {
+              return ListPluggableDatabasesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListPluggableDatabasesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListPluggableDatabasesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<PluggableDatabase> extractResources(
+                ListPluggableDatabasesResponse payload) {
+              return payload.getPluggableDatabasesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem>
+      LIST_DB_SYSTEMS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDbSystemsRequest injectToken(ListDbSystemsRequest payload, String token) {
+              return ListDbSystemsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDbSystemsRequest injectPageSize(ListDbSystemsRequest payload, int pageSize) {
+              return ListDbSystemsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDbSystemsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDbSystemsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DbSystem> extractResources(ListDbSystemsResponse payload) {
+              return payload.getDbSystemsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion>
+      LIST_DB_VERSIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDbVersionsRequest injectToken(ListDbVersionsRequest payload, String token) {
+              return ListDbVersionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDbVersionsRequest injectPageSize(
+                ListDbVersionsRequest payload, int pageSize) {
+              return ListDbVersionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDbVersionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDbVersionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DbVersion> extractResources(ListDbVersionsResponse payload) {
+              return payload.getDbVersionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse, DatabaseCharacterSet>
+      LIST_DATABASE_CHARACTER_SETS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDatabaseCharacterSetsRequest,
+              ListDatabaseCharacterSetsResponse,
+              DatabaseCharacterSet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatabaseCharacterSetsRequest injectToken(
+                ListDatabaseCharacterSetsRequest payload, String token) {
+              return ListDatabaseCharacterSetsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDatabaseCharacterSetsRequest injectPageSize(
+                ListDatabaseCharacterSetsRequest payload, int pageSize) {
+              return ListDatabaseCharacterSetsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatabaseCharacterSetsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatabaseCharacterSetsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DatabaseCharacterSet> extractResources(
+                ListDatabaseCharacterSetsResponse payload) {
+              return payload.getDatabaseCharacterSetsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -915,6 +1524,27 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListResponseFactory<
+          ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+      LIST_MINOR_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMinorVersionsRequest,
+              ListMinorVersionsResponse,
+              ListMinorVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMinorVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMinorVersionsRequest, ListMinorVersionsResponse> callable,
+                ListMinorVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMinorVersionsResponse> futureResponse) {
+              PageContext<ListMinorVersionsRequest, ListMinorVersionsResponse, MinorVersion>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_MINOR_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListMinorVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
       LIST_DB_SYSTEM_SHAPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1056,6 +1686,232 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListResponseFactory<
+          ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+      LIST_ODB_NETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListOdbNetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse> callable,
+                ListOdbNetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOdbNetworksResponse> futureResponse) {
+              PageContext<ListOdbNetworksRequest, ListOdbNetworksResponse, OdbNetwork> pageContext =
+                  PageContext.create(callable, LIST_ODB_NETWORKS_PAGE_STR_DESC, request, context);
+              return ListOdbNetworksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+      LIST_ODB_SUBNETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListOdbSubnetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListOdbSubnetsRequest, ListOdbSubnetsResponse> callable,
+                ListOdbSubnetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOdbSubnetsResponse> futureResponse) {
+              PageContext<ListOdbSubnetsRequest, ListOdbSubnetsResponse, OdbSubnet> pageContext =
+                  PageContext.create(callable, LIST_ODB_SUBNETS_PAGE_STR_DESC, request, context);
+              return ListOdbSubnetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
+      LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExadbVmClustersRequest,
+              ListExadbVmClustersResponse,
+              ListExadbVmClustersPagedResponse>() {
+            @Override
+            public ApiFuture<ListExadbVmClustersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse> callable,
+                ListExadbVmClustersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExadbVmClustersResponse> futureResponse) {
+              PageContext<ListExadbVmClustersRequest, ListExadbVmClustersResponse, ExadbVmCluster>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_EXADB_VM_CLUSTERS_PAGE_STR_DESC, request, context);
+              return ListExadbVmClustersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListExascaleDbStorageVaultsRequest,
+          ListExascaleDbStorageVaultsResponse,
+          ListExascaleDbStorageVaultsPagedResponse>
+      LIST_EXASCALE_DB_STORAGE_VAULTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListExascaleDbStorageVaultsRequest,
+              ListExascaleDbStorageVaultsResponse,
+              ListExascaleDbStorageVaultsPagedResponse>() {
+            @Override
+            public ApiFuture<ListExascaleDbStorageVaultsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+                    callable,
+                ListExascaleDbStorageVaultsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListExascaleDbStorageVaultsResponse> futureResponse) {
+              PageContext<
+                      ListExascaleDbStorageVaultsRequest,
+                      ListExascaleDbStorageVaultsResponse,
+                      ExascaleDbStorageVault>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_EXASCALE_DB_STORAGE_VAULTS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListExascaleDbStorageVaultsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDbSystemInitialStorageSizesRequest,
+          ListDbSystemInitialStorageSizesResponse,
+          ListDbSystemInitialStorageSizesPagedResponse>
+      LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDbSystemInitialStorageSizesRequest,
+              ListDbSystemInitialStorageSizesResponse,
+              ListDbSystemInitialStorageSizesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDbSystemInitialStorageSizesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListDbSystemInitialStorageSizesRequest,
+                        ListDbSystemInitialStorageSizesResponse>
+                    callable,
+                ListDbSystemInitialStorageSizesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDbSystemInitialStorageSizesResponse> futureResponse) {
+              PageContext<
+                      ListDbSystemInitialStorageSizesRequest,
+                      ListDbSystemInitialStorageSizesResponse,
+                      DbSystemInitialStorageSize>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDbSystemInitialStorageSizesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      LIST_DATABASES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatabasesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> callable,
+                ListDatabasesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatabasesResponse> futureResponse) {
+              PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> pageContext =
+                  PageContext.create(callable, LIST_DATABASES_PAGE_STR_DESC, request, context);
+              return ListDatabasesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListPluggableDatabasesRequest,
+          ListPluggableDatabasesResponse,
+          ListPluggableDatabasesPagedResponse>
+      LIST_PLUGGABLE_DATABASES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListPluggableDatabasesRequest,
+              ListPluggableDatabasesResponse,
+              ListPluggableDatabasesPagedResponse>() {
+            @Override
+            public ApiFuture<ListPluggableDatabasesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    callable,
+                ListPluggableDatabasesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListPluggableDatabasesResponse> futureResponse) {
+              PageContext<
+                      ListPluggableDatabasesRequest,
+                      ListPluggableDatabasesResponse,
+                      PluggableDatabase>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_PLUGGABLE_DATABASES_PAGE_STR_DESC, request, context);
+              return ListPluggableDatabasesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+      LIST_DB_SYSTEMS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDbSystemsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDbSystemsRequest, ListDbSystemsResponse> callable,
+                ListDbSystemsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDbSystemsResponse> futureResponse) {
+              PageContext<ListDbSystemsRequest, ListDbSystemsResponse, DbSystem> pageContext =
+                  PageContext.create(callable, LIST_DB_SYSTEMS_PAGE_STR_DESC, request, context);
+              return ListDbSystemsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+      LIST_DB_VERSIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDbVersionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDbVersionsRequest, ListDbVersionsResponse> callable,
+                ListDbVersionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDbVersionsResponse> futureResponse) {
+              PageContext<ListDbVersionsRequest, ListDbVersionsResponse, DbVersion> pageContext =
+                  PageContext.create(callable, LIST_DB_VERSIONS_PAGE_STR_DESC, request, context);
+              return ListDbVersionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDatabaseCharacterSetsRequest,
+          ListDatabaseCharacterSetsResponse,
+          ListDatabaseCharacterSetsPagedResponse>
+      LIST_DATABASE_CHARACTER_SETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatabaseCharacterSetsRequest,
+              ListDatabaseCharacterSetsResponse,
+              ListDatabaseCharacterSetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatabaseCharacterSetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatabaseCharacterSetsRequest, ListDatabaseCharacterSetsResponse>
+                    callable,
+                ListDatabaseCharacterSetsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatabaseCharacterSetsResponse> futureResponse) {
+              PageContext<
+                      ListDatabaseCharacterSetsRequest,
+                      ListDatabaseCharacterSetsResponse,
+                      DatabaseCharacterSet>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATABASE_CHARACTER_SETS_PAGE_STR_DESC, request, context);
+              return ListDatabaseCharacterSetsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1172,6 +2028,13 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return listGiVersionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to listMinorVersions. */
+  public PagedCallSettings<
+          ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+      listMinorVersionsSettings() {
+    return listMinorVersionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listDbSystemShapes. */
   public PagedCallSettings<
           ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
@@ -1205,6 +2068,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       createAutonomousDatabaseOperationSettings() {
     return createAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutonomousDatabase. */
+  public UnaryCallSettings<UpdateAutonomousDatabaseRequest, Operation>
+      updateAutonomousDatabaseSettings() {
+    return updateAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutonomousDatabase. */
+  public OperationCallSettings<
+          UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      updateAutonomousDatabaseOperationSettings() {
+    return updateAutonomousDatabaseOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteAutonomousDatabase. */
@@ -1302,6 +2178,282 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       restartAutonomousDatabaseOperationSettings() {
     return restartAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchoverAutonomousDatabase. */
+  public UnaryCallSettings<SwitchoverAutonomousDatabaseRequest, Operation>
+      switchoverAutonomousDatabaseSettings() {
+    return switchoverAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to switchoverAutonomousDatabase. */
+  public OperationCallSettings<
+          SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      switchoverAutonomousDatabaseOperationSettings() {
+    return switchoverAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to failoverAutonomousDatabase. */
+  public UnaryCallSettings<FailoverAutonomousDatabaseRequest, Operation>
+      failoverAutonomousDatabaseSettings() {
+    return failoverAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to failoverAutonomousDatabase. */
+  public OperationCallSettings<
+          FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      failoverAutonomousDatabaseOperationSettings() {
+    return failoverAutonomousDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listOdbNetworks. */
+  public PagedCallSettings<
+          ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+      listOdbNetworksSettings() {
+    return listOdbNetworksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOdbNetwork. */
+  public UnaryCallSettings<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings() {
+    return getOdbNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbNetwork. */
+  public UnaryCallSettings<CreateOdbNetworkRequest, Operation> createOdbNetworkSettings() {
+    return createOdbNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbNetwork. */
+  public OperationCallSettings<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+      createOdbNetworkOperationSettings() {
+    return createOdbNetworkOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbNetwork. */
+  public UnaryCallSettings<DeleteOdbNetworkRequest, Operation> deleteOdbNetworkSettings() {
+    return deleteOdbNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbNetwork. */
+  public OperationCallSettings<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+      deleteOdbNetworkOperationSettings() {
+    return deleteOdbNetworkOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listOdbSubnets. */
+  public PagedCallSettings<
+          ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+      listOdbSubnetsSettings() {
+    return listOdbSubnetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOdbSubnet. */
+  public UnaryCallSettings<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings() {
+    return getOdbSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbSubnet. */
+  public UnaryCallSettings<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings() {
+    return createOdbSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbSubnet. */
+  public OperationCallSettings<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+      createOdbSubnetOperationSettings() {
+    return createOdbSubnetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbSubnet. */
+  public UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
+    return deleteOdbSubnetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbSubnet. */
+  public OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+      deleteOdbSubnetOperationSettings() {
+    return deleteOdbSubnetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExadbVmClusters. */
+  public PagedCallSettings<
+          ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
+      listExadbVmClustersSettings() {
+    return listExadbVmClustersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExadbVmCluster. */
+  public UnaryCallSettings<GetExadbVmClusterRequest, ExadbVmCluster> getExadbVmClusterSettings() {
+    return getExadbVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExadbVmCluster. */
+  public UnaryCallSettings<CreateExadbVmClusterRequest, Operation> createExadbVmClusterSettings() {
+    return createExadbVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExadbVmCluster. */
+  public OperationCallSettings<CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      createExadbVmClusterOperationSettings() {
+    return createExadbVmClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExadbVmCluster. */
+  public UnaryCallSettings<DeleteExadbVmClusterRequest, Operation> deleteExadbVmClusterSettings() {
+    return deleteExadbVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExadbVmCluster. */
+  public OperationCallSettings<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+      deleteExadbVmClusterOperationSettings() {
+    return deleteExadbVmClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExadbVmCluster. */
+  public UnaryCallSettings<UpdateExadbVmClusterRequest, Operation> updateExadbVmClusterSettings() {
+    return updateExadbVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateExadbVmCluster. */
+  public OperationCallSettings<UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      updateExadbVmClusterOperationSettings() {
+    return updateExadbVmClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeVirtualMachineExadbVmCluster. */
+  public UnaryCallSettings<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+      removeVirtualMachineExadbVmClusterSettings() {
+    return removeVirtualMachineExadbVmClusterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to removeVirtualMachineExadbVmCluster. */
+  public OperationCallSettings<
+          RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+      removeVirtualMachineExadbVmClusterOperationSettings() {
+    return removeVirtualMachineExadbVmClusterOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listExascaleDbStorageVaults. */
+  public PagedCallSettings<
+          ListExascaleDbStorageVaultsRequest,
+          ListExascaleDbStorageVaultsResponse,
+          ListExascaleDbStorageVaultsPagedResponse>
+      listExascaleDbStorageVaultsSettings() {
+    return listExascaleDbStorageVaultsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getExascaleDbStorageVault. */
+  public UnaryCallSettings<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+      getExascaleDbStorageVaultSettings() {
+    return getExascaleDbStorageVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExascaleDbStorageVault. */
+  public UnaryCallSettings<CreateExascaleDbStorageVaultRequest, Operation>
+      createExascaleDbStorageVaultSettings() {
+    return createExascaleDbStorageVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createExascaleDbStorageVault. */
+  public OperationCallSettings<
+          CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+      createExascaleDbStorageVaultOperationSettings() {
+    return createExascaleDbStorageVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
+  public UnaryCallSettings<DeleteExascaleDbStorageVaultRequest, Operation>
+      deleteExascaleDbStorageVaultSettings() {
+    return deleteExascaleDbStorageVaultSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteExascaleDbStorageVault. */
+  public OperationCallSettings<DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+      deleteExascaleDbStorageVaultOperationSettings() {
+    return deleteExascaleDbStorageVaultOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystemInitialStorageSizes. */
+  public PagedCallSettings<
+          ListDbSystemInitialStorageSizesRequest,
+          ListDbSystemInitialStorageSizesResponse,
+          ListDbSystemInitialStorageSizesPagedResponse>
+      listDbSystemInitialStorageSizesSettings() {
+    return listDbSystemInitialStorageSizesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatabases. */
+  public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+      listDatabasesSettings() {
+    return listDatabasesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDatabase. */
+  public UnaryCallSettings<GetDatabaseRequest, Database> getDatabaseSettings() {
+    return getDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listPluggableDatabases. */
+  public PagedCallSettings<
+          ListPluggableDatabasesRequest,
+          ListPluggableDatabasesResponse,
+          ListPluggableDatabasesPagedResponse>
+      listPluggableDatabasesSettings() {
+    return listPluggableDatabasesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPluggableDatabase. */
+  public UnaryCallSettings<GetPluggableDatabaseRequest, PluggableDatabase>
+      getPluggableDatabaseSettings() {
+    return getPluggableDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDbSystems. */
+  public PagedCallSettings<ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+      listDbSystemsSettings() {
+    return listDbSystemsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDbSystem. */
+  public UnaryCallSettings<GetDbSystemRequest, DbSystem> getDbSystemSettings() {
+    return getDbSystemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDbSystem. */
+  public UnaryCallSettings<CreateDbSystemRequest, Operation> createDbSystemSettings() {
+    return createDbSystemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDbSystem. */
+  public OperationCallSettings<CreateDbSystemRequest, DbSystem, OperationMetadata>
+      createDbSystemOperationSettings() {
+    return createDbSystemOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDbSystem. */
+  public UnaryCallSettings<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
+    return deleteDbSystemSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDbSystem. */
+  public OperationCallSettings<DeleteDbSystemRequest, Empty, OperationMetadata>
+      deleteDbSystemOperationSettings() {
+    return deleteDbSystemOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDbVersions. */
+  public PagedCallSettings<
+          ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+      listDbVersionsSettings() {
+    return listDbVersionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseCharacterSets. */
+  public PagedCallSettings<
+          ListDatabaseCharacterSetsRequest,
+          ListDatabaseCharacterSetsResponse,
+          ListDatabaseCharacterSetsPagedResponse>
+      listDatabaseCharacterSetsSettings() {
+    return listDatabaseCharacterSetsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -1450,12 +2602,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     listDbServersSettings = settingsBuilder.listDbServersSettings().build();
     listDbNodesSettings = settingsBuilder.listDbNodesSettings().build();
     listGiVersionsSettings = settingsBuilder.listGiVersionsSettings().build();
+    listMinorVersionsSettings = settingsBuilder.listMinorVersionsSettings().build();
     listDbSystemShapesSettings = settingsBuilder.listDbSystemShapesSettings().build();
     listAutonomousDatabasesSettings = settingsBuilder.listAutonomousDatabasesSettings().build();
     getAutonomousDatabaseSettings = settingsBuilder.getAutonomousDatabaseSettings().build();
     createAutonomousDatabaseSettings = settingsBuilder.createAutonomousDatabaseSettings().build();
     createAutonomousDatabaseOperationSettings =
         settingsBuilder.createAutonomousDatabaseOperationSettings().build();
+    updateAutonomousDatabaseSettings = settingsBuilder.updateAutonomousDatabaseSettings().build();
+    updateAutonomousDatabaseOperationSettings =
+        settingsBuilder.updateAutonomousDatabaseOperationSettings().build();
     deleteAutonomousDatabaseSettings = settingsBuilder.deleteAutonomousDatabaseSettings().build();
     deleteAutonomousDatabaseOperationSettings =
         settingsBuilder.deleteAutonomousDatabaseOperationSettings().build();
@@ -1478,6 +2634,66 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     restartAutonomousDatabaseSettings = settingsBuilder.restartAutonomousDatabaseSettings().build();
     restartAutonomousDatabaseOperationSettings =
         settingsBuilder.restartAutonomousDatabaseOperationSettings().build();
+    switchoverAutonomousDatabaseSettings =
+        settingsBuilder.switchoverAutonomousDatabaseSettings().build();
+    switchoverAutonomousDatabaseOperationSettings =
+        settingsBuilder.switchoverAutonomousDatabaseOperationSettings().build();
+    failoverAutonomousDatabaseSettings =
+        settingsBuilder.failoverAutonomousDatabaseSettings().build();
+    failoverAutonomousDatabaseOperationSettings =
+        settingsBuilder.failoverAutonomousDatabaseOperationSettings().build();
+    listOdbNetworksSettings = settingsBuilder.listOdbNetworksSettings().build();
+    getOdbNetworkSettings = settingsBuilder.getOdbNetworkSettings().build();
+    createOdbNetworkSettings = settingsBuilder.createOdbNetworkSettings().build();
+    createOdbNetworkOperationSettings = settingsBuilder.createOdbNetworkOperationSettings().build();
+    deleteOdbNetworkSettings = settingsBuilder.deleteOdbNetworkSettings().build();
+    deleteOdbNetworkOperationSettings = settingsBuilder.deleteOdbNetworkOperationSettings().build();
+    listOdbSubnetsSettings = settingsBuilder.listOdbSubnetsSettings().build();
+    getOdbSubnetSettings = settingsBuilder.getOdbSubnetSettings().build();
+    createOdbSubnetSettings = settingsBuilder.createOdbSubnetSettings().build();
+    createOdbSubnetOperationSettings = settingsBuilder.createOdbSubnetOperationSettings().build();
+    deleteOdbSubnetSettings = settingsBuilder.deleteOdbSubnetSettings().build();
+    deleteOdbSubnetOperationSettings = settingsBuilder.deleteOdbSubnetOperationSettings().build();
+    listExadbVmClustersSettings = settingsBuilder.listExadbVmClustersSettings().build();
+    getExadbVmClusterSettings = settingsBuilder.getExadbVmClusterSettings().build();
+    createExadbVmClusterSettings = settingsBuilder.createExadbVmClusterSettings().build();
+    createExadbVmClusterOperationSettings =
+        settingsBuilder.createExadbVmClusterOperationSettings().build();
+    deleteExadbVmClusterSettings = settingsBuilder.deleteExadbVmClusterSettings().build();
+    deleteExadbVmClusterOperationSettings =
+        settingsBuilder.deleteExadbVmClusterOperationSettings().build();
+    updateExadbVmClusterSettings = settingsBuilder.updateExadbVmClusterSettings().build();
+    updateExadbVmClusterOperationSettings =
+        settingsBuilder.updateExadbVmClusterOperationSettings().build();
+    removeVirtualMachineExadbVmClusterSettings =
+        settingsBuilder.removeVirtualMachineExadbVmClusterSettings().build();
+    removeVirtualMachineExadbVmClusterOperationSettings =
+        settingsBuilder.removeVirtualMachineExadbVmClusterOperationSettings().build();
+    listExascaleDbStorageVaultsSettings =
+        settingsBuilder.listExascaleDbStorageVaultsSettings().build();
+    getExascaleDbStorageVaultSettings = settingsBuilder.getExascaleDbStorageVaultSettings().build();
+    createExascaleDbStorageVaultSettings =
+        settingsBuilder.createExascaleDbStorageVaultSettings().build();
+    createExascaleDbStorageVaultOperationSettings =
+        settingsBuilder.createExascaleDbStorageVaultOperationSettings().build();
+    deleteExascaleDbStorageVaultSettings =
+        settingsBuilder.deleteExascaleDbStorageVaultSettings().build();
+    deleteExascaleDbStorageVaultOperationSettings =
+        settingsBuilder.deleteExascaleDbStorageVaultOperationSettings().build();
+    listDbSystemInitialStorageSizesSettings =
+        settingsBuilder.listDbSystemInitialStorageSizesSettings().build();
+    listDatabasesSettings = settingsBuilder.listDatabasesSettings().build();
+    getDatabaseSettings = settingsBuilder.getDatabaseSettings().build();
+    listPluggableDatabasesSettings = settingsBuilder.listPluggableDatabasesSettings().build();
+    getPluggableDatabaseSettings = settingsBuilder.getPluggableDatabaseSettings().build();
+    listDbSystemsSettings = settingsBuilder.listDbSystemsSettings().build();
+    getDbSystemSettings = settingsBuilder.getDbSystemSettings().build();
+    createDbSystemSettings = settingsBuilder.createDbSystemSettings().build();
+    createDbSystemOperationSettings = settingsBuilder.createDbSystemOperationSettings().build();
+    deleteDbSystemSettings = settingsBuilder.deleteDbSystemSettings().build();
+    deleteDbSystemOperationSettings = settingsBuilder.deleteDbSystemOperationSettings().build();
+    listDbVersionsSettings = settingsBuilder.listDbVersionsSettings().build();
+    listDatabaseCharacterSetsSettings = settingsBuilder.listDatabaseCharacterSetsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1533,6 +2749,9 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             ListGiVersionsRequest, ListGiVersionsResponse, ListGiVersionsPagedResponse>
         listGiVersionsSettings;
     private final PagedCallSettings.Builder<
+            ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+        listMinorVersionsSettings;
+    private final PagedCallSettings.Builder<
             ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
         listDbSystemShapesSettings;
     private final PagedCallSettings.Builder<
@@ -1547,6 +2766,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         createAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAutonomousDatabaseRequest, Operation>
+        updateAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        updateAutonomousDatabaseOperationSettings;
     private final UnaryCallSettings.Builder<DeleteAutonomousDatabaseRequest, Operation>
         deleteAutonomousDatabaseSettings;
     private final OperationCallSettings.Builder<
@@ -1590,6 +2814,123 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         restartAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<SwitchoverAutonomousDatabaseRequest, Operation>
+        switchoverAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        switchoverAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<FailoverAutonomousDatabaseRequest, Operation>
+        failoverAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        failoverAutonomousDatabaseOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+        listOdbNetworksSettings;
+    private final UnaryCallSettings.Builder<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings;
+    private final UnaryCallSettings.Builder<CreateOdbNetworkRequest, Operation>
+        createOdbNetworkSettings;
+    private final OperationCallSettings.Builder<
+            CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        createOdbNetworkOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
+        deleteOdbNetworkSettings;
+    private final OperationCallSettings.Builder<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+        deleteOdbNetworkOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+        listOdbSubnetsSettings;
+    private final UnaryCallSettings.Builder<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings;
+    private final UnaryCallSettings.Builder<CreateOdbSubnetRequest, Operation>
+        createOdbSubnetSettings;
+    private final OperationCallSettings.Builder<
+            CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        createOdbSubnetOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteOdbSubnetRequest, Operation>
+        deleteOdbSubnetSettings;
+    private final OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+        deleteOdbSubnetOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListExadbVmClustersRequest,
+            ListExadbVmClustersResponse,
+            ListExadbVmClustersPagedResponse>
+        listExadbVmClustersSettings;
+    private final UnaryCallSettings.Builder<GetExadbVmClusterRequest, ExadbVmCluster>
+        getExadbVmClusterSettings;
+    private final UnaryCallSettings.Builder<CreateExadbVmClusterRequest, Operation>
+        createExadbVmClusterSettings;
+    private final OperationCallSettings.Builder<
+            CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        createExadbVmClusterOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteExadbVmClusterRequest, Operation>
+        deleteExadbVmClusterSettings;
+    private final OperationCallSettings.Builder<
+            DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+        deleteExadbVmClusterOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateExadbVmClusterRequest, Operation>
+        updateExadbVmClusterSettings;
+    private final OperationCallSettings.Builder<
+            UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        updateExadbVmClusterOperationSettings;
+    private final UnaryCallSettings.Builder<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+        removeVirtualMachineExadbVmClusterSettings;
+    private final OperationCallSettings.Builder<
+            RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        removeVirtualMachineExadbVmClusterOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListExascaleDbStorageVaultsRequest,
+            ListExascaleDbStorageVaultsResponse,
+            ListExascaleDbStorageVaultsPagedResponse>
+        listExascaleDbStorageVaultsSettings;
+    private final UnaryCallSettings.Builder<
+            GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+        getExascaleDbStorageVaultSettings;
+    private final UnaryCallSettings.Builder<CreateExascaleDbStorageVaultRequest, Operation>
+        createExascaleDbStorageVaultSettings;
+    private final OperationCallSettings.Builder<
+            CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        createExascaleDbStorageVaultOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
+        deleteExascaleDbStorageVaultSettings;
+    private final OperationCallSettings.Builder<
+            DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+        deleteExascaleDbStorageVaultOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDbSystemInitialStorageSizesRequest,
+            ListDbSystemInitialStorageSizesResponse,
+            ListDbSystemInitialStorageSizesPagedResponse>
+        listDbSystemInitialStorageSizesSettings;
+    private final PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings;
+    private final UnaryCallSettings.Builder<GetDatabaseRequest, Database> getDatabaseSettings;
+    private final PagedCallSettings.Builder<
+            ListPluggableDatabasesRequest,
+            ListPluggableDatabasesResponse,
+            ListPluggableDatabasesPagedResponse>
+        listPluggableDatabasesSettings;
+    private final UnaryCallSettings.Builder<GetPluggableDatabaseRequest, PluggableDatabase>
+        getPluggableDatabaseSettings;
+    private final PagedCallSettings.Builder<
+            ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+        listDbSystemsSettings;
+    private final UnaryCallSettings.Builder<GetDbSystemRequest, DbSystem> getDbSystemSettings;
+    private final UnaryCallSettings.Builder<CreateDbSystemRequest, Operation>
+        createDbSystemSettings;
+    private final OperationCallSettings.Builder<CreateDbSystemRequest, DbSystem, OperationMetadata>
+        createDbSystemOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation>
+        deleteDbSystemSettings;
+    private final OperationCallSettings.Builder<DeleteDbSystemRequest, Empty, OperationMetadata>
+        deleteDbSystemOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+        listDbVersionsSettings;
+    private final PagedCallSettings.Builder<
+            ListDatabaseCharacterSetsRequest,
+            ListDatabaseCharacterSetsResponse,
+            ListDatabaseCharacterSetsPagedResponse>
+        listDatabaseCharacterSetsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1604,10 +2945,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.RESOURCE_EXHAUSTED,
-                  StatusCode.Code.UNAVAILABLE,
-                  StatusCode.Code.INTERNAL,
-                  StatusCode.Code.DEADLINE_EXCEEDED)));
+                  StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
@@ -1665,6 +3003,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       listDbServersSettings = PagedCallSettings.newBuilder(LIST_DB_SERVERS_PAGE_STR_FACT);
       listDbNodesSettings = PagedCallSettings.newBuilder(LIST_DB_NODES_PAGE_STR_FACT);
       listGiVersionsSettings = PagedCallSettings.newBuilder(LIST_GI_VERSIONS_PAGE_STR_FACT);
+      listMinorVersionsSettings = PagedCallSettings.newBuilder(LIST_MINOR_VERSIONS_PAGE_STR_FACT);
       listDbSystemShapesSettings =
           PagedCallSettings.newBuilder(LIST_DB_SYSTEM_SHAPES_PAGE_STR_FACT);
       listAutonomousDatabasesSettings =
@@ -1672,6 +3011,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       getAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      updateAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
       deleteAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
       restoreAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1689,6 +3030,56 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       startAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
       restartAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restartAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      switchoverAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      switchoverAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      failoverAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      failoverAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      listOdbNetworksSettings = PagedCallSettings.newBuilder(LIST_ODB_NETWORKS_PAGE_STR_FACT);
+      getOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbNetworkOperationSettings = OperationCallSettings.newBuilder();
+      deleteOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOdbNetworkOperationSettings = OperationCallSettings.newBuilder();
+      listOdbSubnetsSettings = PagedCallSettings.newBuilder(LIST_ODB_SUBNETS_PAGE_STR_FACT);
+      getOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
+      deleteOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
+      listExadbVmClustersSettings =
+          PagedCallSettings.newBuilder(LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT);
+      getExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createExadbVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      deleteExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteExadbVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      updateExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateExadbVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      removeVirtualMachineExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      removeVirtualMachineExadbVmClusterOperationSettings = OperationCallSettings.newBuilder();
+      listExascaleDbStorageVaultsSettings =
+          PagedCallSettings.newBuilder(LIST_EXASCALE_DB_STORAGE_VAULTS_PAGE_STR_FACT);
+      getExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createExascaleDbStorageVaultOperationSettings = OperationCallSettings.newBuilder();
+      deleteExascaleDbStorageVaultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteExascaleDbStorageVaultOperationSettings = OperationCallSettings.newBuilder();
+      listDbSystemInitialStorageSizesSettings =
+          PagedCallSettings.newBuilder(LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES_PAGE_STR_FACT);
+      listDatabasesSettings = PagedCallSettings.newBuilder(LIST_DATABASES_PAGE_STR_FACT);
+      getDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listPluggableDatabasesSettings =
+          PagedCallSettings.newBuilder(LIST_PLUGGABLE_DATABASES_PAGE_STR_FACT);
+      getPluggableDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDbSystemsSettings = PagedCallSettings.newBuilder(LIST_DB_SYSTEMS_PAGE_STR_FACT);
+      getDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDbSystemOperationSettings = OperationCallSettings.newBuilder();
+      deleteDbSystemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDbSystemOperationSettings = OperationCallSettings.newBuilder();
+      listDbVersionsSettings = PagedCallSettings.newBuilder(LIST_DB_VERSIONS_PAGE_STR_FACT);
+      listDatabaseCharacterSetsSettings =
+          PagedCallSettings.newBuilder(LIST_DATABASE_CHARACTER_SETS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1706,10 +3097,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listDbServersSettings,
               listDbNodesSettings,
               listGiVersionsSettings,
+              listMinorVersionsSettings,
               listDbSystemShapesSettings,
               listAutonomousDatabasesSettings,
               getAutonomousDatabaseSettings,
               createAutonomousDatabaseSettings,
+              updateAutonomousDatabaseSettings,
               deleteAutonomousDatabaseSettings,
               restoreAutonomousDatabaseSettings,
               generateAutonomousDatabaseWalletSettings,
@@ -1719,6 +3112,37 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               stopAutonomousDatabaseSettings,
               startAutonomousDatabaseSettings,
               restartAutonomousDatabaseSettings,
+              switchoverAutonomousDatabaseSettings,
+              failoverAutonomousDatabaseSettings,
+              listOdbNetworksSettings,
+              getOdbNetworkSettings,
+              createOdbNetworkSettings,
+              deleteOdbNetworkSettings,
+              listOdbSubnetsSettings,
+              getOdbSubnetSettings,
+              createOdbSubnetSettings,
+              deleteOdbSubnetSettings,
+              listExadbVmClustersSettings,
+              getExadbVmClusterSettings,
+              createExadbVmClusterSettings,
+              deleteExadbVmClusterSettings,
+              updateExadbVmClusterSettings,
+              removeVirtualMachineExadbVmClusterSettings,
+              listExascaleDbStorageVaultsSettings,
+              getExascaleDbStorageVaultSettings,
+              createExascaleDbStorageVaultSettings,
+              deleteExascaleDbStorageVaultSettings,
+              listDbSystemInitialStorageSizesSettings,
+              listDatabasesSettings,
+              getDatabaseSettings,
+              listPluggableDatabasesSettings,
+              getPluggableDatabaseSettings,
+              listDbSystemsSettings,
+              getDbSystemSettings,
+              createDbSystemSettings,
+              deleteDbSystemSettings,
+              listDbVersionsSettings,
+              listDatabaseCharacterSetsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1751,12 +3175,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       listDbServersSettings = settings.listDbServersSettings.toBuilder();
       listDbNodesSettings = settings.listDbNodesSettings.toBuilder();
       listGiVersionsSettings = settings.listGiVersionsSettings.toBuilder();
+      listMinorVersionsSettings = settings.listMinorVersionsSettings.toBuilder();
       listDbSystemShapesSettings = settings.listDbSystemShapesSettings.toBuilder();
       listAutonomousDatabasesSettings = settings.listAutonomousDatabasesSettings.toBuilder();
       getAutonomousDatabaseSettings = settings.getAutonomousDatabaseSettings.toBuilder();
       createAutonomousDatabaseSettings = settings.createAutonomousDatabaseSettings.toBuilder();
       createAutonomousDatabaseOperationSettings =
           settings.createAutonomousDatabaseOperationSettings.toBuilder();
+      updateAutonomousDatabaseSettings = settings.updateAutonomousDatabaseSettings.toBuilder();
+      updateAutonomousDatabaseOperationSettings =
+          settings.updateAutonomousDatabaseOperationSettings.toBuilder();
       deleteAutonomousDatabaseSettings = settings.deleteAutonomousDatabaseSettings.toBuilder();
       deleteAutonomousDatabaseOperationSettings =
           settings.deleteAutonomousDatabaseOperationSettings.toBuilder();
@@ -1779,6 +3207,65 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       restartAutonomousDatabaseSettings = settings.restartAutonomousDatabaseSettings.toBuilder();
       restartAutonomousDatabaseOperationSettings =
           settings.restartAutonomousDatabaseOperationSettings.toBuilder();
+      switchoverAutonomousDatabaseSettings =
+          settings.switchoverAutonomousDatabaseSettings.toBuilder();
+      switchoverAutonomousDatabaseOperationSettings =
+          settings.switchoverAutonomousDatabaseOperationSettings.toBuilder();
+      failoverAutonomousDatabaseSettings = settings.failoverAutonomousDatabaseSettings.toBuilder();
+      failoverAutonomousDatabaseOperationSettings =
+          settings.failoverAutonomousDatabaseOperationSettings.toBuilder();
+      listOdbNetworksSettings = settings.listOdbNetworksSettings.toBuilder();
+      getOdbNetworkSettings = settings.getOdbNetworkSettings.toBuilder();
+      createOdbNetworkSettings = settings.createOdbNetworkSettings.toBuilder();
+      createOdbNetworkOperationSettings = settings.createOdbNetworkOperationSettings.toBuilder();
+      deleteOdbNetworkSettings = settings.deleteOdbNetworkSettings.toBuilder();
+      deleteOdbNetworkOperationSettings = settings.deleteOdbNetworkOperationSettings.toBuilder();
+      listOdbSubnetsSettings = settings.listOdbSubnetsSettings.toBuilder();
+      getOdbSubnetSettings = settings.getOdbSubnetSettings.toBuilder();
+      createOdbSubnetSettings = settings.createOdbSubnetSettings.toBuilder();
+      createOdbSubnetOperationSettings = settings.createOdbSubnetOperationSettings.toBuilder();
+      deleteOdbSubnetSettings = settings.deleteOdbSubnetSettings.toBuilder();
+      deleteOdbSubnetOperationSettings = settings.deleteOdbSubnetOperationSettings.toBuilder();
+      listExadbVmClustersSettings = settings.listExadbVmClustersSettings.toBuilder();
+      getExadbVmClusterSettings = settings.getExadbVmClusterSettings.toBuilder();
+      createExadbVmClusterSettings = settings.createExadbVmClusterSettings.toBuilder();
+      createExadbVmClusterOperationSettings =
+          settings.createExadbVmClusterOperationSettings.toBuilder();
+      deleteExadbVmClusterSettings = settings.deleteExadbVmClusterSettings.toBuilder();
+      deleteExadbVmClusterOperationSettings =
+          settings.deleteExadbVmClusterOperationSettings.toBuilder();
+      updateExadbVmClusterSettings = settings.updateExadbVmClusterSettings.toBuilder();
+      updateExadbVmClusterOperationSettings =
+          settings.updateExadbVmClusterOperationSettings.toBuilder();
+      removeVirtualMachineExadbVmClusterSettings =
+          settings.removeVirtualMachineExadbVmClusterSettings.toBuilder();
+      removeVirtualMachineExadbVmClusterOperationSettings =
+          settings.removeVirtualMachineExadbVmClusterOperationSettings.toBuilder();
+      listExascaleDbStorageVaultsSettings =
+          settings.listExascaleDbStorageVaultsSettings.toBuilder();
+      getExascaleDbStorageVaultSettings = settings.getExascaleDbStorageVaultSettings.toBuilder();
+      createExascaleDbStorageVaultSettings =
+          settings.createExascaleDbStorageVaultSettings.toBuilder();
+      createExascaleDbStorageVaultOperationSettings =
+          settings.createExascaleDbStorageVaultOperationSettings.toBuilder();
+      deleteExascaleDbStorageVaultSettings =
+          settings.deleteExascaleDbStorageVaultSettings.toBuilder();
+      deleteExascaleDbStorageVaultOperationSettings =
+          settings.deleteExascaleDbStorageVaultOperationSettings.toBuilder();
+      listDbSystemInitialStorageSizesSettings =
+          settings.listDbSystemInitialStorageSizesSettings.toBuilder();
+      listDatabasesSettings = settings.listDatabasesSettings.toBuilder();
+      getDatabaseSettings = settings.getDatabaseSettings.toBuilder();
+      listPluggableDatabasesSettings = settings.listPluggableDatabasesSettings.toBuilder();
+      getPluggableDatabaseSettings = settings.getPluggableDatabaseSettings.toBuilder();
+      listDbSystemsSettings = settings.listDbSystemsSettings.toBuilder();
+      getDbSystemSettings = settings.getDbSystemSettings.toBuilder();
+      createDbSystemSettings = settings.createDbSystemSettings.toBuilder();
+      createDbSystemOperationSettings = settings.createDbSystemOperationSettings.toBuilder();
+      deleteDbSystemSettings = settings.deleteDbSystemSettings.toBuilder();
+      deleteDbSystemOperationSettings = settings.deleteDbSystemOperationSettings.toBuilder();
+      listDbVersionsSettings = settings.listDbVersionsSettings.toBuilder();
+      listDatabaseCharacterSetsSettings = settings.listDatabaseCharacterSetsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1796,10 +3283,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               listDbServersSettings,
               listDbNodesSettings,
               listGiVersionsSettings,
+              listMinorVersionsSettings,
               listDbSystemShapesSettings,
               listAutonomousDatabasesSettings,
               getAutonomousDatabaseSettings,
               createAutonomousDatabaseSettings,
+              updateAutonomousDatabaseSettings,
               deleteAutonomousDatabaseSettings,
               restoreAutonomousDatabaseSettings,
               generateAutonomousDatabaseWalletSettings,
@@ -1809,6 +3298,37 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               stopAutonomousDatabaseSettings,
               startAutonomousDatabaseSettings,
               restartAutonomousDatabaseSettings,
+              switchoverAutonomousDatabaseSettings,
+              failoverAutonomousDatabaseSettings,
+              listOdbNetworksSettings,
+              getOdbNetworkSettings,
+              createOdbNetworkSettings,
+              deleteOdbNetworkSettings,
+              listOdbSubnetsSettings,
+              getOdbSubnetSettings,
+              createOdbSubnetSettings,
+              deleteOdbSubnetSettings,
+              listExadbVmClustersSettings,
+              getExadbVmClusterSettings,
+              createExadbVmClusterSettings,
+              deleteExadbVmClusterSettings,
+              updateExadbVmClusterSettings,
+              removeVirtualMachineExadbVmClusterSettings,
+              listExascaleDbStorageVaultsSettings,
+              getExascaleDbStorageVaultSettings,
+              createExascaleDbStorageVaultSettings,
+              deleteExascaleDbStorageVaultSettings,
+              listDbSystemInitialStorageSizesSettings,
+              listDatabasesSettings,
+              getDatabaseSettings,
+              listPluggableDatabasesSettings,
+              getPluggableDatabaseSettings,
+              listDbSystemsSettings,
+              getDbSystemSettings,
+              createDbSystemSettings,
+              deleteDbSystemSettings,
+              listDbVersionsSettings,
+              listDatabaseCharacterSetsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1899,6 +3419,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listMinorVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listDbSystemShapesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1915,6 +3440,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .createAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateAutonomousDatabaseSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1962,6 +3492,161 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .restartAutonomousDatabaseSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .switchoverAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .failoverAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listOdbNetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOdbNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createOdbNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteOdbNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listOdbSubnetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listExadbVmClustersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getExadbVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createExadbVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteExadbVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateExadbVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .removeVirtualMachineExadbVmClusterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listExascaleDbStorageVaultsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getExascaleDbStorageVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createExascaleDbStorageVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteExascaleDbStorageVaultSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDbSystemInitialStorageSizesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDatabasesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listPluggableDatabasesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getPluggableDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDbSystemsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDbSystemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDbSystemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteDbSystemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listDbVersionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDatabaseCharacterSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listLocationsSettings()
@@ -2097,6 +3782,30 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                       .build()));
 
       builder
+          .updateAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutonomousDatabaseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .deleteAutonomousDatabaseOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -2204,6 +3913,347 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .switchoverAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SwitchoverAutonomousDatabaseRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .failoverAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<FailoverAutonomousDatabaseRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createOdbNetworkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateOdbNetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbNetwork.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteOdbNetworkOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteOdbNetworkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createOdbSubnetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateOdbSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbSubnet.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteOdbSubnetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteOdbSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createExadbVmClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateExadbVmClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExadbVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteExadbVmClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteExadbVmClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateExadbVmClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateExadbVmClusterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExadbVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .removeVirtualMachineExadbVmClusterOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RemoveVirtualMachineExadbVmClusterRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExadbVmCluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createExascaleDbStorageVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateExascaleDbStorageVaultRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExascaleDbStorageVault.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteExascaleDbStorageVaultOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteExascaleDbStorageVaultRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDbSystemOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDbSystemRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DbSystem.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDbSystemOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDbSystemRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -2346,6 +4396,13 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       return listGiVersionsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listMinorVersions. */
+    public PagedCallSettings.Builder<
+            ListMinorVersionsRequest, ListMinorVersionsResponse, ListMinorVersionsPagedResponse>
+        listMinorVersionsSettings() {
+      return listMinorVersionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listDbSystemShapes. */
     public PagedCallSettings.Builder<
             ListDbSystemShapesRequest, ListDbSystemShapesResponse, ListDbSystemShapesPagedResponse>
@@ -2379,6 +4436,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             CreateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         createAutonomousDatabaseOperationSettings() {
       return createAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutonomousDatabase. */
+    public UnaryCallSettings.Builder<UpdateAutonomousDatabaseRequest, Operation>
+        updateAutonomousDatabaseSettings() {
+      return updateAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            UpdateAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        updateAutonomousDatabaseOperationSettings() {
+      return updateAutonomousDatabaseOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAutonomousDatabase. */
@@ -2479,6 +4549,299 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         restartAutonomousDatabaseOperationSettings() {
       return restartAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverAutonomousDatabase. */
+    public UnaryCallSettings.Builder<SwitchoverAutonomousDatabaseRequest, Operation>
+        switchoverAutonomousDatabaseSettings() {
+      return switchoverAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to switchoverAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            SwitchoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        switchoverAutonomousDatabaseOperationSettings() {
+      return switchoverAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverAutonomousDatabase. */
+    public UnaryCallSettings.Builder<FailoverAutonomousDatabaseRequest, Operation>
+        failoverAutonomousDatabaseSettings() {
+      return failoverAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to failoverAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        failoverAutonomousDatabaseOperationSettings() {
+      return failoverAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbNetworks. */
+    public PagedCallSettings.Builder<
+            ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
+        listOdbNetworksSettings() {
+      return listOdbNetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbNetwork. */
+    public UnaryCallSettings.Builder<GetOdbNetworkRequest, OdbNetwork> getOdbNetworkSettings() {
+      return getOdbNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbNetwork. */
+    public UnaryCallSettings.Builder<CreateOdbNetworkRequest, Operation>
+        createOdbNetworkSettings() {
+      return createOdbNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbNetwork. */
+    public OperationCallSettings.Builder<CreateOdbNetworkRequest, OdbNetwork, OperationMetadata>
+        createOdbNetworkOperationSettings() {
+      return createOdbNetworkOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
+    public UnaryCallSettings.Builder<DeleteOdbNetworkRequest, Operation>
+        deleteOdbNetworkSettings() {
+      return deleteOdbNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbNetwork. */
+    public OperationCallSettings.Builder<DeleteOdbNetworkRequest, Empty, OperationMetadata>
+        deleteOdbNetworkOperationSettings() {
+      return deleteOdbNetworkOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbSubnets. */
+    public PagedCallSettings.Builder<
+            ListOdbSubnetsRequest, ListOdbSubnetsResponse, ListOdbSubnetsPagedResponse>
+        listOdbSubnetsSettings() {
+      return listOdbSubnetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbSubnet. */
+    public UnaryCallSettings.Builder<GetOdbSubnetRequest, OdbSubnet> getOdbSubnetSettings() {
+      return getOdbSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbSubnet. */
+    public UnaryCallSettings.Builder<CreateOdbSubnetRequest, Operation> createOdbSubnetSettings() {
+      return createOdbSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbSubnet. */
+    public OperationCallSettings.Builder<CreateOdbSubnetRequest, OdbSubnet, OperationMetadata>
+        createOdbSubnetOperationSettings() {
+      return createOdbSubnetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
+    public UnaryCallSettings.Builder<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings() {
+      return deleteOdbSubnetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbSubnet. */
+    public OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
+        deleteOdbSubnetOperationSettings() {
+      return deleteOdbSubnetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExadbVmClusters. */
+    public PagedCallSettings.Builder<
+            ListExadbVmClustersRequest,
+            ListExadbVmClustersResponse,
+            ListExadbVmClustersPagedResponse>
+        listExadbVmClustersSettings() {
+      return listExadbVmClustersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getExadbVmCluster. */
+    public UnaryCallSettings.Builder<GetExadbVmClusterRequest, ExadbVmCluster>
+        getExadbVmClusterSettings() {
+      return getExadbVmClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExadbVmCluster. */
+    public UnaryCallSettings.Builder<CreateExadbVmClusterRequest, Operation>
+        createExadbVmClusterSettings() {
+      return createExadbVmClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExadbVmCluster. */
+    public OperationCallSettings.Builder<
+            CreateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        createExadbVmClusterOperationSettings() {
+      return createExadbVmClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExadbVmCluster. */
+    public UnaryCallSettings.Builder<DeleteExadbVmClusterRequest, Operation>
+        deleteExadbVmClusterSettings() {
+      return deleteExadbVmClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExadbVmCluster. */
+    public OperationCallSettings.Builder<DeleteExadbVmClusterRequest, Empty, OperationMetadata>
+        deleteExadbVmClusterOperationSettings() {
+      return deleteExadbVmClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExadbVmCluster. */
+    public UnaryCallSettings.Builder<UpdateExadbVmClusterRequest, Operation>
+        updateExadbVmClusterSettings() {
+      return updateExadbVmClusterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateExadbVmCluster. */
+    public OperationCallSettings.Builder<
+            UpdateExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        updateExadbVmClusterOperationSettings() {
+      return updateExadbVmClusterOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to removeVirtualMachineExadbVmCluster.
+     */
+    public UnaryCallSettings.Builder<RemoveVirtualMachineExadbVmClusterRequest, Operation>
+        removeVirtualMachineExadbVmClusterSettings() {
+      return removeVirtualMachineExadbVmClusterSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to removeVirtualMachineExadbVmCluster.
+     */
+    public OperationCallSettings.Builder<
+            RemoveVirtualMachineExadbVmClusterRequest, ExadbVmCluster, OperationMetadata>
+        removeVirtualMachineExadbVmClusterOperationSettings() {
+      return removeVirtualMachineExadbVmClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listExascaleDbStorageVaults. */
+    public PagedCallSettings.Builder<
+            ListExascaleDbStorageVaultsRequest,
+            ListExascaleDbStorageVaultsResponse,
+            ListExascaleDbStorageVaultsPagedResponse>
+        listExascaleDbStorageVaultsSettings() {
+      return listExascaleDbStorageVaultsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<GetExascaleDbStorageVaultRequest, ExascaleDbStorageVault>
+        getExascaleDbStorageVaultSettings() {
+      return getExascaleDbStorageVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<CreateExascaleDbStorageVaultRequest, Operation>
+        createExascaleDbStorageVaultSettings() {
+      return createExascaleDbStorageVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            CreateExascaleDbStorageVaultRequest, ExascaleDbStorageVault, OperationMetadata>
+        createExascaleDbStorageVaultOperationSettings() {
+      return createExascaleDbStorageVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
+    public UnaryCallSettings.Builder<DeleteExascaleDbStorageVaultRequest, Operation>
+        deleteExascaleDbStorageVaultSettings() {
+      return deleteExascaleDbStorageVaultSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExascaleDbStorageVault. */
+    public OperationCallSettings.Builder<
+            DeleteExascaleDbStorageVaultRequest, Empty, OperationMetadata>
+        deleteExascaleDbStorageVaultOperationSettings() {
+      return deleteExascaleDbStorageVaultOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystemInitialStorageSizes. */
+    public PagedCallSettings.Builder<
+            ListDbSystemInitialStorageSizesRequest,
+            ListDbSystemInitialStorageSizesResponse,
+            ListDbSystemInitialStorageSizesPagedResponse>
+        listDbSystemInitialStorageSizesSettings() {
+      return listDbSystemInitialStorageSizesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabases. */
+    public PagedCallSettings.Builder<
+            ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
+        listDatabasesSettings() {
+      return listDatabasesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDatabase. */
+    public UnaryCallSettings.Builder<GetDatabaseRequest, Database> getDatabaseSettings() {
+      return getDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listPluggableDatabases. */
+    public PagedCallSettings.Builder<
+            ListPluggableDatabasesRequest,
+            ListPluggableDatabasesResponse,
+            ListPluggableDatabasesPagedResponse>
+        listPluggableDatabasesSettings() {
+      return listPluggableDatabasesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPluggableDatabase. */
+    public UnaryCallSettings.Builder<GetPluggableDatabaseRequest, PluggableDatabase>
+        getPluggableDatabaseSettings() {
+      return getPluggableDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDbSystems. */
+    public PagedCallSettings.Builder<
+            ListDbSystemsRequest, ListDbSystemsResponse, ListDbSystemsPagedResponse>
+        listDbSystemsSettings() {
+      return listDbSystemsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDbSystem. */
+    public UnaryCallSettings.Builder<GetDbSystemRequest, DbSystem> getDbSystemSettings() {
+      return getDbSystemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDbSystem. */
+    public UnaryCallSettings.Builder<CreateDbSystemRequest, Operation> createDbSystemSettings() {
+      return createDbSystemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDbSystem. */
+    public OperationCallSettings.Builder<CreateDbSystemRequest, DbSystem, OperationMetadata>
+        createDbSystemOperationSettings() {
+      return createDbSystemOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDbSystem. */
+    public UnaryCallSettings.Builder<DeleteDbSystemRequest, Operation> deleteDbSystemSettings() {
+      return deleteDbSystemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDbSystem. */
+    public OperationCallSettings.Builder<DeleteDbSystemRequest, Empty, OperationMetadata>
+        deleteDbSystemOperationSettings() {
+      return deleteDbSystemOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDbVersions. */
+    public PagedCallSettings.Builder<
+            ListDbVersionsRequest, ListDbVersionsResponse, ListDbVersionsPagedResponse>
+        listDbVersionsSettings() {
+      return listDbVersionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseCharacterSets. */
+    public PagedCallSettings.Builder<
+            ListDatabaseCharacterSetsRequest,
+            ListDatabaseCharacterSetsResponse,
+            ListDatabaseCharacterSetsPagedResponse>
+        listDatabaseCharacterSetsSettings() {
+      return listDatabaseCharacterSetsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

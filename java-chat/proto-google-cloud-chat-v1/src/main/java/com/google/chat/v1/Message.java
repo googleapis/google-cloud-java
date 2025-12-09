@@ -1742,12 +1742,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about a message that's quoted by a Google Chat
-   * user in a space. Google Chat users can quote a message to reply to it.
+   * Optional. Information about a message that another message quotes.
+   *
+   * When you create a message, you can quote messages within the same
+   * thread, or quote a root message to create a new root message.
+   * However, you can't quote a message reply from a different thread.
+   *
+   * When you update a message, you can't add or replace the
+   * `quotedMessageMetadata` field, but you can remove it.
+   *
+   * For example usage, see [Quote another
+   * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
    * </pre>
    *
    * <code>
-   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the quotedMessageMetadata field is set.
@@ -1761,12 +1770,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about a message that's quoted by a Google Chat
-   * user in a space. Google Chat users can quote a message to reply to it.
+   * Optional. Information about a message that another message quotes.
+   *
+   * When you create a message, you can quote messages within the same
+   * thread, or quote a root message to create a new root message.
+   * However, you can't quote a message reply from a different thread.
+   *
+   * When you update a message, you can't add or replace the
+   * `quotedMessageMetadata` field, but you can remove it.
+   *
+   * For example usage, see [Quote another
+   * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
    * </pre>
    *
    * <code>
-   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The quotedMessageMetadata.
@@ -1782,12 +1800,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Information about a message that's quoted by a Google Chat
-   * user in a space. Google Chat users can quote a message to reply to it.
+   * Optional. Information about a message that another message quotes.
+   *
+   * When you create a message, you can quote messages within the same
+   * thread, or quote a root message to create a new root message.
+   * However, you can't quote a message reply from a different thread.
+   *
+   * When you update a message, you can't add or replace the
+   * `quotedMessageMetadata` field, but you can remove it.
+   *
+   * For example usage, see [Quote another
+   * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
    * </pre>
    *
    * <code>
-   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -9296,12 +9323,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the quotedMessageMetadata field is set.
@@ -9314,12 +9350,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The quotedMessageMetadata.
@@ -9338,12 +9383,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setQuotedMessageMetadata(com.google.chat.v1.QuotedMessageMetadata value) {
@@ -9364,12 +9418,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setQuotedMessageMetadata(
@@ -9388,12 +9451,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeQuotedMessageMetadata(com.google.chat.v1.QuotedMessageMetadata value) {
@@ -9420,12 +9492,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearQuotedMessageMetadata() {
@@ -9443,12 +9524,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.chat.v1.QuotedMessageMetadata.Builder getQuotedMessageMetadataBuilder() {
@@ -9461,12 +9551,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.chat.v1.QuotedMessageMetadataOrBuilder getQuotedMessageMetadataOrBuilder() {
@@ -9483,12 +9582,21 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Information about a message that's quoted by a Google Chat
-     * user in a space. Google Chat users can quote a message to reply to it.
+     * Optional. Information about a message that another message quotes.
+     *
+     * When you create a message, you can quote messages within the same
+     * thread, or quote a root message to create a new root message.
+     * However, you can't quote a message reply from a different thread.
+     *
+     * When you update a message, you can't add or replace the
+     * `quotedMessageMetadata` field, but you can remove it.
+     *
+     * For example usage, see [Quote another
+     * message](https://developers.google.com/workspace/chat/create-messages#quote-a-message).
      * </pre>
      *
      * <code>
-     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.chat.v1.QuotedMessageMetadata quoted_message_metadata = 39 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

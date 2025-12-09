@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for modifying Control.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/retail/v2alpha/control_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ControlServiceGrpc {
 
@@ -557,8 +554,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Control createControl(
-        com.google.cloud.retail.v2alpha.CreateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.CreateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateControlMethod(), getCallOptions(), request);
     }
 
@@ -572,8 +570,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteControl(
-        com.google.cloud.retail.v2alpha.DeleteControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.DeleteControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteControlMethod(), getCallOptions(), request);
     }
 
@@ -589,8 +588,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Control updateControl(
-        com.google.cloud.retail.v2alpha.UpdateControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.UpdateControlRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateControlMethod(), getCallOptions(), request);
     }
 
@@ -602,8 +602,8 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.Control getControl(
-        com.google.cloud.retail.v2alpha.GetControlRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.GetControlRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetControlMethod(), getCallOptions(), request);
     }
 
@@ -616,8 +616,9 @@ public final class ControlServiceGrpc {
      * </pre>
      */
     public com.google.cloud.retail.v2alpha.ListControlsResponse listControls(
-        com.google.cloud.retail.v2alpha.ListControlsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.retail.v2alpha.ListControlsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListControlsMethod(), getCallOptions(), request);
     }
   }

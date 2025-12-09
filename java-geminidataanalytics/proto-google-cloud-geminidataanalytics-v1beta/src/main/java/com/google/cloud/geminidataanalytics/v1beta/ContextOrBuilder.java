@@ -153,7 +153,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -168,7 +168,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -183,7 +183,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -198,7 +198,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -214,7 +214,7 @@ public interface ContextOrBuilder
    * <pre>
    * Optional. A list of example queries, providing examples of relevant and
    * commonly used SQL queries and their corresponding natural language queries
-   * optionally present.
+   * optionally present. Currently only used for BigQuery data sources.
    * </pre>
    *
    * <code>
@@ -223,4 +223,146 @@ public interface ContextOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder getExampleQueriesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm> getGlossaryTermsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.GlossaryTerm getGlossaryTerms(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getGlossaryTermsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder>
+      getGlossaryTermsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Term definitions (currently, only user authored)
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.GlossaryTerm glossary_terms = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.GlossaryTermOrBuilder getGlossaryTermsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship>
+      getSchemaRelationshipsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship getSchemaRelationships(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSchemaRelationshipsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder>
+      getSchemaRelationshipsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Relationships between table schema, including referencing and
+   * referenced columns.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationship schema_relationships = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.Context.SchemaRelationshipOrBuilder
+      getSchemaRelationshipsOrBuilder(int index);
 }

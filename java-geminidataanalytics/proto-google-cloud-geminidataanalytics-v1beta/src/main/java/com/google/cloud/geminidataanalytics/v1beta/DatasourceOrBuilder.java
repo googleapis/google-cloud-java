@@ -194,5 +194,60 @@ public interface DatasourceOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder getSchemaOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the structSchema field is set.
+   */
+  boolean hasStructSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The structSchema.
+   */
+  com.google.protobuf.Struct getStructSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A struct representation of the schema.
+   * This is populated for datasources with schemas that cannot be
+   * fully represented by the strongly-typed `schema` field.
+   *
+   * For Looker datasources, this maps to the LookmlModelExplore type:
+   * https://cloud.google.com/looker/docs/reference/looker-api/latest/types/LookmlModelExplore
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct struct_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.StructOrBuilder getStructSchemaOrBuilder();
+
   com.google.cloud.geminidataanalytics.v1beta.Datasource.ReferenceCase getReferenceCase();
 }

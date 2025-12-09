@@ -200,6 +200,12 @@ public class InstanceGroupsSettings extends ClientSettings<InstanceGroupsSetting
     return ((InstanceGroupsStubSettings) getStubSettings()).setNamedPortsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((InstanceGroupsStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final InstanceGroupsSettings create(InstanceGroupsStubSettings stub)
       throws IOException {
     return new InstanceGroupsSettings.Builder(stub.toBuilder()).build();
@@ -383,6 +389,13 @@ public class InstanceGroupsSettings extends ClientSettings<InstanceGroupsSetting
     public OperationCallSettings.Builder<SetNamedPortsInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return getStubSettingsBuilder().setNamedPortsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

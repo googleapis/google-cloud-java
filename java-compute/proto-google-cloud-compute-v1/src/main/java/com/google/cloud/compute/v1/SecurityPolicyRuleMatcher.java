@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a match condition that incoming traffic is evaluated against. Exactly one field must be specified.
+ * Represents a match condition that incoming traffic is evaluated against.
+ * Exactly one field must be specified.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SecurityPolicyRuleMatcher}
@@ -68,7 +69,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Preconfigured versioned expression.
+   * If this field is specified, config must also be specified.
+   * Available preconfigured expressions along with their requirements are:
+   * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+   * config.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr}
@@ -88,7 +93,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * Matches the source IP address of a request to the IP ranges supplied
+     * in config.
      * </pre>
      *
      * <code>SRC_IPS_V1 = 70925961;</code>
@@ -112,7 +118,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Matches the source IP address of a request to the IP ranges supplied in config.
+     * Matches the source IP address of a request to the IP ranges supplied
+     * in config.
      * </pre>
      *
      * <code>SRC_IPS_V1 = 70925961;</code>
@@ -210,7 +217,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+   * The configuration options available when specifying versioned_expr.
+   * This field must be specified if versioned_expr is specified and cannot
+   * be specified if versioned_expr is not specified.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -227,7 +236,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+   * The configuration options available when specifying versioned_expr.
+   * This field must be specified if versioned_expr is specified and cannot
+   * be specified if versioned_expr is not specified.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -246,7 +257,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+   * The configuration options available when specifying versioned_expr.
+   * This field must be specified if versioned_expr is specified and cannot
+   * be specified if versioned_expr is not specified.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -266,7 +279,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+   * User defined CEVAL expression.
+   * A CEVAL expression is used to specify match criteria such as origin.ip,
+   * source.region_code and contents in the request header.
+   * Expressions containing `evaluateThreatIntelligence` require a Cloud
+   * Armor Enterprise subscription and are not supported in Edge Policies
+   * nor in Regional Policies. Expressions containing
+   * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+   * Enterprise subscription and are only supported in Global Security
+   * Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -282,7 +303,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+   * User defined CEVAL expression.
+   * A CEVAL expression is used to specify match criteria such as origin.ip,
+   * source.region_code and contents in the request header.
+   * Expressions containing `evaluateThreatIntelligence` require a Cloud
+   * Armor Enterprise subscription and are not supported in Edge Policies
+   * nor in Regional Policies. Expressions containing
+   * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+   * Enterprise subscription and are only supported in Global Security
+   * Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -298,7 +327,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+   * User defined CEVAL expression.
+   * A CEVAL expression is used to specify match criteria such as origin.ip,
+   * source.region_code and contents in the request header.
+   * Expressions containing `evaluateThreatIntelligence` require a Cloud
+   * Armor Enterprise subscription and are not supported in Edge Policies
+   * nor in Regional Policies. Expressions containing
+   * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+   * Enterprise subscription and are only supported in Global Security
+   * Policies.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -315,7 +352,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * The configuration options available when specifying a user defined
+   * CEVAL expression (i.e., 'expr').
    * </pre>
    *
    * <code>
@@ -333,7 +371,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * The configuration options available when specifying a user defined
+   * CEVAL expression (i.e., 'expr').
    * </pre>
    *
    * <code>
@@ -353,7 +392,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+   * The configuration options available when specifying a user defined
+   * CEVAL expression (i.e., 'expr').
    * </pre>
    *
    * <code>
@@ -377,7 +417,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Preconfigured versioned expression.
+   * If this field is specified, config must also be specified.
+   * Available preconfigured expressions along with their requirements are:
+   * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+   * config.
    * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
@@ -394,7 +438,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Preconfigured versioned expression.
+   * If this field is specified, config must also be specified.
+   * Available preconfigured expressions along with their requirements are:
+   * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+   * config.
    * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
@@ -419,7 +467,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Preconfigured versioned expression.
+   * If this field is specified, config must also be specified.
+   * Available preconfigured expressions along with their requirements are:
+   * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+   * config.
    * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
@@ -652,7 +704,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Represents a match condition that incoming traffic is evaluated against. Exactly one field must be specified.
+   * Represents a match condition that incoming traffic is evaluated against.
+   * Exactly one field must be specified.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SecurityPolicyRuleMatcher}
@@ -911,7 +964,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -927,7 +982,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -949,7 +1006,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -973,7 +1032,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -995,7 +1056,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -1026,7 +1089,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -1047,7 +1112,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -1063,7 +1130,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -1084,7 +1153,9 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying versioned_expr. This field must be specified if versioned_expr is specified and cannot be specified if versioned_expr is not specified.
+     * The configuration options available when specifying versioned_expr.
+     * This field must be specified if versioned_expr is specified and cannot
+     * be specified if versioned_expr is not specified.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig config = 255820610;
@@ -1118,7 +1189,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1133,7 +1212,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1152,7 +1239,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1175,7 +1270,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1195,7 +1298,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1223,7 +1334,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1243,7 +1362,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1258,7 +1385,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1275,7 +1410,15 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * User defined CEVAL expression. A CEVAL expression is used to specify match criteria such as origin.ip, source.region_code and contents in the request header. Expressions containing `evaluateThreatIntelligence` require Cloud Armor Managed Protection Plus tier and are not supported in Edge Policies nor in Regional Policies. Expressions containing `evaluatePreconfiguredExpr('sourceiplist-*')` require Cloud Armor Managed Protection Plus tier and are only supported in Global Security Policies.
+     * User defined CEVAL expression.
+     * A CEVAL expression is used to specify match criteria such as origin.ip,
+     * source.region_code and contents in the request header.
+     * Expressions containing `evaluateThreatIntelligence` require a Cloud
+     * Armor Enterprise subscription and are not supported in Edge Policies
+     * nor in Regional Policies. Expressions containing
+     * `evaluatePreconfiguredExpr('sourceiplist-*')` require a Cloud Armor
+     * Enterprise subscription and are only supported in Global Security
+     * Policies.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Expr expr = 3127797;</code>
@@ -1308,7 +1451,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1325,7 +1469,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1348,7 +1493,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1374,7 +1520,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1397,7 +1544,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1430,7 +1578,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1452,7 +1601,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1470,7 +1620,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1492,7 +1643,8 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * The configuration options available when specifying a user defined CEVAL expression (i.e., 'expr').
+     * The configuration options available when specifying a user defined
+     * CEVAL expression (i.e., 'expr').
      * </pre>
      *
      * <code>
@@ -1522,7 +1674,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
@@ -1538,7 +1694,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
@@ -1562,7 +1722,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
@@ -1586,7 +1750,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
@@ -1609,7 +1777,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
@@ -1628,7 +1800,11 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Preconfigured versioned expression.
+     * If this field is specified, config must also be specified.
+     * Available preconfigured expressions along with their requirements are:
+     * SRC_IPS_V1 - must specify the corresponding src_ip_range field in
+     * config.
      * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *

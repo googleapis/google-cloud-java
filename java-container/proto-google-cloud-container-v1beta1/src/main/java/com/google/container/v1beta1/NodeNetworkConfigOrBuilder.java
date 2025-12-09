@@ -488,4 +488,87 @@ public interface NodeNetworkConfigOrBuilder
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the networkTierConfig field is set.
+   */
+  boolean hasNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The networkTierConfig.
+   */
+  com.google.container.v1beta1.NetworkTierConfig getNetworkTierConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The network tier configuration for the node pool inherits from
+   * the cluster-level configuration and remains immutable throughout the node
+   * pool's lifecycle, including during upgrades.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.NetworkTierConfig network_tier_config = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The acceleratorNetworkProfile.
+   */
+  java.lang.String getAcceleratorNetworkProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The accelerator network profile for the node pool. For now the
+   * only valid value is "auto". If specified, the network configuration of the
+   * nodes in this node pool will be managed by this profile for the supported
+   * machine types, zone, etc.
+   * </pre>
+   *
+   * <code>string accelerator_network_profile = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for acceleratorNetworkProfile.
+   */
+  com.google.protobuf.ByteString getAcceleratorNetworkProfileBytes();
 }

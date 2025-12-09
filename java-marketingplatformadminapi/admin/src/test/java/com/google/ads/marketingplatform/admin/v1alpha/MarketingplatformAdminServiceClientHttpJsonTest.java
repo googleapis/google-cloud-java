@@ -17,6 +17,7 @@
 package com.google.ads.marketingplatform.admin.v1alpha;
 
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
 
 import com.google.ads.marketingplatform.admin.v1alpha.stub.HttpJsonMarketingplatformAdminServiceStub;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -31,6 +32,7 @@ import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
@@ -160,6 +162,117 @@ public class MarketingplatformAdminServiceClientHttpJsonTest {
     try {
       String name = "organizations/organization-1936";
       client.getOrganization(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOrganizationsTest() throws Exception {
+    Organization responsesElement = Organization.newBuilder().build();
+    ListOrganizationsResponse expectedResponse =
+        ListOrganizationsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOrganizations(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ListOrganizationsRequest request =
+        ListOrganizationsRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListOrganizationsPagedResponse pagedListResponse = client.listOrganizations(request);
+
+    List<Organization> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOrganizationsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listOrganizationsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ListOrganizationsRequest request =
+          ListOrganizationsRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listOrganizations(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void findSalesPartnerManagedClientsTest() throws Exception {
+    FindSalesPartnerManagedClientsResponse expectedResponse =
+        FindSalesPartnerManagedClientsResponse.newBuilder()
+            .addAllClientData(new ArrayList<FindSalesPartnerManagedClientsResponse.ClientData>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FindSalesPartnerManagedClientsRequest request =
+        FindSalesPartnerManagedClientsRequest.newBuilder()
+            .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+            .setIsActive(true)
+            .build();
+
+    FindSalesPartnerManagedClientsResponse actualResponse =
+        client.findSalesPartnerManagedClients(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void findSalesPartnerManagedClientsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FindSalesPartnerManagedClientsRequest request =
+          FindSalesPartnerManagedClientsRequest.newBuilder()
+              .setOrganization(OrganizationName.of("[ORGANIZATION]").toString())
+              .setIsActive(true)
+              .build();
+      client.findSalesPartnerManagedClients(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -494,6 +607,51 @@ public class MarketingplatformAdminServiceClientHttpJsonTest {
       String analyticsAccountLink =
           "organizations/organization-2696/analyticsAccountLinks/analyticsAccountLink-2696";
       client.setPropertyServiceLevel(analyticsAccountLink);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void reportPropertyUsageTest() throws Exception {
+    ReportPropertyUsageResponse expectedResponse =
+        ReportPropertyUsageResponse.newBuilder()
+            .addAllPropertyUsages(new ArrayList<ReportPropertyUsageResponse.PropertyUsage>())
+            .setBillInfo(ReportPropertyUsageResponse.BillInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String organization = "organizations/organization-2552";
+
+    ReportPropertyUsageResponse actualResponse = client.reportPropertyUsage(organization);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void reportPropertyUsageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String organization = "organizations/organization-2552";
+      client.reportPropertyUsage(organization);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

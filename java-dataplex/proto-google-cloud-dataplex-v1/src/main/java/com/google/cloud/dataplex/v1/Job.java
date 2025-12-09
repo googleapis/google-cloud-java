@@ -275,7 +275,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was cancelled outside of Dataplex.
+     * The job was cancelled outside of Dataplex Universal Catalog.
      * </pre>
      *
      * <code>ABORTED = 6;</code>
@@ -354,7 +354,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was cancelled outside of Dataplex.
+     * The job was cancelled outside of Dataplex Universal Catalog.
      * </pre>
      *
      * <code>ABORTED = 6;</code>
@@ -476,8 +476,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was triggered by Dataplex based on trigger spec from task
-     * definition.
+     * The job was triggered by Dataplex Universal Catalog based on trigger spec
+     * from task definition.
      * </pre>
      *
      * <code>TASK_CONFIG = 1;</code>
@@ -511,8 +511,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was triggered by Dataplex based on trigger spec from task
-     * definition.
+     * The job was triggered by Dataplex Universal Catalog based on trigger spec
+     * from task definition.
      * </pre>
      *
      * <code>TASK_CONFIG = 1;</code>

@@ -76,9 +76,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The operations corresponding to an API version.
-   * Only following field will be populated in the response: name,
-   * spec, details.deprecated, details.http_operation.path.path,
-   * details.http_operation.method and details.documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -93,9 +90,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The operations corresponding to an API version.
-   * Only following field will be populated in the response: name,
-   * spec, details.deprecated, details.http_operation.path.path,
-   * details.http_operation.method and details.documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -111,9 +105,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The operations corresponding to an API version.
-   * Only following field will be populated in the response: name,
-   * spec, details.deprecated, details.http_operation.path.path,
-   * details.http_operation.method and details.documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -128,9 +119,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The operations corresponding to an API version.
-   * Only following field will be populated in the response: name,
-   * spec, details.deprecated, details.http_operation.path.path,
-   * details.http_operation.method and details.documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -145,9 +133,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * The operations corresponding to an API version.
-   * Only following field will be populated in the response: name,
-   * spec, details.deprecated, details.http_operation.path.path,
-   * details.http_operation.method and details.documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -650,9 +635,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -670,9 +652,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -690,9 +669,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -710,9 +686,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -736,9 +709,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -760,9 +730,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -786,9 +753,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -812,9 +776,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -836,9 +797,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -860,9 +818,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -884,9 +839,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -907,9 +859,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -930,9 +879,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -946,9 +892,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -966,9 +909,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -987,9 +927,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -1004,9 +941,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>
@@ -1021,9 +955,6 @@ public final class ListApiOperationsResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * The operations corresponding to an API version.
-     * Only following field will be populated in the response: name,
-     * spec, details.deprecated, details.http_operation.path.path,
-     * details.http_operation.method and details.documentation.external_uri.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.ApiOperation api_operations = 1;</code>

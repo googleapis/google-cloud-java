@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing [Intents][google.cloud.dialogflow.cx.v3beta1.Intent].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/cx/v3beta1/intent.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IntentsGrpc {
 
@@ -732,8 +729,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse listIntents(
-        com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIntentsMethod(), getCallOptions(), request);
     }
 
@@ -745,8 +743,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Intent getIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.GetIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.GetIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIntentMethod(), getCallOptions(), request);
     }
 
@@ -761,8 +760,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Intent createIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.CreateIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIntentMethod(), getCallOptions(), request);
     }
 
@@ -777,8 +777,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Intent updateIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.UpdateIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateIntentMethod(), getCallOptions(), request);
     }
 
@@ -793,8 +794,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(
-        com.google.cloud.dialogflow.cx.v3beta1.DeleteIntentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteIntentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
     }
 
@@ -813,8 +815,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importIntents(
-        com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportIntentsMethod(), getCallOptions(), request);
     }
 
@@ -833,8 +836,9 @@ public final class IntentsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation exportIntents(
-        com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getExportIntentsMethod(), getCallOptions(), request);
     }
   }

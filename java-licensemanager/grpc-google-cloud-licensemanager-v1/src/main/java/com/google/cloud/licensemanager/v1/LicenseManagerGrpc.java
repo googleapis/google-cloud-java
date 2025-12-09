@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service describing handlers for resources
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/licensemanager/v1/licensemanager.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LicenseManagerGrpc {
 
@@ -1186,8 +1183,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.ListConfigurationsResponse listConfigurations(
-        com.google.cloud.licensemanager.v1.ListConfigurationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.ListConfigurationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListConfigurationsMethod(), getCallOptions(), request);
     }
 
@@ -1199,8 +1197,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.Configuration getConfiguration(
-        com.google.cloud.licensemanager.v1.GetConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.GetConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1212,8 +1211,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createConfiguration(
-        com.google.cloud.licensemanager.v1.CreateConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.CreateConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1225,8 +1225,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateConfiguration(
-        com.google.cloud.licensemanager.v1.UpdateConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.UpdateConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1238,8 +1239,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteConfiguration(
-        com.google.cloud.licensemanager.v1.DeleteConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.DeleteConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1251,8 +1253,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.ListInstancesResponse listInstances(
-        com.google.cloud.licensemanager.v1.ListInstancesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.ListInstancesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
     }
 
@@ -1264,8 +1267,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.Instance getInstance(
-        com.google.cloud.licensemanager.v1.GetInstanceRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.GetInstanceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
     }
 
@@ -1277,8 +1281,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deactivateConfiguration(
-        com.google.cloud.licensemanager.v1.DeactivateConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.DeactivateConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeactivateConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1290,8 +1295,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation reactivateConfiguration(
-        com.google.cloud.licensemanager.v1.ReactivateConfigurationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.ReactivateConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReactivateConfigurationMethod(), getCallOptions(), request);
     }
 
@@ -1304,8 +1310,9 @@ public final class LicenseManagerGrpc {
      */
     public com.google.cloud.licensemanager.v1.QueryConfigurationLicenseUsageResponse
         queryConfigurationLicenseUsage(
-            com.google.cloud.licensemanager.v1.QueryConfigurationLicenseUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.licensemanager.v1.QueryConfigurationLicenseUsageRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getQueryConfigurationLicenseUsageMethod(), getCallOptions(), request);
     }
 
@@ -1317,8 +1324,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.AggregateUsageResponse aggregateUsage(
-        com.google.cloud.licensemanager.v1.AggregateUsageRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.AggregateUsageRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAggregateUsageMethod(), getCallOptions(), request);
     }
 
@@ -1330,8 +1338,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.ListProductsResponse listProducts(
-        com.google.cloud.licensemanager.v1.ListProductsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.ListProductsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListProductsMethod(), getCallOptions(), request);
     }
 
@@ -1343,8 +1352,9 @@ public final class LicenseManagerGrpc {
      * </pre>
      */
     public com.google.cloud.licensemanager.v1.Product getProduct(
-        com.google.cloud.licensemanager.v1.GetProductRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.licensemanager.v1.GetProductRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProductMethod(), getCallOptions(), request);
     }
   }

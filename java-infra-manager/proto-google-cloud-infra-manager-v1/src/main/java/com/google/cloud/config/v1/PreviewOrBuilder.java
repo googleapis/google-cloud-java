@@ -872,5 +872,48 @@ public interface PreviewOrBuilder
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the providerConfig field is set.
+   */
+  boolean hasProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The providerConfig.
+   */
+  com.google.cloud.config.v1.ProviderConfig getProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder();
+
   com.google.cloud.config.v1.Preview.BlueprintCase getBlueprintCase();
 }

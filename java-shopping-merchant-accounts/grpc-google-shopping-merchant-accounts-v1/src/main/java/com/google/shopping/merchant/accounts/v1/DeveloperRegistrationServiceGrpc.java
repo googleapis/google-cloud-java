@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to access Developer Registration.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/developerregistration.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DeveloperRegistrationServiceGrpc {
 
@@ -183,6 +180,60 @@ public final class DeveloperRegistrationServiceGrpc {
     return getUnregisterGcpMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.protobuf.Empty,
+          com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+      getGetAccountForGcpRegistrationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccountForGcpRegistration",
+      requestType = com.google.protobuf.Empty.class,
+      responseType =
+          com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.protobuf.Empty,
+          com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+      getGetAccountForGcpRegistrationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.protobuf.Empty,
+            com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+        getGetAccountForGcpRegistrationMethod;
+    if ((getGetAccountForGcpRegistrationMethod =
+            DeveloperRegistrationServiceGrpc.getGetAccountForGcpRegistrationMethod)
+        == null) {
+      synchronized (DeveloperRegistrationServiceGrpc.class) {
+        if ((getGetAccountForGcpRegistrationMethod =
+                DeveloperRegistrationServiceGrpc.getGetAccountForGcpRegistrationMethod)
+            == null) {
+          DeveloperRegistrationServiceGrpc.getGetAccountForGcpRegistrationMethod =
+              getGetAccountForGcpRegistrationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.protobuf.Empty,
+                          com.google.shopping.merchant.accounts.v1
+                              .GetAccountForGcpRegistrationResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAccountForGcpRegistration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1
+                                  .GetAccountForGcpRegistrationResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperRegistrationServiceMethodDescriptorSupplier(
+                              "GetAccountForGcpRegistration"))
+                      .build();
+        }
+      }
+    }
+    return getGetAccountForGcpRegistrationMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DeveloperRegistrationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DeveloperRegistrationServiceStub> factory =
@@ -295,6 +346,22 @@ public final class DeveloperRegistrationServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUnregisterGcpMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the merchant account that the calling GCP is registered with.
+     * </pre>
+     */
+    default void getAccountForGcpRegistration(
+        com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAccountForGcpRegistrationMethod(), responseObserver);
+    }
   }
 
   /**
@@ -387,6 +454,24 @@ public final class DeveloperRegistrationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the merchant account that the calling GCP is registered with.
+     * </pre>
+     */
+    public void getAccountForGcpRegistration(
+        com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccountForGcpRegistrationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -420,8 +505,9 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.DeveloperRegistration registerGcp(
-        com.google.shopping.merchant.accounts.v1.RegisterGcpRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.RegisterGcpRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRegisterGcpMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +519,9 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1.DeveloperRegistration getDeveloperRegistration(
-        com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.GetDeveloperRegistrationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDeveloperRegistrationMethod(), getCallOptions(), request);
     }
 
@@ -448,9 +535,24 @@ public final class DeveloperRegistrationServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty unregisterGcp(
-        com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUnregisterGcpMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the merchant account that the calling GCP is registered with.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse
+        getAccountForGcpRegistration(com.google.protobuf.Empty request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAccountForGcpRegistrationMethod(), getCallOptions(), request);
     }
   }
 
@@ -517,6 +619,19 @@ public final class DeveloperRegistrationServiceGrpc {
         com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnregisterGcpMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the merchant account that the calling GCP is registered with.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse
+        getAccountForGcpRegistration(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccountForGcpRegistrationMethod(), getCallOptions(), request);
     }
   }
 
@@ -587,11 +702,26 @@ public final class DeveloperRegistrationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnregisterGcpMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the merchant account that the calling GCP is registered with.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>
+        getAccountForGcpRegistration(com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccountForGcpRegistrationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_REGISTER_GCP = 0;
   private static final int METHODID_GET_DEVELOPER_REGISTRATION = 1;
   private static final int METHODID_UNREGISTER_GCP = 2;
+  private static final int METHODID_GET_ACCOUNT_FOR_GCP_REGISTRATION = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -628,6 +758,14 @@ public final class DeveloperRegistrationServiceGrpc {
           serviceImpl.unregisterGcp(
               (com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_ACCOUNT_FOR_GCP_REGISTRATION:
+          serviceImpl.getAccountForGcpRegistration(
+              (com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.accounts.v1
+                          .GetAccountForGcpRegistrationResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -667,6 +805,13 @@ public final class DeveloperRegistrationServiceGrpc {
                 new MethodHandlers<
                     com.google.shopping.merchant.accounts.v1.UnregisterGcpRequest,
                     com.google.protobuf.Empty>(service, METHODID_UNREGISTER_GCP)))
+        .addMethod(
+            getGetAccountForGcpRegistrationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.protobuf.Empty,
+                    com.google.shopping.merchant.accounts.v1.GetAccountForGcpRegistrationResponse>(
+                    service, METHODID_GET_ACCOUNT_FOR_GCP_REGISTRATION)))
         .build();
   }
 
@@ -721,6 +866,7 @@ public final class DeveloperRegistrationServiceGrpc {
                       .addMethod(getRegisterGcpMethod())
                       .addMethod(getGetDeveloperRegistrationMethod())
                       .addMethod(getUnregisterGcpMethod())
+                      .addMethod(getGetAccountForGcpRegistrationMethod())
                       .build();
         }
       }

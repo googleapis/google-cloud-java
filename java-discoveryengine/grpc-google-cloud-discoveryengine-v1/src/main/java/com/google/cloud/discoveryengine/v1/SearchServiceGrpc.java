@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for search.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/search_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SearchServiceGrpc {
 
@@ -332,8 +329,8 @@ public final class SearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.SearchResponse search(
-        com.google.cloud.discoveryengine.v1.SearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.SearchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
     }
 
@@ -355,8 +352,8 @@ public final class SearchServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.SearchResponse searchLite(
-        com.google.cloud.discoveryengine.v1.SearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.SearchRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchLiteMethod(), getCallOptions(), request);
     }
   }

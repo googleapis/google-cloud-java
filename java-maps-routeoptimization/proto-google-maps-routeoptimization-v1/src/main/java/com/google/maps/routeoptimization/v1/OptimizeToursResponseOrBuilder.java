@@ -265,6 +265,61 @@ public interface OptimizeToursResponseOrBuilder
    *
    *
    * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   *
+   * @return Whether the processedRequest field is set.
+   */
+  boolean hasProcessedRequest();
+
+  /**
+   *
+   *
+   * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   *
+   * @return The processedRequest.
+   */
+  com.google.maps.routeoptimization.v1.OptimizeToursRequest getProcessedRequest();
+
+  /**
+   *
+   *
+   * <pre>
+   * In some cases we modify the incoming request before solving it, i.e. adding
+   * costs. If solving_mode == TRANSFORM_AND_RETURN_REQUEST, the
+   * modified request is returned here.
+   *
+   * Experimental: See
+   * https://developers.google.com/maps/tt/route-optimization/experimental/objectives/make-request
+   * for more details.
+   * </pre>
+   *
+   * <code>.google.maps.routeoptimization.v1.OptimizeToursRequest processed_request = 21;</code>
+   */
+  com.google.maps.routeoptimization.v1.OptimizeToursRequestOrBuilder getProcessedRequestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Duration, distance and usage metrics for this solution.
    * </pre>
    *

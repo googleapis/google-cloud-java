@@ -585,6 +585,126 @@ public interface PlaybookOrBuilder
    *
    *
    * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the inlineActions.
+   */
+  java.util.List<java.lang.String> getInlineActionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of inlineActions.
+   */
+  int getInlineActionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The inlineActions at the given index.
+   */
+  java.lang.String getInlineActions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Names of inline actions scoped to this playbook.
+   * These actions are in addition to those belonging to referenced tools, child
+   * playbooks, and flows, e.g. actions that are defined in the playbook's code
+   * block.
+   * </pre>
+   *
+   * <code>
+   * repeated string inline_actions = 22 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the inlineActions at the given index.
+   */
+  com.google.protobuf.ByteString getInlineActionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the codeBlock field is set.
+   */
+  boolean hasCodeBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The codeBlock.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.CodeBlock getCodeBlock();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The playbook's scoped code block, which may implement handlers
+   * and actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.CodeBlock code_block = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.CodeBlockOrBuilder getCodeBlockOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Llm model settings for the playbook.
    * </pre>
    *
@@ -738,4 +858,34 @@ public interface PlaybookOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.HandlerOrBuilder getHandlersOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for playbookType.
+   */
+  int getPlaybookTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the playbook.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType playbook_type = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The playbookType.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.Playbook.PlaybookType getPlaybookType();
 }

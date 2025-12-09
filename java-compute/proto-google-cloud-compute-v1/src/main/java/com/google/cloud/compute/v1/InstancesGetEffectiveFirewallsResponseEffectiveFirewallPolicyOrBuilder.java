@@ -28,7 +28,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -41,7 +42,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -54,7 +56,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
+   * [Output Only] Deprecated, please use short name instead. The display name
+   * of the firewall policy.
    * </pre>
    *
    * <code>optional string display_name = 4473832;</code>
@@ -168,7 +171,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -181,7 +185,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
+   * [Output only] Priority of firewall policy association. Not applicable for
+   * type=HIERARCHY.
    * </pre>
    *
    * <code>optional int32 priority = 445151652;</code>
@@ -194,7 +199,9 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
+   * [Output Only] The rules that apply to the instance. Only rules that
+   * target the specific VM instance are returned if target service accounts
+   * or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -205,7 +212,9 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
+   * [Output Only] The rules that apply to the instance. Only rules that
+   * target the specific VM instance are returned if target service accounts
+   * or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -216,7 +225,9 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
+   * [Output Only] The rules that apply to the instance. Only rules that
+   * target the specific VM instance are returned if target service accounts
+   * or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -227,7 +238,9 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
+   * [Output Only] The rules that apply to the instance. Only rules that
+   * target the specific VM instance are returned if target service accounts
+   * or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -239,7 +252,9 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The rules that apply to the instance. Only rules that target the specific VM instance are returned if target service accounts or target secure tags are specified in the rules.
+   * [Output Only] The rules that apply to the instance. Only rules that
+   * target the specific VM instance are returned if target service accounts
+   * or target secure tags are specified in the rules.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule rules = 108873975;</code>
@@ -289,7 +304,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -303,7 +319,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -317,7 +334,8 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
+   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

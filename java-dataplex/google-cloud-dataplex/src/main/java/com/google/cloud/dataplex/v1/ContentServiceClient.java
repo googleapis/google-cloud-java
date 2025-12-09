@@ -46,7 +46,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.
+ * Service Description: ContentService manages Notebook and SQL Scripts for Dataplex Universal
+ * Catalog.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

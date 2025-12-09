@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [PhoneNumbers][google.cloud.dialogflow.v2beta1.PhoneNumber].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/dialogflow/v2beta1/phone_number.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PhoneNumbersGrpc {
 
@@ -498,8 +495,9 @@ public final class PhoneNumbersGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.ListPhoneNumbersResponse listPhoneNumbers(
-        com.google.cloud.dialogflow.v2beta1.ListPhoneNumbersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.ListPhoneNumbersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPhoneNumbersMethod(), getCallOptions(), request);
     }
 
@@ -511,8 +509,9 @@ public final class PhoneNumbersGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.PhoneNumber updatePhoneNumber(
-        com.google.cloud.dialogflow.v2beta1.UpdatePhoneNumberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UpdatePhoneNumberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdatePhoneNumberMethod(), getCallOptions(), request);
     }
 
@@ -529,8 +528,9 @@ public final class PhoneNumbersGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.PhoneNumber deletePhoneNumber(
-        com.google.cloud.dialogflow.v2beta1.DeletePhoneNumberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.DeletePhoneNumberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeletePhoneNumberMethod(), getCallOptions(), request);
     }
 
@@ -545,8 +545,9 @@ public final class PhoneNumbersGrpc {
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.PhoneNumber undeletePhoneNumber(
-        com.google.cloud.dialogflow.v2beta1.UndeletePhoneNumberRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.dialogflow.v2beta1.UndeletePhoneNumberRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeletePhoneNumberMethod(), getCallOptions(), request);
     }
   }

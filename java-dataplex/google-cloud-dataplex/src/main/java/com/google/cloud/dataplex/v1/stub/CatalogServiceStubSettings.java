@@ -58,18 +58,22 @@ import com.google.cloud.dataplex.v1.AspectType;
 import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
+import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
+import com.google.cloud.dataplex.v1.EntryLink;
 import com.google.cloud.dataplex.v1.EntryType;
 import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
+import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
@@ -247,6 +251,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           ListMetadataJobsRequest, ListMetadataJobsResponse, ListMetadataJobsPagedResponse>
       listMetadataJobsSettings;
   private final UnaryCallSettings<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings;
+  private final UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings;
+  private final UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings;
+  private final UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -825,6 +832,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     return cancelMetadataJobSettings;
   }
 
+  /** Returns the object with the settings used for calls to createEntryLink. */
+  public UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+    return createEntryLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryLink. */
+  public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+    return deleteEntryLinkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getEntryLink. */
+  public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+    return getEntryLinkSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -984,6 +1006,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     getMetadataJobSettings = settingsBuilder.getMetadataJobSettings().build();
     listMetadataJobsSettings = settingsBuilder.listMetadataJobsSettings().build();
     cancelMetadataJobSettings = settingsBuilder.cancelMetadataJobSettings().build();
+    createEntryLinkSettings = settingsBuilder.createEntryLinkSettings().build();
+    deleteEntryLinkSettings = settingsBuilder.deleteEntryLinkSettings().build();
+    getEntryLinkSettings = settingsBuilder.getEntryLinkSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1068,6 +1093,11 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
         listMetadataJobsSettings;
     private final UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty>
         cancelMetadataJobSettings;
+    private final UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink>
+        createEntryLinkSettings;
+    private final UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink>
+        deleteEntryLinkSettings;
+    private final UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1203,6 +1233,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       getMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listMetadataJobsSettings = PagedCallSettings.newBuilder(LIST_METADATA_JOBS_PAGE_STR_FACT);
       cancelMetadataJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getEntryLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1234,6 +1267,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               getMetadataJobSettings,
               listMetadataJobsSettings,
               cancelMetadataJobSettings,
+              createEntryLinkSettings,
+              deleteEntryLinkSettings,
+              getEntryLinkSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1278,6 +1314,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
       getMetadataJobSettings = settings.getMetadataJobSettings.toBuilder();
       listMetadataJobsSettings = settings.listMetadataJobsSettings.toBuilder();
       cancelMetadataJobSettings = settings.cancelMetadataJobSettings.toBuilder();
+      createEntryLinkSettings = settings.createEntryLinkSettings.toBuilder();
+      deleteEntryLinkSettings = settings.deleteEntryLinkSettings.toBuilder();
+      getEntryLinkSettings = settings.getEntryLinkSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1309,6 +1348,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
               getMetadataJobSettings,
               listMetadataJobsSettings,
               cancelMetadataJobSettings,
+              createEntryLinkSettings,
+              deleteEntryLinkSettings,
+              getEntryLinkSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1465,6 +1507,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .cancelMetadataJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createEntryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteEntryLinkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getEntryLinkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1943,6 +2000,21 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     /** Returns the builder for the settings used for calls to cancelMetadataJob. */
     public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
       return cancelMetadataJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createEntryLink. */
+    public UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+      return createEntryLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryLink. */
+    public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+      return deleteEntryLinkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryLink. */
+    public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+      return getEntryLinkSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

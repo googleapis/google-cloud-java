@@ -65,6 +65,1233 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.DedicatedResources.Builder.class);
   }
 
+  public interface ScaleToZeroSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the minScaleupPeriod field is set.
+     */
+    boolean hasMinScaleupPeriod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The minScaleupPeriod.
+     */
+    com.google.protobuf.Duration getMinScaleupPeriod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getMinScaleupPeriodOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idleScaledownPeriod field is set.
+     */
+    boolean hasIdleScaledownPeriod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idleScaledownPeriod.
+     */
+    com.google.protobuf.Duration getIdleScaledownPeriod();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getIdleScaledownPeriodOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec}
+   */
+  public static final class ScaleToZeroSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)
+      ScaleToZeroSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ScaleToZeroSpec.newBuilder() to construct.
+    private ScaleToZeroSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ScaleToZeroSpec() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ScaleToZeroSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.class,
+              com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MIN_SCALEUP_PERIOD_FIELD_NUMBER = 1;
+    private com.google.protobuf.Duration minScaleupPeriod_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the minScaleupPeriod field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinScaleupPeriod() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The minScaleupPeriod.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getMinScaleupPeriod() {
+      return minScaleupPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minScaleupPeriod_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Minimum duration that a deployment will be scaled up before
+     * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getMinScaleupPeriodOrBuilder() {
+      return minScaleupPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : minScaleupPeriod_;
+    }
+
+    public static final int IDLE_SCALEDOWN_PERIOD_FIELD_NUMBER = 2;
+    private com.google.protobuf.Duration idleScaledownPeriod_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idleScaledownPeriod field is set.
+     */
+    @java.lang.Override
+    public boolean hasIdleScaledownPeriod() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idleScaledownPeriod.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getIdleScaledownPeriod() {
+      return idleScaledownPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : idleScaledownPeriod_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Duration of no traffic before scaling to zero.
+     * [MinValue=300] (5 minutes)
+     * [MaxValue=28800] (8 hours)
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getIdleScaledownPeriodOrBuilder() {
+      return idleScaledownPeriod_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : idleScaledownPeriod_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getMinScaleupPeriod());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getIdleScaledownPeriod());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getMinScaleupPeriod());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(2, getIdleScaledownPeriod());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec other =
+          (com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec) obj;
+
+      if (hasMinScaleupPeriod() != other.hasMinScaleupPeriod()) return false;
+      if (hasMinScaleupPeriod()) {
+        if (!getMinScaleupPeriod().equals(other.getMinScaleupPeriod())) return false;
+      }
+      if (hasIdleScaledownPeriod() != other.hasIdleScaledownPeriod()) return false;
+      if (hasIdleScaledownPeriod()) {
+        if (!getIdleScaledownPeriod().equals(other.getIdleScaledownPeriod())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMinScaleupPeriod()) {
+        hash = (37 * hash) + MIN_SCALEUP_PERIOD_FIELD_NUMBER;
+        hash = (53 * hash) + getMinScaleupPeriod().hashCode();
+      }
+      if (hasIdleScaledownPeriod()) {
+        hash = (37 * hash) + IDLE_SCALEDOWN_PERIOD_FIELD_NUMBER;
+        hash = (53 * hash) + getIdleScaledownPeriod().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.class,
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getMinScaleupPeriodFieldBuilder();
+          getIdleScaledownPeriodFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        minScaleupPeriod_ = null;
+        if (minScaleupPeriodBuilder_ != null) {
+          minScaleupPeriodBuilder_.dispose();
+          minScaleupPeriodBuilder_ = null;
+        }
+        idleScaledownPeriod_ = null;
+        if (idleScaledownPeriodBuilder_ != null) {
+          idleScaledownPeriodBuilder_.dispose();
+          idleScaledownPeriodBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.MachineResourcesProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DedicatedResources_ScaleToZeroSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec build() {
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec result =
+            new com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minScaleupPeriod_ =
+              minScaleupPeriodBuilder_ == null
+                  ? minScaleupPeriod_
+                  : minScaleupPeriodBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.idleScaledownPeriod_ =
+              idleScaledownPeriodBuilder_ == null
+                  ? idleScaledownPeriod_
+                  : idleScaledownPeriodBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+                .getDefaultInstance()) return this;
+        if (other.hasMinScaleupPeriod()) {
+          mergeMinScaleupPeriod(other.getMinScaleupPeriod());
+        }
+        if (other.hasIdleScaledownPeriod()) {
+          mergeIdleScaledownPeriod(other.getIdleScaledownPeriod());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getMinScaleupPeriodFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      getIdleScaledownPeriodFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Duration minScaleupPeriod_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          minScaleupPeriodBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the minScaleupPeriod field is set.
+       */
+      public boolean hasMinScaleupPeriod() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The minScaleupPeriod.
+       */
+      public com.google.protobuf.Duration getMinScaleupPeriod() {
+        if (minScaleupPeriodBuilder_ == null) {
+          return minScaleupPeriod_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : minScaleupPeriod_;
+        } else {
+          return minScaleupPeriodBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMinScaleupPeriod(com.google.protobuf.Duration value) {
+        if (minScaleupPeriodBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          minScaleupPeriod_ = value;
+        } else {
+          minScaleupPeriodBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setMinScaleupPeriod(com.google.protobuf.Duration.Builder builderForValue) {
+        if (minScaleupPeriodBuilder_ == null) {
+          minScaleupPeriod_ = builderForValue.build();
+        } else {
+          minScaleupPeriodBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeMinScaleupPeriod(com.google.protobuf.Duration value) {
+        if (minScaleupPeriodBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && minScaleupPeriod_ != null
+              && minScaleupPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getMinScaleupPeriodBuilder().mergeFrom(value);
+          } else {
+            minScaleupPeriod_ = value;
+          }
+        } else {
+          minScaleupPeriodBuilder_.mergeFrom(value);
+        }
+        if (minScaleupPeriod_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearMinScaleupPeriod() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minScaleupPeriod_ = null;
+        if (minScaleupPeriodBuilder_ != null) {
+          minScaleupPeriodBuilder_.dispose();
+          minScaleupPeriodBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getMinScaleupPeriodBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getMinScaleupPeriodFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getMinScaleupPeriodOrBuilder() {
+        if (minScaleupPeriodBuilder_ != null) {
+          return minScaleupPeriodBuilder_.getMessageOrBuilder();
+        } else {
+          return minScaleupPeriod_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : minScaleupPeriod_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Minimum duration that a deployment will be scaled up before
+       * traffic is evaluated for potential scale-down. [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration min_scaleup_period = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getMinScaleupPeriodFieldBuilder() {
+        if (minScaleupPeriodBuilder_ == null) {
+          minScaleupPeriodBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getMinScaleupPeriod(), getParentForChildren(), isClean());
+          minScaleupPeriod_ = null;
+        }
+        return minScaleupPeriodBuilder_;
+      }
+
+      private com.google.protobuf.Duration idleScaledownPeriod_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          idleScaledownPeriodBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the idleScaledownPeriod field is set.
+       */
+      public boolean hasIdleScaledownPeriod() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The idleScaledownPeriod.
+       */
+      public com.google.protobuf.Duration getIdleScaledownPeriod() {
+        if (idleScaledownPeriodBuilder_ == null) {
+          return idleScaledownPeriod_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : idleScaledownPeriod_;
+        } else {
+          return idleScaledownPeriodBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIdleScaledownPeriod(com.google.protobuf.Duration value) {
+        if (idleScaledownPeriodBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          idleScaledownPeriod_ = value;
+        } else {
+          idleScaledownPeriodBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIdleScaledownPeriod(com.google.protobuf.Duration.Builder builderForValue) {
+        if (idleScaledownPeriodBuilder_ == null) {
+          idleScaledownPeriod_ = builderForValue.build();
+        } else {
+          idleScaledownPeriodBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeIdleScaledownPeriod(com.google.protobuf.Duration value) {
+        if (idleScaledownPeriodBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && idleScaledownPeriod_ != null
+              && idleScaledownPeriod_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getIdleScaledownPeriodBuilder().mergeFrom(value);
+          } else {
+            idleScaledownPeriod_ = value;
+          }
+        } else {
+          idleScaledownPeriodBuilder_.mergeFrom(value);
+        }
+        if (idleScaledownPeriod_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearIdleScaledownPeriod() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        idleScaledownPeriod_ = null;
+        if (idleScaledownPeriodBuilder_ != null) {
+          idleScaledownPeriodBuilder_.dispose();
+          idleScaledownPeriodBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getIdleScaledownPeriodBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getIdleScaledownPeriodFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getIdleScaledownPeriodOrBuilder() {
+        if (idleScaledownPeriodBuilder_ != null) {
+          return idleScaledownPeriodBuilder_.getMessageOrBuilder();
+        } else {
+          return idleScaledownPeriod_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : idleScaledownPeriod_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Duration of no traffic before scaling to zero.
+       * [MinValue=300] (5 minutes)
+       * [MaxValue=28800] (8 hours)
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration idle_scaledown_period = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getIdleScaledownPeriodFieldBuilder() {
+        if (idleScaledownPeriodBuilder_ == null) {
+          idleScaledownPeriodBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getIdleScaledownPeriod(), getParentForChildren(), isClean());
+          idleScaledownPeriod_ = null;
+        }
+        return idleScaledownPeriodBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec)
+    private static final com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScaleToZeroSpec> PARSER =
+        new com.google.protobuf.AbstractParser<ScaleToZeroSpec>() {
+          @java.lang.Override
+          public ScaleToZeroSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ScaleToZeroSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScaleToZeroSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int MACHINE_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
@@ -203,6 +1430,37 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public int getRequiredReplicaCount() {
     return requiredReplicaCount_;
+  }
+
+  public static final int INITIAL_REPLICA_COUNT_FIELD_NUMBER = 6;
+  private int initialReplicaCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Number of initial replicas being deployed on when scaling the
+   * workload up from zero or when creating the workload in case
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * = 0. When
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * &gt; 0 (meaning that the scale-to-zero feature is not enabled),
+   * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+   * should not be set. When
+   * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+   * = 0 (meaning that the scale-to-zero feature is enabled),
+   * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+   * should be larger than zero, but no greater than
+   * [max_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.max_replica_count].
+   * </pre>
+   *
+   * <code>int32 initial_replica_count = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The initialReplicaCount.
+   */
+  @java.lang.Override
+  public int getInitialReplicaCount() {
+    return initialReplicaCount_;
   }
 
   public static final int AUTOSCALING_METRIC_SPECS_FIELD_NUMBER = 4;
@@ -491,6 +1749,69 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         : flexStart_;
   }
 
+  public static final int SCALE_TO_ZERO_SPEC_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scaleToZeroSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scaleToZeroSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasScaleToZeroSpec() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaleToZeroSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+      getScaleToZeroSpec() {
+    return scaleToZeroSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+            .getDefaultInstance()
+        : scaleToZeroSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specification for scale-to-zero feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder
+      getScaleToZeroSpecOrBuilder() {
+    return scaleToZeroSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+            .getDefaultInstance()
+        : scaleToZeroSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -520,11 +1841,17 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (spot_ != false) {
       output.writeBool(5, spot_);
     }
+    if (initialReplicaCount_ != 0) {
+      output.writeInt32(6, initialReplicaCount_);
+    }
     if (requiredReplicaCount_ != 0) {
       output.writeInt32(9, requiredReplicaCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getFlexStart());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(11, getScaleToZeroSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -552,11 +1879,17 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (spot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, spot_);
     }
+    if (initialReplicaCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, initialReplicaCount_);
+    }
     if (requiredReplicaCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, requiredReplicaCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getFlexStart());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getScaleToZeroSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -581,12 +1914,17 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (getMinReplicaCount() != other.getMinReplicaCount()) return false;
     if (getMaxReplicaCount() != other.getMaxReplicaCount()) return false;
     if (getRequiredReplicaCount() != other.getRequiredReplicaCount()) return false;
+    if (getInitialReplicaCount() != other.getInitialReplicaCount()) return false;
     if (!getAutoscalingMetricSpecsList().equals(other.getAutoscalingMetricSpecsList()))
       return false;
     if (getSpot() != other.getSpot()) return false;
     if (hasFlexStart() != other.hasFlexStart()) return false;
     if (hasFlexStart()) {
       if (!getFlexStart().equals(other.getFlexStart())) return false;
+    }
+    if (hasScaleToZeroSpec() != other.hasScaleToZeroSpec()) return false;
+    if (hasScaleToZeroSpec()) {
+      if (!getScaleToZeroSpec().equals(other.getScaleToZeroSpec())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -609,6 +1947,8 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getMaxReplicaCount();
     hash = (37 * hash) + REQUIRED_REPLICA_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRequiredReplicaCount();
+    hash = (37 * hash) + INITIAL_REPLICA_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getInitialReplicaCount();
     if (getAutoscalingMetricSpecsCount() > 0) {
       hash = (37 * hash) + AUTOSCALING_METRIC_SPECS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoscalingMetricSpecsList().hashCode();
@@ -618,6 +1958,10 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     if (hasFlexStart()) {
       hash = (37 * hash) + FLEX_START_FIELD_NUMBER;
       hash = (53 * hash) + getFlexStart().hashCode();
+    }
+    if (hasScaleToZeroSpec()) {
+      hash = (37 * hash) + SCALE_TO_ZERO_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getScaleToZeroSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -765,6 +2109,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         getMachineSpecFieldBuilder();
         getAutoscalingMetricSpecsFieldBuilder();
         getFlexStartFieldBuilder();
+        getScaleToZeroSpecFieldBuilder();
       }
     }
 
@@ -780,18 +2125,24 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       minReplicaCount_ = 0;
       maxReplicaCount_ = 0;
       requiredReplicaCount_ = 0;
+      initialReplicaCount_ = 0;
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
       } else {
         autoscalingMetricSpecs_ = null;
         autoscalingMetricSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       spot_ = false;
       flexStart_ = null;
       if (flexStartBuilder_ != null) {
         flexStartBuilder_.dispose();
         flexStartBuilder_ = null;
+      }
+      scaleToZeroSpec_ = null;
+      if (scaleToZeroSpecBuilder_ != null) {
+        scaleToZeroSpecBuilder_.dispose();
+        scaleToZeroSpecBuilder_ = null;
       }
       return this;
     }
@@ -831,9 +2182,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.DedicatedResources result) {
       if (autoscalingMetricSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           autoscalingMetricSpecs_ = java.util.Collections.unmodifiableList(autoscalingMetricSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.autoscalingMetricSpecs_ = autoscalingMetricSpecs_;
       } else {
@@ -858,12 +2209,20 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requiredReplicaCount_ = requiredReplicaCount_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.spot_ = spot_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.initialReplicaCount_ = initialReplicaCount_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.spot_ = spot_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.flexStart_ = flexStartBuilder_ == null ? flexStart_ : flexStartBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.scaleToZeroSpec_ =
+            scaleToZeroSpecBuilder_ == null ? scaleToZeroSpec_ : scaleToZeroSpecBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -926,11 +2285,14 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       if (other.getRequiredReplicaCount() != 0) {
         setRequiredReplicaCount(other.getRequiredReplicaCount());
       }
+      if (other.getInitialReplicaCount() != 0) {
+        setInitialReplicaCount(other.getInitialReplicaCount());
+      }
       if (autoscalingMetricSpecsBuilder_ == null) {
         if (!other.autoscalingMetricSpecs_.isEmpty()) {
           if (autoscalingMetricSpecs_.isEmpty()) {
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureAutoscalingMetricSpecsIsMutable();
             autoscalingMetricSpecs_.addAll(other.autoscalingMetricSpecs_);
@@ -943,7 +2305,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             autoscalingMetricSpecsBuilder_.dispose();
             autoscalingMetricSpecsBuilder_ = null;
             autoscalingMetricSpecs_ = other.autoscalingMetricSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             autoscalingMetricSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAutoscalingMetricSpecsFieldBuilder()
@@ -958,6 +2320,9 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasFlexStart()) {
         mergeFlexStart(other.getFlexStart());
+      }
+      if (other.hasScaleToZeroSpec()) {
+        mergeScaleToZeroSpec(other.getScaleToZeroSpec());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1020,9 +2385,15 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             case 40:
               {
                 spot_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
+            case 48:
+              {
+                initialReplicaCount_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             case 72:
               {
                 requiredReplicaCount_ = input.readInt32();
@@ -1032,9 +2403,15 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
             case 82:
               {
                 input.readMessage(getFlexStartFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getScaleToZeroSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1505,15 +2882,107 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private int initialReplicaCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Number of initial replicas being deployed on when scaling the
+     * workload up from zero or when creating the workload in case
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * &gt; 0 (meaning that the scale-to-zero feature is not enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should not be set. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0 (meaning that the scale-to-zero feature is enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should be larger than zero, but no greater than
+     * [max_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.max_replica_count].
+     * </pre>
+     *
+     * <code>int32 initial_replica_count = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The initialReplicaCount.
+     */
+    @java.lang.Override
+    public int getInitialReplicaCount() {
+      return initialReplicaCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Number of initial replicas being deployed on when scaling the
+     * workload up from zero or when creating the workload in case
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * &gt; 0 (meaning that the scale-to-zero feature is not enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should not be set. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0 (meaning that the scale-to-zero feature is enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should be larger than zero, but no greater than
+     * [max_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.max_replica_count].
+     * </pre>
+     *
+     * <code>int32 initial_replica_count = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The initialReplicaCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInitialReplicaCount(int value) {
+
+      initialReplicaCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Number of initial replicas being deployed on when scaling the
+     * workload up from zero or when creating the workload in case
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * &gt; 0 (meaning that the scale-to-zero feature is not enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should not be set. When
+     * [min_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.min_replica_count]
+     * = 0 (meaning that the scale-to-zero feature is enabled),
+     * [initial_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.initial_replica_count]
+     * should be larger than zero, but no greater than
+     * [max_replica_count][google.cloud.aiplatform.v1beta1.DedicatedResources.max_replica_count].
+     * </pre>
+     *
+     * <code>int32 initial_replica_count = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInitialReplicaCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      initialReplicaCount_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec>
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
 
     private void ensureAutoscalingMetricSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         autoscalingMetricSpecs_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec>(
                 autoscalingMetricSpecs_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2011,7 +3480,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder clearAutoscalingMetricSpecs() {
       if (autoscalingMetricSpecsBuilder_ == null) {
         autoscalingMetricSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         autoscalingMetricSpecsBuilder_.clear();
@@ -2317,7 +3786,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpec.Builder,
                 com.google.cloud.aiplatform.v1beta1.AutoscalingMetricSpecOrBuilder>(
                 autoscalingMetricSpecs_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         autoscalingMetricSpecs_ = null;
@@ -2360,7 +3829,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
     public Builder setSpot(boolean value) {
 
       spot_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2378,7 +3847,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSpot() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       spot_ = false;
       onChanged();
       return this;
@@ -2407,7 +3876,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * @return Whether the flexStart field is set.
      */
     public boolean hasFlexStart() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2457,7 +3926,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       } else {
         flexStartBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2482,7 +3951,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
       } else {
         flexStartBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2502,7 +3971,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeFlexStart(com.google.cloud.aiplatform.v1beta1.FlexStart value) {
       if (flexStartBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && flexStart_ != null
             && flexStart_ != com.google.cloud.aiplatform.v1beta1.FlexStart.getDefaultInstance()) {
           getFlexStartBuilder().mergeFrom(value);
@@ -2513,7 +3982,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         flexStartBuilder_.mergeFrom(value);
       }
       if (flexStart_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2533,7 +4002,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearFlexStart() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       flexStart_ = null;
       if (flexStartBuilder_ != null) {
         flexStartBuilder_.dispose();
@@ -2557,7 +4026,7 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.FlexStart.Builder getFlexStartBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getFlexStartFieldBuilder().getBuilder();
     }
@@ -2613,6 +4082,229 @@ public final class DedicatedResources extends com.google.protobuf.GeneratedMessa
         flexStart_ = null;
       }
       return flexStartBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scaleToZeroSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder>
+        scaleToZeroSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the scaleToZeroSpec field is set.
+     */
+    public boolean hasScaleToZeroSpec() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scaleToZeroSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+        getScaleToZeroSpec() {
+      if (scaleToZeroSpecBuilder_ == null) {
+        return scaleToZeroSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+                .getDefaultInstance()
+            : scaleToZeroSpec_;
+      } else {
+        return scaleToZeroSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScaleToZeroSpec(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec value) {
+      if (scaleToZeroSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scaleToZeroSpec_ = value;
+      } else {
+        scaleToZeroSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScaleToZeroSpec(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder
+            builderForValue) {
+      if (scaleToZeroSpecBuilder_ == null) {
+        scaleToZeroSpec_ = builderForValue.build();
+      } else {
+        scaleToZeroSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeScaleToZeroSpec(
+        com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec value) {
+      if (scaleToZeroSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && scaleToZeroSpec_ != null
+            && scaleToZeroSpec_
+                != com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+                    .getDefaultInstance()) {
+          getScaleToZeroSpecBuilder().mergeFrom(value);
+        } else {
+          scaleToZeroSpec_ = value;
+        }
+      } else {
+        scaleToZeroSpecBuilder_.mergeFrom(value);
+      }
+      if (scaleToZeroSpec_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearScaleToZeroSpec() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      scaleToZeroSpec_ = null;
+      if (scaleToZeroSpecBuilder_ != null) {
+        scaleToZeroSpecBuilder_.dispose();
+        scaleToZeroSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder
+        getScaleToZeroSpecBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getScaleToZeroSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder
+        getScaleToZeroSpecOrBuilder() {
+      if (scaleToZeroSpecBuilder_ != null) {
+        return scaleToZeroSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return scaleToZeroSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec
+                .getDefaultInstance()
+            : scaleToZeroSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specification for scale-to-zero feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec scale_to_zero_spec = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder>
+        getScaleToZeroSpecFieldBuilder() {
+      if (scaleToZeroSpecBuilder_ == null) {
+        scaleToZeroSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec,
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.DedicatedResources.ScaleToZeroSpecOrBuilder>(
+                getScaleToZeroSpec(), getParentForChildren(), isClean());
+        scaleToZeroSpec_ = null;
+      }
+      return scaleToZeroSpecBuilder_;
     }
 
     @java.lang.Override

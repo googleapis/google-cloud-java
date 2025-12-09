@@ -287,6 +287,53 @@ public interface AccountServiceOrBuilder
    *
    *
    * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   *
+   * @return Whether the comparisonShopping field is set.
+   */
+  boolean hasComparisonShopping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   *
+   * @return The comparisonShopping.
+   */
+  com.google.shopping.merchant.accounts.v1.ComparisonShopping getComparisonShopping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Service type for comparison shopping. The provider is a CSS (Comparison
+   * Shopping Service) managing the account. See
+   * https://support.google.com/merchants/answer/12653197
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.accounts.v1.ComparisonShopping comparison_shopping = 105;
+   * </code>
+   */
+  com.google.shopping.merchant.accounts.v1.ComparisonShoppingOrBuilder
+      getComparisonShoppingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the account service.
    * Format: `accounts/{account}/services/{service}`
    * </pre>

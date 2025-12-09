@@ -28,7 +28,10 @@ public interface SourceInstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   * Attached disks configuration. If not provided, defaults are applied:
+   * For boot disk and any other R/W disks, the source images for each disk
+   * will be used. For read-only disks, they will be attached in read-only
+   * mode. Local SSD disks will be created as blank volumes.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DiskInstantiationConfig disk_configs = 235580623;
@@ -40,7 +43,10 @@ public interface SourceInstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   * Attached disks configuration. If not provided, defaults are applied:
+   * For boot disk and any other R/W disks, the source images for each disk
+   * will be used. For read-only disks, they will be attached in read-only
+   * mode. Local SSD disks will be created as blank volumes.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DiskInstantiationConfig disk_configs = 235580623;
@@ -52,7 +58,10 @@ public interface SourceInstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   * Attached disks configuration. If not provided, defaults are applied:
+   * For boot disk and any other R/W disks, the source images for each disk
+   * will be used. For read-only disks, they will be attached in read-only
+   * mode. Local SSD disks will be created as blank volumes.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DiskInstantiationConfig disk_configs = 235580623;
@@ -64,7 +73,10 @@ public interface SourceInstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   * Attached disks configuration. If not provided, defaults are applied:
+   * For boot disk and any other R/W disks, the source images for each disk
+   * will be used. For read-only disks, they will be attached in read-only
+   * mode. Local SSD disks will be created as blank volumes.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DiskInstantiationConfig disk_configs = 235580623;
@@ -77,7 +89,10 @@ public interface SourceInstanceParamsOrBuilder
    *
    *
    * <pre>
-   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   * Attached disks configuration. If not provided, defaults are applied:
+   * For boot disk and any other R/W disks, the source images for each disk
+   * will be used. For read-only disks, they will be attached in read-only
+   * mode. Local SSD disks will be created as blank volumes.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DiskInstantiationConfig disk_configs = 235580623;

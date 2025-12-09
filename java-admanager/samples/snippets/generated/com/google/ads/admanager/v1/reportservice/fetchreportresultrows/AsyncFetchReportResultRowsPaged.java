@@ -19,7 +19,7 @@ package com.google.ads.admanager.v1.samples;
 // [START admanager_v1_generated_ReportService_FetchReportResultRows_Paged_async]
 import com.google.ads.admanager.v1.FetchReportResultRowsRequest;
 import com.google.ads.admanager.v1.FetchReportResultRowsResponse;
-import com.google.ads.admanager.v1.Report;
+import com.google.ads.admanager.v1.ReportDataTable;
 import com.google.ads.admanager.v1.ReportServiceClient;
 import com.google.common.base.Strings;
 
@@ -45,7 +45,7 @@ public class AsyncFetchReportResultRowsPaged {
       while (true) {
         FetchReportResultRowsResponse response =
             reportServiceClient.fetchReportResultRowsCallable().call(request);
-        for (Report.DataTable.Row element : response.getRowsList()) {
+        for (ReportDataTable.Row element : response.getRowsList()) {
           // doThingsWith(element);
         }
         String nextPageToken = response.getNextPageToken();

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for managing Identity Mapping Stores.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/identity_mapping_store_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class IdentityMappingStoreServiceGrpc {
 
@@ -758,8 +755,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.IdentityMappingStore createIdentityMappingStore(
-        com.google.cloud.discoveryengine.v1.CreateIdentityMappingStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.CreateIdentityMappingStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateIdentityMappingStoreMethod(), getCallOptions(), request);
     }
 
@@ -771,8 +769,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.IdentityMappingStore getIdentityMappingStore(
-        com.google.cloud.discoveryengine.v1.GetIdentityMappingStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.GetIdentityMappingStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIdentityMappingStoreMethod(), getCallOptions(), request);
     }
 
@@ -784,8 +783,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteIdentityMappingStore(
-        com.google.cloud.discoveryengine.v1.DeleteIdentityMappingStoreRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.DeleteIdentityMappingStoreRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteIdentityMappingStoreMethod(), getCallOptions(), request);
     }
 
@@ -797,8 +797,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation importIdentityMappings(
-        com.google.cloud.discoveryengine.v1.ImportIdentityMappingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ImportIdentityMappingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getImportIdentityMappingsMethod(), getCallOptions(), request);
     }
 
@@ -811,8 +812,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation purgeIdentityMappings(
-        com.google.cloud.discoveryengine.v1.PurgeIdentityMappingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.PurgeIdentityMappingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPurgeIdentityMappingsMethod(), getCallOptions(), request);
     }
 
@@ -824,8 +826,9 @@ public final class IdentityMappingStoreServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ListIdentityMappingsResponse listIdentityMappings(
-        com.google.cloud.discoveryengine.v1.ListIdentityMappingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ListIdentityMappingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIdentityMappingsMethod(), getCallOptions(), request);
     }
 
@@ -838,8 +841,9 @@ public final class IdentityMappingStoreServiceGrpc {
      */
     public com.google.cloud.discoveryengine.v1.ListIdentityMappingStoresResponse
         listIdentityMappingStores(
-            com.google.cloud.discoveryengine.v1.ListIdentityMappingStoresRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.discoveryengine.v1.ListIdentityMappingStoresRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIdentityMappingStoresMethod(), getCallOptions(), request);
     }
   }

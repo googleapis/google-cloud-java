@@ -63,6 +63,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     regularSecondaryOpeningHours_ = java.util.Collections.emptyList();
     subDestinations_ = java.util.Collections.emptyList();
     containingPlaces_ = java.util.Collections.emptyList();
+    movedPlace_ = "";
+    movedPlaceId_ = "";
   }
 
   @java.lang.Override
@@ -17783,6 +17785,32 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.type.LocalizedText disclosure_text = 3;</code>
      */
     com.google.type.LocalizedTextOrBuilder getDisclosureTextOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The reviewsUri.
+     */
+    java.lang.String getReviewsUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The bytes for reviewsUri.
+     */
+    com.google.protobuf.ByteString getReviewsUriBytes();
   }
 
   /**
@@ -17807,6 +17835,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     private ReviewSummary() {
       flagContentUri_ = "";
+      reviewsUri_ = "";
     }
 
     @java.lang.Override
@@ -17992,6 +18021,59 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           : disclosureText_;
     }
 
+    public static final int REVIEWS_URI_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object reviewsUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The reviewsUri.
+     */
+    @java.lang.Override
+    public java.lang.String getReviewsUri() {
+      java.lang.Object ref = reviewsUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reviewsUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A link to show reviews of this place on Google Maps.
+     * </pre>
+     *
+     * <code>string reviews_uri = 4;</code>
+     *
+     * @return The bytes for reviewsUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReviewsUriBytes() {
+      java.lang.Object ref = reviewsUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reviewsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -18015,6 +18097,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(3, getDisclosureText());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewsUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reviewsUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -18032,6 +18117,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDisclosureText());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewsUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reviewsUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -18058,6 +18146,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       if (hasDisclosureText()) {
         if (!getDisclosureText().equals(other.getDisclosureText())) return false;
       }
+      if (!getReviewsUri().equals(other.getReviewsUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -18079,6 +18168,8 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + DISCLOSURE_TEXT_FIELD_NUMBER;
         hash = (53 * hash) + getDisclosureText().hashCode();
       }
+      hash = (37 * hash) + REVIEWS_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getReviewsUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -18242,6 +18333,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           disclosureTextBuilder_.dispose();
           disclosureTextBuilder_ = null;
         }
+        reviewsUri_ = "";
         return this;
       }
 
@@ -18290,6 +18382,9 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
           result.disclosureText_ =
               disclosureTextBuilder_ == null ? disclosureText_ : disclosureTextBuilder_.build();
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.reviewsUri_ = reviewsUri_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -18353,6 +18448,11 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDisclosureText()) {
           mergeDisclosureText(other.getDisclosureText());
         }
+        if (!other.getReviewsUri().isEmpty()) {
+          reviewsUri_ = other.reviewsUri_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -18398,6 +18498,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  reviewsUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -18930,6 +19036,117 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         return disclosureTextBuilder_;
       }
 
+      private java.lang.Object reviewsUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return The reviewsUri.
+       */
+      public java.lang.String getReviewsUri() {
+        java.lang.Object ref = reviewsUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reviewsUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return The bytes for reviewsUri.
+       */
+      public com.google.protobuf.ByteString getReviewsUriBytes() {
+        java.lang.Object ref = reviewsUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          reviewsUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @param value The reviewsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewsUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reviewsUri_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReviewsUri() {
+        reviewsUri_ = getDefaultInstance().getReviewsUri();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A link to show reviews of this place on Google Maps.
+       * </pre>
+       *
+       * <code>string reviews_uri = 4;</code>
+       *
+       * @param value The bytes for reviewsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReviewsUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        reviewsUri_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -19117,7 +19334,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19130,7 +19347,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19143,7 +19360,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19437,7 +19654,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19453,7 +19670,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -19469,7 +19686,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A summary of the nearby gas stations.
+     * A summary of the nearby stores.
      * </pre>
      *
      * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20721,7 +20938,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20736,7 +20953,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20757,7 +20974,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20780,7 +20997,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20800,7 +21017,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20828,7 +21045,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20848,7 +21065,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20863,7 +21080,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -20882,7 +21099,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * A summary of the nearby gas stations.
+       * A summary of the nearby stores.
        * </pre>
        *
        * <code>.google.maps.places.v1.ContentBlock store = 4;</code>
@@ -22936,6 +23153,3312 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.maps.places.v1.Place.NeighborhoodSummary getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ConsumerAlertOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.ConsumerAlert)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The overview of the consumer alert message.
+     * </pre>
+     *
+     * <code>string overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    java.lang.String getOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * The overview of the consumer alert message.
+     * </pre>
+     *
+     * <code>string overview = 1;</code>
+     *
+     * @return The bytes for overview.
+     */
+    com.google.protobuf.ByteString getOverviewBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     *
+     * @return Whether the details field is set.
+     */
+    boolean hasDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     *
+     * @return The details.
+     */
+    com.google.maps.places.v1.Place.ConsumerAlert.Details getDetails();
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     */
+    com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder getDetailsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The language code of the consumer alert message. This is a BCP 47
+     * language code.
+     * </pre>
+     *
+     * <code>string language_code = 3;</code>
+     *
+     * @return The languageCode.
+     */
+    java.lang.String getLanguageCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The language code of the consumer alert message. This is a BCP 47
+     * language code.
+     * </pre>
+     *
+     * <code>string language_code = 3;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    com.google.protobuf.ByteString getLanguageCodeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert}
+   */
+  public static final class ConsumerAlert extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.ConsumerAlert)
+      ConsumerAlertOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ConsumerAlert.newBuilder() to construct.
+    private ConsumerAlert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConsumerAlert() {
+      overview_ = "";
+      languageCode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConsumerAlert();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ConsumerAlert_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.maps.places.v1.PlaceProto
+          .internal_static_google_maps_places_v1_Place_ConsumerAlert_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.maps.places.v1.Place.ConsumerAlert.class,
+              com.google.maps.places.v1.Place.ConsumerAlert.Builder.class);
+    }
+
+    public interface DetailsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.ConsumerAlert.Details)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The title to show together with the description.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       *
+       * @return The title.
+       */
+      java.lang.String getTitle();
+
+      /**
+       *
+       *
+       * <pre>
+       * The title to show together with the description.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       *
+       * @return The bytes for title.
+       */
+      com.google.protobuf.ByteString getTitleBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the consumer alert message.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       *
+       * @return The description.
+       */
+      java.lang.String getDescription();
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the consumer alert message.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       *
+       * @return The bytes for description.
+       */
+      com.google.protobuf.ByteString getDescriptionBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       *
+       * @return Whether the aboutLink field is set.
+       */
+      boolean hasAboutLink();
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       *
+       * @return The aboutLink.
+       */
+      com.google.maps.places.v1.Place.ConsumerAlert.Details.Link getAboutLink();
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       */
+      com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder getAboutLinkOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert.Details}
+     */
+    public static final class Details extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.ConsumerAlert.Details)
+        DetailsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use Details.newBuilder() to construct.
+      private Details(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Details() {
+        title_ = "";
+        description_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Details();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.class,
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder.class);
+      }
+
+      public interface LinkOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.maps.places.v1.Place.ConsumerAlert.Details.Link)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show for the link.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The title.
+         */
+        java.lang.String getTitle();
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show for the link.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
+         */
+        com.google.protobuf.ByteString getTitleBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The uri of the link.
+         * </pre>
+         *
+         * <code>string uri = 2;</code>
+         *
+         * @return The uri.
+         */
+        java.lang.String getUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * The uri of the link.
+         * </pre>
+         *
+         * <code>string uri = 2;</code>
+         *
+         * @return The bytes for uri.
+         */
+        com.google.protobuf.ByteString getUriBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert.Details.Link}
+       */
+      public static final class Link extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.maps.places.v1.Place.ConsumerAlert.Details.Link)
+          LinkOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use Link.newBuilder() to construct.
+        private Link(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private Link() {
+          title_ = "";
+          uri_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new Link();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.maps.places.v1.PlaceProto
+              .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_Link_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.maps.places.v1.PlaceProto
+              .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_Link_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.class,
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder.class);
+        }
+
+        public static final int TITLE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show for the link.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The title.
+         */
+        @java.lang.Override
+        public java.lang.String getTitle() {
+          java.lang.Object ref = title_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show for the link.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTitleBytes() {
+          java.lang.Object ref = title_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int URI_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object uri_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The uri of the link.
+         * </pre>
+         *
+         * <code>string uri = 2;</code>
+         *
+         * @return The uri.
+         */
+        @java.lang.Override
+        public java.lang.String getUri() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            uri_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The uri of the link.
+         * </pre>
+         *
+         * <code>string uri = 2;</code>
+         *
+         * @return The bytes for uri.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getUriBytes() {
+          java.lang.Object ref = uri_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            uri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, uri_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj instanceof com.google.maps.places.v1.Place.ConsumerAlert.Details.Link)) {
+            return super.equals(obj);
+          }
+          com.google.maps.places.v1.Place.ConsumerAlert.Details.Link other =
+              (com.google.maps.places.v1.Place.ConsumerAlert.Details.Link) obj;
+
+          if (!getTitle().equals(other.getTitle())) return false;
+          if (!getUri().equals(other.getUri())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + TITLE_FIELD_NUMBER;
+          hash = (53 * hash) + getTitle().hashCode();
+          hash = (37 * hash) + URI_FIELD_NUMBER;
+          hash = (53 * hash) + getUri().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseDelimitedFrom(
+            java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert.Details.Link}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.ConsumerAlert.Details.Link)
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.maps.places.v1.PlaceProto
+                .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_Link_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.maps.places.v1.PlaceProto
+                .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_Link_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.class,
+                    com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder.class);
+          }
+
+          // Construct using com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            title_ = "";
+            uri_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.maps.places.v1.PlaceProto
+                .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_Link_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link
+              getDefaultInstanceForType() {
+            return com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link build() {
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link buildPartial() {
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link result =
+                new com.google.maps.places.v1.Place.ConsumerAlert.Details.Link(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.maps.places.v1.Place.ConsumerAlert.Details.Link result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.title_ = title_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.uri_ = uri_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other instanceof com.google.maps.places.v1.Place.ConsumerAlert.Details.Link) {
+              return mergeFrom((com.google.maps.places.v1.Place.ConsumerAlert.Details.Link) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.maps.places.v1.Place.ConsumerAlert.Details.Link other) {
+            if (other
+                == com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance())
+              return this;
+            if (!other.getTitle().isEmpty()) {
+              title_ = other.title_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getUri().isEmpty()) {
+              uri_ = other.uri_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      title_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      uri_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object title_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The title to show for the link.
+           * </pre>
+           *
+           * <code>string title = 1;</code>
+           *
+           * @return The title.
+           */
+          public java.lang.String getTitle() {
+            java.lang.Object ref = title_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              title_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The title to show for the link.
+           * </pre>
+           *
+           * <code>string title = 1;</code>
+           *
+           * @return The bytes for title.
+           */
+          public com.google.protobuf.ByteString getTitleBytes() {
+            java.lang.Object ref = title_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              title_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The title to show for the link.
+           * </pre>
+           *
+           * <code>string title = 1;</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTitle(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            title_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The title to show for the link.
+           * </pre>
+           *
+           * <code>string title = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearTitle() {
+            title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The title to show for the link.
+           * </pre>
+           *
+           * <code>string title = 1;</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            title_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object uri_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The uri of the link.
+           * </pre>
+           *
+           * <code>string uri = 2;</code>
+           *
+           * @return The uri.
+           */
+          public java.lang.String getUri() {
+            java.lang.Object ref = uri_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              uri_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The uri of the link.
+           * </pre>
+           *
+           * <code>string uri = 2;</code>
+           *
+           * @return The bytes for uri.
+           */
+          public com.google.protobuf.ByteString getUriBytes() {
+            java.lang.Object ref = uri_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              uri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The uri of the link.
+           * </pre>
+           *
+           * <code>string uri = 2;</code>
+           *
+           * @param value The uri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            uri_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The uri of the link.
+           * </pre>
+           *
+           * <code>string uri = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearUri() {
+            uri_ = getDefaultInstance().getUri();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The uri of the link.
+           * </pre>
+           *
+           * <code>string uri = 2;</code>
+           *
+           * @param value The bytes for uri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            uri_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.ConsumerAlert.Details.Link)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.ConsumerAlert.Details.Link)
+        private static final com.google.maps.places.v1.Place.ConsumerAlert.Details.Link
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.ConsumerAlert.Details.Link();
+        }
+
+        public static com.google.maps.places.v1.Place.ConsumerAlert.Details.Link
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<Link> PARSER =
+            new com.google.protobuf.AbstractParser<Link>() {
+              @java.lang.Override
+              public Link parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<Link> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Link> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int TITLE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object title_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The title to show together with the description.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       *
+       * @return The title.
+       */
+      @java.lang.Override
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The title to show together with the description.
+       * </pre>
+       *
+       * <code>string title = 1;</code>
+       *
+       * @return The bytes for title.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DESCRIPTION_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object description_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the consumer alert message.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       *
+       * @return The description.
+       */
+      @java.lang.Override
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the consumer alert message.
+       * </pre>
+       *
+       * <code>string description = 2;</code>
+       *
+       * @return The bytes for description.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ABOUT_LINK_FIELD_NUMBER = 3;
+      private com.google.maps.places.v1.Place.ConsumerAlert.Details.Link aboutLink_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       *
+       * @return Whether the aboutLink field is set.
+       */
+      @java.lang.Override
+      public boolean hasAboutLink() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       *
+       * @return The aboutLink.
+       */
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link getAboutLink() {
+        return aboutLink_ == null
+            ? com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance()
+            : aboutLink_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The link to show together with the description to provide more
+       * information.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder
+          getAboutLinkOrBuilder() {
+        return aboutLink_ == null
+            ? com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance()
+            : aboutLink_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(3, getAboutLink());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAboutLink());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.maps.places.v1.Place.ConsumerAlert.Details)) {
+          return super.equals(obj);
+        }
+        com.google.maps.places.v1.Place.ConsumerAlert.Details other =
+            (com.google.maps.places.v1.Place.ConsumerAlert.Details) obj;
+
+        if (!getTitle().equals(other.getTitle())) return false;
+        if (!getDescription().equals(other.getDescription())) return false;
+        if (hasAboutLink() != other.hasAboutLink()) return false;
+        if (hasAboutLink()) {
+          if (!getAboutLink().equals(other.getAboutLink())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TITLE_FIELD_NUMBER;
+        hash = (53 * hash) + getTitle().hashCode();
+        hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDescription().hashCode();
+        if (hasAboutLink()) {
+          hash = (37 * hash) + ABOUT_LINK_FIELD_NUMBER;
+          hash = (53 * hash) + getAboutLink().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.maps.places.v1.Place.ConsumerAlert.Details prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert.Details}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.ConsumerAlert.Details)
+          com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.maps.places.v1.PlaceProto
+              .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.maps.places.v1.PlaceProto
+              .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details.class,
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder.class);
+        }
+
+        // Construct using com.google.maps.places.v1.Place.ConsumerAlert.Details.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getAboutLinkFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          title_ = "";
+          description_ = "";
+          aboutLink_ = null;
+          if (aboutLinkBuilder_ != null) {
+            aboutLinkBuilder_.dispose();
+            aboutLinkBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.maps.places.v1.PlaceProto
+              .internal_static_google_maps_places_v1_Place_ConsumerAlert_Details_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details getDefaultInstanceForType() {
+          return com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details build() {
+          com.google.maps.places.v1.Place.ConsumerAlert.Details result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details buildPartial() {
+          com.google.maps.places.v1.Place.ConsumerAlert.Details result =
+              new com.google.maps.places.v1.Place.ConsumerAlert.Details(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.google.maps.places.v1.Place.ConsumerAlert.Details result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.title_ = title_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.description_ = description_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.aboutLink_ = aboutLinkBuilder_ == null ? aboutLink_ : aboutLinkBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.maps.places.v1.Place.ConsumerAlert.Details) {
+            return mergeFrom((com.google.maps.places.v1.Place.ConsumerAlert.Details) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.maps.places.v1.Place.ConsumerAlert.Details other) {
+          if (other == com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance())
+            return this;
+          if (!other.getTitle().isEmpty()) {
+            title_ = other.title_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getDescription().isEmpty()) {
+            description_ = other.description_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (other.hasAboutLink()) {
+            mergeAboutLink(other.getAboutLink());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    title_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    description_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(getAboutLinkFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object title_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show together with the description.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The title.
+         */
+        public java.lang.String getTitle() {
+          java.lang.Object ref = title_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show together with the description.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return The bytes for title.
+         */
+        public com.google.protobuf.ByteString getTitleBytes() {
+          java.lang.Object ref = title_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show together with the description.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @param value The title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitle(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          title_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show together with the description.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTitle() {
+          title_ = getDefaultInstance().getTitle();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The title to show together with the description.
+         * </pre>
+         *
+         * <code>string title = 1;</code>
+         *
+         * @param value The bytes for title to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          title_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object description_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the consumer alert message.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         *
+         * @return The description.
+         */
+        public java.lang.String getDescription() {
+          java.lang.Object ref = description_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            description_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the consumer alert message.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         *
+         * @return The bytes for description.
+         */
+        public com.google.protobuf.ByteString getDescriptionBytes() {
+          java.lang.Object ref = description_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            description_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the consumer alert message.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         *
+         * @param value The description to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDescription(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          description_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the consumer alert message.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDescription() {
+          description_ = getDefaultInstance().getDescription();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The description of the consumer alert message.
+         * </pre>
+         *
+         * <code>string description = 2;</code>
+         *
+         * @param value The bytes for description to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          description_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private com.google.maps.places.v1.Place.ConsumerAlert.Details.Link aboutLink_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.Link,
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder,
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder>
+            aboutLinkBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         *
+         * @return Whether the aboutLink field is set.
+         */
+        public boolean hasAboutLink() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         *
+         * @return The aboutLink.
+         */
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link getAboutLink() {
+          if (aboutLinkBuilder_ == null) {
+            return aboutLink_ == null
+                ? com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance()
+                : aboutLink_;
+          } else {
+            return aboutLinkBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public Builder setAboutLink(
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link value) {
+          if (aboutLinkBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            aboutLink_ = value;
+          } else {
+            aboutLinkBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public Builder setAboutLink(
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder builderForValue) {
+          if (aboutLinkBuilder_ == null) {
+            aboutLink_ = builderForValue.build();
+          } else {
+            aboutLinkBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public Builder mergeAboutLink(
+            com.google.maps.places.v1.Place.ConsumerAlert.Details.Link value) {
+          if (aboutLinkBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && aboutLink_ != null
+                && aboutLink_
+                    != com.google.maps.places.v1.Place.ConsumerAlert.Details.Link
+                        .getDefaultInstance()) {
+              getAboutLinkBuilder().mergeFrom(value);
+            } else {
+              aboutLink_ = value;
+            }
+          } else {
+            aboutLinkBuilder_.mergeFrom(value);
+          }
+          if (aboutLink_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public Builder clearAboutLink() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          aboutLink_ = null;
+          if (aboutLinkBuilder_ != null) {
+            aboutLinkBuilder_.dispose();
+            aboutLinkBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder
+            getAboutLinkBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getAboutLinkFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        public com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder
+            getAboutLinkOrBuilder() {
+          if (aboutLinkBuilder_ != null) {
+            return aboutLinkBuilder_.getMessageOrBuilder();
+          } else {
+            return aboutLink_ == null
+                ? com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.getDefaultInstance()
+                : aboutLink_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The link to show together with the description to provide more
+         * information.
+         * </pre>
+         *
+         * <code>.google.maps.places.v1.Place.ConsumerAlert.Details.Link about_link = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.Link,
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder,
+                com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder>
+            getAboutLinkFieldBuilder() {
+          if (aboutLinkBuilder_ == null) {
+            aboutLinkBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.maps.places.v1.Place.ConsumerAlert.Details.Link,
+                    com.google.maps.places.v1.Place.ConsumerAlert.Details.Link.Builder,
+                    com.google.maps.places.v1.Place.ConsumerAlert.Details.LinkOrBuilder>(
+                    getAboutLink(), getParentForChildren(), isClean());
+            aboutLink_ = null;
+          }
+          return aboutLinkBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.ConsumerAlert.Details)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.ConsumerAlert.Details)
+      private static final com.google.maps.places.v1.Place.ConsumerAlert.Details DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.ConsumerAlert.Details();
+      }
+
+      public static com.google.maps.places.v1.Place.ConsumerAlert.Details getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Details> PARSER =
+          new com.google.protobuf.AbstractParser<Details>() {
+            @java.lang.Override
+            public Details parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Details> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Details> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert.Details getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int OVERVIEW_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object overview_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The overview of the consumer alert message.
+     * </pre>
+     *
+     * <code>string overview = 1;</code>
+     *
+     * @return The overview.
+     */
+    @java.lang.Override
+    public java.lang.String getOverview() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        overview_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The overview of the consumer alert message.
+     * </pre>
+     *
+     * <code>string overview = 1;</code>
+     *
+     * @return The bytes for overview.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOverviewBytes() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        overview_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 2;
+    private com.google.maps.places.v1.Place.ConsumerAlert.Details details_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     *
+     * @return Whether the details field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetails() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     *
+     * @return The details.
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.ConsumerAlert.Details getDetails() {
+      return details_ == null
+          ? com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance()
+          : details_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of the consumer alert message.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder getDetailsOrBuilder() {
+      return details_ == null
+          ? com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance()
+          : details_;
+    }
+
+    public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The language code of the consumer alert message. This is a BCP 47
+     * language code.
+     * </pre>
+     *
+     * <code>string language_code = 3;</code>
+     *
+     * @return The languageCode.
+     */
+    @java.lang.Override
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The language code of the consumer alert message. This is a BCP 47
+     * language code.
+     * </pre>
+     *
+     * <code>string language_code = 3;</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(overview_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, overview_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getDetails());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, languageCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(overview_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, overview_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDetails());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.maps.places.v1.Place.ConsumerAlert)) {
+        return super.equals(obj);
+      }
+      com.google.maps.places.v1.Place.ConsumerAlert other =
+          (com.google.maps.places.v1.Place.ConsumerAlert) obj;
+
+      if (!getOverview().equals(other.getOverview())) return false;
+      if (hasDetails() != other.hasDetails()) return false;
+      if (hasDetails()) {
+        if (!getDetails().equals(other.getDetails())) return false;
+      }
+      if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getOverview().hashCode();
+      if (hasDetails()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetails().hashCode();
+      }
+      hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getLanguageCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.maps.places.v1.Place.ConsumerAlert prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * Protobuf type {@code google.maps.places.v1.Place.ConsumerAlert}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.maps.places.v1.Place.ConsumerAlert)
+        com.google.maps.places.v1.Place.ConsumerAlertOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ConsumerAlert_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ConsumerAlert_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.maps.places.v1.Place.ConsumerAlert.class,
+                com.google.maps.places.v1.Place.ConsumerAlert.Builder.class);
+      }
+
+      // Construct using com.google.maps.places.v1.Place.ConsumerAlert.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getDetailsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        overview_ = "";
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        languageCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.maps.places.v1.PlaceProto
+            .internal_static_google_maps_places_v1_Place_ConsumerAlert_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert getDefaultInstanceForType() {
+        return com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert build() {
+        com.google.maps.places.v1.Place.ConsumerAlert result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.maps.places.v1.Place.ConsumerAlert buildPartial() {
+        com.google.maps.places.v1.Place.ConsumerAlert result =
+            new com.google.maps.places.v1.Place.ConsumerAlert(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.maps.places.v1.Place.ConsumerAlert result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overview_ = overview_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.details_ = detailsBuilder_ == null ? details_ : detailsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.languageCode_ = languageCode_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.maps.places.v1.Place.ConsumerAlert) {
+          return mergeFrom((com.google.maps.places.v1.Place.ConsumerAlert) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.maps.places.v1.Place.ConsumerAlert other) {
+        if (other == com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance())
+          return this;
+        if (!other.getOverview().isEmpty()) {
+          overview_ = other.overview_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasDetails()) {
+          mergeDetails(other.getDetails());
+        }
+        if (!other.getLanguageCode().isEmpty()) {
+          languageCode_ = other.languageCode_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  overview_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(getDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  languageCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object overview_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The overview of the consumer alert message.
+       * </pre>
+       *
+       * <code>string overview = 1;</code>
+       *
+       * @return The overview.
+       */
+      public java.lang.String getOverview() {
+        java.lang.Object ref = overview_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          overview_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overview of the consumer alert message.
+       * </pre>
+       *
+       * <code>string overview = 1;</code>
+       *
+       * @return The bytes for overview.
+       */
+      public com.google.protobuf.ByteString getOverviewBytes() {
+        java.lang.Object ref = overview_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          overview_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overview of the consumer alert message.
+       * </pre>
+       *
+       * <code>string overview = 1;</code>
+       *
+       * @param value The overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverview(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overview of the consumer alert message.
+       * </pre>
+       *
+       * <code>string overview = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOverview() {
+        overview_ = getDefaultInstance().getOverview();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The overview of the consumer alert message.
+       * </pre>
+       *
+       * <code>string overview = 1;</code>
+       *
+       * @param value The bytes for overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverviewBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.maps.places.v1.Place.ConsumerAlert.Details details_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.Place.ConsumerAlert.Details,
+              com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder,
+              com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder>
+          detailsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       *
+       * @return Whether the details field is set.
+       */
+      public boolean hasDetails() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       *
+       * @return The details.
+       */
+      public com.google.maps.places.v1.Place.ConsumerAlert.Details getDetails() {
+        if (detailsBuilder_ == null) {
+          return details_ == null
+              ? com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance()
+              : details_;
+        } else {
+          return detailsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public Builder setDetails(com.google.maps.places.v1.Place.ConsumerAlert.Details value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+        } else {
+          detailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public Builder setDetails(
+          com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          details_ = builderForValue.build();
+        } else {
+          detailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public Builder mergeDetails(com.google.maps.places.v1.Place.ConsumerAlert.Details value) {
+        if (detailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && details_ != null
+              && details_
+                  != com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance()) {
+            getDetailsBuilder().mergeFrom(value);
+          } else {
+            details_ = value;
+          }
+        } else {
+          detailsBuilder_.mergeFrom(value);
+        }
+        if (details_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public Builder clearDetails() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder getDetailsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getDetailsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      public com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder getDetailsOrBuilder() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilder();
+        } else {
+          return details_ == null
+              ? com.google.maps.places.v1.Place.ConsumerAlert.Details.getDefaultInstance()
+              : details_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The details of the consumer alert message.
+       * </pre>
+       *
+       * <code>.google.maps.places.v1.Place.ConsumerAlert.Details details = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.maps.places.v1.Place.ConsumerAlert.Details,
+              com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder,
+              com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder>
+          getDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details,
+                  com.google.maps.places.v1.Place.ConsumerAlert.Details.Builder,
+                  com.google.maps.places.v1.Place.ConsumerAlert.DetailsOrBuilder>(
+                  getDetails(), getParentForChildren(), isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      private java.lang.Object languageCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The language code of the consumer alert message. This is a BCP 47
+       * language code.
+       * </pre>
+       *
+       * <code>string language_code = 3;</code>
+       *
+       * @return The languageCode.
+       */
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The language code of the consumer alert message. This is a BCP 47
+       * language code.
+       * </pre>
+       *
+       * <code>string language_code = 3;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The language code of the consumer alert message. This is a BCP 47
+       * language code.
+       * </pre>
+       *
+       * <code>string language_code = 3;</code>
+       *
+       * @param value The languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        languageCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The language code of the consumer alert message. This is a BCP 47
+       * language code.
+       * </pre>
+       *
+       * <code>string language_code = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLanguageCode() {
+        languageCode_ = getDefaultInstance().getLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The language code of the consumer alert message. This is a BCP 47
+       * language code.
+       * </pre>
+       *
+       * <code>string language_code = 3;</code>
+       *
+       * @param value The bytes for languageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        languageCode_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.maps.places.v1.Place.ConsumerAlert)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.maps.places.v1.Place.ConsumerAlert)
+    private static final com.google.maps.places.v1.Place.ConsumerAlert DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.maps.places.v1.Place.ConsumerAlert();
+    }
+
+    public static com.google.maps.places.v1.Place.ConsumerAlert getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConsumerAlert> PARSER =
+        new com.google.protobuf.AbstractParser<ConsumerAlert>() {
+          @java.lang.Override
+          public ConsumerAlert parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConsumerAlert> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConsumerAlert> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.maps.places.v1.Place.ConsumerAlert getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -26651,6 +30174,182 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         : neighborhoodSummary_;
   }
 
+  public static final int CONSUMER_ALERT_FIELD_NUMBER = 92;
+  private com.google.maps.places.v1.Place.ConsumerAlert consumerAlert_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   *
+   * @return Whether the consumerAlert field is set.
+   */
+  @java.lang.Override
+  public boolean hasConsumerAlert() {
+    return ((bitField1_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   *
+   * @return The consumerAlert.
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ConsumerAlert getConsumerAlert() {
+    return consumerAlert_ == null
+        ? com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()
+        : consumerAlert_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The consumer alert message for the place when we detect suspicious review
+   * activity on a business or a business violates our policies.
+   * </pre>
+   *
+   * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+   */
+  @java.lang.Override
+  public com.google.maps.places.v1.Place.ConsumerAlertOrBuilder getConsumerAlertOrBuilder() {
+    return consumerAlert_ == null
+        ? com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()
+        : consumerAlert_;
+  }
+
+  public static final int MOVED_PLACE_FIELD_NUMBER = 93;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object movedPlace_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The movedPlace.
+   */
+  @java.lang.Override
+  public java.lang.String getMovedPlace() {
+    java.lang.Object ref = movedPlace_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      movedPlace_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's resource name, in `places/{place_id}`
+   * format. If this Place moved multiple times, this field will represent the
+   * first moved place. This field will not be populated if this Place has not
+   * moved.
+   * </pre>
+   *
+   * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for movedPlace.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMovedPlaceBytes() {
+    java.lang.Object ref = movedPlace_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      movedPlace_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MOVED_PLACE_ID_FIELD_NUMBER = 94;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object movedPlaceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The movedPlaceId.
+   */
+  @java.lang.Override
+  public java.lang.String getMovedPlaceId() {
+    java.lang.Object ref = movedPlaceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      movedPlaceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If this Place is permanently closed and has moved to a new Place, this
+   * field contains the new Place's place ID. If this Place moved multiple
+   * times, this field will represent the first moved Place. This field will not
+   * be populated if this Place has not moved.
+   * </pre>
+   *
+   * <code>string moved_place_id = 94;</code>
+   *
+   * @return The bytes for movedPlaceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMovedPlaceIdBytes() {
+    java.lang.Object ref = movedPlaceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      movedPlaceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -26878,6 +30577,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField1_ & 0x00004000) != 0)) {
       output.writeMessage(91, getNeighborhoodSummary());
+    }
+    if (((bitField1_ & 0x00008000) != 0)) {
+      output.writeMessage(92, getConsumerAlert());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlace_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 93, movedPlace_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlaceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 94, movedPlaceId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -27120,6 +30828,15 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(91, getNeighborhoodSummary());
     }
+    if (((bitField1_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(92, getConsumerAlert());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlace_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(93, movedPlace_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(movedPlaceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94, movedPlaceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -27350,6 +31067,12 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
     if (hasNeighborhoodSummary()) {
       if (!getNeighborhoodSummary().equals(other.getNeighborhoodSummary())) return false;
     }
+    if (hasConsumerAlert() != other.hasConsumerAlert()) return false;
+    if (hasConsumerAlert()) {
+      if (!getConsumerAlert().equals(other.getConsumerAlert())) return false;
+    }
+    if (!getMovedPlace().equals(other.getMovedPlace())) return false;
+    if (!getMovedPlaceId().equals(other.getMovedPlaceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -27617,6 +31340,14 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + NEIGHBORHOOD_SUMMARY_FIELD_NUMBER;
       hash = (53 * hash) + getNeighborhoodSummary().hashCode();
     }
+    if (hasConsumerAlert()) {
+      hash = (37 * hash) + CONSUMER_ALERT_FIELD_NUMBER;
+      hash = (53 * hash) + getConsumerAlert().hashCode();
+    }
+    hash = (37 * hash) + MOVED_PLACE_FIELD_NUMBER;
+    hash = (53 * hash) + getMovedPlace().hashCode();
+    hash = (37 * hash) + MOVED_PLACE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getMovedPlaceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -27785,6 +31516,7 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         getReviewSummaryFieldBuilder();
         getEvChargeAmenitySummaryFieldBuilder();
         getNeighborhoodSummaryFieldBuilder();
+        getConsumerAlertFieldBuilder();
       }
     }
 
@@ -27997,6 +31729,13 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         neighborhoodSummaryBuilder_.dispose();
         neighborhoodSummaryBuilder_ = null;
       }
+      consumerAlert_ = null;
+      if (consumerAlertBuilder_ != null) {
+        consumerAlertBuilder_.dispose();
+        consumerAlertBuilder_ = null;
+      }
+      movedPlace_ = "";
+      movedPlaceId_ = "";
       return this;
     }
 
@@ -28399,6 +32138,17 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 ? neighborhoodSummary_
                 : neighborhoodSummaryBuilder_.build();
         to_bitField1_ |= 0x00004000;
+      }
+      if (((from_bitField2_ & 0x00000080) != 0)) {
+        result.consumerAlert_ =
+            consumerAlertBuilder_ == null ? consumerAlert_ : consumerAlertBuilder_.build();
+        to_bitField1_ |= 0x00008000;
+      }
+      if (((from_bitField2_ & 0x00000100) != 0)) {
+        result.movedPlace_ = movedPlace_;
+      }
+      if (((from_bitField2_ & 0x00000200) != 0)) {
+        result.movedPlaceId_ = movedPlaceId_;
       }
       result.bitField1_ |= to_bitField1_;
     }
@@ -28885,6 +32635,19 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasNeighborhoodSummary()) {
         mergeNeighborhoodSummary(other.getNeighborhoodSummary());
+      }
+      if (other.hasConsumerAlert()) {
+        mergeConsumerAlert(other.getConsumerAlert());
+      }
+      if (!other.getMovedPlace().isEmpty()) {
+        movedPlace_ = other.movedPlace_;
+        bitField2_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getMovedPlaceId().isEmpty()) {
+        movedPlaceId_ = other.movedPlaceId_;
+        bitField2_ |= 0x00000200;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -29404,6 +33167,24 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
                 bitField2_ |= 0x00000040;
                 break;
               } // case 730
+            case 738:
+              {
+                input.readMessage(getConsumerAlertFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00000080;
+                break;
+              } // case 738
+            case 746:
+              {
+                movedPlace_ = input.readStringRequireUtf8();
+                bitField2_ |= 0x00000100;
+                break;
+              } // case 746
+            case 754:
+              {
+                movedPlaceId_ = input.readStringRequireUtf8();
+                bitField2_ |= 0x00000200;
+                break;
+              } // case 754
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -41077,6 +44858,468 @@ public final class Place extends com.google.protobuf.GeneratedMessageV3
         neighborhoodSummary_ = null;
       }
       return neighborhoodSummaryBuilder_;
+    }
+
+    private com.google.maps.places.v1.Place.ConsumerAlert consumerAlert_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.ConsumerAlert,
+            com.google.maps.places.v1.Place.ConsumerAlert.Builder,
+            com.google.maps.places.v1.Place.ConsumerAlertOrBuilder>
+        consumerAlertBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     *
+     * @return Whether the consumerAlert field is set.
+     */
+    public boolean hasConsumerAlert() {
+      return ((bitField2_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     *
+     * @return The consumerAlert.
+     */
+    public com.google.maps.places.v1.Place.ConsumerAlert getConsumerAlert() {
+      if (consumerAlertBuilder_ == null) {
+        return consumerAlert_ == null
+            ? com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()
+            : consumerAlert_;
+      } else {
+        return consumerAlertBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public Builder setConsumerAlert(com.google.maps.places.v1.Place.ConsumerAlert value) {
+      if (consumerAlertBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        consumerAlert_ = value;
+      } else {
+        consumerAlertBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public Builder setConsumerAlert(
+        com.google.maps.places.v1.Place.ConsumerAlert.Builder builderForValue) {
+      if (consumerAlertBuilder_ == null) {
+        consumerAlert_ = builderForValue.build();
+      } else {
+        consumerAlertBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public Builder mergeConsumerAlert(com.google.maps.places.v1.Place.ConsumerAlert value) {
+      if (consumerAlertBuilder_ == null) {
+        if (((bitField2_ & 0x00000080) != 0)
+            && consumerAlert_ != null
+            && consumerAlert_
+                != com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()) {
+          getConsumerAlertBuilder().mergeFrom(value);
+        } else {
+          consumerAlert_ = value;
+        }
+      } else {
+        consumerAlertBuilder_.mergeFrom(value);
+      }
+      if (consumerAlert_ != null) {
+        bitField2_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public Builder clearConsumerAlert() {
+      bitField2_ = (bitField2_ & ~0x00000080);
+      consumerAlert_ = null;
+      if (consumerAlertBuilder_ != null) {
+        consumerAlertBuilder_.dispose();
+        consumerAlertBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public com.google.maps.places.v1.Place.ConsumerAlert.Builder getConsumerAlertBuilder() {
+      bitField2_ |= 0x00000080;
+      onChanged();
+      return getConsumerAlertFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    public com.google.maps.places.v1.Place.ConsumerAlertOrBuilder getConsumerAlertOrBuilder() {
+      if (consumerAlertBuilder_ != null) {
+        return consumerAlertBuilder_.getMessageOrBuilder();
+      } else {
+        return consumerAlert_ == null
+            ? com.google.maps.places.v1.Place.ConsumerAlert.getDefaultInstance()
+            : consumerAlert_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The consumer alert message for the place when we detect suspicious review
+     * activity on a business or a business violates our policies.
+     * </pre>
+     *
+     * <code>.google.maps.places.v1.Place.ConsumerAlert consumer_alert = 92;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.maps.places.v1.Place.ConsumerAlert,
+            com.google.maps.places.v1.Place.ConsumerAlert.Builder,
+            com.google.maps.places.v1.Place.ConsumerAlertOrBuilder>
+        getConsumerAlertFieldBuilder() {
+      if (consumerAlertBuilder_ == null) {
+        consumerAlertBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.maps.places.v1.Place.ConsumerAlert,
+                com.google.maps.places.v1.Place.ConsumerAlert.Builder,
+                com.google.maps.places.v1.Place.ConsumerAlertOrBuilder>(
+                getConsumerAlert(), getParentForChildren(), isClean());
+        consumerAlert_ = null;
+      }
+      return consumerAlertBuilder_;
+    }
+
+    private java.lang.Object movedPlace_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The movedPlace.
+     */
+    public java.lang.String getMovedPlace() {
+      java.lang.Object ref = movedPlace_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        movedPlace_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for movedPlace.
+     */
+    public com.google.protobuf.ByteString getMovedPlaceBytes() {
+      java.lang.Object ref = movedPlace_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        movedPlace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The movedPlace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlace(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      movedPlace_ = value;
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMovedPlace() {
+      movedPlace_ = getDefaultInstance().getMovedPlace();
+      bitField2_ = (bitField2_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's resource name, in `places/{place_id}`
+     * format. If this Place moved multiple times, this field will represent the
+     * first moved place. This field will not be populated if this Place has not
+     * moved.
+     * </pre>
+     *
+     * <code>string moved_place = 93 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for movedPlace to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      movedPlace_ = value;
+      bitField2_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object movedPlaceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return The movedPlaceId.
+     */
+    public java.lang.String getMovedPlaceId() {
+      java.lang.Object ref = movedPlaceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        movedPlaceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return The bytes for movedPlaceId.
+     */
+    public com.google.protobuf.ByteString getMovedPlaceIdBytes() {
+      java.lang.Object ref = movedPlaceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        movedPlaceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @param value The movedPlaceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      movedPlaceId_ = value;
+      bitField2_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMovedPlaceId() {
+      movedPlaceId_ = getDefaultInstance().getMovedPlaceId();
+      bitField2_ = (bitField2_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If this Place is permanently closed and has moved to a new Place, this
+     * field contains the new Place's place ID. If this Place moved multiple
+     * times, this field will represent the first moved Place. This field will not
+     * be populated if this Place has not moved.
+     * </pre>
+     *
+     * <code>string moved_place_id = 94;</code>
+     *
+     * @param value The bytes for movedPlaceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMovedPlaceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      movedPlaceId_ = value;
+      bitField2_ |= 0x00000200;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

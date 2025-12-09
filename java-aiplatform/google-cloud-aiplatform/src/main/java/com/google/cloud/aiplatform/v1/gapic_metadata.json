@@ -307,6 +307,9 @@
             "FetchFeatureValues": {
               "methods": ["fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValues", "fetchFeatureValuesCallable"]
             },
+            "GenerateFetchAccessToken": {
+              "methods": ["generateFetchAccessToken", "generateFetchAccessTokenCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1311,6 +1314,9 @@
             },
             "DirectRawPredict": {
               "methods": ["directRawPredict", "directRawPredictCallable"]
+            },
+            "EmbedContent": {
+              "methods": ["embedContent", "embedContent", "embedContent", "embedContentCallable"]
             },
             "Explain": {
               "methods": ["explain", "explain", "explain", "explainCallable"]

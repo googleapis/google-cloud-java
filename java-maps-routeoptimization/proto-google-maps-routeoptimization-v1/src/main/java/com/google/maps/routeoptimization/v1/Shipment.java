@@ -712,6 +712,46 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for label.
      */
     com.google.protobuf.ByteString getLabelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether U-turns should be avoided in driving routes at this
+     * location.
+     * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+     * This is an experimental feature and behavior is subject to change.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional bool avoid_u_turns = 13;</code>
+     *
+     * @return Whether the avoidUTurns field is set.
+     */
+    boolean hasAvoidUTurns();
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether U-turns should be avoided in driving routes at this
+     * location.
+     * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+     * This is an experimental feature and behavior is subject to change.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional bool avoid_u_turns = 13;</code>
+     *
+     * @return The avoidUTurns.
+     */
+    boolean getAvoidUTurns();
   }
 
   /**
@@ -1606,6 +1646,55 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int AVOID_U_TURNS_FIELD_NUMBER = 13;
+    private boolean avoidUTurns_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether U-turns should be avoided in driving routes at this
+     * location.
+     * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+     * This is an experimental feature and behavior is subject to change.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional bool avoid_u_turns = 13;</code>
+     *
+     * @return Whether the avoidUTurns field is set.
+     */
+    @java.lang.Override
+    public boolean hasAvoidUTurns() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies whether U-turns should be avoided in driving routes at this
+     * location.
+     * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+     * This is an experimental feature and behavior is subject to change.
+     *
+     * Experimental: See
+     * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+     * for more details.
+     * </pre>
+     *
+     * <code>optional bool avoid_u_turns = 13;</code>
+     *
+     * @return The avoidUTurns.
+     */
+    @java.lang.Override
+    public boolean getAvoidUTurns() {
+      return avoidUTurns_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1652,6 +1741,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetLoadDemands(), LoadDemandsDefaultEntryHolder.defaultEntry, 12);
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeBool(13, avoidUTurns_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1713,6 +1805,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, loadDemands__);
       }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, avoidUTurns_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1756,6 +1851,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetLoadDemands().equals(other.internalGetLoadDemands())) return false;
       if (!getVisitTypesList().equals(other.getVisitTypesList())) return false;
       if (!getLabel().equals(other.getLabel())) return false;
+      if (hasAvoidUTurns() != other.hasAvoidUTurns()) return false;
+      if (hasAvoidUTurns()) {
+        if (getAvoidUTurns() != other.getAvoidUTurns()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1809,6 +1908,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + LABEL_FIELD_NUMBER;
       hash = (53 * hash) + getLabel().hashCode();
+      if (hasAvoidUTurns()) {
+        hash = (37 * hash) + AVOID_U_TURNS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAvoidUTurns());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2028,6 +2131,7 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableLoadDemands().clear();
         visitTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         label_ = "";
+        avoidUTurns_ = false;
         return this;
       }
 
@@ -2126,6 +2230,10 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.label_ = label_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.avoidUTurns_ = avoidUTurns_;
+          to_bitField0_ |= 0x00000020;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2251,6 +2359,9 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000400;
           onChanged();
         }
+        if (other.hasAvoidUTurns()) {
+          setAvoidUTurns(other.getAvoidUTurns());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2365,6 +2476,12 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 98
+              case 104:
+                {
+                  avoidUTurns_ = input.readBool();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 104
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4982,6 +5099,106 @@ public final class Shipment extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         label_ = value;
         bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private boolean avoidUTurns_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether U-turns should be avoided in driving routes at this
+       * location.
+       * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+       * This is an experimental feature and behavior is subject to change.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional bool avoid_u_turns = 13;</code>
+       *
+       * @return Whether the avoidUTurns field is set.
+       */
+      @java.lang.Override
+      public boolean hasAvoidUTurns() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether U-turns should be avoided in driving routes at this
+       * location.
+       * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+       * This is an experimental feature and behavior is subject to change.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional bool avoid_u_turns = 13;</code>
+       *
+       * @return The avoidUTurns.
+       */
+      @java.lang.Override
+      public boolean getAvoidUTurns() {
+        return avoidUTurns_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether U-turns should be avoided in driving routes at this
+       * location.
+       * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+       * This is an experimental feature and behavior is subject to change.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional bool avoid_u_turns = 13;</code>
+       *
+       * @param value The avoidUTurns to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAvoidUTurns(boolean value) {
+
+        avoidUTurns_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether U-turns should be avoided in driving routes at this
+       * location.
+       * U-turn avoidance is best effort and complete avoidance is not guaranteed.
+       * This is an experimental feature and behavior is subject to change.
+       *
+       * Experimental: See
+       * https://developers.google.com/maps/tt/route-optimization/experimental/u-turn-avoidance/make-request
+       * for more details.
+       * </pre>
+       *
+       * <code>optional bool avoid_u_turns = 13;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAvoidUTurns() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        avoidUTurns_ = false;
         onChanged();
         return this;
       }

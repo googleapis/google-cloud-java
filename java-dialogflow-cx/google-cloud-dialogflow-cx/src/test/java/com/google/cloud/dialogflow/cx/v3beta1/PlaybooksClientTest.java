@@ -27,11 +27,13 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
@@ -44,6 +46,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -109,6 +112,8 @@ public class PlaybooksClientTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -164,6 +169,8 @@ public class PlaybooksClientTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -375,6 +382,8 @@ public class PlaybooksClientTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -427,6 +436,8 @@ public class PlaybooksClientTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -464,6 +475,120 @@ public class PlaybooksClientTest {
   }
 
   @Test
+  public void exportPlaybookTest() throws Exception {
+    ExportPlaybookResponse expectedResponse = ExportPlaybookResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportPlaybookTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPlaybooks.addResponse(resultOperation);
+
+    ExportPlaybookRequest request =
+        ExportPlaybookRequest.newBuilder()
+            .setName(PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+            .setPlaybookUri("playbookUri2118184975")
+            .build();
+
+    ExportPlaybookResponse actualResponse = client.exportPlaybookAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPlaybooks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportPlaybookRequest actualRequest = ((ExportPlaybookRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getPlaybookUri(), actualRequest.getPlaybookUri());
+    Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportPlaybookExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPlaybooks.addException(exception);
+
+    try {
+      ExportPlaybookRequest request =
+          ExportPlaybookRequest.newBuilder()
+              .setName(
+                  PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+              .setPlaybookUri("playbookUri2118184975")
+              .build();
+      client.exportPlaybookAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importPlaybookTest() throws Exception {
+    ImportPlaybookResponse expectedResponse =
+        ImportPlaybookResponse.newBuilder()
+            .setPlaybook(
+                PlaybookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]").toString())
+            .setConflictingResources(
+                ImportPlaybookResponse.ConflictingResources.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importPlaybookTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPlaybooks.addResponse(resultOperation);
+
+    ImportPlaybookRequest request =
+        ImportPlaybookRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+            .build();
+
+    ImportPlaybookResponse actualResponse = client.importPlaybookAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPlaybooks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportPlaybookRequest actualRequest = ((ImportPlaybookRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getPlaybookUri(), actualRequest.getPlaybookUri());
+    Assert.assertEquals(request.getPlaybookContent(), actualRequest.getPlaybookContent());
+    Assert.assertEquals(request.getImportStrategy(), actualRequest.getImportStrategy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importPlaybookExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPlaybooks.addException(exception);
+
+    try {
+      ImportPlaybookRequest request =
+          ImportPlaybookRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setImportStrategy(PlaybookImportStrategy.newBuilder().build())
+              .build();
+      client.importPlaybookAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void updatePlaybookTest() throws Exception {
     Playbook expectedResponse =
         Playbook.newBuilder()
@@ -479,6 +604,8 @@ public class PlaybooksClientTest {
             .addAllReferencedPlaybooks(new ArrayList<String>())
             .addAllReferencedFlows(new ArrayList<String>())
             .addAllReferencedTools(new ArrayList<String>())
+            .addAllInlineActions(new ArrayList<String>())
+            .setCodeBlock(CodeBlock.newBuilder().build())
             .setLlmModelSettings(LlmModelSettings.newBuilder().build())
             .setSpeechSettings(AdvancedSettings.SpeechSettings.newBuilder().build())
             .addAllHandlers(new ArrayList<Handler>())
@@ -702,6 +829,86 @@ public class PlaybooksClientTest {
     try {
       String name = "name3373707";
       client.getPlaybookVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restorePlaybookVersionTest() throws Exception {
+    RestorePlaybookVersionResponse expectedResponse =
+        RestorePlaybookVersionResponse.newBuilder()
+            .setPlaybook(Playbook.newBuilder().build())
+            .build();
+    mockPlaybooks.addResponse(expectedResponse);
+
+    PlaybookVersionName name =
+        PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]");
+
+    RestorePlaybookVersionResponse actualResponse = client.restorePlaybookVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPlaybooks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestorePlaybookVersionRequest actualRequest =
+        ((RestorePlaybookVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restorePlaybookVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPlaybooks.addException(exception);
+
+    try {
+      PlaybookVersionName name =
+          PlaybookVersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[PLAYBOOK]", "[VERSION]");
+      client.restorePlaybookVersion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void restorePlaybookVersionTest2() throws Exception {
+    RestorePlaybookVersionResponse expectedResponse =
+        RestorePlaybookVersionResponse.newBuilder()
+            .setPlaybook(Playbook.newBuilder().build())
+            .build();
+    mockPlaybooks.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RestorePlaybookVersionResponse actualResponse = client.restorePlaybookVersion(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPlaybooks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RestorePlaybookVersionRequest actualRequest =
+        ((RestorePlaybookVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void restorePlaybookVersionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPlaybooks.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.restorePlaybookVersion(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

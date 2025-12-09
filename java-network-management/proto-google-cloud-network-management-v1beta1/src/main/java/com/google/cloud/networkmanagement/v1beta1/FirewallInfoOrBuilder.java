@@ -389,4 +389,30 @@ public interface FirewallInfoOrBuilder
    * @return The policyPriority.
    */
   int getPolicyPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The enum numeric value on the wire for targetType.
+   */
+  int getTargetTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Target type of the firewall rule.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType target_type = 13;</code>
+   *
+   * @return The targetType.
+   */
+  com.google.cloud.networkmanagement.v1beta1.FirewallInfo.TargetType getTargetType();
 }

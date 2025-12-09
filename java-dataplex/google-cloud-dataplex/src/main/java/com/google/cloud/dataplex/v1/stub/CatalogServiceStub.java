@@ -31,18 +31,22 @@ import com.google.cloud.dataplex.v1.AspectType;
 import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
+import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
+import com.google.cloud.dataplex.v1.EntryLink;
 import com.google.cloud.dataplex.v1.EntryType;
 import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
+import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
@@ -274,6 +278,18 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelMetadataJobCallable()");
+  }
+
+  public UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: createEntryLinkCallable()");
+  }
+
+  public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteEntryLinkCallable()");
+  }
+
+  public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getEntryLinkCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

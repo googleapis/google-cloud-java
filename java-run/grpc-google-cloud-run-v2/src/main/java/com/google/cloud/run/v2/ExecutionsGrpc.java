@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Cloud Run Execution Control Plane API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/run/v2/execution.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ExecutionsGrpc {
 
@@ -451,8 +448,8 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.Execution getExecution(
-        com.google.cloud.run.v2.GetExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.GetExecutionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetExecutionMethod(), getCallOptions(), request);
     }
 
@@ -465,8 +462,8 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.cloud.run.v2.ListExecutionsResponse listExecutions(
-        com.google.cloud.run.v2.ListExecutionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.ListExecutionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListExecutionsMethod(), getCallOptions(), request);
     }
 
@@ -478,8 +475,8 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteExecution(
-        com.google.cloud.run.v2.DeleteExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.DeleteExecutionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
     }
 
@@ -491,8 +488,8 @@ public final class ExecutionsGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation cancelExecution(
-        com.google.cloud.run.v2.CancelExecutionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.run.v2.CancelExecutionRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelExecutionMethod(), getCallOptions(), request);
     }
   }

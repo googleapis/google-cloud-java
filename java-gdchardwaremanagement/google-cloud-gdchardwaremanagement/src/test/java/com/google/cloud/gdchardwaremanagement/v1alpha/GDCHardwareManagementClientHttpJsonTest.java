@@ -209,6 +209,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -216,6 +217,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -268,6 +275,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -275,6 +283,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -327,6 +341,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -334,6 +349,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -395,6 +416,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -402,6 +424,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -463,6 +491,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -470,6 +499,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -490,6 +525,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -497,6 +533,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -537,6 +579,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .addAllTargetWorkloads(new ArrayList<String>())
               .setCustomerMotivation("customerMotivation419733780")
               .setFulfillmentTime(Timestamp.newBuilder().build())
+              .setCustomerRequestedInstallationDate(Date.newBuilder().build())
               .setRegionCode("regionCode-1991004415")
               .setOrderFormUri("orderFormUri212580058")
               .setSubmitTime(Timestamp.newBuilder().build())
@@ -544,6 +587,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .addAllExistingHardware(new ArrayList<HardwareLocation>())
               .setActualInstallationDate(Date.newBuilder().build())
               .setEstimatedInstallationDate(Date.newBuilder().build())
+              .setEstimatedDeliveryDate(Date.newBuilder().build())
+              .setMigration(true)
+              .setAcceptedTime(Timestamp.newBuilder().build())
+              .setRequestedDateChange(Date.newBuilder().build())
+              .setVendorNotes("vendorNotes43828825")
+              .setVendorContact(OrganizationContact.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateOrderAsync(order, updateMask).get();
@@ -655,6 +704,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -662,6 +712,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -719,6 +775,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllTargetWorkloads(new ArrayList<String>())
             .setCustomerMotivation("customerMotivation419733780")
             .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
             .setRegionCode("regionCode-1991004415")
             .setOrderFormUri("orderFormUri212580058")
             .setSubmitTime(Timestamp.newBuilder().build())
@@ -726,6 +783,12 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .addAllExistingHardware(new ArrayList<HardwareLocation>())
             .setActualInstallationDate(Date.newBuilder().build())
             .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -765,6 +828,148 @@ public class GDCHardwareManagementClientHttpJsonTest {
     try {
       String name = "projects/project-6539/locations/location-6539/orders/order-6539";
       client.submitOrderAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelOrderTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOrganizationContact(OrganizationContact.newBuilder().build())
+            .addAllTargetWorkloads(new ArrayList<String>())
+            .setCustomerMotivation("customerMotivation419733780")
+            .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
+            .setRegionCode("regionCode-1991004415")
+            .setOrderFormUri("orderFormUri212580058")
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setBillingId("billingId1828026614")
+            .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+
+    Order actualResponse = client.cancelOrderAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelOrderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+      client.cancelOrderAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelOrderTest2() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOrganizationContact(OrganizationContact.newBuilder().build())
+            .addAllTargetWorkloads(new ArrayList<String>())
+            .setCustomerMotivation("customerMotivation419733780")
+            .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
+            .setRegionCode("regionCode-1991004415")
+            .setOrderFormUri("orderFormUri212580058")
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setBillingId("billingId1828026614")
+            .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelOrderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6539/locations/location-6539/orders/order-6539";
+
+    Order actualResponse = client.cancelOrderAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelOrderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6539/locations/location-6539/orders/order-6539";
+      client.cancelOrderAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -1925,6 +2130,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1987,6 +2193,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2049,6 +2256,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2120,6 +2328,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2191,6 +2400,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2221,6 +2431,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setRequestedInstallationDate(Date.newBuilder().build())
             .setActualInstallationDate(Date.newBuilder().build())
             .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2271,6 +2482,7 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setRequestedInstallationDate(Date.newBuilder().build())
               .setActualInstallationDate(Date.newBuilder().build())
               .addAllMachineInfos(new ArrayList<Hardware.MachineInfo>())
+              .setEstimatedDeliveryDate(Date.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateHardwareAsync(hardware, updateMask).get();
@@ -3323,6 +3535,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3376,6 +3591,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3429,6 +3647,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3491,6 +3712,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3553,6 +3777,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3574,6 +3801,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3615,6 +3845,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
               .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
               .setGloballyUniqueId("globallyUniqueId-1207923364")
               .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+              .setSkipClusterProvisioning(true)
+              .setClusterIntentRequired(true)
+              .setClusterIntentVerified(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateZoneAsync(zone, updateMask).get();
@@ -3727,6 +3960,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3789,6 +4025,9 @@ public class GDCHardwareManagementClientHttpJsonTest {
             .setNetworkConfig(ZoneNetworkConfig.newBuilder().build())
             .setGloballyUniqueId("globallyUniqueId-1207923364")
             .addAllSubscriptionConfigs(new ArrayList<SubscriptionConfig>())
+            .setSkipClusterProvisioning(true)
+            .setClusterIntentRequired(true)
+            .setClusterIntentVerified(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3832,6 +4071,152 @@ public class GDCHardwareManagementClientHttpJsonTest {
       SignalZoneStateRequest.StateSignal stateSignal =
           SignalZoneStateRequest.StateSignal.forNumber(0);
       client.signalZoneStateAsync(name, stateSignal).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void requestOrderDateChangeTest() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOrganizationContact(OrganizationContact.newBuilder().build())
+            .addAllTargetWorkloads(new ArrayList<String>())
+            .setCustomerMotivation("customerMotivation419733780")
+            .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
+            .setRegionCode("regionCode-1991004415")
+            .setOrderFormUri("orderFormUri212580058")
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setBillingId("billingId1828026614")
+            .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("requestOrderDateChangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+    Date requestedDate = Date.newBuilder().build();
+
+    Order actualResponse = client.requestOrderDateChangeAsync(name, requestedDate).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void requestOrderDateChangeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+      Date requestedDate = Date.newBuilder().build();
+      client.requestOrderDateChangeAsync(name, requestedDate).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void requestOrderDateChangeTest2() throws Exception {
+    Order expectedResponse =
+        Order.newBuilder()
+            .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+            .setDisplayName("displayName1714148973")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setOrganizationContact(OrganizationContact.newBuilder().build())
+            .addAllTargetWorkloads(new ArrayList<String>())
+            .setCustomerMotivation("customerMotivation419733780")
+            .setFulfillmentTime(Timestamp.newBuilder().build())
+            .setCustomerRequestedInstallationDate(Date.newBuilder().build())
+            .setRegionCode("regionCode-1991004415")
+            .setOrderFormUri("orderFormUri212580058")
+            .setSubmitTime(Timestamp.newBuilder().build())
+            .setBillingId("billingId1828026614")
+            .addAllExistingHardware(new ArrayList<HardwareLocation>())
+            .setActualInstallationDate(Date.newBuilder().build())
+            .setEstimatedInstallationDate(Date.newBuilder().build())
+            .setEstimatedDeliveryDate(Date.newBuilder().build())
+            .setMigration(true)
+            .setAcceptedTime(Timestamp.newBuilder().build())
+            .setRequestedDateChange(Date.newBuilder().build())
+            .setVendorNotes("vendorNotes43828825")
+            .setVendorContact(OrganizationContact.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("requestOrderDateChangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6539/locations/location-6539/orders/order-6539";
+    Date requestedDate = Date.newBuilder().build();
+
+    Order actualResponse = client.requestOrderDateChangeAsync(name, requestedDate).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void requestOrderDateChangeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6539/locations/location-6539/orders/order-6539";
+      Date requestedDate = Date.newBuilder().build();
+      client.requestOrderDateChangeAsync(name, requestedDate).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

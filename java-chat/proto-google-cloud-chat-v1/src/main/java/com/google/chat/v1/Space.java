@@ -6935,7 +6935,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether spaces managers have this permission.
+     * Optional. Whether space owners
+     * ([`ROLE_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_MANAGER])
+     * have this permission.
      * </pre>
      *
      * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -6948,7 +6950,41 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether non-manager members have this permission.
+     * Optional. Whether space managers
+     * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+     * have this permission.
+     * </pre>
+     *
+     * <code>optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the assistantManagersAllowed field is set.
+     */
+    boolean hasAssistantManagersAllowed();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether space managers
+     * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+     * have this permission.
+     * </pre>
+     *
+     * <code>optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The assistantManagersAllowed.
+     */
+    boolean getAssistantManagersAllowed();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether basic space members
+     * ([`ROLE_MEMBER`][google.chat.v1.Membership.MembershipRole.ROLE_MEMBER])
+     * have this permission.
      * </pre>
      *
      * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7001,6 +7037,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               com.google.chat.v1.Space.PermissionSetting.Builder.class);
     }
 
+    private int bitField0_;
     public static final int MANAGERS_ALLOWED_FIELD_NUMBER = 1;
     private boolean managersAllowed_ = false;
 
@@ -7008,7 +7045,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether spaces managers have this permission.
+     * Optional. Whether space owners
+     * ([`ROLE_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_MANAGER])
+     * have this permission.
      * </pre>
      *
      * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7020,6 +7059,47 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return managersAllowed_;
     }
 
+    public static final int ASSISTANT_MANAGERS_ALLOWED_FIELD_NUMBER = 3;
+    private boolean assistantManagersAllowed_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether space managers
+     * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+     * have this permission.
+     * </pre>
+     *
+     * <code>optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the assistantManagersAllowed field is set.
+     */
+    @java.lang.Override
+    public boolean hasAssistantManagersAllowed() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether space managers
+     * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+     * have this permission.
+     * </pre>
+     *
+     * <code>optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The assistantManagersAllowed.
+     */
+    @java.lang.Override
+    public boolean getAssistantManagersAllowed() {
+      return assistantManagersAllowed_;
+    }
+
     public static final int MEMBERS_ALLOWED_FIELD_NUMBER = 2;
     private boolean membersAllowed_ = false;
 
@@ -7027,7 +7107,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Whether non-manager members have this permission.
+     * Optional. Whether basic space members
+     * ([`ROLE_MEMBER`][google.chat.v1.Membership.MembershipRole.ROLE_MEMBER])
+     * have this permission.
      * </pre>
      *
      * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7059,6 +7141,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (membersAllowed_ != false) {
         output.writeBool(2, membersAllowed_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBool(3, assistantManagersAllowed_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -7073,6 +7158,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       if (membersAllowed_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, membersAllowed_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, assistantManagersAllowed_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -7091,6 +7179,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           (com.google.chat.v1.Space.PermissionSetting) obj;
 
       if (getManagersAllowed() != other.getManagersAllowed()) return false;
+      if (hasAssistantManagersAllowed() != other.hasAssistantManagersAllowed()) return false;
+      if (hasAssistantManagersAllowed()) {
+        if (getAssistantManagersAllowed() != other.getAssistantManagersAllowed()) return false;
+      }
       if (getMembersAllowed() != other.getMembersAllowed()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -7105,6 +7197,11 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MANAGERS_ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManagersAllowed());
+      if (hasAssistantManagersAllowed()) {
+        hash = (37 * hash) + ASSISTANT_MANAGERS_ALLOWED_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAssistantManagersAllowed());
+      }
       hash = (37 * hash) + MEMBERS_ALLOWED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMembersAllowed());
       hash = (29 * hash) + getUnknownFields().hashCode();
@@ -7250,6 +7347,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         managersAllowed_ = false;
+        assistantManagersAllowed_ = false;
         membersAllowed_ = false;
         return this;
       }
@@ -7290,9 +7388,15 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.managersAllowed_ = managersAllowed_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.assistantManagersAllowed_ = assistantManagersAllowed_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.membersAllowed_ = membersAllowed_;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -7345,6 +7449,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         if (other.getManagersAllowed() != false) {
           setManagersAllowed(other.getManagersAllowed());
         }
+        if (other.hasAssistantManagersAllowed()) {
+          setAssistantManagersAllowed(other.getAssistantManagersAllowed());
+        }
         if (other.getMembersAllowed() != false) {
           setMembersAllowed(other.getMembersAllowed());
         }
@@ -7383,9 +7490,15 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               case 16:
                 {
                   membersAllowed_ = input.readBool();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 16
+              case 24:
+                {
+                  assistantManagersAllowed_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 24
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7411,7 +7524,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether spaces managers have this permission.
+       * Optional. Whether space owners
+       * ([`ROLE_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_MANAGER])
+       * have this permission.
        * </pre>
        *
        * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7427,7 +7542,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether spaces managers have this permission.
+       * Optional. Whether space owners
+       * ([`ROLE_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_MANAGER])
+       * have this permission.
        * </pre>
        *
        * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7447,7 +7564,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether spaces managers have this permission.
+       * Optional. Whether space owners
+       * ([`ROLE_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_MANAGER])
+       * have this permission.
        * </pre>
        *
        * <code>bool managers_allowed = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7461,13 +7580,103 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private boolean assistantManagersAllowed_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether space managers
+       * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+       * have this permission.
+       * </pre>
+       *
+       * <code>
+       * optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the assistantManagersAllowed field is set.
+       */
+      @java.lang.Override
+      public boolean hasAssistantManagersAllowed() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether space managers
+       * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+       * have this permission.
+       * </pre>
+       *
+       * <code>
+       * optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The assistantManagersAllowed.
+       */
+      @java.lang.Override
+      public boolean getAssistantManagersAllowed() {
+        return assistantManagersAllowed_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether space managers
+       * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+       * have this permission.
+       * </pre>
+       *
+       * <code>
+       * optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The assistantManagersAllowed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssistantManagersAllowed(boolean value) {
+
+        assistantManagersAllowed_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether space managers
+       * [`ROLE_ASSISTANT_MANAGER`][google.chat.v1.Membership.MembershipRole.ROLE_ASSISTANT_MANAGER])
+       * have this permission.
+       * </pre>
+       *
+       * <code>
+       * optional bool assistant_managers_allowed = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAssistantManagersAllowed() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        assistantManagersAllowed_ = false;
+        onChanged();
+        return this;
+      }
+
       private boolean membersAllowed_;
 
       /**
        *
        *
        * <pre>
-       * Optional. Whether non-manager members have this permission.
+       * Optional. Whether basic space members
+       * ([`ROLE_MEMBER`][google.chat.v1.Membership.MembershipRole.ROLE_MEMBER])
+       * have this permission.
        * </pre>
        *
        * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7483,7 +7692,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether non-manager members have this permission.
+       * Optional. Whether basic space members
+       * ([`ROLE_MEMBER`][google.chat.v1.Membership.MembershipRole.ROLE_MEMBER])
+       * have this permission.
        * </pre>
        *
        * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7494,7 +7705,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       public Builder setMembersAllowed(boolean value) {
 
         membersAllowed_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7503,7 +7714,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. Whether non-manager members have this permission.
+       * Optional. Whether basic space members
+       * ([`ROLE_MEMBER`][google.chat.v1.Membership.MembershipRole.ROLE_MEMBER])
+       * have this permission.
        * </pre>
        *
        * <code>bool members_allowed = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -7511,7 +7724,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * @return This builder for chaining.
        */
       public Builder clearMembersAllowed() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         membersAllowed_ = false;
         onChanged();
         return this;
@@ -7718,7 +7931,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -7739,7 +7952,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
    * @return The type.
    */
   @java.lang.Override
@@ -7825,7 +8038,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
    * @return The threaded.
    */
   @java.lang.Override
@@ -8403,8 +8616,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * and `SpaceType` is `SPACE`, otherwise should not be set.
    *
    * In the format `customers/{customer}`, where `customer` is the `id` from the
-   * [Admin SDK customer resource](
-   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * [Admin SDK customer
+   * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
@@ -8432,8 +8645,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * and `SpaceType` is `SPACE`, otherwise should not be set.
    *
    * In the format `customers/{customer}`, where `customer` is the `id` from the
-   * [Admin SDK customer resource](
-   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * [Admin SDK customer
+   * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
@@ -8469,8 +8682,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * and `SpaceType` is `SPACE`, otherwise should not be set.
    *
    * In the format `customers/{customer}`, where `customer` is the `id` from the
-   * [Admin SDK customer resource](
-   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * [Admin SDK customer
+   * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
    * Private apps can also use the `customers/my_customer` alias to create
    * the space in the same Google Workspace organization as the app.
    *
@@ -9940,7 +10153,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -9961,7 +10174,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -9985,7 +10198,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
      * @return The type.
      */
     @java.lang.Override
@@ -10007,7 +10220,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -10034,7 +10247,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=265
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10227,7 +10440,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
      * @return The threaded.
      */
     @java.lang.Override
@@ -10247,7 +10460,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -10271,7 +10484,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=277
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -12049,8 +12262,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
@@ -12077,8 +12290,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
@@ -12113,8 +12326,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
@@ -12149,8 +12362,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
@@ -12184,8 +12397,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *
@@ -12215,8 +12428,8 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * and `SpaceType` is `SPACE`, otherwise should not be set.
      *
      * In the format `customers/{customer}`, where `customer` is the `id` from the
-     * [Admin SDK customer resource](
-     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * [Admin SDK customer
+     * resource](https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
      * Private apps can also use the `customers/my_customer` alias to create
      * the space in the same Google Workspace organization as the app.
      *

@@ -70,6 +70,263 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.Tool.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * These are available confidence level user can set to block malicious urls
+   * with chosen confidence and above. For understanding different confidence of
+   * webrisk, please refer to
+   * https://cloud.google.com/web-risk/docs/reference/rpc/google.cloud.webrisk.v1eap1#confidencelevel
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold}
+   */
+  public enum PhishBlockThreshold implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to unspecified.
+     * </pre>
+     *
+     * <code>PHISH_BLOCK_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    PHISH_BLOCK_THRESHOLD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Low and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_LOW_AND_ABOVE = 30;</code>
+     */
+    BLOCK_LOW_AND_ABOVE(30),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Medium and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_MEDIUM_AND_ABOVE = 40;</code>
+     */
+    BLOCK_MEDIUM_AND_ABOVE(40),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks High and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_HIGH_AND_ABOVE = 50;</code>
+     */
+    BLOCK_HIGH_AND_ABOVE(50),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Higher and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_HIGHER_AND_ABOVE = 55;</code>
+     */
+    BLOCK_HIGHER_AND_ABOVE(55),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Very high and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_VERY_HIGH_AND_ABOVE = 60;</code>
+     */
+    BLOCK_VERY_HIGH_AND_ABOVE(60),
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Extremely high confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_ONLY_EXTREMELY_HIGH = 100;</code>
+     */
+    BLOCK_ONLY_EXTREMELY_HIGH(100),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Defaults to unspecified.
+     * </pre>
+     *
+     * <code>PHISH_BLOCK_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    public static final int PHISH_BLOCK_THRESHOLD_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Low and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_LOW_AND_ABOVE = 30;</code>
+     */
+    public static final int BLOCK_LOW_AND_ABOVE_VALUE = 30;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Medium and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_MEDIUM_AND_ABOVE = 40;</code>
+     */
+    public static final int BLOCK_MEDIUM_AND_ABOVE_VALUE = 40;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks High and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_HIGH_AND_ABOVE = 50;</code>
+     */
+    public static final int BLOCK_HIGH_AND_ABOVE_VALUE = 50;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Higher and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_HIGHER_AND_ABOVE = 55;</code>
+     */
+    public static final int BLOCK_HIGHER_AND_ABOVE_VALUE = 55;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Very high and above confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_VERY_HIGH_AND_ABOVE = 60;</code>
+     */
+    public static final int BLOCK_VERY_HIGH_AND_ABOVE_VALUE = 60;
+
+    /**
+     *
+     *
+     * <pre>
+     * Blocks Extremely high confidence URL that is risky.
+     * </pre>
+     *
+     * <code>BLOCK_ONLY_EXTREMELY_HIGH = 100;</code>
+     */
+    public static final int BLOCK_ONLY_EXTREMELY_HIGH_VALUE = 100;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PhishBlockThreshold valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PhishBlockThreshold forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PHISH_BLOCK_THRESHOLD_UNSPECIFIED;
+        case 30:
+          return BLOCK_LOW_AND_ABOVE;
+        case 40:
+          return BLOCK_MEDIUM_AND_ABOVE;
+        case 50:
+          return BLOCK_HIGH_AND_ABOVE;
+        case 55:
+          return BLOCK_HIGHER_AND_ABOVE;
+        case 60:
+          return BLOCK_VERY_HIGH_AND_ABOVE;
+        case 100:
+          return BLOCK_ONLY_EXTREMELY_HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PhishBlockThreshold>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PhishBlockThreshold>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PhishBlockThreshold>() {
+              public PhishBlockThreshold findValueByNumber(int number) {
+                return PhishBlockThreshold.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.Tool.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final PhishBlockThreshold[] VALUES = values();
+
+    public static PhishBlockThreshold valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PhishBlockThreshold(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold)
+  }
+
   public interface GoogleSearchOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.Tool.GoogleSearch)
@@ -136,6 +393,54 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the excludeDomains at the given index.
      */
     com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the blockingConfidence field is set.
+     */
+    boolean hasBlockingConfidence();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for blockingConfidence.
+     */
+    int getBlockingConfidenceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The blockingConfidence.
+     */
+    com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold getBlockingConfidence();
   }
 
   /**
@@ -161,6 +466,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     private GoogleSearch() {
       excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      blockingConfidence_ = 0;
     }
 
     @java.lang.Override
@@ -184,6 +490,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1beta1.Tool.GoogleSearch.Builder.class);
     }
 
+    private int bitField0_;
     public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 3;
 
     @SuppressWarnings("serial")
@@ -260,6 +567,71 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return excludeDomains_.getByteString(index);
     }
 
+    public static final int BLOCKING_CONFIDENCE_FIELD_NUMBER = 4;
+    private int blockingConfidence_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the blockingConfidence field is set.
+     */
+    @java.lang.Override
+    public boolean hasBlockingConfidence() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for blockingConfidence.
+     */
+    @java.lang.Override
+    public int getBlockingConfidenceValue() {
+      return blockingConfidence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Sites with confidence level chosen &amp; above this value will be
+     * blocked from the search results.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The blockingConfidence.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold getBlockingConfidence() {
+      com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold result =
+          com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold.forNumber(
+              blockingConfidence_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -276,6 +648,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < excludeDomains_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, excludeDomains_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(4, blockingConfidence_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -294,6 +669,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getExcludeDomainsList().size();
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, blockingConfidence_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -311,6 +689,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.Tool.GoogleSearch) obj;
 
       if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
+      if (hasBlockingConfidence() != other.hasBlockingConfidence()) return false;
+      if (hasBlockingConfidence()) {
+        if (blockingConfidence_ != other.blockingConfidence_) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -325,6 +707,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (getExcludeDomainsCount() > 0) {
         hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
         hash = (53 * hash) + getExcludeDomainsList().hashCode();
+      }
+      if (hasBlockingConfidence()) {
+        hash = (37 * hash) + BLOCKING_CONFIDENCE_FIELD_NUMBER;
+        hash = (53 * hash) + blockingConfidence_;
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -471,6 +857,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        blockingConfidence_ = 0;
         return this;
       }
 
@@ -511,6 +898,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           excludeDomains_.makeImmutable();
           result.excludeDomains_ = excludeDomains_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.blockingConfidence_ = blockingConfidence_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -571,6 +964,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        if (other.hasBlockingConfidence()) {
+          setBlockingConfidence(other.getBlockingConfidence());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -604,6 +1000,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   excludeDomains_.add(s);
                   break;
                 } // case 26
+              case 32:
+                {
+                  blockingConfidence_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -820,6 +1222,139 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         ensureExcludeDomainsIsMutable();
         excludeDomains_.add(value);
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int blockingConfidence_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the blockingConfidence field is set.
+       */
+      @java.lang.Override
+      public boolean hasBlockingConfidence() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for blockingConfidence.
+       */
+      @java.lang.Override
+      public int getBlockingConfidenceValue() {
+        return blockingConfidence_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for blockingConfidence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockingConfidenceValue(int value) {
+        blockingConfidence_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The blockingConfidence.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold getBlockingConfidence() {
+        com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold result =
+            com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold.forNumber(
+                blockingConfidence_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The blockingConfidence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBlockingConfidence(
+          com.google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        blockingConfidence_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Sites with confidence level chosen &amp; above this value will be
+       * blocked from the search results.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.aiplatform.v1beta1.Tool.PhishBlockThreshold blocking_confidence = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBlockingConfidence() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        blockingConfidence_ = 0;
         onChanged();
         return this;
       }
@@ -1356,6 +1891,88 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return The environment.
      */
     com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse.Environment getEnvironment();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludedPredefinedFunctions.
+     */
+    java.util.List<java.lang.String> getExcludedPredefinedFunctionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludedPredefinedFunctions.
+     */
+    int getExcludedPredefinedFunctionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedPredefinedFunctions at the given index.
+     */
+    java.lang.String getExcludedPredefinedFunctions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedPredefinedFunctions at the given index.
+     */
+    com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index);
   }
 
   /**
@@ -1380,6 +1997,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     private ComputerUse() {
       environment_ = 0;
+      excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
@@ -1584,6 +2202,102 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int EXCLUDED_PREDEFINED_FUNCTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList excludedPredefinedFunctions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the excludedPredefinedFunctions.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludedPredefinedFunctionsList() {
+      return excludedPredefinedFunctions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of excludedPredefinedFunctions.
+     */
+    public int getExcludedPredefinedFunctionsCount() {
+      return excludedPredefinedFunctions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludedPredefinedFunctions at the given index.
+     */
+    public java.lang.String getExcludedPredefinedFunctions(int index) {
+      return excludedPredefinedFunctions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, [predefined
+     * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+     * are included in the final model call. Some of them can be explicitly
+     * excluded from being automatically included. This can serve two purposes:
+     * 1. Using a more restricted / different action space.
+     * 2. Improving the definitions / instructions of predefined functions.
+     * </pre>
+     *
+     * <code>
+     * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludedPredefinedFunctions at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index) {
+      return excludedPredefinedFunctions_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1604,6 +2318,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, environment_);
       }
+      for (int i = 0; i < excludedPredefinedFunctions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 2, excludedPredefinedFunctions_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1618,6 +2336,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               .ENVIRONMENT_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, environment_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludedPredefinedFunctions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludedPredefinedFunctions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludedPredefinedFunctionsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1636,6 +2362,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.aiplatform.v1beta1.Tool.ComputerUse) obj;
 
       if (environment_ != other.environment_) return false;
+      if (!getExcludedPredefinedFunctionsList().equals(other.getExcludedPredefinedFunctionsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1649,6 +2377,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
       hash = (53 * hash) + environment_;
+      if (getExcludedPredefinedFunctionsCount() > 0) {
+        hash = (37 * hash) + EXCLUDED_PREDEFINED_FUNCTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludedPredefinedFunctionsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1793,6 +2525,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         environment_ = 0;
+        excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1831,6 +2564,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.environment_ = environment_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          excludedPredefinedFunctions_.makeImmutable();
+          result.excludedPredefinedFunctions_ = excludedPredefinedFunctions_;
         }
       }
 
@@ -1885,6 +2622,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         if (other.environment_ != 0) {
           setEnvironmentValue(other.getEnvironmentValue());
         }
+        if (!other.excludedPredefinedFunctions_.isEmpty()) {
+          if (excludedPredefinedFunctions_.isEmpty()) {
+            excludedPredefinedFunctions_ = other.excludedPredefinedFunctions_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureExcludedPredefinedFunctionsIsMutable();
+            excludedPredefinedFunctions_.addAll(other.excludedPredefinedFunctions_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1917,6 +2664,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludedPredefinedFunctionsIsMutable();
+                  excludedPredefinedFunctions_.add(s);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2041,6 +2795,255 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public Builder clearEnvironment() {
         bitField0_ = (bitField0_ & ~0x00000001);
         environment_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList excludedPredefinedFunctions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureExcludedPredefinedFunctionsIsMutable() {
+        if (!excludedPredefinedFunctions_.isModifiable()) {
+          excludedPredefinedFunctions_ =
+              new com.google.protobuf.LazyStringArrayList(excludedPredefinedFunctions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the excludedPredefinedFunctions.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludedPredefinedFunctionsList() {
+        excludedPredefinedFunctions_.makeImmutable();
+        return excludedPredefinedFunctions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of excludedPredefinedFunctions.
+       */
+      public int getExcludedPredefinedFunctionsCount() {
+        return excludedPredefinedFunctions_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludedPredefinedFunctions at the given index.
+       */
+      public java.lang.String getExcludedPredefinedFunctions(int index) {
+        return excludedPredefinedFunctions_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludedPredefinedFunctions at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludedPredefinedFunctionsBytes(int index) {
+        return excludedPredefinedFunctions_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludedPredefinedFunctions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludedPredefinedFunctions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedPredefinedFunctions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludedPredefinedFunctions(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureExcludedPredefinedFunctionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, excludedPredefinedFunctions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludedPredefinedFunctions() {
+        excludedPredefinedFunctions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, [predefined
+       * functions](https://cloud.google.com/vertex-ai/generative-ai/docs/computer-use#supported-actions)
+       * are included in the final model call. Some of them can be explicitly
+       * excluded from being automatically included. This can serve two purposes:
+       * 1. Using a more restricted / different action space.
+       * 2. Improving the definitions / instructions of predefined functions.
+       * </pre>
+       *
+       * <code>
+       * repeated string excluded_predefined_functions = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the excludedPredefinedFunctions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludedPredefinedFunctionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludedPredefinedFunctionsIsMutable();
+        excludedPredefinedFunctions_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2626,7 +3629,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : codeExecution_;
   }
 
-  public static final int URL_CONTEXT_FIELD_NUMBER = 8;
+  public static final int URL_CONTEXT_FIELD_NUMBER = 10;
   private com.google.cloud.aiplatform.v1beta1.UrlContext urlContext_;
 
   /**
@@ -2637,7 +3640,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the urlContext field is set.
@@ -2655,7 +3658,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The urlContext.
@@ -2675,7 +3678,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2786,7 +3789,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(7, getGoogleSearch());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeMessage(8, getUrlContext());
+      output.writeMessage(10, getUrlContext());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getComputerUse());
@@ -2824,7 +3827,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUrlContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUrlContext());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
@@ -3402,12 +4405,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
-            case 66:
+            case 82:
               {
                 input.readMessage(getUrlContextFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
+              } // case 82
             case 90:
               {
                 input.readMessage(getComputerUseFieldBuilder().getBuilder(), extensionRegistry);
@@ -5398,7 +6401,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the urlContext field is set.
@@ -5415,7 +6418,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The urlContext.
@@ -5438,7 +6441,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUrlContext(com.google.cloud.aiplatform.v1beta1.UrlContext value) {
@@ -5463,7 +6466,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setUrlContext(
@@ -5486,7 +6489,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1beta1.UrlContext value) {
@@ -5516,7 +6519,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearUrlContext() {
@@ -5538,7 +6541,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.UrlContext.Builder getUrlContextBuilder() {
@@ -5555,7 +6558,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.UrlContextOrBuilder getUrlContextOrBuilder() {
@@ -5576,7 +6579,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.aiplatform.v1beta1.UrlContext url_context = 10 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

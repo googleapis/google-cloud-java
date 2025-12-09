@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * schedule asynchronous jobs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/scheduler/v1/cloudscheduler.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudSchedulerGrpc {
 
@@ -762,8 +759,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.ListJobsResponse listJobs(
-        com.google.cloud.scheduler.v1.ListJobsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.ListJobsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListJobsMethod(), getCallOptions(), request);
     }
 
@@ -775,8 +772,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job getJob(
-        com.google.cloud.scheduler.v1.GetJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.GetJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetJobMethod(), getCallOptions(), request);
     }
 
@@ -788,8 +785,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job createJob(
-        com.google.cloud.scheduler.v1.CreateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.CreateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateJobMethod(), getCallOptions(), request);
     }
 
@@ -808,8 +805,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job updateJob(
-        com.google.cloud.scheduler.v1.UpdateJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.UpdateJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateJobMethod(), getCallOptions(), request);
     }
 
@@ -821,8 +818,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteJob(
-        com.google.cloud.scheduler.v1.DeleteJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.DeleteJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteJobMethod(), getCallOptions(), request);
     }
 
@@ -842,8 +839,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job pauseJob(
-        com.google.cloud.scheduler.v1.PauseJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.PauseJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getPauseJobMethod(), getCallOptions(), request);
     }
 
@@ -862,8 +859,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job resumeJob(
-        com.google.cloud.scheduler.v1.ResumeJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.ResumeJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getResumeJobMethod(), getCallOptions(), request);
     }
 
@@ -877,8 +874,8 @@ public final class CloudSchedulerGrpc {
      * </pre>
      */
     public com.google.cloud.scheduler.v1.Job runJob(
-        com.google.cloud.scheduler.v1.RunJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.scheduler.v1.RunJobRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRunJobMethod(), getCallOptions(), request);
     }
   }

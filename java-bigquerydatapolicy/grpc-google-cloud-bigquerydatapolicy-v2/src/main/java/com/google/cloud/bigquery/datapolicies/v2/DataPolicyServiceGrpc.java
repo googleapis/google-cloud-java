@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Data Policy Service provides APIs for managing the BigQuery Data Policy.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/datapolicies/v2/datapolicy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class DataPolicyServiceGrpc {
 
@@ -949,8 +946,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.DataPolicy createDataPolicy(
-        com.google.cloud.bigquery.datapolicies.v2.CreateDataPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.CreateDataPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataPolicyMethod(), getCallOptions(), request);
     }
 
@@ -966,8 +964,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.DataPolicy addGrantees(
-        com.google.cloud.bigquery.datapolicies.v2.AddGranteesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.AddGranteesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddGranteesMethod(), getCallOptions(), request);
     }
 
@@ -982,8 +981,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.DataPolicy removeGrantees(
-        com.google.cloud.bigquery.datapolicies.v2.RemoveGranteesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.RemoveGranteesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemoveGranteesMethod(), getCallOptions(), request);
     }
 
@@ -996,8 +996,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.DataPolicy updateDataPolicy(
-        com.google.cloud.bigquery.datapolicies.v2.UpdateDataPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.UpdateDataPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1009,8 +1010,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataPolicy(
-        com.google.cloud.bigquery.datapolicies.v2.DeleteDataPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.DeleteDataPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1022,8 +1024,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.DataPolicy getDataPolicy(
-        com.google.cloud.bigquery.datapolicies.v2.GetDataPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.GetDataPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1035,8 +1038,9 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.datapolicies.v2.ListDataPoliciesResponse listDataPolicies(
-        com.google.cloud.bigquery.datapolicies.v2.ListDataPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.datapolicies.v2.ListDataPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -1047,8 +1051,9 @@ public final class DataPolicyServiceGrpc {
      * Gets the IAM policy for the specified data policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1059,8 +1064,9 @@ public final class DataPolicyServiceGrpc {
      * Sets the IAM policy for the specified data policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1072,8 +1078,8 @@ public final class DataPolicyServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

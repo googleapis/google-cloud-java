@@ -104,7 +104,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of local SSD storage available to the instance, defined in GiB.
+   * The amount of local SSD storage available to the instance,
+   * defined in GiB.
    * </pre>
    *
    * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -120,7 +121,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of local SSD storage available to the instance, defined in GiB.
+   * The amount of local SSD storage available to the instance,
+   * defined in GiB.
    * </pre>
    *
    * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -139,7 +141,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of physical memory available to the instance, defined in MiB.
+   * The amount of physical memory available to the instance,
+   * defined in MiB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -155,7 +158,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The amount of physical memory available to the instance, defined in MiB.
+   * The amount of physical memory available to the instance,
+   * defined in MiB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -712,7 +716,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -728,7 +733,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -744,7 +750,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -764,7 +771,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of local SSD storage available to the instance, defined in GiB.
+     * The amount of local SSD storage available to the instance,
+     * defined in GiB.
      * </pre>
      *
      * <code>optional int32 local_ssd_gb = 329237578;</code>
@@ -784,7 +792,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -800,7 +809,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -816,7 +826,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>
@@ -836,7 +847,8 @@ public final class InstanceConsumptionInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The amount of physical memory available to the instance, defined in MiB.
+     * The amount of physical memory available to the instance,
+     * defined in MiB.
      * </pre>
      *
      * <code>optional int32 memory_mb = 116001171;</code>

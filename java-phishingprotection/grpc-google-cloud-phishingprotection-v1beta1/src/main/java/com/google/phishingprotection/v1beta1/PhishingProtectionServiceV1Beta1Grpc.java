@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to report phishing URIs.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/phishingprotection/v1beta1/phishingprotection.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PhishingProtectionServiceV1Beta1Grpc {
 
@@ -270,8 +267,9 @@ public final class PhishingProtectionServiceV1Beta1Grpc {
      * </pre>
      */
     public com.google.phishingprotection.v1beta1.ReportPhishingResponse reportPhishing(
-        com.google.phishingprotection.v1beta1.ReportPhishingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.phishingprotection.v1beta1.ReportPhishingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportPhishingMethod(), getCallOptions(), request);
     }
   }

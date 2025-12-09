@@ -17,6 +17,7 @@
 package com.google.cloud.networkservices.v1;
 
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListAuthzExtensionsPagedResponse;
+import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbEdgeExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbRouteExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLbTrafficExtensionsPagedResponse;
 import static com.google.cloud.networkservices.v1.DepServiceClient.ListLocationsPagedResponse;
@@ -1038,6 +1039,461 @@ public class DepServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteLbRouteExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listLbEdgeExtensionsTest() throws Exception {
+    LbEdgeExtension responsesElement = LbEdgeExtension.newBuilder().build();
+    ListLbEdgeExtensionsResponse expectedResponse =
+        ListLbEdgeExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLbEdgeExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListLbEdgeExtensionsPagedResponse pagedListResponse = client.listLbEdgeExtensions(parent);
+
+    List<LbEdgeExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLbEdgeExtensionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLbEdgeExtensionsRequest actualRequest =
+        ((ListLbEdgeExtensionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLbEdgeExtensionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listLbEdgeExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLbEdgeExtensionsTest2() throws Exception {
+    LbEdgeExtension responsesElement = LbEdgeExtension.newBuilder().build();
+    ListLbEdgeExtensionsResponse expectedResponse =
+        ListLbEdgeExtensionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllLbEdgeExtensions(Arrays.asList(responsesElement))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListLbEdgeExtensionsPagedResponse pagedListResponse = client.listLbEdgeExtensions(parent);
+
+    List<LbEdgeExtension> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLbEdgeExtensionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLbEdgeExtensionsRequest actualRequest =
+        ((ListLbEdgeExtensionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLbEdgeExtensionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listLbEdgeExtensions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLbEdgeExtensionTest() throws Exception {
+    LbEdgeExtension expectedResponse =
+        LbEdgeExtension.newBuilder()
+            .setName(
+                LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .addAllForwardingRules(new ArrayList<String>())
+            .addAllExtensionChains(new ArrayList<ExtensionChain>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    LbEdgeExtensionName name =
+        LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+
+    LbEdgeExtension actualResponse = client.getLbEdgeExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLbEdgeExtensionRequest actualRequest = ((GetLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLbEdgeExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LbEdgeExtensionName name =
+          LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+      client.getLbEdgeExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getLbEdgeExtensionTest2() throws Exception {
+    LbEdgeExtension expectedResponse =
+        LbEdgeExtension.newBuilder()
+            .setName(
+                LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .addAllForwardingRules(new ArrayList<String>())
+            .addAllExtensionChains(new ArrayList<ExtensionChain>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .build();
+    mockDepService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    LbEdgeExtension actualResponse = client.getLbEdgeExtension(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetLbEdgeExtensionRequest actualRequest = ((GetLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getLbEdgeExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getLbEdgeExtension(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createLbEdgeExtensionTest() throws Exception {
+    LbEdgeExtension expectedResponse =
+        LbEdgeExtension.newBuilder()
+            .setName(
+                LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .addAllForwardingRules(new ArrayList<String>())
+            .addAllExtensionChains(new ArrayList<ExtensionChain>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLbEdgeExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+    String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+
+    LbEdgeExtension actualResponse =
+        client.createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLbEdgeExtensionRequest actualRequest =
+        ((CreateLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(lbEdgeExtension, actualRequest.getLbEdgeExtension());
+    Assert.assertEquals(lbEdgeExtensionId, actualRequest.getLbEdgeExtensionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLbEdgeExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+      String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+      client.createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createLbEdgeExtensionTest2() throws Exception {
+    LbEdgeExtension expectedResponse =
+        LbEdgeExtension.newBuilder()
+            .setName(
+                LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .addAllForwardingRules(new ArrayList<String>())
+            .addAllExtensionChains(new ArrayList<ExtensionChain>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createLbEdgeExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+    String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+
+    LbEdgeExtension actualResponse =
+        client.createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateLbEdgeExtensionRequest actualRequest =
+        ((CreateLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(lbEdgeExtension, actualRequest.getLbEdgeExtension());
+    Assert.assertEquals(lbEdgeExtensionId, actualRequest.getLbEdgeExtensionId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createLbEdgeExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+      String lbEdgeExtensionId = "lbEdgeExtensionId673551207";
+      client.createLbEdgeExtensionAsync(parent, lbEdgeExtension, lbEdgeExtensionId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateLbEdgeExtensionTest() throws Exception {
+    LbEdgeExtension expectedResponse =
+        LbEdgeExtension.newBuilder()
+            .setName(
+                LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .addAllForwardingRules(new ArrayList<String>())
+            .addAllExtensionChains(new ArrayList<ExtensionChain>())
+            .setLoadBalancingScheme(LoadBalancingScheme.forNumber(0))
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateLbEdgeExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    LbEdgeExtension actualResponse =
+        client.updateLbEdgeExtensionAsync(lbEdgeExtension, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateLbEdgeExtensionRequest actualRequest =
+        ((UpdateLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(lbEdgeExtension, actualRequest.getLbEdgeExtension());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateLbEdgeExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LbEdgeExtension lbEdgeExtension = LbEdgeExtension.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateLbEdgeExtensionAsync(lbEdgeExtension, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteLbEdgeExtensionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLbEdgeExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    LbEdgeExtensionName name =
+        LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+
+    client.deleteLbEdgeExtensionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLbEdgeExtensionRequest actualRequest =
+        ((DeleteLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLbEdgeExtensionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      LbEdgeExtensionName name =
+          LbEdgeExtensionName.of("[PROJECT]", "[LOCATION]", "[LB_EDGE_EXTENSION]");
+      client.deleteLbEdgeExtensionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteLbEdgeExtensionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteLbEdgeExtensionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDepService.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteLbEdgeExtensionAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockDepService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteLbEdgeExtensionRequest actualRequest =
+        ((DeleteLbEdgeExtensionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteLbEdgeExtensionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDepService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteLbEdgeExtensionAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

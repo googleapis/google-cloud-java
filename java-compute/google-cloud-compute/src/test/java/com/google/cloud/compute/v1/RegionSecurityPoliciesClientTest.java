@@ -237,6 +237,7 @@ public class RegionSecurityPoliciesClientTest {
             .setAdaptiveProtectionConfig(
                 SecurityPolicyAdaptiveProtectionConfig.newBuilder().build())
             .setAdvancedOptionsConfig(SecurityPolicyAdvancedOptionsConfig.newBuilder().build())
+            .addAllAssociations(new ArrayList<SecurityPolicyAssociation>())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDdosProtectionConfig(SecurityPolicyDdosProtectionConfig.newBuilder().build())
             .setDescription("description-1724546052")
@@ -246,10 +247,12 @@ public class RegionSecurityPoliciesClientTest {
             .setLabelFingerprint("labelFingerprint379449680")
             .putAllLabels(new HashMap<String, String>())
             .setName("name3373707")
+            .setParent("parent-995424086")
             .setRecaptchaOptionsConfig(SecurityPolicyRecaptchaOptionsConfig.newBuilder().build())
             .setRegion("region-934795532")
             .addAllRules(new ArrayList<SecurityPolicyRule>())
             .setSelfLink("selfLink1191800166")
+            .setShortName("shortName-2028219097")
             .setType("type3575610")
             .addAllUserDefinedFields(new ArrayList<SecurityPolicyUserDefinedField>())
             .build();

@@ -558,7 +558,7 @@ public class ReportServiceClientTest {
 
   @Test
   public void fetchReportResultRowsTest() throws Exception {
-    Report.DataTable.Row responsesElement = Report.DataTable.Row.newBuilder().build();
+    ReportDataTable.Row responsesElement = ReportDataTable.Row.newBuilder().build();
     FetchReportResultRowsResponse expectedResponse =
         FetchReportResultRowsResponse.newBuilder()
             .setNextPageToken("")
@@ -570,7 +570,7 @@ public class ReportServiceClientTest {
 
     FetchReportResultRowsPagedResponse pagedListResponse = client.fetchReportResultRows(name);
 
-    List<Report.DataTable.Row> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    List<ReportDataTable.Row> resources = Lists.newArrayList(pagedListResponse.iterateAll());
 
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getRowsList().get(0), resources.get(0));

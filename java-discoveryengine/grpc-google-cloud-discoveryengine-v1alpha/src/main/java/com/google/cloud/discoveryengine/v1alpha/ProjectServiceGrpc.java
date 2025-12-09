@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [Project][google.cloud.discoveryengine.v1alpha.Project].
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1alpha/project_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ProjectServiceGrpc {
 
@@ -416,8 +413,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Project getProject(
-        com.google.cloud.discoveryengine.v1alpha.GetProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.GetProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetProjectMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +431,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation provisionProject(
-        com.google.cloud.discoveryengine.v1alpha.ProvisionProjectRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ProvisionProjectRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getProvisionProjectMethod(), getCallOptions(), request);
     }
 
@@ -449,8 +448,9 @@ public final class ProjectServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1alpha.Project reportConsentChange(
-        com.google.cloud.discoveryengine.v1alpha.ReportConsentChangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1alpha.ReportConsentChangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getReportConsentChangeMethod(), getCallOptions(), request);
     }
   }

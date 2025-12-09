@@ -32,7 +32,7 @@ public interface DataScanJobOrBuilder
    * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -51,7 +51,7 @@ public interface DataScanJobOrBuilder
    * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -431,6 +431,49 @@ public interface DataScanJobOrBuilder
    *
    *
    * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDocumentationSpec field is set.
+   */
+  boolean hasDataDocumentationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDocumentationSpec.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationSpec getDataDocumentationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Settings for a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationSpec data_documentation_spec = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationSpecOrBuilder getDataDocumentationSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The result of a data quality scan.
    * </pre>
    *
@@ -555,6 +598,50 @@ public interface DataScanJobOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.DataDiscoveryResultOrBuilder getDataDiscoveryResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dataDocumentationResult field is set.
+   */
+  boolean hasDataDocumentationResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dataDocumentationResult.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult getDataDocumentationResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The result of a data documentation scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult data_documentation_result = 203 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResultOrBuilder
+      getDataDocumentationResultOrBuilder();
 
   com.google.cloud.dataplex.v1.DataScanJob.SpecCase getSpecCase();
 

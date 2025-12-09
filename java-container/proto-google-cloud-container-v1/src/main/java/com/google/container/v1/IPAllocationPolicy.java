@@ -194,7 +194,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2184
+   *     google/container/v1/cluster_service.proto;l=2242
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2184
+   *     google/container/v1/cluster_service.proto;l=2242
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -253,7 +253,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2187
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2187
+   *     google/container/v1/cluster_service.proto;l=2245
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -312,7 +312,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2190
+   *     google/container/v1/cluster_service.proto;l=2248
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -339,7 +339,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2190
+   *     google/container/v1/cluster_service.proto;l=2248
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -759,7 +759,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2278
+   *     google/container/v1/cluster_service.proto;l=2336
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -803,7 +803,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2278
+   *     google/container/v1/cluster_service.proto;l=2336
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -1372,6 +1372,65 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         : autoIpamConfig_;
   }
 
+  public static final int NETWORK_TIER_CONFIG_FIELD_NUMBER = 31;
+  private com.google.container.v1.NetworkTierConfig networkTierConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   *
+   * @return Whether the networkTierConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasNetworkTierConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   *
+   * @return The networkTierConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTierConfig getNetworkTierConfig() {
+    return networkTierConfig_ == null
+        ? com.google.container.v1.NetworkTierConfig.getDefaultInstance()
+        : networkTierConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Cluster-level network tier configuration is used to determine the default
+   * network tier for external IP addresses on cluster resources, such as node
+   * pools and load balancers.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder() {
+    return networkTierConfig_ == null
+        ? com.google.container.v1.NetworkTierConfig.getDefaultInstance()
+        : networkTierConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1452,6 +1511,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(30, getAutoIpamConfig());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(31, getNetworkTierConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1539,6 +1601,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getAutoIpamConfig());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(31, getNetworkTierConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1591,6 +1656,10 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (hasAutoIpamConfig() != other.hasAutoIpamConfig()) return false;
     if (hasAutoIpamConfig()) {
       if (!getAutoIpamConfig().equals(other.getAutoIpamConfig())) return false;
+    }
+    if (hasNetworkTierConfig() != other.hasNetworkTierConfig()) return false;
+    if (hasNetworkTierConfig()) {
+      if (!getNetworkTierConfig().equals(other.getNetworkTierConfig())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1657,6 +1726,10 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (hasAutoIpamConfig()) {
       hash = (37 * hash) + AUTO_IPAM_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAutoIpamConfig().hashCode();
+    }
+    if (hasNetworkTierConfig()) {
+      hash = (37 * hash) + NETWORK_TIER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTierConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1803,6 +1876,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         getAdditionalPodRangesConfigFieldBuilder();
         getAdditionalIpRangesConfigsFieldBuilder();
         getAutoIpamConfigFieldBuilder();
+        getNetworkTierConfigFieldBuilder();
       }
     }
 
@@ -1849,6 +1923,11 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (autoIpamConfigBuilder_ != null) {
         autoIpamConfigBuilder_.dispose();
         autoIpamConfigBuilder_ = null;
+      }
+      networkTierConfig_ = null;
+      if (networkTierConfigBuilder_ != null) {
+        networkTierConfigBuilder_.dispose();
+        networkTierConfigBuilder_ = null;
       }
       return this;
     }
@@ -1973,6 +2052,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         result.autoIpamConfig_ =
             autoIpamConfigBuilder_ == null ? autoIpamConfig_ : autoIpamConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.networkTierConfig_ =
+            networkTierConfigBuilder_ == null
+                ? networkTierConfig_
+                : networkTierConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2135,6 +2221,9 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasAutoIpamConfig()) {
         mergeAutoIpamConfig(other.getAutoIpamConfig());
+      }
+      if (other.hasNetworkTierConfig()) {
+        mergeNetworkTierConfig(other.getNetworkTierConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2304,6 +2393,13 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00200000;
                 break;
               } // case 242
+            case 250:
+              {
+                input.readMessage(
+                    getNetworkTierConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2583,7 +2679,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2184
+     *     google/container/v1/cluster_service.proto;l=2242
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2609,7 +2705,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2184
+     *     google/container/v1/cluster_service.proto;l=2242
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2635,7 +2731,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2184
+     *     google/container/v1/cluster_service.proto;l=2242
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2660,7 +2756,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2184
+     *     google/container/v1/cluster_service.proto;l=2242
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2681,7 +2777,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2184
+     *     google/container/v1/cluster_service.proto;l=2242
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2709,7 +2805,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2187
+     *     google/container/v1/cluster_service.proto;l=2245
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2735,7 +2831,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2187
+     *     google/container/v1/cluster_service.proto;l=2245
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2761,7 +2857,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2187
+     *     google/container/v1/cluster_service.proto;l=2245
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2786,7 +2882,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2187
+     *     google/container/v1/cluster_service.proto;l=2245
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2807,7 +2903,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2187
+     *     google/container/v1/cluster_service.proto;l=2245
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2835,7 +2931,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2190
+     *     google/container/v1/cluster_service.proto;l=2248
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2861,7 +2957,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2190
+     *     google/container/v1/cluster_service.proto;l=2248
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2887,7 +2983,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2190
+     *     google/container/v1/cluster_service.proto;l=2248
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2912,7 +3008,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2190
+     *     google/container/v1/cluster_service.proto;l=2248
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2933,7 +3029,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2190
+     *     google/container/v1/cluster_service.proto;l=2248
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3798,7 +3894,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2278
+     *     google/container/v1/cluster_service.proto;l=2336
      * @return The tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -3841,7 +3937,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2278
+     *     google/container/v1/cluster_service.proto;l=2336
      * @return The bytes for tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -3884,7 +3980,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2278
+     *     google/container/v1/cluster_service.proto;l=2336
      * @param value The tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -3926,7 +4022,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2278
+     *     google/container/v1/cluster_service.proto;l=2336
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3964,7 +4060,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2278
+     *     google/container/v1/cluster_service.proto;l=2336
      * @param value The bytes for tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -5783,6 +5879,220 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         autoIpamConfig_ = null;
       }
       return autoIpamConfigBuilder_;
+    }
+
+    private com.google.container.v1.NetworkTierConfig networkTierConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTierConfig,
+            com.google.container.v1.NetworkTierConfig.Builder,
+            com.google.container.v1.NetworkTierConfigOrBuilder>
+        networkTierConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     *
+     * @return Whether the networkTierConfig field is set.
+     */
+    public boolean hasNetworkTierConfig() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     *
+     * @return The networkTierConfig.
+     */
+    public com.google.container.v1.NetworkTierConfig getNetworkTierConfig() {
+      if (networkTierConfigBuilder_ == null) {
+        return networkTierConfig_ == null
+            ? com.google.container.v1.NetworkTierConfig.getDefaultInstance()
+            : networkTierConfig_;
+      } else {
+        return networkTierConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public Builder setNetworkTierConfig(com.google.container.v1.NetworkTierConfig value) {
+      if (networkTierConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkTierConfig_ = value;
+      } else {
+        networkTierConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public Builder setNetworkTierConfig(
+        com.google.container.v1.NetworkTierConfig.Builder builderForValue) {
+      if (networkTierConfigBuilder_ == null) {
+        networkTierConfig_ = builderForValue.build();
+      } else {
+        networkTierConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public Builder mergeNetworkTierConfig(com.google.container.v1.NetworkTierConfig value) {
+      if (networkTierConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && networkTierConfig_ != null
+            && networkTierConfig_
+                != com.google.container.v1.NetworkTierConfig.getDefaultInstance()) {
+          getNetworkTierConfigBuilder().mergeFrom(value);
+        } else {
+          networkTierConfig_ = value;
+        }
+      } else {
+        networkTierConfigBuilder_.mergeFrom(value);
+      }
+      if (networkTierConfig_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public Builder clearNetworkTierConfig() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      networkTierConfig_ = null;
+      if (networkTierConfigBuilder_ != null) {
+        networkTierConfigBuilder_.dispose();
+        networkTierConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public com.google.container.v1.NetworkTierConfig.Builder getNetworkTierConfigBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getNetworkTierConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    public com.google.container.v1.NetworkTierConfigOrBuilder getNetworkTierConfigOrBuilder() {
+      if (networkTierConfigBuilder_ != null) {
+        return networkTierConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkTierConfig_ == null
+            ? com.google.container.v1.NetworkTierConfig.getDefaultInstance()
+            : networkTierConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cluster-level network tier configuration is used to determine the default
+     * network tier for external IP addresses on cluster resources, such as node
+     * pools and load balancers.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkTierConfig network_tier_config = 31;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkTierConfig,
+            com.google.container.v1.NetworkTierConfig.Builder,
+            com.google.container.v1.NetworkTierConfigOrBuilder>
+        getNetworkTierConfigFieldBuilder() {
+      if (networkTierConfigBuilder_ == null) {
+        networkTierConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkTierConfig,
+                com.google.container.v1.NetworkTierConfig.Builder,
+                com.google.container.v1.NetworkTierConfigOrBuilder>(
+                getNetworkTierConfig(), getParentForChildren(), isClean());
+        networkTierConfig_ = null;
+      }
+      return networkTierConfigBuilder_;
     }
 
     @java.lang.Override

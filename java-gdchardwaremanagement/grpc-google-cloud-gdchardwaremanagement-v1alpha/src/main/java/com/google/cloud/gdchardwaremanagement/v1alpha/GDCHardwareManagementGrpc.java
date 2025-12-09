@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * The GDC Hardware Management service.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gdchardwaremanagement/v1alpha/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class GDCHardwareManagementGrpc {
 
@@ -312,6 +309,52 @@ public final class GDCHardwareManagementGrpc {
       }
     }
     return getSubmitOrderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest,
+          com.google.longrunning.Operation>
+      getCancelOrderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelOrder",
+      requestType = com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest,
+          com.google.longrunning.Operation>
+      getCancelOrderMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest,
+            com.google.longrunning.Operation>
+        getCancelOrderMethod;
+    if ((getCancelOrderMethod = GDCHardwareManagementGrpc.getCancelOrderMethod) == null) {
+      synchronized (GDCHardwareManagementGrpc.class) {
+        if ((getCancelOrderMethod = GDCHardwareManagementGrpc.getCancelOrderMethod) == null) {
+          GDCHardwareManagementGrpc.getCancelOrderMethod =
+              getCancelOrderMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelOrder"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GDCHardwareManagementMethodDescriptorSupplier("CancelOrder"))
+                      .build();
+        }
+      }
+    }
+    return getCancelOrderMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1692,6 +1735,60 @@ public final class GDCHardwareManagementGrpc {
     return getSignalZoneStateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest,
+          com.google.longrunning.Operation>
+      getRequestOrderDateChangeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RequestOrderDateChange",
+      requestType =
+          com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest,
+          com.google.longrunning.Operation>
+      getRequestOrderDateChangeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest,
+            com.google.longrunning.Operation>
+        getRequestOrderDateChangeMethod;
+    if ((getRequestOrderDateChangeMethod =
+            GDCHardwareManagementGrpc.getRequestOrderDateChangeMethod)
+        == null) {
+      synchronized (GDCHardwareManagementGrpc.class) {
+        if ((getRequestOrderDateChangeMethod =
+                GDCHardwareManagementGrpc.getRequestOrderDateChangeMethod)
+            == null) {
+          GDCHardwareManagementGrpc.getRequestOrderDateChangeMethod =
+              getRequestOrderDateChangeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.gdchardwaremanagement.v1alpha
+                              .RequestOrderDateChangeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RequestOrderDateChange"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.gdchardwaremanagement.v1alpha
+                                  .RequestOrderDateChangeRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new GDCHardwareManagementMethodDescriptorSupplier(
+                              "RequestOrderDateChange"))
+                      .build();
+        }
+      }
+    }
+    return getRequestOrderDateChangeMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static GDCHardwareManagementStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<GDCHardwareManagementStub> factory =
@@ -1838,6 +1935,20 @@ public final class GDCHardwareManagementGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSubmitOrderMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an order.
+     * </pre>
+     */
+    default void cancelOrder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelOrderMethod(), responseObserver);
     }
 
     /**
@@ -2256,6 +2367,20 @@ public final class GDCHardwareManagementGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSignalZoneStateMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the requested date change of a single Order.
+     * </pre>
+     */
+    default void requestOrderDateChange(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRequestOrderDateChangeMethod(), responseObserver);
+    }
   }
 
   /**
@@ -2384,6 +2509,22 @@ public final class GDCHardwareManagementGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitOrderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an order.
+     * </pre>
+     */
+    public void cancelOrder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2849,6 +2990,22 @@ public final class GDCHardwareManagementGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the requested date change of a single Order.
+     * </pre>
+     */
+    public void requestOrderDateChange(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRequestOrderDateChangeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2879,8 +3036,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListOrdersResponse listOrders(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListOrdersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListOrdersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrdersMethod(), getCallOptions(), request);
     }
 
@@ -2892,8 +3050,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Order getOrder(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrderMethod(), getCallOptions(), request);
     }
 
@@ -2905,8 +3064,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createOrder(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOrderMethod(), getCallOptions(), request);
     }
 
@@ -2918,8 +3078,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateOrder(
-        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOrderMethod(), getCallOptions(), request);
     }
 
@@ -2931,8 +3092,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteOrder(
-        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOrderMethod(), getCallOptions(), request);
     }
 
@@ -2944,9 +3106,24 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation submitOrder(
-        com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubmitOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an order.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelOrder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelOrderMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2957,8 +3134,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListSitesResponse listSites(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListSitesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListSitesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSitesMethod(), getCallOptions(), request);
     }
 
@@ -2970,8 +3148,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Site getSite(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSiteMethod(), getCallOptions(), request);
     }
 
@@ -2983,8 +3162,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createSite(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSiteMethod(), getCallOptions(), request);
     }
 
@@ -2996,8 +3176,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateSite(
-        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSiteMethod(), getCallOptions(), request);
     }
 
@@ -3009,8 +3190,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteSite(
-        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteSiteRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSiteMethod(), getCallOptions(), request);
     }
 
@@ -3023,8 +3205,9 @@ public final class GDCHardwareManagementGrpc {
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsResponse
         listHardwareGroups(
-            com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareGroupsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHardwareGroupsMethod(), getCallOptions(), request);
     }
 
@@ -3036,8 +3219,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup getHardwareGroup(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetHardwareGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetHardwareGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHardwareGroupMethod(), getCallOptions(), request);
     }
 
@@ -3049,8 +3233,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createHardwareGroup(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateHardwareGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateHardwareGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHardwareGroupMethod(), getCallOptions(), request);
     }
 
@@ -3062,8 +3247,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateHardwareGroup(
-        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateHardwareGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateHardwareGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHardwareGroupMethod(), getCallOptions(), request);
     }
 
@@ -3075,8 +3261,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteHardwareGroup(
-        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareGroupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteHardwareGroupMethod(), getCallOptions(), request);
     }
 
@@ -3088,8 +3275,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareResponse listHardware(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListHardwareMethod(), getCallOptions(), request);
     }
 
@@ -3101,8 +3289,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Hardware getHardware(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetHardwareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetHardwareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetHardwareMethod(), getCallOptions(), request);
     }
 
@@ -3114,8 +3303,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createHardware(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateHardwareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateHardwareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateHardwareMethod(), getCallOptions(), request);
     }
 
@@ -3127,8 +3317,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateHardware(
-        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateHardwareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateHardwareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateHardwareMethod(), getCallOptions(), request);
     }
 
@@ -3140,8 +3331,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteHardware(
-        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteHardwareMethod(), getCallOptions(), request);
     }
 
@@ -3153,8 +3345,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListCommentsResponse listComments(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListCommentsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListCommentsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCommentsMethod(), getCallOptions(), request);
     }
 
@@ -3166,8 +3359,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Comment getComment(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetCommentMethod(), getCallOptions(), request);
     }
 
@@ -3179,8 +3373,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createComment(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateCommentMethod(), getCallOptions(), request);
     }
 
@@ -3195,8 +3390,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Comment recordActionOnComment(
-        com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRecordActionOnCommentMethod(), getCallOptions(), request);
     }
 
@@ -3209,8 +3405,9 @@ public final class GDCHardwareManagementGrpc {
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesResponse
         listChangeLogEntries(
-            com.google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gdchardwaremanagement.v1alpha.ListChangeLogEntriesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListChangeLogEntriesMethod(), getCallOptions(), request);
     }
 
@@ -3222,8 +3419,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry getChangeLogEntry(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetChangeLogEntryRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetChangeLogEntryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetChangeLogEntryMethod(), getCallOptions(), request);
     }
 
@@ -3235,8 +3433,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListSkusResponse listSkus(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListSkusRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListSkusRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSkusMethod(), getCallOptions(), request);
     }
 
@@ -3248,8 +3447,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Sku getSku(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetSkuRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetSkuRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSkuMethod(), getCallOptions(), request);
     }
 
@@ -3261,8 +3461,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse listZones(
-        com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListZonesMethod(), getCallOptions(), request);
     }
 
@@ -3274,8 +3475,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.cloud.gdchardwaremanagement.v1alpha.Zone getZone(
-        com.google.cloud.gdchardwaremanagement.v1alpha.GetZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.GetZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetZoneMethod(), getCallOptions(), request);
     }
 
@@ -3287,8 +3489,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createZone(
-        com.google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CreateZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateZoneMethod(), getCallOptions(), request);
     }
 
@@ -3300,8 +3503,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateZone(
-        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.UpdateZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateZoneMethod(), getCallOptions(), request);
     }
 
@@ -3313,8 +3517,9 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteZone(
-        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteZoneRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.DeleteZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteZoneMethod(), getCallOptions(), request);
     }
 
@@ -3326,9 +3531,24 @@ public final class GDCHardwareManagementGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation signalZoneState(
-        com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSignalZoneStateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the requested date change of a single Order.
+     * </pre>
+     */
+    public com.google.longrunning.Operation requestOrderDateChange(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRequestOrderDateChangeMethod(), getCallOptions(), request);
     }
   }
 
@@ -3434,6 +3654,19 @@ public final class GDCHardwareManagementGrpc {
      *
      *
      * <pre>
+     * Cancels an order.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cancelOrder(
+        com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelOrderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists sites in a given project and location.
      * </pre>
      */
@@ -3811,6 +4044,19 @@ public final class GDCHardwareManagementGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSignalZoneStateMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the requested date change of a single Order.
+     * </pre>
+     */
+    public com.google.longrunning.Operation requestOrderDateChange(
+        com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRequestOrderDateChangeMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3912,6 +4158,19 @@ public final class GDCHardwareManagementGrpc {
         submitOrder(com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitOrderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an order.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cancelOrder(com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelOrderMethod(), getCallOptions()), request);
     }
 
     /**
@@ -4320,6 +4579,20 @@ public final class GDCHardwareManagementGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSignalZoneStateMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the requested date change of a single Order.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        requestOrderDateChange(
+            com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRequestOrderDateChangeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_ORDERS = 0;
@@ -4328,35 +4601,37 @@ public final class GDCHardwareManagementGrpc {
   private static final int METHODID_UPDATE_ORDER = 3;
   private static final int METHODID_DELETE_ORDER = 4;
   private static final int METHODID_SUBMIT_ORDER = 5;
-  private static final int METHODID_LIST_SITES = 6;
-  private static final int METHODID_GET_SITE = 7;
-  private static final int METHODID_CREATE_SITE = 8;
-  private static final int METHODID_UPDATE_SITE = 9;
-  private static final int METHODID_DELETE_SITE = 10;
-  private static final int METHODID_LIST_HARDWARE_GROUPS = 11;
-  private static final int METHODID_GET_HARDWARE_GROUP = 12;
-  private static final int METHODID_CREATE_HARDWARE_GROUP = 13;
-  private static final int METHODID_UPDATE_HARDWARE_GROUP = 14;
-  private static final int METHODID_DELETE_HARDWARE_GROUP = 15;
-  private static final int METHODID_LIST_HARDWARE = 16;
-  private static final int METHODID_GET_HARDWARE = 17;
-  private static final int METHODID_CREATE_HARDWARE = 18;
-  private static final int METHODID_UPDATE_HARDWARE = 19;
-  private static final int METHODID_DELETE_HARDWARE = 20;
-  private static final int METHODID_LIST_COMMENTS = 21;
-  private static final int METHODID_GET_COMMENT = 22;
-  private static final int METHODID_CREATE_COMMENT = 23;
-  private static final int METHODID_RECORD_ACTION_ON_COMMENT = 24;
-  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 25;
-  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 26;
-  private static final int METHODID_LIST_SKUS = 27;
-  private static final int METHODID_GET_SKU = 28;
-  private static final int METHODID_LIST_ZONES = 29;
-  private static final int METHODID_GET_ZONE = 30;
-  private static final int METHODID_CREATE_ZONE = 31;
-  private static final int METHODID_UPDATE_ZONE = 32;
-  private static final int METHODID_DELETE_ZONE = 33;
-  private static final int METHODID_SIGNAL_ZONE_STATE = 34;
+  private static final int METHODID_CANCEL_ORDER = 6;
+  private static final int METHODID_LIST_SITES = 7;
+  private static final int METHODID_GET_SITE = 8;
+  private static final int METHODID_CREATE_SITE = 9;
+  private static final int METHODID_UPDATE_SITE = 10;
+  private static final int METHODID_DELETE_SITE = 11;
+  private static final int METHODID_LIST_HARDWARE_GROUPS = 12;
+  private static final int METHODID_GET_HARDWARE_GROUP = 13;
+  private static final int METHODID_CREATE_HARDWARE_GROUP = 14;
+  private static final int METHODID_UPDATE_HARDWARE_GROUP = 15;
+  private static final int METHODID_DELETE_HARDWARE_GROUP = 16;
+  private static final int METHODID_LIST_HARDWARE = 17;
+  private static final int METHODID_GET_HARDWARE = 18;
+  private static final int METHODID_CREATE_HARDWARE = 19;
+  private static final int METHODID_UPDATE_HARDWARE = 20;
+  private static final int METHODID_DELETE_HARDWARE = 21;
+  private static final int METHODID_LIST_COMMENTS = 22;
+  private static final int METHODID_GET_COMMENT = 23;
+  private static final int METHODID_CREATE_COMMENT = 24;
+  private static final int METHODID_RECORD_ACTION_ON_COMMENT = 25;
+  private static final int METHODID_LIST_CHANGE_LOG_ENTRIES = 26;
+  private static final int METHODID_GET_CHANGE_LOG_ENTRY = 27;
+  private static final int METHODID_LIST_SKUS = 28;
+  private static final int METHODID_GET_SKU = 29;
+  private static final int METHODID_LIST_ZONES = 30;
+  private static final int METHODID_GET_ZONE = 31;
+  private static final int METHODID_CREATE_ZONE = 32;
+  private static final int METHODID_UPDATE_ZONE = 33;
+  private static final int METHODID_DELETE_ZONE = 34;
+  private static final int METHODID_SIGNAL_ZONE_STATE = 35;
+  private static final int METHODID_REQUEST_ORDER_DATE_CHANGE = 36;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4406,6 +4681,11 @@ public final class GDCHardwareManagementGrpc {
         case METHODID_SUBMIT_ORDER:
           serviceImpl.submitOrder(
               (com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CANCEL_ORDER:
+          serviceImpl.cancelOrder(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_SITES:
@@ -4577,6 +4857,12 @@ public final class GDCHardwareManagementGrpc {
               (com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_REQUEST_ORDER_DATE_CHANGE:
+          serviceImpl.requestOrderDateChange(
+              (com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -4633,6 +4919,12 @@ public final class GDCHardwareManagementGrpc {
                 new MethodHandlers<
                     com.google.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest,
                     com.google.longrunning.Operation>(service, METHODID_SUBMIT_ORDER)))
+        .addMethod(
+            getCancelOrderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CANCEL_ORDER)))
         .addMethod(
             getListSitesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4821,6 +5113,12 @@ public final class GDCHardwareManagementGrpc {
                 new MethodHandlers<
                     com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest,
                     com.google.longrunning.Operation>(service, METHODID_SIGNAL_ZONE_STATE)))
+        .addMethod(
+            getRequestOrderDateChangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REQUEST_ORDER_DATE_CHANGE)))
         .build();
   }
 
@@ -4878,6 +5176,7 @@ public final class GDCHardwareManagementGrpc {
                       .addMethod(getUpdateOrderMethod())
                       .addMethod(getDeleteOrderMethod())
                       .addMethod(getSubmitOrderMethod())
+                      .addMethod(getCancelOrderMethod())
                       .addMethod(getListSitesMethod())
                       .addMethod(getGetSiteMethod())
                       .addMethod(getCreateSiteMethod())
@@ -4907,6 +5206,7 @@ public final class GDCHardwareManagementGrpc {
                       .addMethod(getUpdateZoneMethod())
                       .addMethod(getDeleteZoneMethod())
                       .addMethod(getSignalZoneStateMethod())
+                      .addMethod(getRequestOrderDateChangeMethod())
                       .build();
         }
       }

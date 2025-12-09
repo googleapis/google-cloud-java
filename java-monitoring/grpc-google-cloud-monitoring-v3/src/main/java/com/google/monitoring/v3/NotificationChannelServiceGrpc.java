@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * controls how messages related to incidents are sent.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/monitoring/v3/notification_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class NotificationChannelServiceGrpc {
 
@@ -1108,8 +1105,9 @@ public final class NotificationChannelServiceGrpc {
      */
     public com.google.monitoring.v3.ListNotificationChannelDescriptorsResponse
         listNotificationChannelDescriptors(
-            com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.monitoring.v3.ListNotificationChannelDescriptorsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationChannelDescriptorsMethod(), getCallOptions(), request);
     }
 
@@ -1122,8 +1120,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannelDescriptor getNotificationChannelDescriptor(
-        com.google.monitoring.v3.GetNotificationChannelDescriptorRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetNotificationChannelDescriptorRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationChannelDescriptorMethod(), getCallOptions(), request);
     }
 
@@ -1137,8 +1136,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.ListNotificationChannelsResponse listNotificationChannels(
-        com.google.monitoring.v3.ListNotificationChannelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.ListNotificationChannelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListNotificationChannelsMethod(), getCallOptions(), request);
     }
 
@@ -1154,8 +1154,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel getNotificationChannel(
-        com.google.monitoring.v3.GetNotificationChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.GetNotificationChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetNotificationChannelMethod(), getCallOptions(), request);
     }
 
@@ -1172,8 +1173,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel createNotificationChannel(
-        com.google.monitoring.v3.CreateNotificationChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.CreateNotificationChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateNotificationChannelMethod(), getCallOptions(), request);
     }
 
@@ -1190,8 +1192,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel updateNotificationChannel(
-        com.google.monitoring.v3.UpdateNotificationChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.UpdateNotificationChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateNotificationChannelMethod(), getCallOptions(), request);
     }
 
@@ -1207,8 +1210,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteNotificationChannel(
-        com.google.monitoring.v3.DeleteNotificationChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.DeleteNotificationChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteNotificationChannelMethod(), getCallOptions(), request);
     }
 
@@ -1221,8 +1225,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty sendNotificationChannelVerificationCode(
-        com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.SendNotificationChannelVerificationCodeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getSendNotificationChannelVerificationCodeMethod(),
           getCallOptions(),
@@ -1257,8 +1262,9 @@ public final class NotificationChannelServiceGrpc {
      */
     public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
         getNotificationChannelVerificationCode(
-            com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.monitoring.v3.GetNotificationChannelVerificationCodeRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getGetNotificationChannelVerificationCodeMethod(),
           getCallOptions(),
@@ -1275,8 +1281,9 @@ public final class NotificationChannelServiceGrpc {
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel verifyNotificationChannel(
-        com.google.monitoring.v3.VerifyNotificationChannelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.monitoring.v3.VerifyNotificationChannelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyNotificationChannelMethod(), getCallOptions(), request);
     }
   }

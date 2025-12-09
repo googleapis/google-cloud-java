@@ -41,6 +41,7 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
 
   private FailoverReservationRequest() {
     name_ = "";
+    failoverMode_ = 0;
   }
 
   @java.lang.Override
@@ -123,6 +124,53 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
     }
   }
 
+  public static final int FAILOVER_MODE_FIELD_NUMBER = 2;
+  private int failoverMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A parameter that determines how writes that are pending
+   * replication are handled after a failover is initiated. If not specified,
+   * HARD failover mode is used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for failoverMode.
+   */
+  @java.lang.Override
+  public int getFailoverModeValue() {
+    return failoverMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A parameter that determines how writes that are pending
+   * replication are handled after a failover is initiated. If not specified,
+   * HARD failover mode is used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The failoverMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.reservation.v1.FailoverMode getFailoverMode() {
+    com.google.cloud.bigquery.reservation.v1.FailoverMode result =
+        com.google.cloud.bigquery.reservation.v1.FailoverMode.forNumber(failoverMode_);
+    return result == null
+        ? com.google.cloud.bigquery.reservation.v1.FailoverMode.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +188,11 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (failoverMode_
+        != com.google.cloud.bigquery.reservation.v1.FailoverMode.FAILOVER_MODE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, failoverMode_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +204,11 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (failoverMode_
+        != com.google.cloud.bigquery.reservation.v1.FailoverMode.FAILOVER_MODE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, failoverMode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -169,6 +227,7 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
         (com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (failoverMode_ != other.failoverMode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -182,6 +241,8 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FAILOVER_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + failoverMode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -326,6 +387,7 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      failoverMode_ = 0;
       return this;
     }
 
@@ -367,6 +429,9 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.failoverMode_ = failoverMode_;
       }
     }
 
@@ -424,6 +489,9 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.failoverMode_ != 0) {
+        setFailoverModeValue(other.getFailoverModeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -456,6 +524,12 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                failoverMode_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -597,6 +671,123 @@ public final class FailoverReservationRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int failoverMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A parameter that determines how writes that are pending
+     * replication are handled after a failover is initiated. If not specified,
+     * HARD failover mode is used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for failoverMode.
+     */
+    @java.lang.Override
+    public int getFailoverModeValue() {
+      return failoverMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A parameter that determines how writes that are pending
+     * replication are handled after a failover is initiated. If not specified,
+     * HARD failover mode is used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for failoverMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailoverModeValue(int value) {
+      failoverMode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A parameter that determines how writes that are pending
+     * replication are handled after a failover is initiated. If not specified,
+     * HARD failover mode is used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The failoverMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.reservation.v1.FailoverMode getFailoverMode() {
+      com.google.cloud.bigquery.reservation.v1.FailoverMode result =
+          com.google.cloud.bigquery.reservation.v1.FailoverMode.forNumber(failoverMode_);
+      return result == null
+          ? com.google.cloud.bigquery.reservation.v1.FailoverMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A parameter that determines how writes that are pending
+     * replication are handled after a failover is initiated. If not specified,
+     * HARD failover mode is used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The failoverMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFailoverMode(com.google.cloud.bigquery.reservation.v1.FailoverMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      failoverMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A parameter that determines how writes that are pending
+     * replication are handled after a failover is initiated. If not specified,
+     * HARD failover mode is used by default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFailoverMode() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      failoverMode_ = 0;
       onChanged();
       return this;
     }

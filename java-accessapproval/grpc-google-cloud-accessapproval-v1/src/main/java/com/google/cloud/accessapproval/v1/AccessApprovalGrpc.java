@@ -50,9 +50,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * If a request is not approved or dismissed, we call it pending.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/accessapproval/v1/accessapproval.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccessApprovalGrpc {
 
@@ -1082,8 +1079,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ListApprovalRequestsResponse listApprovalRequests(
-        com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.ListApprovalRequestsMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListApprovalRequestsMethod(), getCallOptions(), request);
     }
 
@@ -1095,8 +1093,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest getApprovalRequest(
-        com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.GetApprovalRequestMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -1110,8 +1109,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest approveApprovalRequest(
-        com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getApproveApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -1129,8 +1129,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest dismissApprovalRequest(
-        com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.DismissApprovalRequestMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDismissApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -1147,8 +1148,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.ApprovalRequest invalidateApprovalRequest(
-        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.InvalidateApprovalRequestMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInvalidateApprovalRequestMethod(), getCallOptions(), request);
     }
 
@@ -1160,8 +1162,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.AccessApprovalSettings getAccessApprovalSettings(
-        com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1174,8 +1177,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.cloud.accessapproval.v1.AccessApprovalSettings updateAccessApprovalSettings(
-        com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1192,8 +1196,9 @@ public final class AccessApprovalGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteAccessApprovalSettings(
-        com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAccessApprovalSettingsMethod(), getCallOptions(), request);
     }
 
@@ -1207,8 +1212,9 @@ public final class AccessApprovalGrpc {
      */
     public com.google.cloud.accessapproval.v1.AccessApprovalServiceAccount
         getAccessApprovalServiceAccount(
-            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.accessapproval.v1.GetAccessApprovalServiceAccountMessage request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAccessApprovalServiceAccountMethod(), getCallOptions(), request);
     }
   }

@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * [OnlineReturnPolicy](/merchant/api/reference/rpc/google.shopping.merchant.accounts.v1beta#google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy)
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1beta/online_return_policy.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OnlineReturnPolicyServiceGrpc {
 
@@ -614,8 +611,9 @@ public final class OnlineReturnPolicyServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy getOnlineReturnPolicy(
-        com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.GetOnlineReturnPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
 
@@ -628,8 +626,9 @@ public final class OnlineReturnPolicyServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesResponse
         listOnlineReturnPolicies(
-            com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1beta.ListOnlineReturnPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOnlineReturnPoliciesMethod(), getCallOptions(), request);
     }
 
@@ -641,8 +640,9 @@ public final class OnlineReturnPolicyServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy createOnlineReturnPolicy(
-        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.CreateOnlineReturnPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
 
@@ -654,8 +654,9 @@ public final class OnlineReturnPolicyServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.accounts.v1beta.OnlineReturnPolicy updateOnlineReturnPolicy(
-        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.UpdateOnlineReturnPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
 
@@ -667,8 +668,9 @@ public final class OnlineReturnPolicyServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteOnlineReturnPolicy(
-        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.accounts.v1beta.DeleteOnlineReturnPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteOnlineReturnPolicyMethod(), getCallOptions(), request);
     }
   }

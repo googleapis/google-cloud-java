@@ -38,9 +38,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *     * at least one of latitude and longitude must be non-zero.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/optimization/v1/fleet_routing.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class FleetRoutingGrpc {
 
@@ -435,8 +432,9 @@ public final class FleetRoutingGrpc {
      * </pre>
      */
     public com.google.cloud.optimization.v1.OptimizeToursResponse optimizeTours(
-        com.google.cloud.optimization.v1.OptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.optimization.v1.OptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getOptimizeToursMethod(), getCallOptions(), request);
     }
 
@@ -456,8 +454,9 @@ public final class FleetRoutingGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation batchOptimizeTours(
-        com.google.cloud.optimization.v1.BatchOptimizeToursRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.optimization.v1.BatchOptimizeToursRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchOptimizeToursMethod(), getCallOptions(), request);
     }
   }

@@ -24,10 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Manages the deployment of SaaS services.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/cloud/saasplatform/saasservicemgmt/v1beta1/deployments_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SaasDeploymentsGrpc {
 
@@ -2524,8 +2520,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListSaasResponse listSaas(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListSaasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListSaasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSaasMethod(), getCallOptions(), request);
     }
 
@@ -2537,8 +2534,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas getSaas(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetSaasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetSaasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSaasMethod(), getCallOptions(), request);
     }
 
@@ -2550,8 +2548,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas createSaas(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateSaasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateSaasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSaasMethod(), getCallOptions(), request);
     }
 
@@ -2563,8 +2562,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Saas updateSaas(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateSaasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateSaasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSaasMethod(), getCallOptions(), request);
     }
 
@@ -2576,8 +2576,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSaas(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteSaasRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteSaasRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSaasMethod(), getCallOptions(), request);
     }
 
@@ -2589,8 +2590,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListTenantsResponse listTenants(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListTenantsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListTenantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListTenantsMethod(), getCallOptions(), request);
     }
 
@@ -2602,8 +2604,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Tenant getTenant(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTenantMethod(), getCallOptions(), request);
     }
 
@@ -2615,8 +2618,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Tenant createTenant(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateTenantMethod(), getCallOptions(), request);
     }
 
@@ -2628,8 +2632,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Tenant updateTenant(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateTenantMethod(), getCallOptions(), request);
     }
 
@@ -2641,8 +2646,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteTenant(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteTenantRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteTenantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteTenantMethod(), getCallOptions(), request);
     }
 
@@ -2655,8 +2661,9 @@ public final class SaasDeploymentsGrpc {
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitKindsResponse
         listUnitKinds(
-            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitKindsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitKindsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUnitKindsMethod(), getCallOptions(), request);
     }
 
@@ -2668,8 +2675,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitKind getUnitKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUnitKindMethod(), getCallOptions(), request);
     }
 
@@ -2681,8 +2689,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitKind createUnitKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUnitKindMethod(), getCallOptions(), request);
     }
 
@@ -2694,8 +2703,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitKind updateUnitKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUnitKindMethod(), getCallOptions(), request);
     }
 
@@ -2707,8 +2717,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUnitKind(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitKindRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitKindRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUnitKindMethod(), getCallOptions(), request);
     }
 
@@ -2720,8 +2731,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitsResponse listUnits(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUnitsMethod(), getCallOptions(), request);
     }
 
@@ -2733,8 +2745,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Unit getUnit(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUnitMethod(), getCallOptions(), request);
     }
 
@@ -2746,8 +2759,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Unit createUnit(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUnitMethod(), getCallOptions(), request);
     }
 
@@ -2759,8 +2773,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Unit updateUnit(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUnitMethod(), getCallOptions(), request);
     }
 
@@ -2772,8 +2787,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUnit(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUnitMethod(), getCallOptions(), request);
     }
 
@@ -2786,9 +2802,9 @@ public final class SaasDeploymentsGrpc {
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitOperationsResponse
         listUnitOperations(
-            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitOperationsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListUnitOperationsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUnitOperationsMethod(), getCallOptions(), request);
     }
 
@@ -2800,8 +2816,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation getUnitOperation(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetUnitOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetUnitOperationMethod(), getCallOptions(), request);
     }
 
@@ -2813,8 +2830,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation createUnitOperation(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateUnitOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateUnitOperationMethod(), getCallOptions(), request);
     }
 
@@ -2826,8 +2844,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UnitOperation updateUnitOperation(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateUnitOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateUnitOperationMethod(), getCallOptions(), request);
     }
 
@@ -2839,8 +2858,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteUnitOperation(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitOperationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteUnitOperationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteUnitOperationMethod(), getCallOptions(), request);
     }
 
@@ -2852,8 +2872,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListReleasesResponse listReleases(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListReleasesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.ListReleasesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReleasesMethod(), getCallOptions(), request);
     }
 
@@ -2865,8 +2886,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Release getRelease(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.GetReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2878,8 +2900,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Release createRelease(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.CreateReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2891,8 +2914,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.cloud.saasplatform.saasservicemgmt.v1beta1.Release updateRelease(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.UpdateReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReleaseMethod(), getCallOptions(), request);
     }
 
@@ -2904,8 +2928,9 @@ public final class SaasDeploymentsGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteRelease(
-        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteReleaseRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.saasplatform.saasservicemgmt.v1beta1.DeleteReleaseRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReleaseMethod(), getCallOptions(), request);
     }
   }

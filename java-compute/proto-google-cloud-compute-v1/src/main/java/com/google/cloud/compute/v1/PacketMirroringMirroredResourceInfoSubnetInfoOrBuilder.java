@@ -28,7 +28,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the server.
+   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -41,7 +42,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the server.
+   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -54,7 +56,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the server.
+   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * server.
    * </pre>
    *
    * <code>optional string canonical_url = 512294820;</code>
@@ -67,7 +70,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * Resource URL to the subnetwork for which traffic from/to all VM instances will be mirrored.
+   * Resource URL to the subnetwork for which
+   * traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>optional string url = 116079;</code>
@@ -80,7 +84,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * Resource URL to the subnetwork for which traffic from/to all VM instances will be mirrored.
+   * Resource URL to the subnetwork for which
+   * traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>optional string url = 116079;</code>
@@ -93,7 +98,8 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * Resource URL to the subnetwork for which traffic from/to all VM instances will be mirrored.
+   * Resource URL to the subnetwork for which
+   * traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>optional string url = 116079;</code>

@@ -367,7 +367,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * <code>string layout_name = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-   *     google/cloud/edgenetwork/v1/resources.proto;l=79
+   *     google/cloud/edgenetwork/v1/resources.proto;l=92
    * @return The layoutName.
    */
   @java.lang.Override
@@ -395,7 +395,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    * <code>string layout_name = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-   *     google/cloud/edgenetwork/v1/resources.proto;l=79
+   *     google/cloud/edgenetwork/v1/resources.proto;l=92
    * @return The bytes for layoutName.
    */
   @java.lang.Override
@@ -1647,7 +1647,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>string layout_name = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-     *     google/cloud/edgenetwork/v1/resources.proto;l=79
+     *     google/cloud/edgenetwork/v1/resources.proto;l=92
      * @return The layoutName.
      */
     @java.lang.Deprecated
@@ -1674,7 +1674,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>string layout_name = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-     *     google/cloud/edgenetwork/v1/resources.proto;l=79
+     *     google/cloud/edgenetwork/v1/resources.proto;l=92
      * @return The bytes for layoutName.
      */
     @java.lang.Deprecated
@@ -1701,7 +1701,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>string layout_name = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-     *     google/cloud/edgenetwork/v1/resources.proto;l=79
+     *     google/cloud/edgenetwork/v1/resources.proto;l=92
      * @param value The layoutName to set.
      * @return This builder for chaining.
      */
@@ -1727,7 +1727,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>string layout_name = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-     *     google/cloud/edgenetwork/v1/resources.proto;l=79
+     *     google/cloud/edgenetwork/v1/resources.proto;l=92
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1749,7 +1749,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      * <code>string layout_name = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.edgenetwork.v1.Zone.layout_name is deprecated. See
-     *     google/cloud/edgenetwork/v1/resources.proto;l=79
+     *     google/cloud/edgenetwork/v1/resources.proto;l=92
      * @param value The bytes for layoutName to set.
      * @return This builder for chaining.
      */

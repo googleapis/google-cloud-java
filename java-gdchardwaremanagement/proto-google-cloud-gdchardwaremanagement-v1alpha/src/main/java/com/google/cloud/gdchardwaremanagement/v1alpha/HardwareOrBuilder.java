@@ -756,4 +756,47 @@ public interface HardwareOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.Hardware.MachineInfoOrBuilder
       getMachineInfosOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedDeliveryDate field is set.
+   */
+  boolean hasEstimatedDeliveryDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedDeliveryDate.
+   */
+  com.google.type.Date getEstimatedDeliveryDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The estimated delivery date of the hardware.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder();
 }

@@ -508,6 +508,58 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int VISIT_DATE_FIELD_NUMBER = 17;
+  private com.google.type.Date visitDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   *
+   * @return Whether the visitDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasVisitDate() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   *
+   * @return The visitDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getVisitDate() {
+    return visitDate_ == null ? com.google.type.Date.getDefaultInstance() : visitDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The date when the author visited the place. This is truncated to the year
+   * and month of the visit.
+   * </pre>
+   *
+   * <code>.google.type.Date visit_date = 17;</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getVisitDateOrBuilder() {
+    return visitDate_ == null ? com.google.type.Date.getDefaultInstance() : visitDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -550,6 +602,9 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(googleMapsUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, googleMapsUri_);
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(17, getVisitDate());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -587,6 +642,9 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(googleMapsUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, googleMapsUri_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getVisitDate());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -626,6 +684,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getFlagContentUri().equals(other.getFlagContentUri())) return false;
     if (!getGoogleMapsUri().equals(other.getGoogleMapsUri())) return false;
+    if (hasVisitDate() != other.hasVisitDate()) return false;
+    if (hasVisitDate()) {
+      if (!getVisitDate().equals(other.getVisitDate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -665,6 +727,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getFlagContentUri().hashCode();
     hash = (37 * hash) + GOOGLE_MAPS_URI_FIELD_NUMBER;
     hash = (53 * hash) + getGoogleMapsUri().hashCode();
+    if (hasVisitDate()) {
+      hash = (37 * hash) + VISIT_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getVisitDate().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -809,6 +875,7 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         getOriginalTextFieldBuilder();
         getAuthorAttributionFieldBuilder();
         getPublishTimeFieldBuilder();
+        getVisitDateFieldBuilder();
       }
     }
 
@@ -841,6 +908,11 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       flagContentUri_ = "";
       googleMapsUri_ = "";
+      visitDate_ = null;
+      if (visitDateBuilder_ != null) {
+        visitDateBuilder_.dispose();
+        visitDateBuilder_ = null;
+      }
       return this;
     }
 
@@ -912,6 +984,10 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.googleMapsUri_ = googleMapsUri_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.visitDate_ = visitDateBuilder_ == null ? visitDate_ : visitDateBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -996,6 +1072,9 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasVisitDate()) {
+        mergeVisitDate(other.getVisitDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1077,6 +1156,12 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 130
+            case 138:
+              {
+                input.readMessage(getVisitDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2383,6 +2468,199 @@ public final class Review extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.type.Date visitDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        visitDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     *
+     * @return Whether the visitDate field is set.
+     */
+    public boolean hasVisitDate() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     *
+     * @return The visitDate.
+     */
+    public com.google.type.Date getVisitDate() {
+      if (visitDateBuilder_ == null) {
+        return visitDate_ == null ? com.google.type.Date.getDefaultInstance() : visitDate_;
+      } else {
+        return visitDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public Builder setVisitDate(com.google.type.Date value) {
+      if (visitDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        visitDate_ = value;
+      } else {
+        visitDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public Builder setVisitDate(com.google.type.Date.Builder builderForValue) {
+      if (visitDateBuilder_ == null) {
+        visitDate_ = builderForValue.build();
+      } else {
+        visitDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public Builder mergeVisitDate(com.google.type.Date value) {
+      if (visitDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && visitDate_ != null
+            && visitDate_ != com.google.type.Date.getDefaultInstance()) {
+          getVisitDateBuilder().mergeFrom(value);
+        } else {
+          visitDate_ = value;
+        }
+      } else {
+        visitDateBuilder_.mergeFrom(value);
+      }
+      if (visitDate_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public Builder clearVisitDate() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      visitDate_ = null;
+      if (visitDateBuilder_ != null) {
+        visitDateBuilder_.dispose();
+        visitDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public com.google.type.Date.Builder getVisitDateBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getVisitDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    public com.google.type.DateOrBuilder getVisitDateOrBuilder() {
+      if (visitDateBuilder_ != null) {
+        return visitDateBuilder_.getMessageOrBuilder();
+      } else {
+        return visitDate_ == null ? com.google.type.Date.getDefaultInstance() : visitDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date when the author visited the place. This is truncated to the year
+     * and month of the visit.
+     * </pre>
+     *
+     * <code>.google.type.Date visit_date = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getVisitDateFieldBuilder() {
+      if (visitDateBuilder_ == null) {
+        visitDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getVisitDate(), getParentForChildren(), isClean());
+        visitDate_ = null;
+      }
+      return visitDateBuilder_;
     }
 
     @java.lang.Override

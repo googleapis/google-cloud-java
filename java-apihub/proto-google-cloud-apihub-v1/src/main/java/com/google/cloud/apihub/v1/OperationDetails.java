@@ -175,12 +175,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Description of the operation behavior.
+   * Optional. Description of the operation behavior.
    * For OpenAPI spec, this will map to `operation.description` in the
    * spec, in case description is empty, `operation.summary` will be used.
    * </pre>
    *
-   * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -201,12 +201,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Description of the operation behavior.
+   * Optional. Description of the operation behavior.
    * For OpenAPI spec, this will map to `operation.description` in the
    * spec, in case description is empty, `operation.summary` will be used.
    * </pre>
    *
-   * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -230,12 +230,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the documentation field is set.
@@ -249,12 +249,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The documentation.
@@ -270,12 +270,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -292,11 +292,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. For OpenAPI spec, this will be set if `operation.deprecated`is
+   * Optional. For OpenAPI spec, this will be set if `operation.deprecated`is
    * marked as `true` in the spec.
    * </pre>
    *
-   * <code>bool deprecated = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deprecated.
    */
@@ -1006,12 +1006,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Description of the operation behavior.
+     * Optional. Description of the operation behavior.
      * For OpenAPI spec, this will map to `operation.description` in the
      * spec, in case description is empty, `operation.summary` will be used.
      * </pre>
      *
-     * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1031,12 +1031,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Description of the operation behavior.
+     * Optional. Description of the operation behavior.
      * For OpenAPI spec, this will map to `operation.description` in the
      * spec, in case description is empty, `operation.summary` will be used.
      * </pre>
      *
-     * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1056,12 +1056,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Description of the operation behavior.
+     * Optional. Description of the operation behavior.
      * For OpenAPI spec, this will map to `operation.description` in the
      * spec, in case description is empty, `operation.summary` will be used.
      * </pre>
      *
-     * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1080,12 +1080,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Description of the operation behavior.
+     * Optional. Description of the operation behavior.
      * For OpenAPI spec, this will map to `operation.description` in the
      * spec, in case description is empty, `operation.summary` will be used.
      * </pre>
      *
-     * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1100,12 +1100,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Description of the operation behavior.
+     * Optional. Description of the operation behavior.
      * For OpenAPI spec, this will map to `operation.description` in the
      * spec, in case description is empty, `operation.summary` will be used.
      * </pre>
      *
-     * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1132,12 +1132,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the documentation field is set.
@@ -1150,12 +1150,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The documentation.
@@ -1174,12 +1174,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDocumentation(com.google.cloud.apihub.v1.Documentation value) {
@@ -1200,12 +1200,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDocumentation(
@@ -1224,12 +1224,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeDocumentation(com.google.cloud.apihub.v1.Documentation value) {
@@ -1255,12 +1255,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDocumentation() {
@@ -1278,12 +1278,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.Documentation.Builder getDocumentationBuilder() {
@@ -1296,12 +1296,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.DocumentationOrBuilder getDocumentationOrBuilder() {
@@ -1318,12 +1318,12 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Additional external documentation for this operation.
+     * Optional. Additional external documentation for this operation.
      * For OpenAPI spec, this will map to `operation.documentation` in the spec.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1349,11 +1349,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. For OpenAPI spec, this will be set if `operation.deprecated`is
+     * Optional. For OpenAPI spec, this will be set if `operation.deprecated`is
      * marked as `true` in the spec.
      * </pre>
      *
-     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The deprecated.
      */
@@ -1366,11 +1366,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. For OpenAPI spec, this will be set if `operation.deprecated`is
+     * Optional. For OpenAPI spec, this will be set if `operation.deprecated`is
      * marked as `true` in the spec.
      * </pre>
      *
-     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The deprecated to set.
      * @return This builder for chaining.
@@ -1387,11 +1387,11 @@ public final class OperationDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. For OpenAPI spec, this will be set if `operation.deprecated`is
+     * Optional. For OpenAPI spec, this will be set if `operation.deprecated`is
      * marked as `true` in the spec.
      * </pre>
      *
-     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>bool deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

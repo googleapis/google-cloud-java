@@ -29,9 +29,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * dataset in your project.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/bigquery/dataexchange/v1beta1/dataexchange.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AnalyticsHubServiceGrpc {
 
@@ -1376,8 +1373,9 @@ public final class AnalyticsHubServiceGrpc {
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesResponse
         listDataExchanges(
-            com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.dataexchange.v1beta1.ListDataExchangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListDataExchangesMethod(), getCallOptions(), request);
     }
 
@@ -1391,8 +1389,9 @@ public final class AnalyticsHubServiceGrpc {
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesResponse
         listOrgDataExchanges(
-            com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.bigquery.dataexchange.v1beta1.ListOrgDataExchangesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListOrgDataExchangesMethod(), getCallOptions(), request);
     }
 
@@ -1404,8 +1403,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange getDataExchange(
-        com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.GetDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -1417,8 +1417,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange createDataExchange(
-        com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.CreateDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -1430,8 +1431,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.DataExchange updateDataExchange(
-        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -1443,8 +1445,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteDataExchange(
-        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteDataExchangeRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteDataExchangeMethod(), getCallOptions(), request);
     }
 
@@ -1456,8 +1459,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsResponse listListings(
-        com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.ListListingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListListingsMethod(), getCallOptions(), request);
     }
 
@@ -1469,8 +1473,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing getListing(
-        com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.GetListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetListingMethod(), getCallOptions(), request);
     }
 
@@ -1482,8 +1487,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing createListing(
-        com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.CreateListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateListingMethod(), getCallOptions(), request);
     }
 
@@ -1495,8 +1501,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.Listing updateListing(
-        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.UpdateListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateListingMethod(), getCallOptions(), request);
     }
 
@@ -1508,8 +1515,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteListing(
-        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.DeleteListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteListingMethod(), getCallOptions(), request);
     }
 
@@ -1525,8 +1533,9 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingResponse subscribeListing(
-        com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.bigquery.dataexchange.v1beta1.SubscribeListingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSubscribeListingMethod(), getCallOptions(), request);
     }
 
@@ -1537,8 +1546,9 @@ public final class AnalyticsHubServiceGrpc {
      * Gets the IAM policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1549,8 +1559,9 @@ public final class AnalyticsHubServiceGrpc {
      * Sets the IAM policy.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -1562,8 +1573,8 @@ public final class AnalyticsHubServiceGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

@@ -115,7 +115,8 @@ public final class InstancesBulkInsertOperationMetadata
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -142,7 +143,8 @@ public final class InstancesBulkInsertOperationMetadata
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -159,7 +161,8 @@ public final class InstancesBulkInsertOperationMetadata
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -184,7 +187,8 @@ public final class InstancesBulkInsertOperationMetadata
    *
    *
    * <pre>
-   * Status information per location (location name is key). Example key: zones/us-central1-a
+   * Status information per location (location name is key).
+   * Example key: zones/us-central1-a
    * </pre>
    *
    * <code>
@@ -662,7 +666,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -689,7 +694,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -706,7 +712,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -732,7 +739,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -764,7 +772,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -791,7 +800,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -815,7 +825,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>
@@ -841,7 +852,8 @@ public final class InstancesBulkInsertOperationMetadata
      *
      *
      * <pre>
-     * Status information per location (location name is key). Example key: zones/us-central1-a
+     * Status information per location (location name is key).
+     * Example key: zones/us-central1-a
      * </pre>
      *
      * <code>

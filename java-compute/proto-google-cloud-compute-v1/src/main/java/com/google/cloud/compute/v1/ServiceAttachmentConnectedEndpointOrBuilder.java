@@ -106,7 +106,66 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * NAT IPs of the connected PSC endpoint and those of other endpoints
+   * propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @return A list containing the natIps.
+   */
+  java.util.List<java.lang.String> getNatIpsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints
+   * propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @return The count of natIps.
+   */
+  int getNatIpsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints
+   * propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The natIps at the given index.
+   */
+  java.lang.String getNatIps(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * NAT IPs of the connected PSC endpoint and those of other endpoints
+   * propagated from it.
+   * </pre>
+   *
+   * <code>repeated string nat_ips = 117635086;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the natIps at the given index.
+   */
+  com.google.protobuf.ByteString getNatIpsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of consumer Network Connectivity Center spokes that the
+   * connected Private Service Connect endpoint has propagated to.
    * </pre>
    *
    * <code>optional uint32 propagated_connection_count = 324594130;</code>
@@ -119,7 +178,8 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
-   * The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
+   * The number of consumer Network Connectivity Center spokes that the
+   * connected Private Service Connect endpoint has propagated to.
    * </pre>
    *
    * <code>optional uint32 propagated_connection_count = 324594130;</code>

@@ -51,4 +51,32 @@ public interface MaintenanceExclusionOptionsOrBuilder
    * @return The scope.
    */
   com.google.container.v1.MaintenanceExclusionOptions.Scope getScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * EndTimeBehavior specifies the behavior of the exclusion end time.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for endTimeBehavior.
+   */
+  int getEndTimeBehaviorValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * EndTimeBehavior specifies the behavior of the exclusion end time.
+   * </pre>
+   *
+   * <code>.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior end_time_behavior = 2;
+   * </code>
+   *
+   * @return The endTimeBehavior.
+   */
+  com.google.container.v1.MaintenanceExclusionOptions.EndTimeBehavior getEndTimeBehavior();
 }

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage promotions for products.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/promotions/v1/promotions.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class PromotionsServiceGrpc {
 
@@ -418,8 +415,9 @@ public final class PromotionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.promotions.v1.Promotion insertPromotion(
-        com.google.shopping.merchant.promotions.v1.InsertPromotionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.promotions.v1.InsertPromotionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInsertPromotionMethod(), getCallOptions(), request);
     }
 
@@ -433,8 +431,9 @@ public final class PromotionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.promotions.v1.Promotion getPromotion(
-        com.google.shopping.merchant.promotions.v1.GetPromotionRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.promotions.v1.GetPromotionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetPromotionMethod(), getCallOptions(), request);
     }
 
@@ -450,8 +449,9 @@ public final class PromotionsServiceGrpc {
      * </pre>
      */
     public com.google.shopping.merchant.promotions.v1.ListPromotionsResponse listPromotions(
-        com.google.shopping.merchant.promotions.v1.ListPromotionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.shopping.merchant.promotions.v1.ListPromotionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListPromotionsMethod(), getCallOptions(), request);
     }
   }

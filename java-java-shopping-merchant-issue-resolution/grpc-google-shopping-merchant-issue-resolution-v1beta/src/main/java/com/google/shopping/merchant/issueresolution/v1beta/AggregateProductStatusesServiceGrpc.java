@@ -24,10 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to manage aggregate product statuses.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments =
-        "Source: google/shopping/merchant/issueresolution/v1beta/aggregateproductstatuses.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AggregateProductStatusesServiceGrpc {
 
@@ -278,8 +274,9 @@ public final class AggregateProductStatusesServiceGrpc {
     public com.google.shopping.merchant.issueresolution.v1beta.ListAggregateProductStatusesResponse
         listAggregateProductStatuses(
             com.google.shopping.merchant.issueresolution.v1beta.ListAggregateProductStatusesRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAggregateProductStatusesMethod(), getCallOptions(), request);
     }
   }

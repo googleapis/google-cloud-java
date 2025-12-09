@@ -71,7 +71,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * </pre>
    *
    * Protobuf enum {@code
@@ -253,7 +254,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
@@ -270,7 +272,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
@@ -295,7 +298,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
@@ -797,7 +801,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
@@ -813,7 +818,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
@@ -837,7 +843,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
@@ -861,7 +868,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
@@ -884,7 +892,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
@@ -903,7 +912,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      *
      *
      * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Specifies the behavior to apply to scheduled snapshots when
+     * the source disk is deleted.
      * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *

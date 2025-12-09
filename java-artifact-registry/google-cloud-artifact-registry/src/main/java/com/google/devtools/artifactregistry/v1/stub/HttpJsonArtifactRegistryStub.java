@@ -65,6 +65,9 @@ import com.google.devtools.artifactregistry.v1.DeleteRuleRequest;
 import com.google.devtools.artifactregistry.v1.DeleteTagRequest;
 import com.google.devtools.artifactregistry.v1.DeleteVersionRequest;
 import com.google.devtools.artifactregistry.v1.DockerImage;
+import com.google.devtools.artifactregistry.v1.ExportArtifactMetadata;
+import com.google.devtools.artifactregistry.v1.ExportArtifactRequest;
+import com.google.devtools.artifactregistry.v1.ExportArtifactResponse;
 import com.google.devtools.artifactregistry.v1.File;
 import com.google.devtools.artifactregistry.v1.GetAttachmentRequest;
 import com.google.devtools.artifactregistry.v1.GetDockerImageRequest;
@@ -154,12 +157,14 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
       TypeRegistry.newBuilder()
           .add(BatchDeleteVersionsMetadata.getDescriptor())
           .add(Attachment.getDescriptor())
+          .add(ExportArtifactResponse.getDescriptor())
           .add(Empty.getDescriptor())
           .add(ImportYumArtifactsResponse.getDescriptor())
           .add(ImportAptArtifactsResponse.getDescriptor())
           .add(ImportYumArtifactsMetadata.getDescriptor())
           .add(ImportAptArtifactsMetadata.getDescriptor())
           .add(Repository.getDescriptor())
+          .add(ExportArtifactMetadata.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
 
@@ -1982,6 +1987,47 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ExportArtifactRequest, Operation>
+      exportArtifactMethodDescriptor =
+          ApiMethodDescriptor.<ExportArtifactRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.devtools.artifactregistry.v1.ArtifactRegistry/ExportArtifact")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExportArtifactRequest>newBuilder()
+                      .setPath(
+                          "/v1/{repository=projects/*/locations/*/repositories/*}:exportArtifact",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportArtifactRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "repository", request.getRepository());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportArtifactRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearRepository().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (ExportArtifactRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2149,6 +2195,10 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   private final UnaryCallable<DeleteAttachmentRequest, Operation> deleteAttachmentCallable;
   private final OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationCallable;
+  private final UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable;
+  private final OperationCallable<
+          ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2761,6 +2811,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ExportArtifactRequest, Operation> exportArtifactTransportSettings =
+        HttpJsonCallSettings.<ExportArtifactRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportArtifactMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("repository", String.valueOf(request.getRepository()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3047,6 +3108,15 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
             settings.deleteAttachmentOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.exportArtifactCallable =
+        callableFactory.createUnaryCallable(
+            exportArtifactTransportSettings, settings.exportArtifactSettings(), clientContext);
+    this.exportArtifactOperationCallable =
+        callableFactory.createOperationCallable(
+            exportArtifactTransportSettings,
+            settings.exportArtifactOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -3113,6 +3183,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
     methodDescriptors.add(getAttachmentMethodDescriptor);
     methodDescriptors.add(createAttachmentMethodDescriptor);
     methodDescriptors.add(deleteAttachmentMethodDescriptor);
+    methodDescriptors.add(exportArtifactMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -3494,6 +3565,17 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
   public OperationCallable<DeleteAttachmentRequest, Empty, OperationMetadata>
       deleteAttachmentOperationCallable() {
     return deleteAttachmentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportArtifactRequest, Operation> exportArtifactCallable() {
+    return exportArtifactCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportArtifactRequest, ExportArtifactResponse, ExportArtifactMetadata>
+      exportArtifactOperationCallable() {
+    return exportArtifactOperationCallable;
   }
 
   @Override

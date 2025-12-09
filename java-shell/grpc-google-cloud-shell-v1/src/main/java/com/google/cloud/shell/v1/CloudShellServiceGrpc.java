@@ -30,9 +30,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * client.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/shell/v1/cloudshell.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class CloudShellServiceGrpc {
 
@@ -585,8 +582,8 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.cloud.shell.v1.Environment getEnvironment(
-        com.google.cloud.shell.v1.GetEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.shell.v1.GetEnvironmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -603,8 +600,8 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation startEnvironment(
-        com.google.cloud.shell.v1.StartEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.shell.v1.StartEnvironmentRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getStartEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -619,8 +616,9 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation authorizeEnvironment(
-        com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.shell.v1.AuthorizeEnvironmentRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAuthorizeEnvironmentMethod(), getCallOptions(), request);
     }
 
@@ -634,8 +632,8 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation addPublicKey(
-        com.google.cloud.shell.v1.AddPublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.shell.v1.AddPublicKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getAddPublicKeyMethod(), getCallOptions(), request);
     }
 
@@ -650,8 +648,8 @@ public final class CloudShellServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation removePublicKey(
-        com.google.cloud.shell.v1.RemovePublicKeyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.shell.v1.RemovePublicKeyRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRemovePublicKeyMethod(), getCallOptions(), request);
     }
   }

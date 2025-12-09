@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * The policy describes the baseline against which Instance boot integrity is measured.
+ * The policy describes the baseline against which
+ * Instance boot integrity is measured.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy}
@@ -71,7 +72,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+   * Updates the integrity policy baseline using the
+   * measurements from the VM instance's most recent boot.
    * </pre>
    *
    * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -87,7 +89,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+   * Updates the integrity policy baseline using the
+   * measurements from the VM instance's most recent boot.
    * </pre>
    *
    * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -270,7 +273,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The policy describes the baseline against which Instance boot integrity is measured.
+   * The policy describes the baseline against which
+   * Instance boot integrity is measured.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy}
@@ -456,7 +460,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+     * Updates the integrity policy baseline using the
+     * measurements from the VM instance's most recent boot.
      * </pre>
      *
      * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -472,7 +477,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+     * Updates the integrity policy baseline using the
+     * measurements from the VM instance's most recent boot.
      * </pre>
      *
      * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -488,7 +494,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+     * Updates the integrity policy baseline using the
+     * measurements from the VM instance's most recent boot.
      * </pre>
      *
      * <code>optional bool update_auto_learn_policy = 245490215;</code>
@@ -508,7 +515,8 @@ public final class ShieldedInstanceIntegrityPolicy extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Updates the integrity policy baseline using the measurements from the VM instance's most recent boot.
+     * Updates the integrity policy baseline using the
+     * measurements from the VM instance's most recent boot.
      * </pre>
      *
      * <code>optional bool update_auto_learn_policy = 245490215;</code>

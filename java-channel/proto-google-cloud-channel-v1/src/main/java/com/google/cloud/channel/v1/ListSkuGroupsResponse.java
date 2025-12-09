@@ -151,8 +151,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListSkuGroups.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -177,8 +178,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A token to retrieve the next page of results.
-   * Pass to [ListSkuGroups.page_token][] to obtain that
-   * page.
+   * Pass to
+   * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+   * to obtain that page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -985,8 +987,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroups.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1010,8 +1013,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroups.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1035,8 +1039,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroups.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1059,8 +1064,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroups.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1079,8 +1085,9 @@ public final class ListSkuGroupsResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A token to retrieve the next page of results.
-     * Pass to [ListSkuGroups.page_token][] to obtain that
-     * page.
+     * Pass to
+     * [ListSkuGroupsRequest.page_token][google.cloud.channel.v1.ListSkuGroupsRequest.page_token]
+     * to obtain that page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

@@ -251,7 +251,7 @@ public interface ReportOrBuilder
    *
    * <pre>
    * Output only. The locale of this report. Locale is set from the user's
-   * locale at the time of the request. Locale can not be modified.
+   * locale at the time of the request. Locale can't be modified.
    * </pre>
    *
    * <code>string locale = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -265,7 +265,7 @@ public interface ReportOrBuilder
    *
    * <pre>
    * Output only. The locale of this report. Locale is set from the user's
-   * locale at the time of the request. Locale can not be modified.
+   * locale at the time of the request. Locale can't be modified.
    * </pre>
    *
    * <code>string locale = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

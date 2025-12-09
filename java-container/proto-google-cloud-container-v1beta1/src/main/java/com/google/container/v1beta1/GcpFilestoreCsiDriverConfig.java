@@ -23,7 +23,7 @@ package com.google.container.v1beta1;
  *
  *
  * <pre>
- * Configuration for the GCP Filestore CSI driver.
+ * Configuration for the Filestore CSI driver.
  * </pre>
  *
  * Protobuf type {@code google.container.v1beta1.GcpFilestoreCsiDriverConfig}
@@ -69,7 +69,7 @@ public final class GcpFilestoreCsiDriverConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Whether the GCP Filestore CSI driver is enabled for this cluster.
+   * Whether the Filestore CSI driver is enabled for this cluster.
    * </pre>
    *
    * <code>bool enabled = 1;</code>
@@ -246,7 +246,7 @@ public final class GcpFilestoreCsiDriverConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configuration for the GCP Filestore CSI driver.
+   * Configuration for the Filestore CSI driver.
    * </pre>
    *
    * Protobuf type {@code google.container.v1beta1.GcpFilestoreCsiDriverConfig}
@@ -429,7 +429,7 @@ public final class GcpFilestoreCsiDriverConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Whether the GCP Filestore CSI driver is enabled for this cluster.
+     * Whether the Filestore CSI driver is enabled for this cluster.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -445,7 +445,7 @@ public final class GcpFilestoreCsiDriverConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Whether the GCP Filestore CSI driver is enabled for this cluster.
+     * Whether the Filestore CSI driver is enabled for this cluster.
      * </pre>
      *
      * <code>bool enabled = 1;</code>
@@ -465,7 +465,7 @@ public final class GcpFilestoreCsiDriverConfig extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Whether the GCP Filestore CSI driver is enabled for this cluster.
+     * Whether the Filestore CSI driver is enabled for this cluster.
      * </pre>
      *
      * <code>bool enabled = 1;</code>

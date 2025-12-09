@@ -23,7 +23,8 @@ package com.google.cloud.channel.v1;
  *
  *
  * <pre>
- * Request message for [CloudChannelService.ChangeParametersRequest][].
+ * Request message for
+ * [CloudChannelService.ChangeParameters][google.cloud.channel.v1.CloudChannelService.ChangeParameters].
  * </pre>
  *
  * Protobuf type {@code google.cloud.channel.v1.ChangeParametersRequest}
@@ -556,7 +557,8 @@ public final class ChangeParametersRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Request message for [CloudChannelService.ChangeParametersRequest][].
+   * Request message for
+   * [CloudChannelService.ChangeParameters][google.cloud.channel.v1.CloudChannelService.ChangeParameters].
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.ChangeParametersRequest}

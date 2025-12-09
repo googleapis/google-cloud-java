@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Allows users to manage their organization resources.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/resourcemanager/v3/organizations.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class OrganizationsGrpc {
 
@@ -567,8 +564,9 @@ public final class OrganizationsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.Organization getOrganization(
-        com.google.cloud.resourcemanager.v3.GetOrganizationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.GetOrganizationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetOrganizationMethod(), getCallOptions(), request);
     }
 
@@ -585,8 +583,9 @@ public final class OrganizationsGrpc {
      * </pre>
      */
     public com.google.cloud.resourcemanager.v3.SearchOrganizationsResponse searchOrganizations(
-        com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.resourcemanager.v3.SearchOrganizationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchOrganizationsMethod(), getCallOptions(), request);
     }
 
@@ -601,8 +600,9 @@ public final class OrganizationsGrpc {
      * `resourcemanager.organizations.getIamPolicy` on the specified organization.
      * </pre>
      */
-    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -617,8 +617,9 @@ public final class OrganizationsGrpc {
      * `resourcemanager.organizations.setIamPolicy` on the specified organization.
      * </pre>
      */
-    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
 
@@ -633,8 +634,8 @@ public final class OrganizationsGrpc {
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
-        com.google.iam.v1.TestIamPermissionsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
     }
   }

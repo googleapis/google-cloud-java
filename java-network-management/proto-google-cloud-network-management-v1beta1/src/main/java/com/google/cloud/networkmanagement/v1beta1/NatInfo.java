@@ -132,6 +132,16 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVATE_SERVICE_CONNECT = 4;</code>
      */
     PRIVATE_SERVICE_CONNECT(4),
+    /**
+     *
+     *
+     * <pre>
+     * GKE Pod IP address masquerading.
+     * </pre>
+     *
+     * <code>GKE_POD_IP_MASQUERADING = 5;</code>
+     */
+    GKE_POD_IP_MASQUERADING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -190,6 +200,17 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * GKE Pod IP address masquerading.
+     * </pre>
+     *
+     * <code>GKE_POD_IP_MASQUERADING = 5;</code>
+     */
+    public static final int GKE_POD_IP_MASQUERADING_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -224,6 +245,8 @@ public final class NatInfo extends com.google.protobuf.GeneratedMessageV3
           return CLOUD_NAT;
         case 4:
           return PRIVATE_SERVICE_CONNECT;
+        case 5:
+          return GKE_POD_IP_MASQUERADING;
         default:
           return null;
       }

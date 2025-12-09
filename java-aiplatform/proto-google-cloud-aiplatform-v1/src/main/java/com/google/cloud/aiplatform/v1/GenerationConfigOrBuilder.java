@@ -633,6 +633,49 @@ public interface GenerationConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.aiplatform.v1.SpeechConfig getSpeechConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The speech generation config.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.SpeechConfig speech_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Config for thinking features.
    * An error will be returned if this field is set for models that don't
    * support thinking.
@@ -678,4 +721,47 @@ public interface GenerationConfigOrBuilder
    */
   com.google.cloud.aiplatform.v1.GenerationConfig.ThinkingConfigOrBuilder
       getThinkingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the imageConfig field is set.
+   */
+  boolean hasImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The imageConfig.
+   */
+  com.google.cloud.aiplatform.v1.ImageConfig getImageConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Config for image generation features.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.ImageConfig image_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.ImageConfigOrBuilder getImageConfigOrBuilder();
 }

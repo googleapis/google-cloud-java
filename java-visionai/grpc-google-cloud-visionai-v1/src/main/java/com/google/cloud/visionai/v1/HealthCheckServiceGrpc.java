@@ -25,9 +25,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Check.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/visionai/v1/health_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class HealthCheckServiceGrpc {
 
@@ -246,8 +243,8 @@ public final class HealthCheckServiceGrpc {
      * </pre>
      */
     public com.google.cloud.visionai.v1.HealthCheckResponse healthCheck(
-        com.google.cloud.visionai.v1.HealthCheckRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.visionai.v1.HealthCheckRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getHealthCheckMethod(), getCallOptions(), request);
     }
   }

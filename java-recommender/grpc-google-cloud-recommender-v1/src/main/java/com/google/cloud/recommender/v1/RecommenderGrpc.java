@@ -27,9 +27,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * based on analysis of user resources, configuration and monitoring metrics.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/recommender/v1/recommender_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class RecommenderGrpc {
 
@@ -1298,8 +1295,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.ListInsightsResponse listInsights(
-        com.google.cloud.recommender.v1.ListInsightsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.ListInsightsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListInsightsMethod(), getCallOptions(), request);
     }
 
@@ -1312,8 +1310,8 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Insight getInsight(
-        com.google.cloud.recommender.v1.GetInsightRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.GetInsightRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInsightMethod(), getCallOptions(), request);
     }
 
@@ -1329,8 +1327,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Insight markInsightAccepted(
-        com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.MarkInsightAcceptedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMarkInsightAcceptedMethod(), getCallOptions(), request);
     }
 
@@ -1343,8 +1342,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.ListRecommendationsResponse listRecommendations(
-        com.google.cloud.recommender.v1.ListRecommendationsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.ListRecommendationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListRecommendationsMethod(), getCallOptions(), request);
     }
 
@@ -1357,8 +1357,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Recommendation getRecommendation(
-        com.google.cloud.recommender.v1.GetRecommendationRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.GetRecommendationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRecommendationMethod(), getCallOptions(), request);
     }
 
@@ -1376,8 +1377,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Recommendation markRecommendationDismissed(
-        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMarkRecommendationDismissedMethod(), getCallOptions(), request);
     }
 
@@ -1396,8 +1398,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Recommendation markRecommendationClaimed(
-        com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMarkRecommendationClaimedMethod(), getCallOptions(), request);
     }
 
@@ -1417,8 +1420,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Recommendation markRecommendationSucceeded(
-        com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMarkRecommendationSucceededMethod(), getCallOptions(), request);
     }
 
@@ -1438,8 +1442,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.Recommendation markRecommendationFailed(
-        com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.MarkRecommendationFailedRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMarkRecommendationFailedMethod(), getCallOptions(), request);
     }
 
@@ -1452,8 +1457,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.RecommenderConfig getRecommenderConfig(
-        com.google.cloud.recommender.v1.GetRecommenderConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.GetRecommenderConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetRecommenderConfigMethod(), getCallOptions(), request);
     }
 
@@ -1466,8 +1472,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.RecommenderConfig updateRecommenderConfig(
-        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.UpdateRecommenderConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateRecommenderConfigMethod(), getCallOptions(), request);
     }
 
@@ -1480,8 +1487,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.InsightTypeConfig getInsightTypeConfig(
-        com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.GetInsightTypeConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInsightTypeConfigMethod(), getCallOptions(), request);
     }
 
@@ -1494,8 +1502,9 @@ public final class RecommenderGrpc {
      * </pre>
      */
     public com.google.cloud.recommender.v1.InsightTypeConfig updateInsightTypeConfig(
-        com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.recommender.v1.UpdateInsightTypeConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInsightTypeConfigMethod(), getCallOptions(), request);
     }
   }

@@ -72,6 +72,10 @@ public final class TuningJobProto {
       internal_static_google_cloud_aiplatform_v1_TunedModelCheckpoint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_TunedModelCheckpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_PreTunedModel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_PreTunedModel_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -88,11 +92,13 @@ public final class TuningJobProto {
           + "esource.proto\032(google/cloud/aiplatform/v1/content.proto\0320google/cloud/aiplatform"
           + "/v1/encryption_spec.proto\032*google/cloud/"
           + "aiplatform/v1/job_state.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\032\027google/rpc/status.proto\"\307\010\n"
+          + "otobuf/timestamp.proto\032\027google/rpc/status.proto\"\215\t\n"
           + "\tTuningJob\022\024\n\n"
-          + "base_model\030\004 \001(\tH\000\022R\n"
-          + "\026supervised_tuning_spec\030\005 \001(\01320.go"
-          + "ogle.cloud.aiplatform.v1.SupervisedTuningSpecH\001\022\024\n"
+          + "base_model\030\004 \001(\tH\000\022D\n"
+          + "\017pre_tuned_model\030\037"
+          + " \001(\0132).google.cloud.aiplatform.v1.PreTunedModelH\000\022R\n"
+          + "\026supervised_tuning_spec\030\005"
+          + " \001(\01320.google.cloud.aiplatform.v1.SupervisedTuningSpecH\001\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022%\n"
           + "\030tuned_model_display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\0228\n"
@@ -109,18 +115,18 @@ public final class TuningJobProto {
           + "experiment\030\r"
           + " \001(\tB)\340A\003\372A#\n"
           + "!aiplatform.googleapis.com/Context\022@\n"
-          + "\013tuned_model\030\016 \001(\013"
-          + "2&.google.cloud.aiplatform.v1.TunedModelB\003\340A\003\022K\n"
-          + "\021tuning_data_stats\030\017 \001(\0132+.googl"
-          + "e.cloud.aiplatform.v1.TuningDataStatsB\003\340A\003\022C\n"
+          + "\013tuned_model\030\016"
+          + " \001(\0132&.google.cloud.aiplatform.v1.TunedModelB\003\340A\003\022K\n"
+          + "\021tuning_data_stats\030\017"
+          + " \001(\0132+.google.cloud.aiplatform.v1.TuningDataStatsB\003\340A\003\022C\n"
           + "\017encryption_spec\030\020"
           + " \001(\0132*.google.cloud.aiplatform.v1.EncryptionSpec\022\027\n"
           + "\017service_account\030\026 \001(\t\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\200\001\352A}\n"
-          + "#aiplatform.googleapis.com/TuningJob\022?projects/{pr"
-          + "oject}/locations/{location}/tuningJobs/{tuning_job}*\n"
+          + "#aiplatform.googleapis.com/TuningJob\022?projects/{project}/loc"
+          + "ations/{location}/tuningJobs/{tuning_job}*\n"
           + "tuningJobs2\ttuningJobB\016\n"
           + "\014source_modelB\r\n"
           + "\013tuning_spec\"\316\001\n\n"
@@ -140,8 +146,8 @@ public final class TuningJobProto {
           + "\006median\030\005 \001(\001B\003\340A\003\022\017\n"
           + "\002p5\030\006 \001(\001B\003\340A\003\022\020\n"
           + "\003p95\030\007 \001(\001B\003\340A\003\022c\n"
-          + "\007buckets\030\010 \003(\0132M.google.cloud.aiplatform.v1.Sup"
-          + "ervisedTuningDatasetDistribution.DatasetBucketB\003\340A\003\032J\n\r"
+          + "\007buckets\030\010 \003(\0132M.google.cloud.aiplatform.v1.SupervisedTun"
+          + "ingDatasetDistribution.DatasetBucketB\003\340A\003\032J\n\r"
           + "DatasetBucket\022\022\n"
           + "\005count\030\001 \001(\001B\003\340A\003\022\021\n"
           + "\004left\030\002 \001(\001B\003\340A\003\022\022\n"
@@ -152,27 +158,27 @@ public final class TuningJobProto {
           + "\036total_billable_character_count\030\003 \001(\003B\005\030\001\340A\003\022\'\n"
           + "\032total_billable_token_count\030\t \001(\003B\003\340A\003\022\036\n"
           + "\021tuning_step_count\030\004 \001(\003B\003\340A\003\022k\n"
-          + "\035user_input_token_distribution\030\005 \001"
-          + "(\0132?.google.cloud.aiplatform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022l\n"
-          + "\036user_output_token_distribution\030\006 \001(\0132?.googl"
-          + "e.cloud.aiplatform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022s\n"
-          + "%user_message_per_example_distribution\030\007 \001(\0132?.google.c"
-          + "loud.aiplatform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022G\n"
-          + "\025user_dataset_examples\030\010"
-          + " \003(\0132#.google.cloud.aiplatform.v1.ContentB\003\340A\003\022*\n"
+          + "\035user_input_token_distribution\030\005 \001(\0132?.googl"
+          + "e.cloud.aiplatform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022l\n"
+          + "\036user_output_token_distribution\030\006 \001(\0132?.google.cloud.ai"
+          + "platform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022s\n"
+          + "%user_message_per_example_distribution\030\007 \001(\0132?.google.cloud.aipla"
+          + "tform.v1.SupervisedTuningDatasetDistributionB\003\340A\003\022G\n"
+          + "\025user_dataset_examples\030\010 \003(\013"
+          + "2#.google.cloud.aiplatform.v1.ContentB\003\340A\003\022*\n"
           + "\035total_truncated_example_count\030\n"
           + " \001(\003B\003\340A\003\022&\n"
           + "\031truncated_example_indices\030\013 \003(\003B\003\340A\003\022$\n"
           + "\027dropped_example_reasons\030\014 \003(\tB\003\340A\003\"\205\001\n"
           + "\017TuningDataStats\022]\n"
-          + "\034supervised_tuning_data_stats\030\001 \001(\01325.googl"
-          + "e.cloud.aiplatform.v1.SupervisedTuningDataStatsH\000B\023\n"
+          + "\034supervised_tuning_data_stats\030\001 \001(\01325.google.cloud.ai"
+          + "platform.v1.SupervisedTuningDataStatsH\000B\023\n"
           + "\021tuning_data_stats\"\372\002\n"
           + "\031SupervisedHyperParameters\022\030\n"
           + "\013epoch_count\030\001 \001(\003B\003\340A\001\022%\n"
           + "\030learning_rate_multiplier\030\002 \001(\001B\003\340A\001\022\\\n"
-          + "\014adapter_size\030\003 \001(\0162A.google.clo"
-          + "ud.aiplatform.v1.SupervisedHyperParameters.AdapterSizeB\003\340A\001\"\275\001\n"
+          + "\014adapter_size\030\003 \001(\0162A.google.cloud.aiplatf"
+          + "orm.v1.SupervisedHyperParameters.AdapterSizeB\003\340A\001\"\275\001\n"
           + "\013AdapterSize\022\034\n"
           + "\030ADAPTER_SIZE_UNSPECIFIED\020\000\022\024\n"
           + "\020ADAPTER_SIZE_ONE\020\001\022\024\n"
@@ -186,8 +192,7 @@ public final class TuningJobProto {
           + "\026validation_dataset_uri\030\002 \001(\tB\003\340A\001\022T\n"
           + "\020hyper_parameters\030\003"
           + " \001(\01325.google.cloud.aiplatform.v1.SupervisedHyperParametersB\003\340A\001\022(\n"
-          + "\033export_last_checkpoint_only\030\006 \001(\010B\003\340A\001\"\343\001\n"
-          + "\r"
+          + "\033export_last_checkpoint_only\030\006 \001(\010B\003\340A\001\"\343\001\n\r"
           + "TunedModelRef\022;\n"
           + "\013tuned_model\030\001 \001(\tB$\372A!\n"
           + "\037aiplatform.googleapis.com/ModelH\000\022>\n\n"
@@ -200,11 +205,16 @@ public final class TuningJobProto {
           + "checkpoint_id\030\001 \001(\t\022\r\n"
           + "\005epoch\030\002 \001(\003\022\014\n"
           + "\004step\030\003 \001(\003\022\020\n"
-          + "\010endpoint\030\004 \001(\tB\314\001\n"
-          + "\036com.google.cloud.aiplatform.v1B\016TuningJobProtoP\001Z>cloud.google.com/go/aipla"
-          + "tform/apiv1/aiplatformpb;aiplatformpb\252\002\032"
-          + "Google.Cloud.AIPlatform.V1\312\002\032Google\\Clou"
-          + "d\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "\010endpoint\030\004 \001(\t\"\204\001\n\r"
+          + "PreTunedModel\022>\n"
+          + "\020tuned_model_name\030\001 \001(\tB$\372A!\n"
+          + "\037aiplatform.googleapis.com/Model\022\032\n\r"
+          + "checkpoint_id\030\002 \001(\tB\003\340A\001\022\027\n\n"
+          + "base_model\030\003 \001(\tB\003\340A\003B\314\001\n"
+          + "\036com.google.cloud.aiplatform.v1B\016TuningJobProtoP\001Z>cloud.google.com/go/"
+          + "aiplatform/apiv1/aiplatformpb;aiplatform"
+          + "pb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Google"
+          + "\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -225,6 +235,7 @@ public final class TuningJobProto {
             internal_static_google_cloud_aiplatform_v1_TuningJob_descriptor,
             new java.lang.String[] {
               "BaseModel",
+              "PreTunedModel",
               "SupervisedTuningSpec",
               "Name",
               "TunedModelDisplayName",
@@ -339,6 +350,14 @@ public final class TuningJobProto {
             internal_static_google_cloud_aiplatform_v1_TunedModelCheckpoint_descriptor,
             new java.lang.String[] {
               "CheckpointId", "Epoch", "Step", "Endpoint",
+            });
+    internal_static_google_cloud_aiplatform_v1_PreTunedModel_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1_PreTunedModel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_PreTunedModel_descriptor,
+            new java.lang.String[] {
+              "TunedModelName", "CheckpointId", "BaseModel",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

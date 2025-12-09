@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for search tuning.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/discoveryengine/v1/search_tuning_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SearchTuningServiceGrpc {
 
@@ -321,8 +318,9 @@ public final class SearchTuningServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation trainCustomModel(
-        com.google.cloud.discoveryengine.v1.TrainCustomModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.TrainCustomModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTrainCustomModelMethod(), getCallOptions(), request);
     }
 
@@ -334,8 +332,9 @@ public final class SearchTuningServiceGrpc {
      * </pre>
      */
     public com.google.cloud.discoveryengine.v1.ListCustomModelsResponse listCustomModels(
-        com.google.cloud.discoveryengine.v1.ListCustomModelsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.discoveryengine.v1.ListCustomModelsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListCustomModelsMethod(), getCallOptions(), request);
     }
   }

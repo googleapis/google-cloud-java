@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * APIs for enterprise knowledge graph product.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/enterpriseknowledgegraph/v1/service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EnterpriseKnowledgeGraphServiceGrpc {
 
@@ -936,8 +933,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
     public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
         createEntityReconciliationJob(
             com.google.cloud.enterpriseknowledgegraph.v1.CreateEntityReconciliationJobRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEntityReconciliationJobMethod(), getCallOptions(), request);
     }
 
@@ -950,9 +948,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.EntityReconciliationJob
         getEntityReconciliationJob(
-            com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.enterpriseknowledgegraph.v1.GetEntityReconciliationJobRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEntityReconciliationJobMethod(), getCallOptions(), request);
     }
 
@@ -966,8 +964,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
     public com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsResponse
         listEntityReconciliationJobs(
             com.google.cloud.enterpriseknowledgegraph.v1.ListEntityReconciliationJobsRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEntityReconciliationJobsMethod(), getCallOptions(), request);
     }
 
@@ -980,8 +979,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty cancelEntityReconciliationJob(
-        com.google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.CancelEntityReconciliationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCancelEntityReconciliationJobMethod(), getCallOptions(), request);
     }
 
@@ -995,8 +995,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntityReconciliationJob(
-        com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.DeleteEntityReconciliationJobRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEntityReconciliationJobMethod(), getCallOptions(), request);
     }
 
@@ -1008,8 +1009,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.LookupResponse lookup(
-        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupMethod(), getCallOptions(), request);
     }
 
@@ -1021,8 +1023,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.SearchResponse search(
-        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchMethod(), getCallOptions(), request);
     }
 
@@ -1034,8 +1037,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgResponse lookupPublicKg(
-        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.LookupPublicKgRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getLookupPublicKgMethod(), getCallOptions(), request);
     }
 
@@ -1047,8 +1051,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
      * </pre>
      */
     public com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgResponse searchPublicKg(
-        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.enterpriseknowledgegraph.v1.SearchPublicKgRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchPublicKgMethod(), getCallOptions(), request);
     }
   }

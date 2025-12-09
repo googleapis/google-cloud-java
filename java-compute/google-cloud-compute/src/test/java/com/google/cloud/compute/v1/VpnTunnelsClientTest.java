@@ -211,6 +211,7 @@ public class VpnTunnelsClientTest {
   public void getTest() throws Exception {
     VpnTunnel expectedResponse =
         VpnTunnel.newBuilder()
+            .setCipherSuite(VpnTunnelCipherSuite.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setDetailedStatus("detailedStatus879873218")

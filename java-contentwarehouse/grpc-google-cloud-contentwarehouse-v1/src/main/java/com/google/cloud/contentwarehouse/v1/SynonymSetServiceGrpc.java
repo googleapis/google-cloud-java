@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A Service that manage/custom customer specified SynonymSets.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/contentwarehouse/v1/synonymset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SynonymSetServiceGrpc {
 
@@ -566,8 +563,9 @@ public final class SynonymSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.SynonymSet createSynonymSet(
-        com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.CreateSynonymSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateSynonymSetMethod(), getCallOptions(), request);
     }
 
@@ -581,8 +579,9 @@ public final class SynonymSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.SynonymSet getSynonymSet(
-        com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.GetSynonymSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetSynonymSetMethod(), getCallOptions(), request);
     }
 
@@ -596,8 +595,9 @@ public final class SynonymSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.SynonymSet updateSynonymSet(
-        com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.UpdateSynonymSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateSynonymSetMethod(), getCallOptions(), request);
     }
 
@@ -610,8 +610,9 @@ public final class SynonymSetServiceGrpc {
      * </pre>
      */
     public com.google.protobuf.Empty deleteSynonymSet(
-        com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.DeleteSynonymSetRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteSynonymSetMethod(), getCallOptions(), request);
     }
 
@@ -623,8 +624,9 @@ public final class SynonymSetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.contentwarehouse.v1.ListSynonymSetsResponse listSynonymSets(
-        com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.contentwarehouse.v1.ListSynonymSetsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListSynonymSetsMethod(), getCallOptions(), request);
     }
   }

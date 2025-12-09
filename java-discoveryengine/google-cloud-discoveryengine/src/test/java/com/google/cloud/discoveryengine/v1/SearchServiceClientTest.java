@@ -134,6 +134,7 @@ public class SearchServiceClientTest {
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -177,6 +178,9 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
+    Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -228,6 +232,7 @@ public class SearchServiceClientTest {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -285,6 +290,7 @@ public class SearchServiceClientTest {
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -328,6 +334,9 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getSessionSpec(), actualRequest.getSessionSpec());
     Assert.assertEquals(request.getRelevanceThreshold(), actualRequest.getRelevanceThreshold());
     Assert.assertEquals(request.getRelevanceScoreSpec(), actualRequest.getRelevanceScoreSpec());
+    Assert.assertEquals(request.getRankingExpression(), actualRequest.getRankingExpression());
+    Assert.assertEquals(
+        request.getRankingExpressionBackend(), actualRequest.getRankingExpressionBackend());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -379,6 +388,7 @@ public class SearchServiceClientTest {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");

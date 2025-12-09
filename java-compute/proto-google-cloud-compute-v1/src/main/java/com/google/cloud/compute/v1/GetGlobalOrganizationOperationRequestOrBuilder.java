@@ -28,7 +28,8 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return. Parent is derived from this field.
+   * Name of the Operations resource to return. Parent is derived from this
+   * field.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface GetGlobalOrganizationOperationRequestOrBuilder
    *
    *
    * <pre>
-   * Name of the Operations resource to return. Parent is derived from this field.
+   * Name of the Operations resource to return. Parent is derived from this
+   * field.
    * </pre>
    *
    * <code>

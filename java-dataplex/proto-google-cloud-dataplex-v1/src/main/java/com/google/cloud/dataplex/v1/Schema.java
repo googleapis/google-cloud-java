@@ -3654,18 +3654,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
-   * The default is `false` (managed by Dataplex).
+   * Required. Set to `true` if user-managed or `false` if managed by Dataplex
+   * Universal Catalog. The default is `false` (managed by Dataplex Universal
+   * Catalog).
    *
-   * - Set to `false`to enable Dataplex discovery to update the schema.
+   * - Set to `false`to enable Dataplex Universal Catalog discovery to update
+   * the schema.
    *   including new data discovery, schema inference, and schema evolution.
-   *   Users retain the ability to input and edit the schema. Dataplex
-   *   treats schema input by the user as though produced
-   *   by a previous Dataplex discovery operation, and it will
-   *   evolve the schema and take action based on that treatment.
+   *   Users retain the ability to input and edit the schema. Dataplex Universal
+   *   Catalog treats schema input by the user as though produced by a previous
+   *   Dataplex Universal Catalog discovery operation, and it will evolve the
+   *   schema and take action based on that treatment.
    *
    * - Set to `true` to fully manage the entity
-   *   schema. This setting guarantees that Dataplex will not
+   *   schema. This setting guarantees that Dataplex Universal Catalog will not
    *   change schema fields.
    * </pre>
    *
@@ -4416,18 +4418,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
-     * The default is `false` (managed by Dataplex).
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex
+     * Universal Catalog. The default is `false` (managed by Dataplex Universal
+     * Catalog).
      *
-     * - Set to `false`to enable Dataplex discovery to update the schema.
+     * - Set to `false`to enable Dataplex Universal Catalog discovery to update
+     * the schema.
      *   including new data discovery, schema inference, and schema evolution.
-     *   Users retain the ability to input and edit the schema. Dataplex
-     *   treats schema input by the user as though produced
-     *   by a previous Dataplex discovery operation, and it will
-     *   evolve the schema and take action based on that treatment.
+     *   Users retain the ability to input and edit the schema. Dataplex Universal
+     *   Catalog treats schema input by the user as though produced by a previous
+     *   Dataplex Universal Catalog discovery operation, and it will evolve the
+     *   schema and take action based on that treatment.
      *
      * - Set to `true` to fully manage the entity
-     *   schema. This setting guarantees that Dataplex will not
+     *   schema. This setting guarantees that Dataplex Universal Catalog will not
      *   change schema fields.
      * </pre>
      *
@@ -4444,18 +4448,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
-     * The default is `false` (managed by Dataplex).
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex
+     * Universal Catalog. The default is `false` (managed by Dataplex Universal
+     * Catalog).
      *
-     * - Set to `false`to enable Dataplex discovery to update the schema.
+     * - Set to `false`to enable Dataplex Universal Catalog discovery to update
+     * the schema.
      *   including new data discovery, schema inference, and schema evolution.
-     *   Users retain the ability to input and edit the schema. Dataplex
-     *   treats schema input by the user as though produced
-     *   by a previous Dataplex discovery operation, and it will
-     *   evolve the schema and take action based on that treatment.
+     *   Users retain the ability to input and edit the schema. Dataplex Universal
+     *   Catalog treats schema input by the user as though produced by a previous
+     *   Dataplex Universal Catalog discovery operation, and it will evolve the
+     *   schema and take action based on that treatment.
      *
      * - Set to `true` to fully manage the entity
-     *   schema. This setting guarantees that Dataplex will not
+     *   schema. This setting guarantees that Dataplex Universal Catalog will not
      *   change schema fields.
      * </pre>
      *
@@ -4476,18 +4482,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Set to `true` if user-managed or `false` if managed by Dataplex.
-     * The default is `false` (managed by Dataplex).
+     * Required. Set to `true` if user-managed or `false` if managed by Dataplex
+     * Universal Catalog. The default is `false` (managed by Dataplex Universal
+     * Catalog).
      *
-     * - Set to `false`to enable Dataplex discovery to update the schema.
+     * - Set to `false`to enable Dataplex Universal Catalog discovery to update
+     * the schema.
      *   including new data discovery, schema inference, and schema evolution.
-     *   Users retain the ability to input and edit the schema. Dataplex
-     *   treats schema input by the user as though produced
-     *   by a previous Dataplex discovery operation, and it will
-     *   evolve the schema and take action based on that treatment.
+     *   Users retain the ability to input and edit the schema. Dataplex Universal
+     *   Catalog treats schema input by the user as though produced by a previous
+     *   Dataplex Universal Catalog discovery operation, and it will evolve the
+     *   schema and take action based on that treatment.
      *
      * - Set to `true` to fully manage the entity
-     *   schema. This setting guarantees that Dataplex will not
+     *   schema. This setting guarantees that Dataplex Universal Catalog will not
      *   change schema fields.
      * </pre>
      *

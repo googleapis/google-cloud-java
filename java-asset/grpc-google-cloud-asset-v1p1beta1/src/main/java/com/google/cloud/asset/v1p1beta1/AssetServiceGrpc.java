@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Asset service definition.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/asset/v1p1beta1/asset_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AssetServiceGrpc {
 
@@ -346,8 +343,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1p1beta1.SearchAllResourcesResponse searchAllResources(
-        com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAllResourcesMethod(), getCallOptions(), request);
     }
 
@@ -364,8 +362,9 @@ public final class AssetServiceGrpc {
      * </pre>
      */
     public com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesResponse searchAllIamPolicies(
-        com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSearchAllIamPoliciesMethod(), getCallOptions(), request);
     }
   }

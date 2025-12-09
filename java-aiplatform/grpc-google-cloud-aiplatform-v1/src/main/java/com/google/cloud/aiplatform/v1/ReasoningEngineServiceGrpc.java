@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's Reasoning Engines.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/aiplatform/v1/reasoning_engine_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class ReasoningEngineServiceGrpc {
 
@@ -571,8 +568,9 @@ public final class ReasoningEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createReasoningEngine(
-        com.google.cloud.aiplatform.v1.CreateReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.CreateReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateReasoningEngineMethod(), getCallOptions(), request);
     }
 
@@ -584,8 +582,9 @@ public final class ReasoningEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ReasoningEngine getReasoningEngine(
-        com.google.cloud.aiplatform.v1.GetReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.GetReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReasoningEngineMethod(), getCallOptions(), request);
     }
 
@@ -597,8 +596,9 @@ public final class ReasoningEngineServiceGrpc {
      * </pre>
      */
     public com.google.cloud.aiplatform.v1.ListReasoningEnginesResponse listReasoningEngines(
-        com.google.cloud.aiplatform.v1.ListReasoningEnginesRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.ListReasoningEnginesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListReasoningEnginesMethod(), getCallOptions(), request);
     }
 
@@ -610,8 +610,9 @@ public final class ReasoningEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateReasoningEngine(
-        com.google.cloud.aiplatform.v1.UpdateReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.UpdateReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReasoningEngineMethod(), getCallOptions(), request);
     }
 
@@ -623,8 +624,9 @@ public final class ReasoningEngineServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteReasoningEngine(
-        com.google.cloud.aiplatform.v1.DeleteReasoningEngineRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.aiplatform.v1.DeleteReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteReasoningEngineMethod(), getCallOptions(), request);
     }
   }

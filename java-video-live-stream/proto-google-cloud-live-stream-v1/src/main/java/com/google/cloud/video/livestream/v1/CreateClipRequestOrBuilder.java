@@ -60,10 +60,12 @@ public interface CreateClipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object in the following form:
+   * Required. The ID of the clip resource to be created.
    *
-   * 1. 1 character minimum, 63 characters maximum
-   * 2. Only contains letters, digits, underscores, and hyphens
+   * This value must be 1-63 characters, begin and end with a lower-case letter
+   * or a number, and consist of only lower-case letters, numbers, and hyphens.
+   * In other words, it must match the following regex:
+   * `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string clip_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,10 +78,12 @@ public interface CreateClipRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Id of the requesting object in the following form:
+   * Required. The ID of the clip resource to be created.
    *
-   * 1. 1 character minimum, 63 characters maximum
-   * 2. Only contains letters, digits, underscores, and hyphens
+   * This value must be 1-63 characters, begin and end with a lower-case letter
+   * or a number, and consist of only lower-case letters, numbers, and hyphens.
+   * In other words, it must match the following regex:
+   * `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string clip_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

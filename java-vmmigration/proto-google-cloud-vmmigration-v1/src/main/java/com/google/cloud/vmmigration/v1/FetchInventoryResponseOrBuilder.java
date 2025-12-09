@@ -102,6 +102,43 @@ public interface FetchInventoryResponseOrBuilder
    *
    *
    * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   *
+   * @return Whether the azureVms field is set.
+   */
+  boolean hasAzureVms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   *
+   * @return The azureVms.
+   */
+  com.google.cloud.vmmigration.v1.AzureVmsDetails getAzureVms();
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   */
+  com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder getAzureVmsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The timestamp when the source was last queried (if the result
    * is from the cache).
    * </pre>

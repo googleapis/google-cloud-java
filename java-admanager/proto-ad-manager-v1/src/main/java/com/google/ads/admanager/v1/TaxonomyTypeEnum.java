@@ -98,6 +98,16 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The IAB Content Taxonomy v1.0.
+     * </pre>
+     *
+     * <code>TAXONOMY_IAB_CONTENT_1_0 = 8;</code>
+     */
+    TAXONOMY_IAB_CONTENT_1_0(8),
+    /**
+     *
+     *
+     * <pre>
      * The IAB Content Taxonomy v2.1.
      * </pre>
      *
@@ -158,6 +168,17 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
      * <code>TAXONOMY_IAB_AUDIENCE_1_1 = 3;</code>
      */
     public static final int TAXONOMY_IAB_AUDIENCE_1_1_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * The IAB Content Taxonomy v1.0.
+     * </pre>
+     *
+     * <code>TAXONOMY_IAB_CONTENT_1_0 = 8;</code>
+     */
+    public static final int TAXONOMY_IAB_CONTENT_1_0_VALUE = 8;
 
     /**
      *
@@ -231,6 +252,8 @@ public final class TaxonomyTypeEnum extends com.google.protobuf.GeneratedMessage
           return TAXONOMY_TYPE_UNSPECIFIED;
         case 3:
           return TAXONOMY_IAB_AUDIENCE_1_1;
+        case 8:
+          return TAXONOMY_IAB_CONTENT_1_0;
         case 4:
           return TAXONOMY_IAB_CONTENT_2_1;
         case 6:

@@ -25,10 +25,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * to create and manage Anthos clusters that run on AWS infrastructure.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/gkemulticloud/v1/aws_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class AwsClustersGrpc {
 
   private AwsClustersGrpc() {}
@@ -851,6 +849,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -864,6 +863,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAwsCluster(
         com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -878,6 +878,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAwsCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -893,6 +894,7 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAwsCluster(
         com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsCluster>
@@ -909,6 +911,7 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAwsClusters(
         com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>
@@ -930,6 +933,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAwsCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -944,6 +948,7 @@ public final class AwsClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     default void generateAwsClusterAgentToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -961,6 +966,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void generateAwsAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -981,6 +987,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAwsNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -995,6 +1002,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     default void updateAwsNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1014,6 +1022,7 @@ public final class AwsClustersGrpc {
      * rollback.
      * </pre>
      */
+    @java.lang.Deprecated
     default void rollbackAwsNodePoolUpdate(
         com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1029,6 +1038,7 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAwsNodePool(
         com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsNodePool>
@@ -1046,6 +1056,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAwsNodePools(
         com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>
@@ -1065,6 +1076,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAwsNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1083,6 +1095,7 @@ public final class AwsClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAwsOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
@@ -1099,6 +1112,7 @@ public final class AwsClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAwsJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
@@ -1115,6 +1129,7 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAwsServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsServerConfig>
@@ -1132,6 +1147,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class AwsClustersImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -1149,6 +1165,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AwsClustersStub
       extends io.grpc.stub.AbstractAsyncStub<AwsClustersStub> {
     private AwsClustersStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1171,6 +1188,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAwsCluster(
         com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1187,6 +1205,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAwsCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1204,6 +1223,7 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAwsCluster(
         com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsCluster>
@@ -1222,6 +1242,7 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAwsClusters(
         com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>
@@ -1245,6 +1266,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAwsCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1261,6 +1283,7 @@ public final class AwsClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public void generateAwsClusterAgentToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1280,6 +1303,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void generateAwsAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request,
         io.grpc.stub.StreamObserver<
@@ -1302,6 +1326,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAwsNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1318,6 +1343,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public void updateAwsNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1339,6 +1365,7 @@ public final class AwsClustersGrpc {
      * rollback.
      * </pre>
      */
+    @java.lang.Deprecated
     public void rollbackAwsNodePoolUpdate(
         com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1356,6 +1383,7 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAwsNodePool(
         com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsNodePool>
@@ -1375,6 +1403,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAwsNodePools(
         com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>
@@ -1396,6 +1425,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAwsNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -1416,6 +1446,7 @@ public final class AwsClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAwsOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
@@ -1434,6 +1465,7 @@ public final class AwsClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAwsJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
@@ -1452,6 +1484,7 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAwsServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.gkemulticloud.v1.AwsServerConfig>
@@ -1471,6 +1504,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AwsClustersBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<AwsClustersBlockingV2Stub> {
     private AwsClustersBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1494,9 +1528,11 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAwsCluster(
-        com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1507,9 +1543,11 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAwsCluster(
-        com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1521,9 +1559,11 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster(
-        com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1535,9 +1575,11 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse listAwsClusters(
-        com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAwsClustersMethod(), getCallOptions(), request);
     }
 
@@ -1554,9 +1596,11 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAwsCluster(
-        com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAwsClusterMethod(), getCallOptions(), request);
     }
 
@@ -1567,10 +1611,12 @@ public final class AwsClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
         generateAwsClusterAgentToken(
-            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAwsClusterAgentTokenMethod(), getCallOptions(), request);
     }
 
@@ -1582,9 +1628,11 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse generateAwsAccessToken(
-        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGenerateAwsAccessTokenMethod(), getCallOptions(), request);
     }
 
@@ -1599,9 +1647,11 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1612,9 +1662,11 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1630,9 +1682,11 @@ public final class AwsClustersGrpc {
      * rollback.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation rollbackAwsNodePoolUpdate(
-        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getRollbackAwsNodePoolUpdateMethod(), getCallOptions(), request);
     }
 
@@ -1644,9 +1698,11 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1659,9 +1715,11 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse listAwsNodePools(
-        com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAwsNodePoolsMethod(), getCallOptions(), request);
     }
 
@@ -1676,9 +1734,11 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAwsNodePool(
-        com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteAwsNodePoolMethod(), getCallOptions(), request);
     }
 
@@ -1693,9 +1753,11 @@ public final class AwsClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig getAwsOpenIdConfig(
-        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsOpenIdConfigMethod(), getCallOptions(), request);
     }
 
@@ -1707,9 +1769,11 @@ public final class AwsClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys getAwsJsonWebKeys(
-        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsJsonWebKeysMethod(), getCallOptions(), request);
     }
 
@@ -1721,9 +1785,11 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsServerConfig getAwsServerConfig(
-        com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetAwsServerConfigMethod(), getCallOptions(), request);
     }
   }
@@ -1736,6 +1802,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AwsClustersBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AwsClustersBlockingStub> {
     private AwsClustersBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -1759,6 +1826,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAwsCluster(
         com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1772,6 +1840,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAwsCluster(
         com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1786,6 +1855,7 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsCluster getAwsCluster(
         com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1800,6 +1870,7 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse listAwsClusters(
         com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1819,6 +1890,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAwsCluster(
         com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1832,6 +1904,7 @@ public final class AwsClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse
         generateAwsClusterAgentToken(
             com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenRequest request) {
@@ -1847,6 +1920,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse generateAwsAccessToken(
         com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1864,6 +1938,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAwsNodePool(
         com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1877,6 +1952,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation updateAwsNodePool(
         com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1895,6 +1971,7 @@ public final class AwsClustersGrpc {
      * rollback.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation rollbackAwsNodePoolUpdate(
         com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1909,6 +1986,7 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsNodePool getAwsNodePool(
         com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1924,6 +2002,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse listAwsNodePools(
         com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1941,6 +2020,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAwsNodePool(
         com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1958,6 +2038,7 @@ public final class AwsClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig getAwsOpenIdConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1972,6 +2053,7 @@ public final class AwsClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys getAwsJsonWebKeys(
         com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -1986,6 +2068,7 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.gkemulticloud.v1.AwsServerConfig getAwsServerConfig(
         com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -2001,6 +2084,7 @@ public final class AwsClustersGrpc {
    * to create and manage Anthos clusters that run on AWS infrastructure.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AwsClustersFutureStub
       extends io.grpc.stub.AbstractFutureStub<AwsClustersFutureStub> {
     private AwsClustersFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -2024,6 +2108,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAwsCluster(com.google.cloud.gkemulticloud.v1.CreateAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2037,6 +2122,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAwsCluster(com.google.cloud.gkemulticloud.v1.UpdateAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2051,6 +2137,7 @@ public final class AwsClustersGrpc {
      * resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AwsCluster>
         getAwsCluster(com.google.cloud.gkemulticloud.v1.GetAwsClusterRequest request) {
@@ -2066,6 +2153,7 @@ public final class AwsClustersGrpc {
      * on a given Google Cloud project and region.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.ListAwsClustersResponse>
         listAwsClusters(com.google.cloud.gkemulticloud.v1.ListAwsClustersRequest request) {
@@ -2086,6 +2174,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAwsCluster(com.google.cloud.gkemulticloud.v1.DeleteAwsClusterRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2099,6 +2188,7 @@ public final class AwsClustersGrpc {
      * Generates an access token for a cluster agent.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentToken(
@@ -2115,6 +2205,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.GenerateAwsAccessTokenResponse>
         generateAwsAccessToken(
@@ -2134,6 +2225,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAwsNodePool(com.google.cloud.gkemulticloud.v1.CreateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2147,6 +2239,7 @@ public final class AwsClustersGrpc {
      * Updates an [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateAwsNodePool(com.google.cloud.gkemulticloud.v1.UpdateAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2165,6 +2258,7 @@ public final class AwsClustersGrpc {
      * rollback.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         rollbackAwsNodePoolUpdate(
             com.google.cloud.gkemulticloud.v1.RollbackAwsNodePoolUpdateRequest request) {
@@ -2180,6 +2274,7 @@ public final class AwsClustersGrpc {
      * [AwsNodePool][google.cloud.gkemulticloud.v1.AwsNodePool] resource.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AwsNodePool>
         getAwsNodePool(com.google.cloud.gkemulticloud.v1.GetAwsNodePoolRequest request) {
@@ -2196,6 +2291,7 @@ public final class AwsClustersGrpc {
      * [AwsCluster][google.cloud.gkemulticloud.v1.AwsCluster].
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsResponse>
         listAwsNodePools(com.google.cloud.gkemulticloud.v1.ListAwsNodePoolsRequest request) {
@@ -2214,6 +2310,7 @@ public final class AwsClustersGrpc {
      * described to track the status of the operation.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAwsNodePool(com.google.cloud.gkemulticloud.v1.DeleteAwsNodePoolRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -2231,6 +2328,7 @@ public final class AwsClustersGrpc {
      * for details.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AwsOpenIdConfig>
         getAwsOpenIdConfig(com.google.cloud.gkemulticloud.v1.GetAwsOpenIdConfigRequest request) {
@@ -2246,6 +2344,7 @@ public final class AwsClustersGrpc {
      * JSON Web Key format.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AwsJsonWebKeys>
         getAwsJsonWebKeys(com.google.cloud.gkemulticloud.v1.GetAwsJsonWebKeysRequest request) {
@@ -2261,6 +2360,7 @@ public final class AwsClustersGrpc {
      * versions, on a given Google Cloud location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.gkemulticloud.v1.AwsServerConfig>
         getAwsServerConfig(com.google.cloud.gkemulticloud.v1.GetAwsServerConfigRequest request) {

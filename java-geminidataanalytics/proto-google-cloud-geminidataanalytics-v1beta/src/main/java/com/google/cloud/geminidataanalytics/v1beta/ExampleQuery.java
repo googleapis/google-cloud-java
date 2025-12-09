@@ -24,7 +24,8 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  * <pre>
  * Example of relevant and commonly used SQL query and its corresponding natural
- * language queries optionally present.
+ * language queries optionally present. Currently only used for BigQuery data
+ * sources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.ExampleQuery}
@@ -434,7 +435,8 @@ public final class ExampleQuery extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Example of relevant and commonly used SQL query and its corresponding natural
-   * language queries optionally present.
+   * language queries optionally present. Currently only used for BigQuery data
+   * sources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.ExampleQuery}

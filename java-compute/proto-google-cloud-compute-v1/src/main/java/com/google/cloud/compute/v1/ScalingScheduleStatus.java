@@ -89,7 +89,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * The current autoscaling recommendation is influenced by this scaling
+     * schedule.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -119,7 +120,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * The current autoscaling recommendation is not influenced by this scaling
+     * schedule.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -143,7 +145,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The current autoscaling recommendation is influenced by this scaling schedule.
+     * The current autoscaling recommendation is influenced by this scaling
+     * schedule.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -176,7 +179,8 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The current autoscaling recommendation is not influenced by this scaling schedule.
+     * The current autoscaling recommendation is not influenced by this scaling
+     * schedule.
      * </pre>
      *
      * <code>READY = 77848963;</code>
@@ -282,7 +286,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -298,7 +306,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -322,7 +334,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+   * [Output Only] The last time the scaling schedule became active.
+   * Note: this is a timestamp when a schedule actually became active, not when
+   * it was planned to do so.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string last_start_time = 34545107;</code>
@@ -351,7 +367,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>
@@ -367,7 +387,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>
@@ -391,7 +415,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+   * [Output Only] The next time the scaling schedule is to become active.
+   * Note: this is a timestamp when a schedule is planned to run, but the actual
+   * time might be slightly different.
+   * The timestamp is in RFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string next_start_time = 97270102;</code>
@@ -899,7 +927,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -914,7 +946,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -937,7 +973,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -960,7 +1000,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -982,7 +1026,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -1000,7 +1048,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
+     * [Output Only] The last time the scaling schedule became active.
+     * Note: this is a timestamp when a schedule actually became active, not when
+     * it was planned to do so.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string last_start_time = 34545107;</code>
@@ -1025,7 +1077,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>
@@ -1040,7 +1096,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>
@@ -1063,7 +1123,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>
@@ -1086,7 +1150,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>
@@ -1108,7 +1176,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>
@@ -1126,7 +1198,11 @@ public final class ScalingScheduleStatus extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
+     * [Output Only] The next time the scaling schedule is to become active.
+     * Note: this is a timestamp when a schedule is planned to run, but the actual
+     * time might be slightly different.
+     * The timestamp is in RFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string next_start_time = 97270102;</code>

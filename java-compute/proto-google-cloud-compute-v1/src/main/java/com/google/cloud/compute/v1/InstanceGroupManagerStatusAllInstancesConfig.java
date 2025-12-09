@@ -75,7 +75,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+   * [Output Only] Current all-instances configuration revision.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string current_revision = 38355937;</code>
@@ -91,7 +92,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+   * [Output Only] Current all-instances configuration revision.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string current_revision = 38355937;</code>
@@ -115,7 +117,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+   * [Output Only] Current all-instances configuration revision.
+   * This value is in RFC3339 text format.
    * </pre>
    *
    * <code>optional string current_revision = 38355937;</code>
@@ -142,7 +145,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+   * [Output Only] A bit indicating whether this configuration has
+   * been applied to all managed instances in the group.
    * </pre>
    *
    * <code>optional bool effective = 141961639;</code>
@@ -158,7 +162,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+   * [Output Only] A bit indicating whether this configuration has
+   * been applied to all managed instances in the group.
    * </pre>
    *
    * <code>optional bool effective = 141961639;</code>
@@ -567,7 +572,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -582,7 +588,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -605,7 +612,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -628,7 +636,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -650,7 +659,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -668,7 +678,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision. This value is in RFC3339 text format.
+     * [Output Only] Current all-instances configuration revision.
+     * This value is in RFC3339 text format.
      * </pre>
      *
      * <code>optional string current_revision = 38355937;</code>
@@ -693,7 +704,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+     * [Output Only] A bit indicating whether this configuration has
+     * been applied to all managed instances in the group.
      * </pre>
      *
      * <code>optional bool effective = 141961639;</code>
@@ -709,7 +721,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+     * [Output Only] A bit indicating whether this configuration has
+     * been applied to all managed instances in the group.
      * </pre>
      *
      * <code>optional bool effective = 141961639;</code>
@@ -725,7 +738,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+     * [Output Only] A bit indicating whether this configuration has
+     * been applied to all managed instances in the group.
      * </pre>
      *
      * <code>optional bool effective = 141961639;</code>
@@ -745,7 +759,8 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has been applied to all managed instances in the group.
+     * [Output Only] A bit indicating whether this configuration has
+     * been applied to all managed instances in the group.
      * </pre>
      *
      * <code>optional bool effective = 141961639;</code>

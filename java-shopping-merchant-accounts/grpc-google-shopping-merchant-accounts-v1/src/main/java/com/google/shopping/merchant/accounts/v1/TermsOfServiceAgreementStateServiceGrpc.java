@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service to support `TermsOfServiceAgreementState` API.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/shopping/merchant/accounts/v1/termsofserviceagreementstate.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class TermsOfServiceAgreementStateServiceGrpc {
 
@@ -373,9 +370,9 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
      */
     public com.google.shopping.merchant.accounts.v1.TermsOfServiceAgreementState
         getTermsOfServiceAgreementState(
-            com.google.shopping.merchant.accounts.v1.GetTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+            com.google.shopping.merchant.accounts.v1.GetTermsOfServiceAgreementStateRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetTermsOfServiceAgreementStateMethod(), getCallOptions(), request);
     }
 
@@ -393,8 +390,9 @@ public final class TermsOfServiceAgreementStateServiceGrpc {
         retrieveForApplicationTermsOfServiceAgreementState(
             com.google.shopping.merchant.accounts.v1
                     .RetrieveForApplicationTermsOfServiceAgreementStateRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(),
           getRetrieveForApplicationTermsOfServiceAgreementStateMethod(),
           getCallOptions(),

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service definition for the Places Aggregate RPC.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/maps/areainsights/v1/area_insights_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AreaInsightsGrpc {
 
@@ -264,8 +261,9 @@ public final class AreaInsightsGrpc {
      * </pre>
      */
     public com.google.maps.areainsights.v1.ComputeInsightsResponse computeInsights(
-        com.google.maps.areainsights.v1.ComputeInsightsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.maps.areainsights.v1.ComputeInsightsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeInsightsMethod(), getCallOptions(), request);
     }
   }

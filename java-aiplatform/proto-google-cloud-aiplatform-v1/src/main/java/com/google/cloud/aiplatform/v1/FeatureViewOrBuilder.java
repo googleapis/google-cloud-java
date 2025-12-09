@@ -646,5 +646,49 @@ public interface FeatureViewOrBuilder
    */
   boolean getSatisfiesPzi();
 
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigtableMetadata field is set.
+   */
+  boolean hasBigtableMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigtableMetadata.
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.BigtableMetadata getBigtableMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata containing information about the Cloud Bigtable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.FeatureView.BigtableMetadata bigtable_metadata = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.FeatureView.BigtableMetadataOrBuilder
+      getBigtableMetadataOrBuilder();
+
   com.google.cloud.aiplatform.v1.FeatureView.SourceCase getSourceCase();
 }
