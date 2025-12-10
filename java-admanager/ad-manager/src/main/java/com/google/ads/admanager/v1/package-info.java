@@ -474,6 +474,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= LineItemServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `LineItem` objects.
+ *
+ * <p>Sample for LineItemServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (LineItemServiceClient lineItemServiceClient = LineItemServiceClient.create()) {
+ *   LineItemName name = LineItemName.of("[NETWORK_CODE]", "[LINE_ITEM]");
+ *   LineItem response = lineItemServiceClient.getLineItem(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= MobileCarrierServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `MobileCarrier` objects.

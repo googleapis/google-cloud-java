@@ -20,11 +20,23 @@ import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitSizesPag
 import static com.google.ads.admanager.v1.AdUnitServiceClient.ListAdUnitsPagedResponse;
 
 import com.google.ads.admanager.v1.AdUnit;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchActivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchArchiveAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchCreateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateAdUnitsResponse;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsRequest;
+import com.google.ads.admanager.v1.BatchUpdateAdUnitsResponse;
+import com.google.ads.admanager.v1.CreateAdUnitRequest;
 import com.google.ads.admanager.v1.GetAdUnitRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesRequest;
 import com.google.ads.admanager.v1.ListAdUnitSizesResponse;
 import com.google.ads.admanager.v1.ListAdUnitsRequest;
 import com.google.ads.admanager.v1.ListAdUnitsResponse;
+import com.google.ads.admanager.v1.UpdateAdUnitRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -167,6 +179,271 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateAdUnitRequest, AdUnit>
+      createAdUnitMethodDescriptor =
+          ApiMethodDescriptor.<CreateAdUnitRequest, AdUnit>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/CreateAdUnit")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAdUnitRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdUnitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAdUnitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("adUnit", request.getAdUnit(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdUnit>newBuilder()
+                      .setDefaultInstance(AdUnit.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAdUnitRequest, AdUnit>
+      updateAdUnitMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAdUnitRequest, AdUnit>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/UpdateAdUnit")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAdUnitRequest>newBuilder()
+                      .setPath(
+                          "/v1/{adUnit.name=networks/*/adUnits/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAdUnitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "adUnit.name", request.getAdUnit().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAdUnitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("adUnit", request.getAdUnit(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AdUnit>newBuilder()
+                      .setDefaultInstance(AdUnit.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsMethodDescriptor =
+          ApiMethodDescriptor.<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/BatchCreateAdUnits")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateAdUnitsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateAdUnitsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateAdUnitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsMethodDescriptor =
+          ApiMethodDescriptor.<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/BatchUpdateAdUnits")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateAdUnitsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateAdUnitsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateAdUnitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/BatchActivateAdUnits")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateAdUnitsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateAdUnitsResponse>newBuilder()
+                      .setDefaultInstance(BatchActivateAdUnitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/BatchDeactivateAdUnits")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeactivateAdUnitsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchDeactivateAdUnitsResponse>newBuilder()
+                      .setDefaultInstance(BatchDeactivateAdUnitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsMethodDescriptor =
+          ApiMethodDescriptor.<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>newBuilder()
+              .setFullMethodName("google.ads.admanager.v1.AdUnitService/BatchArchiveAdUnits")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchArchiveAdUnitsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/adUnits:batchArchive",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchArchiveAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchArchiveAdUnitsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchArchiveAdUnitsResponse>newBuilder()
+                      .setDefaultInstance(BatchArchiveAdUnitsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetAdUnitRequest, AdUnit> getAdUnitCallable;
   private final UnaryCallable<ListAdUnitsRequest, ListAdUnitsResponse> listAdUnitsCallable;
   private final UnaryCallable<ListAdUnitsRequest, ListAdUnitsPagedResponse>
@@ -175,6 +452,18 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
       listAdUnitSizesCallable;
   private final UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
       listAdUnitSizesPagedCallable;
+  private final UnaryCallable<CreateAdUnitRequest, AdUnit> createAdUnitCallable;
+  private final UnaryCallable<UpdateAdUnitRequest, AdUnit> updateAdUnitCallable;
+  private final UnaryCallable<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsCallable;
+  private final UnaryCallable<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsCallable;
+  private final UnaryCallable<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsCallable;
+  private final UnaryCallable<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsCallable;
+  private final UnaryCallable<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -252,6 +541,91 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateAdUnitRequest, AdUnit> createAdUnitTransportSettings =
+        HttpJsonCallSettings.<CreateAdUnitRequest, AdUnit>newBuilder()
+            .setMethodDescriptor(createAdUnitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateAdUnitRequest, AdUnit> updateAdUnitTransportSettings =
+        HttpJsonCallSettings.<UpdateAdUnitRequest, AdUnit>newBuilder()
+            .setMethodDescriptor(updateAdUnitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("ad_unit.name", String.valueOf(request.getAdUnit().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+        batchCreateAdUnitsTransportSettings =
+            HttpJsonCallSettings.<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateAdUnitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+        batchUpdateAdUnitsTransportSettings =
+            HttpJsonCallSettings.<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateAdUnitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+        batchActivateAdUnitsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>newBuilder()
+                .setMethodDescriptor(batchActivateAdUnitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+        batchDeactivateAdUnitsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>newBuilder()
+                .setMethodDescriptor(batchDeactivateAdUnitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+        batchArchiveAdUnitsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>newBuilder()
+                .setMethodDescriptor(batchArchiveAdUnitsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getAdUnitCallable =
         callableFactory.createUnaryCallable(
@@ -268,6 +642,37 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
     this.listAdUnitSizesPagedCallable =
         callableFactory.createPagedCallable(
             listAdUnitSizesTransportSettings, settings.listAdUnitSizesSettings(), clientContext);
+    this.createAdUnitCallable =
+        callableFactory.createUnaryCallable(
+            createAdUnitTransportSettings, settings.createAdUnitSettings(), clientContext);
+    this.updateAdUnitCallable =
+        callableFactory.createUnaryCallable(
+            updateAdUnitTransportSettings, settings.updateAdUnitSettings(), clientContext);
+    this.batchCreateAdUnitsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateAdUnitsTransportSettings,
+            settings.batchCreateAdUnitsSettings(),
+            clientContext);
+    this.batchUpdateAdUnitsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateAdUnitsTransportSettings,
+            settings.batchUpdateAdUnitsSettings(),
+            clientContext);
+    this.batchActivateAdUnitsCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateAdUnitsTransportSettings,
+            settings.batchActivateAdUnitsSettings(),
+            clientContext);
+    this.batchDeactivateAdUnitsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateAdUnitsTransportSettings,
+            settings.batchDeactivateAdUnitsSettings(),
+            clientContext);
+    this.batchArchiveAdUnitsCallable =
+        callableFactory.createUnaryCallable(
+            batchArchiveAdUnitsTransportSettings,
+            settings.batchArchiveAdUnitsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -279,6 +684,13 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
     methodDescriptors.add(getAdUnitMethodDescriptor);
     methodDescriptors.add(listAdUnitsMethodDescriptor);
     methodDescriptors.add(listAdUnitSizesMethodDescriptor);
+    methodDescriptors.add(createAdUnitMethodDescriptor);
+    methodDescriptors.add(updateAdUnitMethodDescriptor);
+    methodDescriptors.add(batchCreateAdUnitsMethodDescriptor);
+    methodDescriptors.add(batchUpdateAdUnitsMethodDescriptor);
+    methodDescriptors.add(batchActivateAdUnitsMethodDescriptor);
+    methodDescriptors.add(batchDeactivateAdUnitsMethodDescriptor);
+    methodDescriptors.add(batchArchiveAdUnitsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -306,6 +718,46 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
   public UnaryCallable<ListAdUnitSizesRequest, ListAdUnitSizesPagedResponse>
       listAdUnitSizesPagedCallable() {
     return listAdUnitSizesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAdUnitRequest, AdUnit> createAdUnitCallable() {
+    return createAdUnitCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAdUnitRequest, AdUnit> updateAdUnitCallable() {
+    return updateAdUnitCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchCreateAdUnitsRequest, BatchCreateAdUnitsResponse>
+      batchCreateAdUnitsCallable() {
+    return batchCreateAdUnitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
+      batchUpdateAdUnitsCallable() {
+    return batchUpdateAdUnitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
+      batchActivateAdUnitsCallable() {
+    return batchActivateAdUnitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
+      batchDeactivateAdUnitsCallable() {
+    return batchDeactivateAdUnitsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
+      batchArchiveAdUnitsCallable() {
+    return batchArchiveAdUnitsCallable;
   }
 
   @Override
