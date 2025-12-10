@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.storage.test.JsonTest.*;
@@ -26,8 +27,11 @@ import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.Descriptor;
 import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.Int64Value;
 import com.google.protobuf.Message;
+import com.google.protobuf.Timestamp;
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -513,6 +517,20 @@ public class JsonToProtoMessageTest {
           .setMode(TableFieldSchema.Mode.REPEATED)
           .setName("test_json")
           .build();
+  final TableFieldSchema TEST_TIMESTAMP_HIGHER_PRECISION =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIMESTAMP)
+          .setMode(TableFieldSchema.Mode.NULLABLE)
+          .setName("test_timestamp_higher_precision")
+          .setTimestampPrecision(Int64Value.newBuilder().setValue(12).build())
+          .build();
+  private final TableFieldSchema TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED =
+      TableFieldSchema.newBuilder()
+          .setType(TableFieldSchema.Type.TIMESTAMP)
+          .setMode(TableFieldSchema.Mode.REPEATED)
+          .setName("test_timestamp_higher_precision_repeated")
+          .setTimestampPrecision(Int64Value.newBuilder().setValue(12).build())
+          .build();
   private final TableSchema COMPLEX_TABLE_SCHEMA =
       TableSchema.newBuilder()
           .addFields(0, TEST_INT)
@@ -546,6 +564,8 @@ public class JsonToProtoMessageTest {
           .addFields(28, TEST_BIGNUMERIC_DOUBLE)
           .addFields(29, TEST_INTERVAL)
           .addFields(30, TEST_JSON)
+          .addFields(31, TEST_TIMESTAMP_HIGHER_PRECISION)
+          .addFields(32, TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
           .build();
 
   @Test
@@ -874,6 +894,76 @@ public class JsonToProtoMessageTest {
   }
 
   @Test
+  public void testTimestamp_higherPrecision() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_string")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_string_T_Z")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_long")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_int")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_float")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_offset")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_zero_offset")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_timezone")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION)
+                    .setName("test_saformat")
+                    .build())
+            .build();
+
+    TestTimestampHigherPrecision expectedProto =
+        TestTimestampHigherPrecision.newBuilder()
+            .setTestString("1970-01-01T00:00:00.000010+00:00")
+            .setTestStringTZ("2022-03-28T18:47:59.010000+00:00")
+            .setTestLong("2023-06-28T20:28:05.000000+00:00")
+            .setTestInt("1970-01-01T00:02:33.480695+00:00")
+            .setTestFloat("1970-01-02T18:37:48.069500+00:00")
+            .setTestOffset("2022-04-05T05:06:11.000000+00:00")
+            .setTestZeroOffset("2022-03-28T18:47:59.010000+00:00")
+            .setTestTimezone("2022-04-05T16:06:11.000000+00:00")
+            .setTestSaformat("2018-08-19T12:11:00.000000+00:00")
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_string", "1970-01-01 00:00:00.000010");
+    json.put("test_string_T_Z", "2022-03-28T18:47:59.01Z");
+    json.put("test_long", 1687984085000000L);
+    json.put("test_int", 153480695);
+    json.put("test_float", "1.534680695e11");
+    json.put("test_offset", "2022-04-05T09:06:11+04:00");
+    json.put("test_zero_offset", "2022-03-28T18:47:59.01+00:00");
+    json.put("test_timezone", "2022-04-05 09:06:11 PST");
+    json.put("test_saformat", "2018/08/19 12:11");
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestTimestampHigherPrecision.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
   public void testTimestampRepeated() throws Exception {
     TableSchema tableSchema =
         TableSchema.newBuilder()
@@ -940,6 +1030,77 @@ public class JsonToProtoMessageTest {
     DynamicMessage protoMsg =
         JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             TestRepeatedTimestamp.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testTimestampRepeated_higherPrecision() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_string_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_string_T_Z_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_long_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_int_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_float_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_offset_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_zero_offset_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_timezone_repeated")
+                    .build())
+            .addFields(
+                TableFieldSchema.newBuilder(TEST_TIMESTAMP_HIGHER_PRECISION_REPEATED)
+                    .setName("test_saformat_repeated")
+                    .build())
+            .build();
+
+    TestRepeatedTimestampHigherPrecision expectedProto =
+        TestRepeatedTimestampHigherPrecision.newBuilder()
+            .addTestStringRepeated("1970-01-01T00:00:00.000010+00:00")
+            .addTestStringTZRepeated("2022-03-28T18:47:59.010000+00:00")
+            .addTestLongRepeated("2023-06-28T20:28:05.000000+00:00")
+            .addTestIntRepeated("1970-01-01T00:02:33.480695+00:00")
+            .addTestFloatRepeated("1970-01-02T18:37:48.069500+00:00")
+            .addTestOffsetRepeated("2022-04-05T05:06:11.000000+00:00")
+            .addTestZeroOffsetRepeated("2022-03-28T18:47:59.010000+00:00")
+            .addTestTimezoneRepeated("2022-04-05T16:06:11.000000+00:00")
+            .addTestSaformatRepeated("2018-08-19T12:11:00.000000+00:00")
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_string_repeated", new JSONArray(new String[] {"1970-01-01 00:00:00.000010"}));
+    json.put("test_string_T_Z_repeated", new JSONArray(new String[] {"2022-03-28T18:47:59.01Z"}));
+    json.put("test_long_repeated", new JSONArray(new Long[] {1687984085000000L}));
+    json.put("test_int_repeated", new JSONArray(new Integer[] {153480695}));
+    json.put("test_float_repeated", new JSONArray(new String[] {"1.534680695e11"}));
+    json.put("test_offset_repeated", new JSONArray(new String[] {"2022-04-05T09:06:11+04:00"}));
+    json.put(
+        "test_zero_offset_repeated", new JSONArray(new String[] {"2022-03-28T18:47:59.01+00:00"}));
+    json.put("test_timezone_repeated", new JSONArray(new String[] {"2022-04-05 09:06:11 PST"}));
+    json.put("test_saformat_repeated", new JSONArray(new String[] {"2018/08/19 12:11"}));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            TestRepeatedTimestampHigherPrecision.getDescriptor(), tableSchema, json);
     assertEquals(expectedProto, protoMsg);
   }
 
@@ -1305,6 +1466,7 @@ public class JsonToProtoMessageTest {
                 BigDecimalByteStringEncoder.encodeToBigNumericByteString(new BigDecimal(5D)))
             .setTestInterval("0-0 0 0:0:0.000005")
             .addTestJson("{'a':'b'}")
+            .setTestTimestampHigherPrecision("2025-12-01 12:34:56.123456789123+00:00")
             .build();
     JSONObject complex_lvl2 = new JSONObject();
     complex_lvl2.put("test_int", 3);
@@ -1370,6 +1532,7 @@ public class JsonToProtoMessageTest {
     json.put("test_bignumeric_double", 5D);
     json.put("test_interval", "0-0 0 0:0:0.000005");
     json.put("test_json", new JSONArray(new String[] {"{'a':'b'}"}));
+    json.put("test_timestamp_higher_precision", "2025-12-01 12:34:56.123456789123+00:00");
     DynamicMessage protoMsg =
         JsonToProtoMessage.INSTANCE.convertToProtoMessage(
             ComplexRoot.getDescriptor(), COMPLEX_TABLE_SCHEMA, json);
@@ -1833,5 +1996,61 @@ public class JsonToProtoMessageTest {
     protoMsg =
         JsonToProtoMessage.INSTANCE.convertToProtoMessage(TestBignumeric.getDescriptor(), ts, json);
     assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  public void testGetTimestampAsString() {
+    // String case must be in ISO8601 format
+    assertEquals(
+        "2025-10-01T12:34:56.123456+00:00",
+        JsonToProtoMessage.getTimestampAsString("2025-10-01 12:34:56.123456+00:00"));
+    assertEquals(
+        "2025-10-01T12:34:56.123456789123+00:00",
+        JsonToProtoMessage.getTimestampAsString("2025-10-01T12:34:56.123456789123+00:00"));
+
+    // Numeric case must be micros from epoch
+    assertEquals("1970-01-01T00:00:00.000001+00:00", JsonToProtoMessage.getTimestampAsString(1L));
+    assertEquals("1969-12-31T23:59:59.999999+00:00", JsonToProtoMessage.getTimestampAsString(-1L));
+    assertEquals(
+        "1970-01-01T00:00:00.001234+00:00", JsonToProtoMessage.getTimestampAsString("1234"));
+    assertEquals("1970-01-01T00:00:00.000010+00:00", JsonToProtoMessage.getTimestampAsString(10.4));
+    assertEquals(
+        "1969-12-31T23:59:59.999000+00:00", JsonToProtoMessage.getTimestampAsString("-1000.4"));
+
+    // Protobuf timestamp format is converted to ISO8601 string
+    assertEquals(
+        "1970-01-02T10:17:36.000123456+00:00",
+        JsonToProtoMessage.getTimestampAsString(
+            Timestamp.newBuilder().setSeconds(123456).setNanos(123456).build()));
+    assertEquals(
+        "1969-12-30T13:42:23.999876544+00:00",
+        JsonToProtoMessage.getTimestampAsString(
+            Timestamp.newBuilder().setSeconds(-123456).setNanos(-123456).build()));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> JsonToProtoMessage.getTimestampAsString("2025-10-01"));
+    assertThrows(
+        IllegalArgumentException.class, () -> JsonToProtoMessage.getTimestampAsString("abc"));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> JsonToProtoMessage.getTimestampAsString(Timestamp.newBuilder()));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> JsonToProtoMessage.getTimestampAsString(new Object()));
+    assertThrows(
+        IllegalArgumentException.class, () -> JsonToProtoMessage.getTimestampAsString(null));
+  }
+
+  @Test
+  public void testFromEpochMicros() {
+    // The `+` is added if there are more than 4 digits for years
+    assertEquals(
+        "+294247-01-10T04:00:54.775807Z",
+        JsonToProtoMessage.fromEpochMicros(Long.MAX_VALUE).toString());
+    assertEquals(
+        "-290308-12-21T19:59:05.224192Z",
+        JsonToProtoMessage.fromEpochMicros(Long.MIN_VALUE).toString());
+    assertEquals(Instant.EPOCH.toString(), JsonToProtoMessage.fromEpochMicros(0L).toString());
   }
 }

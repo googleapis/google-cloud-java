@@ -35,6 +35,8 @@ message ComplexRoot {
   optional bytes test_bignumeric_double = 29;
   optional string test_interval = 30;
   repeated string test_json = 31;
+  optional string test_timestamp_higher_precision = 32;
+  repeated string test_timestamp_higher_precision_repeated = 33;
 }
 
 message CasingComplex {
@@ -157,6 +159,18 @@ message TestTimestamp {
   optional int64 test_saformat = 9;
 }
 
+message TestTimestampHigherPrecision {
+  optional string test_string = 1;
+  optional string test_string_t_z = 2;
+  optional string test_long = 3;
+  optional string test_int = 4;
+  optional string test_float = 5;
+  optional string test_offset = 6;
+  optional string test_zero_offset = 7;
+  optional string test_timezone = 8;
+  optional string test_saformat = 9;
+}
+
 message TestRepeatedTimestamp {
   repeated int64 test_string_repeated = 1;
   repeated int64 test_string_t_z_repeated = 2;
@@ -167,6 +181,18 @@ message TestRepeatedTimestamp {
   repeated int64 test_zero_offset_repeated = 7;
   repeated int64 test_timezone_repeated = 8;
   repeated int64 test_saformat_repeated = 9;
+}
+
+message TestRepeatedTimestampHigherPrecision {
+  repeated string test_string_repeated = 1;
+  repeated string test_string_t_z_repeated = 2;
+  repeated string test_long_repeated = 3;
+  repeated string test_int_repeated = 4;
+  repeated string test_float_repeated = 5;
+  repeated string test_offset_repeated = 6;
+  repeated string test_zero_offset_repeated = 7;
+  repeated string test_timezone_repeated = 8;
+  repeated string test_saformat_repeated = 9;
 }
 
 message TestDate {
