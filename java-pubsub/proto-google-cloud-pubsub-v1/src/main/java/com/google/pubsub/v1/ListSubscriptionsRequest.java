@@ -74,12 +74,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the project in which to list subscriptions.
-   * Format is `projects/{project-id}`.
+   * Required. Identifier. The name of the project in which to list
+   * subscriptions. Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>
-   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The project.
@@ -101,12 +101,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. The name of the project in which to list subscriptions.
-   * Format is `projects/{project-id}`.
+   * Required. Identifier. The name of the project in which to list
+   * subscriptions. Format is `projects/{project-id}`.
    * </pre>
    *
    * <code>
-   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for project.
@@ -594,12 +594,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the project in which to list subscriptions.
-     * Format is `projects/{project-id}`.
+     * Required. Identifier. The name of the project in which to list
+     * subscriptions. Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The project.
@@ -620,12 +620,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the project in which to list subscriptions.
-     * Format is `projects/{project-id}`.
+     * Required. Identifier. The name of the project in which to list
+     * subscriptions. Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for project.
@@ -646,12 +646,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the project in which to list subscriptions.
-     * Format is `projects/{project-id}`.
+     * Required. Identifier. The name of the project in which to list
+     * subscriptions. Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The project to set.
@@ -671,12 +671,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the project in which to list subscriptions.
-     * Format is `projects/{project-id}`.
+     * Required. Identifier. The name of the project in which to list
+     * subscriptions. Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -692,12 +692,12 @@ public final class ListSubscriptionsRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. The name of the project in which to list subscriptions.
-     * Format is `projects/{project-id}`.
+     * Required. Identifier. The name of the project in which to list
+     * subscriptions. Format is `projects/{project-id}`.
      * </pre>
      *
      * <code>
-     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string project = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for project to set.

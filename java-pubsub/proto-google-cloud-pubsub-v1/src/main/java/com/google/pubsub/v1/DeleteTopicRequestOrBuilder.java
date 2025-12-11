@@ -28,12 +28,12 @@ public interface DeleteTopicRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the topic to delete.
+   * Required. Identifier. Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
    * <code>
-   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The topic.
@@ -44,12 +44,12 @@ public interface DeleteTopicRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the topic to delete.
+   * Required. Identifier. Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
    * </pre>
    *
    * <code>
-   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string topic = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for topic.

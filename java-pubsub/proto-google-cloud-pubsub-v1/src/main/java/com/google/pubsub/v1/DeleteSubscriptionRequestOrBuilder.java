@@ -28,12 +28,12 @@ public interface DeleteSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The subscription to delete.
+   * Required. Identifier. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The subscription.
@@ -44,12 +44,12 @@ public interface DeleteSubscriptionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The subscription to delete.
+   * Required. Identifier. The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for subscription.

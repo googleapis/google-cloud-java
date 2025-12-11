@@ -28,7 +28,7 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the subscription. It must have the format
+   * Required. Identifier. The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
    * start with a letter, and contain only letters (`[A-Za-z]`), numbers
    * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -36,7 +36,9 @@ public interface SubscriptionOrBuilder
    * in length, and it must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -46,7 +48,7 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the subscription. It must have the format
+   * Required. Identifier. The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
    * start with a letter, and contain only letters (`[A-Za-z]`), numbers
    * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
@@ -54,7 +56,9 @@ public interface SubscriptionOrBuilder
    * in length, and it must not start with `"goog"`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */

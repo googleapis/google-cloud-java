@@ -28,16 +28,16 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. User-provided name for this snapshot. If the name is not provided
-   * in the request, the server will assign a random name for this snapshot on
-   * the same project as the subscription. Note that for REST API requests, you
-   * must specify a name.  See the [resource name
+   * Required. Identifier. User-provided name for this snapshot. If the name is
+   * not provided in the request, the server will assign a random name for this
+   * snapshot on the same project as the subscription. Note that for REST API
+   * requests, you must specify a name.  See the [resource name
    * rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -48,16 +48,16 @@ public interface CreateSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. User-provided name for this snapshot. If the name is not provided
-   * in the request, the server will assign a random name for this snapshot on
-   * the same project as the subscription. Note that for REST API requests, you
-   * must specify a name.  See the [resource name
+   * Required. Identifier. User-provided name for this snapshot. If the name is
+   * not provided in the request, the server will assign a random name for this
+   * snapshot on the same project as the subscription. Note that for REST API
+   * requests, you must specify a name.  See the [resource name
    * rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.

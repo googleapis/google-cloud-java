@@ -28,12 +28,12 @@ public interface GetSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the snapshot to get.
+   * Required. Identifier. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The snapshot.
@@ -44,12 +44,12 @@ public interface GetSnapshotRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the snapshot to get.
+   * Required. Identifier. The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
-   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string snapshot = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for snapshot.

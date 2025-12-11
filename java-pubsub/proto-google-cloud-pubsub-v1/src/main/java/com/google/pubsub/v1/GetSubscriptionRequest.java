@@ -73,12 +73,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the subscription to get.
+   * Required. Identifier. The name of the subscription to get.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The subscription.
@@ -100,12 +100,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the subscription to get.
+   * Required. Identifier. The name of the subscription to get.
    * Format is `projects/{project}/subscriptions/{sub}`.
    * </pre>
    *
    * <code>
-   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for subscription.
@@ -471,12 +471,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the subscription to get.
+     * Required. Identifier. The name of the subscription to get.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
      * <code>
-     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The subscription.
@@ -497,12 +497,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the subscription to get.
+     * Required. Identifier. The name of the subscription to get.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
      * <code>
-     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for subscription.
@@ -523,12 +523,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the subscription to get.
+     * Required. Identifier. The name of the subscription to get.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
      * <code>
-     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The subscription to set.
@@ -548,12 +548,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the subscription to get.
+     * Required. Identifier. The name of the subscription to get.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
      * <code>
-     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -569,12 +569,12 @@ public final class GetSubscriptionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the subscription to get.
+     * Required. Identifier. The name of the subscription to get.
      * Format is `projects/{project}/subscriptions/{sub}`.
      * </pre>
      *
      * <code>
-     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string subscription = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for subscription to set.

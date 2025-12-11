@@ -420,7 +420,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the topic. It must have the format
+   * @param name Required. Identifier. The name of the topic. It must have the format
    *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
    *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
    *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
@@ -451,7 +451,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The name of the topic. It must have the format
+   * @param name Required. Identifier. The name of the topic. It must have the format
    *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
    *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
    *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
@@ -682,8 +682,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. The messages in the request will be published on this topic. Format is
-   *     `projects/{project}/topics/{topic}`.
+   * @param topic Required. Identifier. The messages in the request will be published on this topic.
+   *     Format is `projects/{project}/topics/{topic}`.
    * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -715,8 +715,8 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. The messages in the request will be published on this topic. Format is
-   *     `projects/{project}/topics/{topic}`.
+   * @param topic Required. Identifier. The messages in the request will be published on this topic.
+   *     Format is `projects/{project}/topics/{topic}`.
    * @param messages Required. The messages to publish.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -801,7 +801,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. The name of the topic to get. Format is
+   * @param topic Required. Identifier. The name of the topic to get. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -829,7 +829,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. The name of the topic to get. Format is
+   * @param topic Required. Identifier. The name of the topic to get. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -938,7 +938,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. The name of the project in which to list topics. Format is
+   * @param project Required. Identifier. The name of the project in which to list topics. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -970,7 +970,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param project Required. The name of the project in which to list topics. Format is
+   * @param project Required. Identifier. The name of the project in which to list topics. Format is
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1481,7 +1481,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. Name of the topic to delete. Format is
+   * @param topic Required. Identifier. Name of the topic to delete. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1512,7 +1512,7 @@ public class TopicAdminClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param topic Required. Name of the topic to delete. Format is
+   * @param topic Required. Identifier. Name of the topic to delete. Format is
    *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
