@@ -432,5 +432,169 @@ public interface ValueOrBuilder
    */
   com.google.firestore.v1.MapValueOrBuilder getMapValueOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Value which references a field.
+   *
+   * This is considered relative (vs absolute) since it only refers to a field
+   * and not a field within a particular document.
+   *
+   * **Requires:**
+   *
+   * * Must follow [field reference][FieldReference.field_path] limitations.
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>string field_reference_value = 19;</code>
+   *
+   * @return Whether the fieldReferenceValue field is set.
+   */
+  boolean hasFieldReferenceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Value which references a field.
+   *
+   * This is considered relative (vs absolute) since it only refers to a field
+   * and not a field within a particular document.
+   *
+   * **Requires:**
+   *
+   * * Must follow [field reference][FieldReference.field_path] limitations.
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>string field_reference_value = 19;</code>
+   *
+   * @return The fieldReferenceValue.
+   */
+  java.lang.String getFieldReferenceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Value which references a field.
+   *
+   * This is considered relative (vs absolute) since it only refers to a field
+   * and not a field within a particular document.
+   *
+   * **Requires:**
+   *
+   * * Must follow [field reference][FieldReference.field_path] limitations.
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>string field_reference_value = 19;</code>
+   *
+   * @return The bytes for fieldReferenceValue.
+   */
+  com.google.protobuf.ByteString getFieldReferenceValueBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated expression.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Function function_value = 20;</code>
+   *
+   * @return Whether the functionValue field is set.
+   */
+  boolean hasFunctionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated expression.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Function function_value = 20;</code>
+   *
+   * @return The functionValue.
+   */
+  com.google.firestore.v1.Function getFunctionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated expression.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Function function_value = 20;</code>
+   */
+  com.google.firestore.v1.FunctionOrBuilder getFunctionValueOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated pipeline.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Pipeline pipeline_value = 21;</code>
+   *
+   * @return Whether the pipelineValue field is set.
+   */
+  boolean hasPipelineValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated pipeline.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Pipeline pipeline_value = 21;</code>
+   *
+   * @return The pipelineValue.
+   */
+  com.google.firestore.v1.Pipeline getPipelineValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * A value that represents an unevaluated pipeline.
+   *
+   * **Requires:**
+   *
+   * * Not allowed to be used when writing documents.
+   * </pre>
+   *
+   * <code>.google.firestore.v1.Pipeline pipeline_value = 21;</code>
+   */
+  com.google.firestore.v1.PipelineOrBuilder getPipelineValueOrBuilder();
+
   com.google.firestore.v1.Value.ValueTypeCase getValueTypeCase();
 }

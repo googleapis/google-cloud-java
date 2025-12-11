@@ -28,6 +28,9 @@
             "DeleteDocument": {
               "methods": ["deleteDocument", "deleteDocument", "deleteDocumentCallable"]
             },
+            "ExecutePipeline": {
+              "methods": ["executePipelineCallable"]
+            },
             "GetDocument": {
               "methods": ["getDocument", "getDocumentCallable"]
             },

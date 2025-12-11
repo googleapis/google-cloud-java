@@ -10014,8 +10014,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -10036,8 +10036,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -10058,8 +10058,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -10622,8 +10622,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -10647,8 +10647,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -10674,8 +10674,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * Since DOT_PRODUCT distances increase when the vectors are more similar,
      * the comparison is inverted.
      *
-     * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-     * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+     * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+     * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
      * </pre>
      *
      * <code>
@@ -12128,8 +12128,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12152,8 +12152,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12182,8 +12182,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12214,8 +12214,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12243,8 +12243,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12280,8 +12280,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12309,8 +12309,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12333,8 +12333,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>
@@ -12361,8 +12361,8 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * Since DOT_PRODUCT distances increase when the vectors are more similar,
        * the comparison is inverted.
        *
-       * * For EUCLIDEAN, COSINE: WHERE distance &lt;= distance_threshold
-       * * For DOT_PRODUCT:       WHERE distance &gt;= distance_threshold
+       * * For EUCLIDEAN, COSINE: `WHERE distance &lt;= distance_threshold`
+       * * For DOT_PRODUCT:       `WHERE distance &gt;= distance_threshold`
        * </pre>
        *
        * <code>

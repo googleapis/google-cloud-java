@@ -188,7 +188,7 @@ public interface TargetOrBuilder
    * will immediately send a response with a `TargetChange::Remove` event.
    *
    * Note that if the client sends multiple `AddTarget` requests
-   * without an ID, the order of IDs returned in `TargetChage.target_ids` are
+   * without an ID, the order of IDs returned in `TargetChange.target_ids` are
    * undefined. Therefore, clients should provide a target ID instead of relying
    * on the server to assign one.
    *

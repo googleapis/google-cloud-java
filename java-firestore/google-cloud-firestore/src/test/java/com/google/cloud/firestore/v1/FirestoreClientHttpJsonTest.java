@@ -484,6 +484,17 @@ public class FirestoreClientHttpJsonTest {
   }
 
   @Test
+  public void executePipelineTest() throws Exception {}
+
+  @Test
+  public void executePipelineExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
+
+  @Test
   public void runAggregationQueryTest() throws Exception {}
 
   @Test

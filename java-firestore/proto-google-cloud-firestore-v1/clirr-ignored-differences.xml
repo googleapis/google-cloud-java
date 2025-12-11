@@ -223,4 +223,9 @@
     <method>* setUnknownFields(*)</method>
     <to>**</to>
   </difference>
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/v1/ValueOrBuilder</className>
+    <method>*</method>
+  </difference>
 </differences>

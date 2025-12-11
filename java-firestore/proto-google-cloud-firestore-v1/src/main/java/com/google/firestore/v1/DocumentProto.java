@@ -52,6 +52,26 @@ public final class DocumentProto {
       internal_static_google_firestore_v1_MapValue_FieldsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_firestore_v1_MapValue_FieldsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1_Function_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1_Function_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1_Function_OptionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1_Function_OptionsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1_Pipeline_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1_Pipeline_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1_Pipeline_Stage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1_Pipeline_Stage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_v1_Pipeline_Stage_OptionsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_firestore_v1_Pipeline_Stage_OptionsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -73,7 +93,7 @@ public final class DocumentProto {
           + "\013update_time\030\004 \001(\0132\032.google.protobuf.Timestamp\032I\n"
           + "\013FieldsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022)\n"
-          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\256\003\n"
+          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\301\004\n"
           + "\005Value\0220\n\n"
           + "null_value\030\013 \001(\0162\032.google.protobuf.NullValueH\000\022\027\n\r"
           + "boolean_value\030\001 \001(\010H\000\022\027\n\r"
@@ -86,7 +106,10 @@ public final class DocumentProto {
           + "\017reference_value\030\005 \001(\tH\000\022.\n"
           + "\017geo_point_value\030\010 \001(\0132\023.google.type.LatLngH\000\0226\n"
           + "\013array_value\030\t \001(\0132\037.google.firestore.v1.ArrayValueH\000\0222\n"
-          + "\tmap_value\030\006 \001(\0132\035.google.firestore.v1.MapValueH\000B\014\n\n"
+          + "\tmap_value\030\006 \001(\0132\035.google.firestore.v1.MapValueH\000\022\037\n"
+          + "\025field_reference_value\030\023 \001(\tH\000\0227\n"
+          + "\016function_value\030\024 \001(\0132\035.google.firestore.v1.FunctionH\000\0227\n"
+          + "\016pipeline_value\030\025 \001(\0132\035.google.firestore.v1.PipelineH\000B\014\n\n"
           + "value_type\"8\n\n"
           + "ArrayValue\022*\n"
           + "\006values\030\001 \003(\0132\032.google.firestore.v1.Value\"\220\001\n"
@@ -94,12 +117,31 @@ public final class DocumentProto {
           + "\006fields\030\001 \003(\0132).google.firestore.v1.MapValue.FieldsEntry\032I\n"
           + "\013FieldsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022)\n"
+          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\332\001\n"
+          + "\010Function\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022-\n"
+          + "\004args\030\002 \003(\0132\032.google.firestore.v1.ValueB\003\340A\001\022@\n"
+          + "\007options\030\003 \003(\0132"
+          + "*.google.firestore.v1.Function.OptionsEntryB\003\340A\001\032J\n"
+          + "\014OptionsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022)\n"
+          + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001\"\244\002\n"
+          + "\010Pipeline\0228\n"
+          + "\006stages\030\001"
+          + " \003(\0132#.google.firestore.v1.Pipeline.StageB\003\340A\002\032\335\001\n"
+          + "\005Stage\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022-\n"
+          + "\004args\030\002 \003(\0132\032.google.firestore.v1.ValueB\003\340A\001\022F\n"
+          + "\007options\030\003"
+          + " \003(\01320.google.firestore.v1.Pipeline.Stage.OptionsEntryB\003\340A\001\032J\n"
+          + "\014OptionsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022)\n"
           + "\005value\030\002 \001(\0132\032.google.firestore.v1.Value:\0028\001B\305\001\n"
           + "\027com.google.firestore.v1B\r"
-          + "DocumentProtoP\001Z;cloud.google.com/go/firestore/apiv1/f"
-          + "irestorepb;firestorepb\242\002\004GCFS\252\002\031Google.C"
-          + "loud.Firestore.V1\312\002\031Google\\Cloud\\Firesto"
-          + "re\\V1\352\002\034Google::Cloud::Firestore::V1b\006proto3"
+          + "DocumentProtoP\001Z;cloud.google.com/go/firestore/apiv1/firestorepb;firest"
+          + "orepb\242\002\004GCFS\252\002\031Google.Cloud.Firestore.V1"
+          + "\312\002\031Google\\Cloud\\Firestore\\V1\352\002\034Google::C"
+          + "loud::Firestore::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -142,6 +184,9 @@ public final class DocumentProto {
               "GeoPointValue",
               "ArrayValue",
               "MapValue",
+              "FieldReferenceValue",
+              "FunctionValue",
+              "PipelineValue",
               "ValueType",
             });
     internal_static_google_firestore_v1_ArrayValue_descriptor =
@@ -168,6 +213,51 @@ public final class DocumentProto {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_firestore_v1_Function_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_firestore_v1_Function_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1_Function_descriptor,
+            new java.lang.String[] {
+              "Name", "Args", "Options",
+            });
+    internal_static_google_firestore_v1_Function_OptionsEntry_descriptor =
+        internal_static_google_firestore_v1_Function_descriptor.getNestedTypes().get(0);
+    internal_static_google_firestore_v1_Function_OptionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1_Function_OptionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_firestore_v1_Pipeline_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_firestore_v1_Pipeline_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1_Pipeline_descriptor,
+            new java.lang.String[] {
+              "Stages",
+            });
+    internal_static_google_firestore_v1_Pipeline_Stage_descriptor =
+        internal_static_google_firestore_v1_Pipeline_descriptor.getNestedTypes().get(0);
+    internal_static_google_firestore_v1_Pipeline_Stage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1_Pipeline_Stage_descriptor,
+            new java.lang.String[] {
+              "Name", "Args", "Options",
+            });
+    internal_static_google_firestore_v1_Pipeline_Stage_OptionsEntry_descriptor =
+        internal_static_google_firestore_v1_Pipeline_Stage_descriptor.getNestedTypes().get(0);
+    internal_static_google_firestore_v1_Pipeline_Stage_OptionsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_firestore_v1_Pipeline_Stage_OptionsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

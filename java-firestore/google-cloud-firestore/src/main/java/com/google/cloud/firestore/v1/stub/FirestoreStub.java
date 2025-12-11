@@ -35,6 +35,8 @@ import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.CreateDocumentRequest;
 import com.google.firestore.v1.DeleteDocumentRequest;
 import com.google.firestore.v1.Document;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.GetDocumentRequest;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListCollectionIdsResponse;
@@ -105,6 +107,11 @@ public abstract class FirestoreStub implements BackgroundResource {
 
   public ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: runQueryCallable()");
+  }
+
+  public ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable() {
+    throw new UnsupportedOperationException("Not implemented: executePipelineCallable()");
   }
 
   public ServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse>

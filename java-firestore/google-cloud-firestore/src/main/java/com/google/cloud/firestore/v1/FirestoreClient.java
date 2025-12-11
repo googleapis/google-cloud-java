@@ -42,6 +42,8 @@ import com.google.firestore.v1.Cursor;
 import com.google.firestore.v1.DeleteDocumentRequest;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.DocumentMask;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.GetDocumentRequest;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListCollectionIdsResponse;
@@ -243,6 +245,16 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> runQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExecutePipeline</td>
+ *      <td><p> Executes a pipeline query.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> executePipelineCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1121,6 +1133,34 @@ public class FirestoreClient implements BackgroundResource {
    */
   public final ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return stub.runQueryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Executes a pipeline query.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
+   *   ExecutePipelineRequest request =
+   *       ExecutePipelineRequest.newBuilder().setDatabase("database1789464955").build();
+   *   ServerStream<ExecutePipelineResponse> stream =
+   *       firestoreClient.executePipelineCallable().call(request);
+   *   for (ExecutePipelineResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable() {
+    return stub.executePipelineCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

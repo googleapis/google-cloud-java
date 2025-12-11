@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BatchWriteRequest;
@@ -40,6 +41,8 @@ import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.CreateDocumentRequest;
 import com.google.firestore.v1.DeleteDocumentRequest;
 import com.google.firestore.v1.Document;
+import com.google.firestore.v1.ExecutePipelineRequest;
+import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.GetDocumentRequest;
 import com.google.firestore.v1.ListCollectionIdsRequest;
 import com.google.firestore.v1.ListCollectionIdsResponse;
@@ -168,6 +171,18 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineMethodDescriptor =
+          MethodDescriptor.<ExecutePipelineRequest, ExecutePipelineResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.firestore.v1.Firestore/ExecutePipeline")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExecutePipelineRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ExecutePipelineResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<RunAggregationQueryRequest, RunAggregationQueryResponse>
       runAggregationQueryMethodDescriptor =
           MethodDescriptor.<RunAggregationQueryRequest, RunAggregationQueryResponse>newBuilder()
@@ -256,6 +271,8 @@ public class GrpcFirestoreStub extends FirestoreStub {
   private final UnaryCallable<CommitRequest, CommitResponse> commitCallable;
   private final UnaryCallable<RollbackRequest, Empty> rollbackCallable;
   private final ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable;
+  private final ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable;
   private final ServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse>
       runAggregationQueryCallable;
   private final UnaryCallable<PartitionQueryRequest, PartitionQueryResponse> partitionQueryCallable;
@@ -273,6 +290,11 @@ public class GrpcFirestoreStub extends FirestoreStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
+
+  private static final PathTemplate EXECUTE_PIPELINE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project_id=*}/**");
+  private static final PathTemplate EXECUTE_PIPELINE_1_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/databases/{database_id=*}/**");
 
   public static final GrpcFirestoreStub create(FirestoreStubSettings settings) throws IOException {
     return new GrpcFirestoreStub(settings, ClientContext.create(settings));
@@ -404,6 +426,20 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ExecutePipelineRequest, ExecutePipelineResponse>
+        executePipelineTransportSettings =
+            GrpcCallSettings.<ExecutePipelineRequest, ExecutePipelineResponse>newBuilder()
+                .setMethodDescriptor(executePipelineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getDatabase(), "project_id", EXECUTE_PIPELINE_0_PATH_TEMPLATE);
+                      builder.add(
+                          request.getDatabase(), "database_id", EXECUTE_PIPELINE_1_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<RunAggregationQueryRequest, RunAggregationQueryResponse>
         runAggregationQueryTransportSettings =
             GrpcCallSettings.<RunAggregationQueryRequest, RunAggregationQueryResponse>newBuilder()
@@ -511,6 +547,9 @@ public class GrpcFirestoreStub extends FirestoreStub {
     this.runQueryCallable =
         callableFactory.createServerStreamingCallable(
             runQueryTransportSettings, settings.runQuerySettings(), clientContext);
+    this.executePipelineCallable =
+        callableFactory.createServerStreamingCallable(
+            executePipelineTransportSettings, settings.executePipelineSettings(), clientContext);
     this.runAggregationQueryCallable =
         callableFactory.createServerStreamingCallable(
             runAggregationQueryTransportSettings,
@@ -604,6 +643,12 @@ public class GrpcFirestoreStub extends FirestoreStub {
   @Override
   public ServerStreamingCallable<RunQueryRequest, RunQueryResponse> runQueryCallable() {
     return runQueryCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<ExecutePipelineRequest, ExecutePipelineResponse>
+      executePipelineCallable() {
+    return executePipelineCallable;
   }
 
   @Override
