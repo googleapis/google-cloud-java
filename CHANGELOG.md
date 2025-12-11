@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.57.0](https://github.com/googleapis/java-bigquery/compare/v2.56.0...v2.57.0) (2025-12-11)
+
+
+### Features
+
+* Add timestamp_precision to Field ([#4014](https://github.com/googleapis/java-bigquery/issues/4014)) ([57ffe1d](https://github.com/googleapis/java-bigquery/commit/57ffe1d2ba8af3b950438c926d66ac23ca8a3093))
+* Introduce DataFormatOptions to configure the output of BigQuery data types ([#4010](https://github.com/googleapis/java-bigquery/issues/4010)) ([6dcc900](https://github.com/googleapis/java-bigquery/commit/6dcc90053353422ae766e531413b3ecc65b8b155))
+* Relax client-side validation for BigQuery entity IDs ([#4000](https://github.com/googleapis/java-bigquery/issues/4000)) ([c3548a2](https://github.com/googleapis/java-bigquery/commit/c3548a2f521b19761c844c0b24fc8caab541aba7))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#4022](https://github.com/googleapis/java-bigquery/issues/4022)) ([d2f2057](https://github.com/googleapis/java-bigquery/commit/d2f20579fd60efc36fa4239619e0d679a914cd6d))
+
 ## [2.56.0](https://github.com/googleapis/java-bigquery/compare/v2.55.3...v2.56.0) (2025-11-15)
 
 
