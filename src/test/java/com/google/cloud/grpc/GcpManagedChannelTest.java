@@ -772,7 +772,7 @@ public final class GcpManagedChannelTest {
                 + "[key_a: \"val_a\", key_b: \"val_b\"],");
 
     assertThat(lastLogLevel()).isEqualTo(Level.INFO);
-    assertThat(lastLogMessage()).isEqualTo(poolIndex + ": Metrics enabled.");
+    assertThat(lastLogMessage()).isEqualTo(poolIndex + ": Metrics enabled (OpenCensus).");
 
     List<LabelKey> expectedLabelKeys = new ArrayList<>(labelKeys);
     expectedLabelKeys.add(

@@ -37,9 +37,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
-import com.google.cloud.grpc.MetricRegistryTestUtils.FakeMetricRegistry;
-import com.google.cloud.grpc.MetricRegistryTestUtils.MetricsRecord;
-import com.google.cloud.grpc.MetricRegistryTestUtils.PointWithFunction;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseAdminClient;
@@ -96,8 +93,13 @@ import io.grpc.MethodDescriptor;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
-import io.opencensus.metrics.LabelKey;
-import io.opencensus.metrics.LabelValue;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.LongPointData;
+import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
@@ -109,6 +111,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -148,6 +151,7 @@ public final class SpannerIntegrationTest {
 
   private static final int MAX_CHANNEL = 3;
   private static final int MAX_STREAM = 2;
+  private static boolean resourcesCreated = false;
 
   private static final ManagedChannelBuilder<?> builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
@@ -157,8 +161,8 @@ public final class SpannerIntegrationTest {
   final String leaderME = "leader";
   final String followerME = "follower";
 
-  final LabelKey commonKey = LabelKey.create("common_key", "Common key");
-  final LabelValue commonValue = LabelValue.create("common_value");
+  final String commonKey = "common_key";
+  final String commonValue = "common_value";
 
   private void sleep(long millis) throws InterruptedException {
     Sleeper.DEFAULT.sleep(millis);
@@ -178,6 +182,7 @@ public final class SpannerIntegrationTest {
       initializeDatabase(databaseAdminClient, databaseId);
       DatabaseClient databaseClient = spanner.getDatabaseClient(databaseId);
       initializeTable(databaseClient);
+      resourcesCreated = true;
     }
   }
 
@@ -261,11 +266,16 @@ public final class SpannerIntegrationTest {
 
   @AfterClass
   public static void afterClass() {
+    if (GCP_PROJECT_ID == null || !resourcesCreated) {
+      return;
+    }
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId(GCP_PROJECT_ID).build();
     try (Spanner spanner = options.getService()) {
       InstanceAdminClient instanceAdminClient = spanner.getInstanceAdminClient();
       InstanceId instanceId = InstanceId.of(GCP_PROJECT_ID, INSTANCE_ID);
       cleanUpInstance(instanceAdminClient, instanceId);
+    } catch (Exception ignored) {
+      // Ignore cleanup failures in test environments.
     }
   }
 
@@ -467,22 +477,31 @@ public final class SpannerIntegrationTest {
     gcpChannelBRR.shutdownNow();
   }
 
-  private long getOkCallsCount(FakeMetricRegistry fakeRegistry, String endpoint) {
-    MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction<?>> metric =
-        record.getMetrics().get(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED);
-    for (PointWithFunction<?> m : metric) {
-      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.RESULT_LABEL);
-      assertThat(m.keys().get(1).getKey()).isEqualTo(commonKey.getKey());
-      assertThat(m.values().get(1).getValue()).isEqualTo(commonValue.getValue());
-      assertThat(m.keys().get(2).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
-      if (!m.values().get(0).equals(LabelValue.create(GcpMetricsConstants.RESULT_SUCCESS))) {
+  private static Object getAttribute(Map<AttributeKey<?>, Object> attributes, String key) {
+    for (Map.Entry<AttributeKey<?>, Object> entry : attributes.entrySet()) {
+      if (entry.getKey() != null && key.equals(entry.getKey().getKey())) {
+        return entry.getValue();
+      }
+    }
+    return null;
+  }
+
+  private long getOkCallsCount(InMemoryMetricReader metricReader, String endpoint) {
+    for (MetricData metric : metricReader.collectAllMetrics()) {
+      if (!metric.getName().equals(GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED)) {
         continue;
       }
-      if (!m.values().get(2).equals(LabelValue.create(endpoint))) {
-        continue;
+      for (LongPointData point : metric.getLongGaugeData().getPoints()) {
+        Map<AttributeKey<?>, Object> attributes = point.getAttributes().asMap();
+        Object result = getAttribute(attributes, GcpMetricsConstants.RESULT_LABEL);
+        Object common = getAttribute(attributes, commonKey);
+        Object ep = getAttribute(attributes, GcpMetricsConstants.ENDPOINT_LABEL);
+        if (GcpMetricsConstants.RESULT_SUCCESS.equals(result)
+            && commonValue.equals(common)
+            && endpoint.equals(ep)) {
+          return point.getValue();
+        }
       }
-      return m.value();
     }
     fail("Success calls metric is not found for endpoint: " + endpoint);
     return 0;
@@ -500,62 +519,59 @@ public final class SpannerIntegrationTest {
     return apiConfigBuilder.build();
   }
 
-  private String getCurrentEndpoint(FakeMetricRegistry fakeRegistry, String meName) {
-    MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction<?>> metric =
-        record.getMetrics().get(GcpMetricsConstants.METRIC_CURRENT_ENDPOINT);
-    for (PointWithFunction<?> m : metric) {
-      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
-      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
-      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
-      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
-      if (!m.values().get(0).getValue().equals(meName)) {
+  private String getCurrentEndpoint(InMemoryMetricReader metricReader, String meName) {
+    for (MetricData metric : metricReader.collectAllMetrics()) {
+      if (!metric.getName().equals(GcpMetricsConstants.METRIC_CURRENT_ENDPOINT)) {
         continue;
       }
-      if (m.value() == 1) {
-        return m.values().get(1).getValue();
+      for (LongPointData point : metric.getLongGaugeData().getPoints()) {
+        Map<AttributeKey<?>, Object> attributes = point.getAttributes().asMap();
+        Object me = getAttribute(attributes, GcpMetricsConstants.ME_NAME_LABEL);
+        Object common = getAttribute(attributes, commonKey);
+        if (meName.equals(me) && commonValue.equals(common) && point.getValue() == 1L) {
+          Object endpoint = getAttribute(attributes, GcpMetricsConstants.ENDPOINT_LABEL);
+          return endpoint == null ? null : endpoint.toString();
+        }
       }
     }
     fail("Current endpoint metric not found for multi-endpoint: " + meName);
     return null;
   }
 
-  private String getEndpointState(FakeMetricRegistry fakeRegistry, String endpoint) {
-    MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction<?>> metric =
-        record.getMetrics().get(GcpMetricsConstants.METRIC_ENDPOINT_STATE);
-    for (PointWithFunction<?> m : metric) {
-      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ENDPOINT_LABEL);
-      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.STATUS_LABEL);
-      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
-      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
-      if (!m.values().get(0).getValue().equals(endpoint)) {
+  private String getEndpointState(InMemoryMetricReader metricReader, String endpoint) {
+    for (MetricData metric : metricReader.collectAllMetrics()) {
+      if (!metric.getName().equals(GcpMetricsConstants.METRIC_ENDPOINT_STATE)) {
         continue;
       }
-      if (m.value() == 1) {
-        return m.values().get(1).getValue();
+      for (LongPointData point : metric.getLongGaugeData().getPoints()) {
+        Map<AttributeKey<?>, Object> attributes = point.getAttributes().asMap();
+        Object common = getAttribute(attributes, commonKey);
+        Object ep = getAttribute(attributes, GcpMetricsConstants.ENDPOINT_LABEL);
+        if (!commonValue.equals(common) || !endpoint.equals(ep) || point.getValue() != 1L) {
+          continue;
+        }
+        Object status = getAttribute(attributes, GcpMetricsConstants.STATUS_LABEL);
+        return status == null ? null : status.toString();
       }
     }
     fail("Endpoint state metric not found for endpoint: " + endpoint);
     return null;
   }
 
-  private long getSwitchCount(FakeMetricRegistry fakeRegistry, String meName, String type) {
-    MetricsRecord record = fakeRegistry.pollRecord();
-    List<PointWithFunction<?>> metric =
-        record.getMetrics().get(GcpMetricsConstants.METRIC_ENDPOINT_SWITCH);
-    for (PointWithFunction<?> m : metric) {
-      assertThat(m.keys().get(0).getKey()).isEqualTo(GcpMetricsConstants.ME_NAME_LABEL);
-      assertThat(m.keys().get(1).getKey()).isEqualTo(GcpMetricsConstants.SWITCH_TYPE_LABEL);
-      assertThat(m.keys().get(2).getKey()).isEqualTo(commonKey.getKey());
-      assertThat(m.values().get(2).getValue()).isEqualTo(commonValue.getValue());
-      if (!m.values().get(0).getValue().equals(meName)) {
+  private long getSwitchCount(InMemoryMetricReader metricReader, String meName, String type) {
+    for (MetricData metric : metricReader.collectAllMetrics()) {
+      if (!metric.getName().equals(GcpMetricsConstants.METRIC_ENDPOINT_SWITCH)) {
         continue;
       }
-      if (!m.values().get(1).getValue().equals(type)) {
-        continue;
+      for (LongPointData point : metric.getLongGaugeData().getPoints()) {
+        Map<AttributeKey<?>, Object> attributes = point.getAttributes().asMap();
+        Object common = getAttribute(attributes, commonKey);
+        Object me = getAttribute(attributes, GcpMetricsConstants.ME_NAME_LABEL);
+        Object t = getAttribute(attributes, GcpMetricsConstants.SWITCH_TYPE_LABEL);
+        if (commonValue.equals(common) && meName.equals(me) && type.equals(t)) {
+          return point.getValue();
+        }
       }
-      return m.value();
     }
     fail("Switch count metric with type " + type + " not found for multi-endpoint: " + meName);
     return 0;
@@ -584,7 +600,10 @@ public final class SpannerIntegrationTest {
     // Watch debug messages.
     testLogger.setLevel(Level.FINEST);
 
-    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    OpenTelemetry otel = OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
     // Leader-first multi-endpoint endpoints.
     final List<String> leaderEndpoints = new ArrayList<>();
@@ -633,8 +652,8 @@ public final class SpannerIntegrationTest {
                         .build())
                 .withMetricsOptions(
                     GcpMetricsOptions.newBuilder()
-                        .withMetricRegistry(fakeRegistry)
-                        .withLabels(
+                        .withOpenTelemetryMeter(otel.getMeter("grpc-gcp-spanner-it"))
+                        .withOtelLabels(
                             Collections.singletonList(commonKey),
                             Collections.singletonList(commonValue))
                         .build())
@@ -666,44 +685,8 @@ public final class SpannerIntegrationTest {
       }
     }
 
-    // Make sure endpoint is set as a metric label for each pool.
-    assertThat(
-            logRecords.stream()
-                .filter(
-                    logRecord ->
-                        logRecord
-                            .getMessage()
-                            .matches(
-                                leaderPoolIndex
-                                    + ": Metrics options: \\{namePrefix: \"\", labels: \\["
-                                    + commonKey.getKey()
-                                    + ": \""
-                                    + commonValue.getValue()
-                                    + "\", endpoint: "
-                                    + "\""
-                                    + leaderEndpoint
-                                    + "\".*"))
-                .count())
-        .isEqualTo(1);
-
-    assertThat(
-            logRecords.stream()
-                .filter(
-                    logRecord ->
-                        logRecord
-                            .getMessage()
-                            .matches(
-                                followerPoolIndex
-                                    + ": Metrics options: \\{namePrefix: \"\", labels: \\["
-                                    + commonKey.getKey()
-                                    + ": \""
-                                    + commonValue.getValue()
-                                    + "\", endpoint: "
-                                    + "\""
-                                    + followerEndpoint
-                                    + "\".*"))
-                .count())
-        .isEqualTo(1);
+    // Trigger OTel metric callbacks at least once.
+    metricReader.collectAllMetrics();
 
     logRecords.clear();
 
@@ -737,29 +720,29 @@ public final class SpannerIntegrationTest {
         };
 
     // Make sure top priority endpoints reported as current.
-    assertThat(getCurrentEndpoint(fakeRegistry, leaderME)).isEqualTo(leaderEndpoint);
-    assertThat(getCurrentEndpoint(fakeRegistry, followerME)).isEqualTo(followerEndpoint);
+    assertThat(getCurrentEndpoint(metricReader, leaderME)).isEqualTo(leaderEndpoint);
+    assertThat(getCurrentEndpoint(metricReader, followerME)).isEqualTo(followerEndpoint);
 
     // Make sure both endpoints reported as available.
-    assertThat(getEndpointState(fakeRegistry, leaderEndpoint))
+    assertThat(getEndpointState(metricReader, leaderEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
-    assertThat(getEndpointState(fakeRegistry, followerEndpoint))
+    assertThat(getEndpointState(metricReader, followerEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
 
     // Make sure leader endpoint is used by default.
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(0);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(0);
     readQuery.run();
 
     // Wait for sessions creation requests to be completed but no more than 10 seconds.
     for (int i = 0; i < 20; i++) {
       sleep(500);
-      if (getOkCallsCount(fakeRegistry, leaderEndpoint) == 4) {
+      if (getOkCallsCount(metricReader, leaderEndpoint) == 4) {
         break;
       }
     }
 
     // 3 session creation requests + 1 our read request to the leader endpoint.
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(4);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(4);
 
     // Make sure there were 3 session creation requests in the leader pool only.
     assertThat(
@@ -807,10 +790,10 @@ public final class SpannerIntegrationTest {
     Function<String, Context> contextFor =
         meName -> Context.current().withValue(ME_CONTEXT_KEY, meName);
 
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(0);
     // Use follower, make sure it is used. (multi-endpoint is set in the context)
     contextFor.apply(followerME).run(readQuery);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
 
     // Replace leader endpoints. Try endpoint with default port.
     final String newLeaderEndpoint = "https://us-west1.googleapis.com";
@@ -842,57 +825,57 @@ public final class SpannerIntegrationTest {
     gcpMultiEndpointChannel.setMultiEndpoints(opts);
 
     // New leader endpoint should be unavailable first because it is connecting.
-    assertThat(getEndpointState(fakeRegistry, newLeaderEndpoint))
+    assertThat(getEndpointState(metricReader, newLeaderEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_UNAVAILABLE);
-    assertThat(getEndpointState(fakeRegistry, followerEndpoint))
+    assertThat(getEndpointState(metricReader, followerEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
 
     // One switch should be reported for the leader-first ME with type REPLACE.
     // Switched from leader (removed from the endpoints) to fallback endpoint as new leader endpoint
     // is not yet available.
-    assertThat(getSwitchCount(fakeRegistry, leaderME, GcpMetricsConstants.TYPE_REPLACE))
+    assertThat(getSwitchCount(metricReader, leaderME, GcpMetricsConstants.TYPE_REPLACE))
         .isEqualTo(1);
     // No switched should be reported for the follower-first ME as it stays at fallback endpoint.
-    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_REPLACE))
+    assertThat(getSwitchCount(metricReader, newFollowerME, GcpMetricsConstants.TYPE_REPLACE))
         .isEqualTo(0);
-    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_FALLBACK))
+    assertThat(getSwitchCount(metricReader, newFollowerME, GcpMetricsConstants.TYPE_FALLBACK))
         .isEqualTo(0);
-    assertThat(getSwitchCount(fakeRegistry, newFollowerME, GcpMetricsConstants.TYPE_RECOVER))
+    assertThat(getSwitchCount(metricReader, newFollowerME, GcpMetricsConstants.TYPE_RECOVER))
         .isEqualTo(0);
 
     // As it takes some time to connect to the new leader endpoint, RPC will fall back to the
     // follower until we connect to leader.
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
 
     sleep(500);
 
     // Now the new leader endpoint should be available and current for leaderME.
-    assertThat(getEndpointState(fakeRegistry, newLeaderEndpoint))
+    assertThat(getEndpointState(metricReader, newLeaderEndpoint))
         .isEqualTo(GcpMetricsConstants.STATUS_AVAILABLE);
-    assertThat(getCurrentEndpoint(fakeRegistry, leaderME)).isEqualTo(newLeaderEndpoint);
+    assertThat(getCurrentEndpoint(metricReader, leaderME)).isEqualTo(newLeaderEndpoint);
 
     // And now another switch with type RECOVER should be reported as the leader-first ME should
     // switch from the fallback endpoint to the new leader endpoint.
-    assertThat(getSwitchCount(fakeRegistry, leaderME, GcpMetricsConstants.TYPE_RECOVER))
+    assertThat(getSwitchCount(metricReader, leaderME, GcpMetricsConstants.TYPE_RECOVER))
         .isEqualTo(1);
 
     // Make sure the new leader endpoint is used by default after it is connected.
-    assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(0);
+    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(0);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(1);
+    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(1);
 
     // Make sure that the follower endpoint still works if specified.
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
     // Use follower, make sure it is used. (multi-endpoint is set in the call options)
     callContextFor.apply(newFollowerME).run(readQuery);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(3);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(3);
 
     // Use leader, make sure it is used. (multi-endpoint from the call options overrides context-set
     // multi-endpoint)
     contextFor.apply(newFollowerME).run(() -> callContextFor.apply(leaderME).run(readQuery));
-    assertThat(getOkCallsCount(fakeRegistry, newLeaderEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, newLeaderEndpoint)).isEqualTo(2);
 
     gcpMultiEndpointChannel.shutdown();
     spanner.close();
@@ -907,7 +890,10 @@ public final class SpannerIntegrationTest {
     final long switchingDelayMs = 500;
     final long marginMs = 50;
 
-    final FakeMetricRegistry fakeRegistry = new FakeMetricRegistry();
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    OpenTelemetry otel = OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
     // Leader-first multi-endpoint endpoints.
     final List<String> leaderEndpoints = new ArrayList<>();
@@ -955,8 +941,8 @@ public final class SpannerIntegrationTest {
                         .build())
                 .withMetricsOptions(
                     GcpMetricsOptions.newBuilder()
-                        .withMetricRegistry(fakeRegistry)
-                        .withLabels(
+                        .withOpenTelemetryMeter(otel.getMeter("grpc-gcp-spanner-it-delay"))
+                        .withOtelLabels(
                             Collections.singletonList(commonKey),
                             Collections.singletonList(commonValue))
                         .build())
@@ -996,19 +982,19 @@ public final class SpannerIntegrationTest {
         };
 
     // Make sure leader endpoint is used by default.
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(0);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(0);
     readQuery.run();
 
     // Wait for sessions creation requests to be completed but no more than 10 seconds.
     for (int i = 0; i < 20; i++) {
       sleep(500);
-      if (getOkCallsCount(fakeRegistry, leaderEndpoint) == 4) {
+      if (getOkCallsCount(metricReader, leaderEndpoint) == 4) {
         break;
       }
     }
 
     // 3 session creation requests + 1 our read request to the leader endpoint.
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(4);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(4);
 
     // Change the endpoints in the leader endpoint. east4, east1 -> east1, east4.
     leaderOpts =
@@ -1028,15 +1014,15 @@ public final class SpannerIntegrationTest {
     // Because of the delay the leader MultiEndpoint should still use leader endpoint.
     sleep(switchingDelayMs - marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(0);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(0);
 
     // But after the delay, it should switch to the follower endpoint.
     sleep(2 * marginMs);
 
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(1);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(1);
 
     // Remove leader endpoint from the leader multi-endpoint. east1, east4 -> east1.
     leaderOpts =
@@ -1071,14 +1057,14 @@ public final class SpannerIntegrationTest {
     // Because of the delay the leader MultiEndpoint should still use follower endpoint.
     sleep(switchingDelayMs - marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(5);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(5);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
 
     // But after the delay, it should switch back to the leader endpoint.
     sleep(2 * marginMs);
     readQuery.run();
-    assertThat(getOkCallsCount(fakeRegistry, leaderEndpoint)).isEqualTo(6);
-    assertThat(getOkCallsCount(fakeRegistry, followerEndpoint)).isEqualTo(2);
+    assertThat(getOkCallsCount(metricReader, leaderEndpoint)).isEqualTo(6);
+    assertThat(getOkCallsCount(metricReader, followerEndpoint)).isEqualTo(2);
 
     gcpMultiEndpointChannel.shutdown();
     spanner.close();

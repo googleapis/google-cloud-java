@@ -49,6 +49,9 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -137,6 +140,8 @@ public class GcpManagedChannel extends ManagedChannel {
 
   // Metrics configuration.
   private MetricRegistry metricRegistry;
+  private Meter otelMeter;
+  private Attributes otelCommonAttributes;
   private final List<LabelKey> labelKeys = new ArrayList<>();
   private final List<LabelKey> labelKeysWithResult =
       new ArrayList<>(
@@ -448,12 +453,21 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
     logMetricsOptions();
+    if (metricsOptions.getOpenTelemetryMeter() != null) {
+      // Prefer OpenTelemetry if provided.
+      logger.info(log("OpenTelemetry meter detected. Using OpenTelemetry metrics."));
+      setupOtelCommonAttributes(metricsOptions);
+      metricPrefix = metricsOptions.getNamePrefix();
+      initOtelMetrics(metricsOptions.getOpenTelemetryMeter());
+      initLogMetrics();
+      return;
+    }
     if (metricsOptions.getMetricRegistry() == null) {
       logger.info(log("Metric registry is null. Metrics disabled."));
       initLogMetrics();
       return;
     }
-    logger.info(log("Metrics enabled."));
+    logger.info(log("Metrics enabled (OpenCensus)."));
 
     metricRegistry = metricsOptions.getMetricRegistry();
     labelKeys.addAll(metricsOptions.getLabelKeys());
@@ -661,14 +675,14 @@ public class GcpManagedChannel extends ManagedChannel {
     createDerivedLongGaugeTimeSeries(
         GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS,
         "The minimum calls dropped before detection of an unresponsive connection.",
-        GcpMetricsConstants.MILLISECOND,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMinUnresponsiveDrops);
 
     createDerivedLongGaugeTimeSeries(
         GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS,
         "The maximum calls dropped before detection of an unresponsive connection.",
-        GcpMetricsConstants.MILLISECOND,
+        GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportMaxUnresponsiveDrops);
 
@@ -679,6 +693,264 @@ public class GcpManagedChannel extends ManagedChannel {
         this,
         GcpManagedChannel::reportScaleUp,
         GcpManagedChannel::reportScaleDown);
+  }
+
+  private void setupOtelCommonAttributes(GcpMetricsOptions metricsOptions) {
+    AttributesBuilder builder = Attributes.builder();
+    if (metricsOptions.getOtelLabelKeys() != null && metricsOptions.getOtelLabelValues() != null) {
+      List<String> keys = metricsOptions.getOtelLabelKeys();
+      List<String> values = metricsOptions.getOtelLabelValues();
+      for (int i = 0; i < Math.min(keys.size(), values.size()); i++) {
+        String k = keys.get(i);
+        String v = values.get(i);
+        if (k != null && !k.isEmpty() && v != null) {
+          builder.put(k, v);
+        }
+      }
+    }
+    // pool_index label is always added
+    builder.put(GcpMetricsConstants.POOL_INDEX_LABEL, metricPoolIndex);
+    otelCommonAttributes = builder.build();
+  }
+
+  private Attributes withResult(String result) {
+    return Attributes.builder()
+        .putAll(otelCommonAttributes)
+        .put(GcpMetricsConstants.RESULT_LABEL, result)
+        .build();
+  }
+
+  private Attributes withDirection(String dir) {
+    return Attributes.builder()
+        .putAll(otelCommonAttributes)
+        .put(GcpMetricsConstants.DIRECTION_LABEL, dir)
+        .build();
+  }
+
+  private void initOtelMetrics(Meter meter) {
+    this.otelMeter = meter;
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CHANNELS)
+        .ofLongs()
+        .setDescription("The number of channels currently in the pool.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(getNumberOfChannels(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_CHANNELS)
+        .ofLongs()
+        .setDescription("The minimum number of channels in the pool.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minChannels, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_CHANNELS)
+        .ofLongs()
+        .setDescription("The maximum number of channels in the pool.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxChannels, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_ALLOWED_CHANNELS)
+        .ofLongs()
+        .setDescription("The maximum number of channels allowed in the pool. (The pool max size)")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxSize, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_READY_CHANNELS)
+        .ofLongs()
+        .setDescription("The minimum number of channels simultaneously in the READY state.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minReadyChannels, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_READY_CHANNELS)
+        .ofLongs()
+        .setDescription("The maximum number of channels simultaneously in the READY state.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxReadyChannels, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CHANNEL_CONNECT)
+        .ofLongs()
+        .setDescription("The number of times when a channel reached the READY state.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(numChannelConnect.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CHANNEL_DISCONNECT)
+        .ofLongs()
+        .setDescription("The number of disconnections (deviations from READY state)")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(numChannelDisconnect.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_CHANNEL_READINESS_TIME)
+        .ofLongs()
+        .setDescription("The minimum time it took to transition a channel to READY (us).")
+        .setUnit(GcpMetricsConstants.MICROSECOND)
+        .buildWithCallback(m -> m.record(minReadinessTime, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_AVG_CHANNEL_READINESS_TIME)
+        .ofLongs()
+        .setDescription("The average time it took to transition a channel to READY (us).")
+        .setUnit(GcpMetricsConstants.MICROSECOND)
+        .buildWithCallback(
+            m -> {
+              long occ = readinessTimeOccurrences.get();
+              long total = totalReadinessTime.get();
+              long avg = occ == 0 ? 0 : total / occ;
+              m.record(avg, otelCommonAttributes);
+            });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_CHANNEL_READINESS_TIME)
+        .ofLongs()
+        .setDescription("The maximum time it took to transition a channel to READY (us).")
+        .setUnit(GcpMetricsConstants.MICROSECOND)
+        .buildWithCallback(m -> m.record(maxReadinessTime, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_ACTIVE_STREAMS)
+        .ofLongs()
+        .setDescription("The minimum number of active streams on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minActiveStreams, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_ACTIVE_STREAMS)
+        .ofLongs()
+        .setDescription("The maximum number of active streams on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxActiveStreams, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_TOTAL_ACTIVE_STREAMS)
+        .ofLongs()
+        .setDescription("The minimum total number of active streams across all channels.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minTotalActiveStreams, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_TOTAL_ACTIVE_STREAMS)
+        .ofLongs()
+        .setDescription("The maximum total number of active streams across all channels.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxTotalActiveStreams, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_AFFINITY)
+        .ofLongs()
+        .setDescription("The minimum affinity count on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minAffinity.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_AFFINITY)
+        .ofLongs()
+        .setDescription("The maximum affinity count on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxAffinity.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_AFFINITY)
+        .ofLongs()
+        .setDescription("The total affinity count across all channels.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(totalAffinityCount.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_CALLS_COMPLETED)
+        .ofLongs()
+        .setDescription("The number of calls completed across all channels.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(
+            m -> {
+              m.record(totalOkCalls.get(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(totalErrCalls.get(), withResult(GcpMetricsConstants.RESULT_ERROR));
+            });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_CALLS)
+        .ofLongs()
+        .setDescription("The minimum number of completed calls on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(
+            m -> {
+              m.record(minOkCalls, withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(minErrCalls, withResult(GcpMetricsConstants.RESULT_ERROR));
+            });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_CALLS)
+        .ofLongs()
+        .setDescription("The maximum number of completed calls on any channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(
+            m -> {
+              m.record(maxOkCalls, withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(maxErrCalls, withResult(GcpMetricsConstants.RESULT_ERROR));
+            });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_FALLBACKS)
+        .ofLongs()
+        .setDescription("The number of calls that had fallback to another channel.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(
+            m -> {
+              m.record(fallbacksSucceeded.get(), withResult(GcpMetricsConstants.RESULT_SUCCESS));
+              m.record(fallbacksFailed.get(), withResult(GcpMetricsConstants.RESULT_ERROR));
+            });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_NUM_UNRESPONSIVE_DETECTIONS)
+        .ofLongs()
+        .setDescription("The number of unresponsive connections detected.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(unresponsiveDetectionCount.get(), otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DETECTION_TIME)
+        .ofLongs()
+        .setDescription("Min time to detect an unresponsive connection (ms).")
+        .setUnit(GcpMetricsConstants.MILLISECOND)
+        .buildWithCallback(m -> m.record(minUnresponsiveMs, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DETECTION_TIME)
+        .ofLongs()
+        .setDescription("Max time to detect an unresponsive connection (ms).")
+        .setUnit(GcpMetricsConstants.MILLISECOND)
+        .buildWithCallback(m -> m.record(maxUnresponsiveMs, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MIN_UNRESPONSIVE_DROPPED_CALLS)
+        .ofLongs()
+        .setDescription("Min calls dropped before unresponsive detection.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(minUnresponsiveDrops, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_MAX_UNRESPONSIVE_DROPPED_CALLS)
+        .ofLongs()
+        .setDescription("Max calls dropped before unresponsive detection.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(maxUnresponsiveDrops, otelCommonAttributes));
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_CHANNEL_POOL_SCALING)
+        .ofLongs()
+        .setDescription("The number of channels channel pool scaled up or down.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(
+            m -> {
+              m.record(scaleUpCount, withDirection(GcpMetricsConstants.DIRECTION_UP));
+              m.record(scaleDownCount, withDirection(GcpMetricsConstants.DIRECTION_DOWN));
+            });
   }
 
   private void logGauge(String key, long value) {

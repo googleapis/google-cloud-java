@@ -4,5 +4,7 @@ opentelemetry = "1.46.0"
 [libraries]
 opentelemetry-api = { module = "io.opentelemetry:opentelemetry-api", version.ref = "opentelemetry" }
 opentelemetry-sdk = { module = "io.opentelemetry:opentelemetry-sdk", version.ref = "opentelemetry" }
+opentelemetry-sdk-metrics = { module = "io.opentelemetry:opentelemetry-sdk-metrics", version.ref = "opentelemetry" }
+opentelemetry-sdk-testing = { module = "io.opentelemetry:opentelemetry-sdk-testing", version.ref = "opentelemetry" }
 auto-value = "com.google.auto.value:auto-value:1.11.0"
 auto-value-annotations = "com.google.auto.value:auto-value-annotations:1.11.0"

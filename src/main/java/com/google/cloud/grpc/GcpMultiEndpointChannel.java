@@ -59,6 +59,9 @@ import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricOptions;
 import io.opencensus.metrics.MetricRegistry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.metrics.Meter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -154,6 +157,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   private DerivedLongGauge endpointStateMetric;
   private DerivedLongCumulative endpointSwitchMetric;
   private DerivedLongGauge currentEndpointMetric;
+  private Meter otelMeter;
+  private Attributes otelCommonAttributes;
 
   private final Map<String, CurrentEndpointWatcher> currentEndpointWatchers =
       new ConcurrentHashMap<>();
@@ -266,6 +271,17 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     labelKeys.add(endpointKey);
     labelValues.add(LabelValue.create(endpoint));
 
+    // Mirror OpenCensus endpoint label for OpenTelemetry as well.
+    List<String> otelLabelKeys = metricsOptions.build().getOtelLabelKeys();
+    List<String> otelLabelValues = metricsOptions.build().getOtelLabelValues();
+    if (otelLabelKeys != null && otelLabelValues != null) {
+      List<String> newOtelKeys = new ArrayList<>(otelLabelKeys);
+      List<String> newOtelValues = new ArrayList<>(otelLabelValues);
+      newOtelKeys.add(ENDPOINT_LABEL);
+      newOtelValues.add(endpoint);
+      metricsOptions.withOtelLabels(newOtelKeys, newOtelValues);
+    }
+
     // Make sure the pool will have at least 1 channel always connected. If maximum size > 1 then we
     // want at least 2 channels or square root of maximum channels whichever is larger.
     // Do not override if minSize is already specified as > 0.
@@ -321,29 +337,36 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   private void setUpMetricsForMultiEndpoint(GcpMultiEndpointOptions options, MultiEndpoint me) {
     String name = options.getName();
     List<String> endpoints = options.getEndpoints();
-    endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)),
-        me,
-        MultiEndpoint::getFallbackCnt);
-    endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)),
-        me,
-        MultiEndpoint::getRecoverCnt);
-    endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)),
-        me,
-        MultiEndpoint::getReplaceCnt);
-    for (String e : endpoints) {
-      CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
-      currentEndpointWatchers.put(name + ":" + e, watcher);
-      currentEndpointMetric.createTimeSeries(
-          appendCommonValues(LabelValue.create(name), LabelValue.create(e)),
-          watcher,
-          CurrentEndpointWatcher::getMetricValue);
+    if (endpointSwitchMetric != null) {
+      endpointSwitchMetric.createTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)),
+          me,
+          MultiEndpoint::getFallbackCnt);
+      endpointSwitchMetric.createTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)),
+          me,
+          MultiEndpoint::getRecoverCnt);
+      endpointSwitchMetric.createTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)),
+          me,
+          MultiEndpoint::getReplaceCnt);
+    }
+    if (currentEndpointMetric != null) {
+      for (String e : endpoints) {
+        CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
+        currentEndpointWatchers.put(name + ":" + e, watcher);
+        currentEndpointMetric.createTimeSeries(
+            appendCommonValues(LabelValue.create(name), LabelValue.create(e)),
+            watcher,
+            CurrentEndpointWatcher::getMetricValue);
+      }
     }
   }
 
   private void updateMetricsForMultiEndpoint(GcpMultiEndpointOptions options, MultiEndpoint me) {
+    if (currentEndpointMetric == null) {
+      return;
+    }
     Set<String> newEndpoints = new HashSet<>(options.getEndpoints());
     Set<String> existingEndpoints = new HashSet<>(me.getEndpoints());
     for (String e : existingEndpoints) {
@@ -366,16 +389,20 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   }
 
   private void removeMetricsForMultiEndpoint(String name, MultiEndpoint me) {
-    endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)));
-    endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)));
-    endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)));
-    for (String e : me.getEndpoints()) {
-      currentEndpointMetric.removeTimeSeries(
-          appendCommonValues(LabelValue.create(name), LabelValue.create(e)));
-      currentEndpointWatchers.remove(name + ":" + e);
+    if (endpointSwitchMetric != null) {
+      endpointSwitchMetric.removeTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)));
+      endpointSwitchMetric.removeTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)));
+      endpointSwitchMetric.removeTimeSeries(
+          appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)));
+    }
+    if (currentEndpointMetric != null) {
+      for (String e : me.getEndpoints()) {
+        currentEndpointMetric.removeTimeSeries(
+            appendCommonValues(LabelValue.create(name), LabelValue.create(e)));
+        currentEndpointWatchers.remove(name + ":" + e);
+      }
     }
   }
 
@@ -522,6 +549,114 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     }
 
     MetricRegistry metricRegistry = gcpMetricsOptions.getMetricRegistry();
+    if (gcpMetricsOptions.getOpenTelemetryMeter() != null) {
+      // Prefer OpenTelemetry if present.
+      this.otelMeter = gcpMetricsOptions.getOpenTelemetryMeter();
+      AttributesBuilder builder = Attributes.builder();
+      if (gcpMetricsOptions.getOtelLabelKeys() != null
+          && gcpMetricsOptions.getOtelLabelValues() != null) {
+        for (int i = 0;
+            i
+                < Math.min(
+                    gcpMetricsOptions.getOtelLabelKeys().size(),
+                    gcpMetricsOptions.getOtelLabelValues().size());
+            i++) {
+          String k = gcpMetricsOptions.getOtelLabelKeys().get(i);
+          String v = gcpMetricsOptions.getOtelLabelValues().get(i);
+          if (k != null && !k.isEmpty() && v != null) {
+            builder.put(k, v);
+          }
+        }
+      }
+      otelCommonAttributes = builder.build();
+      String prefix = gcpMetricsOptions.getNamePrefix();
+      otelMeter
+          .gaugeBuilder(prefix + METRIC_ENDPOINT_SWITCH)
+          .ofLongs()
+          .setDescription(
+              "Reports occurrences of changes of current endpoint for a multi-endpoint with the name, specifying change type.")
+          .setUnit(COUNT)
+          .buildWithCallback(
+              m -> {
+                for (Map.Entry<String, MultiEndpoint> entry : multiEndpoints.entrySet()) {
+                  String meName = entry.getKey();
+                  MultiEndpoint me = entry.getValue();
+                  m.record(
+                      me.getFallbackCnt(),
+                      Attributes.builder()
+                          .putAll(otelCommonAttributes)
+                          .put(ME_NAME_LABEL, meName)
+                          .put(SWITCH_TYPE_LABEL, TYPE_FALLBACK)
+                          .build());
+                  m.record(
+                      me.getRecoverCnt(),
+                      Attributes.builder()
+                          .putAll(otelCommonAttributes)
+                          .put(ME_NAME_LABEL, meName)
+                          .put(SWITCH_TYPE_LABEL, TYPE_RECOVER)
+                          .build());
+                  m.record(
+                      me.getReplaceCnt(),
+                      Attributes.builder()
+                          .putAll(otelCommonAttributes)
+                          .put(ME_NAME_LABEL, meName)
+                          .put(SWITCH_TYPE_LABEL, TYPE_REPLACE)
+                          .build());
+                }
+              });
+
+      otelMeter
+          .gaugeBuilder(prefix + METRIC_CURRENT_ENDPOINT)
+          .ofLongs()
+          .setDescription("Reports 1 when an endpoint is current for multi-endpoint with the name.")
+          .setUnit(COUNT)
+          .buildWithCallback(
+              m -> {
+                for (Map.Entry<String, MultiEndpoint> entry : multiEndpoints.entrySet()) {
+                  String meName = entry.getKey();
+                  MultiEndpoint me = entry.getValue();
+                  for (String endpoint : me.getEndpoints()) {
+                    m.record(
+                        endpoint.equals(me.getCurrentId()) ? 1L : 0L,
+                        Attributes.builder()
+                            .putAll(otelCommonAttributes)
+                            .put(ME_NAME_LABEL, meName)
+                            .put(ENDPOINT_LABEL, endpoint)
+                            .build());
+                  }
+                }
+              });
+
+      otelMeter
+          .gaugeBuilder(prefix + METRIC_ENDPOINT_STATE)
+          .ofLongs()
+          .setDescription("Reports 1 when endpoint is in the status.")
+          .setUnit(COUNT)
+          .buildWithCallback(
+              m -> {
+                for (Map.Entry<String, GcpManagedChannel> entry : pools.entrySet()) {
+                  String endpoint = entry.getKey();
+                  GcpManagedChannel channel = entry.getValue();
+                  boolean available = ConnectivityState.READY.equals(channel.getState(false));
+                  m.record(
+                      available ? 1L : 0L,
+                      Attributes.builder()
+                          .putAll(otelCommonAttributes)
+                          .put(ENDPOINT_LABEL, endpoint)
+                          .put(STATUS_LABEL, STATUS_AVAILABLE)
+                          .build());
+                  m.record(
+                      available ? 0L : 1L,
+                      Attributes.builder()
+                          .putAll(otelCommonAttributes)
+                          .put(ENDPOINT_LABEL, endpoint)
+                          .put(STATUS_LABEL, STATUS_UNAVAILABLE)
+                          .build());
+                }
+              });
+      return;
+    }
+
     if (metricRegistry == null) {
       return;
     }

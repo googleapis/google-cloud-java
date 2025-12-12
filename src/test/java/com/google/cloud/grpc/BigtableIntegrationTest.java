@@ -67,6 +67,7 @@ public class BigtableIntegrationTest {
   private static final String INSTANCE_ID = "grpc-gcp-test-instance";
   private static final String TABLE_ID = "test-table";
   private static final String FAMILY_NAME = "test-family";
+  private static boolean resourcesCreated = false;
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int NEW_MAX_CHANNEL = 5;
@@ -99,14 +100,22 @@ public class BigtableIntegrationTest {
     tableAdminClient.createTable(createTableRequest);
     tableAdminClient.close();
     instanceAdminClient.close();
+    resourcesCreated = true;
   }
 
   @AfterClass
   public static void afterClass() throws IOException {
-    BigtableInstanceAdminClient instanceAdminClient =
-        BigtableInstanceAdminClient.create(GCP_PROJECT_ID);
-    instanceAdminClient.deleteInstance(INSTANCE_ID);
-    instanceAdminClient.close();
+    if (GCP_PROJECT_ID == null || !resourcesCreated) {
+      return;
+    }
+    try {
+      BigtableInstanceAdminClient instanceAdminClient =
+          BigtableInstanceAdminClient.create(GCP_PROJECT_ID);
+      instanceAdminClient.deleteInstance(INSTANCE_ID);
+      instanceAdminClient.close();
+    } catch (Exception ignored) {
+      // Ignore cleanup failures in test environments.
+    }
   }
 
   private static GoogleCredentials getCreds() {

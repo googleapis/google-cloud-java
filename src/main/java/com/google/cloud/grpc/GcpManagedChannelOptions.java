@@ -20,6 +20,7 @@ import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
+import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -446,12 +447,18 @@ public class GcpManagedChannelOptions {
     private final List<LabelKey> labelKeys;
     private final List<LabelValue> labelValues;
     private final String namePrefix;
+    @Nullable private final Meter otelMeter;
+    @Nullable private final List<String> otelLabelKeys;
+    @Nullable private final List<String> otelLabelValues;
 
     public GcpMetricsOptions(Builder builder) {
       metricRegistry = builder.metricRegistry;
       labelKeys = builder.labelKeys;
       labelValues = builder.labelValues;
       namePrefix = builder.namePrefix;
+      otelMeter = builder.otelMeter;
+      otelLabelKeys = builder.otelLabelKeys;
+      otelLabelValues = builder.otelLabelValues;
     }
 
     public MetricRegistry getMetricRegistry() {
@@ -470,6 +477,21 @@ public class GcpManagedChannelOptions {
       return namePrefix;
     }
 
+    @Nullable
+    public Meter getOpenTelemetryMeter() {
+      return otelMeter;
+    }
+
+    @Nullable
+    public List<String> getOtelLabelKeys() {
+      return otelLabelKeys;
+    }
+
+    @Nullable
+    public List<String> getOtelLabelValues() {
+      return otelLabelValues;
+    }
+
     @Override
     public String toString() {
       Iterator<LabelKey> keyIterator = getLabelKeys().iterator();
@@ -482,8 +504,8 @@ public class GcpManagedChannelOptions {
                 "%s: \"%s\"", keyIterator.next().getKey(), valueIterator.next().getValue()));
       }
       return String.format(
-          "{namePrefix: \"%s\", labels: [%s], metricRegistry: %s}",
-          getNamePrefix(), String.join(", ", labels), getMetricRegistry());
+          "{namePrefix: \"%s\", labels: [%s], metricRegistry: %s, otelMeter: %s}",
+          getNamePrefix(), String.join(", ", labels), getMetricRegistry(), getOpenTelemetryMeter());
     }
 
     /** Creates a new GcpMetricsOptions.Builder. */
@@ -501,12 +523,17 @@ public class GcpManagedChannelOptions {
       private List<LabelKey> labelKeys;
       private List<LabelValue> labelValues;
       private String namePrefix;
+      private Meter otelMeter;
+      private List<String> otelLabelKeys;
+      private List<String> otelLabelValues;
 
       /** Constructor for GcpMetricsOptions.Builder. */
       public Builder() {
         labelKeys = new ArrayList<>();
         labelValues = new ArrayList<>();
         namePrefix = "";
+        otelLabelKeys = new ArrayList<>();
+        otelLabelValues = new ArrayList<>();
       }
 
       public Builder(GcpMetricsOptions options) {
@@ -518,6 +545,9 @@ public class GcpManagedChannelOptions {
         this.labelKeys = options.getLabelKeys();
         this.labelValues = options.getLabelValues();
         this.namePrefix = options.getNamePrefix();
+        this.otelMeter = options.getOpenTelemetryMeter();
+        this.otelLabelKeys = options.getOtelLabelKeys();
+        this.otelLabelValues = options.getOtelLabelValues();
       }
 
       public GcpMetricsOptions build() {
@@ -553,6 +583,30 @@ public class GcpManagedChannelOptions {
        */
       public Builder withNamePrefix(String namePrefix) {
         this.namePrefix = namePrefix;
+        return this;
+      }
+
+      /**
+       * Sets the OpenTelemetry {@link Meter} to be used to emit metrics. If provided, metrics will
+       * be exported using OpenTelemetry APIs. If both MetricRegistry and Meter are null, metrics
+       * are disabled.
+       */
+      public Builder withOpenTelemetryMeter(Meter meter) {
+        this.otelMeter = meter;
+        return this;
+      }
+
+      /**
+       * Sets label keys and values for OpenTelemetry metrics. The size of keys and values lists
+       * must match. These labels are applied to all OTel metrics emitted by the channel.
+       */
+      public Builder withOtelLabels(List<String> labelKeys, List<String> labelValues) {
+        if (labelKeys == null || labelValues == null || labelKeys.size() != labelValues.size()) {
+          logger.warning("Unable to set OTel label keys and values - size mismatch or null.");
+          return this;
+        }
+        this.otelLabelKeys = labelKeys;
+        this.otelLabelValues = labelValues;
         return this;
       }
     }
