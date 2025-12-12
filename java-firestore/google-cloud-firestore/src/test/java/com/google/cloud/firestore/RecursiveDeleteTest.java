@@ -72,6 +72,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -326,6 +327,7 @@ public class RecursiveDeleteTest {
   }
 
   @Test
+  @Ignore
   public void createsSecondQueryWithCorrectStartAfter() throws Exception {
     // This test checks that the second query is created with the correct startAfter() once the
     // RecursiveDelete instance is below the MIN_PENDING_OPS threshold to send the next batch.

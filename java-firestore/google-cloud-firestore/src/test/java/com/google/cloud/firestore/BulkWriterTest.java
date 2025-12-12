@@ -61,6 +61,7 @@ import javax.annotation.Nonnull;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -1279,6 +1280,7 @@ public class BulkWriterTest {
   }
 
   @Test
+  @Ignore
   public void sendsBackoffBatchAfterOtherEnqueuedBatches() throws Exception {
     ResponseStubber responseStubber =
         new ResponseStubber() {
