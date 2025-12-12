@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.19.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.18.0...v3.19.0) (2025-12-12)
+
+
+### Features
+
+* Add picosecond timestamp support for Json to Proto converter ([#3131](https://github.com/googleapis/java-bigquerystorage/issues/3131)) ([ea1bcc5](https://github.com/googleapis/java-bigquerystorage/commit/ea1bcc509b7c430f92c5764cc4121aaa282255bf))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#3137](https://github.com/googleapis/java-bigquerystorage/issues/3137)) ([2dc42c7](https://github.com/googleapis/java-bigquerystorage/commit/2dc42c7a6a15c4b86f7012a0cd211ca09ffd9a0e))
+* Update googleapis/sdk-platform-java action to v2.64.2 ([#3138](https://github.com/googleapis/java-bigquerystorage/issues/3138)) ([28cbdd9](https://github.com/googleapis/java-bigquerystorage/commit/28cbdd9f5ab36e9d7d0aa8142260dc760e50a3fb))
+
 ## [3.18.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.17.3...v3.18.0) (2025-11-13)
 
 
