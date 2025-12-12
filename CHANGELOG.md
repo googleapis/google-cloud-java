@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.33.1](https://github.com/googleapis/java-datastore/compare/v2.33.0...v2.33.1) (2025-12-11)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.64.2 ([b5f1285](https://github.com/googleapis/java-datastore/commit/b5f1285bb783c004464b0f7e8b1fcea567ea22d5))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#2011](https://github.com/googleapis/java-datastore/issues/2011)) ([c2062e7](https://github.com/googleapis/java-datastore/commit/c2062e77f0ae50981ff381bd82151720f31aa83a))
+* Update googleapis/sdk-platform-java action to v2.64.2 ([#2012](https://github.com/googleapis/java-datastore/issues/2012)) ([3ad3168](https://github.com/googleapis/java-datastore/commit/3ad31689197a97d3496ae10fa3338d15d9df022f))
+
 ## [2.33.0](https://github.com/googleapis/java-datastore/compare/v2.32.3...v2.33.0) (2025-11-13)
 
 
