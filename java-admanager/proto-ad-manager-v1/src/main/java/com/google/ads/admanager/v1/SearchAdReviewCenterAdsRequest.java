@@ -238,11 +238,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Only return ads with the given status.
+   * Optional. Only return ads with the given status.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -256,11 +256,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Required. Only return ads with the given status.
+   * Optional. Only return ads with the given status.
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+   * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The status.
@@ -285,7 +285,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+   * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+   * no other filter can be set (other than page size and page token).
    * </pre>
    *
    * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -301,7 +302,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+   * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+   * no other filter can be set (other than page size and page token).
    * </pre>
    *
    * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -317,7 +319,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+   * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+   * no other filter can be set (other than page size and page token).
    * </pre>
    *
    * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -334,7 +337,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+   * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+   * no other filter can be set (other than page size and page token).
    * </pre>
    *
    * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1520,11 +1524,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Only return ads with the given status.
+     * Optional. Only return ads with the given status.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -1538,11 +1542,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Only return ads with the given status.
+     * Optional. Only return ads with the given status.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -1559,11 +1563,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Only return ads with the given status.
+     * Optional. Only return ads with the given status.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The status.
@@ -1584,11 +1588,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Only return ads with the given status.
+     * Optional. Only return ads with the given status.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The status to set.
@@ -1609,11 +1613,11 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Required. Only return ads with the given status.
+     * Optional. Only return ads with the given status.
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = REQUIRED];
+     * .google.ads.admanager.v1.AdReviewCenterAdStatusEnum.AdReviewCenterAdStatus status = 4 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
@@ -1639,7 +1643,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1656,7 +1661,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1672,7 +1678,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1689,7 +1696,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1706,7 +1714,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1731,7 +1740,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1755,7 +1765,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1776,7 +1787,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
@@ -1796,7 +1808,8 @@ public final class SearchAdReviewCenterAdsRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. If provided, only return ads with the given AdReviewCenterAd IDs.
+     * Optional. Only return ads with the given AdReviewCenterAd IDs. If provided,
+     * no other filter can be set (other than page size and page token).
      * </pre>
      *
      * <code>repeated string ad_review_center_ad_id = 5 [(.google.api.field_behavior) = OPTIONAL];
