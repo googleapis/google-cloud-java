@@ -28,8 +28,11 @@ public interface VertexDatasetResourceReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the dataset resource. If set within a project-level
+   * Required. The name of the Vertex AI resource. If set within a project-level
    * configuration, the specified resource must be within the project.
+   * Examples:
+   *
+   * * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
    * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +45,11 @@ public interface VertexDatasetResourceReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the dataset resource. If set within a project-level
+   * Required. The name of the Vertex AI resource. If set within a project-level
    * configuration, the specified resource must be within the project.
+   * Examples:
+   *
+   * * `projects/{project}/locations/{location}/datasets/{dataset}`
    * </pre>
    *
    * <code>string dataset_resource_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>

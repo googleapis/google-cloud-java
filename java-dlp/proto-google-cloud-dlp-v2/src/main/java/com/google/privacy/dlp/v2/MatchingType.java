@@ -25,7 +25,7 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Type of the match which can be applied to different ways of matching, like
  * Dictionary, regular expression and intersecting with findings of another
- * info type.
+ * infoType.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.MatchingType}
@@ -47,9 +47,9 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <pre>
    * Full match.
    *
-   * - Dictionary: join of Dictionary results matched complete finding quote
-   * - Regex: all regex matches fill a finding quote start to end
-   * - Exclude info type: completely inside affecting info types findings
+   * - Dictionary: join of Dictionary results matched the complete finding quote
+   * - Regex: all regex matches fill a finding quote from start to end
+   * - Exclude infoType: completely inside affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_FULL_MATCH = 1;</code>
@@ -63,7 +63,7 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * - Dictionary: at least one of the tokens in the finding matches
    * - Regex: substring of the finding matches
-   * - Exclude info type: intersects with affecting info types findings
+   * - Exclude infoType: intersects with affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_PARTIAL_MATCH = 2;</code>
@@ -77,7 +77,7 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * - Dictionary: no tokens in the finding match the dictionary
    * - Regex: finding doesn't match the regex
-   * - Exclude info type: no intersection with affecting info types findings
+   * - Exclude infoType: no intersection with affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_INVERSE_MATCH = 3;</code>
@@ -103,9 +103,9 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    * <pre>
    * Full match.
    *
-   * - Dictionary: join of Dictionary results matched complete finding quote
-   * - Regex: all regex matches fill a finding quote start to end
-   * - Exclude info type: completely inside affecting info types findings
+   * - Dictionary: join of Dictionary results matched the complete finding quote
+   * - Regex: all regex matches fill a finding quote from start to end
+   * - Exclude infoType: completely inside affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_FULL_MATCH = 1;</code>
@@ -120,7 +120,7 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * - Dictionary: at least one of the tokens in the finding matches
    * - Regex: substring of the finding matches
-   * - Exclude info type: intersects with affecting info types findings
+   * - Exclude infoType: intersects with affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_PARTIAL_MATCH = 2;</code>
@@ -135,7 +135,7 @@ public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
    *
    * - Dictionary: no tokens in the finding match the dictionary
    * - Regex: finding doesn't match the regex
-   * - Exclude info type: no intersection with affecting info types findings
+   * - Exclude infoType: no intersection with affecting infoTypes findings
    * </pre>
    *
    * <code>MATCHING_TYPE_INVERSE_MATCH = 3;</code>

@@ -72,6 +72,9 @@
             },
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
+            },
+            "QueryData": {
+              "methods": ["queryData", "queryDataCallable"]
             }
           }
         }

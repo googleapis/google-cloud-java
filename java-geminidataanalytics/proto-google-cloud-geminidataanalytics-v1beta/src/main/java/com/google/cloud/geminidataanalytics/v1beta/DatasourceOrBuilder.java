@@ -155,6 +155,123 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   *
+   * @return Whether the alloyDbReference field is set.
+   */
+  boolean hasAlloyDbReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   *
+   * @return The alloyDbReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.AlloyDbReference getAlloyDbReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to an AlloyDB database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.AlloyDbReference alloy_db_reference = 12;</code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.AlloyDbReferenceOrBuilder
+      getAlloyDbReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   *
+   * @return Whether the spannerReference field is set.
+   */
+  boolean hasSpannerReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   *
+   * @return The spannerReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.SpannerReference getSpannerReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Spanner database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.SpannerReference spanner_reference = 13;</code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.SpannerReferenceOrBuilder
+      getSpannerReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   *
+   * @return Whether the cloudSqlReference field is set.
+   */
+  boolean hasCloudSqlReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   *
+   * @return The cloudSqlReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.CloudSqlReference getCloudSqlReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a CloudSQL database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.CloudSqlReference cloud_sql_reference = 14;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.CloudSqlReferenceOrBuilder
+      getCloudSqlReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The schema of the datasource.
    * </pre>
    *

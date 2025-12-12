@@ -18,7 +18,7 @@ package com.google.ads.admanager.v1.samples;
 
 // [START admanager_v1_generated_NetworkService_ListNetworks_sync]
 import com.google.ads.admanager.v1.ListNetworksRequest;
-import com.google.ads.admanager.v1.ListNetworksResponse;
+import com.google.ads.admanager.v1.Network;
 import com.google.ads.admanager.v1.NetworkServiceClient;
 
 public class SyncListNetworks {
@@ -34,8 +34,15 @@ public class SyncListNetworks {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
-      ListNetworksRequest request = ListNetworksRequest.newBuilder().build();
-      ListNetworksResponse response = networkServiceClient.listNetworks(request);
+      ListNetworksRequest request =
+          ListNetworksRequest.newBuilder()
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setSkip(3532159)
+              .build();
+      for (Network element : networkServiceClient.listNetworks(request).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

@@ -73,7 +73,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the CmsMetadataKey.
+   * Required. The resource name of the CmsMetadataValue.
    * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
    * </pre>
    *
@@ -100,7 +100,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the CmsMetadataKey.
+   * Required. The resource name of the CmsMetadataValue.
    * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
    * </pre>
    *
@@ -473,7 +473,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the CmsMetadataKey.
+     * Required. The resource name of the CmsMetadataValue.
      * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
      * </pre>
      *
@@ -499,7 +499,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the CmsMetadataKey.
+     * Required. The resource name of the CmsMetadataValue.
      * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
      * </pre>
      *
@@ -525,7 +525,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the CmsMetadataKey.
+     * Required. The resource name of the CmsMetadataValue.
      * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
      * </pre>
      *
@@ -550,7 +550,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the CmsMetadataKey.
+     * Required. The resource name of the CmsMetadataValue.
      * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
      * </pre>
      *
@@ -571,7 +571,7 @@ public final class GetCmsMetadataValueRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the CmsMetadataKey.
+     * Required. The resource name of the CmsMetadataValue.
      * Format: `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
      * </pre>
      *

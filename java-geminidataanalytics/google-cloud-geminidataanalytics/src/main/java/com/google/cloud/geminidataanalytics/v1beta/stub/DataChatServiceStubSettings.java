@@ -57,6 +57,8 @@ import com.google.cloud.geminidataanalytics.v1beta.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
+import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
 import com.google.cloud.geminidataanalytics.v1beta.StorageMessage;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -141,6 +143,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
   private final PagedCallSettings<
           ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
       listMessagesSettings;
+  private final UnaryCallSettings<QueryDataRequest, QueryDataResponse> queryDataSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -341,6 +344,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     return listMessagesSettings;
   }
 
+  /** Returns the object with the settings used for calls to queryData. */
+  public UnaryCallSettings<QueryDataRequest, QueryDataResponse> queryDataSettings() {
+    return queryDataSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -469,6 +477,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     listMessagesSettings = settingsBuilder.listMessagesSettings().build();
+    queryDataSettings = settingsBuilder.queryDataSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -489,6 +498,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
     private final PagedCallSettings.Builder<
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings;
+    private final UnaryCallSettings.Builder<QueryDataRequest, QueryDataResponse> queryDataSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -537,6 +547,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       listMessagesSettings = PagedCallSettings.newBuilder(LIST_MESSAGES_PAGE_STR_FACT);
+      queryDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -547,6 +558,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
+              queryDataSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -561,6 +573,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       listMessagesSettings = settings.listMessagesSettings.toBuilder();
+      queryDataSettings = settings.queryDataSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -571,6 +584,7 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
               getConversationSettings,
               listConversationsSettings,
               listMessagesSettings,
+              queryDataSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -627,6 +641,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
 
       builder
           .listMessagesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .queryDataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -693,6 +712,11 @@ public class DataChatServiceStubSettings extends StubSettings<DataChatServiceStu
             ListMessagesRequest, ListMessagesResponse, ListMessagesPagedResponse>
         listMessagesSettings() {
       return listMessagesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to queryData. */
+    public UnaryCallSettings.Builder<QueryDataRequest, QueryDataResponse> queryDataSettings() {
+      return queryDataSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

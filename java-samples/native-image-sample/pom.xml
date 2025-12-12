@@ -124,7 +124,7 @@
                     <plugin>
                         <groupId>org.graalvm.buildtools</groupId>
                         <artifactId>native-maven-plugin</artifactId>
-                        <version>0.10.1</version>
+                        <version>${native-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
                             <mainClass>com.google.cloud.example.NativeImageSecretManagerSample</mainClass>
