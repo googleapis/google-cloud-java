@@ -104,6 +104,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.apache.avro.Conversions;
 import org.apache.avro.LogicalTypes;
@@ -516,9 +517,10 @@ public class ITBigQueryStorageTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
 
     if (bigquery != null) {
@@ -1436,7 +1438,8 @@ public class ITBigQueryStorageTest {
   }
 
   @Test
-  public void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
+  public void testSimpleReadWithBackgroundExecutorProvider()
+      throws IOException, InterruptedException {
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder()
             .setBackgroundExecutorProvider(

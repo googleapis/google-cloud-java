@@ -32,6 +32,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -67,6 +68,7 @@ public class ReadRowsRetryTest {
   @After
   public void tearDown() throws Exception {
     client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   @Test

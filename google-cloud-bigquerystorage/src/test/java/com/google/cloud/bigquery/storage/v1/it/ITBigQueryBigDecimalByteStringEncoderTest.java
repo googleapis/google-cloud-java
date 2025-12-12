@@ -44,6 +44,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -91,9 +92,10 @@ public class ITBigQueryBigDecimalByteStringEncoderTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);

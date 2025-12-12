@@ -58,6 +58,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.After;
@@ -158,6 +159,9 @@ public class JsonStreamWriterTest {
   @After
   public void tearDown() throws Exception {
     serviceHelper.stop();
+
+    client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   private JsonStreamWriter.Builder getTestJsonStreamWriterBuilder(

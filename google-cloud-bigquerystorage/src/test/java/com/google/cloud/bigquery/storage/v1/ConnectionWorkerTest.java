@@ -47,6 +47,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.VarCharVector;
@@ -60,6 +61,7 @@ import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.arrow.vector.types.pojo.Schema;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -101,6 +103,14 @@ public class ConnectionWorkerTest {
                 .setCredentialsProvider(NoCredentialsProvider.create())
                 .setTransportChannelProvider(serviceHelper.createChannelProvider())
                 .build());
+  }
+
+  @After
+  public void cleanUp() throws InterruptedException {
+    serviceHelper.stop();
+
+    client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   @Test

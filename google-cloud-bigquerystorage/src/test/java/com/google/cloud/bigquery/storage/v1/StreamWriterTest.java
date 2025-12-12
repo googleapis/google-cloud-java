@@ -189,9 +189,11 @@ public class StreamWriterTest {
   @After
   public void tearDown() throws Exception {
     log.info("tearDown called");
-    client.close();
     serviceHelper.stop();
     StreamWriter.cleanUp();
+
+    client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   private StreamWriter getMultiplexingTestStreamWriter() throws IOException {
@@ -1996,6 +1998,9 @@ public class StreamWriterTest {
         ((GoogleCredentialsProvider) writerSettings2.getCredentialsProvider())
             .getScopesToApply()
             .size());
+
+    client.close();
+    client.awaitTermination(10, TimeUnit.SECONDS);
   }
 
   @Test

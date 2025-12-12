@@ -34,6 +34,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assume;
@@ -74,9 +75,10 @@ public class ITBigQueryStorageLongRunningTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
   }
 

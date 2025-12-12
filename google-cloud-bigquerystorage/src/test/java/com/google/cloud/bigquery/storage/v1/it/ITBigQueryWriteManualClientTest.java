@@ -216,9 +216,10 @@ public class ITBigQueryWriteManualClientTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
 
     if (bigquery != null) {

@@ -44,6 +44,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.AfterClass;
@@ -98,9 +99,10 @@ public class ITBigQueryTimeEncoderTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
