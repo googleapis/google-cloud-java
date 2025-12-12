@@ -1237,6 +1237,22 @@ libraries:
   - proto_path: google/apps/script/type/sheets
   - proto_path: google/apps/script/type/slides
 
+- api_shortname: hypercomputecluster
+  name_pretty: Cluster Director API
+  product_documentation: 
+    https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
+  api_description: simplifies cluster management across compute, network, and storage
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-hypercomputecluster
+  api_id: hypercomputecluster.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/hypercomputecluster/v1beta
+  requires_billing: true
 - api_shortname: iam
   name_pretty: IAM
   product_documentation: n/a
