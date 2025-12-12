@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingKeyServiceClient.ListCustomTargetingKeysPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.CustomTargetingKey;
 import com.google.ads.admanager.v1.GetCustomTargetingKeyRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingKeysResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingKeyRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -49,6 +59,44 @@ public abstract class CustomTargetingKeyServiceStub implements BackgroundResourc
   public UnaryCallable<ListCustomTargetingKeysRequest, ListCustomTargetingKeysResponse>
       listCustomTargetingKeysCallable() {
     throw new UnsupportedOperationException("Not implemented: listCustomTargetingKeysCallable()");
+  }
+
+  public UnaryCallable<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createCustomTargetingKeyCallable()");
+  }
+
+  public UnaryCallable<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateCustomTargetingKeysCallable()");
+  }
+
+  public UnaryCallable<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateCustomTargetingKeyCallable()");
+  }
+
+  public UnaryCallable<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchUpdateCustomTargetingKeysCallable()");
+  }
+
+  public UnaryCallable<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateCustomTargetingKeysCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateCustomTargetingKeysCallable()");
   }
 
   @Override

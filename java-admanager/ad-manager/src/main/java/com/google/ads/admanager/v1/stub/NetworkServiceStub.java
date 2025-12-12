@@ -16,6 +16,8 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
+
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
 import com.google.ads.admanager.v1.ListNetworksResponse;
@@ -35,6 +37,10 @@ public abstract class NetworkServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetNetworkRequest, Network> getNetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: getNetworkCallable()");
+  }
+
+  public UnaryCallable<ListNetworksRequest, ListNetworksPagedResponse> listNetworksPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listNetworksPagedCallable()");
   }
 
   public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
