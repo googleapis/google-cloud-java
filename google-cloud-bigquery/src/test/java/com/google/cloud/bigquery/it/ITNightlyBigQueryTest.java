@@ -63,7 +63,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.UUID;
-import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -183,7 +182,7 @@ public class ITNightlyBigQueryTest {
   }
 
   @AfterClass
-  public static void afterClass() throws ExecutionException, InterruptedException {
+  public static void afterClass() {
     try {
       if (bigquery != null) {
         deleteTable(DATASET, TABLE);
