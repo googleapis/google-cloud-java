@@ -54,6 +54,7 @@ import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.monitoring.v3.TypedValue;
+import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -281,11 +282,19 @@ class BigtableExporterUtils {
     metricBuilder.putLabels(CLIENT_UID_KEY.getKey(), taskId);
     builder.setMetric(metricBuilder.build());
 
+    MetricKind kind = convertMetricKind(metricData);
+
+    Timestamp endTimestamp = Timestamps.fromNanos(pointData.getEpochNanos());
+    Timestamp startTimestamp;
+
+    if (kind == GAUGE) {
+      // GAUGE metrics must have start_time equal to end_time.
+      startTimestamp = endTimestamp;
+    } else {
+      startTimestamp = Timestamps.fromNanos(pointData.getStartEpochNanos());
+    }
     TimeInterval timeInterval =
-        TimeInterval.newBuilder()
-            .setStartTime(Timestamps.fromNanos(pointData.getStartEpochNanos()))
-            .setEndTime(Timestamps.fromNanos(pointData.getEpochNanos()))
-            .build();
+        TimeInterval.newBuilder().setStartTime(startTimestamp).setEndTime(endTimestamp).build();
 
     builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval));
 
@@ -294,9 +303,10 @@ class BigtableExporterUtils {
 
   private static Optional<TimeSeries> createInternalMetricsTimeSeries(
       MetricData metricData, PointData pointData, MonitoredResource applicationResource) {
+    MetricKind kind = convertMetricKind(metricData);
     TimeSeries.Builder builder =
         TimeSeries.newBuilder()
-            .setMetricKind(convertMetricKind(metricData))
+            .setMetricKind(kind)
             .setValueType(convertValueType(metricData.getType()))
             .setResource(applicationResource);
 
@@ -318,11 +328,15 @@ class BigtableExporterUtils {
 
     builder.setMetric(metricBuilder.build());
 
+    Timestamp endTimestamp = Timestamps.fromNanos(pointData.getEpochNanos());
+    Timestamp startTimestamp;
+    if (kind == GAUGE) {
+      startTimestamp = endTimestamp;
+    } else {
+      startTimestamp = Timestamps.fromNanos(pointData.getStartEpochNanos());
+    }
     TimeInterval timeInterval =
-        TimeInterval.newBuilder()
-            .setStartTime(Timestamps.fromNanos(pointData.getStartEpochNanos()))
-            .setEndTime(Timestamps.fromNanos(pointData.getEpochNanos()))
-            .build();
+        TimeInterval.newBuilder().setStartTime(startTimestamp).setEndTime(endTimestamp).build();
 
     builder.addPoints(createPoint(metricData.getType(), pointData, timeInterval));
     return Optional.of(builder.build());
