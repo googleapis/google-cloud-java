@@ -1099,10 +1099,12 @@ public class ITBigQueryTest {
             .setContentType("application/json")
             .build(),
         JSON_CONTENT_SIMPLE.getBytes(StandardCharsets.UTF_8));
-    InputStream stream =
-        ITBigQueryTest.class.getClassLoader().getResourceAsStream("QueryTestData.csv");
-    storage.createFrom(
-        BlobInfo.newBuilder(BUCKET, LOAD_FILE_LARGE).setContentType("text/plain").build(), stream);
+    try (InputStream stream =
+        ITBigQueryTest.class.getClassLoader().getResourceAsStream("QueryTestData.csv")) {
+      storage.createFrom(
+          BlobInfo.newBuilder(BUCKET, LOAD_FILE_LARGE).setContentType("text/plain").build(),
+          stream);
+    }
     storage.create(
         BlobInfo.newBuilder(BUCKET, JSON_LOAD_FILE_BQ_RESULTSET)
             .setContentType("application/json")
@@ -1179,10 +1181,11 @@ public class ITBigQueryTest {
   }
 
   @AfterClass
-  public static void afterClass() throws ExecutionException, InterruptedException {
+  public static void afterClass() throws Exception {
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, UK_DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, OTHER_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, MODEL_DATASET);
       RemoteBigQueryHelper.forceDelete(bigquery, ROUTINE_DATASET);
     }
@@ -1191,6 +1194,11 @@ public class ITBigQueryTest {
       if (!wasDeleted && LOG.isLoggable(Level.WARNING)) {
         LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
+      storage.close();
+    }
+
+    if (otel instanceof OpenTelemetrySdk) {
+      ((OpenTelemetrySdk) otel).close();
     }
   }
 
