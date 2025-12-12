@@ -44,7 +44,6 @@ import com.google.cloud.bigquery.Acl.DatasetAclEntity;
 import com.google.cloud.bigquery.Acl.Expr;
 import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
@@ -1434,8 +1433,8 @@ public class ITBigQueryTest {
             datasetOption,
             updateModeOption);
     assertNotNull(updatedDataset);
-    assertEquals(updatedDataset.getDescription(), "Updated Description");
-    assertThat(updatedDataset.getLabels().isEmpty());
+    assertEquals("Updated Description", updatedDataset.getDescription());
+    assertTrue(updatedDataset.getLabels().isEmpty());
 
     Acl updatedAclWithCond = null;
     for (Acl updatedAcl : updatedDataset.getAcl()) {
@@ -1875,7 +1874,7 @@ public class ITBigQueryTest {
     DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
     Dataset dataset = bigquery.create(info, datasetOption);
     assertNotNull(dataset);
-    assertEquals(dataset.getDescription(), DESCRIPTION);
+    assertEquals(DESCRIPTION, dataset.getDescription());
 
     Acl remoteAclWithCond = null;
     for (Acl remoteAcl : dataset.getAcl()) {
@@ -1981,7 +1980,7 @@ public class ITBigQueryTest {
     Schema remoteSchema = remoteTable.<StandardTableDefinition>getDefinition().getSchema();
     // Schema should be equal because collation has been added to the fields.
     assertEquals(schema, remoteSchema);
-    assertEquals(null, remoteTable.getDefaultCollation());
+    assertNull(remoteTable.getDefaultCollation());
     FieldList fieldList = remoteSchema.getFields();
     for (Field field : fieldList) {
       if (field.getName().equals("stringFieldWithoutDefaultCollation")) {
@@ -2425,7 +2424,7 @@ public class ITBigQueryTest {
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(integerValue, integerCell.getLongValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       integerValue = ~integerValue & 0x1;
       rowCount++;
     }
@@ -2531,7 +2530,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
@@ -3065,13 +3064,13 @@ public class ITBigQueryTest {
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(0, integerArrayCell.getRepeatedValue().get(0).getLongValue());
       assertEquals(1, integerArrayCell.getRepeatedValue().get(1).getLongValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       assertArrayEquals(BYTES, bytesCell.getBytesValue());
       assertEquals(-14182916000000L, recordCell.getRecordValue().get(0).getTimestampValue());
       assertTrue(recordCell.getRecordValue().get(1).isNull());
       assertEquals(1, recordCell.getRecordValue().get(2).getRepeatedValue().get(0).getLongValue());
       assertEquals(0, recordCell.getRecordValue().get(2).getRepeatedValue().get(1).getLongValue());
-      assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
+      assertTrue(recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
       assertEquals("POINT(-122.35022 47.649154)", geographyCell.getStringValue());
@@ -3132,21 +3131,21 @@ public class ITBigQueryTest {
     ModelId modelId = ModelId.of(MODEL_DATASET, modelName);
     Model model = bigquery.getModel(modelId);
     assertNotNull(model);
-    assertEquals(model.getModelType(), "LINEAR_REGRESSION");
+    assertEquals("LINEAR_REGRESSION", model.getModelType());
     // Compare the extended model metadata.
-    assertEquals(model.getFeatureColumns().get(0).getName(), "f1");
-    assertEquals(model.getLabelColumns().get(0).getName(), "predicted_label");
+    assertEquals("f1", model.getFeatureColumns().get(0).getName());
+    assertEquals("predicted_label", model.getLabelColumns().get(0).getName());
     assertEquals(
-        model.getTrainingRuns().get(0).getTrainingOptions().getLearnRateStrategy(), "CONSTANT");
+        "CONSTANT", model.getTrainingRuns().get(0).getTrainingOptions().getLearnRateStrategy());
 
     // Mutate metadata.
     ModelInfo info = model.toBuilder().setDescription("TEST").build();
     Model afterUpdate = bigquery.update(info);
-    assertEquals(afterUpdate.getDescription(), "TEST");
+    assertEquals("TEST", afterUpdate.getDescription());
 
     // Ensure model is present in listModels.
     Page<Model> models = bigquery.listModels(MODEL_DATASET);
-    Boolean found = false;
+    boolean found = false;
     for (Model m : models.getValues()) {
       if (m.getModelId().getModel().equals(modelName)) {
         found = true;
@@ -3167,7 +3166,7 @@ public class ITBigQueryTest {
     assertEquals(0, Iterables.size(models.getValues()));
     assertFalse(models.hasNextPage());
     assertNull(models.getNextPageToken());
-    assertTrue(bigquery.delete(datasetId));
+    RemoteBigQueryHelper.forceDelete(bigquery, datasetId);
   }
 
   @Test
@@ -3179,7 +3178,7 @@ public class ITBigQueryTest {
     assertEquals(0, Iterables.size(routines.getValues()));
     assertFalse(routines.hasNextPage());
     assertNull(routines.getNextPageToken());
-    assertTrue(bigquery.delete(datasetId));
+    RemoteBigQueryHelper.forceDelete(bigquery, datasetId);
   }
 
   @Test
@@ -3197,7 +3196,7 @@ public class ITBigQueryTest {
     RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
     Routine routine = bigquery.getRoutine(routineId);
     assertNotNull(routine);
-    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    assertEquals("SCALAR_FUNCTION", routine.getRoutineType());
 
     // Mutate metadata.
     RoutineInfo newInfo =
@@ -3208,11 +3207,11 @@ public class ITBigQueryTest {
             .setRoutineType(routine.getRoutineType())
             .build();
     Routine afterUpdate = bigquery.update(newInfo);
-    assertEquals(afterUpdate.getBody(), "x * 4");
+    assertEquals("x * 4", afterUpdate.getBody());
 
     // Ensure routine is present in listRoutines.
     Page<Routine> routines = bigquery.listRoutines(ROUTINE_DATASET);
-    Boolean found = false;
+    boolean found = false;
     for (Routine r : routines.getValues()) {
       if (r.getRoutineId().getRoutine().equals(routineName)) {
         found = true;
@@ -3244,7 +3243,7 @@ public class ITBigQueryTest {
 
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
-    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    assertEquals("SCALAR_FUNCTION", routine.getRoutineType());
   }
 
   @Test
@@ -3269,10 +3268,10 @@ public class ITBigQueryTest {
 
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
-    assertEquals(routine.getLanguage(), "JAVASCRIPT");
-    assertEquals(routine.getDeterminismLevel(), "DETERMINISTIC");
-    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
-    assertEquals(routine.getReturnType(), StandardSQLDataType.newBuilder("STRING").build());
+    assertEquals("JAVASCRIPT", routine.getLanguage());
+    assertEquals("DETERMINISTIC", routine.getDeterminismLevel());
+    assertEquals("SCALAR_FUNCTION", routine.getRoutineType());
+    assertEquals(StandardSQLDataType.newBuilder("STRING").build(), routine.getReturnType());
   }
 
   @Test
@@ -3299,8 +3298,8 @@ public class ITBigQueryTest {
             .build();
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
-    assertEquals(routine.getRoutineType(), "TABLE_VALUED_FUNCTION");
-    assertEquals(routine.getReturnTableType(), returnTableType);
+    assertEquals("TABLE_VALUED_FUNCTION", routine.getRoutineType());
+    assertEquals(returnTableType, routine.getReturnTableType());
   }
 
   @Test
@@ -3324,10 +3323,10 @@ public class ITBigQueryTest {
 
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
-    assertEquals(routine.getLanguage(), "SQL");
-    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
-    assertEquals(routine.getReturnType(), StandardSQLDataType.newBuilder("INT64").build());
-    assertEquals(routine.getDataGovernanceType(), "DATA_MASKING");
+    assertEquals("SQL", routine.getLanguage());
+    assertEquals("SCALAR_FUNCTION", routine.getRoutineType());
+    assertEquals(StandardSQLDataType.newBuilder("INT64").build(), routine.getReturnType());
+    assertEquals("DATA_MASKING", routine.getDataGovernanceType());
   }
 
   @Test
@@ -3348,7 +3347,7 @@ public class ITBigQueryTest {
             .build();
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
-    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    assertEquals("SCALAR_FUNCTION", routine.getRoutineType());
     Dataset routineDataset = bigquery.getDataset(ROUTINE_DATASET);
     List<Acl> routineAcl = new ArrayList<>(routineDataset.getAcl());
     routineAcl.add(Acl.of(new Acl.Routine(routineId)));
@@ -3370,7 +3369,7 @@ public class ITBigQueryTest {
         DatasetInfo.newBuilder(datasetId).setAcl(acl).setDescription("shared Dataset").build();
     Dataset sharedDataset = bigquery.create(datasetInfo);
     assertNotNull(sharedDataset);
-    assertEquals(sharedDataset.getDescription(), "shared Dataset");
+    assertEquals("shared Dataset", sharedDataset.getDescription());
     // Get the current metadata for the dataset you want to share by calling the datasets.get method
     List<Acl> sharedDatasetAcl = new ArrayList<>(sharedDataset.getAcl());
 
@@ -3384,7 +3383,7 @@ public class ITBigQueryTest {
     Dataset authorizedDataset = bigquery.create(authorizedDatasetInfo);
     assertNotNull(authorizedDataset);
     assertEquals(
-        authorizedDataset.getDescription(), "new Dataset to be authorized by the sharedDataset");
+        "new Dataset to be authorized by the sharedDataset", authorizedDataset.getDescription());
 
     // Add the new DatasetAccessEntry object to the existing sharedDatasetAcl list
     DatasetAclEntity datasetEntity = new DatasetAclEntity(authorizedDatasetId, targetTypes);
@@ -3395,6 +3394,9 @@ public class ITBigQueryTest {
 
     // Verify that the authorized dataset has been added
     assertEquals(sharedDatasetAcl, updatedDataset.getAcl());
+
+    RemoteBigQueryHelper.forceDelete(bigquery, datasetName);
+    RemoteBigQueryHelper.forceDelete(bigquery, authorizedDatasetName);
   }
 
   /* TODO(prasmish): replicate the entire test case for executeSelect */
@@ -3514,7 +3516,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
@@ -3945,14 +3947,14 @@ public class ITBigQueryTest {
     assertTrue(rs.next()); // first row
     // checking for the null or 0 column values
     assertNull(rs.getString("StringField"));
-    assertTrue(rs.getDouble("BigNumericField") == 0.0d);
+    assertEquals(0.0d, rs.getDouble("BigNumericField"), 1e-9);
     assertFalse(rs.getBoolean("BooleanField"));
     assertNull(rs.getBytes("BytesField"));
-    assertEquals(rs.getInt("IntegerField"), 0);
+    assertEquals(0, rs.getInt("IntegerField"));
     assertNull(rs.getTimestamp("TimestampField"));
     assertNull(rs.getDate("DateField"));
-    assertTrue(rs.getDouble("FloatField") == 0.0d);
-    assertTrue(rs.getDouble("NumericField") == 0.0d);
+    assertEquals(0.0d, rs.getDouble("FloatField"), 1e-9);
+    assertEquals(0.0d, rs.getDouble("NumericField"), 1e-9);
     assertNull(rs.getTime("TimeField"));
     assertNull(rs.getString("DateTimeField"));
     assertNull(rs.getString("GeographyField"));
@@ -3962,14 +3964,14 @@ public class ITBigQueryTest {
     assertTrue(rs.next()); // second row
     // second row is non null, comparing the values
     assertEquals("StringValue1", rs.getString("StringField"));
-    assertTrue(rs.getDouble("BigNumericField") == 0.3333333333333333d);
+    assertEquals(0.3333333333333333d, rs.getDouble("BigNumericField"), 1e-9);
     assertFalse(rs.getBoolean("BooleanField"));
     assertNotNull(rs.getBytes("BytesField"));
     assertEquals(1, rs.getInt("IntegerField"));
     assertEquals(1534680695123L, rs.getTimestamp("TimestampField").getTime());
     assertEquals(java.sql.Date.valueOf("2018-08-19"), rs.getDate("DateField"));
-    assertTrue(rs.getDouble("FloatField") == 10.1d);
-    assertTrue(rs.getDouble("NumericField") == 100.0d);
+    assertEquals(10.1d, rs.getDouble("FloatField"), 1e-9);
+    assertEquals(100.0d, rs.getDouble("NumericField"), 1e-9);
     assertEquals(Time.valueOf(LocalTime.of(12, 11, 35, 123456)), rs.getTime("TimeField"));
     assertEquals("2018-08-19T12:11:35.123456", rs.getString("DateTimeField"));
     assertEquals("POINT(-122.35022 47.649154)", rs.getString("GeographyField"));
@@ -4015,14 +4017,14 @@ public class ITBigQueryTest {
     assertTrue(rs.next()); // first row
     // checking for the null or 0 column values
     assertNull(rs.getString("StringField"));
-    assertTrue(rs.getDouble("BigNumericField") == 0.0d);
+    assertEquals(0.0d, rs.getDouble("BigNumericField"), 1e-9);
     assertFalse(rs.getBoolean("BooleanField"));
     assertNull(rs.getBytes("BytesField"));
-    assertEquals(rs.getInt("IntegerField"), 0);
+    assertEquals(0, rs.getInt("IntegerField"));
     assertNull(rs.getTimestamp("TimestampField"));
     assertNull(rs.getDate("DateField"));
-    assertTrue(rs.getDouble("FloatField") == 0.0d);
-    assertTrue(rs.getDouble("NumericField") == 0.0d);
+    assertEquals(0.0d, rs.getDouble("FloatField"), 1e-9);
+    assertEquals(0.0d, rs.getDouble("NumericField"), 1e-9);
     assertNull(rs.getTime("TimeField"));
     assertNull(rs.getString("DateTimeField"));
     assertNull(rs.getString("GeographyField"));
@@ -4032,14 +4034,14 @@ public class ITBigQueryTest {
     assertTrue(rs.next()); // second row
     // second row is non null, comparing the values
     assertEquals("StringValue1", rs.getString("StringField"));
-    assertTrue(rs.getDouble("BigNumericField") == 0.3333333333333333d);
+    assertEquals(0.3333333333333333d, rs.getDouble("BigNumericField"), 1e-9);
     assertFalse(rs.getBoolean("BooleanField"));
     assertNotNull(rs.getBytes("BytesField"));
     assertEquals(1, rs.getInt("IntegerField"));
     assertEquals(1534680695123L, rs.getTimestamp("TimestampField").getTime());
     assertEquals(java.sql.Date.valueOf("2018-08-19"), rs.getDate("DateField"));
-    assertTrue(rs.getDouble("FloatField") == 10.1d);
-    assertTrue(rs.getDouble("NumericField") == 100.0d);
+    assertEquals(10.1d, rs.getDouble("FloatField"), 1e-9);
+    assertEquals(100.0d, rs.getDouble("NumericField"), 1e-9);
     assertEquals(
         Time.valueOf(LocalTime.of(12, 11, 35, 123456)).toString(),
         rs.getTime("TimeField").toString());
@@ -4364,7 +4366,7 @@ public class ITBigQueryTest {
     assertEquals(2, bigQueryResult.getTotalRows()); // Expecting 2 rows
     while (rs.next()) {
       assertEquals(rs.getString(0), rs.getString("StringField"));
-      assertTrue(rs.getDouble(1) == rs.getDouble("BigNumericField"));
+      assertEquals(rs.getDouble(1), rs.getDouble("BigNumericField"), 1e-9);
       assertEquals(rs.getBoolean(2), rs.getBoolean("BooleanField"));
       if (rs.getBytes(3) == null) { // both overloads should be null
         assertEquals(rs.getBytes(3), rs.getBytes("BytesField"));
@@ -4376,8 +4378,8 @@ public class ITBigQueryTest {
       assertEquals(rs.getInt(4), rs.getInt("IntegerField"));
       assertEquals(rs.getTimestamp(5), rs.getTimestamp("TimestampField"));
       assertEquals(rs.getDate(9), rs.getDate("DateField"));
-      assertTrue(rs.getDouble("FloatField") == rs.getDouble(6));
-      assertTrue(rs.getDouble("NumericField") == rs.getDouble(7));
+      assertEquals(rs.getDouble("FloatField"), rs.getDouble(6), 1e-9);
+      assertEquals(rs.getDouble("NumericField"), rs.getDouble(7), 1e-9);
       assertEquals(rs.getTime(8), rs.getTime("TimeField"));
       assertEquals(rs.getString(10), rs.getString("DateTimeField"));
       assertEquals(rs.getString(11), rs.getString("GeographyField"));
@@ -4638,7 +4640,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
     }
   }
 
@@ -4808,7 +4810,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
     }
   }
 
@@ -5249,7 +5251,7 @@ public class ITBigQueryTest {
           (long) Double.parseDouble("1.40845209522E9"),
           (long) Double.parseDouble(values.get(0).getValue().toString()));
       assertEquals("stringValue", values.get(1).getValue());
-      assertEquals(false, values.get(2).getBooleanValue());
+      assertFalse(values.get(2).getBooleanValue());
       assertEquals("0.33333333333333333333333333333333333333", values.get(3).getValue());
       assertEquals("0.00000000000000000000000000000000000001", values.get(4).getValue());
       assertEquals("-100000000000000000000000000000000000000", values.get(5).getValue());
@@ -5579,15 +5581,15 @@ public class ITBigQueryTest {
     assertEquals(2, Iterables.size(result.getValues()));
     for (FieldValueList values : result.iterateAll()) {
       for (FieldValue value : values) {
-        assertEquals(null, value.getRecordValue().get("StringField").getValue());
-        assertEquals(true, value.getRecordValue().get("BooleanField").getBooleanValue());
+        assertNull(value.getRecordValue().get("StringField").getValue());
+        assertTrue(value.getRecordValue().get("BooleanField").getBooleanValue());
       }
     }
   }
 
   private static void assertsFieldValue(FieldValue record) {
     assertEquals(FieldValue.Attribute.RECORD, record.getAttribute());
-    assertEquals(true, record.getRecordValue().get("booleanField").getBooleanValue());
+    assertTrue(record.getRecordValue().get("booleanField").getBooleanValue());
     assertEquals(10, record.getRecordValue().get("integerField").getLongValue());
     assertEquals("test-stringField", record.getRecordValue().get("stringField").getStringValue());
   }
@@ -5622,12 +5624,12 @@ public class ITBigQueryTest {
     for (FieldValueList values : result.iterateAll()) {
       for (FieldValue value : values) {
         assertEquals(Attribute.RECORD, value.getAttribute());
-        assertEquals(true, value.getRecordValue().get(0).getRecordValue().get(0).getBooleanValue());
+        assertTrue(value.getRecordValue().get(0).getRecordValue().get(0).getBooleanValue());
         assertEquals(10, value.getRecordValue().get(0).getRecordValue().get(1).getLongValue());
         assertEquals(
             "test-stringField",
             value.getRecordValue().get(0).getRecordValue().get(2).getStringValue());
-        assertEquals(true, value.getRecordValue().get(1).getBooleanValue());
+        assertTrue(value.getRecordValue().get(1).getBooleanValue());
         assertEquals("test-stringField", value.getRecordValue().get(2).getStringValue());
         assertEquals(10, value.getRecordValue().get(3).getLongValue());
       }
@@ -5674,7 +5676,7 @@ public class ITBigQueryTest {
     int rowCount = 0;
     for (FieldValueList row : result.getValues()) {
       rowCount++;
-      assertEquals(true, row.get(0).getBooleanValue());
+      assertTrue(row.get(0).getBooleanValue());
     }
     assertEquals(1, rowCount);
   }
@@ -5938,7 +5940,6 @@ public class ITBigQueryTest {
     assertNotNull(snapshotTable);
     assertEquals(snapshotTableId.getDataset(), snapshotTable.getTableId().getDataset());
     assertEquals(snapshotTableName, snapshotTable.getTableId().getTable());
-    System.out.println(snapshotTable.getDefinition());
     assertTrue(snapshotTable.getDefinition() instanceof SnapshotTableDefinition);
     assertEquals(DDL_TABLE_SCHEMA, snapshotTable.getDefinition().getSchema());
     assertNotNull(((SnapshotTableDefinition) snapshotTable.getDefinition()).getSnapshotTime());
@@ -6034,7 +6035,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       rowCount++;
     }
     assertEquals(2, rowCount);
@@ -6042,12 +6043,12 @@ public class ITBigQueryTest {
     Job queryJob = bigquery.getJob(remoteJob.getJobId());
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
     if (statistics.getBiEngineStats() != null) {
-      assertEquals(statistics.getBiEngineStats().getBiEngineMode(), "DISABLED");
+      assertEquals("DISABLED", statistics.getBiEngineStats().getBiEngineMode());
       assertEquals(
-          statistics.getBiEngineStats().getBiEngineReasons().get(0).getCode(), "OTHER_REASON");
+          "OTHER_REASON", statistics.getBiEngineStats().getBiEngineReasons().get(0).getCode());
       assertEquals(
-          statistics.getBiEngineStats().getBiEngineReasons().get(0).getMessage(),
-          "Only SELECT queries without a destination table can be accelerated.");
+          "Only SELECT queries without a destination table can be accelerated.",
+          statistics.getBiEngineStats().getBiEngineReasons().get(0).getMessage());
     }
     assertNotNull(statistics.getQueryPlan());
   }
@@ -6115,11 +6116,11 @@ public class ITBigQueryTest {
       assertNull(remoteJob.getStatus().getError());
       JobStatistics.QueryStatistics stats = remoteJob.getStatistics();
       assertNotNull(stats.getSearchStats());
-      assertEquals(stats.getSearchStats().getIndexUsageMode(), "UNUSED");
+      assertEquals("UNUSED", stats.getSearchStats().getIndexUsageMode());
       assertNotNull(stats.getSearchStats().getIndexUnusedReasons());
-      assertNotNull(
-          stats.getSearchStats().getIndexUnusedReasons().get(0).getCode(),
-          "INDEX_CONFIG_NOT_AVAILABLE");
+      assertEquals(
+          "INDEX_CONFIG_NOT_AVAILABLE",
+          stats.getSearchStats().getIndexUnusedReasons().get(0).getCode());
     } finally {
       bigquery.delete(destinationTable);
     }
@@ -6196,8 +6197,8 @@ public class ITBigQueryTest {
       Table remoteTable = bigquery.getTable(DATASET, tableName);
       assertNotNull(remoteTable);
       assertEquals(
-          remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString(),
-          "BIGNUMERIC");
+          "BIGNUMERIC",
+          remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString());
     } finally {
       bigquery.delete(destinationTable);
     }
@@ -6218,8 +6219,8 @@ public class ITBigQueryTest {
     Table remoteTable = bigquery.getTable(DATASET, tableName);
     assertNotNull(remoteTable);
     assertEquals(
-        remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString(),
-        "BIGNUMERIC");
+        "BIGNUMERIC",
+        remoteTable.getDefinition().getSchema().getFields().get(0).getType().toString());
     assertTrue(remoteTable.delete());
   }
 
@@ -6422,13 +6423,13 @@ public class ITBigQueryTest {
       assertEquals("stringValue", stringCell.getStringValue());
       assertEquals(0, integerArrayCell.getRepeatedValue().get(0).getLongValue());
       assertEquals(1, integerArrayCell.getRepeatedValue().get(1).getLongValue());
-      assertEquals(false, booleanCell.getBooleanValue());
+      assertFalse(booleanCell.getBooleanValue());
       assertArrayEquals(BYTES, bytesCell.getBytesValue());
       assertEquals(-14182916000000L, recordCell.getRecordValue().get(0).getTimestampValue());
       assertTrue(recordCell.getRecordValue().get(1).isNull());
       assertEquals(1, recordCell.getRecordValue().get(2).getRepeatedValue().get(0).getLongValue());
       assertEquals(0, recordCell.getRecordValue().get(2).getRepeatedValue().get(1).getLongValue());
-      assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
+      assertTrue(recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
       assertEquals("POINT(-122.35022 47.649154)", geographyCell.getStringValue());
@@ -6507,23 +6508,21 @@ public class ITBigQueryTest {
     assertThat(location).isNotEqualTo(wrongLocation);
 
     Tracer tracer = otel.getTracer("Test Tracer");
-    bigquery =
+    BigQuery otelBigquery =
         bigquery.getOptions().toBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
             .build()
             .getService();
 
+    String datasetName = "locationset_" + UUID.randomUUID().toString().replace("-", "_");
     Dataset dataset =
-        bigquery.create(
-            DatasetInfo.newBuilder("locationset_" + UUID.randomUUID().toString().replace("-", "_"))
-                .setLocation(location)
-                .build());
+        otelBigquery.create(DatasetInfo.newBuilder(datasetName).setLocation(location).build());
     try {
       TableId tableId = TableId.of(dataset.getDatasetId().getDataset(), "sometable");
       Schema schema = Schema.of(Field.of("name", LegacySQLTypeName.STRING));
       TableDefinition tableDef = StandardTableDefinition.of(schema);
-      Table table = bigquery.create(TableInfo.newBuilder(tableId, tableDef).build());
+      Table table = otelBigquery.create(TableInfo.newBuilder(tableId, tableDef).build());
 
       String query =
           String.format(
@@ -6535,7 +6534,7 @@ public class ITBigQueryTest {
       // Test create/get
       {
         Job job =
-            bigquery.create(
+            otelBigquery.create(
                 JobInfo.of(
                     JobId.newBuilder().setLocation(location).build(),
                     QueryJobConfiguration.of(query)));
@@ -6548,20 +6547,20 @@ public class ITBigQueryTest {
         JobId wrongId = jobId.toBuilder().setLocation(wrongLocation).build();
 
         // Getting with location should work.
-        assertThat(bigquery.getJob(jobId)).isNotNull();
+        assertThat(otelBigquery.getJob(jobId)).isNotNull();
         // Getting with wrong location shouldn't work.
-        assertThat(bigquery.getJob(wrongId)).isNull();
+        assertThat(otelBigquery.getJob(wrongId)).isNull();
 
         // Cancelling with location should work. (Cancelling already finished job is fine.)
-        assertThat(bigquery.cancel(jobId)).isTrue();
+        assertThat(otelBigquery.cancel(jobId)).isTrue();
         // Cancelling with wrong location shouldn't work.
-        assertThat(bigquery.cancel(wrongId)).isFalse();
+        assertThat(otelBigquery.cancel(wrongId)).isFalse();
       }
 
       // Test query
       {
         assertThat(
-                bigquery
+                otelBigquery
                     .query(
                         QueryJobConfiguration.of(query),
                         JobId.newBuilder().setLocation(location).build())
@@ -6569,7 +6568,7 @@ public class ITBigQueryTest {
             .isEmpty();
 
         try {
-          bigquery
+          otelBigquery
               .query(
                   QueryJobConfiguration.of(query),
                   JobId.newBuilder().setLocation(wrongLocation).build())
@@ -6587,7 +6586,7 @@ public class ITBigQueryTest {
                 .setFormatOptions(FormatOptions.csv())
                 .build();
         try (TableDataWriteChannel writer =
-            bigquery.writer(
+            otelBigquery.writer(
                 JobId.newBuilder().setLocation(location).build(), writeChannelConfiguration)) {
           writer.write(ByteBuffer.wrap("foo".getBytes()));
           assertEquals(
@@ -6597,22 +6596,16 @@ public class ITBigQueryTest {
               location);
         }
 
-        try {
-          bigquery.writer(
-              JobId.newBuilder().setLocation(wrongLocation).build(), writeChannelConfiguration);
+        try (TableDataWriteChannel ignore =
+            otelBigquery.writer(
+                JobId.newBuilder().setLocation(wrongLocation).build(), writeChannelConfiguration)) {
           fail("writing to a table with wrong location shouldn't work");
         } catch (BigQueryException e) {
           // Nothing to do
         }
       }
     } finally {
-      bigquery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
-      bigquery =
-          bigquery.getOptions().toBuilder()
-              .setEnableOpenTelemetryTracing(false)
-              .setOpenTelemetryTracer(null)
-              .build()
-              .getService();
+      RemoteBigQueryHelper.forceDelete(bigquery, datasetName);
     }
   }
 
@@ -6708,7 +6701,7 @@ public class ITBigQueryTest {
       Job job = bigquery.create(JobInfo.of(loadJobConfiguration));
       // Blocks until this load table job completes its execution, either failing or succeeding.
       job = job.waitFor();
-      assertEquals(true, job.isDone());
+      assertTrue(job.isDone());
 
       LoadJobConfiguration actualLoadJobConfiguration = job.getConfiguration();
       Table generatedTable = bigquery.getTable(actualLoadJobConfiguration.getDestinationTable());
@@ -6716,7 +6709,7 @@ public class ITBigQueryTest {
       assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
       // clean up after test to avoid conflict with other tests
       boolean success = bigquery.delete(tableId);
-      assertEquals(true, success);
+      assertTrue(success);
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Column not added during load append \n" + e.toString());
     }
@@ -6768,14 +6761,14 @@ public class ITBigQueryTest {
       Job job = bigquery.create(JobInfo.of(loadJobConfiguration));
       // Blocks until this load table job completes its execution, either failing or succeeding.
       job = job.waitFor();
-      assertEquals(true, job.isDone());
+      assertTrue(job.isDone());
       LoadJobConfiguration actualLoadJobConfiguration = job.getConfiguration();
       Table generatedTable = bigquery.getTable(actualLoadJobConfiguration.getDestinationTable());
 
       assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
       // clean up after test to avoid conflict with other tests
       boolean success = bigquery.delete(tableId);
-      assertEquals(true, success);
+      assertTrue(success);
     } catch (BigQueryException | InterruptedException e) {
       System.out.println("Column not added during load append \n" + e.toString());
     }
@@ -6818,7 +6811,7 @@ public class ITBigQueryTest {
     assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
     // clean up after test to avoid conflict with other tests
     boolean success = bigquery.delete(tableId);
-    assertEquals(true, success);
+    assertTrue(success);
   }
 
   @Test
@@ -6859,15 +6852,14 @@ public class ITBigQueryTest {
     Table generatedTable = bigquery.getTable(createdTable.getTableId());
     assertEquals(expectedSchema, generatedTable.getDefinition().getSchema());
     // clean up after test to avoid conflict with other tests
-    boolean success = bigquery.delete(tableId);
-    assertEquals(true, success);
+    assertTrue(bigquery.delete(tableId));
   }
 
   @Test
   public void testCloneTableCopyJob() throws InterruptedException {
     String sourceTableName = "test_copy_job_base_table";
     String ddlTableName = TABLE_ID_DDL.getTable();
-    String cloneTableName = String.format("test_clone_table");
+    String cloneTableName = "test_clone_table";
     // Create source table with some data in it
     String ddlQuery =
         String.format(
@@ -7277,11 +7269,9 @@ public class ITBigQueryTest {
     BigQuery bigQuery =
         bigqueryHelper.getOptions().toBuilder().setLocation(location).build().getService();
 
+    String datasetName = "locationset_" + UUID.randomUUID().toString().replace("-", "_");
     Dataset dataset =
-        bigQuery.create(
-            DatasetInfo.newBuilder("locationset_" + UUID.randomUUID().toString().replace("-", "_"))
-                .setLocation(location)
-                .build());
+        bigQuery.create(DatasetInfo.newBuilder(datasetName).setLocation(location).build());
     try {
       TableId tableId = TableId.of(dataset.getDatasetId().getDataset(), "sometable");
       Schema schema = Schema.of(Field.of("name", LegacySQLTypeName.STRING));
@@ -7313,7 +7303,7 @@ public class ITBigQueryTest {
         // Nothing to do
       }
     } finally {
-      bigQuery.delete(dataset.getDatasetId(), DatasetDeleteOption.deleteContents());
+      RemoteBigQueryHelper.forceDelete(bigQuery, datasetName);
     }
   }
 
@@ -7376,7 +7366,7 @@ public class ITBigQueryTest {
       bigQuery.listDatasets("bigquery-public-data");
       fail("RPCs to invalid universe domain should fail");
     } catch (BigQueryException e) {
-      assertEquals(e.getCode(), HTTP_UNAUTHORIZED);
+      assertEquals(HTTP_UNAUTHORIZED, e.getCode());
       assertNotNull(e.getMessage());
       assertThat(
               (e.getMessage()
@@ -7399,7 +7389,7 @@ public class ITBigQueryTest {
       bigQuery.listDatasets("bigquery-public-data");
       fail("RPCs to invalid universe domain should fail");
     } catch (BigQueryException e) {
-      assertEquals(e.getCode(), HTTP_UNAUTHORIZED);
+      assertEquals(HTTP_UNAUTHORIZED, e.getCode());
       assertNotNull(e.getMessage());
       assertThat(
               (e.getMessage()
@@ -7693,49 +7683,50 @@ public class ITBigQueryTest {
               .build();
 
       dataset = bigquery.update(updatedInfo, DatasetOption.accessPolicyVersion(2));
-      assertEquals(dataset.getDescription(), "Updated Description");
+      assertEquals("Updated Description", dataset.getDescription());
       assertTrue(bigquery.delete(dataset.getDatasetId()));
     } finally {
       parentSpan.end();
       Map<AttributeKey<?>, Object> createMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createDataset");
-      assertEquals(createMap.get(AttributeKey.stringKey("bq.dataset.location")), "null");
+      assertEquals("null", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
       assertEquals(
+          "DatasetService",
           OTEL_ATTRIBUTES
               .get("com.google.cloud.bigquery.BigQueryRpc.createDataset")
-              .get(AttributeKey.stringKey("bq.rpc.service")),
-          "DatasetService");
+              .get(AttributeKey.stringKey("bq.rpc.service")));
 
       Map<AttributeKey<?>, Object> getMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.getDataset");
-      assertEquals(getMap.get(AttributeKey.stringKey("bq.dataset.id")), billingModelDataset);
+      assertEquals(billingModelDataset, getMap.get(AttributeKey.stringKey("bq.dataset.id")));
 
       Map<AttributeKey<?>, Object> updateMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.updateDataset");
-      assertEquals(updateMap.get(AttributeKey.stringKey("bq.option.ACCESS_POLICY_VERSION")), "2");
+      assertEquals("2", updateMap.get(AttributeKey.stringKey("bq.option.ACCESS_POLICY_VERSION")));
 
       Map<AttributeKey<?>, Object> deleteMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.deleteDataset");
-      assertEquals(deleteMap.get(AttributeKey.stringKey("bq.dataset.id")), billingModelDataset);
+      assertEquals(billingModelDataset, deleteMap.get(AttributeKey.stringKey("bq.dataset.id")));
 
       // All should be children spans of parentSpan
+      String testParentSpanName = "Test Parent Span";
       assertEquals(
+          testParentSpanName,
           OTEL_SPAN_IDS_TO_NAMES.get(
-              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.getDataset")),
-          "Test Parent Span");
+              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.getDataset")));
       assertEquals(
+          testParentSpanName,
           OTEL_SPAN_IDS_TO_NAMES.get(
-              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.createDataset")),
-          "Test Parent Span");
+              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.createDataset")));
       assertEquals(
+          testParentSpanName,
           OTEL_SPAN_IDS_TO_NAMES.get(
-              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.deleteDataset")),
-          "Test Parent Span");
+              OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.deleteDataset")));
       assertEquals(
           OTEL_SPAN_IDS_TO_NAMES.get(
               OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQueryRpc.createDataset")),
           "com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries");
-      assertEquals(OTEL_PARENT_SPAN_IDS.get("Test Parent Span"), OTEL_PARENT_SPAN_ID);
+      assertEquals(OTEL_PARENT_SPAN_ID, OTEL_PARENT_SPAN_IDS.get(testParentSpanName));
       RemoteBigQueryHelper.forceDelete(bigquery, billingModelDataset);
     }
   }
@@ -7757,26 +7748,26 @@ public class ITBigQueryTest {
             .setDescription("Some Description")
             .build();
     Table createdTable = bigquery.create(tableInfo);
-    assertThat(createdTable.getDescription()).isEqualTo("Some Description");
+    assertEquals("Some Description", createdTable.getDescription());
 
     assertEquals(
-        OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.createTable"),
-        OTEL_PARENT_SPAN_ID);
+        OTEL_PARENT_SPAN_ID,
+        OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.createTable"));
     assertEquals(
+        tableName,
         OTEL_ATTRIBUTES
             .get("com.google.cloud.bigquery.BigQuery.createTable")
-            .get(AttributeKey.stringKey("bq.table.id")),
-        tableName);
+            .get(AttributeKey.stringKey("bq.table.id")));
     assertEquals(
+        "null",
         OTEL_ATTRIBUTES
             .get("com.google.cloud.bigquery.BigQuery.createTable")
-            .get(AttributeKey.stringKey("bq.table.creation_time")),
-        "null");
+            .get(AttributeKey.stringKey("bq.table.creation_time")));
     assertEquals(
+        "InsertTable",
         OTEL_ATTRIBUTES
             .get("com.google.cloud.bigquery.BigQueryRpc.createTable")
-            .get(AttributeKey.stringKey("bq.rpc.method")),
-        "InsertTable");
+            .get(AttributeKey.stringKey("bq.rpc.method")));
 
     Table updatedTable =
         bigquery.update(createdTable.toBuilder().setDescription("Updated Description").build());
@@ -7785,8 +7776,8 @@ public class ITBigQueryTest {
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.updateTable"));
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQueryRpc.patchTable"));
     assertEquals(
-        OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.updateTable"),
-        OTEL_PARENT_SPAN_ID);
+        OTEL_PARENT_SPAN_ID,
+        OTEL_PARENT_SPAN_IDS.get("com.google.cloud.bigquery.BigQuery.updateTable"));
     assertTrue(bigquery.delete(updatedTable.getTableId()));
   }
 
