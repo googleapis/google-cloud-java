@@ -1489,6 +1489,25 @@ libraries:
   - proto_path: google/cloud/maintenance/api/v1beta
   requires_billing: true
   rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
+- api_shortname: maintenance
+  name_pretty: Maintenance API
+  product_documentation: https://cloud.google.com/unified-maintenance/docs/overview
+  api_description: provides a centralized view of planned disruptive     maintenance
+    events across supported Google Cloud products. It offers users     visibility
+    into upcoming, ongoing, and completed maintenance, along with     controls to
+    manage certain maintenance activities, such as mainteance     windows, rescheduling,
+    and on-demand updates.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-maintenance
+  api_id: maintenance.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/maintenance/api/v1
+  requires_billing: true
 - api_shortname: managedidentities
   name_pretty: Managed Service for Microsoft Active Directory
   product_documentation: https://cloud.google.com/managed-microsoft-ad/
