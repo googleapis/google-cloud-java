@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.8.0 (2025-12-12)
+
+### Features
+
+* End to end fallback (#221)
+* Migrate opencensus metrics to opentelemetry (#222)
+
 ## 1.7.0 (2025-09-23)
 
 ### Features
