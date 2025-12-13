@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.57.1](https://github.com/googleapis/java-bigquery/compare/v2.57.0...v2.57.1) (2025-12-12)
+
+
+### Dependencies
+
+* Update actions/upload-artifact action to v6 ([#4027](https://github.com/googleapis/java-bigquery/issues/4027)) ([5d389cf](https://github.com/googleapis/java-bigquery/commit/5d389cf45b41a0edceb3c5ed98dd2421ba6f2234))
+
 ## [2.57.0](https://github.com/googleapis/java-bigquery/compare/v2.56.0...v2.57.0) (2025-12-11)
 
 
