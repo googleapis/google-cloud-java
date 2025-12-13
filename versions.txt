@@ -929,3 +929,5 @@ grpc-google-cloud-databasecenter-v1beta:0.1.0:0.2.0-SNAPSHOT
 google-cloud-hypercomputecluster:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-hypercomputecluster-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-hypercomputecluster-v1beta:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-maintenance-v1:0.14.0:0.15.0-SNAPSHOT
+grpc-google-cloud-maintenance-v1:0.14.0:0.15.0-SNAPSHOT
