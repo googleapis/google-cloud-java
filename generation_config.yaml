@@ -1487,6 +1487,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/maintenance/api/v1beta
+  - proto_path: google/cloud/maintenance/api/v1
   requires_billing: true
   rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
 - api_shortname: managedidentities
