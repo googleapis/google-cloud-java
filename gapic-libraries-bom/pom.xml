@@ -693,6 +693,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-hypercomputecluster-bom</artifactId>
+        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-hypercomputecluster:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-iamcredentials-bom</artifactId>
         <version>2.81.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
         <type>pom</type>
