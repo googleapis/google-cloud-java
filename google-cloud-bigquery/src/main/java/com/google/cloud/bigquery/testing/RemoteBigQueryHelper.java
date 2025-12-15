@@ -120,18 +120,27 @@ public class RemoteBigQueryHelper {
    * credentials.
    */
   public static RemoteBigQueryHelper create() {
+    return create(BigQueryOptions.newBuilder());
+  }
+
+  /**
+   * Creates a {@code RemoteBigQueryHelper} object using default project id and authentication
+   * credentials.
+   *
+   * @param bigqueryOptionsBuilder Custom BigqueryOptions.Builder with some pre-defined settings
+   */
+  public static RemoteBigQueryHelper create(BigQueryOptions.Builder bigqueryOptionsBuilder) {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
     transportOptions =
         transportOptions.toBuilder()
             .setConnectTimeout(connectTimeout)
             .setReadTimeout(connectTimeout)
             .build();
-    BigQueryOptions bigqueryOptions =
-        BigQueryOptions.newBuilder()
+    BigQueryOptions.Builder builder =
+        bigqueryOptionsBuilder
             .setRetrySettings(retrySettings())
-            .setTransportOptions(transportOptions)
-            .build();
-    return new RemoteBigQueryHelper(bigqueryOptions);
+            .setTransportOptions(transportOptions);
+    return new RemoteBigQueryHelper(builder.build());
   }
 
   private static RetrySettings retrySettings() {

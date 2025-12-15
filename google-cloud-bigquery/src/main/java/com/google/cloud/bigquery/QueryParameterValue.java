@@ -328,9 +328,9 @@ public abstract class QueryParameterValue implements Serializable {
    * <p>This method supports up to picosecond precision (12 digits) for timestamp. Input should
    * conform to ISO8601 format.
    *
-   * <p>Must be in the format "yyyy-MM-dd HH:mm:ss.SSSSSS{SSSSSSS}ZZ", e.g. "2014-08-19
-   * 12:41:35.123456+00:00" for microsecond precision and "2014-08-19 12:41:35.123456789123+00:00"
-   * for picosecond precision
+   * <p>Should be in the format "yyyy-MM-dd HH:mm:ss.SSSSSS{SSSSSSS}Z", e.g. "2014-08-19
+   * 12:41:35.123456Z" for microsecond precision and "2014-08-19 12:41:35.123456789123Z" for
+   * picosecond precision
    */
   public static QueryParameterValue timestamp(String value) {
     return of(value, StandardSQLTypeName.TIMESTAMP);
