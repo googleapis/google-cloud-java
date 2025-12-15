@@ -958,6 +958,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/ui/{name=projects/*/locations/*/ragEngineConfig/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/ui/{name=projects/*/locations/*/specialistPools/*/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
@@ -1123,6 +1128,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setPost(
                                     "/v1/{name=projects/*/locations/*/persistentResources/*/operations/*}:cancel")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragEngineConfig/operations/*}:cancel")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1391,6 +1401,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setDelete(
+                                    "/ui/{name=projects/*/locations/*/ragEngineConfig/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
                                     "/ui/{name=projects/*/locations/*/tensorboards/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -1566,6 +1581,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setDelete(
                                     "/v1/{name=projects/*/locations/*/notebookRuntimeTemplates/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setDelete(
+                                    "/v1/{name=projects/*/locations/*/ragEngineConfig/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -1854,6 +1874,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/ui/{name=projects/*/locations/*/ragEngineConfig/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/ui/{name=projects/*/locations/*/schedules/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -2041,6 +2066,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/notebookRuntimeTemplates/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/ragEngineConfig/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -2318,6 +2348,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/ui/{name=projects/*/locations/*/ragEngineConfig}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/ui/{name=projects/*/locations/*/schedules/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -2531,6 +2566,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/pipelineJobs/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/ragEngineConfig}/operations")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -2798,6 +2838,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setPost(
+                                    "/ui/{name=projects/*/locations/*/ragEngineConfig/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
                                     "/ui/{name=projects/*/locations/*/tensorboards/*/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
@@ -2973,6 +3018,11 @@ public class HttpJsonEndpointServiceStub extends EndpointServiceStub {
                             HttpRule.newBuilder()
                                 .setPost(
                                     "/v1/{name=projects/*/locations/*/notebookRuntimeTemplates/*/operations/*}:wait")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setPost(
+                                    "/v1/{name=projects/*/locations/*/ragEngineConfig/operations/*}:wait")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

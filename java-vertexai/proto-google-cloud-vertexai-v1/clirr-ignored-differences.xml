@@ -16,7 +16,8 @@
     <className>com/google/cloud/vertexai/api/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-  <!-- The following 7006 exemptions are related to Protobuf 4.27.4 upgrade -->
+
+  <!-- The following 7006 exemptions are related to Protobuf 4.27.4+ runtime upgrade -->
   <difference>
     <differenceType>7006</differenceType>
     <className>com/google/cloud/vertexai/api/**</className>

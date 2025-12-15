@@ -125,6 +125,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -198,6 +200,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -271,6 +275,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -346,6 +352,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -421,6 +429,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -489,6 +499,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -655,6 +667,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -683,6 +697,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -738,6 +754,8 @@ public class EndpointServiceClientHttpJsonTest {
               .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+              .setPrivateModelServerEnabled(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEndpoint(endpoint, updateMask);
@@ -774,6 +792,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -808,6 +828,8 @@ public class EndpointServiceClientHttpJsonTest {
             .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+            .setPrivateModelServerEnabled(true)
             .build();
 
     Endpoint actualResponse = client.updateEndpointLongRunningAsync(endpoint).get();
@@ -862,6 +884,8 @@ public class EndpointServiceClientHttpJsonTest {
               .setClientConnectionConfig(ClientConnectionConfig.newBuilder().build())
               .setSatisfiesPzs(true)
               .setSatisfiesPzi(true)
+              .setGenAiAdvancedFeaturesConfig(GenAiAdvancedFeaturesConfig.newBuilder().build())
+              .setPrivateModelServerEnabled(true)
               .build();
       client.updateEndpointLongRunningAsync(endpoint).get();
       Assert.fail("No exception raised");

@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * Service for LLM related utility functions.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vertexai/v1/llm_utility_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class LlmUtilityServiceGrpc {
 
@@ -322,8 +319,8 @@ public final class LlmUtilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vertexai.api.CountTokensResponse countTokens(
-        com.google.cloud.vertexai.api.CountTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.CountTokensRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCountTokensMethod(), getCallOptions(), request);
     }
 
@@ -335,8 +332,8 @@ public final class LlmUtilityServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vertexai.api.ComputeTokensResponse computeTokens(
-        com.google.cloud.vertexai.api.ComputeTokensRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.ComputeTokensRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getComputeTokensMethod(), getCallOptions(), request);
     }
   }
