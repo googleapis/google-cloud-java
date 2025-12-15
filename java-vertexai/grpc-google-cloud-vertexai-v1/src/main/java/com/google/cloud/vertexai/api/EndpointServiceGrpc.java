@@ -24,9 +24,6 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * A service for managing Vertex AI's Endpoints.
  * </pre>
  */
-@javax.annotation.Generated(
-    value = "by gRPC proto compiler",
-    comments = "Source: google/cloud/vertexai/v1/endpoint_service.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class EndpointServiceGrpc {
 
@@ -625,9 +622,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     default void mutateDeployedModel(
@@ -807,9 +804,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public void mutateDeployedModel(
@@ -850,8 +847,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation createEndpoint(
-        com.google.cloud.vertexai.api.CreateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.CreateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getCreateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -863,8 +861,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vertexai.api.Endpoint getEndpoint(
-        com.google.cloud.vertexai.api.GetEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.GetEndpointRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetEndpointMethod(), getCallOptions(), request);
     }
 
@@ -876,8 +874,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vertexai.api.ListEndpointsResponse listEndpoints(
-        com.google.cloud.vertexai.api.ListEndpointsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.ListEndpointsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListEndpointsMethod(), getCallOptions(), request);
     }
 
@@ -889,8 +887,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.cloud.vertexai.api.Endpoint updateEndpoint(
-        com.google.cloud.vertexai.api.UpdateEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.UpdateEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointMethod(), getCallOptions(), request);
     }
 
@@ -902,8 +901,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation updateEndpointLongRunning(
-        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.UpdateEndpointLongRunningRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateEndpointLongRunningMethod(), getCallOptions(), request);
     }
 
@@ -915,8 +915,9 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deleteEndpoint(
-        com.google.cloud.vertexai.api.DeleteEndpointRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.DeleteEndpointRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteEndpointMethod(), getCallOptions(), request);
     }
 
@@ -928,8 +929,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation deployModel(
-        com.google.cloud.vertexai.api.DeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.DeployModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeployModelMethod(), getCallOptions(), request);
     }
 
@@ -942,8 +943,8 @@ public final class EndpointServiceGrpc {
      * </pre>
      */
     public com.google.longrunning.Operation undeployModel(
-        com.google.cloud.vertexai.api.UndeployModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.UndeployModelRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUndeployModelMethod(), getCallOptions(), request);
     }
 
@@ -952,14 +953,15 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedModel(
-        com.google.cloud.vertexai.api.MutateDeployedModelRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+        com.google.cloud.vertexai.api.MutateDeployedModelRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMutateDeployedModelMethod(), getCallOptions(), request);
     }
   }
@@ -1093,9 +1095,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.longrunning.Operation mutateDeployedModel(
@@ -1238,9 +1240,9 @@ public final class EndpointServiceGrpc {
      *
      * <pre>
      * Updates an existing deployed model. Updatable fields include
-     * `min_replica_count`, `max_replica_count`, `autoscaling_metric_specs`,
-     * `disable_container_logging` (v1 only), and `enable_container_logging`
-     * (v1beta1 only).
+     * `min_replica_count`, `max_replica_count`, `required_replica_count`,
+     * `autoscaling_metric_specs`, `disable_container_logging` (v1 only), and
+     * `enable_container_logging` (v1beta1 only).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
