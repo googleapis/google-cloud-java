@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Sleeper;
@@ -82,9 +83,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Integration tests for BigQuery Write API. */
-public class ITBigQueryWriteManualClientTest {
-  private static final Logger LOG =
-      Logger.getLogger(ITBigQueryWriteManualClientTest.class.getName());
+public class ITBigQueryWriteClientTest {
+  private static final Logger LOG = Logger.getLogger(ITBigQueryWriteClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DATASET_EU = RemoteBigQueryHelper.generateDatasetName();
   private static final String TABLE = "testtable";
@@ -109,7 +109,7 @@ public class ITBigQueryWriteManualClientTest {
 
   private static final BufferAllocator allocator = new RootAllocator();
 
-  public class StringWithSecondsNanos {
+  public static class StringWithSecondsNanos {
     public String foo;
     public long seconds;
     public int nanos;
@@ -224,11 +224,11 @@ public class ITBigQueryWriteManualClientTest {
 
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
-      LOG.info("Deleted test dataset: " + DATASET);
+      RemoteBigQueryHelper.forceDelete(bigquery, DATASET_EU);
     }
   }
 
-  ProtoRows CreateProtoRows(String[] messages) {
+  ProtoRows createProtoRows(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       FooType foo = FooType.newBuilder().setFoo(message).build();
@@ -237,7 +237,7 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
-  ProtoSchema CreateProtoSchemaWithColField() {
+  ProtoSchema createProtoSchemaWithColField() {
     return ProtoSchema.newBuilder()
         .setProtoDescriptor(
             DescriptorProto.newBuilder()
@@ -252,7 +252,7 @@ public class ITBigQueryWriteManualClientTest {
         .build();
   }
 
-  ProtoRows CreateProtoOptionalRows(String[] messages) {
+  ProtoRows createProtoOptionalRows(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       FooOptionalType foo = FooOptionalType.newBuilder().setFoo(message).build();
@@ -261,7 +261,7 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
-  ProtoRows CreateProtoRowsMultipleColumns(String[] messages) {
+  ProtoRows createProtoRowsMultipleColumns(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       UpdatedFooType foo = UpdatedFooType.newBuilder().setFoo(message).setBar(message).build();
@@ -270,7 +270,7 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
-  ProtoRows CreateProtoRowsComplex(String[] messages) {
+  ProtoRows createProtoRowsComplex(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
       ComplicateType foo =
@@ -282,7 +282,7 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
-  ProtoRows CreateProtoRowsMixed(StringWithSecondsNanos[] messages) {
+  ProtoRows createProtoRowsMixed(StringWithSecondsNanos[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (StringWithSecondsNanos message : messages) {
       FooTimestampType datum =
@@ -309,21 +309,22 @@ public class ITBigQueryWriteManualClientTest {
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
-    StreamWriter streamWriter =
+    ApiFuture<AppendRowsResponse> response1;
+    ApiFuture<AppendRowsResponse> response2;
+    try (StreamWriter streamWriter =
         StreamWriter.newBuilder(writeStream.getName())
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
-            .build();
-    LOG.info("Sending one message");
+            .build()) {
+      LOG.info("Sending one message");
 
-    ApiFuture<AppendRowsResponse> response =
-        streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 0);
-    assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(createProtoRows(new String[] {"aaa"}), 0);
+      assertEquals(0, response.get().getAppendResult().getOffset().getValue());
 
-    LOG.info("Sending two more messages");
-    ApiFuture<AppendRowsResponse> response1 =
-        streamWriter.append(CreateProtoRows(new String[] {"bbb", "ccc"}), 1);
-    ApiFuture<AppendRowsResponse> response2 =
-        streamWriter.append(CreateProtoRows(new String[] {"ddd"}), 3);
+      LOG.info("Sending two more messages");
+      response1 = streamWriter.append(createProtoRows(new String[] {"bbb", "ccc"}), 1);
+      response2 = streamWriter.append(createProtoRows(new String[] {"ddd"}), 3);
+    }
     assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
   }
@@ -338,21 +339,22 @@ public class ITBigQueryWriteManualClientTest {
                 .setWriteStream(
                     WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
                 .build());
-    StreamWriter streamWriter =
+    ApiFuture<AppendRowsResponse> response1;
+    ApiFuture<AppendRowsResponse> response2;
+    try (StreamWriter streamWriter =
         StreamWriter.newBuilder(writeStream.getName())
             .setWriterSchema(ProtoSchemaConverter.convert(FooOptionalType.getDescriptor()))
-            .build();
-    LOG.info("Sending one message");
+            .build()) {
+      LOG.info("Sending one message");
 
-    ApiFuture<AppendRowsResponse> response =
-        streamWriter.append(CreateProtoOptionalRows(new String[] {"aaa"}), 0);
-    assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+      ApiFuture<AppendRowsResponse> response =
+          streamWriter.append(createProtoOptionalRows(new String[] {"aaa"}), 0);
+      assertEquals(0, response.get().getAppendResult().getOffset().getValue());
 
-    LOG.info("Sending two more messages");
-    ApiFuture<AppendRowsResponse> response1 =
-        streamWriter.append(CreateProtoOptionalRows(new String[] {"bbb", "ccc"}), 1);
-    ApiFuture<AppendRowsResponse> response2 =
-        streamWriter.append(CreateProtoOptionalRows(new String[] {""}), 3);
+      LOG.info("Sending two more messages");
+      response1 = streamWriter.append(createProtoOptionalRows(new String[] {"bbb", "ccc"}), 1);
+      response2 = streamWriter.append(createProtoOptionalRows(new String[] {""}), 3);
+    }
     assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
   }
@@ -444,7 +446,7 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
     }
   }
 
@@ -470,60 +472,59 @@ public class ITBigQueryWriteManualClientTest {
             .build();
     bigquery.create(tableInfo);
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
-    StreamWriter streamWriter =
+    ApiFuture<AppendRowsResponse> futureResponse1;
+    try (StreamWriter streamWriter =
         StreamWriter.newBuilder(parent.toString() + "/_default")
             .setWriterSchema(ProtoSchemaConverter.convert(FooTimestampType.getDescriptor()))
-            .build();
+            .build()) {
 
-    LOG.info("Sending three messages");
-    StringWithSecondsNanos[] myBadList = {
-      new StringWithSecondsNanos("aaabbbcccddd", 1663821424, 0),
-      new StringWithSecondsNanos("bbb", Long.MIN_VALUE, 0),
-      new StringWithSecondsNanos("cccdddeeefffggg", 1663621424, 0)
-    };
-    ApiFuture<AppendRowsResponse> futureResponse =
-        streamWriter.append(CreateProtoRowsMixed(myBadList), -1);
-    AppendRowsResponse actualResponse = null;
-    try {
-      actualResponse = futureResponse.get();
-    } catch (Throwable t) {
-      assertTrue(t instanceof ExecutionException);
-      t = t.getCause();
-      assertTrue(t instanceof AppendSerializationError);
-      AppendSerializationError e = (AppendSerializationError) t;
-      LOG.info("Found row errors on stream: " + e.getStreamName());
-      assertEquals(
-          "Field foo: STRING(10) has maximum length 10 but got a value with length 12 on field"
-              + " foo.",
-          e.getRowIndexToErrorMessage().get(0));
-      assertEquals(
-          "Timestamp field value is out of range: -9223372036854775808 on field bar.",
-          e.getRowIndexToErrorMessage().get(1));
-      assertEquals(
-          "Field foo: STRING(10) has maximum length 10 but got a value with length 15 on field"
-              + " foo.",
-          e.getRowIndexToErrorMessage().get(2));
-      for (Map.Entry<Integer, String> entry : e.getRowIndexToErrorMessage().entrySet()) {
-        LOG.info("Bad row index: " + entry.getKey() + ", has problem: " + entry.getValue());
+      LOG.info("Sending three messages");
+      StringWithSecondsNanos[] myBadList = {
+        new StringWithSecondsNanos("aaabbbcccddd", 1663821424, 0),
+        new StringWithSecondsNanos("bbb", Long.MIN_VALUE, 0),
+        new StringWithSecondsNanos("cccdddeeefffggg", 1663621424, 0)
+      };
+      ApiFuture<AppendRowsResponse> futureResponse =
+          streamWriter.append(createProtoRowsMixed(myBadList), -1);
+      AppendRowsResponse actualResponse = null;
+      try {
+        actualResponse = futureResponse.get();
+      } catch (Throwable t) {
+        assertTrue(t instanceof ExecutionException);
+        t = t.getCause();
+        assertTrue(t instanceof AppendSerializationError);
+        AppendSerializationError e = (AppendSerializationError) t;
+        LOG.info("Found row errors on stream: " + e.getStreamName());
+        assertEquals(
+            "Field foo: STRING(10) has maximum length 10 but got a value with length 12 on field"
+                + " foo.",
+            e.getRowIndexToErrorMessage().get(0));
+        assertEquals(
+            "Timestamp field value is out of range: -9223372036854775808 on field bar.",
+            e.getRowIndexToErrorMessage().get(1));
+        assertEquals(
+            "Field foo: STRING(10) has maximum length 10 but got a value with length 15 on field"
+                + " foo.",
+            e.getRowIndexToErrorMessage().get(2));
+        for (Map.Entry<Integer, String> entry : e.getRowIndexToErrorMessage().entrySet()) {
+          LOG.info("Bad row index: " + entry.getKey() + ", has problem: " + entry.getValue());
+        }
       }
-    }
-    assertEquals(null, actualResponse);
+      assertNull(actualResponse);
 
-    LOG.info("Resending with three good messages");
-    StringWithSecondsNanos[] myGoodList = {
-      new StringWithSecondsNanos("aaa", 1664821424, 0),
-      new StringWithSecondsNanos("bbb", 1663821424, 0),
-      new StringWithSecondsNanos("ccc", 1664801424, 0)
-    };
-    ApiFuture<AppendRowsResponse> futureResponse1 =
-        streamWriter.append(CreateProtoRowsMixed(myGoodList), -1);
+      LOG.info("Resending with three good messages");
+      StringWithSecondsNanos[] myGoodList = {
+        new StringWithSecondsNanos("aaa", 1664821424, 0),
+        new StringWithSecondsNanos("bbb", 1663821424, 0),
+        new StringWithSecondsNanos("ccc", 1664801424, 0)
+      };
+      futureResponse1 = streamWriter.append(createProtoRowsMixed(myGoodList), -1);
+    }
     assertEquals(0, futureResponse1.get().getAppendResult().getOffset().getValue());
 
     TableResult result =
         bigquery.listTableData(tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
-    Iterator<FieldValueList> iterDump = result.getValues().iterator();
-    while (iterDump.hasNext()) {
-      FieldValueList currentRow = iterDump.next();
+    for (FieldValueList currentRow : result.getValues()) {
       LOG.info("Table row contains " + currentRow.size() + " field values.");
       LOG.info("Table column has foo: " + currentRow.get(0).getStringValue());
       LOG.info("Table column has bar: " + currentRow.get(1).getTimestampValue());
@@ -539,7 +540,7 @@ public class ITBigQueryWriteManualClientTest {
     currentRow = iter.next();
     assertEquals("ccc", currentRow.get(0).getStringValue());
     assertEquals(1664801424000000L, currentRow.get(1).getTimestampValue());
-    assertEquals(false, iter.hasNext());
+    assertFalse(iter.hasNext());
   }
 
   @Test
@@ -717,7 +718,7 @@ public class ITBigQueryWriteManualClientTest {
       FieldValueList currentRow2 = iter.next();
       assertEquals("YQ==", currentRow2.get(3).getRepeatedValue().get(0).getStringValue());
       assertEquals("Yg==", currentRow2.get(3).getRepeatedValue().get(1).getStringValue());
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
     }
   }
 
@@ -727,11 +728,11 @@ public class ITBigQueryWriteManualClientTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
 
     // Create JsonStreamWriter with newBuilder(streamOrTable, client)
-    try {
-      JsonStreamWriter jsonStreamWriter =
-          JsonStreamWriter.newBuilder(parent.toString(), client)
-              .setIgnoreUnknownFields(true)
-              .build();
+    try (JsonStreamWriter ignore =
+        JsonStreamWriter.newBuilder(parent.toString(), client)
+            .setIgnoreUnknownFields(true)
+            .build()) {
+      // Do nothing
     } catch (Exception exception) {
       assertTrue(exception.getMessage().contains("it may not exist"));
     }
@@ -899,7 +900,7 @@ public class ITBigQueryWriteManualClientTest {
       FieldValueList currentRow2 = iter.next();
       assertEquals("YQ==", currentRow2.get(3).getRepeatedValue().get(0).getStringValue());
       assertEquals("Yg==", currentRow2.get(3).getRepeatedValue().get(1).getStringValue());
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
     }
   }
 
@@ -1006,14 +1007,14 @@ public class ITBigQueryWriteManualClientTest {
 
     currentRow = iter.next();
     assertEquals("default_value_for_test", currentRow.get(0).getStringValue());
-    assertEquals(null, currentRow.get(1).getValue());
+    assertNull(currentRow.get(1).getValue());
     assertFalse(currentRow.get(2).getStringValue().isEmpty());
     // Check whether the recorded value is up to date enough.
     parsedInstant =
         Instant.ofEpochSecond(Double.valueOf(currentRow.get(2).getStringValue()).longValue());
     assertTrue(parsedInstant.isAfter(Instant.now().minus(1, ChronoUnit.HOURS)));
 
-    assertEquals(false, iter.hasNext());
+    assertFalse(iter.hasNext());
   }
 
   @Test
@@ -1072,7 +1073,7 @@ public class ITBigQueryWriteManualClientTest {
 
       currentRow = iter.next();
       assertEquals("default_value_for_test", currentRow.get(0).getStringValue());
-      assertEquals(null, currentRow.get(1).getValue());
+      assertNull(currentRow.get(1).getValue());
       assertFalse(currentRow.get(2).getStringValue().isEmpty());
       // Check whether the recorded value is up to date enough.
       Instant parsedInstant =
@@ -1219,16 +1220,16 @@ public class ITBigQueryWriteManualClientTest {
     FieldValueList currentRow = iter.next();
     assertEquals("A", currentRow.get(0).getStringValue());
     assertEquals("1", currentRow.get(1).getStringValue());
-    assertEquals(true, currentRow.get(2).getBooleanValue());
+    assertTrue(currentRow.get(2).getBooleanValue());
     currentRow = iter.next();
     assertEquals("B", currentRow.get(0).getStringValue());
     assertEquals("2", currentRow.get(1).getStringValue());
-    assertEquals(false, currentRow.get(2).getBooleanValue());
+    assertFalse(currentRow.get(2).getBooleanValue());
     currentRow = iter.next();
     assertEquals("C", currentRow.get(0).getStringValue());
     assertEquals("3", currentRow.get(1).getStringValue());
-    assertEquals(true, currentRow.get(2).getBooleanValue());
-    assertEquals(false, iter.hasNext());
+    assertTrue(currentRow.get(2).getBooleanValue());
+    assertFalse(iter.hasNext());
   }
 
   // This test runs about 1 min.
@@ -1414,10 +1415,12 @@ public class ITBigQueryWriteManualClientTest {
     try (JsonStreamWriter jsonStreamWriter =
         JsonStreamWriter.newBuilder(writeStream.getName(), client).build()) {
       int numberOfThreads = 5;
+      CountDownLatch latch;
+      AtomicInteger next;
       ExecutorService streamTaskExecutor = Executors.newFixedThreadPool(5);
-      CountDownLatch latch = new CountDownLatch(numberOfThreads);
+      latch = new CountDownLatch(numberOfThreads);
       // Used to verify data correctness
-      AtomicInteger next = new AtomicInteger();
+      next = new AtomicInteger();
 
       // update TableSchema async
       Runnable updateTableSchemaTask =
@@ -1476,6 +1479,7 @@ public class ITBigQueryWriteManualClientTest {
             });
       }
       latch.await();
+      streamTaskExecutor.shutdown();
 
       // verify that the last 5 rows streamed are ccc,ddd
       Iterator<FieldValueList> rowsIter = bigquery.listTableData(tableId).getValues().iterator();
@@ -1494,11 +1498,7 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterSchemaUpdateWithMissingValueInterpretationMap()
-      throws DescriptorValidationException,
-          ExecutionException,
-          IOException,
-          InterruptedException,
-          ParseException {
+      throws DescriptorValidationException, ExecutionException, IOException, InterruptedException {
     String tableName = "SchemaUpdateMissingValueMapTestTable";
     TableId tableId = TableId.of(DATASET, tableName);
     tableInfo = TableInfo.newBuilder(tableId, defaultValueTableDefinition).build();
@@ -1705,7 +1705,7 @@ public class ITBigQueryWriteManualClientTest {
       assertEquals("bbb", iter.next().get(0).getStringValue());
       assertEquals("ccc", iter.next().get(0).getStringValue());
       assertEquals("ddd", iter.next().get(0).getStringValue());
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
     }
   }
 
@@ -1798,7 +1798,7 @@ public class ITBigQueryWriteManualClientTest {
       FieldValueList lastRecord = lastRow.get(1).getRepeatedValue().get(0).getRecordValue();
       assertEquals("nested-str2", lastRecord.get(0).getStringValue());
       assertEquals("20", lastRecord.get(1).getStringValue());
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
     }
   }
 
@@ -1896,18 +1896,18 @@ public class ITBigQueryWriteManualClientTest {
                 .setParent(tableId2)
                 .setWriteStream(WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build())
                 .build());
-    FinalizeWriteStreamResponse finalizeResponse = FinalizeWriteStreamResponse.getDefaultInstance();
+    FinalizeWriteStreamResponse finalizeResponse;
     try (StreamWriter streamWriter =
         StreamWriter.newBuilder(writeStream.getName())
             .setWriterSchema(ProtoSchemaConverter.convert(ComplicateType.getDescriptor()))
             .build()) {
       LOG.info("Sending two messages");
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsComplex(new String[] {"aaa"}), 0L);
+          streamWriter.append(createProtoRowsComplex(new String[] {"aaa"}), 0L);
       assertEquals(0, response.get().getAppendResult().getOffset().getValue());
 
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRowsComplex(new String[] {"bbb"}), 1L);
+          streamWriter.append(createProtoRowsComplex(new String[] {"bbb"}), 1L);
       assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
 
       // Nothing showed up since rows are not committed.
@@ -1915,7 +1915,7 @@ public class ITBigQueryWriteManualClientTest {
           bigquery.listTableData(
               tableInfo2.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
       Iterator<FieldValueList> iter = result.getValues().iterator();
-      assertEquals(false, iter.hasNext());
+      assertFalse(iter.hasNext());
 
       LOG.info("Finalize a write stream");
       finalizeResponse =
@@ -1923,7 +1923,7 @@ public class ITBigQueryWriteManualClientTest {
               FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
 
       ApiFuture<AppendRowsResponse> response3 =
-          streamWriter.append(CreateProtoRows(new String[] {"ccc"}), 2L);
+          streamWriter.append(createProtoRows(new String[] {"ccc"}), 2L);
       try {
         response3.get();
         Assert.fail("Append to finalized stream should fail.");
@@ -1939,7 +1939,7 @@ public class ITBigQueryWriteManualClientTest {
                 .setParent(tableId2)
                 .addWriteStreams(writeStream.getName())
                 .build());
-    assertEquals(true, batchCommitWriteStreamsResponse.hasCommitTime());
+    assertTrue(batchCommitWriteStreamsResponse.hasCommitTime());
     TableResult queryResult =
         bigquery.query(
             QueryJobConfiguration.newBuilder("SELECT * from " + DATASET + '.' + TABLE2).build());
@@ -1972,11 +1972,11 @@ public class ITBigQueryWriteManualClientTest {
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .build()) {
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), -1L);
+          streamWriter.append(createProtoRows(new String[] {"aaa"}), -1L);
       assertEquals(0L, response.get().getAppendResult().getOffset().getValue());
       // Send in a bogus stream name should cause in connection error.
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 100L);
+          streamWriter.append(createProtoRows(new String[] {"aaa"}), 100L);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -1986,7 +1986,7 @@ public class ITBigQueryWriteManualClientTest {
       }
       // We can keep sending requests on the same stream.
       ApiFuture<AppendRowsResponse> response3 =
-          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), -1L);
+          streamWriter.append(createProtoRows(new String[] {"aaa"}), -1L);
       assertEquals(1L, response3.get().getAppendResult().getOffset().getValue());
     } finally {
     }
@@ -2009,7 +2009,7 @@ public class ITBigQueryWriteManualClientTest {
       // Create a proto row that has extra fields than the table schema defined which should trigger
       // the SCHEMA_MISMATCH_EXTRA_FIELDS error
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       try {
         response.get();
         Assert.fail("Should fail");
@@ -2039,14 +2039,14 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append once before finalizing the stream
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       response.get();
       // Finalize the stream in order to trigger STREAM_FINALIZED error
       client.finalizeWriteStream(
           FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
       // Try to append to a finalized stream
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 1);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 1);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -2077,11 +2077,11 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append once with correct offset
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       response.get();
       // Append again with the same offset
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -2113,7 +2113,7 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append with an out of range offset
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 10);
+          streamWriter.append(createProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 10);
       try {
         response.get();
         Assert.fail("Should fail");
@@ -2144,7 +2144,7 @@ public class ITBigQueryWriteManualClientTest {
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .build()) {
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRows(new String[] {"aaa"}), 0L);
+          streamWriter.append(createProtoRows(new String[] {"aaa"}), 0L);
       assertEquals(0L, response.get().getAppendResult().getOffset().getValue());
     }
 
@@ -2155,7 +2155,7 @@ public class ITBigQueryWriteManualClientTest {
       // Currently there is a bug that reconnection must wait 5 seconds to get the real row count.
       Thread.sleep(5000L);
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRows(new String[] {"bbb"}), 1L);
+          streamWriter.append(createProtoRows(new String[] {"bbb"}), 1L);
       assertEquals(1L, response.get().getAppendResult().getOffset().getValue());
     }
   }
@@ -2200,11 +2200,11 @@ public class ITBigQueryWriteManualClientTest {
             .setTraceId(TEST_TRACE_ID)
             .build();
     ApiFuture<AppendRowsResponse> response1 =
-        streamWriter1.append(CreateProtoRows(new String[] {"aaa"}));
+        streamWriter1.append(createProtoRows(new String[] {"aaa"}));
     ApiFuture<AppendRowsResponse> response2 =
-        streamWriter2.append(CreateProtoRowsComplex(new String[] {"aaa"}));
+        streamWriter2.append(createProtoRowsComplex(new String[] {"aaa"}));
     ApiFuture<AppendRowsResponse> response3 =
-        streamWriter3.append(CreateProtoRows(new String[] {"bbb"}));
+        streamWriter3.append(createProtoRows(new String[] {"bbb"}));
     assertEquals(0L, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response2.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response3.get().getAppendResult().getOffset().getValue());
@@ -2228,7 +2228,7 @@ public class ITBigQueryWriteManualClientTest {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, tableName);
     try (StreamWriter streamWriter =
         StreamWriter.newBuilder(parent.toString() + "/_default")
-            .setWriterSchema(CreateProtoSchemaWithColField())
+            .setWriterSchema(createProtoSchemaWithColField())
             .build()) {
       List<Integer> sizeSet = Arrays.asList(15 * 1024 * 1024, 1024);
       List<ApiFuture<AppendRowsResponse>> responseList =
@@ -2239,7 +2239,7 @@ public class ITBigQueryWriteManualClientTest {
         LOG.info("Sending size: " + size);
         responseList.add(
             streamWriter.append(
-                CreateProtoRows(
+                createProtoRows(
                     new String[] {
                       new String(new char[size]).replace('\u0000', (char) (r.nextInt(26) + 'a'))
                     })));

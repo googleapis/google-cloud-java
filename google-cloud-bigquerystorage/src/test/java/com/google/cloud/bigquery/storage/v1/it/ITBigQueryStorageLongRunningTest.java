@@ -88,7 +88,7 @@ public class ITBigQueryStorageLongRunningTest {
     // for a longer running session.
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "wikipedia");
@@ -123,6 +123,7 @@ public class ITBigQueryStorageLongRunningTest {
 
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());
     List<Future<Long>> results = executor.invokeAll(tasks);
+    executor.shutdown();
 
     long rowCount = 0;
     for (Future<Long> result : results) {

@@ -45,6 +45,7 @@ import com.google.protobuf.Descriptors.DescriptorValidationException;
 import io.grpc.Status.Code;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -86,9 +87,10 @@ public class ITBigQueryWriteNonQuotaRetryTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
 
     if (bigquery != null) {
@@ -131,7 +133,7 @@ public class ITBigQueryWriteNonQuotaRetryTest {
         /* rowBatchSize= */ 1);
   }
 
-  // Moved to ITBigQueryWriteNonQuotaRetryTest from ITBigQueryWriteManualClientTest, as it requires
+  // Moved to ITBigQueryWriteNonQuotaRetryTest from ITBigQueryWriteClientTest, as it requires
   // usage of the project this file uses to inject errors (bq-write-api-java-retry-test).
   @Test
   public void testDefaultRequestLimit()

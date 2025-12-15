@@ -101,7 +101,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -119,8 +118,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /** Integration tests for BigQuery Storage API. */
-public class ITBigQueryStorageTest {
-  private static final Logger LOG = Logger.getLogger(ITBigQueryStorageTest.class.getName());
+public class ITBigQueryStorageReadClientTest {
+  private static final Logger LOG =
+      Logger.getLogger(ITBigQueryStorageReadClientTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "BigQuery Storage Java client test dataset";
 
@@ -504,7 +504,7 @@ public class ITBigQueryStorageTest {
     LOG.info(
         String.format(
             "%s tests running with parent project: %s",
-            ITBigQueryStorageTest.class.getSimpleName(), parentProjectId));
+            ITBigQueryStorageReadClientTest.class.getSimpleName(), parentProjectId));
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
@@ -532,7 +532,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testSimpleReadAvro() {
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -568,7 +568,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testSimpleReadArrow() {
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -632,7 +632,7 @@ public class ITBigQueryStorageTest {
     bigquery.query(createTable);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ ServiceOptions.getDefaultProjectId(),
             /* datasetId= */ DATASET,
             /* tableId= */ tableId.getTable());
@@ -741,7 +741,7 @@ public class ITBigQueryStorageTest {
     }
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName,
             /* datasetId= */ DATASET,
             /* tableId= */ tableId.getTable());
@@ -802,7 +802,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testSimpleReadAndResume() {
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -847,7 +847,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testFilter() throws IOException {
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -889,15 +889,13 @@ public class ITBigQueryStorageTest {
       rowCount += response.getRowCount();
       reader.processRows(
           response.getAvroRows(),
-          new AvroRowConsumer() {
-            @Override
-            public void accept(GenericData.Record record) {
-              Long wordCount = (Long) record.get("word_count");
-              assertWithMessage("Row not matching expectations: %s", record.toString())
-                  .that(wordCount)
-                  .isGreaterThan(100L);
-            }
-          });
+          (AvroRowConsumer)
+              record -> {
+                Long wordCount = (Long) record.get("word_count");
+                assertWithMessage("Row not matching expectations: %s", record.toString())
+                    .that(wordCount)
+                    .isGreaterThan(100L);
+              });
     }
 
     assertEquals(1_333, rowCount);
@@ -906,7 +904,7 @@ public class ITBigQueryStorageTest {
   @Test
   public void testColumnSelection() throws IOException {
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -966,19 +964,17 @@ public class ITBigQueryStorageTest {
       rowCount += response.getRowCount();
       reader.processRows(
           response.getAvroRows(),
-          new AvroRowConsumer() {
-            @Override
-            public void accept(GenericData.Record record) {
-              String rowAssertMessage =
-                  String.format("Row not matching expectations: %s", record.toString());
+          (AvroRowConsumer)
+              record -> {
+                String rowAssertMessage =
+                    String.format("Row not matching expectations: %s", record.toString());
 
-              Long wordCount = (Long) record.get("word_count");
-              assertWithMessage(rowAssertMessage).that(wordCount).isGreaterThan(100L);
+                Long wordCount = (Long) record.get("word_count");
+                assertWithMessage(rowAssertMessage).that(wordCount).isGreaterThan(100L);
 
-              Utf8 word = (Utf8) record.get("word");
-              assertWithMessage(rowAssertMessage).that(word.length()).isGreaterThan(0);
-            }
-          });
+                Utf8 word = (Utf8) record.get("word");
+                assertWithMessage(rowAssertMessage).that(word.length()).isGreaterThan(0);
+              });
     }
 
     assertEquals(1_333, rowCount);
@@ -997,8 +993,6 @@ public class ITBigQueryStorageTest {
     TableId testTableId = TableId.of(/* dataset= */ DATASET, /* table= */ "test_read_snapshot");
     bigquery.create(TableInfo.of(testTableId, StandardTableDefinition.of(tableSchema)));
 
-    testTableId.toString();
-
     Job firstJob =
         RunQueryAppendJobAndExpectSuccess(
             /* destinationTableId= */ testTableId, /* query= */ "SELECT 1 AS col");
@@ -1008,7 +1002,7 @@ public class ITBigQueryStorageTest {
             /* destinationTableId= */ testTableId, /* query= */ "SELECT 2 AS col");
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName,
             /* datasetId= */ DATASET,
             /* tableId= */ testTableId.getTable());
@@ -1024,7 +1018,7 @@ public class ITBigQueryStorageTest {
             rowsAfterFirstSnapshot.add((Long) record.get("col"));
           }
         });
-    assertEquals(Arrays.asList(1L), rowsAfterFirstSnapshot);
+    assertEquals(Collections.singletonList(1L), rowsAfterFirstSnapshot);
 
     final List<Long> rowsAfterSecondSnapshot = new ArrayList<>();
     ProcessRowsAtSnapshot(
@@ -1062,7 +1056,7 @@ public class ITBigQueryStorageTest {
     RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName,
             /* datasetId= */ DATASET,
             /* tableId= */ partitionedTableName);
@@ -1110,7 +1104,7 @@ public class ITBigQueryStorageTest {
         /* query= */ "SELECT 2 AS num_field");
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName,
             /* datasetId= */ testTableId.getDataset(),
             /* tableId= */ testTableId.getTable());
@@ -1153,7 +1147,7 @@ public class ITBigQueryStorageTest {
     RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table= */ table, /* filter= */ null);
@@ -1250,7 +1244,7 @@ public class ITBigQueryStorageTest {
     RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table= */ table, /* filter= */ null);
@@ -1345,7 +1339,7 @@ public class ITBigQueryStorageTest {
     RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table= */ table, /* filter= */ null);
@@ -1388,7 +1382,7 @@ public class ITBigQueryStorageTest {
     RunQueryJobAndExpectSuccess(QueryJobConfiguration.newBuilder(createTableStatement).build());
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ projectName, /* datasetId= */ DATASET, /* tableId= */ tableName);
 
     List<GenericData.Record> rows = ReadAllRows(/* table= */ table, /* filter= */ null);
@@ -1456,7 +1450,7 @@ public class ITBigQueryStorageTest {
                 client.getStub().getStubSettings().getBackgroundExecutorProvider())
             .getExecutorThreadCount());
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -1500,7 +1494,7 @@ public class ITBigQueryStorageTest {
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -1535,7 +1529,7 @@ public class ITBigQueryStorageTest {
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -1567,7 +1561,7 @@ public class ITBigQueryStorageTest {
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -1611,7 +1605,7 @@ public class ITBigQueryStorageTest {
     BigQueryReadClient otelClient = BigQueryReadClient.create(otelSettings);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
             /* datasetId= */ "samples",
             /* tableId= */ "shakespeare");
@@ -1670,7 +1664,7 @@ public class ITBigQueryStorageTest {
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
 
     String table =
-        BigQueryResource.FormatTableResource(
+        BigQueryResource.formatTableResource(
             /* projectId= */ "google-tpc-testing-environment:cloudsdk-test-project",
             /* datasetId= */ "tpc_demo_dataset",
             /* tableId= */ "new_table");
@@ -1712,10 +1706,8 @@ public class ITBigQueryStorageTest {
 
     long rowCount = 0;
     ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
-    Iterator<ReadRowsResponse> responseIterator = serverStream.iterator();
 
-    while (responseIterator.hasNext()) {
-      ReadRowsResponse response = responseIterator.next();
+    for (ReadRowsResponse response : serverStream) {
       rowCount += response.getRowCount();
       if (rowCount >= rowOffset) {
         return rowOffset;
@@ -1856,8 +1848,7 @@ public class ITBigQueryStorageTest {
   }
 
   static ServiceAccountCredentials loadCredentials(String credentialFile) {
-    try {
-      InputStream keyStream = new ByteArrayInputStream(credentialFile.getBytes());
+    try (InputStream keyStream = new ByteArrayInputStream(credentialFile.getBytes())) {
       return ServiceAccountCredentials.fromStream(keyStream);
     } catch (IOException e) {
       fail("Couldn't create fake JSON credentials.");
