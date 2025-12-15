@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLIED_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.METHOD_KEY;
@@ -28,6 +29,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_TYPE;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TRANSPORT_ZONE;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.Util.extractStatus;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
@@ -41,6 +43,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import io.grpc.Deadline;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.DoubleGauge;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import java.time.Duration;
@@ -136,6 +139,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private final DoubleHistogram remainingDeadlineHistogram;
   private final LongCounter connectivityErrorCounter;
   private final LongCounter retryCounter;
+  private final DoubleGauge batchWriteFlowControlTargetQps;
+  private final DoubleHistogram batchWriteFlowControlFactorHistogram;
 
   BuiltinMetricsTracer(
       OperationType operationType,
@@ -150,7 +155,9 @@ class BuiltinMetricsTracer extends BigtableTracer {
       DoubleHistogram applicationBlockingLatenciesHistogram,
       DoubleHistogram deadlineHistogram,
       LongCounter connectivityErrorCounter,
-      LongCounter retryCounter) {
+      LongCounter retryCounter,
+      DoubleGauge batchWriteFlowControlTargetQps,
+      DoubleHistogram batchWriteFlowControlFactorHistogram) {
     this.operationType = operationType;
     this.spanName = spanName;
     this.baseAttributes = attributes;
@@ -165,6 +172,8 @@ class BuiltinMetricsTracer extends BigtableTracer {
     this.remainingDeadlineHistogram = deadlineHistogram;
     this.connectivityErrorCounter = connectivityErrorCounter;
     this.retryCounter = retryCounter;
+    this.batchWriteFlowControlTargetQps = batchWriteFlowControlTargetQps;
+    this.batchWriteFlowControlFactorHistogram = batchWriteFlowControlFactorHistogram;
   }
 
   @Override
@@ -374,7 +383,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
     long operationLatencyNano = operationTimer.elapsed(TimeUnit.NANOSECONDS);
 
     boolean isStreaming = operationType == OperationType.ServerStreaming;
-    String statusStr = Util.extractStatus(status);
+    String statusStr = extractStatus(status);
 
     // Publish metric data with all the attributes. The attributes get filtered in
     // BuiltinMetricsConstants when we construct the views.
@@ -431,7 +440,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
       status = status.getCause();
     }
 
-    String statusStr = Util.extractStatus(status);
+    String statusStr = extractStatus(status);
 
     Attributes attributes =
         baseAttributes.toBuilder()
@@ -495,5 +504,25 @@ class BuiltinMetricsTracer extends BigtableTracer {
   private static double convertToMs(long nanoSeconds) {
     double toMs = 1e-6;
     return nanoSeconds * toMs;
+  }
+
+  @Override
+  public void setBatchWriteFlowControlTargetQps(double targetQps) {
+    Attributes attributes = baseAttributes.toBuilder().put(METHOD_KEY, spanName.toString()).build();
+
+    batchWriteFlowControlTargetQps.set(targetQps, attributes);
+  }
+
+  @Override
+  public void addBatchWriteFlowControlFactor(
+      double factor, @Nullable Throwable status, boolean applied) {
+    Attributes attributes =
+        baseAttributes.toBuilder()
+            .put(METHOD_KEY, spanName.toString())
+            .put(STATUS_KEY, extractStatus(status))
+            .put(APPLIED_KEY, applied)
+            .build();
+
+    batchWriteFlowControlFactorHistogram.record(factor, attributes);
   }
 }

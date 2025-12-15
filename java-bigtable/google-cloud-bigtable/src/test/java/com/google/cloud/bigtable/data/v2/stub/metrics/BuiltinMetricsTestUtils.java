@@ -23,6 +23,7 @@ import com.google.common.truth.Correspondence;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.metrics.data.DoublePointData;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -93,6 +94,27 @@ public class BuiltinMetricsTestUtils {
         return ld.getValue();
       default:
         return 0;
+    }
+  }
+
+  public static double getAggregatedDoubleValue(MetricData metricData, Attributes attributes) {
+    switch (metricData.getType()) {
+      case HISTOGRAM:
+        HistogramPointData hd =
+            metricData.getHistogramData().getPoints().stream()
+                .filter(pd -> pd.getAttributes().equals(attributes))
+                .collect(Collectors.toList())
+                .get(0);
+        return hd.getSum() / hd.getCount();
+      case DOUBLE_GAUGE:
+        DoublePointData dd =
+            metricData.getDoubleGaugeData().getPoints().stream()
+                .filter(pd -> pd.getAttributes().equals(attributes))
+                .collect(Collectors.toList())
+                .get(0);
+        return dd.getValue();
+      default:
+        return 0.0;
     }
   }
 

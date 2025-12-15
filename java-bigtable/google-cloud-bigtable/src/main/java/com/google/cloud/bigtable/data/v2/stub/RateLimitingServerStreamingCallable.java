@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import static com.google.cloud.bigtable.data.v2.stub.metrics.Util.extractStatus;
+
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.ResourceExhaustedException;
@@ -37,6 +39,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 class RateLimitingServerStreamingCallable
     extends ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> {
@@ -69,6 +72,8 @@ class RateLimitingServerStreamingCallable
 
   private final ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> innerCallable;
 
+  private BigtableTracer bigtableTracer;
+
   RateLimitingServerStreamingCallable(
       @Nonnull ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> innerCallable) {
     this.limiter = new ConditionalRateLimiter(DEFAULT_QPS);
@@ -84,8 +89,8 @@ class RateLimitingServerStreamingCallable
     limiter.acquire();
     stopwatch.stop();
     if (context.getTracer() instanceof BigtableTracer) {
-      ((BigtableTracer) context.getTracer())
-          .batchRequestThrottled(stopwatch.elapsed(TimeUnit.NANOSECONDS));
+      bigtableTracer = (BigtableTracer) context.getTracer();
+      bigtableTracer.batchRequestThrottled(stopwatch.elapsed(TimeUnit.NANOSECONDS));
     }
     RateLimitingResponseObserver innerObserver = new RateLimitingResponseObserver(responseObserver);
     innerCallable.call(request, innerObserver, context);
@@ -104,7 +109,10 @@ class RateLimitingServerStreamingCallable
 
     public ConditionalRateLimiter(long defaultQps) {
       limiter = RateLimiter.create(defaultQps);
-      logger.info("Rate limiting is initiated (but disabled) with rate of " + defaultQps + " QPS.");
+      logger.info(
+          "Batch write flow control: rate limiter is initiated (but disabled) with rate of "
+              + defaultQps
+              + " QPS.");
     }
 
     /**
@@ -128,7 +136,7 @@ class RateLimitingServerStreamingCallable
       if (now.isAfter(nextTime)) {
         boolean wasEnabled = this.enabled.getAndSet(false);
         if (wasEnabled) {
-          logger.info("Rate limiter is disabled.");
+          logger.info("Batch write flow control: rate limiter is disabled.");
         }
         // No need to update nextRateUpdateTime, any new RateLimitInfo can enable rate limiting and
         // update the rate again.
@@ -139,7 +147,7 @@ class RateLimitingServerStreamingCallable
     public void enable() {
       boolean wasEnabled = this.enabled.getAndSet(true);
       if (!wasEnabled) {
-        logger.info("Rate limiter is enabled.");
+        logger.info("Batch write flow control: rate limiter is enabled.");
       }
     }
 
@@ -158,12 +166,23 @@ class RateLimitingServerStreamingCallable
      * @param rate The new rate of the rate limiter.
      * @param period The period during which rate should not be updated again and the rate limiter
      *     should not be disabled.
+     * @param bigtableTracer The tracer for exporting client-side metrics.
+     * @param factor The capped factor that we're trying to apply.
+     * @param status The status of the response from which the factor is retrieved or derived.
      */
-    public void trySetRate(double rate, Duration period) {
+    public void trySetRate(
+        double rate,
+        Duration period,
+        @Nullable BigtableTracer bigtableTracer,
+        double factor,
+        @Nullable Throwable status) {
       Instant nextTime = nextRateUpdateTime.get();
       Instant now = Instant.now();
 
       if (now.isBefore(nextTime)) {
+        if (bigtableTracer != null) {
+          bigtableTracer.addBatchWriteFlowControlFactor(factor, status, false);
+        }
         return;
       }
 
@@ -171,18 +190,28 @@ class RateLimitingServerStreamingCallable
 
       if (!nextRateUpdateTime.compareAndSet(nextTime, newNextTime)) {
         // Someone else updated it already.
+        if (bigtableTracer != null) {
+          bigtableTracer.addBatchWriteFlowControlFactor(factor, status, false);
+        }
         return;
       }
       final double oldRate = limiter.getRate();
       limiter.setRate(rate);
       logger.info(
-          "Updated max rate from "
+          "Batch write flow control: updated max rate from "
               + oldRate
               + " to "
               + rate
+              + " applied factor "
+              + factor
               + " with period "
               + period.getSeconds()
-              + " seconds.");
+              + " seconds. Status="
+              + extractStatus(status));
+      if (bigtableTracer != null) {
+        bigtableTracer.setBatchWriteFlowControlTargetQps(rate);
+        bigtableTracer.addBatchWriteFlowControlFactor(factor, status, true);
+      }
     }
 
     @VisibleForTesting
@@ -215,17 +244,21 @@ class RateLimitingServerStreamingCallable
       // have presence even thought it's marked as "optional". Check the factor and
       // period to make sure they're not 0.
       if (!response.hasRateLimitInfo()) {
-        logger.finest("Response carries no RateLimitInfo");
+        logger.finest("Batch write flow control: response carries no RateLimitInfo");
         return false;
       }
 
       if (response.getRateLimitInfo().getFactor() <= 0
           || response.getRateLimitInfo().getPeriod().getSeconds() <= 0) {
-        logger.finest("Response carries invalid RateLimitInfo=" + response.getRateLimitInfo());
+        logger.finest(
+            "Batch write flow control: response carries invalid RateLimitInfo="
+                + response.getRateLimitInfo());
         return false;
       }
 
-      logger.finest("Response carries valid RateLimitInfo=" + response.getRateLimitInfo());
+      logger.finest(
+          "Batch write flow control: response carries valid RateLimitInfo="
+              + response.getRateLimitInfo());
       return true;
     }
 
@@ -236,7 +269,8 @@ class RateLimitingServerStreamingCallable
         RateLimitInfo info = response.getRateLimitInfo();
         updateQps(
             info.getFactor(),
-            Duration.ofSeconds(com.google.protobuf.util.Durations.toSeconds(info.getPeriod())));
+            Duration.ofSeconds(com.google.protobuf.util.Durations.toSeconds(info.getPeriod())),
+            null);
       } else {
         limiter.tryDisable();
       }
@@ -250,7 +284,7 @@ class RateLimitingServerStreamingCallable
       if (t instanceof DeadlineExceededException
           || t instanceof UnavailableException
           || t instanceof ResourceExhaustedException) {
-        updateQps(MIN_FACTOR, DEFAULT_PERIOD);
+        updateQps(MIN_FACTOR, DEFAULT_PERIOD, t);
       }
       outerObserver.onError(t);
     }
@@ -260,11 +294,11 @@ class RateLimitingServerStreamingCallable
       outerObserver.onComplete();
     }
 
-    private void updateQps(double factor, Duration period) {
+    private void updateQps(double factor, Duration period, @Nullable Throwable status) {
       double cappedFactor = Math.min(Math.max(factor, MIN_FACTOR), MAX_FACTOR);
       double currentRate = limiter.getRate();
       double cappedRate = Math.min(Math.max(currentRate * cappedFactor, MIN_QPS), MAX_QPS);
-      limiter.trySetRate(cappedRate, period);
+      limiter.trySetRate(cappedRate, period, bigtableTracer, cappedFactor, status);
     }
   }
 

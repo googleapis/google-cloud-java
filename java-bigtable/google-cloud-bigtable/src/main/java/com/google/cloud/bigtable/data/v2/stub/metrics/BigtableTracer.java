@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
@@ -115,4 +116,25 @@ public class BigtableTracer extends BaseApiTracer {
   public void setTotalTimeoutDuration(Duration totalTimeoutDuration) {
     // noop
   }
+
+  /**
+   * Record the target QPS for batch write flow control.
+   *
+   * @param targetQps The new target QPS for the client.
+   */
+  @InternalApi
+  public void setBatchWriteFlowControlTargetQps(double targetQps) {}
+
+  /**
+   * Record the factors received from server-side for batch write flow control. The factors are
+   * capped by min and max allowed factor values. Status and whether the factor was actually applied
+   * are also recorded.
+   *
+   * @param factor Capped factor from server-side. For non-OK response, min factor is used.
+   * @param status The status of the response from which the factor is retrieved or derived.
+   * @param applied Whether the factor was actually applied.
+   */
+  @InternalApi
+  public void addBatchWriteFlowControlFactor(
+      double factor, @Nullable Throwable status, boolean applied) {}
 }

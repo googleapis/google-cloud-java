@@ -79,7 +79,7 @@ public class Util {
       Metadata.Key.of("x-goog-ext-425905942-bin", Metadata.BINARY_BYTE_MARSHALLER);
 
   /** Convert an exception into a value that can be used to create an OpenCensus tag value. */
-  static String extractStatus(@Nullable Throwable error) {
+  public static String extractStatus(@Nullable Throwable error) {
     final String statusString;
 
     if (error == null) {

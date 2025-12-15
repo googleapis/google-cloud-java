@@ -16,7 +16,10 @@
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLIED_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLUSTER_ID_KEY;
@@ -31,6 +34,7 @@ import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConst
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.STREAMING_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.TABLE_ID_KEY;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ZONE_ID_KEY;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedDoubleValue;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getAggregatedValue;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.getMetricData;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsTestUtils.verifyAttributes;
@@ -236,6 +240,7 @@ public class BuiltinMetricsTracerTest {
 
     stubSettingsBuilder
         .bulkMutateRowsSettings()
+        .setServerInitiatedFlowControl(true)
         .setBatchingSettings(
             // Each batch has 2 mutations, batch has 1 in-flight request, disable auto flush by
             // setting the delay to 1 hour.
@@ -811,6 +816,163 @@ public class BuiltinMetricsTracerTest {
     assertThat(okRemainingDeadline).isIn(Range.closed(expected - 500, expected + 10));
   }
 
+  @Test
+  public void testBatchWriteFlowControlTargetQpsIncreased() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      batcher.add(
+          RowMutationEntry.create("batch-write-flow-control-success-12").setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+      Attributes targetQpsAttributes =
+          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      double expected_qps = 12;
+      assertThat(expected_qps).isEqualTo(actual_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      Attributes factorAttributes =
+          baseAttributes.toBuilder()
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(APPLIED_KEY, true)
+              .put(STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      double expected_factor_mean = 1.2;
+      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsDecreased() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      batcher.add(
+          RowMutationEntry.create("batch-write-flow-control-success-08").setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+      Attributes targetQpsAttributes =
+          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      double expected_qps = 8.0;
+      assertThat(expected_qps).isEqualTo(actual_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      Attributes factorAttributes =
+          baseAttributes.toBuilder()
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(APPLIED_KEY, true)
+              .put(STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      double expected_factor_mean = 0.8;
+      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsCappedOnMaxFactor() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      batcher.add(
+          RowMutationEntry.create("batch-write-flow-control-success-18").setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+      Attributes targetQpsAttributes =
+          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // Factor is 1.8 but capped at 1.3 so updated QPS is 13.
+      double expected_qps = 13;
+      assertThat(expected_qps).isEqualTo(actual_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      Attributes factorAttributes =
+          baseAttributes.toBuilder()
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(APPLIED_KEY, true)
+              .put(STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // Factor is 1.8 but capped at 1.3
+      double expected_factor_mean = 1.3;
+      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsCappedOnMinFactor() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      batcher.add(
+          RowMutationEntry.create("batch-write-flow-control-success-05").setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+      Attributes targetQpsAttributes =
+          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // Factor is 0.5 but capped at 0.7 so updated QPS is 7.
+      double expected_qps = 7;
+      assertThat(expected_qps).isEqualTo(actual_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      Attributes factorAttributes =
+          baseAttributes.toBuilder()
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(APPLIED_KEY, true)
+              .put(STATUS_KEY, "OK")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // Factor is 0.5 but capped at 0.7
+      double expected_factor_mean = 0.7;
+      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+    }
+  }
+
+  @Test
+  public void testBatchWriteFlowControlTargetQpsDecreasedForError() throws InterruptedException {
+    try (Batcher<RowMutationEntry, Void> batcher = stub.newMutateRowsBatcher(TABLE, null)) {
+      batcher.add(
+          RowMutationEntry.create("batch-write-flow-control-fail-unavailable")
+              .setCell("f", "q", "v"));
+
+      // closing the batcher to trigger the flush
+      batcher.close();
+
+      MetricData targetQpsMetric =
+          getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME);
+      Attributes targetQpsAttributes =
+          baseAttributes.toBuilder().put(METHOD_KEY, "Bigtable.MutateRows").build();
+      double actual_qps = getAggregatedDoubleValue(targetQpsMetric, targetQpsAttributes);
+      // On error, min factor is applied.
+      double expected_qps = 7;
+      assertThat(expected_qps).isEqualTo(actual_qps);
+
+      MetricData factorMetric = getMetricData(metricReader, BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME);
+      Attributes factorAttributes =
+          baseAttributes.toBuilder()
+              .put(METHOD_KEY, "Bigtable.MutateRows")
+              .put(APPLIED_KEY, true)
+              .put(STATUS_KEY, "UNAVAILABLE")
+              .build();
+      double actual_factor_mean = getAggregatedDoubleValue(factorMetric, factorAttributes);
+      // On error, min factor is applied.
+      double expected_factor_mean = 0.7;
+      assertThat(expected_factor_mean).isEqualTo(actual_factor_mean);
+    }
+  }
+
   private static class FakeService extends BigtableGrpc.BigtableImplBase {
 
     static List<ReadRowsResponse> createFakeResponse() {
@@ -901,7 +1063,10 @@ public class BuiltinMetricsTracerTest {
       } catch (InterruptedException e) {
       }
       MutateRowsResponse.Builder builder = MutateRowsResponse.newBuilder();
+      String receivedRowkey = "";
       for (int i = 0; i < request.getEntriesCount(); i++) {
+        receivedRowkey =
+            request.getEntries(i).getRowKey().toString(Charset.availableCharsets().get("UTF-8"));
         if (request
             .getEntries(i)
             .getRowKey()
@@ -918,6 +1083,33 @@ public class BuiltinMetricsTracerTest {
         }
         builder.addEntriesBuilder().setIndex(i);
       }
+
+      // Add RateLimitInfo for Batch Write Flow Control
+      com.google.protobuf.Duration duration =
+          builder.getRateLimitInfoBuilder().getPeriodBuilder().setSeconds(10).build();
+      if (receivedRowkey.equals("batch-write-flow-control-success-18")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(1.8).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-12")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(1.2).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-08")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(0.8).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-success-05")) {
+        builder.setRateLimitInfo(
+            builder.getRateLimitInfoBuilder().setFactor(0.5).setPeriod(duration).build());
+      } else if (receivedRowkey.equals("batch-write-flow-control-fail-unavailable")) {
+        if (getAttemptCounter().get() > 0) {
+          responseObserver.onNext(builder.build());
+          responseObserver.onCompleted();
+          return;
+        }
+        getAttemptCounter().incrementAndGet();
+        responseObserver.onError(new StatusRuntimeException(Status.UNAVAILABLE));
+        return;
+      }
+
       responseObserver.onNext(builder.build());
       responseObserver.onCompleted();
     }

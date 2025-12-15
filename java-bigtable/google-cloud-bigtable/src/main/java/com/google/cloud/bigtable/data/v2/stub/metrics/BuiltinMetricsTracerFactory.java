@@ -18,6 +18,8 @@ package com.google.cloud.bigtable.data.v2.stub.metrics;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.APPLICATION_BLOCKING_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES2_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.ATTEMPT_LATENCIES_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME;
+import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CLIENT_BLOCKING_LATENCIES_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.CONNECTIVITY_ERROR_COUNT_NAME;
 import static com.google.cloud.bigtable.data.v2.stub.metrics.BuiltinMetricsConstants.FIRST_RESPONSE_LATENCIES_NAME;
@@ -34,6 +36,7 @@ import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.SpanName;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.DoubleGauge;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
@@ -61,6 +64,8 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
   private final DoubleHistogram remainingDeadlineHistogram;
   private final LongCounter connectivityErrorCounter;
   private final LongCounter retryCounter;
+  private final DoubleGauge batchWriteFlowControlTargetQps;
+  private final DoubleHistogram batchWriteFlowControlFactorHistogram;
 
   public static BuiltinMetricsTracerFactory create(
       OpenTelemetry openTelemetry, Attributes attributes) throws IOException {
@@ -147,6 +152,19 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
             .setDescription("The number of additional RPCs sent after the initial attempt.")
             .setUnit(COUNT)
             .build();
+    batchWriteFlowControlTargetQps =
+        meter
+            .gaugeBuilder(BATCH_WRITE_FLOW_CONTROL_TARGET_QPS_NAME)
+            .setDescription("The current target QPS of the client under batch write flow control.")
+            .setUnit("1")
+            .build();
+    batchWriteFlowControlFactorHistogram =
+        meter
+            .histogramBuilder(BATCH_WRITE_FLOW_CONTROL_FACTOR_NAME)
+            .setDescription(
+                "The distribution of batch write flow control factors received from the server.")
+            .setUnit("1")
+            .build();
   }
 
   @Override
@@ -164,6 +182,8 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         applicationBlockingLatenciesHistogram,
         remainingDeadlineHistogram,
         connectivityErrorCounter,
-        retryCounter);
+        retryCounter,
+        batchWriteFlowControlTargetQps,
+        batchWriteFlowControlFactorHistogram);
   }
 }
