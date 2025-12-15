@@ -76,6 +76,7 @@ public final class TransactionEvent extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Enum that represents an event in the payment transaction lifecycle.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.TransactionEvent.TransactionEventType}

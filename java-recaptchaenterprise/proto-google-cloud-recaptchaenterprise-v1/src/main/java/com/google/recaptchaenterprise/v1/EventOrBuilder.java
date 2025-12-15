@@ -185,7 +185,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=745
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated
@@ -235,7 +235,7 @@ public interface EventOrBuilder
    *
    *
    * <pre>
-   * Optional. Flag for running WAF token assessment.
+   * Optional. Flag for running Web Application Firewall (WAF) token assessment.
    * If enabled, the token must be specified, and have been created by a
    * WAF-enabled key.
    * </pre>

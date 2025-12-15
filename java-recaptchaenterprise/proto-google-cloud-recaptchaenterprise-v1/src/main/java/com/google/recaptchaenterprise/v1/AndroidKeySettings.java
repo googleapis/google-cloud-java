@@ -101,6 +101,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
+   * Each key supports a maximum of 250 package names. To use a key on more
+   * apps, set `allow_all_package_names` to true. When this is set, you
+   * are responsible for validating the package name by checking the
+   * `token_properties.android_package_name` field in each assessment response
+   * against your list of allowed package names.
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -118,6 +123,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
+   * Each key supports a maximum of 250 package names. To use a key on more
+   * apps, set `allow_all_package_names` to true. When this is set, you
+   * are responsible for validating the package name by checking the
+   * `token_properties.android_package_name` field in each assessment response
+   * against your list of allowed package names.
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -135,6 +145,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
+   * Each key supports a maximum of 250 package names. To use a key on more
+   * apps, set `allow_all_package_names` to true. When this is set, you
+   * are responsible for validating the package name by checking the
+   * `token_properties.android_package_name` field in each assessment response
+   * against your list of allowed package names.
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -153,6 +168,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Optional. Android package names of apps allowed to use the key.
    * Example: 'com.companyname.appname'
+   * Each key supports a maximum of 250 package names. To use a key on more
+   * apps, set `allow_all_package_names` to true. When this is set, you
+   * are responsible for validating the package name by checking the
+   * `token_properties.android_package_name` field in each assessment response
+   * against your list of allowed package names.
    * </pre>
    *
    * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -633,6 +653,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -651,6 +676,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -668,6 +698,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -686,6 +721,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -704,6 +744,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -730,6 +775,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -755,6 +805,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -777,6 +832,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];
@@ -798,6 +858,11 @@ public final class AndroidKeySettings extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Optional. Android package names of apps allowed to use the key.
      * Example: 'com.companyname.appname'
+     * Each key supports a maximum of 250 package names. To use a key on more
+     * apps, set `allow_all_package_names` to true. When this is set, you
+     * are responsible for validating the package name by checking the
+     * `token_properties.android_package_name` field in each assessment response
+     * against your list of allowed package names.
      * </pre>
      *
      * <code>repeated string allowed_package_names = 1 [(.google.api.field_behavior) = OPTIONAL];

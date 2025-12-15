@@ -696,7 +696,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>
@@ -714,7 +714,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>
@@ -734,7 +734,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>
@@ -3150,7 +3150,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3167,7 +3167,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3190,7 +3190,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3215,7 +3215,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3238,7 +3238,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3268,7 +3268,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3290,7 +3290,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3307,7 +3307,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>
@@ -3328,7 +3328,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Settings for WAF
+     * Optional. Settings for Web Application Firewall (WAF).
      * </pre>
      *
      * <code>

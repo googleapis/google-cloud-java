@@ -45,6 +45,80 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+      getRiskReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason getRiskReasons(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getRiskReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>
+      getRiskReasonsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder
+      getRiskReasonsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Assessment of this transaction for risk of a stolen
    * instrument.
    * </pre>

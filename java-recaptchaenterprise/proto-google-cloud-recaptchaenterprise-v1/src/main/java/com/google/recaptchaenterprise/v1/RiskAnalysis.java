@@ -55,6 +55,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     reasons_ = emptyIntList();
     extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
     challenge_ = 0;
+    verifiedBots_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,6 +78,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Reasons contributing to the risk analysis verdict.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.RiskAnalysis.ClassificationReason}
@@ -367,7 +369,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Challenge information for SCORE_AND_CHALLENGE and INVISIBLE keys
+   * Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE keys.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge}
@@ -783,8 +786,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-   * keys
+   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+   * keys.
    * </pre>
    *
    * <code>
@@ -802,8 +805,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-   * keys
+   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+   * keys.
    * </pre>
    *
    * <code>
@@ -819,6 +822,97 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     return result == null
         ? com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.UNRECOGNIZED
         : result;
+  }
+
+  public static final int VERIFIED_BOTS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.recaptchaenterprise.v1.Bot> verifiedBots_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.recaptchaenterprise.v1.Bot> getVerifiedBotsList() {
+    return verifiedBots_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.recaptchaenterprise.v1.BotOrBuilder>
+      getVerifiedBotsOrBuilderList() {
+    return verifiedBots_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getVerifiedBotsCount() {
+    return verifiedBots_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.Bot getVerifiedBots(int index) {
+    return verifiedBots_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.BotOrBuilder getVerifiedBotsOrBuilder(int index) {
+    return verifiedBots_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -854,6 +948,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         != com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge.CHALLENGE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(4, challenge_);
+    }
+    for (int i = 0; i < verifiedBots_.size(); i++) {
+      output.writeMessage(5, verifiedBots_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -892,6 +989,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, challenge_);
     }
+    for (int i = 0; i < verifiedBots_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, verifiedBots_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -914,6 +1014,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     if (!getExtendedVerdictReasonsList().equals(other.getExtendedVerdictReasonsList()))
       return false;
     if (challenge_ != other.challenge_) return false;
+    if (!getVerifiedBotsList().equals(other.getVerifiedBotsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -937,6 +1038,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + CHALLENGE_FIELD_NUMBER;
     hash = (53 * hash) + challenge_;
+    if (getVerifiedBotsCount() > 0) {
+      hash = (37 * hash) + VERIFIED_BOTS_FIELD_NUMBER;
+      hash = (53 * hash) + getVerifiedBotsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1081,6 +1186,13 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       reasons_ = emptyIntList();
       extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
       challenge_ = 0;
+      if (verifiedBotsBuilder_ == null) {
+        verifiedBots_ = java.util.Collections.emptyList();
+      } else {
+        verifiedBots_ = null;
+        verifiedBotsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -1108,11 +1220,24 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     public com.google.recaptchaenterprise.v1.RiskAnalysis buildPartial() {
       com.google.recaptchaenterprise.v1.RiskAnalysis result =
           new com.google.recaptchaenterprise.v1.RiskAnalysis(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.recaptchaenterprise.v1.RiskAnalysis result) {
+      if (verifiedBotsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          verifiedBots_ = java.util.Collections.unmodifiableList(verifiedBots_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.verifiedBots_ = verifiedBots_;
+      } else {
+        result.verifiedBots_ = verifiedBotsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.recaptchaenterprise.v1.RiskAnalysis result) {
@@ -1171,6 +1296,33 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       }
       if (other.challenge_ != 0) {
         setChallengeValue(other.getChallengeValue());
+      }
+      if (verifiedBotsBuilder_ == null) {
+        if (!other.verifiedBots_.isEmpty()) {
+          if (verifiedBots_.isEmpty()) {
+            verifiedBots_ = other.verifiedBots_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureVerifiedBotsIsMutable();
+            verifiedBots_.addAll(other.verifiedBots_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.verifiedBots_.isEmpty()) {
+          if (verifiedBotsBuilder_.isEmpty()) {
+            verifiedBotsBuilder_.dispose();
+            verifiedBotsBuilder_ = null;
+            verifiedBots_ = other.verifiedBots_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            verifiedBotsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetVerifiedBotsFieldBuilder()
+                    : null;
+          } else {
+            verifiedBotsBuilder_.addAllMessages(other.verifiedBots_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1235,6 +1387,19 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 42:
+              {
+                com.google.recaptchaenterprise.v1.Bot m =
+                    input.readMessage(
+                        com.google.recaptchaenterprise.v1.Bot.parser(), extensionRegistry);
+                if (verifiedBotsBuilder_ == null) {
+                  ensureVerifiedBotsIsMutable();
+                  verifiedBots_.add(m);
+                } else {
+                  verifiedBotsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1797,8 +1962,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-     * keys
+     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+     * keys.
      * </pre>
      *
      * <code>
@@ -1816,8 +1981,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-     * keys
+     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+     * keys.
      * </pre>
      *
      * <code>
@@ -1838,8 +2003,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-     * keys
+     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+     * keys.
      * </pre>
      *
      * <code>
@@ -1861,8 +2026,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-     * keys
+     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+     * keys.
      * </pre>
      *
      * <code>
@@ -1886,8 +2051,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-     * keys
+     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+     * keys.
      * </pre>
      *
      * <code>
@@ -1901,6 +2066,427 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       challenge_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.recaptchaenterprise.v1.Bot> verifiedBots_ =
+        java.util.Collections.emptyList();
+
+    private void ensureVerifiedBotsIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        verifiedBots_ =
+            new java.util.ArrayList<com.google.recaptchaenterprise.v1.Bot>(verifiedBots_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.recaptchaenterprise.v1.Bot,
+            com.google.recaptchaenterprise.v1.Bot.Builder,
+            com.google.recaptchaenterprise.v1.BotOrBuilder>
+        verifiedBotsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.recaptchaenterprise.v1.Bot> getVerifiedBotsList() {
+      if (verifiedBotsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(verifiedBots_);
+      } else {
+        return verifiedBotsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getVerifiedBotsCount() {
+      if (verifiedBotsBuilder_ == null) {
+        return verifiedBots_.size();
+      } else {
+        return verifiedBotsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.Bot getVerifiedBots(int index) {
+      if (verifiedBotsBuilder_ == null) {
+        return verifiedBots_.get(index);
+      } else {
+        return verifiedBotsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVerifiedBots(int index, com.google.recaptchaenterprise.v1.Bot value) {
+      if (verifiedBotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.set(index, value);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVerifiedBots(
+        int index, com.google.recaptchaenterprise.v1.Bot.Builder builderForValue) {
+      if (verifiedBotsBuilder_ == null) {
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVerifiedBots(com.google.recaptchaenterprise.v1.Bot value) {
+      if (verifiedBotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.add(value);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVerifiedBots(int index, com.google.recaptchaenterprise.v1.Bot value) {
+      if (verifiedBotsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.add(index, value);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVerifiedBots(com.google.recaptchaenterprise.v1.Bot.Builder builderForValue) {
+      if (verifiedBotsBuilder_ == null) {
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.add(builderForValue.build());
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addVerifiedBots(
+        int index, com.google.recaptchaenterprise.v1.Bot.Builder builderForValue) {
+      if (verifiedBotsBuilder_ == null) {
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllVerifiedBots(
+        java.lang.Iterable<? extends com.google.recaptchaenterprise.v1.Bot> values) {
+      if (verifiedBotsBuilder_ == null) {
+        ensureVerifiedBotsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, verifiedBots_);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVerifiedBots() {
+      if (verifiedBotsBuilder_ == null) {
+        verifiedBots_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeVerifiedBots(int index) {
+      if (verifiedBotsBuilder_ == null) {
+        ensureVerifiedBotsIsMutable();
+        verifiedBots_.remove(index);
+        onChanged();
+      } else {
+        verifiedBotsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.Bot.Builder getVerifiedBotsBuilder(int index) {
+      return internalGetVerifiedBotsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.BotOrBuilder getVerifiedBotsOrBuilder(int index) {
+      if (verifiedBotsBuilder_ == null) {
+        return verifiedBots_.get(index);
+      } else {
+        return verifiedBotsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.recaptchaenterprise.v1.BotOrBuilder>
+        getVerifiedBotsOrBuilderList() {
+      if (verifiedBotsBuilder_ != null) {
+        return verifiedBotsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(verifiedBots_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.Bot.Builder addVerifiedBotsBuilder() {
+      return internalGetVerifiedBotsFieldBuilder()
+          .addBuilder(com.google.recaptchaenterprise.v1.Bot.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.Bot.Builder addVerifiedBotsBuilder(int index) {
+      return internalGetVerifiedBotsFieldBuilder()
+          .addBuilder(index, com.google.recaptchaenterprise.v1.Bot.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Bots with identities that have been verified by reCAPTCHA and
+     * detected in the event.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.recaptchaenterprise.v1.Bot.Builder>
+        getVerifiedBotsBuilderList() {
+      return internalGetVerifiedBotsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.recaptchaenterprise.v1.Bot,
+            com.google.recaptchaenterprise.v1.Bot.Builder,
+            com.google.recaptchaenterprise.v1.BotOrBuilder>
+        internalGetVerifiedBotsFieldBuilder() {
+      if (verifiedBotsBuilder_ == null) {
+        verifiedBotsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.recaptchaenterprise.v1.Bot,
+                com.google.recaptchaenterprise.v1.Bot.Builder,
+                com.google.recaptchaenterprise.v1.BotOrBuilder>(
+                verifiedBots_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        verifiedBots_ = null;
+      }
+      return verifiedBotsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.RiskAnalysis)

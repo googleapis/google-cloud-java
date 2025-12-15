@@ -47,6 +47,10 @@ public interface WebKeySettingsOrBuilder
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -63,6 +67,10 @@ public interface WebKeySettingsOrBuilder
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79,6 +87,10 @@ public interface WebKeySettingsOrBuilder
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -96,6 +108,10 @@ public interface WebKeySettingsOrBuilder
    * subdomains of an allowed domain are automatically allowed. A valid domain
    * requires a host and must not include any path, port, query or fragment.
    * Examples: 'example.com' or 'subdomain.example.com'
+   * Each key supports a maximum of 250 domains. To use a key on more domains,
+   * set `allow_all_domains` to true. When this is set, you are responsible for
+   * validating the hostname by checking the `token_properties.hostname` field
+   * in each assessment response against your list of allowed domains.
    * </pre>
    *
    * <code>repeated string allowed_domains = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -155,7 +171,7 @@ public interface WebKeySettingsOrBuilder
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+   * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
    * </pre>
    *
    * <code>
@@ -172,7 +188,7 @@ public interface WebKeySettingsOrBuilder
    * <pre>
    * Optional. Settings for the frequency and difficulty at which this key
    * triggers captcha challenges. This should only be specified for
-   * IntegrationTypes CHECKBOX and INVISIBLE and SCORE_AND_CHALLENGE.
+   * `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE.
    * </pre>
    *
    * <code>
@@ -183,4 +199,48 @@ public interface WebKeySettingsOrBuilder
    */
   com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSecurityPreference
       getChallengeSecurityPreference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the challengeSettings field is set.
+   */
+  boolean hasChallengeSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The challengeSettings.
+   */
+  com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings getChallengeSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Challenge settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.WebKeySettings.ChallengeSettings challenge_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.WebKeySettings.ChallengeSettingsOrBuilder
+      getChallengeSettingsOrBuilder();
 }

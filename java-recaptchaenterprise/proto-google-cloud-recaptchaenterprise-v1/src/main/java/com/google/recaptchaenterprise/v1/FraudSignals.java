@@ -842,6 +842,7 @@ public final class FraudSignals extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Risk labels describing the card being assessed, such as its funding
      * mechanism.
+     * Ensure that applications can handle values not explicitly listed.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.FraudSignals.CardSignals.CardLabel}

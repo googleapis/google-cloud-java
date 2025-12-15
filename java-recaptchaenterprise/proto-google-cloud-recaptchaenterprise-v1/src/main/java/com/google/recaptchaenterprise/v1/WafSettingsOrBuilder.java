@@ -30,7 +30,7 @@ public interface WafSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The WAF service that uses this key.
+   * Required. The Web Application Firewall (WAF) service that uses this key.
    * </pre>
    *
    * <code>
@@ -45,7 +45,7 @@ public interface WafSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The WAF service that uses this key.
+   * Required. The Web Application Firewall (WAF) service that uses this key.
    * </pre>
    *
    * <code>
@@ -60,7 +60,8 @@ public interface WafSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The WAF feature for which this key is enabled.
+   * Required. The Web Application Firewall (WAF) feature for which this key is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -75,7 +76,8 @@ public interface WafSettingsOrBuilder
    *
    *
    * <pre>
-   * Required. The WAF feature for which this key is enabled.
+   * Required. The Web Application Firewall (WAF) feature for which this key is
+   * enabled.
    * </pre>
    *
    * <code>

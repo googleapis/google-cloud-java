@@ -76,6 +76,7 @@ public final class IpOverrideData extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Enum that represents the type of IP override.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.IpOverrideData.OverrideType}

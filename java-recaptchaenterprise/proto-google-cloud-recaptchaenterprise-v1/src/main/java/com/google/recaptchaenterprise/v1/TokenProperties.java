@@ -79,6 +79,7 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Enum that represents the types of invalid token reasons.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.TokenProperties.InvalidReason}
@@ -155,6 +156,23 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      * <code>BROWSER_ERROR = 6;</code>
      */
     BROWSER_ERROR(6),
+    /**
+     *
+     *
+     * <pre>
+     * The action provided at token generation was different than
+     * the `expected_action` in the assessment request. The comparison is
+     * case-insensitive. This reason can only be returned if all of the
+     * following are true:
+     *
+     * - your `site_key` has the POLICY_BASED_CHALLENGE integration type
+     * - you set an action score threshold higher than 0.0
+     * - you provided a non-empty `expected_action`
+     * </pre>
+     *
+     * <code>UNEXPECTED_ACTION = 7;</code>
+     */
+    UNEXPECTED_ACTION(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -246,6 +264,24 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      */
     public static final int BROWSER_ERROR_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * The action provided at token generation was different than
+     * the `expected_action` in the assessment request. The comparison is
+     * case-insensitive. This reason can only be returned if all of the
+     * following are true:
+     *
+     * - your `site_key` has the POLICY_BASED_CHALLENGE integration type
+     * - you set an action score threshold higher than 0.0
+     * - you provided a non-empty `expected_action`
+     * </pre>
+     *
+     * <code>UNEXPECTED_ACTION = 7;</code>
+     */
+    public static final int UNEXPECTED_ACTION_VALUE = 7;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -284,6 +320,8 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
           return MISSING;
         case 6:
           return BROWSER_ERROR;
+        case 7:
+          return UNEXPECTED_ACTION;
         default:
           return null;
       }

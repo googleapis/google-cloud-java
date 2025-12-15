@@ -75,6 +75,7 @@ public final class SmsTollFraudVerdict extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Reasons contributing to the SMS toll fraud verdict.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code

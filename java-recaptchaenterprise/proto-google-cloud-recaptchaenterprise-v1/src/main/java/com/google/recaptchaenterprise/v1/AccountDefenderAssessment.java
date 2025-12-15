@@ -75,6 +75,7 @@ public final class AccountDefenderAssessment extends com.google.protobuf.Generat
    *
    * <pre>
    * Labels returned by account defender for this request.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code

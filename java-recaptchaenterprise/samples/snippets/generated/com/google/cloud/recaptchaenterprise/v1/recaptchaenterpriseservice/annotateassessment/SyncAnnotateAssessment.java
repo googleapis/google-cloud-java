@@ -22,6 +22,7 @@ import com.google.protobuf.ByteString;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.AssessmentName;
+import com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent;
 import com.google.recaptchaenterprise.v1.TransactionEvent;
 import java.util.ArrayList;
 
@@ -46,6 +47,7 @@ public class SyncAnnotateAssessment {
               .setAccountId("accountId-1827029976")
               .setHashedAccountId(ByteString.EMPTY)
               .setTransactionEvent(TransactionEvent.newBuilder().build())
+              .setPhoneAuthenticationEvent(PhoneAuthenticationEvent.newBuilder().build())
               .build();
       AnnotateAssessmentResponse response =
           recaptchaEnterpriseServiceClient.annotateAssessment(request);

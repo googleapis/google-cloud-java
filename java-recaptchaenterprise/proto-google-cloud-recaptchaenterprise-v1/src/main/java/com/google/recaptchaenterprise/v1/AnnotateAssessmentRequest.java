@@ -1150,6 +1150,69 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         : transactionEvent_;
   }
 
+  public static final int PHONE_AUTHENTICATION_EVENT_FIELD_NUMBER = 6;
+  private com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent phoneAuthenticationEvent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the phoneAuthenticationEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasPhoneAuthenticationEvent() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The phoneAuthenticationEvent.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent getPhoneAuthenticationEvent() {
+    return phoneAuthenticationEvent_ == null
+        ? com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.getDefaultInstance()
+        : phoneAuthenticationEvent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If using an external multi-factor authentication provider,
+   * provide phone authentication details for fraud detection purposes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder
+      getPhoneAuthenticationEventOrBuilder() {
+    return phoneAuthenticationEvent_ == null
+        ? com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.getDefaultInstance()
+        : phoneAuthenticationEvent_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1186,6 +1249,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getTransactionEvent());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getPhoneAuthenticationEvent());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, accountId_);
@@ -1226,6 +1292,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTransactionEvent());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getPhoneAuthenticationEvent());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, accountId_);
     }
@@ -1254,6 +1325,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (hasTransactionEvent()) {
       if (!getTransactionEvent().equals(other.getTransactionEvent())) return false;
     }
+    if (hasPhoneAuthenticationEvent() != other.hasPhoneAuthenticationEvent()) return false;
+    if (hasPhoneAuthenticationEvent()) {
+      if (!getPhoneAuthenticationEvent().equals(other.getPhoneAuthenticationEvent())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1280,6 +1355,10 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     if (hasTransactionEvent()) {
       hash = (37 * hash) + TRANSACTION_EVENT_FIELD_NUMBER;
       hash = (53 * hash) + getTransactionEvent().hashCode();
+    }
+    if (hasPhoneAuthenticationEvent()) {
+      hash = (37 * hash) + PHONE_AUTHENTICATION_EVENT_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneAuthenticationEvent().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1424,6 +1503,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetTransactionEventFieldBuilder();
+        internalGetPhoneAuthenticationEventFieldBuilder();
       }
     }
 
@@ -1440,6 +1520,11 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       if (transactionEventBuilder_ != null) {
         transactionEventBuilder_.dispose();
         transactionEventBuilder_ = null;
+      }
+      phoneAuthenticationEvent_ = null;
+      if (phoneAuthenticationEventBuilder_ != null) {
+        phoneAuthenticationEventBuilder_.dispose();
+        phoneAuthenticationEventBuilder_ = null;
       }
       return this;
     }
@@ -1499,6 +1584,13 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
             transactionEventBuilder_ == null ? transactionEvent_ : transactionEventBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.phoneAuthenticationEvent_ =
+            phoneAuthenticationEventBuilder_ == null
+                ? phoneAuthenticationEvent_
+                : phoneAuthenticationEventBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1544,6 +1636,9 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
       }
       if (other.hasTransactionEvent()) {
         mergeTransactionEvent(other.getTransactionEvent());
+      }
+      if (other.hasPhoneAuthenticationEvent()) {
+        mergePhoneAuthenticationEvent(other.getPhoneAuthenticationEvent());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1614,6 +1709,14 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000020;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetPhoneAuthenticationEventFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 50
             case 58:
               {
                 accountId_ = input.readStringRequireUtf8();
@@ -2558,6 +2661,235 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
         transactionEvent_ = null;
       }
       return transactionEventBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent phoneAuthenticationEvent_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent,
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.Builder,
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder>
+        phoneAuthenticationEventBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the phoneAuthenticationEvent field is set.
+     */
+    public boolean hasPhoneAuthenticationEvent() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The phoneAuthenticationEvent.
+     */
+    public com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent
+        getPhoneAuthenticationEvent() {
+      if (phoneAuthenticationEventBuilder_ == null) {
+        return phoneAuthenticationEvent_ == null
+            ? com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.getDefaultInstance()
+            : phoneAuthenticationEvent_;
+      } else {
+        return phoneAuthenticationEventBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPhoneAuthenticationEvent(
+        com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent value) {
+      if (phoneAuthenticationEventBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        phoneAuthenticationEvent_ = value;
+      } else {
+        phoneAuthenticationEventBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPhoneAuthenticationEvent(
+        com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.Builder builderForValue) {
+      if (phoneAuthenticationEventBuilder_ == null) {
+        phoneAuthenticationEvent_ = builderForValue.build();
+      } else {
+        phoneAuthenticationEventBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePhoneAuthenticationEvent(
+        com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent value) {
+      if (phoneAuthenticationEventBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && phoneAuthenticationEvent_ != null
+            && phoneAuthenticationEvent_
+                != com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent
+                    .getDefaultInstance()) {
+          getPhoneAuthenticationEventBuilder().mergeFrom(value);
+        } else {
+          phoneAuthenticationEvent_ = value;
+        }
+      } else {
+        phoneAuthenticationEventBuilder_.mergeFrom(value);
+      }
+      if (phoneAuthenticationEvent_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPhoneAuthenticationEvent() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      phoneAuthenticationEvent_ = null;
+      if (phoneAuthenticationEventBuilder_ != null) {
+        phoneAuthenticationEventBuilder_.dispose();
+        phoneAuthenticationEventBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.Builder
+        getPhoneAuthenticationEventBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetPhoneAuthenticationEventFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder
+        getPhoneAuthenticationEventOrBuilder() {
+      if (phoneAuthenticationEventBuilder_ != null) {
+        return phoneAuthenticationEventBuilder_.getMessageOrBuilder();
+      } else {
+        return phoneAuthenticationEvent_ == null
+            ? com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.getDefaultInstance()
+            : phoneAuthenticationEvent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If using an external multi-factor authentication provider,
+     * provide phone authentication details for fraud detection purposes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.PhoneAuthenticationEvent phone_authentication_event = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent,
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.Builder,
+            com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder>
+        internalGetPhoneAuthenticationEventFieldBuilder() {
+      if (phoneAuthenticationEventBuilder_ == null) {
+        phoneAuthenticationEventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent,
+                com.google.recaptchaenterprise.v1.PhoneAuthenticationEvent.Builder,
+                com.google.recaptchaenterprise.v1.PhoneAuthenticationEventOrBuilder>(
+                getPhoneAuthenticationEvent(), getParentForChildren(), isClean());
+        phoneAuthenticationEvent_ = null;
+      }
+      return phoneAuthenticationEventBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.AnnotateAssessmentRequest)
