@@ -281,7 +281,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
    * autoscalers.
    * </pre>
    *
@@ -298,7 +298,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
    * autoscalers.
    * </pre>
    *
@@ -323,7 +323,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
    * autoscalers.
    * </pre>
    *
@@ -434,7 +434,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -450,7 +450,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -474,7 +474,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -504,7 +504,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -520,7 +520,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -536,7 +536,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -553,7 +553,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -1582,7 +1582,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1598,7 +1598,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1622,7 +1622,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1646,7 +1646,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1669,7 +1669,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1688,7 +1688,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#autoscalerAggregatedList for aggregated lists of
      * autoscalers.
      * </pre>
      *
@@ -1864,7 +1864,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1879,7 +1879,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1902,7 +1902,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1925,7 +1925,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1947,7 +1947,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1965,7 +1965,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1998,7 +1998,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2015,7 +2015,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2031,7 +2031,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2048,7 +2048,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2065,7 +2065,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2090,7 +2090,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2114,7 +2114,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2135,7 +2135,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2155,7 +2155,7 @@ public final class AutoscalerAggregatedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *

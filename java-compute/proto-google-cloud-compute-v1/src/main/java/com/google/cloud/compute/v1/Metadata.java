@@ -250,7 +250,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -267,7 +267,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -292,7 +292,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -1322,7 +1322,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -1338,7 +1338,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -1362,7 +1362,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -1386,7 +1386,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -1409,7 +1409,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -1428,7 +1428,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *

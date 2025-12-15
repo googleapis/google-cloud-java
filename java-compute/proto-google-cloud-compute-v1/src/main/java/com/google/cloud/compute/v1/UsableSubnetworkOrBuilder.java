@@ -28,7 +28,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface UsableSubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *

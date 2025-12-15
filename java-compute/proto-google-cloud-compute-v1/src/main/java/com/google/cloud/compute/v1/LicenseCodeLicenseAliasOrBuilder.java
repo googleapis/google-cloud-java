@@ -28,7 +28,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -41,7 +41,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -54,7 +54,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -67,7 +67,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -80,7 +80,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -93,7 +93,7 @@ public interface LicenseCodeLicenseAliasOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of license corresponding to this License Code.
+   * Output only. [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

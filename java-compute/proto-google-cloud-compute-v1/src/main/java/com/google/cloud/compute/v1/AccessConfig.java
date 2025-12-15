@@ -550,7 +550,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -566,7 +566,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -590,7 +590,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1993,7 +1993,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2008,7 +2008,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2031,7 +2031,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2054,7 +2054,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2076,7 +2076,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2094,7 +2094,7 @@ public final class AccessConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

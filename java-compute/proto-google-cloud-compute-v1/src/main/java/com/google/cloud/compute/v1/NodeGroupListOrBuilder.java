@@ -122,7 +122,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#nodeGroupList
+   * Output only. [Output Only] Type of resource.Always compute#nodeGroupList
    * for lists of node groups.
    * </pre>
    *
@@ -136,7 +136,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#nodeGroupList
+   * Output only. [Output Only] Type of resource.Always compute#nodeGroupList
    * for lists of node groups.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#nodeGroupList
+   * Output only. [Output Only] Type of resource.Always compute#nodeGroupList
    * for lists of node groups.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -228,7 +228,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -241,7 +241,7 @@ public interface NodeGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

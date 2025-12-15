@@ -71,7 +71,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] The current status of the requested amendment.
+   * Output only. [Output Only] The current status of the requested amendment.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.FutureReservationStatus.AmendmentStatus}
@@ -270,7 +270,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Current state of this Future Reservation
+   * Output only. Current state of this Future Reservation
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.FutureReservationStatus.ProcurementStatus}
@@ -693,7 +693,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] The current status of the requested amendment.
+   * Output only. [Output Only] The current status of the requested amendment.
    * Check the AmendmentStatus enum for the list of possible values.
    * </pre>
    *
@@ -710,7 +710,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] The current status of the requested amendment.
+   * Output only. [Output Only] The current status of the requested amendment.
    * Check the AmendmentStatus enum for the list of possible values.
    * </pre>
    *
@@ -735,7 +735,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] The current status of the requested amendment.
+   * Output only. [Output Only] The current status of the requested amendment.
    * Check the AmendmentStatus enum for the list of possible values.
    * </pre>
    *
@@ -766,7 +766,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Fully qualified urls of the automatically created reservations at
+   * Output only. Fully qualified urls of the automatically created reservations at
    * start_time.
    * </pre>
    *
@@ -782,7 +782,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Fully qualified urls of the automatically created reservations at
+   * Output only. Fully qualified urls of the automatically created reservations at
    * start_time.
    * </pre>
    *
@@ -798,7 +798,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Fully qualified urls of the automatically created reservations at
+   * Output only. Fully qualified urls of the automatically created reservations at
    * start_time.
    * </pre>
    *
@@ -815,7 +815,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Fully qualified urls of the automatically created reservations at
+   * Output only. Fully qualified urls of the automatically created reservations at
    * start_time.
    * </pre>
    *
@@ -836,7 +836,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Represents the existing matching usage for the future
+   * Output only. [Output Only] Represents the existing matching usage for the future
    * reservation.
    * </pre>
    *
@@ -855,7 +855,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Represents the existing matching usage for the future
+   * Output only. [Output Only] Represents the existing matching usage for the future
    * reservation.
    * </pre>
    *
@@ -878,7 +878,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Represents the existing matching usage for the future
+   * Output only. [Output Only] Represents the existing matching usage for the future
    * reservation.
    * </pre>
    *
@@ -902,7 +902,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This count indicates the fulfilled capacity so far. This is set during
+   * Output only. This count indicates the fulfilled capacity so far. This is set during
    * "PROVISIONING" state. This count also includes capacity delivered as part
    * of existing matching reservations.
    * </pre>
@@ -920,7 +920,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * This count indicates the fulfilled capacity so far. This is set during
+   * Output only. This count indicates the fulfilled capacity so far. This is set during
    * "PROVISIONING" state. This count also includes capacity delivered as part
    * of existing matching reservations.
    * </pre>
@@ -941,7 +941,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This field represents the future reservation before an
+   * Output only. [Output Only] This field represents the future reservation before an
    * amendment was requested. If the amendment is declined, the Future
    * Reservation will be reverted to the last known good state. The last known
    * good state is not set when updating a future reservation whose
@@ -963,7 +963,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This field represents the future reservation before an
+   * Output only. [Output Only] This field represents the future reservation before an
    * amendment was requested. If the amendment is declined, the Future
    * Reservation will be reverted to the last known good state. The last known
    * good state is not set when updating a future reservation whose
@@ -988,7 +988,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This field represents the future reservation before an
+   * Output only. [Output Only] This field represents the future reservation before an
    * amendment was requested. If the amendment is declined, the Future
    * Reservation will be reverted to the last known good state. The last known
    * good state is not set when updating a future reservation whose
@@ -1016,7 +1016,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Time when Future Reservation would become LOCKED, after which no
+   * Output only. Time when Future Reservation would become LOCKED, after which no
    * modifications to Future Reservation will be allowed. Applicable only
    * after the Future Reservation is in the APPROVED state. The lock_time is
    * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -1036,7 +1036,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Time when Future Reservation would become LOCKED, after which no
+   * Output only. Time when Future Reservation would become LOCKED, after which no
    * modifications to Future Reservation will be allowed. Applicable only
    * after the Future Reservation is in the APPROVED state. The lock_time is
    * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -1064,7 +1064,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Time when Future Reservation would become LOCKED, after which no
+   * Output only. Time when Future Reservation would become LOCKED, after which no
    * modifications to Future Reservation will be allowed. Applicable only
    * after the Future Reservation is in the APPROVED state. The lock_time is
    * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -1097,7 +1097,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Current state of this Future Reservation
+   * Output only. Current state of this Future Reservation
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>
    *
@@ -1114,7 +1114,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Current state of this Future Reservation
+   * Output only. Current state of this Future Reservation
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>
    *
@@ -1139,7 +1139,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Current state of this Future Reservation
+   * Output only. Current state of this Future Reservation
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>
    *
@@ -1818,7 +1818,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1834,7 +1834,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1858,7 +1858,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1882,7 +1882,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1905,7 +1905,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1924,7 +1924,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] The current status of the requested amendment.
+     * Output only. [Output Only] The current status of the requested amendment.
      * Check the AmendmentStatus enum for the list of possible values.
      * </pre>
      *
@@ -1959,7 +1959,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -1976,7 +1976,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -1992,7 +1992,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2009,7 +2009,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2026,7 +2026,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2051,7 +2051,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2075,7 +2075,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2096,7 +2096,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2116,7 +2116,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Fully qualified urls of the automatically created reservations at
+     * Output only. Fully qualified urls of the automatically created reservations at
      * start_time.
      * </pre>
      *
@@ -2149,7 +2149,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2167,7 +2167,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2193,7 +2193,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2220,7 +2220,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2245,7 +2245,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2279,7 +2279,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2302,7 +2302,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2321,7 +2321,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2345,7 +2345,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Represents the existing matching usage for the future
+     * Output only. [Output Only] Represents the existing matching usage for the future
      * reservation.
      * </pre>
      *
@@ -2378,7 +2378,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This count indicates the fulfilled capacity so far. This is set during
+     * Output only. This count indicates the fulfilled capacity so far. This is set during
      * "PROVISIONING" state. This count also includes capacity delivered as part
      * of existing matching reservations.
      * </pre>
@@ -2396,7 +2396,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This count indicates the fulfilled capacity so far. This is set during
+     * Output only. This count indicates the fulfilled capacity so far. This is set during
      * "PROVISIONING" state. This count also includes capacity delivered as part
      * of existing matching reservations.
      * </pre>
@@ -2414,7 +2414,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This count indicates the fulfilled capacity so far. This is set during
+     * Output only. This count indicates the fulfilled capacity so far. This is set during
      * "PROVISIONING" state. This count also includes capacity delivered as part
      * of existing matching reservations.
      * </pre>
@@ -2436,7 +2436,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * This count indicates the fulfilled capacity so far. This is set during
+     * Output only. This count indicates the fulfilled capacity so far. This is set during
      * "PROVISIONING" state. This count also includes capacity delivered as part
      * of existing matching reservations.
      * </pre>
@@ -2464,7 +2464,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2485,7 +2485,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2514,7 +2514,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2544,7 +2544,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2572,7 +2572,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2609,7 +2609,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2635,7 +2635,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2657,7 +2657,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2684,7 +2684,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This field represents the future reservation before an
+     * Output only. [Output Only] This field represents the future reservation before an
      * amendment was requested. If the amendment is declined, the Future
      * Reservation will be reverted to the last known good state. The last known
      * good state is not set when updating a future reservation whose
@@ -2718,7 +2718,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2737,7 +2737,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2764,7 +2764,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2791,7 +2791,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2817,7 +2817,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2839,7 +2839,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Time when Future Reservation would become LOCKED, after which no
+     * Output only. Time when Future Reservation would become LOCKED, after which no
      * modifications to Future Reservation will be allowed. Applicable only
      * after the Future Reservation is in the APPROVED state. The lock_time is
      * an RFC3339 string. The procurement_status will transition to PROCURING
@@ -2868,7 +2868,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *
@@ -2884,7 +2884,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *
@@ -2908,7 +2908,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *
@@ -2932,7 +2932,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *
@@ -2955,7 +2955,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *
@@ -2974,7 +2974,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Current state of this Future Reservation
+     * Output only. Current state of this Future Reservation
      * Check the ProcurementStatus enum for the list of possible values.
      * </pre>
      *

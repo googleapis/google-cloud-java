@@ -315,6 +315,7 @@
  *           .setQueryParams(QueryParameters.newBuilder().build())
  *           .setQueryInput(QueryInput.newBuilder().build())
  *           .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+ *           .setResponseView(DetectIntentResponseView.forNumber(0))
  *           .build();
  *   DetectIntentResponse response = sessionsClient.detectIntent(request);
  * }

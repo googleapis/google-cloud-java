@@ -73,7 +73,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk status.
+   * Output only. [Output Only] The disk status.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.StoragePoolDisk.Status}
@@ -333,7 +333,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instances this disk is attached to.
+   * Output only. [Output Only] Instances this disk is attached to.
    * </pre>
    *
    * <code>repeated string attached_instances = 65255843;</code>
@@ -348,7 +348,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instances this disk is attached to.
+   * Output only. [Output Only] Instances this disk is attached to.
    * </pre>
    *
    * <code>repeated string attached_instances = 65255843;</code>
@@ -363,7 +363,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instances this disk is attached to.
+   * Output only. [Output Only] Instances this disk is attached to.
    * </pre>
    *
    * <code>repeated string attached_instances = 65255843;</code>
@@ -379,7 +379,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Instances this disk is attached to.
+   * Output only. [Output Only] Instances this disk is attached to.
    * </pre>
    *
    * <code>repeated string attached_instances = 65255843;</code>
@@ -400,7 +400,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -417,7 +417,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -442,7 +442,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -472,7 +472,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the disk.
+   * Output only. [Output Only] The URL of the disk.
    * </pre>
    *
    * <code>optional string disk = 3083677;</code>
@@ -488,7 +488,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the disk.
+   * Output only. [Output Only] The URL of the disk.
    * </pre>
    *
    * <code>optional string disk = 3083677;</code>
@@ -512,7 +512,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The URL of the disk.
+   * Output only. [Output Only] The URL of the disk.
    * </pre>
    *
    * <code>optional string disk = 3083677;</code>
@@ -541,7 +541,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the disk.
+   * Output only. [Output Only] The name of the disk.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -557,7 +557,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the disk.
+   * Output only. [Output Only] The name of the disk.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -581,7 +581,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The name of the disk.
+   * Output only. [Output Only] The name of the disk.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -608,7 +608,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The number of IOPS provisioned for the disk.
+   * Output only. [Output Only] The number of IOPS provisioned for the disk.
    * </pre>
    *
    * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -624,7 +624,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The number of IOPS provisioned for the disk.
+   * Output only. [Output Only] The number of IOPS provisioned for the disk.
    * </pre>
    *
    * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -643,7 +643,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The throughput provisioned for the disk.
+   * Output only. [Output Only] The throughput provisioned for the disk.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -659,7 +659,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The throughput provisioned for the disk.
+   * Output only. [Output Only] The throughput provisioned for the disk.
    * </pre>
    *
    * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -681,7 +681,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
    * creations.
    * </pre>
    *
@@ -697,7 +697,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
    * creations.
    * </pre>
    *
@@ -713,7 +713,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
    * creations.
    * </pre>
    *
@@ -730,7 +730,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Resource policies applied to disk for automatic snapshot
+   * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
    * creations.
    * </pre>
    *
@@ -750,7 +750,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk size, in GB.
+   * Output only. [Output Only] The disk size, in GB.
    * </pre>
    *
    * <code>optional int64 size_gb = 494929369;</code>
@@ -766,7 +766,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk size, in GB.
+   * Output only. [Output Only] The disk size, in GB.
    * </pre>
    *
    * <code>optional int64 size_gb = 494929369;</code>
@@ -787,7 +787,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk status.
+   * Output only. [Output Only] The disk status.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -804,7 +804,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk status.
+   * Output only. [Output Only] The disk status.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -829,7 +829,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk status.
+   * Output only. [Output Only] The disk status.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -859,7 +859,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk type.
+   * Output only. [Output Only] The disk type.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -875,7 +875,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk type.
+   * Output only. [Output Only] The disk type.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -899,7 +899,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The disk type.
+   * Output only. [Output Only] The disk type.
    * </pre>
    *
    * <code>optional string type = 3575610;</code>
@@ -926,7 +926,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Amount of disk space used.
+   * Output only. [Output Only] Amount of disk space used.
    * </pre>
    *
    * <code>optional int64 used_bytes = 231640425;</code>
@@ -942,7 +942,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Amount of disk space used.
+   * Output only. [Output Only] Amount of disk space used.
    * </pre>
    *
    * <code>optional int64 used_bytes = 231640425;</code>
@@ -1629,7 +1629,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1645,7 +1645,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1660,7 +1660,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1676,7 +1676,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1692,7 +1692,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1716,7 +1716,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1739,7 +1739,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1759,7 +1759,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1778,7 +1778,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Instances this disk is attached to.
+     * Output only. [Output Only] Instances this disk is attached to.
      * </pre>
      *
      * <code>repeated string attached_instances = 65255843;</code>
@@ -1804,7 +1804,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1820,7 +1820,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1844,7 +1844,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1868,7 +1868,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1891,7 +1891,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1910,7 +1910,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1936,7 +1936,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -1951,7 +1951,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -1974,7 +1974,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -1997,7 +1997,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -2019,7 +2019,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -2037,7 +2037,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The URL of the disk.
+     * Output only. [Output Only] The URL of the disk.
      * </pre>
      *
      * <code>optional string disk = 3083677;</code>
@@ -2062,7 +2062,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2077,7 +2077,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2100,7 +2100,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2123,7 +2123,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2145,7 +2145,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2163,7 +2163,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The name of the disk.
+     * Output only. [Output Only] The name of the disk.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2188,7 +2188,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The number of IOPS provisioned for the disk.
+     * Output only. [Output Only] The number of IOPS provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -2204,7 +2204,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The number of IOPS provisioned for the disk.
+     * Output only. [Output Only] The number of IOPS provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -2220,7 +2220,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The number of IOPS provisioned for the disk.
+     * Output only. [Output Only] The number of IOPS provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -2240,7 +2240,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The number of IOPS provisioned for the disk.
+     * Output only. [Output Only] The number of IOPS provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_iops = 186769108;</code>
@@ -2260,7 +2260,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The throughput provisioned for the disk.
+     * Output only. [Output Only] The throughput provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -2276,7 +2276,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The throughput provisioned for the disk.
+     * Output only. [Output Only] The throughput provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -2292,7 +2292,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The throughput provisioned for the disk.
+     * Output only. [Output Only] The throughput provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -2312,7 +2312,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The throughput provisioned for the disk.
+     * Output only. [Output Only] The throughput provisioned for the disk.
      * </pre>
      *
      * <code>optional int64 provisioned_throughput = 526524181;</code>
@@ -2340,7 +2340,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2357,7 +2357,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2373,7 +2373,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2390,7 +2390,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2407,7 +2407,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2432,7 +2432,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2456,7 +2456,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2477,7 +2477,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2497,7 +2497,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Resource policies applied to disk for automatic snapshot
+     * Output only. [Output Only] Resource policies applied to disk for automatic snapshot
      * creations.
      * </pre>
      *
@@ -2524,7 +2524,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk size, in GB.
+     * Output only. [Output Only] The disk size, in GB.
      * </pre>
      *
      * <code>optional int64 size_gb = 494929369;</code>
@@ -2540,7 +2540,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk size, in GB.
+     * Output only. [Output Only] The disk size, in GB.
      * </pre>
      *
      * <code>optional int64 size_gb = 494929369;</code>
@@ -2556,7 +2556,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk size, in GB.
+     * Output only. [Output Only] The disk size, in GB.
      * </pre>
      *
      * <code>optional int64 size_gb = 494929369;</code>
@@ -2576,7 +2576,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk size, in GB.
+     * Output only. [Output Only] The disk size, in GB.
      * </pre>
      *
      * <code>optional int64 size_gb = 494929369;</code>
@@ -2596,7 +2596,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2612,7 +2612,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2636,7 +2636,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2660,7 +2660,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2683,7 +2683,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2702,7 +2702,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk status.
+     * Output only. [Output Only] The disk status.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -2728,7 +2728,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2743,7 +2743,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2766,7 +2766,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2789,7 +2789,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2811,7 +2811,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2829,7 +2829,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The disk type.
+     * Output only. [Output Only] The disk type.
      * </pre>
      *
      * <code>optional string type = 3575610;</code>
@@ -2854,7 +2854,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Amount of disk space used.
+     * Output only. [Output Only] Amount of disk space used.
      * </pre>
      *
      * <code>optional int64 used_bytes = 231640425;</code>
@@ -2870,7 +2870,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Amount of disk space used.
+     * Output only. [Output Only] Amount of disk space used.
      * </pre>
      *
      * <code>optional int64 used_bytes = 231640425;</code>
@@ -2886,7 +2886,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Amount of disk space used.
+     * Output only. [Output Only] Amount of disk space used.
      * </pre>
      *
      * <code>optional int64 used_bytes = 231640425;</code>
@@ -2906,7 +2906,7 @@ public final class StoragePoolDisk extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Amount of disk space used.
+     * Output only. [Output Only] Amount of disk space used.
      * </pre>
      *
      * <code>optional int64 used_bytes = 231640425;</code>

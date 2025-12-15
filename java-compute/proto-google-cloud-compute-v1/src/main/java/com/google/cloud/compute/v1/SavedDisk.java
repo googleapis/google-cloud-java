@@ -71,7 +71,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SavedDisk.Architecture}
@@ -253,7 +253,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -393,7 +393,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -410,7 +410,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -435,7 +435,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -465,7 +465,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -482,7 +482,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -507,7 +507,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -537,7 +537,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -553,7 +553,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -577,7 +577,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -604,7 +604,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
    * image.
    * </pre>
    *
@@ -621,7 +621,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
    * image.
    * </pre>
    *
@@ -643,7 +643,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -664,7 +664,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -693,7 +693,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1191,7 +1191,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1207,7 +1207,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1231,7 +1231,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1255,7 +1255,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1278,7 +1278,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1297,7 +1297,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk.
+     * Output only. [Output Only] The architecture of the attached disk.
      * Check the Architecture enum for the list of possible values.
      * </pre>
      *
@@ -1323,7 +1323,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1339,7 +1339,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1363,7 +1363,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1387,7 +1387,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1410,7 +1410,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1429,7 +1429,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#savedDisk
+     * Output only. [Output Only] Type of the resource. Always compute#savedDisk
      * for attached disks.
      * </pre>
      *
@@ -1455,7 +1455,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1470,7 +1470,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1493,7 +1493,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1516,7 +1516,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1538,7 +1538,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1556,7 +1556,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies a URL of the disk attached to the source instance.
+     * Output only. Specifies a URL of the disk attached to the source instance.
      * </pre>
      *
      * <code>optional string source_disk = 451753793;</code>
@@ -1581,7 +1581,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine
+     * Output only. [Output Only] Size of the individual disk snapshot used by this machine
      * image.
      * </pre>
      *
@@ -1598,7 +1598,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine
+     * Output only. [Output Only] Size of the individual disk snapshot used by this machine
      * image.
      * </pre>
      *
@@ -1615,7 +1615,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine
+     * Output only. [Output Only] Size of the individual disk snapshot used by this machine
      * image.
      * </pre>
      *
@@ -1636,7 +1636,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the individual disk snapshot used by this machine
+     * Output only. [Output Only] Size of the individual disk snapshot used by this machine
      * image.
      * </pre>
      *
@@ -1657,7 +1657,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1677,7 +1677,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1705,7 +1705,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1733,7 +1733,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1760,7 +1760,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -1783,7 +1783,7 @@ public final class SavedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,

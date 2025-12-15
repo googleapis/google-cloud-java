@@ -28,7 +28,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * The InterconnectLocation.city (metropolitan area designator) that all
+   * Output only. The InterconnectLocation.city (metropolitan area designator) that all
    * interconnects are located in.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * The InterconnectLocation.city (metropolitan area designator) that all
+   * Output only. The InterconnectLocation.city (metropolitan area designator) that all
    * interconnects are located in.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * The InterconnectLocation.city (metropolitan area designator) that all
+   * Output only. The InterconnectLocation.city (metropolitan area designator) that all
    * interconnects are located in.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * Endpoint label from the wire group.
+   * Output only. Endpoint label from the wire group.
    * </pre>
    *
    * <code>optional string label = 102727412;</code>
@@ -83,7 +83,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * Endpoint label from the wire group.
+   * Output only. Endpoint label from the wire group.
    * </pre>
    *
    * <code>optional string label = 102727412;</code>
@@ -96,7 +96,7 @@ public interface WireGroupTopologyEndpointOrBuilder
    *
    *
    * <pre>
-   * Endpoint label from the wire group.
+   * Output only. Endpoint label from the wire group.
    * </pre>
    *
    * <code>optional string label = 102727412;</code>

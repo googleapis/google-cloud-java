@@ -514,7 +514,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -530,7 +530,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -554,7 +554,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -750,7 +750,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Calculation of the complexity of a single firewall policy
+   * Output only. [Output Only] Calculation of the complexity of a single firewall policy
    * rule.
    * </pre>
    *
@@ -767,7 +767,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Calculation of the complexity of a single firewall policy
+   * Output only. [Output Only] Calculation of the complexity of a single firewall policy
    * rule.
    * </pre>
    *
@@ -2590,7 +2590,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2605,7 +2605,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2628,7 +2628,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2651,7 +2651,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2673,7 +2673,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2691,7 +2691,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+     * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3137,7 +3137,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Calculation of the complexity of a single firewall policy
+     * Output only. [Output Only] Calculation of the complexity of a single firewall policy
      * rule.
      * </pre>
      *
@@ -3154,7 +3154,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Calculation of the complexity of a single firewall policy
+     * Output only. [Output Only] Calculation of the complexity of a single firewall policy
      * rule.
      * </pre>
      *
@@ -3171,7 +3171,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Calculation of the complexity of a single firewall policy
+     * Output only. [Output Only] Calculation of the complexity of a single firewall policy
      * rule.
      * </pre>
      *
@@ -3192,7 +3192,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Calculation of the complexity of a single firewall policy
+     * Output only. [Output Only] Calculation of the complexity of a single firewall policy
      * rule.
      * </pre>
      *

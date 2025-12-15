@@ -372,7 +372,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
    * (each commitment has an end date defined). Status can be one of the
    * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * </pre>
@@ -546,12 +546,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * resource types.
    *
    *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-   * For example, type MEMORY_OPTIMIZED specifies a commitment
-   * that applies only to eligible resources of memory optimized M1 and M2
-   * machine series. Type GENERAL_PURPOSE specifies a commitment
-   * that applies only to eligible resources of general purpose N1 machine
-   * series.
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Commitment.Type}
@@ -611,6 +610,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     GENERAL_PURPOSE_T2D(232477166),
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
     GRAPHICS_OPTIMIZED(68500563),
+    /** <code>GRAPHICS_OPTIMIZED_G4 = 54029369;</code> */
+    GRAPHICS_OPTIMIZED_G4(54029369),
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     MEMORY_OPTIMIZED(281753417),
     /** <code>MEMORY_OPTIMIZED_M3 = 276301372;</code> */
@@ -719,6 +720,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     /** <code>GRAPHICS_OPTIMIZED = 68500563;</code> */
     public static final int GRAPHICS_OPTIMIZED_VALUE = 68500563;
 
+    /** <code>GRAPHICS_OPTIMIZED_G4 = 54029369;</code> */
+    public static final int GRAPHICS_OPTIMIZED_G4_VALUE = 54029369;
+
     /** <code>MEMORY_OPTIMIZED = 281753417;</code> */
     public static final int MEMORY_OPTIMIZED_VALUE = 281753417;
 
@@ -826,6 +830,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
           return GENERAL_PURPOSE_T2D;
         case 68500563:
           return GRAPHICS_OPTIMIZED;
+        case 54029369:
+          return GRAPHICS_OPTIMIZED_G4;
         case 281753417:
           return MEMORY_OPTIMIZED;
         case 276301372:
@@ -1047,7 +1053,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1064,7 +1070,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1089,7 +1095,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1263,7 +1269,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time inRFC3339
+   * Output only. [Output Only] Commitment end time inRFC3339
    * text format.
    * </pre>
    *
@@ -1280,7 +1286,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time inRFC3339
+   * Output only. [Output Only] Commitment end time inRFC3339
    * text format.
    * </pre>
    *
@@ -1305,7 +1311,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment end time inRFC3339
+   * Output only. [Output Only] Commitment end time inRFC3339
    * text format.
    * </pre>
    *
@@ -1377,7 +1383,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1394,7 +1400,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1416,7 +1422,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
    * for commitments.
    * </pre>
    *
@@ -1433,7 +1439,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
    * for commitments.
    * </pre>
    *
@@ -1458,7 +1464,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#commitment
+   * Output only. [Output Only] Type of the resource. Always compute#commitment
    * for commitments.
    * </pre>
    *
@@ -1795,7 +1801,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed
+   * Output only. [Output Only] URL of the region where the commitment and committed
    * resources are located.
    * </pre>
    *
@@ -1812,7 +1818,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed
+   * Output only. [Output Only] URL of the region where the commitment and committed
    * resources are located.
    * </pre>
    *
@@ -1837,7 +1843,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the commitment and committed
+   * Output only. [Output Only] URL of the region where the commitment and committed
    * resources are located.
    * </pre>
    *
@@ -1981,7 +1987,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -1998,7 +2004,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -2017,7 +2023,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for Commitment resource.
+   * Output only. [Output Only] Status information for Commitment resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -2126,7 +2132,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2142,7 +2148,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2166,7 +2172,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2270,7 +2276,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time inRFC3339
+   * Output only. [Output Only] Commitment start time inRFC3339
    * text format.
    * </pre>
    *
@@ -2287,7 +2293,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time inRFC3339
+   * Output only. [Output Only] Commitment start time inRFC3339
    * text format.
    * </pre>
    *
@@ -2312,7 +2318,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Commitment start time inRFC3339
+   * Output only. [Output Only] Commitment start time inRFC3339
    * text format.
    * </pre>
    *
@@ -2342,7 +2348,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
    * (each commitment has an end date defined). Status can be one of the
    * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
@@ -2361,7 +2367,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
    * (each commitment has an end date defined). Status can be one of the
    * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
@@ -2388,7 +2394,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status of the commitment with regards to eventual expiration
+   * Output only. [Output Only] Status of the commitment with regards to eventual expiration
    * (each commitment has an end date defined). Status can be one of the
    * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
    * Check the Status enum for the list of possible values.
@@ -2420,7 +2426,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2436,7 +2442,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2460,7 +2466,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2495,12 +2501,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * resource types.
    *
    *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-   * For example, type MEMORY_OPTIMIZED specifies a commitment
-   * that applies only to eligible resources of memory optimized M1 and M2
-   * machine series. Type GENERAL_PURPOSE specifies a commitment
-   * that applies only to eligible resources of general purpose N1 machine
-   * series.
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2523,12 +2528,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * resource types.
    *
    *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-   * For example, type MEMORY_OPTIMIZED specifies a commitment
-   * that applies only to eligible resources of memory optimized M1 and M2
-   * machine series. Type GENERAL_PURPOSE specifies a commitment
-   * that applies only to eligible resources of general purpose N1 machine
-   * series.
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -2559,12 +2563,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * resource types.
    *
    *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-   * For example, type MEMORY_OPTIMIZED specifies a commitment
-   * that applies only to eligible resources of memory optimized M1 and M2
-   * machine series. Type GENERAL_PURPOSE specifies a commitment
-   * that applies only to eligible resources of general purpose N1 machine
-   * series.
+   *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+   * example, type MEMORY_OPTIMIZED specifies a commitment that
+   * applies only to eligible resources of memory optimized M1 and M2 machine
+   * series. Type GENERAL_PURPOSE specifies a commitment that
+   * applies only to eligible resources of general purpose N1 machine series.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -3995,7 +3998,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4011,7 +4014,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4035,7 +4038,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4059,7 +4062,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4082,7 +4085,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4101,7 +4104,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4391,7 +4394,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4407,7 +4410,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4431,7 +4434,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4455,7 +4458,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4478,7 +4481,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4497,7 +4500,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment end time inRFC3339
+     * Output only. [Output Only] Commitment end time inRFC3339
      * text format.
      * </pre>
      *
@@ -4652,7 +4655,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -4669,7 +4672,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -4686,7 +4689,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -4707,7 +4710,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -4728,7 +4731,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -4744,7 +4747,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -4768,7 +4771,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -4792,7 +4795,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -4815,7 +4818,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -4834,7 +4837,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#commitment
+     * Output only. [Output Only] Type of the resource. Always compute#commitment
      * for commitments.
      * </pre>
      *
@@ -5603,7 +5606,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -5619,7 +5622,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -5643,7 +5646,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -5667,7 +5670,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -5690,7 +5693,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -5709,7 +5712,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the commitment and committed
+     * Output only. [Output Only] URL of the region where the commitment and committed
      * resources are located.
      * </pre>
      *
@@ -6252,7 +6255,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6268,7 +6271,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6290,7 +6293,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6314,7 +6317,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6336,7 +6339,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6366,7 +6369,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6387,7 +6390,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6403,7 +6406,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6424,7 +6427,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for Commitment resource.
+     * Output only. [Output Only] Status information for Commitment resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.CommitmentResourceStatus resource_status = 249429315;
@@ -6858,7 +6861,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6873,7 +6876,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6896,7 +6899,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6919,7 +6922,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6941,7 +6944,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6959,7 +6962,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -7122,7 +7125,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7138,7 +7141,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7162,7 +7165,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7186,7 +7189,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7209,7 +7212,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7228,7 +7231,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Commitment start time inRFC3339
+     * Output only. [Output Only] Commitment start time inRFC3339
      * text format.
      * </pre>
      *
@@ -7254,7 +7257,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7272,7 +7275,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7298,7 +7301,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7324,7 +7327,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7349,7 +7352,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7370,7 +7373,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration
+     * Output only. [Output Only] Status of the commitment with regards to eventual expiration
      * (each commitment has an end date defined). Status can be one of the
      * following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
      * Check the Status enum for the list of possible values.
@@ -7398,7 +7401,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7413,7 +7416,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7436,7 +7439,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7459,7 +7462,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7481,7 +7484,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7499,7 +7502,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -7530,12 +7533,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -7557,12 +7559,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -7592,12 +7593,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -7627,12 +7627,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -7661,12 +7660,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -7691,12 +7689,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * resource types.
      *
      *  The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D,
-     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, MEMORY_OPTIMIZED,MEMORY_OPTIMIZED_M3, MEMORY_OPTIMIZED_X4,STORAGE_OPTIMIZED_Z3.
-     * For example, type MEMORY_OPTIMIZED specifies a commitment
-     * that applies only to eligible resources of memory optimized M1 and M2
-     * machine series. Type GENERAL_PURPOSE specifies a commitment
-     * that applies only to eligible resources of general purpose N1 machine
-     * series.
+     *  COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For
+     * example, type MEMORY_OPTIMIZED specifies a commitment that
+     * applies only to eligible resources of memory optimized M1 and M2 machine
+     * series. Type GENERAL_PURPOSE specifies a commitment that
+     * applies only to eligible resources of general purpose N1 machine series.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

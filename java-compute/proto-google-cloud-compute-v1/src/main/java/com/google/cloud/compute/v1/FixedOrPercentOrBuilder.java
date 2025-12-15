@@ -28,7 +28,7 @@ public interface FixedOrPercentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Absolute value of VM instances calculated based on the
+   * Output only. [Output Only] Absolute value of VM instances calculated based on the
    * specific mode.
    *
    *
@@ -53,7 +53,7 @@ public interface FixedOrPercentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Absolute value of VM instances calculated based on the
+   * Output only. [Output Only] Absolute value of VM instances calculated based on the
    * specific mode.
    *
    *

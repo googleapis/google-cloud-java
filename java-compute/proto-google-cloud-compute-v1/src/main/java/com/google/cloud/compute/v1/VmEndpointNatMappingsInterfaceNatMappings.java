@@ -81,7 +81,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface.
+   * Output only. List of all drain IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -99,7 +99,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface.
+   * Output only. List of all drain IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -117,7 +117,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface.
+   * Output only. List of all drain IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -136,7 +136,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface.
+   * Output only. List of all drain IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -161,7 +161,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface.
+   * Output only. A list of all IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -179,7 +179,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface.
+   * Output only. A list of all IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -197,7 +197,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface.
+   * Output only. A list of all IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -216,7 +216,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface.
+   * Output only. A list of all IP:port-range mappings assigned to this interface.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
    * "1.1.1.1:2234-2234"].
@@ -238,7 +238,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Total number of drain ports across all NAT IPs allocated to this
+   * Output only. Total number of drain ports across all NAT IPs allocated to this
    * interface. It equals to the aggregated port number in the field
    * drain_nat_ip_port_ranges.
    * </pre>
@@ -256,7 +256,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Total number of drain ports across all NAT IPs allocated to this
+   * Output only. Total number of drain ports across all NAT IPs allocated to this
    * interface. It equals to the aggregated port number in the field
    * drain_nat_ip_port_ranges.
    * </pre>
@@ -277,7 +277,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Total number of ports across all NAT IPs allocated to this interface.
+   * Output only. Total number of ports across all NAT IPs allocated to this interface.
    * It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
@@ -294,7 +294,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Total number of ports across all NAT IPs allocated to this interface.
+   * Output only. Total number of ports across all NAT IPs allocated to this interface.
    * It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Information about mappings provided by rules in this NAT.
+   * Output only. Information about mappings provided by rules in this NAT.
    * </pre>
    *
    * <code>
@@ -336,7 +336,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Information about mappings provided by rules in this NAT.
+   * Output only. Information about mappings provided by rules in this NAT.
    * </pre>
    *
    * <code>
@@ -356,7 +356,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Information about mappings provided by rules in this NAT.
+   * Output only. Information about mappings provided by rules in this NAT.
    * </pre>
    *
    * <code>
@@ -372,7 +372,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Information about mappings provided by rules in this NAT.
+   * Output only. Information about mappings provided by rules in this NAT.
    * </pre>
    *
    * <code>
@@ -389,7 +389,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Information about mappings provided by rules in this NAT.
+   * Output only. Information about mappings provided by rules in this NAT.
    * </pre>
    *
    * <code>
@@ -412,7 +412,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Alias IP range for this interface endpoint.
+   * Output only. Alias IP range for this interface endpoint.
    * It will be a private (RFC 1918) IP range.
    * Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
@@ -430,7 +430,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Alias IP range for this interface endpoint.
+   * Output only. Alias IP range for this interface endpoint.
    * It will be a private (RFC 1918) IP range.
    * Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
@@ -456,7 +456,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Alias IP range for this interface endpoint.
+   * Output only. Alias IP range for this interface endpoint.
    * It will be a private (RFC 1918) IP range.
    * Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
@@ -487,7 +487,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Primary IP of the VM for this NIC.
+   * Output only. Primary IP of the VM for this NIC.
    * </pre>
    *
    * <code>optional string source_virtual_ip = 149836159;</code>
@@ -503,7 +503,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Primary IP of the VM for this NIC.
+   * Output only. Primary IP of the VM for this NIC.
    * </pre>
    *
    * <code>optional string source_virtual_ip = 149836159;</code>
@@ -527,7 +527,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
    *
    *
    * <pre>
-   * Primary IP of the VM for this NIC.
+   * Output only. Primary IP of the VM for this NIC.
    * </pre>
    *
    * <code>optional string source_virtual_ip = 149836159;</code>
@@ -1163,7 +1163,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1182,7 +1182,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1200,7 +1200,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1219,7 +1219,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1238,7 +1238,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1265,7 +1265,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1291,7 +1291,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1314,7 +1314,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1336,7 +1336,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * List of all drain IP:port-range mappings assigned to this interface.
+     * Output only. List of all drain IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1373,7 +1373,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1392,7 +1392,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1410,7 +1410,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1429,7 +1429,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1448,7 +1448,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1475,7 +1475,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1501,7 +1501,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1524,7 +1524,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1546,7 +1546,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * A list of all IP:port-range mappings assigned to this interface.
+     * Output only. A list of all IP:port-range mappings assigned to this interface.
      * These ranges are inclusive, that is, both the first and the last
      * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
      * "1.1.1.1:2234-2234"].
@@ -1575,7 +1575,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of drain ports across all NAT IPs allocated to this
+     * Output only. Total number of drain ports across all NAT IPs allocated to this
      * interface. It equals to the aggregated port number in the field
      * drain_nat_ip_port_ranges.
      * </pre>
@@ -1593,7 +1593,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of drain ports across all NAT IPs allocated to this
+     * Output only. Total number of drain ports across all NAT IPs allocated to this
      * interface. It equals to the aggregated port number in the field
      * drain_nat_ip_port_ranges.
      * </pre>
@@ -1611,7 +1611,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of drain ports across all NAT IPs allocated to this
+     * Output only. Total number of drain ports across all NAT IPs allocated to this
      * interface. It equals to the aggregated port number in the field
      * drain_nat_ip_port_ranges.
      * </pre>
@@ -1633,7 +1633,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of drain ports across all NAT IPs allocated to this
+     * Output only. Total number of drain ports across all NAT IPs allocated to this
      * interface. It equals to the aggregated port number in the field
      * drain_nat_ip_port_ranges.
      * </pre>
@@ -1655,7 +1655,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of ports across all NAT IPs allocated to this interface.
+     * Output only. Total number of ports across all NAT IPs allocated to this interface.
      * It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
@@ -1672,7 +1672,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of ports across all NAT IPs allocated to this interface.
+     * Output only. Total number of ports across all NAT IPs allocated to this interface.
      * It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
@@ -1689,7 +1689,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of ports across all NAT IPs allocated to this interface.
+     * Output only. Total number of ports across all NAT IPs allocated to this interface.
      * It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
@@ -1710,7 +1710,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Total number of ports across all NAT IPs allocated to this interface.
+     * Output only. Total number of ports across all NAT IPs allocated to this interface.
      * It equals to the aggregated port number in the field nat_ip_port_ranges.
      * </pre>
      *
@@ -1751,7 +1751,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1772,7 +1772,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1791,7 +1791,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1811,7 +1811,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1839,7 +1839,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1864,7 +1864,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1891,7 +1891,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1919,7 +1919,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1943,7 +1943,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1968,7 +1968,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -1995,7 +1995,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2017,7 +2017,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2039,7 +2039,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2056,7 +2056,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2077,7 +2077,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2100,7 +2100,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2120,7 +2120,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2141,7 +2141,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Information about mappings provided by rules in this NAT.
+     * Output only. Information about mappings provided by rules in this NAT.
      * </pre>
      *
      * <code>
@@ -2183,7 +2183,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2200,7 +2200,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2225,7 +2225,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2250,7 +2250,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2274,7 +2274,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2294,7 +2294,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Alias IP range for this interface endpoint.
+     * Output only. Alias IP range for this interface endpoint.
      * It will be a private (RFC 1918) IP range.
      * Examples: "10.33.4.55/32", or "192.168.5.0/24".
      * </pre>
@@ -2321,7 +2321,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>
@@ -2336,7 +2336,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>
@@ -2359,7 +2359,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>
@@ -2382,7 +2382,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>
@@ -2404,7 +2404,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>
@@ -2422,7 +2422,7 @@ public final class VmEndpointNatMappingsInterfaceNatMappings
      *
      *
      * <pre>
-     * Primary IP of the VM for this NIC.
+     * Output only. Primary IP of the VM for this NIC.
      * </pre>
      *
      * <code>optional string source_virtual_ip = 149836159;</code>

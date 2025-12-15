@@ -612,7 +612,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality,
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
    * which can take one of the following values:
    *
    *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -908,7 +908,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
    * take one of the following values:
    *
    *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -1505,7 +1505,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
    * circuits in this LAG.
    * </pre>
    *
@@ -1521,7 +1521,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
    * circuits in this LAG.
    * </pre>
    *
@@ -1538,7 +1538,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
    * circuits in this LAG.
    * </pre>
    *
@@ -1554,7 +1554,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
    * circuits in this LAG.
    * </pre>
    *
@@ -1570,7 +1570,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of CircuitInfo objects, that describe the individual
+   * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
    * circuits in this LAG.
    * </pre>
    *
@@ -1592,7 +1592,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1609,7 +1609,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1634,7 +1634,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1809,7 +1809,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -1826,7 +1826,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -1844,7 +1844,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -1860,7 +1860,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -1876,7 +1876,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of outages expected for this Interconnect.
+   * Output only. [Output Only] A list of outages expected for this Interconnect.
    * </pre>
    *
    * <code>
@@ -1898,7 +1898,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
    * link. This can be used only for ping tests.
    * </pre>
    *
@@ -1915,7 +1915,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
    * link. This can be used only for ping tests.
    * </pre>
    *
@@ -1940,7 +1940,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the Google side of the Interconnect
+   * Output only. [Output Only] IP address configured on the Google side of the Interconnect
    * link. This can be used only for ping tests.
    * </pre>
    *
@@ -1970,7 +1970,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
@@ -1987,7 +1987,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
@@ -2012,7 +2012,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Google reference ID to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
@@ -2040,7 +2040,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -2057,7 +2057,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -2080,7 +2080,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
    * to use  this Interconnect.
    * </pre>
    *
@@ -2096,7 +2096,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
    * to use  this Interconnect.
    * </pre>
    *
@@ -2112,7 +2112,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
    * to use  this Interconnect.
    * </pre>
    *
@@ -2129,7 +2129,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all InterconnectAttachments configured
+   * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
    * to use  this Interconnect.
    * </pre>
    *
@@ -2152,7 +2152,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
    * Order is arbitrary and items are unique.
    * </pre>
    *
@@ -2168,7 +2168,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
    * Order is arbitrary and items are unique.
    * </pre>
    *
@@ -2184,7 +2184,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
    * Order is arbitrary and items are unique.
    * </pre>
    *
@@ -2201,7 +2201,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+   * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
    * Order is arbitrary and items are unique.
    * </pre>
    *
@@ -2319,7 +2319,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2335,7 +2335,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -2359,7 +2359,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -3024,7 +3024,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality,
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
    * which can take one of the following values:
    *
    *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -3051,7 +3051,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality,
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
    * which can take one of the following values:
    *
    *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -3086,7 +3086,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality,
+   * Output only. [Output Only] The current status of this Interconnect's functionality,
    * which can take one of the following values:
    *
    *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -3182,7 +3182,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the
+   * Output only. [Output Only] IP address configured on the customer side of the
    * Interconnect link. The customer should configure this IP address during
    * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
@@ -3200,7 +3200,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the
+   * Output only. [Output Only] IP address configured on the customer side of the
    * Interconnect link. The customer should configure this IP address during
    * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
@@ -3226,7 +3226,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] IP address configured on the customer side of the
+   * Output only. [Output Only] IP address configured on the customer side of the
    * Interconnect link. The customer should configure this IP address during
    * turnup when prompted by Google NOC. This can be used only for ping tests.
    * </pre>
@@ -3255,7 +3255,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Number of links actually provisioned in this interconnect.
+   * Output only. [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
    * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -3271,7 +3271,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Number of links actually provisioned in this interconnect.
+   * Output only. [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
    * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -3507,7 +3507,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3523,7 +3523,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3544,7 +3544,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3560,7 +3560,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3584,7 +3584,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3613,7 +3613,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
    * take one of the following values:
    *
    *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -3639,7 +3639,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
    * take one of the following values:
    *
    *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -3673,7 +3673,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can
+   * Output only. [Output Only] The current state of Interconnect functionality, which can
    * take one of the following values:
    *
    *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -3788,7 +3788,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
    * configured to use this Interconnect. The Interconnect cannot be deleted if
    * this list is non-empty.
    * </pre>
@@ -3805,7 +3805,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
    * configured to use this Interconnect. The Interconnect cannot be deleted if
    * this list is non-empty.
    * </pre>
@@ -3822,7 +3822,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
    * configured to use this Interconnect. The Interconnect cannot be deleted if
    * this list is non-empty.
    * </pre>
@@ -3840,7 +3840,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+   * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
    * configured to use this Interconnect. The Interconnect cannot be deleted if
    * this list is non-empty.
    * </pre>
@@ -6148,7 +6148,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6168,7 +6168,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6187,7 +6187,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6206,7 +6206,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6232,7 +6232,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6255,7 +6255,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6280,7 +6280,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6306,7 +6306,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6329,7 +6329,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6352,7 +6352,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6375,7 +6375,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6397,7 +6397,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6419,7 +6419,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6435,7 +6435,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6455,7 +6455,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6475,7 +6475,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6491,7 +6491,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6509,7 +6509,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of CircuitInfo objects, that describe the individual
+     * Output only. [Output Only] A list of CircuitInfo objects, that describe the individual
      * circuits in this LAG.
      * </pre>
      *
@@ -6544,7 +6544,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6560,7 +6560,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6584,7 +6584,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6608,7 +6608,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6631,7 +6631,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6650,7 +6650,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -6956,7 +6956,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -6976,7 +6976,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -6995,7 +6995,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7015,7 +7015,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7041,7 +7041,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7065,7 +7065,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7091,7 +7091,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7117,7 +7117,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7140,7 +7140,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7164,7 +7164,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7188,7 +7188,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7210,7 +7210,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7232,7 +7232,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7248,7 +7248,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7268,7 +7268,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7289,7 +7289,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7307,7 +7307,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7326,7 +7326,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of outages expected for this Interconnect.
+     * Output only. [Output Only] A list of outages expected for this Interconnect.
      * </pre>
      *
      * <code>
@@ -7364,7 +7364,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7380,7 +7380,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7404,7 +7404,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7428,7 +7428,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7451,7 +7451,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7470,7 +7470,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the Google side of the Interconnect
+     * Output only. [Output Only] IP address configured on the Google side of the Interconnect
      * link. This can be used only for ping tests.
      * </pre>
      *
@@ -7496,7 +7496,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7512,7 +7512,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7536,7 +7536,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7560,7 +7560,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7583,7 +7583,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7602,7 +7602,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Google reference ID to be used when raising support tickets
+     * Output only. [Output Only] Google reference ID to be used when raising support tickets
      * with Google or otherwise to debug backend connectivity issues.
      * </pre>
      *
@@ -7628,7 +7628,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -7645,7 +7645,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -7662,7 +7662,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -7683,7 +7683,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -7713,7 +7713,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7730,7 +7730,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7746,7 +7746,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7763,7 +7763,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7780,7 +7780,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7805,7 +7805,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7829,7 +7829,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7850,7 +7850,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7870,7 +7870,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all InterconnectAttachments configured
+     * Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured
      * to use  this Interconnect.
      * </pre>
      *
@@ -7905,7 +7905,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -7922,7 +7922,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -7938,7 +7938,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -7955,7 +7955,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -7972,7 +7972,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -7997,7 +7997,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -8021,7 +8021,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -8042,7 +8042,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -8062,7 +8062,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URLs of InterconnectGroups that include this Interconnect.
+     * Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect.
      * Order is arbitrary and items are unique.
      * </pre>
      *
@@ -8269,7 +8269,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8284,7 +8284,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8307,7 +8307,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8330,7 +8330,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8352,7 +8352,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -8370,7 +8370,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -9658,7 +9658,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -9684,7 +9684,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -9718,7 +9718,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -9752,7 +9752,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -9785,7 +9785,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -9814,7 +9814,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality,
+     * Output only. [Output Only] The current status of this Interconnect's functionality,
      * which can take one of the following values:
      *
      *    - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to
@@ -10054,7 +10054,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10071,7 +10071,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10096,7 +10096,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10121,7 +10121,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10145,7 +10145,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10165,7 +10165,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] IP address configured on the customer side of the
+     * Output only. [Output Only] IP address configured on the customer side of the
      * Interconnect link. The customer should configure this IP address during
      * turnup when prompted by Google NOC. This can be used only for ping tests.
      * </pre>
@@ -10192,7 +10192,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of links actually provisioned in this interconnect.
+     * Output only. [Output Only] Number of links actually provisioned in this interconnect.
      * </pre>
      *
      * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -10208,7 +10208,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of links actually provisioned in this interconnect.
+     * Output only. [Output Only] Number of links actually provisioned in this interconnect.
      * </pre>
      *
      * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -10224,7 +10224,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of links actually provisioned in this interconnect.
+     * Output only. [Output Only] Number of links actually provisioned in this interconnect.
      * </pre>
      *
      * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -10244,7 +10244,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of links actually provisioned in this interconnect.
+     * Output only. [Output Only] Number of links actually provisioned in this interconnect.
      * </pre>
      *
      * <code>optional int32 provisioned_link_count = 410888565;</code>
@@ -10745,7 +10745,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -10761,7 +10761,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -10777,7 +10777,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -10797,7 +10797,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -10817,7 +10817,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10832,7 +10832,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10855,7 +10855,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10878,7 +10878,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10900,7 +10900,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10918,7 +10918,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -10943,7 +10943,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -10968,7 +10968,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -11001,7 +11001,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -11034,7 +11034,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -11066,7 +11066,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -11094,7 +11094,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can
+     * Output only. [Output Only] The current state of Interconnect functionality, which can
      * take one of the following values:
      *
      *    - ACTIVE: The Interconnect is valid, turned up and ready to use.
@@ -11275,7 +11275,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11293,7 +11293,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11310,7 +11310,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11328,7 +11328,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11346,7 +11346,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11372,7 +11372,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11397,7 +11397,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11419,7 +11419,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>
@@ -11440,7 +11440,7 @@ public final class Interconnect extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
+     * Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups
      * configured to use this Interconnect. The Interconnect cannot be deleted if
      * this list is non-empty.
      * </pre>

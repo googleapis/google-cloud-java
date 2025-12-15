@@ -266,7 +266,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+   * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
    * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -282,7 +282,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+   * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
    * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -306,7 +306,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+   * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
    * </pre>
    *
    * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1132,7 +1132,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1147,7 +1147,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1170,7 +1170,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1193,7 +1193,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1215,7 +1215,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>
@@ -1233,7 +1233,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] SHA256 hash value for the field oauth2_client_secret above.
+     * Output only. [Output Only] SHA256 hash value for the field oauth2_client_secret above.
      * </pre>
      *
      * <code>optional string oauth2_client_secret_sha256 = 112903782;</code>

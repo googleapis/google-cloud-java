@@ -123,7 +123,7 @@ public interface ServiceAttachmentListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -136,7 +136,7 @@ public interface ServiceAttachmentListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -149,7 +149,7 @@ public interface ServiceAttachmentListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

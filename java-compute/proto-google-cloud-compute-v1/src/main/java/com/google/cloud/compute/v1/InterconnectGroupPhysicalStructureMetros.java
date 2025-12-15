@@ -142,7 +142,7 @@ public final class InterconnectGroupPhysicalStructureMetros
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
    * like "iad". This is the first component of the location of
    * Interconnects underneath this.
    * </pre>
@@ -160,7 +160,7 @@ public final class InterconnectGroupPhysicalStructureMetros
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
    * like "iad". This is the first component of the location of
    * Interconnects underneath this.
    * </pre>
@@ -186,7 +186,7 @@ public final class InterconnectGroupPhysicalStructureMetros
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase string
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
    * like "iad". This is the first component of the location of
    * Interconnects underneath this.
    * </pre>
@@ -979,7 +979,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>
@@ -996,7 +996,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>
@@ -1021,7 +1021,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>
@@ -1046,7 +1046,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>
@@ -1070,7 +1070,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>
@@ -1090,7 +1090,7 @@ public final class InterconnectGroupPhysicalStructureMetros
      *
      *
      * <pre>
-     * [Output Only] The name of the metro, as a three-letter lowercase string
+     * Output only. [Output Only] The name of the metro, as a three-letter lowercase string
      * like "iad". This is the first component of the location of
      * Interconnects underneath this.
      * </pre>

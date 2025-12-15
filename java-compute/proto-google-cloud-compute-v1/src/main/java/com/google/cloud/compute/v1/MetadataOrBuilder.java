@@ -151,7 +151,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -165,7 +165,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -179,7 +179,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *

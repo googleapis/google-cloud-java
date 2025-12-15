@@ -410,7 +410,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -424,7 +424,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -438,7 +438,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1423,7 +1423,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendService
+   * Output only. [Output Only] Type of resource. Always compute#backendService
    * for backend services.
    * </pre>
    *
@@ -1437,7 +1437,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendService
+   * Output only. [Output Only] Type of resource. Always compute#backendService
    * for backend services.
    * </pre>
    *
@@ -1451,7 +1451,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendService
+   * Output only. [Output Only] Type of resource. Always compute#backendService
    * for backend services.
    * </pre>
    *
@@ -2481,7 +2481,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional backend service
+   * Output only. [Output Only] URL of the region where the regional backend service
    * resides. This field is not applicable to global backend services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -2497,7 +2497,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional backend service
+   * Output only. [Output Only] URL of the region where the regional backend service
    * resides. This field is not applicable to global backend services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -2513,7 +2513,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional backend service
+   * Output only. [Output Only] URL of the region where the regional backend service
    * resides. This field is not applicable to global backend services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -3016,7 +3016,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing given backend service.
+   * Output only. [Output Only] List of resources referencing given backend service.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
@@ -3027,7 +3027,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing given backend service.
+   * Output only. [Output Only] List of resources referencing given backend service.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
@@ -3038,7 +3038,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing given backend service.
+   * Output only. [Output Only] List of resources referencing given backend service.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
@@ -3049,7 +3049,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing given backend service.
+   * Output only. [Output Only] List of resources referencing given backend service.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>
@@ -3061,7 +3061,7 @@ public interface BackendServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing given backend service.
+   * Output only. [Output Only] List of resources referencing given backend service.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendServiceUsedBy used_by = 389320729;</code>

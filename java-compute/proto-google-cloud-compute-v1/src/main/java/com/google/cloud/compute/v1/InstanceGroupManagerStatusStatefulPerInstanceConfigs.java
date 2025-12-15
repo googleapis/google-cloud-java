@@ -73,7 +73,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations
+   * Output only. A bit indicating if all of the group's per-instance configurations
    * (listed in the output of a listPerInstanceConfigs API call) have
    * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
@@ -91,7 +91,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    *
    *
    * <pre>
-   * A bit indicating if all of the group's per-instance configurations
+   * Output only. A bit indicating if all of the group's per-instance configurations
    * (listed in the output of a listPerInstanceConfigs API call) have
    * status EFFECTIVE or there are no per-instance-configs.
    * </pre>
@@ -485,7 +485,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configurations
+     * Output only. A bit indicating if all of the group's per-instance configurations
      * (listed in the output of a listPerInstanceConfigs API call) have
      * status EFFECTIVE or there are no per-instance-configs.
      * </pre>
@@ -503,7 +503,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configurations
+     * Output only. A bit indicating if all of the group's per-instance configurations
      * (listed in the output of a listPerInstanceConfigs API call) have
      * status EFFECTIVE or there are no per-instance-configs.
      * </pre>
@@ -521,7 +521,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configurations
+     * Output only. A bit indicating if all of the group's per-instance configurations
      * (listed in the output of a listPerInstanceConfigs API call) have
      * status EFFECTIVE or there are no per-instance-configs.
      * </pre>
@@ -543,7 +543,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      *
      *
      * <pre>
-     * A bit indicating if all of the group's per-instance configurations
+     * Output only. A bit indicating if all of the group's per-instance configurations
      * (listed in the output of a listPerInstanceConfigs API call) have
      * status EFFECTIVE or there are no per-instance-configs.
      * </pre>

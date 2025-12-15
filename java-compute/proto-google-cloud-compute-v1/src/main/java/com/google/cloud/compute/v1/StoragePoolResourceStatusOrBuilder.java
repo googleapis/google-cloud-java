@@ -54,7 +54,7 @@ public interface StoragePoolResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize inRFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -67,7 +67,7 @@ public interface StoragePoolResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize inRFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -80,7 +80,7 @@ public interface StoragePoolResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize inRFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>

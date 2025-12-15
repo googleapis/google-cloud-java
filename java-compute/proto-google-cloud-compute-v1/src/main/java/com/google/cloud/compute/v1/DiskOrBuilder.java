@@ -188,7 +188,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -201,7 +201,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -219,7 +219,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -233,7 +233,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -250,7 +250,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of disks this disk is asynchronously replicated to.
+   * Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
    * </pre>
    *
    * <code>
@@ -264,7 +264,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -278,7 +278,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -292,7 +292,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -554,7 +554,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -568,7 +568,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -582,7 +582,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
    * disks.
    * </pre>
    *
@@ -596,7 +596,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
    * disks.
    * </pre>
    *
@@ -610,7 +610,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#disk for
+   * Output only. [Output Only] Type of the resource. Always compute#disk for
    * disks.
    * </pre>
    *
@@ -755,7 +755,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp inRFC3339
+   * Output only. [Output Only] Last attach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -769,7 +769,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp inRFC3339
+   * Output only. [Output Only] Last attach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -783,7 +783,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last attach timestamp inRFC3339
+   * Output only. [Output Only] Last attach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -797,7 +797,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp inRFC3339
+   * Output only. [Output Only] Last detach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -811,7 +811,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp inRFC3339
+   * Output only. [Output Only] Last detach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -825,7 +825,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last detach timestamp inRFC3339
+   * Output only. [Output Only] Last detach timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1209,7 +1209,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
    * regional resources.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1225,7 +1225,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
    * regional resources.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1241,7 +1241,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the disk resides. Only applicable for
+   * Output only. [Output Only] URL of the region where the disk resides. Only applicable for
    * regional resources.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1369,7 +1369,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1382,7 +1382,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1395,7 +1395,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for the disk resource.
+   * Output only. [Output Only] Status information for the disk resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DiskResourceStatus resource_status = 249429315;</code>
@@ -1432,7 +1432,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1445,7 +1445,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1458,7 +1458,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1471,7 +1471,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1484,7 +1484,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1535,7 +1535,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1549,7 +1549,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1563,7 +1563,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1577,7 +1577,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1591,7 +1591,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1605,7 +1605,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk
    * that was created using a consistency group.
    * </pre>
    *
@@ -1721,7 +1721,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
    * value identifies the exact disk that was used to create this persistent
    * disk. For example, if you created the persistent disk from a disk that
    * was later deleted and recreated under the same name, the source disk ID
@@ -1738,7 +1738,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
    * value identifies the exact disk that was used to create this persistent
    * disk. For example, if you created the persistent disk from a disk that
    * was later deleted and recreated under the same name, the source disk ID
@@ -1755,7 +1755,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the disk used to create this disk. This
+   * Output only. [Output Only] The unique ID of the disk used to create this disk. This
    * value identifies the exact disk that was used to create this persistent
    * disk. For example, if you created the persistent disk from a disk that
    * was later deleted and recreated under the same name, the source disk ID
@@ -1932,7 +1932,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
    * value identifies the exact image that was used to create this persistent
    * disk. For example, if you created the persistent disk from an image that
    * was later deleted and recreated under the same name, the source image ID
@@ -1949,7 +1949,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
    * value identifies the exact image that was used to create this persistent
    * disk. For example, if you created the persistent disk from an image that
    * was later deleted and recreated under the same name, the source image ID
@@ -1966,7 +1966,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The ID value of the image used to create this disk. This
+   * Output only. [Output Only] The ID value of the image used to create this disk. This
    * value identifies the exact image that was used to create this persistent
    * disk. For example, if you created the persistent disk from an image that
    * was later deleted and recreated under the same name, the source image ID
@@ -2043,7 +2043,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * disk. This value identifies the exact instant snapshot that was used to
    * create this persistent disk. For example, if you created the persistent
    * disk from an instant snapshot that was later deleted and recreated under
@@ -2061,7 +2061,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * disk. This value identifies the exact instant snapshot that was used to
    * create this persistent disk. For example, if you created the persistent
    * disk from an instant snapshot that was later deleted and recreated under
@@ -2079,7 +2079,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * disk. This value identifies the exact instant snapshot that was used to
    * create this persistent disk. For example, if you created the persistent
    * disk from an instant snapshot that was later deleted and recreated under
@@ -2207,7 +2207,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
    * value identifies the exact snapshot that was used to create this persistent
    * disk. For example, if you created the persistent disk from a snapshot that
    * was later deleted and recreated under the same name, the source snapshot ID
@@ -2224,7 +2224,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
    * value identifies the exact snapshot that was used to create this persistent
    * disk. For example, if you created the persistent disk from a snapshot that
    * was later deleted and recreated under the same name, the source snapshot ID
@@ -2241,7 +2241,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the snapshot used to create this disk. This
+   * Output only. [Output Only] The unique ID of the snapshot used to create this disk. This
    * value identifies the exact snapshot that was used to create this persistent
    * disk. For example, if you created the persistent disk from a snapshot that
    * was later deleted and recreated under the same name, the source snapshot ID
@@ -2315,7 +2315,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
+   * Output only. [Output Only] The status of disk creation.
    *
    *
    *      - CREATING: Disk is provisioning.
@@ -2337,7 +2337,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
+   * Output only. [Output Only] The status of disk creation.
    *
    *
    *      - CREATING: Disk is provisioning.
@@ -2359,7 +2359,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of disk creation.
+   * Output only. [Output Only] The status of disk creation.
    *
    *
    *      - CREATING: Disk is provisioning.
@@ -2486,7 +2486,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances)
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
    * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
@@ -2500,7 +2500,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances)
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
    * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
@@ -2514,7 +2514,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances)
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
    * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
@@ -2529,7 +2529,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Links to the users of the disk (attached instances)
+   * Output only. [Output Only] Links to the users of the disk (attached instances)
    * in form:projects/project/zones/zone/instances/instance
    * </pre>
    *
@@ -2544,7 +2544,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides.
+   * Output only. [Output Only] URL of the zone where the disk resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -2559,7 +2559,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides.
+   * Output only. [Output Only] URL of the zone where the disk resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -2574,7 +2574,7 @@ public interface DiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the disk resides.
+   * Output only. [Output Only] URL of the zone where the disk resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>

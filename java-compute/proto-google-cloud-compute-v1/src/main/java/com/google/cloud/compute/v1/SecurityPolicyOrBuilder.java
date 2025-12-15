@@ -142,7 +142,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -315,7 +315,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -329,7 +329,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -343,7 +343,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -356,7 +356,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -369,7 +369,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyfor security policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -567,7 +567,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The parent of the security policy.
+   * Output only. [Output Only] The parent of the security policy.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -580,7 +580,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The parent of the security policy.
+   * Output only. [Output Only] The parent of the security policy.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -593,7 +593,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The parent of the security policy.
+   * Output only. [Output Only] The parent of the security policy.
    * </pre>
    *
    * <code>optional string parent = 78317738;</code>
@@ -632,7 +632,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy
+   * Output only. [Output Only] URL of the region where the regional security policy
    * resides. This field is not applicable to global security policies.
    * </pre>
    *
@@ -646,7 +646,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy
+   * Output only. [Output Only] URL of the region where the regional security policy
    * resides. This field is not applicable to global security policies.
    * </pre>
    *
@@ -660,7 +660,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional security policy
+   * Output only. [Output Only] URL of the region where the regional security policy
    * resides. This field is not applicable to global security policies.
    * </pre>
    *
@@ -760,7 +760,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -773,7 +773,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -786,7 +786,7 @@ public interface SecurityPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

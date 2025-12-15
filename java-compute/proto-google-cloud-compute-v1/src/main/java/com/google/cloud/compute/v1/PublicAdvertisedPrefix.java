@@ -83,7 +83,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicAdvertisedPrefix.ByoipApiVersion}
@@ -961,7 +961,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -978,7 +978,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -1003,7 +1003,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -1033,7 +1033,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1050,7 +1050,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1075,7 +1075,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1334,7 +1334,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -1351,7 +1351,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -1517,7 +1517,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1533,7 +1533,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1557,7 +1557,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1776,7 +1776,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
    * public advertised prefix.
    * </pre>
    *
@@ -1794,7 +1794,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
    * public advertised prefix.
    * </pre>
    *
@@ -1814,7 +1814,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
    * public advertised prefix.
    * </pre>
    *
@@ -1831,7 +1831,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
    * public advertised prefix.
    * </pre>
    *
@@ -1849,7 +1849,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The list of public delegated prefixes that exist for this
+   * Output only. [Output Only] The list of public delegated prefixes that exist for this
    * public advertised prefix.
    * </pre>
    *
@@ -1872,7 +1872,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1888,7 +1888,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1912,7 +1912,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2929,7 +2929,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2945,7 +2945,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2969,7 +2969,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -2993,7 +2993,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3016,7 +3016,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3035,7 +3035,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3061,7 +3061,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3077,7 +3077,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3101,7 +3101,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3125,7 +3125,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3148,7 +3148,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3167,7 +3167,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3619,7 +3619,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3636,7 +3636,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3653,7 +3653,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3674,7 +3674,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3959,7 +3959,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3974,7 +3974,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3997,7 +3997,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4020,7 +4020,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4042,7 +4042,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4060,7 +4060,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4456,7 +4456,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4477,7 +4477,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4497,7 +4497,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4518,7 +4518,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4545,7 +4545,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4571,7 +4571,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4598,7 +4598,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4625,7 +4625,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4650,7 +4650,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4676,7 +4676,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4702,7 +4702,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4725,7 +4725,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4748,7 +4748,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4765,7 +4765,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4786,7 +4786,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4809,7 +4809,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4829,7 +4829,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4850,7 +4850,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The list of public delegated prefixes that exist for this
+     * Output only. [Output Only] The list of public delegated prefixes that exist for this
      * public advertised prefix.
      * </pre>
      *
@@ -4890,7 +4890,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4905,7 +4905,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4928,7 +4928,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4951,7 +4951,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4973,7 +4973,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4991,7 +4991,7 @@ public final class PublicAdvertisedPrefix extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

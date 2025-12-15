@@ -70,7 +70,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -125,7 +125,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -138,7 +138,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of the feature.
+   * Output only. [Output Only] Description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -151,7 +151,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -165,7 +165,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -179,7 +179,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
    * preview features.
    * </pre>
    *
@@ -193,7 +193,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
    * preview features.
    * </pre>
    *
@@ -207,7 +207,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] The type of the feature. Always "compute#previewFeature" for
+   * Output only. [Output only] The type of the feature. Always "compute#previewFeature" for
    * preview features.
    * </pre>
    *
@@ -304,7 +304,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -317,7 +317,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -330,7 +330,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -343,7 +343,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -356,7 +356,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>
@@ -369,7 +369,7 @@ public interface PreviewFeatureOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the feature.
+   * Output only. [Output only] Status of the feature.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PreviewFeatureStatus status = 181260274;</code>

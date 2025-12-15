@@ -28,7 +28,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk.
+   * Output only. [Output Only] The architecture of the attached disk.
    * Check the Architecture enum for the list of possible values.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#savedDisk
+   * Output only. [Output Only] Type of the resource. Always compute#savedDisk
    * for attached disks.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -125,7 +125,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -138,7 +138,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies a URL of the disk attached to the source instance.
+   * Output only. Specifies a URL of the disk attached to the source instance.
    * </pre>
    *
    * <code>optional string source_disk = 451753793;</code>
@@ -151,7 +151,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
    * image.
    * </pre>
    *
@@ -165,7 +165,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Size of the individual disk snapshot used by this machine
+   * Output only. [Output Only] Size of the individual disk snapshot used by this machine
    * image.
    * </pre>
    *
@@ -179,7 +179,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -197,7 +197,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -215,7 +215,7 @@ public interface SavedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,

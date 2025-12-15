@@ -73,7 +73,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
    * BackendBucket.
    * </pre>
    *
@@ -90,7 +90,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
    * BackendBucket.
    * </pre>
    *
@@ -115,7 +115,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
    * BackendBucket.
    * </pre>
    *
@@ -492,7 +492,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *
@@ -508,7 +508,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *
@@ -532,7 +532,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *
@@ -556,7 +556,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *
@@ -579,7 +579,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *
@@ -598,7 +598,7 @@ public final class BackendBucketUsedBy extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for UrlMaps referencing that
+     * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
      * BackendBucket.
      * </pre>
      *

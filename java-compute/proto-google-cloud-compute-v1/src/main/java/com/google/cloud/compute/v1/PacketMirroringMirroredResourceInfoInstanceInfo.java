@@ -77,7 +77,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the
+   * Output only. [Output Only] Unique identifier for the instance; defined by the
    * server.
    * </pre>
    *
@@ -94,7 +94,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the
+   * Output only. [Output Only] Unique identifier for the instance; defined by the
    * server.
    * </pre>
    *
@@ -119,7 +119,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the instance; defined by the
+   * Output only. [Output Only] Unique identifier for the instance; defined by the
    * server.
    * </pre>
    *
@@ -614,7 +614,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *
@@ -630,7 +630,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *
@@ -654,7 +654,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *
@@ -678,7 +678,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *
@@ -701,7 +701,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *
@@ -720,7 +720,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the instance; defined by the
+     * Output only. [Output Only] Unique identifier for the instance; defined by the
      * server.
      * </pre>
      *

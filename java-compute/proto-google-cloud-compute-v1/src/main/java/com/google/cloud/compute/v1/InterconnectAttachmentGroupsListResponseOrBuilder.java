@@ -255,7 +255,7 @@ public interface InterconnectAttachmentGroupsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface:
    * MixerListResponseWithEtagBuilder
    * </pre>
@@ -270,7 +270,7 @@ public interface InterconnectAttachmentGroupsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface:
    * MixerListResponseWithEtagBuilder
    * </pre>
@@ -285,7 +285,7 @@ public interface InterconnectAttachmentGroupsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface:
    * MixerListResponseWithEtagBuilder
    * </pre>
@@ -301,7 +301,7 @@ public interface InterconnectAttachmentGroupsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface:
    * MixerListResponseWithEtagBuilder
    * </pre>

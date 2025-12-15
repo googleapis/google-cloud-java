@@ -119,7 +119,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
    * displays for reservations that are tied to a commitment.
    * </pre>
    *
@@ -133,7 +133,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
    * displays for reservations that are tied to a commitment.
    * </pre>
    *
@@ -147,7 +147,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to a parent commitment. This field
+   * Output only. [Output Only] Full or partial URL to a parent commitment. This field
    * displays for reservations that are tied to a commitment.
    * </pre>
    *
@@ -161,7 +161,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -175,7 +175,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -189,7 +189,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -397,7 +397,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -411,7 +411,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -425,7 +425,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -438,7 +438,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -451,7 +451,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -464,7 +464,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
    * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
@@ -478,7 +478,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
    * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
@@ -492,7 +492,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
    * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
@@ -507,7 +507,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Full or partial URL to parent commitments. This field
+   * Output only. [Output Only] Full or partial URL to parent commitments. This field
    * displays for reservations that are tied to multiple commitments.
    * </pre>
    *
@@ -750,7 +750,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -764,7 +764,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -778,7 +778,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Status information for Reservation resource.
+   * Output only. [Output Only] Status information for Reservation resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.AllocationResourceStatus resource_status = 249429315;
@@ -790,7 +790,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -803,7 +803,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -858,7 +858,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -871,7 +871,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -884,7 +884,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1017,7 +1017,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * Output only. [Output Only] The status of the reservation.
    *
    *
    *      - CREATING: Reservation resources are being
@@ -1039,7 +1039,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * Output only. [Output Only] The status of the reservation.
    *
    *
    *      - CREATING: Reservation resources are being
@@ -1061,7 +1061,7 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the reservation.
+   * Output only. [Output Only] The status of the reservation.
    *
    *
    *      - CREATING: Reservation resources are being

@@ -144,7 +144,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *
@@ -161,7 +161,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *
@@ -186,7 +186,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *
@@ -718,7 +718,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *
@@ -734,7 +734,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *
@@ -758,7 +758,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *
@@ -782,7 +782,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *
@@ -805,7 +805,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *
@@ -824,7 +824,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#screenshot
+     * Output only. [Output Only] Type of the resource. Always compute#screenshot
      * for the screenshots.
      * </pre>
      *

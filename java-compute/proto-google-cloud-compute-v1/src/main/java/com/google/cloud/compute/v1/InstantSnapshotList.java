@@ -223,7 +223,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -239,7 +239,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -263,7 +263,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -373,7 +373,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -389,7 +389,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -413,7 +413,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1535,7 +1535,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1550,7 +1550,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1573,7 +1573,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1596,7 +1596,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1618,7 +1618,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1636,7 +1636,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1811,7 +1811,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1826,7 +1826,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1849,7 +1849,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1872,7 +1872,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1894,7 +1894,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1912,7 +1912,7 @@ public final class InstantSnapshotList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

@@ -225,7 +225,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected
+   * Output only. [Output Only] An array of connections for all the producers connected
    * to this network attachment.
    * </pre>
    *
@@ -243,7 +243,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected
+   * Output only. [Output Only] An array of connections for all the producers connected
    * to this network attachment.
    * </pre>
    *
@@ -262,7 +262,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected
+   * Output only. [Output Only] An array of connections for all the producers connected
    * to this network attachment.
    * </pre>
    *
@@ -279,7 +279,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected
+   * Output only. [Output Only] An array of connections for all the producers connected
    * to this network attachment.
    * </pre>
    *
@@ -297,7 +297,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] An array of connections for all the producers connected
+   * Output only. [Output Only] An array of connections for all the producers connected
    * to this network attachment.
    * </pre>
    *
@@ -392,7 +392,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -409,7 +409,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -434,7 +434,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -609,7 +609,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -626,7 +626,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -648,7 +648,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -664,7 +664,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -688,7 +688,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource.
+   * Output only. [Output Only] Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -804,7 +804,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment
+   * Output only. [Output Only] The URL of the network which the Network Attachment
    * belongs to. Practically it is inferred by fetching the network of the first
    * subnetwork associated. Because it is required that all the subnetworks must
    * be from the same network, it is assured that the Network Attachment belongs
@@ -824,7 +824,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment
+   * Output only. [Output Only] The URL of the network which the Network Attachment
    * belongs to. Practically it is inferred by fetching the network of the first
    * subnetwork associated. Because it is required that all the subnetworks must
    * be from the same network, it is assured that the Network Attachment belongs
@@ -852,7 +852,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The URL of the network which the Network Attachment
+   * Output only. [Output Only] The URL of the network which the Network Attachment
    * belongs to. Practically it is inferred by fetching the network of the first
    * subnetwork associated. Because it is required that all the subnetworks must
    * be from the same network, it is assured that the Network Attachment belongs
@@ -1029,7 +1029,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1048,7 +1048,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1075,7 +1075,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the network attachment resides.
+   * Output only. [Output Only] URL of the region where the network attachment resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1107,7 +1107,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1123,7 +1123,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1147,7 +1147,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1176,7 +1176,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1192,7 +1192,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1216,7 +1216,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -2176,7 +2176,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2197,7 +2197,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2217,7 +2217,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2238,7 +2238,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2265,7 +2265,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2290,7 +2290,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2317,7 +2317,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2344,7 +2344,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2368,7 +2368,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2393,7 +2393,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2418,7 +2418,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2441,7 +2441,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2464,7 +2464,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2481,7 +2481,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2502,7 +2502,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2524,7 +2524,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2543,7 +2543,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2563,7 +2563,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] An array of connections for all the producers connected
+     * Output only. [Output Only] An array of connections for all the producers connected
      * to this network attachment.
      * </pre>
      *
@@ -2734,7 +2734,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2750,7 +2750,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2774,7 +2774,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2798,7 +2798,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2821,7 +2821,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2840,7 +2840,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3136,7 +3136,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3153,7 +3153,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3170,7 +3170,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3191,7 +3191,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3212,7 +3212,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3227,7 +3227,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3250,7 +3250,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3273,7 +3273,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3295,7 +3295,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3313,7 +3313,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource.
+     * Output only. [Output Only] Type of the resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3500,7 +3500,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -3519,7 +3519,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -3546,7 +3546,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -3573,7 +3573,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -3599,7 +3599,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -3621,7 +3621,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The URL of the network which the Network Attachment
+     * Output only. [Output Only] The URL of the network which the Network Attachment
      * belongs to. Practically it is inferred by fetching the network of the first
      * subnetwork associated. Because it is required that all the subnetworks must
      * be from the same network, it is assured that the Network Attachment belongs
@@ -4034,7 +4034,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4052,7 +4052,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4078,7 +4078,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4104,7 +4104,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4129,7 +4129,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4150,7 +4150,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the network attachment resides.
+     * Output only. [Output Only] URL of the region where the network attachment resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -4178,7 +4178,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4193,7 +4193,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4216,7 +4216,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4239,7 +4239,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4261,7 +4261,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4279,7 +4279,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4304,7 +4304,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4319,7 +4319,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4342,7 +4342,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4365,7 +4365,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4387,7 +4387,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4405,7 +4405,7 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>

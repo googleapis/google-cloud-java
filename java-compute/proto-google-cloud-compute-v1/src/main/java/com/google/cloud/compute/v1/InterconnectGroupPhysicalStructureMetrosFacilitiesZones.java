@@ -82,7 +82,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
    * given metro, facility, and zone.
    * </pre>
    *
@@ -98,7 +98,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
    * given metro, facility, and zone.
    * </pre>
    *
@@ -114,7 +114,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
    * given metro, facility, and zone.
    * </pre>
    *
@@ -131,7 +131,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
    * given metro, facility, and zone.
    * </pre>
    *
@@ -153,7 +153,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
    * This is the second component of the location of Interconnects in
    * this facility.
    * </pre>
@@ -171,7 +171,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
    * This is the second component of the location of Interconnects in
    * this facility.
    * </pre>
@@ -197,7 +197,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
    * This is the second component of the location of Interconnects in
    * this facility.
    * </pre>
@@ -652,7 +652,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -669,7 +669,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -685,7 +685,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -702,7 +702,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -719,7 +719,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -744,7 +744,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -768,7 +768,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -789,7 +789,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -809,7 +809,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] URLs of Interconnects in this redundancy group in the
+     * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
      * given metro, facility, and zone.
      * </pre>
      *
@@ -836,7 +836,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>
@@ -853,7 +853,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>
@@ -878,7 +878,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>
@@ -903,7 +903,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>
@@ -927,7 +927,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>
@@ -947,7 +947,7 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilitiesZones
      *
      *
      * <pre>
-     * [Output Only] The name of the zone, either "zone1" or "zone2".
+     * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
      * This is the second component of the location of Interconnects in
      * this facility.
      * </pre>

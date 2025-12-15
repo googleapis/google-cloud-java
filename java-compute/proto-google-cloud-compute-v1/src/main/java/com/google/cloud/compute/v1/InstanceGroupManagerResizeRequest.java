@@ -80,7 +80,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Current state of the request.
+   * Output only. [Output only] Current state of the request.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstanceGroupManagerResizeRequest.State}
@@ -345,7 +345,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -362,7 +362,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -387,7 +387,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this resize request inRFC3339
+   * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
    * text format.
    * </pre>
    *
@@ -484,7 +484,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -501,7 +501,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -523,7 +523,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
    * resize requests.
    * </pre>
    *
@@ -540,7 +540,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
    * resize requests.
    * </pre>
    *
@@ -565,7 +565,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
    * resize requests.
    * </pre>
    *
@@ -762,7 +762,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines
+   * Output only. [Output Only] The URL for this resize request. The server defines
    * this URL.
    * </pre>
    *
@@ -779,7 +779,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines
+   * Output only. [Output Only] The URL for this resize request. The server defines
    * this URL.
    * </pre>
    *
@@ -804,7 +804,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL for this resize request. The server defines
+   * Output only. [Output Only] The URL for this resize request. The server defines
    * this URL.
    * </pre>
    *
@@ -834,7 +834,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -850,7 +850,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -874,7 +874,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -903,7 +903,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Current state of the request.
+   * Output only. [Output only] Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -920,7 +920,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Current state of the request.
+   * Output only. [Output only] Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -945,7 +945,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Current state of the request.
+   * Output only. [Output only] Current state of the request.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -973,7 +973,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Status of the request.
+   * Output only. [Output only] Status of the request.
    * </pre>
    *
    * <code>
@@ -991,7 +991,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Status of the request.
+   * Output only. [Output only] Status of the request.
    * </pre>
    *
    * <code>
@@ -1011,7 +1011,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output only] Status of the request.
+   * Output only. [Output only] Status of the request.
    * </pre>
    *
    * <code>
@@ -1035,7 +1035,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1053,7 +1053,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1079,7 +1079,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the resize request is located. Populated only for zonal resize
    * requests.
    * </pre>
@@ -1813,7 +1813,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1829,7 +1829,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1853,7 +1853,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1877,7 +1877,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1900,7 +1900,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -1919,7 +1919,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The creation timestamp for this resize request inRFC3339
+     * Output only. [Output Only] The creation timestamp for this resize request inRFC3339
      * text format.
      * </pre>
      *
@@ -2071,7 +2071,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2088,7 +2088,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2105,7 +2105,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2126,7 +2126,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2147,7 +2147,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2163,7 +2163,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2187,7 +2187,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2211,7 +2211,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2234,7 +2234,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2253,7 +2253,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
+     * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for
      * resize requests.
      * </pre>
      *
@@ -2695,7 +2695,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2711,7 +2711,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2735,7 +2735,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2759,7 +2759,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2782,7 +2782,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2801,7 +2801,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL for this resize request. The server defines
+     * Output only. [Output Only] The URL for this resize request. The server defines
      * this URL.
      * </pre>
      *
@@ -2827,7 +2827,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2842,7 +2842,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2865,7 +2865,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2888,7 +2888,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2910,7 +2910,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2928,7 +2928,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2953,7 +2953,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2969,7 +2969,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2993,7 +2993,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3017,7 +3017,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3040,7 +3040,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3059,7 +3059,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Current state of the request.
+     * Output only. [Output only] Current state of the request.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -3090,7 +3090,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3107,7 +3107,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3131,7 +3131,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3157,7 +3157,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3181,7 +3181,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3214,7 +3214,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3236,7 +3236,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3254,7 +3254,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3277,7 +3277,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output only] Status of the request.
+     * Output only. [Output only] Status of the request.
      * </pre>
      *
      * <code>
@@ -3307,7 +3307,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3324,7 +3324,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3349,7 +3349,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3374,7 +3374,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3398,7 +3398,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>
@@ -3418,7 +3418,7 @@ public final class InstanceGroupManagerResizeRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] The URL of azone
+     * Output only. [Output Only] The URL of azone
      * where the resize request is located. Populated only for zonal resize
      * requests.
      * </pre>

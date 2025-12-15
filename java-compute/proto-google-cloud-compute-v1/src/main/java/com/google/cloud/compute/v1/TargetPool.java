@@ -558,7 +558,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -575,7 +575,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -600,7 +600,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -954,7 +954,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetPool
+   * Output only. [Output Only] Type of the resource. Always compute#targetPool
    * for target pools.
    * </pre>
    *
@@ -971,7 +971,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetPool
+   * Output only. [Output Only] Type of the resource. Always compute#targetPool
    * for target pools.
    * </pre>
    *
@@ -996,7 +996,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#targetPool
+   * Output only. [Output Only] Type of the resource. Always compute#targetPool
    * for target pools.
    * </pre>
    *
@@ -1113,7 +1113,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target pool resides.
+   * Output only. [Output Only] URL of the region where the target pool resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1129,7 +1129,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target pool resides.
+   * Output only. [Output Only] URL of the region where the target pool resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1153,7 +1153,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the target pool resides.
+   * Output only. [Output Only] URL of the region where the target pool resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -2343,7 +2343,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2359,7 +2359,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2383,7 +2383,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2407,7 +2407,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2430,7 +2430,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2449,7 +2449,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3213,7 +3213,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3229,7 +3229,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3253,7 +3253,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3277,7 +3277,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3300,7 +3300,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3319,7 +3319,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#targetPool
+     * Output only. [Output Only] Type of the resource. Always compute#targetPool
      * for target pools.
      * </pre>
      *
@@ -3507,7 +3507,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3522,7 +3522,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3545,7 +3545,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3568,7 +3568,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3590,7 +3590,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3608,7 +3608,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the target pool resides.
+     * Output only. [Output Only] URL of the region where the target pool resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>

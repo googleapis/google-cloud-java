@@ -28,7 +28,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -687,7 +687,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#urlMaps for
+   * Output only. [Output Only] Type of the resource. Always compute#urlMaps for
    * url maps.
    * </pre>
    *
@@ -701,7 +701,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#urlMaps for
+   * Output only. [Output Only] Type of the resource. Always compute#urlMaps for
    * url maps.
    * </pre>
    *
@@ -715,7 +715,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#urlMaps for
+   * Output only. [Output Only] Type of the resource. Always compute#urlMaps for
    * url maps.
    * </pre>
    *
@@ -842,7 +842,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional URL map resides.
+   * Output only. [Output Only] URL of the region where the regional URL map resides.
    * This field is not applicable to global URL maps.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -858,7 +858,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional URL map resides.
+   * Output only. [Output Only] URL of the region where the regional URL map resides.
    * This field is not applicable to global URL maps.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -874,7 +874,7 @@ public interface UrlMapOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional URL map resides.
+   * Output only. [Output Only] URL of the region where the regional URL map resides.
    * This field is not applicable to global URL maps.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.

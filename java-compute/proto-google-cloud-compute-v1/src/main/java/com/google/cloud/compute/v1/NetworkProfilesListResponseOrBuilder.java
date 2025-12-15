@@ -144,7 +144,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
+   * Output only. [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -157,7 +157,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
+   * Output only. [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -170,7 +170,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
+   * Output only. [Output Only] Type of resource. Alwayscompute#networkProfileList for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -240,7 +240,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -253,7 +253,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -266,7 +266,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -279,7 +279,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -293,7 +293,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -307,7 +307,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -322,7 +322,7 @@ public interface NetworkProfilesListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *

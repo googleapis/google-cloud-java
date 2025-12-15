@@ -228,7 +228,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -241,7 +241,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -254,7 +254,7 @@ public interface SecurityPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
+   * Output only. [Output only] Type of the resource. Alwayscompute#securityPolicyRule for security policy rules
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

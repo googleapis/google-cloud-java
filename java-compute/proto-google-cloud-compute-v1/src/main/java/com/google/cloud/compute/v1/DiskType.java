@@ -362,7 +362,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType
+   * Output only. [Output Only] Type of the resource. Always compute#diskType
    * for disk types.
    * </pre>
    *
@@ -379,7 +379,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType
+   * Output only. [Output Only] Type of the resource. Always compute#diskType
    * for disk types.
    * </pre>
    *
@@ -404,7 +404,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#diskType
+   * Output only. [Output Only] Type of the resource. Always compute#diskType
    * for disk types.
    * </pre>
    *
@@ -2065,7 +2065,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *
@@ -2081,7 +2081,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *
@@ -2105,7 +2105,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *
@@ -2129,7 +2129,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *
@@ -2152,7 +2152,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *
@@ -2171,7 +2171,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#diskType
+     * Output only. [Output Only] Type of the resource. Always compute#diskType
      * for disk types.
      * </pre>
      *

@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Warning of fetching the `quotas` field for this region. This
+ * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
  * field is populated only if fetching of the `quotas` field fails.
  * </pre>
  *
@@ -1334,7 +1334,7 @@ public final class QuotaStatusWarning extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
    * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *

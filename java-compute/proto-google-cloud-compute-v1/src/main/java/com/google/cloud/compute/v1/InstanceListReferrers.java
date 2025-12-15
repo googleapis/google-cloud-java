@@ -223,7 +223,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+   * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -239,7 +239,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+   * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -263,7 +263,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+   * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -373,7 +373,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -389,7 +389,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -413,7 +413,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1534,7 +1534,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1549,7 +1549,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1572,7 +1572,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1595,7 +1595,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1617,7 +1617,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1635,7 +1635,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
+     * Output only. [Output Only] Type of resource. Alwayscompute#instanceListReferrers for lists of Instance referrers.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1810,7 +1810,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1825,7 +1825,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1848,7 +1848,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1871,7 +1871,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1893,7 +1893,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1911,7 +1911,7 @@ public final class InstanceListReferrers extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

@@ -28,7 +28,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image inRFC3339
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image inRFC3339
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this machine image inRFC3339
+   * Output only. [Output Only] The creation timestamp for this machine image inRFC3339
    * text format.
    * </pre>
    *
@@ -140,7 +140,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this machine image. The server
+   * Output only. [Output Only] A unique identifier for this machine image. The server
    * defines this identifier.
    * </pre>
    *
@@ -154,7 +154,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this machine image. The server
+   * Output only. [Output Only] A unique identifier for this machine image. The server
    * defines this identifier.
    * </pre>
    *
@@ -208,7 +208,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -221,7 +221,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -234,7 +234,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
+   * Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -541,7 +541,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -554,7 +554,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -567,7 +567,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the
+   * Output only. An array of Machine Image specific properties for disks attached to the
    * source instance
    * </pre>
    *
@@ -579,7 +579,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the
+   * Output only. An array of Machine Image specific properties for disks attached to the
    * source instance
    * </pre>
    *
@@ -591,7 +591,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the
+   * Output only. An array of Machine Image specific properties for disks attached to the
    * source instance
    * </pre>
    *
@@ -603,7 +603,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the
+   * Output only. An array of Machine Image specific properties for disks attached to the
    * source instance
    * </pre>
    *
@@ -616,7 +616,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * An array of Machine Image specific properties for disks attached to the
+   * Output only. An array of Machine Image specific properties for disks attached to the
    * source instance
    * </pre>
    *
@@ -628,7 +628,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -641,7 +641,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -654,7 +654,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this machine image. The server defines this URL.
+   * Output only. [Output Only] The URL for this machine image. The server defines this URL.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -802,7 +802,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
    * instead for source instance related properties. New properties will not be
    * added to this field.
    * </pre>
@@ -819,7 +819,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
    * instead for source instance related properties. New properties will not be
    * added to this field.
    * </pre>
@@ -836,7 +836,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] DEPRECATED: Please use instance_properties
+   * Output only. [Output Only] DEPRECATED: Please use instance_properties
    * instead for source instance related properties. New properties will not be
    * added to this field.
    * </pre>
@@ -852,7 +852,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -866,7 +866,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -880,7 +880,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
+   * Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -952,7 +952,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Total size of the storage used by the machine image.
+   * Output only. [Output Only] Total size of the storage used by the machine image.
    * </pre>
    *
    * <code>optional int64 total_storage_bytes = 81855468;</code>
@@ -965,7 +965,7 @@ public interface MachineImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Total size of the storage used by the machine image.
+   * Output only. [Output Only] Total size of the storage used by the machine image.
    * </pre>
    *
    * <code>optional int64 total_storage_bytes = 81855468;</code>

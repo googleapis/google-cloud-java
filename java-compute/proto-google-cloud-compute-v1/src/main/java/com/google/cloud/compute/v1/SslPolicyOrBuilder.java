@@ -28,7 +28,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -174,7 +174,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -187,7 +187,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -200,7 +200,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -214,7 +214,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of features enabled in the SSL policy.
+   * Output only. [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
    * <code>repeated string enabled_features = 469017467;</code>
@@ -288,7 +288,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -302,7 +302,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -316,7 +316,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -329,7 +329,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -342,7 +342,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
+   * Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -508,7 +508,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy
+   * Output only. [Output Only] URL of the region where the regional SSL policy
    * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
@@ -522,7 +522,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy
+   * Output only. [Output Only] URL of the region where the regional SSL policy
    * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
@@ -536,7 +536,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL policy
+   * Output only. [Output Only] URL of the region where the regional SSL policy
    * resides. This field is not applicable to global SSL policies.
    * </pre>
    *
@@ -550,7 +550,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -563,7 +563,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -576,7 +576,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -589,7 +589,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
@@ -601,7 +601,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
@@ -613,7 +613,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
@@ -625,7 +625,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * SSL policy, this field will be populated with warning messages.
    * </pre>
    *
@@ -638,7 +638,7 @@ public interface SslPolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * SSL policy, this field will be populated with warning messages.
    * </pre>
    *

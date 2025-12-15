@@ -32,11 +32,9 @@ public interface ManifestOrBuilder
    * a CSV file in a Google Cloud Storage bucket. Each row in the file must
    * include the object details i.e. BucketId and Name. Generation may
    * optionally be specified. When it is not specified the live object is acted
-   * upon.
-   *  `manifest_location` should either be
-   * 1) An absolute path to the object in the format of
-   * `gs://bucket_name/path/file_name.csv`.
-   * 2) An absolute path with a single wildcard character in the file name, for
+   * upon. `manifest_location` should either be 1) An absolute path to the
+   * object in the format of `gs://bucket_name/path/file_name.csv`. 2) An
+   * absolute path with a single wildcard character in the file name, for
    * example `gs://bucket_name/path/file_name*.csv`.
    * If manifest location is specified with a wildcard, objects in all manifest
    * files matching the pattern will be acted upon.
@@ -56,11 +54,9 @@ public interface ManifestOrBuilder
    * a CSV file in a Google Cloud Storage bucket. Each row in the file must
    * include the object details i.e. BucketId and Name. Generation may
    * optionally be specified. When it is not specified the live object is acted
-   * upon.
-   *  `manifest_location` should either be
-   * 1) An absolute path to the object in the format of
-   * `gs://bucket_name/path/file_name.csv`.
-   * 2) An absolute path with a single wildcard character in the file name, for
+   * upon. `manifest_location` should either be 1) An absolute path to the
+   * object in the format of `gs://bucket_name/path/file_name.csv`. 2) An
+   * absolute path with a single wildcard character in the file name, for
    * example `gs://bucket_name/path/file_name*.csv`.
    * If manifest location is specified with a wildcard, objects in all manifest
    * files matching the pattern will be acted upon.

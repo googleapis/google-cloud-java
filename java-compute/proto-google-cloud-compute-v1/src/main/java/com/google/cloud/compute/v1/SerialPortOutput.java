@@ -145,7 +145,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -161,7 +161,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -185,7 +185,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -255,7 +255,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -271,7 +271,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -295,7 +295,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -958,7 +958,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -973,7 +973,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -996,7 +996,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1019,7 +1019,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1041,7 +1041,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1059,7 +1059,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#serialPortOutput for serial port output.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1168,7 +1168,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1183,7 +1183,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1206,7 +1206,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1229,7 +1229,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1251,7 +1251,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1269,7 +1269,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

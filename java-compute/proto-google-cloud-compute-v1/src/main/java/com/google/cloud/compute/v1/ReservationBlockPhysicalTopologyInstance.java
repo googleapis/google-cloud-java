@@ -108,7 +108,7 @@ public final class ReservationBlockPhysicalTopologyInstance
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>
@@ -126,7 +126,7 @@ public final class ReservationBlockPhysicalTopologyInstance
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>
@@ -148,7 +148,7 @@ public final class ReservationBlockPhysicalTopologyInstance
    *
    *
    * <pre>
-   * The PhysicalHostTopology of instances within a Block resource.
+   * Output only. The PhysicalHostTopology of instances within a Block resource.
    * </pre>
    *
    * <code>
@@ -720,7 +720,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -737,7 +737,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -762,7 +762,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -789,7 +789,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -814,7 +814,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -849,7 +849,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -871,7 +871,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -890,7 +890,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>
@@ -914,7 +914,7 @@ public final class ReservationBlockPhysicalTopologyInstance
      *
      *
      * <pre>
-     * The PhysicalHostTopology of instances within a Block resource.
+     * Output only. The PhysicalHostTopology of instances within a Block resource.
      * </pre>
      *
      * <code>

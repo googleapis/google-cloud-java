@@ -73,6 +73,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
 
   private StreamingDetectIntentRequest() {
     session_ = "";
+    responseView_ = 0;
   }
 
   @java.lang.Override
@@ -391,6 +392,53 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     return enableDebuggingInfo_;
   }
 
+  public static final int RESPONSE_VIEW_FIELD_NUMBER = 16;
+  private int responseView_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which fields in the
+   * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+   * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for responseView.
+   */
+  @java.lang.Override
+  public int getResponseViewValue() {
+    return responseView_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies which fields in the
+   * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+   * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The responseView.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView getResponseView() {
+    com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView result =
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView.forNumber(responseView_);
+    return result == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -423,6 +471,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     if (enableDebuggingInfo_ != false) {
       output.writeBool(8, enableDebuggingInfo_);
     }
+    if (responseView_
+        != com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView
+            .DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(16, responseView_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -449,6 +503,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     if (enableDebuggingInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableDebuggingInfo_);
+    }
+    if (responseView_
+        != com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView
+            .DETECT_INTENT_RESPONSE_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, responseView_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -481,6 +541,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     }
     if (getEnablePartialResponse() != other.getEnablePartialResponse()) return false;
     if (getEnableDebuggingInfo() != other.getEnableDebuggingInfo()) return false;
+    if (responseView_ != other.responseView_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -510,6 +571,8 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePartialResponse());
     hash = (37 * hash) + ENABLE_DEBUGGING_INFO_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableDebuggingInfo());
+    hash = (37 * hash) + RESPONSE_VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + responseView_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -714,6 +777,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
       enablePartialResponse_ = false;
       enableDebuggingInfo_ = false;
+      responseView_ = 0;
       return this;
     }
 
@@ -778,6 +842,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.enableDebuggingInfo_ = enableDebuggingInfo_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.responseView_ = responseView_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -851,6 +918,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
       if (other.getEnableDebuggingInfo() != false) {
         setEnableDebuggingInfo(other.getEnableDebuggingInfo());
       }
+      if (other.responseView_ != 0) {
+        setResponseViewValue(other.getResponseViewValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -914,6 +984,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000020;
                 break;
               } // case 64
+            case 128:
+              {
+                responseView_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1857,6 +1933,124 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
     public Builder clearEnableDebuggingInfo() {
       bitField0_ = (bitField0_ & ~0x00000020);
       enableDebuggingInfo_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int responseView_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which fields in the
+     * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+     * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for responseView.
+     */
+    @java.lang.Override
+    public int getResponseViewValue() {
+      return responseView_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which fields in the
+     * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+     * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for responseView to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseViewValue(int value) {
+      responseView_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which fields in the
+     * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+     * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The responseView.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView getResponseView() {
+      com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView result =
+          com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView.forNumber(responseView_);
+      return result == null
+          ? com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which fields in the
+     * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+     * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The responseView to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResponseView(
+        com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      responseView_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies which fields in the
+     * [QueryResult][google.cloud.dialogflow.cx.v3beta1.QueryResult] to return. If
+     * not set, the default is DETECT_INTENT_RESPONSE_VIEW_FULL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.DetectIntentResponseView response_view = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResponseView() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      responseView_ = 0;
       onChanged();
       return this;
     }

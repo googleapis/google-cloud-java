@@ -157,7 +157,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -171,7 +171,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -366,7 +366,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -379,7 +379,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -392,7 +392,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -583,7 +583,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TargetHttpsProxy
+   * Output only. [Output Only] URL of the region where the regional TargetHttpsProxy
    * resides. This field is not applicable to global TargetHttpsProxies.
    * </pre>
    *
@@ -597,7 +597,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TargetHttpsProxy
+   * Output only. [Output Only] URL of the region where the regional TargetHttpsProxy
    * resides. This field is not applicable to global TargetHttpsProxies.
    * </pre>
    *
@@ -611,7 +611,7 @@ public interface TargetHttpsProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TargetHttpsProxy
+   * Output only. [Output Only] URL of the region where the regional TargetHttpsProxy
    * resides. This field is not applicable to global TargetHttpsProxies.
    * </pre>
    *

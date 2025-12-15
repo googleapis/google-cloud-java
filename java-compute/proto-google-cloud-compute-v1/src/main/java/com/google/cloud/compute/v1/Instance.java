@@ -493,7 +493,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the
+   * Output only. [Output Only] The status of the instance. One of the
    * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
    * instance, see
    * Instance life cycle.
@@ -1018,7 +1018,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The CPU platform used by this instance.
+   * Output only. [Output Only] The CPU platform used by this instance.
    * </pre>
    *
    * <code>optional string cpu_platform = 410285354;</code>
@@ -1034,7 +1034,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The CPU platform used by this instance.
+   * Output only. [Output Only] The CPU platform used by this instance.
    * </pre>
    *
    * <code>optional string cpu_platform = 410285354;</code>
@@ -1058,7 +1058,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The CPU platform used by this instance.
+   * Output only. [Output Only] The CPU platform used by this instance.
    * </pre>
    *
    * <code>optional string cpu_platform = 410285354;</code>
@@ -1087,7 +1087,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1103,7 +1103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1127,7 +1127,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -1645,7 +1645,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1662,7 +1662,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1843,7 +1843,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance
+   * Output only. [Output Only] Type of the resource. Always compute#instance
    * for instances.
    * </pre>
    *
@@ -1860,7 +1860,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance
+   * Output only. [Output Only] Type of the resource. Always compute#instance
    * for instances.
    * </pre>
    *
@@ -1885,7 +1885,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#instance
+   * Output only. [Output Only] Type of the resource. Always compute#instance
    * for instances.
    * </pre>
    *
@@ -2116,7 +2116,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -2132,7 +2132,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -2156,7 +2156,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last start timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last start timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_start_timestamp = 443830736;</code>
@@ -2185,7 +2185,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2201,7 +2201,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2225,7 +2225,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last stop timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -2254,7 +2254,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -2270,7 +2270,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -2294,7 +2294,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Last suspended timestamp inRFC3339 text format.
+   * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -3073,7 +3073,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as
+   * Output only. [Output Only] Specifies values set for instance attributes as
    * compared to the values requested by user in the corresponding input only
    * field.
    * </pre>
@@ -3091,7 +3091,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as
+   * Output only. [Output Only] Specifies values set for instance attributes as
    * compared to the values requested by user in the corresponding input only
    * field.
    * </pre>
@@ -3111,7 +3111,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Specifies values set for instance attributes as
+   * Output only. [Output Only] Specifies values set for instance attributes as
    * compared to the values requested by user in the corresponding input only
    * field.
    * </pre>
@@ -3132,7 +3132,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -3148,7 +3148,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -3167,7 +3167,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3183,7 +3183,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -3257,7 +3257,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3273,7 +3273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3297,7 +3297,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -3649,7 +3649,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Whether a VM has been restricted for start because Compute
+   * Output only. [Output Only] Whether a VM has been restricted for start because Compute
    * Engine has detected suspicious activity.
    * </pre>
    *
@@ -3666,7 +3666,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Whether a VM has been restricted for start because Compute
+   * Output only. [Output Only] Whether a VM has been restricted for start because Compute
    * Engine has detected suspicious activity.
    * </pre>
    *
@@ -3688,7 +3688,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the
+   * Output only. [Output Only] The status of the instance. One of the
    * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
    * instance, see
    * Instance life cycle.
@@ -3708,7 +3708,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the
+   * Output only. [Output Only] The status of the instance. One of the
    * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
    * instance, see
    * Instance life cycle.
@@ -3736,7 +3736,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. One of the
+   * Output only. [Output Only] The status of the instance. One of the
    * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
    * instance, see
    * Instance life cycle.
@@ -3769,7 +3769,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -3785,7 +3785,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -3809,7 +3809,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -3899,7 +3899,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides.
+   * Output only. [Output Only] URL of the zone where the instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -3917,7 +3917,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides.
+   * Output only. [Output Only] URL of the zone where the instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -3943,7 +3943,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instance resides.
+   * Output only. [Output Only] URL of the zone where the instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -6456,7 +6456,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6471,7 +6471,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6494,7 +6494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6517,7 +6517,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6539,7 +6539,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6557,7 +6557,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The CPU platform used by this instance.
+     * Output only. [Output Only] The CPU platform used by this instance.
      * </pre>
      *
      * <code>optional string cpu_platform = 410285354;</code>
@@ -6582,7 +6582,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6597,7 +6597,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6620,7 +6620,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6643,7 +6643,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6665,7 +6665,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -6683,7 +6683,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -8198,7 +8198,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -8215,7 +8215,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -8232,7 +8232,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -8253,7 +8253,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -8702,7 +8702,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -8718,7 +8718,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -8742,7 +8742,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -8766,7 +8766,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -8789,7 +8789,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -8808,7 +8808,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#instance
+     * Output only. [Output Only] Type of the resource. Always compute#instance
      * for instances.
      * </pre>
      *
@@ -9181,7 +9181,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9196,7 +9196,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9219,7 +9219,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9242,7 +9242,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9264,7 +9264,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9282,7 +9282,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last start timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last start timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_start_timestamp = 443830736;</code>
@@ -9307,7 +9307,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9322,7 +9322,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9345,7 +9345,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9368,7 +9368,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9390,7 +9390,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9408,7 +9408,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last stop timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last stop timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_stop_timestamp = 412823010;</code>
@@ -9433,7 +9433,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -9448,7 +9448,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -9471,7 +9471,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -9494,7 +9494,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -9516,7 +9516,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -9534,7 +9534,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Last suspended timestamp inRFC3339 text format.
+     * Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_suspended_timestamp = 356275337;</code>
@@ -11689,7 +11689,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11706,7 +11706,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11729,7 +11729,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11754,7 +11754,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11777,7 +11777,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11807,7 +11807,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11829,7 +11829,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11846,7 +11846,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11867,7 +11867,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Specifies values set for instance attributes as
+     * Output only. [Output Only] Specifies values set for instance attributes as
      * compared to the values requested by user in the corresponding input only
      * field.
      * </pre>
@@ -11897,7 +11897,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -11913,7 +11913,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -11929,7 +11929,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -11949,7 +11949,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -11969,7 +11969,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -11985,7 +11985,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -12001,7 +12001,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -12021,7 +12021,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -12235,7 +12235,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -12250,7 +12250,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -12273,7 +12273,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -12296,7 +12296,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -12318,7 +12318,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -12336,7 +12336,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -13525,7 +13525,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Output only. [Output Only] Whether a VM has been restricted for start because Compute
      * Engine has detected suspicious activity.
      * </pre>
      *
@@ -13542,7 +13542,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Output only. [Output Only] Whether a VM has been restricted for start because Compute
      * Engine has detected suspicious activity.
      * </pre>
      *
@@ -13559,7 +13559,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Output only. [Output Only] Whether a VM has been restricted for start because Compute
      * Engine has detected suspicious activity.
      * </pre>
      *
@@ -13580,7 +13580,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Whether a VM has been restricted for start because Compute
+     * Output only. [Output Only] Whether a VM has been restricted for start because Compute
      * Engine has detected suspicious activity.
      * </pre>
      *
@@ -13601,7 +13601,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13620,7 +13620,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13647,7 +13647,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13674,7 +13674,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13700,7 +13700,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13722,7 +13722,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the instance. One of the
+     * Output only. [Output Only] The status of the instance. One of the
      * following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the
      * instance, see
      * Instance life cycle.
@@ -13751,7 +13751,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -13766,7 +13766,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -13789,7 +13789,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -13812,7 +13812,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -13834,7 +13834,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -13852,7 +13852,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -14103,7 +14103,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -14120,7 +14120,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -14145,7 +14145,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -14170,7 +14170,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -14194,7 +14194,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -14214,7 +14214,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instance resides.
+     * Output only. [Output Only] URL of the zone where the instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>

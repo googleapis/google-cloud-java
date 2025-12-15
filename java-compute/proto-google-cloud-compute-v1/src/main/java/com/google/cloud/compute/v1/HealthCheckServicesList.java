@@ -77,7 +77,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -93,7 +93,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -117,7 +117,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -146,7 +146,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of HealthCheckService resources.
+   * Output only. A list of HealthCheckService resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -160,7 +160,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of HealthCheckService resources.
+   * Output only. A list of HealthCheckService resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -175,7 +175,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of HealthCheckService resources.
+   * Output only. A list of HealthCheckService resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -189,7 +189,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of HealthCheckService resources.
+   * Output only. A list of HealthCheckService resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -203,7 +203,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of HealthCheckService resources.
+   * Output only. A list of HealthCheckService resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -222,7 +222,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+   * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
    * HealthCheckServices.
    * </pre>
    *
@@ -239,7 +239,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+   * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
    * HealthCheckServices.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+   * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
    * HealthCheckServices.
    * </pre>
    *
@@ -294,7 +294,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -314,7 +314,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -342,7 +342,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -375,7 +375,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -391,7 +391,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -415,7 +415,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1044,7 +1044,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1059,7 +1059,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1082,7 +1082,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1105,7 +1105,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1127,7 +1127,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1145,7 +1145,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1184,7 +1184,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1201,7 +1201,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1218,7 +1218,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1235,7 +1235,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1258,7 +1258,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1279,7 +1279,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1302,7 +1302,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1325,7 +1325,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1346,7 +1346,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1367,7 +1367,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1388,7 +1388,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1408,7 +1408,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1428,7 +1428,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1441,7 +1441,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1458,7 +1458,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1476,7 +1476,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1490,7 +1490,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1504,7 +1504,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of HealthCheckService resources.
+     * Output only. A list of HealthCheckService resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthCheckService items = 100526016;</code>
@@ -1537,7 +1537,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1553,7 +1553,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1577,7 +1577,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1601,7 +1601,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1624,7 +1624,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1643,7 +1643,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
+     * Output only. [Output Only] Type of the resource. Alwayscompute#healthCheckServicesList for lists of
      * HealthCheckServices.
      * </pre>
      *
@@ -1669,7 +1669,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1688,7 +1688,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1715,7 +1715,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1742,7 +1742,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1768,7 +1768,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1790,7 +1790,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1819,7 +1819,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1834,7 +1834,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1857,7 +1857,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1880,7 +1880,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1902,7 +1902,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1920,7 +1920,7 @@ public final class HealthCheckServicesList extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

@@ -241,7 +241,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -254,7 +254,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -267,7 +267,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -306,7 +306,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * Output only. [Output Only] Maximum number of VMs that can be created for this node type.
    * </pre>
    *
    * <code>optional int32 max_vms = 307579713;</code>
@@ -319,7 +319,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * Output only. [Output Only] Maximum number of VMs that can be created for this node type.
    * </pre>
    *
    * <code>optional int32 max_vms = 307579713;</code>
@@ -399,7 +399,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -412,7 +412,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -425,7 +425,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -438,7 +438,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides,
+   * Output only. [Output Only] The name of the zone where the node type resides,
    * such as us-central1-a.
    * </pre>
    *
@@ -452,7 +452,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides,
+   * Output only. [Output Only] The name of the zone where the node type resides,
    * such as us-central1-a.
    * </pre>
    *
@@ -466,7 +466,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides,
+   * Output only. [Output Only] The name of the zone where the node type resides,
    * such as us-central1-a.
    * </pre>
    *

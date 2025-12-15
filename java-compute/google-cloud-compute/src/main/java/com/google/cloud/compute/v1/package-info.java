@@ -61,6 +61,28 @@
  * }
  * }</pre>
  *
+ * <p>======================= AdviceClient =======================
+ *
+ * <p>Service Description: The Advice API.
+ *
+ * <p>Sample for AdviceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AdviceClient adviceClient = AdviceClient.create()) {
+ *   String project = "project-309310695";
+ *   String region = "region-934795532";
+ *   CalendarModeAdviceRequest calendarModeAdviceRequestResource =
+ *       CalendarModeAdviceRequest.newBuilder().build();
+ *   CalendarModeAdviceResponse response =
+ *       adviceClient.calendarMode(project, region, calendarModeAdviceRequestResource);
+ * }
+ * }</pre>
+ *
  * <p>======================= AutoscalersClient =======================
  *
  * <p>Service Description: The Autoscalers API.

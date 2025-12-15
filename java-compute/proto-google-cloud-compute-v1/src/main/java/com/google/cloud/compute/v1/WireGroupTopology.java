@@ -73,7 +73,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -87,7 +87,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -102,7 +102,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -116,7 +116,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -130,7 +130,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -554,7 +554,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -573,7 +573,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -591,7 +591,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -609,7 +609,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -634,7 +634,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -656,7 +656,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -680,7 +680,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -705,7 +705,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -727,7 +727,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -749,7 +749,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -772,7 +772,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -793,7 +793,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -814,7 +814,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -829,7 +829,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -848,7 +848,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -867,7 +867,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -882,7 +882,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;
@@ -899,7 +899,7 @@ public final class WireGroupTopology extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Topology details for all endpoints in the wire group.
+     * Output only. Topology details for all endpoints in the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;

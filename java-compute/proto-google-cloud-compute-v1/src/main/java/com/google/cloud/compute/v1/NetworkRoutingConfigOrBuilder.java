@@ -154,7 +154,7 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
    * field.
    * </pre>
    *
@@ -168,7 +168,7 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
    * field.
    * </pre>
    *
@@ -182,7 +182,7 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
@@ -197,7 +197,7 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
@@ -212,7 +212,7 @@ public interface NetworkRoutingConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>

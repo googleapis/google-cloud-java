@@ -132,7 +132,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -149,7 +149,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -174,7 +174,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -410,7 +410,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -427,7 +427,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -449,7 +449,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -465,7 +465,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -489,7 +489,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -603,7 +603,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates whether there are wire changes yet to be processed.
+   * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
    * </pre>
    *
    * <code>optional bool reconciling = 432155787;</code>
@@ -619,7 +619,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates whether there are wire changes yet to be processed.
+   * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
    * </pre>
    *
    * <code>optional bool reconciling = 432155787;</code>
@@ -640,7 +640,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -656,7 +656,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -680,7 +680,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -707,7 +707,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Topology details for the wire group configuration.
+   * Output only. Topology details for the wire group configuration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -723,7 +723,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Topology details for the wire group configuration.
+   * Output only. Topology details for the wire group configuration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -741,7 +741,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Topology details for the wire group configuration.
+   * Output only. Topology details for the wire group configuration.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -815,7 +815,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The single/redundant wire(s) managed by the wire group.
+   * Output only. The single/redundant wire(s) managed by the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -829,7 +829,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The single/redundant wire(s) managed by the wire group.
+   * Output only. The single/redundant wire(s) managed by the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -844,7 +844,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The single/redundant wire(s) managed by the wire group.
+   * Output only. The single/redundant wire(s) managed by the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -858,7 +858,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The single/redundant wire(s) managed by the wire group.
+   * Output only. The single/redundant wire(s) managed by the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -872,7 +872,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The single/redundant wire(s) managed by the wire group.
+   * Output only. The single/redundant wire(s) managed by the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -1732,7 +1732,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1748,7 +1748,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1772,7 +1772,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1796,7 +1796,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1819,7 +1819,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1838,7 +1838,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2276,7 +2276,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2293,7 +2293,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2310,7 +2310,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2331,7 +2331,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2352,7 +2352,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2367,7 +2367,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2390,7 +2390,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2413,7 +2413,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2435,7 +2435,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2453,7 +2453,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2640,7 +2640,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether there are wire changes yet to be processed.
+     * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
      * </pre>
      *
      * <code>optional bool reconciling = 432155787;</code>
@@ -2656,7 +2656,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether there are wire changes yet to be processed.
+     * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
      * </pre>
      *
      * <code>optional bool reconciling = 432155787;</code>
@@ -2672,7 +2672,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether there are wire changes yet to be processed.
+     * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
      * </pre>
      *
      * <code>optional bool reconciling = 432155787;</code>
@@ -2692,7 +2692,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether there are wire changes yet to be processed.
+     * Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
      * </pre>
      *
      * <code>optional bool reconciling = 432155787;</code>
@@ -2712,7 +2712,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2727,7 +2727,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2750,7 +2750,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2773,7 +2773,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2795,7 +2795,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2813,7 +2813,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2843,7 +2843,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2858,7 +2858,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2879,7 +2879,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2902,7 +2902,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2923,7 +2923,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2951,7 +2951,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2971,7 +2971,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -2986,7 +2986,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -3005,7 +3005,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Topology details for the wire group configuration.
+     * Output only. Topology details for the wire group configuration.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireGroupTopology topology = 122274415;</code>
@@ -3242,7 +3242,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3259,7 +3259,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3276,7 +3276,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3293,7 +3293,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3316,7 +3316,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3336,7 +3336,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3359,7 +3359,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3382,7 +3382,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3402,7 +3402,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3422,7 +3422,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3443,7 +3443,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3463,7 +3463,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3483,7 +3483,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3496,7 +3496,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3513,7 +3513,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3531,7 +3531,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3545,7 +3545,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>
@@ -3559,7 +3559,7 @@ public final class WireGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The single/redundant wire(s) managed by the wire group.
+     * Output only. The single/redundant wire(s) managed by the wire group.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.Wire wires = 113139854;</code>

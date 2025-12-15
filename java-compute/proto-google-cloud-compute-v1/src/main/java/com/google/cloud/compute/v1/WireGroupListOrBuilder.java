@@ -143,7 +143,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -156,7 +156,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -169,7 +169,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -272,7 +272,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -286,7 +286,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -300,7 +300,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -315,7 +315,7 @@ public interface WireGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *

@@ -311,7 +311,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -327,7 +327,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -351,7 +351,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -484,7 +484,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -500,7 +500,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -524,7 +524,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined, fully qualified URL for this resource.
+   * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1755,7 +1755,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1770,7 +1770,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1793,7 +1793,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1816,7 +1816,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1838,7 +1838,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1856,7 +1856,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#acceleratorType for accelerator types.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2079,7 +2079,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2094,7 +2094,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2117,7 +2117,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2140,7 +2140,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2162,7 +2162,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2180,7 +2180,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined, fully qualified URL for this resource.
+     * Output only. [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

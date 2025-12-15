@@ -157,7 +157,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -170,7 +170,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -183,7 +183,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -224,7 +224,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -237,7 +237,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -250,7 +250,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -408,7 +408,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
    * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
@@ -422,7 +422,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
    * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
@@ -436,7 +436,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
    * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
@@ -533,7 +533,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject
+   * Output only. [Output Only] Domains associated with the certificate via Subject
    * Alternative Name.
    * </pre>
    *
@@ -547,7 +547,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject
+   * Output only. [Output Only] Domains associated with the certificate via Subject
    * Alternative Name.
    * </pre>
    *
@@ -561,7 +561,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject
+   * Output only. [Output Only] Domains associated with the certificate via Subject
    * Alternative Name.
    * </pre>
    *
@@ -576,7 +576,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject
+   * Output only. [Output Only] Domains associated with the certificate via Subject
    * Alternative Name.
    * </pre>
    *

@@ -151,7 +151,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -167,7 +167,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -191,7 +191,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
    *
    *
    * <pre>
-   * This field is only temporary. It will be removed. Do not use it.
+   * Output only. This field is only temporary. It will be removed. Do not use it.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -750,7 +750,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -765,7 +765,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -788,7 +788,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -811,7 +811,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -833,7 +833,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -851,7 +851,7 @@ public final class BulkInsertInstanceResourcePerInstanceProperties
      *
      *
      * <pre>
-     * This field is only temporary. It will be removed. Do not use it.
+     * Output only. This field is only temporary. It will be removed. Do not use it.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

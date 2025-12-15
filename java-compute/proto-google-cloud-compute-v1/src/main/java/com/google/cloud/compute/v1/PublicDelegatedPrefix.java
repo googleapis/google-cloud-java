@@ -85,7 +85,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PublicDelegatedPrefix.ByoipApiVersion}
@@ -254,7 +254,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * </pre>
    *
@@ -983,7 +983,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -1000,7 +1000,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -1025,7 +1025,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -1055,7 +1055,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1072,7 +1072,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1097,7 +1097,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1190,6 +1190,43 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int ENABLE_ENHANCED_IPV4_ALLOCATION_FIELD_NUMBER = 54582253;
+  private boolean enableEnhancedIpv4Allocation_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return Whether the enableEnhancedIpv4Allocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableEnhancedIpv4Allocation() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return The enableEnhancedIpv4Allocation.
+   */
+  @java.lang.Override
+  public boolean getEnableEnhancedIpv4Allocation() {
+    return enableEnhancedIpv4Allocation_;
+  }
+
   public static final int FINGERPRINT_FIELD_NUMBER = 234678500;
 
   @SuppressWarnings("serial")
@@ -1215,7 +1252,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1287,7 +1324,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -1297,14 +1334,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -1336,7 +1373,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasIpCidrRange() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1398,7 +1435,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -1409,14 +1446,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasIpv6AccessType() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -1442,7 +1479,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -1480,7 +1517,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasIsLiveMigration() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1508,7 +1545,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1517,14 +1554,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1548,7 +1585,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1587,7 +1624,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasMode() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1664,7 +1701,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1746,7 +1783,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasParentPrefix() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1905,7 +1942,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1917,14 +1954,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1951,7 +1988,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -1983,7 +2020,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1992,14 +2029,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2023,7 +2060,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2073,7 +2110,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -2162,19 +2199,19 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15233991, parentPrefix_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -2183,34 +2220,37 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(38427446, allocatablePrefixLength_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(54582253, enableEnhancedIpv4Allocation_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 162683283, byoipApiVersion_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     for (int i = 0; i < publicDelegatedSubPrefixs_.size(); i++) {
       output.writeMessage(188940044, publicDelegatedSubPrefixs_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(511823856, isLiveMigration_);
     }
     getUnknownFields().writeTo(output);
@@ -2222,19 +2262,19 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15233991, parentPrefix_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
@@ -2246,16 +2286,21 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               38427446, allocatablePrefixLength_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              54582253, enableEnhancedIpv4Allocation_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(162683283, byoipApiVersion_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     for (int i = 0; i < publicDelegatedSubPrefixs_.size(); i++) {
@@ -2263,19 +2308,19 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               188940044, publicDelegatedSubPrefixs_.get(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(511823856, isLiveMigration_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -2309,6 +2354,11 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (hasDescription() != other.hasDescription()) return false;
     if (hasDescription()) {
       if (!getDescription().equals(other.getDescription())) return false;
+    }
+    if (hasEnableEnhancedIpv4Allocation() != other.hasEnableEnhancedIpv4Allocation()) return false;
+    if (hasEnableEnhancedIpv4Allocation()) {
+      if (getEnableEnhancedIpv4Allocation() != other.getEnableEnhancedIpv4Allocation())
+        return false;
     }
     if (hasFingerprint() != other.hasFingerprint()) return false;
     if (hasFingerprint()) {
@@ -2386,6 +2436,11 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     if (hasDescription()) {
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
+    }
+    if (hasEnableEnhancedIpv4Allocation()) {
+      hash = (37 * hash) + ENABLE_ENHANCED_IPV4_ALLOCATION_FIELD_NUMBER;
+      hash =
+          (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableEnhancedIpv4Allocation());
     }
     if (hasFingerprint()) {
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
@@ -2587,6 +2642,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       byoipApiVersion_ = "";
       creationTimestamp_ = "";
       description_ = "";
+      enableEnhancedIpv4Allocation_ = false;
       fingerprint_ = "";
       id_ = 0L;
       ipCidrRange_ = "";
@@ -2602,7 +2658,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         publicDelegatedSubPrefixs_ = null;
         publicDelegatedSubPrefixsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       region_ = "";
       selfLink_ = "";
       status_ = "";
@@ -2644,10 +2700,10 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.PublicDelegatedPrefix result) {
       if (publicDelegatedSubPrefixsBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           publicDelegatedSubPrefixs_ =
               java.util.Collections.unmodifiableList(publicDelegatedSubPrefixs_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.publicDelegatedSubPrefixs_ = publicDelegatedSubPrefixs_;
       } else {
@@ -2675,52 +2731,56 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.fingerprint_ = fingerprint_;
+        result.enableEnhancedIpv4Allocation_ = enableEnhancedIpv4Allocation_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.id_ = id_;
+        result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.ipCidrRange_ = ipCidrRange_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.ipv6AccessType_ = ipv6AccessType_;
+        result.ipCidrRange_ = ipCidrRange_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.isLiveMigration_ = isLiveMigration_;
+        result.ipv6AccessType_ = ipv6AccessType_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.kind_ = kind_;
+        result.isLiveMigration_ = isLiveMigration_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.mode_ = mode_;
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.name_ = name_;
+        result.mode_ = mode_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.parentPrefix_ = parentPrefix_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.region_ = region_;
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.parentPrefix_ = parentPrefix_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2789,9 +2849,12 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasEnableEnhancedIpv4Allocation()) {
+        setEnableEnhancedIpv4Allocation(other.getEnableEnhancedIpv4Allocation());
+      }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasId()) {
@@ -2799,12 +2862,12 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       if (other.hasIpCidrRange()) {
         ipCidrRange_ = other.ipCidrRange_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasIpv6AccessType()) {
         ipv6AccessType_ = other.ipv6AccessType_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasIsLiveMigration()) {
@@ -2812,29 +2875,29 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasMode()) {
         mode_ = other.mode_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasParentPrefix()) {
         parentPrefix_ = other.parentPrefix_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (publicDelegatedSubPrefixsBuilder_ == null) {
         if (!other.publicDelegatedSubPrefixs_.isEmpty()) {
           if (publicDelegatedSubPrefixs_.isEmpty()) {
             publicDelegatedSubPrefixs_ = other.publicDelegatedSubPrefixs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensurePublicDelegatedSubPrefixsIsMutable();
             publicDelegatedSubPrefixs_.addAll(other.publicDelegatedSubPrefixs_);
@@ -2847,7 +2910,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             publicDelegatedSubPrefixsBuilder_.dispose();
             publicDelegatedSubPrefixsBuilder_ = null;
             publicDelegatedSubPrefixs_ = other.publicDelegatedSubPrefixs_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00004000);
             publicDelegatedSubPrefixsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPublicDelegatedSubPrefixsFieldBuilder()
@@ -2859,17 +2922,17 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2901,31 +2964,31 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 26840
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26336418
             case 26856730:
               {
                 mode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26856730
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 26989658
             case 121871930:
               {
                 parentPrefix_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 121871930
             case 244202930:
@@ -2940,16 +3003,22 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000001;
                 break;
               } // case 307419568
+            case 436658024:
+              {
+                enableEnhancedIpv4Allocation_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 436658024
             case 784938578:
               {
                 ipCidrRange_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 784938578
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1111570338
             case 1301466266:
@@ -2961,7 +3030,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1450082194
             case 1511520354:
@@ -2982,7 +3051,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1877428002
             case -911466526:
@@ -2994,19 +3063,19 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -645248918
             case -257698070:
               {
                 ipv6AccessType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -257698070
             case -200376448:
               {
                 isLiveMigration_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -200376448
             default:
@@ -3114,7 +3183,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3130,7 +3199,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3154,7 +3223,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3178,7 +3247,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3201,7 +3270,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3220,7 +3289,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The version of BYOIP API.
+     * Output only. [Output Only] The version of BYOIP API.
      * Check the ByoipApiVersion enum for the list of possible values.
      * </pre>
      *
@@ -3246,7 +3315,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3262,7 +3331,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3286,7 +3355,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3310,7 +3379,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3333,7 +3402,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3352,7 +3421,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3504,6 +3573,82 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private boolean enableEnhancedIpv4Allocation_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+     * Applicable for IPv4 PDPs only.
+     * </pre>
+     *
+     * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+     *
+     * @return Whether the enableEnhancedIpv4Allocation field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableEnhancedIpv4Allocation() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+     * Applicable for IPv4 PDPs only.
+     * </pre>
+     *
+     * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+     *
+     * @return The enableEnhancedIpv4Allocation.
+     */
+    @java.lang.Override
+    public boolean getEnableEnhancedIpv4Allocation() {
+      return enableEnhancedIpv4Allocation_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+     * Applicable for IPv4 PDPs only.
+     * </pre>
+     *
+     * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+     *
+     * @param value The enableEnhancedIpv4Allocation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableEnhancedIpv4Allocation(boolean value) {
+
+      enableEnhancedIpv4Allocation_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+     * Applicable for IPv4 PDPs only.
+     * </pre>
+     *
+     * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableEnhancedIpv4Allocation() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableEnhancedIpv4Allocation_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object fingerprint_ = "";
 
     /**
@@ -3525,7 +3670,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3612,7 +3757,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3637,7 +3782,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3667,7 +3812,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3678,7 +3823,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3688,14 +3833,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3712,7 +3857,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3724,7 +3869,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3733,7 +3878,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -3742,7 +3887,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       id_ = 0L;
       onChanged();
       return this;
@@ -3763,7 +3908,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the ipCidrRange field is set.
      */
     public boolean hasIpCidrRange() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3832,7 +3977,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       ipCidrRange_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3851,7 +3996,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearIpCidrRange() {
       ipCidrRange_ = getDefaultInstance().getIpCidrRange();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3875,7 +4020,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       ipCidrRange_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3886,7 +4031,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -3896,14 +4041,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the ipv6AccessType field is set.
      */
     public boolean hasIpv6AccessType() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -3928,7 +4073,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -3953,7 +4098,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -3968,7 +4113,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3977,7 +4122,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -3988,7 +4133,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearIpv6AccessType() {
       ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3997,7 +4142,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+     * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
      * Inherited from parent prefix.
      * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
@@ -4013,7 +4158,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4033,7 +4178,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     @java.lang.Override
     public boolean hasIsLiveMigration() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -4067,7 +4212,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     public Builder setIsLiveMigration(boolean value) {
 
       isLiveMigration_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4084,7 +4229,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return This builder for chaining.
      */
     public Builder clearIsLiveMigration() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       isLiveMigration_ = false;
       onChanged();
       return this;
@@ -4096,7 +4241,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4104,14 +4249,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4134,7 +4279,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4157,7 +4302,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4170,7 +4315,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4179,7 +4324,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4188,7 +4333,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4197,7 +4342,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4211,7 +4356,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4231,7 +4376,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the mode field is set.
      */
     public boolean hasMode() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4300,7 +4445,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       mode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4319,7 +4464,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearMode() {
       mode_ = getDefaultInstance().getMode();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4343,7 +4488,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       mode_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4368,7 +4513,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4452,7 +4597,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4476,7 +4621,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -4505,7 +4650,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4525,7 +4670,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the parentPrefix field is set.
      */
     public boolean hasParentPrefix() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -4594,7 +4739,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       parentPrefix_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4613,7 +4758,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearParentPrefix() {
       parentPrefix_ = getDefaultInstance().getParentPrefix();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -4637,7 +4782,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       parentPrefix_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4647,12 +4792,12 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         publicDelegatedSubPrefixs_ = java.util.Collections.emptyList();
 
     private void ensurePublicDelegatedSubPrefixsIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00004000) != 0)) {
         publicDelegatedSubPrefixs_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix>(
                 publicDelegatedSubPrefixs_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
       }
     }
 
@@ -4925,7 +5070,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
     public Builder clearPublicDelegatedSubPrefixs() {
       if (publicDelegatedSubPrefixsBuilder_ == null) {
         publicDelegatedSubPrefixs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
       } else {
         publicDelegatedSubPrefixsBuilder_.clear();
@@ -5088,7 +5233,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
                 com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Builder,
                 com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder>(
                 publicDelegatedSubPrefixs_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         publicDelegatedSubPrefixs_ = null;
@@ -5102,7 +5247,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5113,14 +5258,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5146,7 +5291,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5172,7 +5317,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5188,7 +5333,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5197,7 +5342,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5209,7 +5354,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5218,7 +5363,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the public delegated prefix resides.
+     * Output only. [Output Only] URL of the region where the public delegated prefix resides.
      * This field applies only to the region resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -5235,7 +5380,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5246,7 +5391,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5254,14 +5399,14 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5284,7 +5429,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5307,7 +5452,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5320,7 +5465,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5329,7 +5474,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5338,7 +5483,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -5347,7 +5492,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5361,7 +5506,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5392,7 +5537,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5494,7 +5639,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5524,7 +5669,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5559,7 +5704,7 @@ public final class PublicDelegatedPrefix extends com.google.protobuf.GeneratedMe
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }

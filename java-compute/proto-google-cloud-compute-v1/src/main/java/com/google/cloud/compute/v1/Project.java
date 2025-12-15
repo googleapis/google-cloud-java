@@ -83,7 +83,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
    * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
    *
    * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -484,7 +484,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
    * this project.
    * </pre>
    *
@@ -763,7 +763,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
    * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
    *
    * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -783,7 +783,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
    * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
    *
    * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -811,7 +811,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The Cloud Armor tier for this project. It can be one of the
+   * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
    * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
    *
    * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -1298,7 +1298,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for
+   * Output only. [Output Only] Type of the resource. Always compute#project for
    * projects.
    * </pre>
    *
@@ -1315,7 +1315,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for
+   * Output only. [Output Only] Type of the resource. Always compute#project for
    * projects.
    * </pre>
    *
@@ -1340,7 +1340,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#project for
+   * Output only. [Output Only] Type of the resource. Always compute#project for
    * projects.
    * </pre>
    *
@@ -1647,7 +1647,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
    * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
@@ -1665,7 +1665,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
    * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
@@ -1691,7 +1691,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Default internal DNS setting used by VMs running in
+   * Output only. [Output Only] Default internal DNS setting used by VMs running in
    * this project.
    * Check the VmDnsSetting enum for the list of possible values.
    * </pre>
@@ -2648,7 +2648,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -2667,7 +2667,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -2694,7 +2694,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -2721,7 +2721,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -2747,7 +2747,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -2769,7 +2769,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The Cloud Armor tier for this project. It can be one of the
+     * Output only. [Output Only] The Cloud Armor tier for this project. It can be one of the
      * following values: CA_STANDARD,CA_ENTERPRISE_PAYGO.
      *
      * If this field is not specified, it is assumed to beCA_STANDARD.
@@ -3803,7 +3803,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -3819,7 +3819,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -3843,7 +3843,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -3867,7 +3867,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -3890,7 +3890,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -3909,7 +3909,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#project for
+     * Output only. [Output Only] Type of the resource. Always compute#project for
      * projects.
      * </pre>
      *
@@ -4780,7 +4780,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
@@ -4797,7 +4797,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
@@ -4822,7 +4822,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
@@ -4847,7 +4847,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
@@ -4871,7 +4871,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>
@@ -4891,7 +4891,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Default internal DNS setting used by VMs running in
+     * Output only. [Output Only] Default internal DNS setting used by VMs running in
      * this project.
      * Check the VmDnsSetting enum for the list of possible values.
      * </pre>

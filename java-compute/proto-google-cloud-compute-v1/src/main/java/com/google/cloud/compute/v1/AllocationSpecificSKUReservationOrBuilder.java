@@ -28,7 +28,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -41,7 +41,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are actually usable currently.
+   * Output only. [Output Only] Indicates how many instances are actually usable currently.
    * </pre>
    *
    * <code>optional int64 assured_count = 281197645;</code>
@@ -80,7 +80,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>
@@ -93,7 +93,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates how many instances are in use.
+   * Output only. [Output Only] Indicates how many instances are in use.
    * </pre>
    *
    * <code>optional int64 in_use_count = 493458877;</code>

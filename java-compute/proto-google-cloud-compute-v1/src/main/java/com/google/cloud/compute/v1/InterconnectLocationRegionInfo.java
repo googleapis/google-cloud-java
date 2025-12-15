@@ -72,7 +72,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence}
@@ -293,7 +293,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
    * to a VM in this region.
    * </pre>
    *
@@ -310,7 +310,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
    * to a VM in this region.
    * </pre>
    *
@@ -330,7 +330,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies whether L2 Interconnect Attachments can be created in this
+   * Output only. Identifies whether L2 Interconnect Attachments can be created in this
    * region for interconnects that are in this location.
    * </pre>
    *
@@ -347,7 +347,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies whether L2 Interconnect Attachments can be created in this
+   * Output only. Identifies whether L2 Interconnect Attachments can be created in this
    * region for interconnects that are in this location.
    * </pre>
    *
@@ -369,7 +369,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -386,7 +386,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -411,7 +411,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -441,7 +441,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -457,7 +457,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -481,7 +481,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -949,7 +949,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
      * to a VM in this region.
      * </pre>
      *
@@ -966,7 +966,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
      * to a VM in this region.
      * </pre>
      *
@@ -983,7 +983,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
      * to a VM in this region.
      * </pre>
      *
@@ -1004,7 +1004,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Expected round-trip time in milliseconds, from this InterconnectLocation
+     * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
      * to a VM in this region.
      * </pre>
      *
@@ -1025,7 +1025,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies whether L2 Interconnect Attachments can be created in this
+     * Output only. Identifies whether L2 Interconnect Attachments can be created in this
      * region for interconnects that are in this location.
      * </pre>
      *
@@ -1042,7 +1042,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies whether L2 Interconnect Attachments can be created in this
+     * Output only. Identifies whether L2 Interconnect Attachments can be created in this
      * region for interconnects that are in this location.
      * </pre>
      *
@@ -1059,7 +1059,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies whether L2 Interconnect Attachments can be created in this
+     * Output only. Identifies whether L2 Interconnect Attachments can be created in this
      * region for interconnects that are in this location.
      * </pre>
      *
@@ -1080,7 +1080,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies whether L2 Interconnect Attachments can be created in this
+     * Output only. Identifies whether L2 Interconnect Attachments can be created in this
      * region for interconnects that are in this location.
      * </pre>
      *
@@ -1101,7 +1101,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1117,7 +1117,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1141,7 +1141,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1165,7 +1165,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1188,7 +1188,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1207,7 +1207,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Identifies the network presence of this location.
+     * Output only. Identifies the network presence of this location.
      * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
@@ -1233,7 +1233,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -1248,7 +1248,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -1271,7 +1271,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -1294,7 +1294,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -1316,7 +1316,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -1334,7 +1334,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * URL for the region of this location.
+     * Output only. URL for the region of this location.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>

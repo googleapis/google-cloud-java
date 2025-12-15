@@ -276,7 +276,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -292,7 +292,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -316,7 +316,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -496,7 +496,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -512,7 +512,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -528,7 +528,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -545,7 +545,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -1819,7 +1819,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1834,7 +1834,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1857,7 +1857,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1880,7 +1880,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1902,7 +1902,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1920,7 +1920,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2229,7 +2229,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2246,7 +2246,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2262,7 +2262,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2279,7 +2279,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2296,7 +2296,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2321,7 +2321,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2345,7 +2345,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2366,7 +2366,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2386,7 +2386,7 @@ public final class CrossSiteNetworkList extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *

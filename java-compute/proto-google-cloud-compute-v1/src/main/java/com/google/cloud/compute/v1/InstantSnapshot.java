@@ -94,7 +94,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The architecture of the instant snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
    * ARM64 or X86_64.
    * </pre>
    *
@@ -277,7 +277,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+   * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.InstantSnapshot.Status}
@@ -513,7 +513,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The architecture of the instant snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -531,7 +531,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The architecture of the instant snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -557,7 +557,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The architecture of the instant snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -588,7 +588,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -605,7 +605,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -630,7 +630,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -730,7 +730,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Size of the source disk, specified in GB.
+   * Output only. [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
    * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -746,7 +746,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Size of the source disk, specified in GB.
+   * Output only. [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
    * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -765,7 +765,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -782,7 +782,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -804,7 +804,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -820,7 +820,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -844,7 +844,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1168,7 +1168,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instant snapshot resides.
+   * Output only. [Output Only] URL of the region where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1186,7 +1186,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instant snapshot resides.
+   * Output only. [Output Only] URL of the region where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1212,7 +1212,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instant snapshot resides.
+   * Output only. [Output Only] URL of the region where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1241,7 +1241,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Status information for the instant snapshot resource.
+   * Output only. [Output Only] Status information for the instant snapshot resource.
    * </pre>
    *
    * <code>
@@ -1259,7 +1259,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Status information for the instant snapshot resource.
+   * Output only. [Output Only] Status information for the instant snapshot resource.
    * </pre>
    *
    * <code>
@@ -1279,7 +1279,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Status information for the instant snapshot resource.
+   * Output only. [Output Only] Status information for the instant snapshot resource.
    * </pre>
    *
    * <code>
@@ -1336,7 +1336,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1352,7 +1352,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1373,7 +1373,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1389,7 +1389,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1413,7 +1413,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1442,7 +1442,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1458,7 +1458,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1482,7 +1482,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1646,7 +1646,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+   * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
    * This value may be used to determine whether the InstantSnapshot
    * was taken from the current or a previous instance of a given disk name.
    * </pre>
@@ -1664,7 +1664,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+   * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
    * This value may be used to determine whether the InstantSnapshot
    * was taken from the current or a previous instance of a given disk name.
    * </pre>
@@ -1690,7 +1690,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+   * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
    * This value may be used to determine whether the InstantSnapshot
    * was taken from the current or a previous instance of a given disk name.
    * </pre>
@@ -1721,7 +1721,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+   * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1738,7 +1738,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+   * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1763,7 +1763,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+   * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1793,7 +1793,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instant snapshot resides.
+   * Output only. [Output Only] URL of the zone where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1811,7 +1811,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instant snapshot resides.
+   * Output only. [Output Only] URL of the zone where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1837,7 +1837,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the instant snapshot resides.
+   * Output only. [Output Only] URL of the zone where the instant snapshot resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -2792,7 +2792,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2809,7 +2809,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2834,7 +2834,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2859,7 +2859,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2883,7 +2883,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2903,7 +2903,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The architecture of the instant snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the instant snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -2930,7 +2930,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2946,7 +2946,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2970,7 +2970,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2994,7 +2994,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3017,7 +3017,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3036,7 +3036,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3194,7 +3194,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -3210,7 +3210,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -3226,7 +3226,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -3246,7 +3246,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -3266,7 +3266,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3283,7 +3283,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3300,7 +3300,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3321,7 +3321,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3342,7 +3342,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3357,7 +3357,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3380,7 +3380,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3403,7 +3403,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3425,7 +3425,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3443,7 +3443,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshot for InstantSnapshot resources.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3990,7 +3990,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4007,7 +4007,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4032,7 +4032,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4057,7 +4057,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4081,7 +4081,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4101,7 +4101,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the instant snapshot resides.
+     * Output only. [Output Only] URL of the region where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -4133,7 +4133,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4150,7 +4150,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4173,7 +4173,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4199,7 +4199,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4222,7 +4222,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4254,7 +4254,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4276,7 +4276,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4294,7 +4294,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4316,7 +4316,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Status information for the instant snapshot resource.
+     * Output only. [Output Only] Status information for the instant snapshot resource.
      * </pre>
      *
      * <code>
@@ -4418,7 +4418,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4434,7 +4434,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4450,7 +4450,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4470,7 +4470,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -4490,7 +4490,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4505,7 +4505,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4528,7 +4528,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4551,7 +4551,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4573,7 +4573,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4591,7 +4591,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4616,7 +4616,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4631,7 +4631,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4654,7 +4654,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4677,7 +4677,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4699,7 +4699,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4717,7 +4717,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5000,7 +5000,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5017,7 +5017,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5042,7 +5042,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5067,7 +5067,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5091,7 +5091,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5111,7 +5111,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this InstantSnapshot.
+     * Output only. [Output Only] The ID value of the disk used to create this InstantSnapshot.
      * This value may be used to determine whether the InstantSnapshot
      * was taken from the current or a previous instance of a given disk name.
      * </pre>
@@ -5138,7 +5138,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5154,7 +5154,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5178,7 +5178,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5202,7 +5202,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5225,7 +5225,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5244,7 +5244,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
+     * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -5270,7 +5270,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5287,7 +5287,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5312,7 +5312,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5337,7 +5337,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5361,7 +5361,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5381,7 +5381,7 @@ public final class InstantSnapshot extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the instant snapshot resides.
+     * Output only. [Output Only] URL of the zone where the instant snapshot resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>

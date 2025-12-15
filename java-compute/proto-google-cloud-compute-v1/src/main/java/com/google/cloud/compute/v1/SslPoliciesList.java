@@ -77,7 +77,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -93,7 +93,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -117,7 +117,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the resource; defined by the server.
+   * Output only. [Output Only] Unique identifier for the resource; defined by the server.
    * </pre>
    *
    * <code>optional string id = 3355;</code>
@@ -146,7 +146,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of SslPolicy resources.
+   * Output only. A list of SslPolicy resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -160,7 +160,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of SslPolicy resources.
+   * Output only. A list of SslPolicy resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -175,7 +175,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of SslPolicy resources.
+   * Output only. A list of SslPolicy resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -189,7 +189,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of SslPolicy resources.
+   * Output only. A list of SslPolicy resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -203,7 +203,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * A list of SslPolicy resources.
+   * Output only. A list of SslPolicy resources.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -222,7 +222,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -238,7 +238,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -262,7 +262,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -291,7 +291,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -311,7 +311,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -339,7 +339,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for
+   * Output only. [Output Only] This token allows you to get the next page of results for
    * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
    * the query parameter pageToken in the next list request.
    * Subsequent list requests will have their own nextPageToken to
@@ -372,7 +372,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -388,7 +388,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -412,7 +412,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1039,7 +1039,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1054,7 +1054,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1077,7 +1077,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1100,7 +1100,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1122,7 +1122,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1140,7 +1140,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the resource; defined by the server.
+     * Output only. [Output Only] Unique identifier for the resource; defined by the server.
      * </pre>
      *
      * <code>optional string id = 3355;</code>
@@ -1179,7 +1179,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1196,7 +1196,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1213,7 +1213,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1230,7 +1230,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1253,7 +1253,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1274,7 +1274,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1297,7 +1297,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1320,7 +1320,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1340,7 +1340,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1361,7 +1361,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1382,7 +1382,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1402,7 +1402,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1422,7 +1422,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1435,7 +1435,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1452,7 +1452,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1470,7 +1470,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1484,7 +1484,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1498,7 +1498,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * A list of SslPolicy resources.
+     * Output only. A list of SslPolicy resources.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.SslPolicy items = 100526016;</code>
@@ -1530,7 +1530,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1545,7 +1545,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1568,7 +1568,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1591,7 +1591,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1613,7 +1613,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1631,7 +1631,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#sslPoliciesList for lists of sslPolicies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1656,7 +1656,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1675,7 +1675,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1702,7 +1702,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1729,7 +1729,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1755,7 +1755,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1777,7 +1777,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] This token allows you to get the next page of results for
+     * Output only. [Output Only] This token allows you to get the next page of results for
      * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
      * the query parameter pageToken in the next list request.
      * Subsequent list requests will have their own nextPageToken to
@@ -1806,7 +1806,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1821,7 +1821,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1844,7 +1844,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1867,7 +1867,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1889,7 +1889,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1907,7 +1907,7 @@ public final class SslPoliciesList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

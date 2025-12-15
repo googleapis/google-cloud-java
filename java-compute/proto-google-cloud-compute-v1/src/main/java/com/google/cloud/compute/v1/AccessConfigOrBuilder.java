@@ -110,7 +110,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -123,7 +123,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -136,7 +136,7 @@ public interface AccessConfigOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#accessConfig for access configs.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

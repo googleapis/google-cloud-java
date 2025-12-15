@@ -125,7 +125,7 @@ public interface OperationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *
@@ -139,7 +139,7 @@ public interface OperationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *
@@ -153,7 +153,7 @@ public interface OperationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *

@@ -409,7 +409,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the corresponding base forwarding rule. By base
+   * Output only. [Output Only] The URL for the corresponding base forwarding rule. By base
    * forwarding rule, we mean the forwarding rule that has the same IP address,
    * protocol, and port settings with the current forwarding rule, but without
    * sourceIPRanges specified.
@@ -427,7 +427,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the corresponding base forwarding rule. By base
+   * Output only. [Output Only] The URL for the corresponding base forwarding rule. By base
    * forwarding rule, we mean the forwarding rule that has the same IP address,
    * protocol, and port settings with the current forwarding rule, but without
    * sourceIPRanges specified.
@@ -445,7 +445,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for the corresponding base forwarding rule. By base
+   * Output only. [Output Only] The URL for the corresponding base forwarding rule. By base
    * forwarding rule, we mean the forwarding rule that has the same IP address,
    * protocol, and port settings with the current forwarding rule, but without
    * sourceIPRanges specified.
@@ -463,7 +463,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -477,7 +477,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -491,7 +491,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -907,7 +907,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -920,7 +920,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -933,7 +933,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1846,7 +1846,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional forwarding rule resides.
+   * Output only. [Output Only] URL of the region where the regional forwarding rule resides.
    * This field is not applicable to global forwarding rules.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1862,7 +1862,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional forwarding rule resides.
+   * Output only. [Output Only] URL of the region where the regional forwarding rule resides.
    * This field is not applicable to global forwarding rules.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1878,7 +1878,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional forwarding rule resides.
+   * Output only. [Output Only] URL of the region where the regional forwarding rule resides.
    * This field is not applicable to global forwarding rules.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1933,7 +1933,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1946,7 +1946,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1959,7 +1959,7 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>

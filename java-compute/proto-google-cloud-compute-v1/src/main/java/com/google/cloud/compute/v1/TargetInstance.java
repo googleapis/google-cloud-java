@@ -227,7 +227,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -244,7 +244,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -269,7 +269,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -498,7 +498,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -514,7 +514,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -538,7 +538,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -948,7 +948,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the target instance resides.
+   * Output only. [Output Only] URL of the zone where the target instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -966,7 +966,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the target instance resides.
+   * Output only. [Output Only] URL of the zone where the target instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -992,7 +992,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the target instance resides.
+   * Output only. [Output Only] URL of the zone where the target instance resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1675,7 +1675,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1691,7 +1691,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1715,7 +1715,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1739,7 +1739,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1762,7 +1762,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1781,7 +1781,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2183,7 +2183,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2198,7 +2198,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2221,7 +2221,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2244,7 +2244,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2266,7 +2266,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2284,7 +2284,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3011,7 +3011,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -3028,7 +3028,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -3053,7 +3053,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -3078,7 +3078,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -3102,7 +3102,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -3122,7 +3122,7 @@ public final class TargetInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the target instance resides.
+     * Output only. [Output Only] URL of the zone where the target instance resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>

@@ -150,7 +150,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+   * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
    * VM endpoints.
    * </pre>
    *
@@ -167,7 +167,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+   * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
    * VM endpoints.
    * </pre>
    *
@@ -192,7 +192,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+   * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
    * VM endpoints.
    * </pre>
    *
@@ -379,7 +379,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -395,7 +395,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -419,7 +419,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1183,7 +1183,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1199,7 +1199,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1223,7 +1223,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1247,7 +1247,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1270,7 +1270,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1289,7 +1289,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
+     * Output only. [Output Only] Type of resource. Alwayscompute#vmEndpointNatMappingsList for lists of Nat mappings of
      * VM endpoints.
      * </pre>
      *
@@ -1835,7 +1835,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1850,7 +1850,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1873,7 +1873,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1896,7 +1896,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1918,7 +1918,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1936,7 +1936,7 @@ public final class VmEndpointNatMappingsList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

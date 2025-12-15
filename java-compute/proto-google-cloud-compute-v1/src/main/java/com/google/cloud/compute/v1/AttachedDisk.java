@@ -77,7 +77,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk. Valid values are ARM64
+   * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
    * or X86_64.
    * </pre>
    *
@@ -556,7 +556,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+   * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
    * field is set to PRESERVED if the LocalSSD data has been saved
    * to a persistent location by customer request.  (see the
    * discard_local_ssd option on Stop/Suspend).
@@ -852,7 +852,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk. Valid values are ARM64
+   * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
    * or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -870,7 +870,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk. Valid values are ARM64
+   * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
    * or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -896,7 +896,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the attached disk. Valid values are ARM64
+   * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
    * or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -1384,7 +1384,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+   * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
    * boot disk. If you have many disks attached to an instance, each
    * disk would have a unique index number.
    * </pre>
@@ -1402,7 +1402,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+   * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
    * boot disk. If you have many disks attached to an instance, each
    * disk would have a unique index number.
    * </pre>
@@ -1587,7 +1587,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1603,7 +1603,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1627,7 +1627,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1657,7 +1657,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1672,7 +1672,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1687,7 +1687,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1703,7 +1703,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -1799,7 +1799,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+   * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
    * field is set to PRESERVED if the LocalSSD data has been saved
    * to a persistent location by customer request.  (see the
    * discard_local_ssd option on Stop/Suspend).
@@ -1820,7 +1820,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+   * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
    * field is set to PRESERVED if the LocalSSD data has been saved
    * to a persistent location by customer request.  (see the
    * discard_local_ssd option on Stop/Suspend).
@@ -1849,7 +1849,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+   * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
    * field is set to PRESERVED if the LocalSSD data has been saved
    * to a persistent location by customer request.  (see the
    * discard_local_ssd option on Stop/Suspend).
@@ -1881,7 +1881,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] shielded vm initial state stored on disk
+   * Output only. [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
    * <code>
@@ -1899,7 +1899,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] shielded vm initial state stored on disk
+   * Output only. [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
    * <code>
@@ -1919,7 +1919,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] shielded vm initial state stored on disk
+   * Output only. [Output Only] shielded vm initial state stored on disk
    * </pre>
    *
    * <code>
@@ -3039,7 +3039,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -3056,7 +3056,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -3081,7 +3081,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -3106,7 +3106,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -3130,7 +3130,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -3150,7 +3150,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the attached disk. Valid values are ARM64
+     * Output only. [Output Only] The architecture of the attached disk. Valid values are ARM64
      * or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -4506,7 +4506,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+     * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
      * boot disk. If you have many disks attached to an instance, each
      * disk would have a unique index number.
      * </pre>
@@ -4524,7 +4524,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+     * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
      * boot disk. If you have many disks attached to an instance, each
      * disk would have a unique index number.
      * </pre>
@@ -4542,7 +4542,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+     * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
      * boot disk. If you have many disks attached to an instance, each
      * disk would have a unique index number.
      * </pre>
@@ -4564,7 +4564,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A zero-based index to this disk, where 0 is reserved for the
+     * Output only. [Output Only] A zero-based index to this disk, where 0 is reserved for the
      * boot disk. If you have many disks attached to an instance, each
      * disk would have a unique index number.
      * </pre>
@@ -5011,7 +5011,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5026,7 +5026,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5049,7 +5049,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5072,7 +5072,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5094,7 +5094,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5112,7 +5112,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5145,7 +5145,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5161,7 +5161,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5176,7 +5176,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5192,7 +5192,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5208,7 +5208,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5232,7 +5232,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5255,7 +5255,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5275,7 +5275,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5294,7 +5294,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Any valid publicly visible licenses.
+     * Output only. [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
      * <code>repeated string licenses = 337642578;</code>
@@ -5458,7 +5458,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5478,7 +5478,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5506,7 +5506,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5534,7 +5534,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5561,7 +5561,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5584,7 +5584,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
+     * Output only. For LocalSSD disks on VM Instances in STOPPED or SUSPENDED state, this
      * field is set to PRESERVED if the LocalSSD data has been saved
      * to a persistent location by customer request.  (see the
      * discard_local_ssd option on Stop/Suspend).
@@ -5619,7 +5619,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5636,7 +5636,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5659,7 +5659,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5685,7 +5685,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5708,7 +5708,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5740,7 +5740,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5762,7 +5762,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5780,7 +5780,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>
@@ -5802,7 +5802,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] shielded vm initial state stored on disk
+     * Output only. [Output Only] shielded vm initial state stored on disk
      * </pre>
      *
      * <code>

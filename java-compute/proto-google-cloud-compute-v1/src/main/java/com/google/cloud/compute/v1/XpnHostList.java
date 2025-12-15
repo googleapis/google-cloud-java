@@ -222,7 +222,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#xpnHostList for
+   * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
    * lists of shared VPC hosts.
    * </pre>
    *
@@ -239,7 +239,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#xpnHostList for
+   * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
    * lists of shared VPC hosts.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#xpnHostList for
+   * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
    * lists of shared VPC hosts.
    * </pre>
    *
@@ -375,7 +375,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -391,7 +391,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -415,7 +415,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1532,7 +1532,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1548,7 +1548,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1572,7 +1572,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1596,7 +1596,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1619,7 +1619,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1638,7 +1638,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#xpnHostList for
+     * Output only. [Output Only] Type of resource. Always compute#xpnHostList for
      * lists of shared VPC hosts.
      * </pre>
      *
@@ -1814,7 +1814,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1829,7 +1829,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1852,7 +1852,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1875,7 +1875,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1897,7 +1897,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1915,7 +1915,7 @@ public final class XpnHostList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

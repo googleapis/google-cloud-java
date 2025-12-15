@@ -75,7 +75,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
    * server.
    * </pre>
    *
@@ -92,7 +92,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
    * server.
    * </pre>
    *
@@ -117,7 +117,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the forwarding rule; defined by the
+   * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
    * server.
    * </pre>
    *
@@ -600,7 +600,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *
@@ -616,7 +616,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *
@@ -640,7 +640,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *
@@ -664,7 +664,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *
@@ -687,7 +687,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *
@@ -706,7 +706,7 @@ public final class PacketMirroringForwardingRuleInfo extends com.google.protobuf
      *
      *
      * <pre>
-     * [Output Only] Unique identifier for the forwarding rule; defined by the
+     * Output only. [Output Only] Unique identifier for the forwarding rule; defined by the
      * server.
      * </pre>
      *

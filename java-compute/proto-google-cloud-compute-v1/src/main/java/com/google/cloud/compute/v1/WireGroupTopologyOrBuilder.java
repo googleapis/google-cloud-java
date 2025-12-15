@@ -28,7 +28,7 @@ public interface WireGroupTopologyOrBuilder
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -39,7 +39,7 @@ public interface WireGroupTopologyOrBuilder
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -50,7 +50,7 @@ public interface WireGroupTopologyOrBuilder
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -61,7 +61,7 @@ public interface WireGroupTopologyOrBuilder
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>
@@ -73,7 +73,7 @@ public interface WireGroupTopologyOrBuilder
    *
    *
    * <pre>
-   * Topology details for all endpoints in the wire group.
+   * Output only. Topology details for all endpoints in the wire group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireGroupTopologyEndpoint endpoints = 287085950;</code>

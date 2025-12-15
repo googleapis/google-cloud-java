@@ -28,7 +28,7 @@ public interface VpnGatewayStatusOrBuilder
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface VpnGatewayStatusOrBuilder
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface VpnGatewayStatusOrBuilder
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface VpnGatewayStatusOrBuilder
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -81,7 +81,7 @@ public interface VpnGatewayStatusOrBuilder
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
