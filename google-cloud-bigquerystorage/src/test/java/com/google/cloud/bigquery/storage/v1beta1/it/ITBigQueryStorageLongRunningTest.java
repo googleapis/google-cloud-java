@@ -36,6 +36,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assume;
@@ -76,9 +77,10 @@ public class ITBigQueryStorageLongRunningTest {
   }
 
   @AfterClass
-  public static void afterClass() {
+  public static void afterClass() throws InterruptedException {
     if (client != null) {
       client.close();
+      client.awaitTermination(10, TimeUnit.SECONDS);
     }
   }
 
@@ -109,17 +111,12 @@ public class ITBigQueryStorageLongRunningTest {
 
     List<Callable<Long>> tasks = new ArrayList<>(session.getStreamsCount());
     for (final Stream stream : session.getStreamsList()) {
-      tasks.add(
-          new Callable<Long>() {
-            @Override
-            public Long call() throws Exception {
-              return readAllRowsFromStream(stream);
-            }
-          });
+      tasks.add(() -> readAllRowsFromStream(stream));
     }
 
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());
     List<Future<Long>> results = executor.invokeAll(tasks);
+    executor.shutdown();
 
     long rowCount = 0;
     for (Future<Long> result : results) {
