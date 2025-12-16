@@ -691,7 +691,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -708,7 +708,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -733,7 +733,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -876,7 +876,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -893,7 +893,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -915,7 +915,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -931,7 +931,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -955,7 +955,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1349,7 +1349,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the network endpoint group is located.
    * </pre>
    *
@@ -1366,7 +1366,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the network endpoint group is located.
    * </pre>
    *
@@ -1391,7 +1391,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the network endpoint group is located.
    * </pre>
    *
@@ -1421,7 +1421,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1437,7 +1437,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1461,7 +1461,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1488,7 +1488,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] Number of network endpoints in the network endpoint group.
+   * Output only. [Output only] Number of network endpoints in the network endpoint group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1504,7 +1504,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output only] Number of network endpoints in the network endpoint group.
+   * Output only. [Output only] Number of network endpoints in the network endpoint group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1597,7 +1597,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of thezone
+   * Output only. [Output Only] The URL of thezone
    * where the network endpoint group is located.
    * </pre>
    *
@@ -1614,7 +1614,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of thezone
+   * Output only. [Output Only] The URL of thezone
    * where the network endpoint group is located.
    * </pre>
    *
@@ -1639,7 +1639,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of thezone
+   * Output only. [Output Only] The URL of thezone
    * where the network endpoint group is located.
    * </pre>
    *
@@ -3414,7 +3414,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3430,7 +3430,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3454,7 +3454,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3478,7 +3478,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3501,7 +3501,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3520,7 +3520,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3766,7 +3766,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3783,7 +3783,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3800,7 +3800,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3821,7 +3821,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3842,7 +3842,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3857,7 +3857,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3880,7 +3880,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3903,7 +3903,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3925,7 +3925,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3943,7 +3943,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4749,7 +4749,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4765,7 +4765,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4789,7 +4789,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4813,7 +4813,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4836,7 +4836,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4855,7 +4855,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of theregion
+     * Output only. [Output Only] The URL of theregion
      * where the network endpoint group is located.
      * </pre>
      *
@@ -4881,7 +4881,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4896,7 +4896,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4919,7 +4919,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4942,7 +4942,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4964,7 +4964,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4982,7 +4982,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -5007,7 +5007,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] Number of network endpoints in the network endpoint group.
+     * Output only. [Output only] Number of network endpoints in the network endpoint group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -5023,7 +5023,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] Number of network endpoints in the network endpoint group.
+     * Output only. [Output only] Number of network endpoints in the network endpoint group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -5039,7 +5039,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] Number of network endpoints in the network endpoint group.
+     * Output only. [Output only] Number of network endpoints in the network endpoint group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -5059,7 +5059,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output only] Number of network endpoints in the network endpoint group.
+     * Output only. [Output only] Number of network endpoints in the network endpoint group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -5211,7 +5211,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *
@@ -5227,7 +5227,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *
@@ -5251,7 +5251,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *
@@ -5275,7 +5275,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *
@@ -5298,7 +5298,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *
@@ -5317,7 +5317,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of thezone
+     * Output only. [Output Only] The URL of thezone
      * where the network endpoint group is located.
      * </pre>
      *

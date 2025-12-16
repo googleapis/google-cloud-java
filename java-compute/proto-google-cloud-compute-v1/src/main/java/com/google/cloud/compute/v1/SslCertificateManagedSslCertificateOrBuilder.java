@@ -28,7 +28,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
    * certificate resource.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
    * certificate resource.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
    * certificate resource.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
    * certificate resource.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
    * certificate resource.
    * </pre>
    *
@@ -162,7 +162,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -176,7 +176,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -190,7 +190,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

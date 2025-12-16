@@ -28,7 +28,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -83,7 +83,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -96,7 +96,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -109,7 +109,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -123,7 +123,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
    * licenses.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
    * licenses.
    * </pre>
    *
@@ -165,7 +165,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
    * licenses.
    * </pre>
    *
@@ -245,7 +245,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
    * must be a valid 64 bit integer.
    * </pre>
    *
@@ -259,7 +259,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
    * must be a valid 64 bit integer.
    * </pre>
    *
@@ -273,7 +273,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
    * must be a valid 64 bit integer.
    * </pre>
    *
@@ -287,7 +287,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -300,7 +300,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -313,7 +313,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -326,7 +326,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -340,7 +340,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -354,7 +354,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -368,7 +368,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating
+   * Output only. [Output Only] If true, the license will remain attached when creating
    * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
@@ -382,7 +382,7 @@ public interface LicenseCodeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating
+   * Output only. [Output Only] If true, the license will remain attached when creating
    * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *

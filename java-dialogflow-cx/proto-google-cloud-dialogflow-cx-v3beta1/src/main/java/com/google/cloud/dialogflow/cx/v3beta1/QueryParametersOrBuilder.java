@@ -963,7 +963,7 @@ public interface QueryParametersOrBuilder
    *
    * @deprecated
    *     google.cloud.dialogflow.cx.v3beta1.QueryParameters.populate_data_store_connection_signals
-   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=762
+   *     is deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=774
    * @return The populateDataStoreConnectionSignals.
    */
   @java.lang.Deprecated

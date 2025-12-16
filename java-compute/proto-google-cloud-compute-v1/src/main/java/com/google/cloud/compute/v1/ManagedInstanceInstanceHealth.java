@@ -68,7 +68,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState}
@@ -321,7 +321,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -338,7 +338,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -363,7 +363,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The current detailed instance health state.
+   * Output only. [Output Only] The current detailed instance health state.
    * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
@@ -393,7 +393,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the
+   * Output only. [Output Only] The URL for the health check that verifies whether the
    * instance is healthy.
    * </pre>
    *
@@ -410,7 +410,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the
+   * Output only. [Output Only] The URL for the health check that verifies whether the
    * instance is healthy.
    * </pre>
    *
@@ -435,7 +435,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * [Output Only] The URL for the health check that verifies whether the
+   * Output only. [Output Only] The URL for the health check that verifies whether the
    * instance is healthy.
    * </pre>
    *
@@ -844,7 +844,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -860,7 +860,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -884,7 +884,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -908,7 +908,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -931,7 +931,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -950,7 +950,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The current detailed instance health state.
+     * Output only. [Output Only] The current detailed instance health state.
      * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
@@ -976,7 +976,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *
@@ -992,7 +992,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *
@@ -1016,7 +1016,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *
@@ -1040,7 +1040,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *
@@ -1063,7 +1063,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *
@@ -1082,7 +1082,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * [Output Only] The URL for the health check that verifies whether the
+     * Output only. [Output Only] The URL for the health check that verifies whether the
      * instance is healthy.
      * </pre>
      *

@@ -72,7 +72,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The VPN gateway interface this VPN tunnel is associated with.
+   * Output only. The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
    * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -88,7 +88,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The VPN gateway interface this VPN tunnel is associated with.
+   * Output only. The VPN gateway interface this VPN tunnel is associated with.
    * </pre>
    *
    * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -107,7 +107,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The peer gateway interface this VPN tunnel is connected to, the peer
+   * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
    * gateway could either be an external VPN gateway or a Google Cloud
    * VPN gateway.
    * </pre>
@@ -125,7 +125,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The peer gateway interface this VPN tunnel is connected to, the peer
+   * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
    * gateway could either be an external VPN gateway or a Google Cloud
    * VPN gateway.
    * </pre>
@@ -148,7 +148,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL reference to the VPN tunnel.
+   * Output only. URL reference to the VPN tunnel.
    * </pre>
    *
    * <code>optional string tunnel_url = 78975256;</code>
@@ -164,7 +164,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL reference to the VPN tunnel.
+   * Output only. URL reference to the VPN tunnel.
    * </pre>
    *
    * <code>optional string tunnel_url = 78975256;</code>
@@ -188,7 +188,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * URL reference to the VPN tunnel.
+   * Output only. URL reference to the VPN tunnel.
    * </pre>
    *
    * <code>optional string tunnel_url = 78975256;</code>
@@ -624,7 +624,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The VPN gateway interface this VPN tunnel is associated with.
+     * Output only. The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
      * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -640,7 +640,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The VPN gateway interface this VPN tunnel is associated with.
+     * Output only. The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
      * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -656,7 +656,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The VPN gateway interface this VPN tunnel is associated with.
+     * Output only. The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
      * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -676,7 +676,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The VPN gateway interface this VPN tunnel is associated with.
+     * Output only. The VPN gateway interface this VPN tunnel is associated with.
      * </pre>
      *
      * <code>optional uint32 local_gateway_interface = 158764330;</code>
@@ -696,7 +696,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer
+     * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
      * gateway could either be an external VPN gateway or a Google Cloud
      * VPN gateway.
      * </pre>
@@ -714,7 +714,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer
+     * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
      * gateway could either be an external VPN gateway or a Google Cloud
      * VPN gateway.
      * </pre>
@@ -732,7 +732,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer
+     * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
      * gateway could either be an external VPN gateway or a Google Cloud
      * VPN gateway.
      * </pre>
@@ -754,7 +754,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The peer gateway interface this VPN tunnel is connected to, the peer
+     * Output only. The peer gateway interface this VPN tunnel is connected to, the peer
      * gateway could either be an external VPN gateway or a Google Cloud
      * VPN gateway.
      * </pre>
@@ -776,7 +776,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>
@@ -791,7 +791,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>
@@ -814,7 +814,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>
@@ -837,7 +837,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>
@@ -859,7 +859,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>
@@ -877,7 +877,7 @@ public final class VpnGatewayStatusTunnel extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * URL reference to the VPN tunnel.
+     * Output only. URL reference to the VPN tunnel.
      * </pre>
      *
      * <code>optional string tunnel_url = 78975256;</code>

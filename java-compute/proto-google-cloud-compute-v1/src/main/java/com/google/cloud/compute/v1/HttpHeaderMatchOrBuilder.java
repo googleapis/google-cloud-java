@@ -365,7 +365,8 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch,suffixMatch, regexMatch,presentMatch or rangeMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -388,7 +389,8 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch,suffixMatch, regexMatch,presentMatch or rangeMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -411,7 +413,8 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch,suffixMatch, regexMatch,presentMatch or rangeMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>

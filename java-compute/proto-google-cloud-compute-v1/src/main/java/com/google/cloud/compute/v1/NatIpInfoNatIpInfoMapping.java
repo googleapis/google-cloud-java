@@ -70,7 +70,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NatIpInfoNatIpInfoMapping.Mode}
@@ -199,7 +199,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
    * not.
    * </pre>
    *
@@ -335,7 +335,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -352,7 +352,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -377,7 +377,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is auto or manual.
+   * Output only. Specifies whether NAT IP is auto or manual.
    * Check the Mode enum for the list of possible values.
    * </pre>
    *
@@ -407,7 +407,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -423,7 +423,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -447,7 +447,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * NAT IP address. For example: 203.0.113.11.
+   * Output only. NAT IP address. For example: 203.0.113.11.
    * </pre>
    *
    * <code>optional string nat_ip = 21113093;</code>
@@ -476,7 +476,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
    * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
@@ -494,7 +494,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
    * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
@@ -520,7 +520,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specifies whether NAT IP is currently serving at least one endpoint or
+   * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
    * not.
    * Check the Usage enum for the list of possible values.
    * </pre>
@@ -960,7 +960,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -976,7 +976,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1000,7 +1000,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1024,7 +1024,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1047,7 +1047,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1066,7 +1066,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is auto or manual.
+     * Output only. Specifies whether NAT IP is auto or manual.
      * Check the Mode enum for the list of possible values.
      * </pre>
      *
@@ -1092,7 +1092,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1107,7 +1107,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1130,7 +1130,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1153,7 +1153,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1175,7 +1175,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1193,7 +1193,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * NAT IP address. For example: 203.0.113.11.
+     * Output only. NAT IP address. For example: 203.0.113.11.
      * </pre>
      *
      * <code>optional string nat_ip = 21113093;</code>
@@ -1218,7 +1218,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
@@ -1235,7 +1235,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
@@ -1260,7 +1260,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
@@ -1285,7 +1285,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
@@ -1309,7 +1309,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>
@@ -1329,7 +1329,7 @@ public final class NatIpInfoNatIpInfoMapping extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specifies whether NAT IP is currently serving at least one endpoint or
+     * Output only. Specifies whether NAT IP is currently serving at least one endpoint or
      * not.
      * Check the Usage enum for the list of possible values.
      * </pre>

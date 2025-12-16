@@ -300,7 +300,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -342,7 +342,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -673,7 +673,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -689,7 +689,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -713,7 +713,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+   * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -900,7 +900,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy.
+   * Output only. [Output Only] The parent of the firewall policy.
    * This field is not applicable to network firewall policies.
    * </pre>
    *
@@ -917,7 +917,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy.
+   * Output only. [Output Only] The parent of the firewall policy.
    * This field is not applicable to network firewall policies.
    * </pre>
    *
@@ -942,7 +942,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The parent of the firewall policy.
+   * Output only. [Output Only] The parent of the firewall policy.
    * This field is not applicable to network firewall policies.
    * </pre>
    *
@@ -1050,7 +1050,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
    * This field is not applicable to global firewall policies.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1069,7 +1069,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
    * This field is not applicable to global firewall policies.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1096,7 +1096,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional firewall policy resides.
+   * Output only. [Output Only] URL of the region where the regional firewall policy resides.
    * This field is not applicable to global firewall policies.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1126,7 +1126,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Total count of all firewall policy rule tuples. A firewall
+   * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
    * policy can not exceed a set number of tuples.
    * </pre>
    *
@@ -1143,7 +1143,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Total count of all firewall policy rule tuples. A firewall
+   * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
    * policy can not exceed a set number of tuples.
    * </pre>
    *
@@ -1325,7 +1325,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1341,7 +1341,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1365,7 +1365,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -2828,7 +2828,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2844,7 +2844,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2868,7 +2868,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2892,7 +2892,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2915,7 +2915,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2934,7 +2934,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3528,7 +3528,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3543,7 +3543,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3566,7 +3566,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3589,7 +3589,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3611,7 +3611,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3629,7 +3629,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
+     * Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4206,7 +4206,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4222,7 +4222,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4246,7 +4246,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4270,7 +4270,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4293,7 +4293,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4312,7 +4312,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The parent of the firewall policy.
+     * Output only. [Output Only] The parent of the firewall policy.
      * This field is not applicable to network firewall policies.
      * </pre>
      *
@@ -4482,7 +4482,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4500,7 +4500,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4526,7 +4526,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4552,7 +4552,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4577,7 +4577,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4598,7 +4598,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the regional firewall policy resides.
+     * Output only. [Output Only] URL of the region where the regional firewall policy resides.
      * This field is not applicable to global firewall policies.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -4626,7 +4626,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
      * policy can not exceed a set number of tuples.
      * </pre>
      *
@@ -4643,7 +4643,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
      * policy can not exceed a set number of tuples.
      * </pre>
      *
@@ -4660,7 +4660,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
      * policy can not exceed a set number of tuples.
      * </pre>
      *
@@ -4681,7 +4681,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Total count of all firewall policy rule tuples. A firewall
+     * Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall
      * policy can not exceed a set number of tuples.
      * </pre>
      *
@@ -5249,7 +5249,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5264,7 +5264,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5287,7 +5287,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5310,7 +5310,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5332,7 +5332,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -5350,7 +5350,7 @@ public final class FirewallPolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>

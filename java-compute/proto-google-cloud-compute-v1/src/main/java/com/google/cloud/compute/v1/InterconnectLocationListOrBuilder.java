@@ -123,7 +123,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
    * locations.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
    * locations.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectLocationList for lists of interconnect
    * locations.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -229,7 +229,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -242,7 +242,7 @@ public interface InterconnectLocationListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

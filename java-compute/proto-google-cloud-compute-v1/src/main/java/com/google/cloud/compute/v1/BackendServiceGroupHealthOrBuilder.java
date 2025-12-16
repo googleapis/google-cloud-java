@@ -152,7 +152,7 @@ public interface BackendServiceGroupHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *
@@ -166,7 +166,7 @@ public interface BackendServiceGroupHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *
@@ -180,7 +180,7 @@ public interface BackendServiceGroupHealthOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *

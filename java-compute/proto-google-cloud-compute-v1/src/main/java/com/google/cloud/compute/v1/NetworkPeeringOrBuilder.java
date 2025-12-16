@@ -62,7 +62,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection
+   * Output only. [Output Only] The effective state of the peering connection
    * as a whole.
    * </pre>
    *
@@ -78,7 +78,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection
+   * Output only. [Output Only] The effective state of the peering connection
    * as a whole.
    * </pre>
    *
@@ -94,7 +94,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The effective state of the peering connection
+   * Output only. [Output Only] The effective state of the peering connection
    * as a whole.
    * </pre>
    *
@@ -366,7 +366,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
+   * Output only. [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -379,7 +379,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
+   * Output only. [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -437,7 +437,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
    * peering is `ACTIVE` when there's a matching configuration in the peer
    * network.
    * Check the State enum for the list of possible values.
@@ -453,7 +453,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
    * peering is `ACTIVE` when there's a matching configuration in the peer
    * network.
    * Check the State enum for the list of possible values.
@@ -469,7 +469,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
+   * Output only. [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The
    * peering is `ACTIVE` when there's a matching configuration in the peer
    * network.
    * Check the State enum for the list of possible values.
@@ -485,7 +485,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Details about the current state of the peering.
+   * Output only. [Output Only] Details about the current state of the peering.
    * </pre>
    *
    * <code>optional string state_details = 95566996;</code>
@@ -498,7 +498,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Details about the current state of the peering.
+   * Output only. [Output Only] Details about the current state of the peering.
    * </pre>
    *
    * <code>optional string state_details = 95566996;</code>
@@ -511,7 +511,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Details about the current state of the peering.
+   * Output only. [Output Only] Details about the current state of the peering.
    * </pre>
    *
    * <code>optional string state_details = 95566996;</code>

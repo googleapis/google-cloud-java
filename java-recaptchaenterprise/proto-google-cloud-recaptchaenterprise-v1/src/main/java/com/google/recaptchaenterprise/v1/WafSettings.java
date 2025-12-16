@@ -72,6 +72,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Supported WAF features. For more information, see
    * https://cloud.google.com/recaptcha/docs/usecase#comparison_of_features.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.WafSettings.WafFeature}
@@ -122,12 +123,12 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use reCAPTCHA WAF express protection to protect any content other than
-     * web pages, like APIs and IoT devices.
+     * Deprecated: Use `express_settings` instead.
      * </pre>
      *
-     * <code>EXPRESS = 5;</code>
+     * <code>EXPRESS = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     EXPRESS(5),
     UNRECOGNIZED(-1),
     ;
@@ -181,13 +182,12 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Use reCAPTCHA WAF express protection to protect any content other than
-     * web pages, like APIs and IoT devices.
+     * Deprecated: Use `express_settings` instead.
      * </pre>
      *
-     * <code>EXPRESS = 5;</code>
+     * <code>EXPRESS = 5 [deprecated = true];</code>
      */
-    public static final int EXPRESS_VALUE = 5;
+    @java.lang.Deprecated public static final int EXPRESS_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -280,7 +280,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Web Application Firewalls supported by reCAPTCHA.
+   * Web Application Firewalls that reCAPTCHA supports.
+   * Ensure that applications can handle values not explicitly listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.WafSettings.WafService}
@@ -488,7 +489,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The WAF service that uses this key.
+   * Required. The Web Application Firewall (WAF) service that uses this key.
    * </pre>
    *
    * <code>
@@ -506,7 +507,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The WAF service that uses this key.
+   * Required. The Web Application Firewall (WAF) service that uses this key.
    * </pre>
    *
    * <code>
@@ -531,7 +532,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The WAF feature for which this key is enabled.
+   * Required. The Web Application Firewall (WAF) feature for which this key is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -549,7 +551,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The WAF feature for which this key is enabled.
+   * Required. The Web Application Firewall (WAF) feature for which this key is
+   * enabled.
    * </pre>
    *
    * <code>
@@ -944,7 +947,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF service that uses this key.
+     * Required. The Web Application Firewall (WAF) service that uses this key.
      * </pre>
      *
      * <code>
@@ -962,7 +965,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF service that uses this key.
+     * Required. The Web Application Firewall (WAF) service that uses this key.
      * </pre>
      *
      * <code>
@@ -983,7 +986,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF service that uses this key.
+     * Required. The Web Application Firewall (WAF) service that uses this key.
      * </pre>
      *
      * <code>
@@ -1005,7 +1008,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF service that uses this key.
+     * Required. The Web Application Firewall (WAF) service that uses this key.
      * </pre>
      *
      * <code>
@@ -1029,7 +1032,7 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF service that uses this key.
+     * Required. The Web Application Firewall (WAF) service that uses this key.
      * </pre>
      *
      * <code>
@@ -1051,7 +1054,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF feature for which this key is enabled.
+     * Required. The Web Application Firewall (WAF) feature for which this key is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1069,7 +1073,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF feature for which this key is enabled.
+     * Required. The Web Application Firewall (WAF) feature for which this key is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1090,7 +1095,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF feature for which this key is enabled.
+     * Required. The Web Application Firewall (WAF) feature for which this key is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1112,7 +1118,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF feature for which this key is enabled.
+     * Required. The Web Application Firewall (WAF) feature for which this key is
+     * enabled.
      * </pre>
      *
      * <code>
@@ -1136,7 +1143,8 @@ public final class WafSettings extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The WAF feature for which this key is enabled.
+     * Required. The Web Application Firewall (WAF) feature for which this key is
+     * enabled.
      * </pre>
      *
      * <code>

@@ -56,7 +56,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the AttachmentGroup that includes this Attachment.
+   * Output only. [Output Only] URL of the AttachmentGroup that includes this Attachment.
    * </pre>
    *
    * <code>optional string attachment_group = 63442019;</code>
@@ -69,7 +69,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the AttachmentGroup that includes this Attachment.
+   * Output only. [Output Only] URL of the AttachmentGroup that includes this Attachment.
    * </pre>
    *
    * <code>optional string attachment_group = 63442019;</code>
@@ -82,7 +82,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the AttachmentGroup that includes this Attachment.
+   * Output only. [Output Only] URL of the AttachmentGroup that includes this Attachment.
    * </pre>
    *
    * <code>optional string attachment_group = 63442019;</code>
@@ -189,6 +189,216 @@ public interface InterconnectAttachmentOrBuilder
    * @return The bytes for bandwidth.
    */
   com.google.protobuf.ByteString getBandwidthBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address must be the same.
+   *    - Max prefix length is 31.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ip_address = 311379276;</code>
+   *
+   * @return Whether the candidateCloudRouterIpAddress field is set.
+   */
+  boolean hasCandidateCloudRouterIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address must be the same.
+   *    - Max prefix length is 31.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ip_address = 311379276;</code>
+   *
+   * @return The candidateCloudRouterIpAddress.
+   */
+  java.lang.String getCandidateCloudRouterIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ip_address and
+   *    candidate_customer_router_ip_address must be the same.
+   *    - Max prefix length is 31.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ip_address = 311379276;</code>
+   *
+   * @return The bytes for candidateCloudRouterIpAddress.
+   */
+  com.google.protobuf.ByteString getCandidateCloudRouterIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address must be the same.
+   *    - Max prefix length is 126.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ipv6_address = 417499660;</code>
+   *
+   * @return Whether the candidateCloudRouterIpv6Address field is set.
+   */
+  boolean hasCandidateCloudRouterIpv6Address();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address must be the same.
+   *    - Max prefix length is 126.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ipv6_address = 417499660;</code>
+   *
+   * @return The candidateCloudRouterIpv6Address.
+   */
+  java.lang.String getCandidateCloudRouterIpv6Address();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the cloud router
+   * interface for this interconnect attachment.
+   *
+   *    - Both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address fields must be set or both must be
+   *    unset.
+   *    - Prefix length of both candidate_cloud_router_ipv6_address and
+   *    candidate_customer_router_ipv6_address must be the same.
+   *    - Max prefix length is 126.
+   * </pre>
+   *
+   * <code>optional string candidate_cloud_router_ipv6_address = 417499660;</code>
+   *
+   * @return The bytes for candidateCloudRouterIpv6Address.
+   */
+  com.google.protobuf.ByteString getCandidateCloudRouterIpv6AddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ip_address = 339113389;</code>
+   *
+   * @return Whether the candidateCustomerRouterIpAddress field is set.
+   */
+  boolean hasCandidateCustomerRouterIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ip_address = 339113389;</code>
+   *
+   * @return The candidateCustomerRouterIpAddress.
+   */
+  java.lang.String getCandidateCustomerRouterIpAddress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv4 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ip_address = 339113389;</code>
+   *
+   * @return The bytes for candidateCustomerRouterIpAddress.
+   */
+  com.google.protobuf.ByteString getCandidateCustomerRouterIpAddressBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ipv6_address = 226436653;</code>
+   *
+   * @return Whether the candidateCustomerRouterIpv6Address field is set.
+   */
+  boolean hasCandidateCustomerRouterIpv6Address();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ipv6_address = 226436653;</code>
+   *
+   * @return The candidateCustomerRouterIpv6Address.
+   */
+  java.lang.String getCandidateCustomerRouterIpv6Address();
+
+  /**
+   *
+   *
+   * <pre>
+   * Single IPv6 address + prefix length to be configured on the customer router
+   * interface for this interconnect attachment.
+   * </pre>
+   *
+   * <code>optional string candidate_customer_router_ipv6_address = 226436653;</code>
+   *
+   * @return The bytes for candidateCustomerRouterIpv6Address.
+   */
+  com.google.protobuf.ByteString getCandidateCustomerRouterIpv6AddressBytes();
 
   /**
    *
@@ -326,7 +536,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on Cloud Router
    * Interface for this interconnect attachment.
    * </pre>
    *
@@ -340,7 +550,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on Cloud Router
    * Interface for this interconnect attachment.
    * </pre>
    *
@@ -354,7 +564,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on Cloud Router
    * Interface for this interconnect attachment.
    * </pre>
    *
@@ -368,7 +578,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on Cloud
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on Cloud
    * Router Interface for this interconnect attachment.
    * </pre>
    *
@@ -382,7 +592,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on Cloud
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on Cloud
    * Router Interface for this interconnect attachment.
    * </pre>
    *
@@ -396,7 +606,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on Cloud
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on Cloud
    * Router Interface for this interconnect attachment.
    * </pre>
    *
@@ -449,7 +659,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints for this attachment, if any. The attachment does
+   * Output only. [Output Only] Constraints for this attachment, if any. The attachment does
    * not work if these constraints are not met.
    * </pre>
    *
@@ -465,7 +675,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints for this attachment, if any. The attachment does
+   * Output only. [Output Only] Constraints for this attachment, if any. The attachment does
    * not work if these constraints are not met.
    * </pre>
    *
@@ -482,7 +692,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints for this attachment, if any. The attachment does
+   * Output only. [Output Only] Constraints for this attachment, if any. The attachment does
    * not work if these constraints are not met.
    * </pre>
    *
@@ -497,7 +707,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -511,7 +721,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -525,7 +735,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -539,7 +749,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on the customer
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on the customer
    * router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -553,7 +763,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on the customer
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on the customer
    * router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -567,7 +777,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv4 address + prefix length to be configured on the customer
+   * Output only. [Output Only] IPv4 address + prefix length to be configured on the customer
    * router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -581,7 +791,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on the
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on the
    * customer router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -595,7 +805,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on the
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on the
    * customer router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -609,7 +819,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address + prefix length to be configured on the
+   * Output only. [Output Only] IPv6 address + prefix length to be configured on the
    * customer router subinterface for this interconnect attachment.
    * </pre>
    *
@@ -662,7 +872,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Dataplane version for this InterconnectAttachment. This
+   * Output only. [Output Only] Dataplane version for this InterconnectAttachment. This
    * field is only present for Dataplane version 2 and higher. Absence of this
    * field in the API output indicates that the Dataplane is version 1.
    * </pre>
@@ -677,7 +887,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Dataplane version for this InterconnectAttachment. This
+   * Output only. [Output Only] Dataplane version for this InterconnectAttachment. This
    * field is only present for Dataplane version 2 and higher. Absence of this
    * field in the API output indicates that the Dataplane is version 1.
    * </pre>
@@ -890,7 +1100,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID, to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID, to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * [Deprecated] This field is not used.
    * </pre>
@@ -905,7 +1115,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID, to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID, to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * [Deprecated] This field is not used.
    * </pre>
@@ -920,7 +1130,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Google reference ID, to be used when raising support tickets
+   * Output only. [Output Only] Google reference ID, to be used when raising support tickets
    * with Google or otherwise to debug backend connectivity issues.
    * [Deprecated] This field is not used.
    * </pre>
@@ -935,7 +1145,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -949,7 +1159,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1111,7 +1321,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1124,7 +1334,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1137,7 +1347,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1432,7 +1642,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect
+   * Output only. [Output Only] The current status of whether or not this interconnect
    * attachment is functional, which can take one of the following values:
    *
    *    - OS_ACTIVE: The attachment has been turned up and is ready to
@@ -1452,7 +1662,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect
+   * Output only. [Output Only] The current status of whether or not this interconnect
    * attachment is functional, which can take one of the following values:
    *
    *    - OS_ACTIVE: The attachment has been turned up and is ready to
@@ -1472,7 +1682,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current status of whether or not this interconnect
+   * Output only. [Output Only] The current status of whether or not this interconnect
    * attachment is functional, which can take one of the following values:
    *
    *    - OS_ACTIVE: The attachment has been turned up and is ready to
@@ -1668,7 +1878,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information specific to an InterconnectAttachment.
+   * Output only. [Output Only] Information specific to an InterconnectAttachment.
    * This property is populated if the interconnect that
    * this is attached to is of type DEDICATED.
    * </pre>
@@ -1685,7 +1895,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information specific to an InterconnectAttachment.
+   * Output only. [Output Only] Information specific to an InterconnectAttachment.
    * This property is populated if the interconnect that
    * this is attached to is of type DEDICATED.
    * </pre>
@@ -1702,7 +1912,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information specific to an InterconnectAttachment.
+   * Output only. [Output Only] Information specific to an InterconnectAttachment.
    * This property is populated if the interconnect that
    * this is attached to is of type DEDICATED.
    * </pre>
@@ -1718,7 +1928,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional interconnect attachment
+   * Output only. [Output Only] URL of the region where the regional interconnect attachment
    * resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1734,7 +1944,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional interconnect attachment
+   * Output only. [Output Only] URL of the region where the regional interconnect attachment
    * resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1750,7 +1960,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional interconnect attachment
+   * Output only. [Output Only] URL of the region where the regional interconnect attachment
    * resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1766,7 +1976,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * If the attachment is on a Cross-Cloud Interconnect connection, this field
    * contains the interconnect's remote location service provider. Example
    * values: "Amazon Web Services" "Microsoft Azure".
@@ -1786,7 +1996,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * If the attachment is on a Cross-Cloud Interconnect connection, this field
    * contains the interconnect's remote location service provider. Example
    * values: "Amazon Web Services" "Microsoft Azure".
@@ -1806,7 +2016,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * If the attachment is on a Cross-Cloud Interconnect connection, this field
    * contains the interconnect's remote location service provider. Example
    * values: "Amazon Web Services" "Microsoft Azure".
@@ -1874,7 +2084,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1887,7 +2097,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -1900,7 +2110,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1913,7 +2123,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1926,7 +2136,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1996,7 +2206,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality.
+   * Output only. [Output Only] The current state of this attachment's functionality.
    * Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE,
    * PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values
    * PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used
@@ -2030,7 +2240,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality.
+   * Output only. [Output Only] The current state of this attachment's functionality.
    * Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE,
    * PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values
    * PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used
@@ -2064,7 +2274,7 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current state of this attachment's functionality.
+   * Output only. [Output Only] The current state of this attachment's functionality.
    * Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE,
    * PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values
    * PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used

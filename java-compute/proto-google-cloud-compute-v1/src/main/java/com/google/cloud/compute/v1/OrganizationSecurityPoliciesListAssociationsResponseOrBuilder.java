@@ -90,7 +90,7 @@ public interface OrganizationSecurityPoliciesListAssociationsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface OrganizationSecurityPoliciesListAssociationsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface OrganizationSecurityPoliciesListAssociationsResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *

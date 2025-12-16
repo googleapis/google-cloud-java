@@ -222,7 +222,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
    * text format.
    * </pre>
    *
@@ -236,7 +236,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
    * text format.
    * </pre>
    *
@@ -250,7 +250,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this managed instance group inRFC3339
+   * Output only. [Output Only] The creation timestamp for this managed instance group inRFC3339
    * text format.
    * </pre>
    *
@@ -264,7 +264,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances
+   * Output only. [Output Only] The list of instance actions and the number of instances
    * in this managed instance group that are scheduled for each of those
    * actions.
    * </pre>
@@ -281,7 +281,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances
+   * Output only. [Output Only] The list of instance actions and the number of instances
    * in this managed instance group that are scheduled for each of those
    * actions.
    * </pre>
@@ -298,7 +298,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The list of instance actions and the number of instances
+   * Output only. [Output Only] The list of instance actions and the number of instances
    * in this managed instance group that are scheduled for each of those
    * actions.
    * </pre>
@@ -453,7 +453,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -467,7 +467,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -535,7 +535,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -548,7 +548,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -561,7 +561,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the Instance Group resource.
+   * Output only. [Output Only] The URL of the Instance Group resource.
    * </pre>
    *
    * <code>optional string instance_group = 81095253;</code>
@@ -667,7 +667,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -680,7 +680,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -693,7 +693,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -854,7 +854,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the managed instance group resides (for regional resources).
    * </pre>
    *
@@ -868,7 +868,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the managed instance group resides (for regional resources).
    * </pre>
    *
@@ -882,7 +882,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of theregion
+   * Output only. [Output Only] The URL of theregion
    * where the managed instance group resides (for regional resources).
    * </pre>
    *
@@ -940,7 +940,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -953,7 +953,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzi = 480964257;</code>
@@ -966,7 +966,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -979,7 +979,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -992,7 +992,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
    * this URL.
    * </pre>
    *
@@ -1006,7 +1006,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
    * this URL.
    * </pre>
    *
@@ -1020,7 +1020,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this managed instance group. The server defines
+   * Output only. [Output Only] The URL for this managed instance group. The server defines
    * this URL.
    * </pre>
    *
@@ -1115,7 +1115,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1128,7 +1128,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1141,7 +1141,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this managed instance group.
+   * Output only. [Output Only] The status of this managed instance group.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceGroupManagerStatus status = 181260274;</code>
@@ -1466,7 +1466,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the managed instance group is located (for zonal resources).
    * </pre>
    *
@@ -1480,7 +1480,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the managed instance group is located (for zonal resources).
    * </pre>
    *
@@ -1494,7 +1494,7 @@ public interface InstanceGroupManagerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of azone
+   * Output only. [Output Only] The URL of azone
    * where the managed instance group is located (for zonal resources).
    * </pre>
    *

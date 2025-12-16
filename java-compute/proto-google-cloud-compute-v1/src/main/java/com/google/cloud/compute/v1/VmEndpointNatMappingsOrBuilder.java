@@ -28,7 +28,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>
@@ -41,7 +41,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>
@@ -54,7 +54,7 @@ public interface VmEndpointNatMappingsOrBuilder
    *
    *
    * <pre>
-   * Name of the VM instance which the endpoint belongs to
+   * Output only. Name of the VM instance which the endpoint belongs to
    * </pre>
    *
    * <code>optional string instance_name = 227947509;</code>

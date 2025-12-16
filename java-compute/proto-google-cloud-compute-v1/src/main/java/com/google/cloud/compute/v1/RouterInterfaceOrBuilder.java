@@ -232,7 +232,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -254,7 +254,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -276,7 +276,7 @@ public interface RouterInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.

@@ -144,7 +144,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -157,7 +157,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -170,7 +170,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#crossSiteNetwork for cross-site networks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -273,7 +273,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -287,7 +287,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -301,7 +301,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -316,7 +316,7 @@ public interface CrossSiteNetworkListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *

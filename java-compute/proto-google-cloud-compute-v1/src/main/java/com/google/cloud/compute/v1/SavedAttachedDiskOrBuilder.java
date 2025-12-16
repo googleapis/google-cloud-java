@@ -189,7 +189,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
    * pd-ssd
    * </pre>
    *
@@ -203,7 +203,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
    * pd-ssd
    * </pre>
    *
@@ -217,7 +217,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
+   * Output only. [Output Only] URL of the disk type resource. For example:projects/project/zones/zone/diskTypes/pd-standard or
    * pd-ssd
    * </pre>
    *
@@ -302,7 +302,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies zero-based index of the disk that is attached to the source
+   * Output only. Specifies zero-based index of the disk that is attached to the source
    * instance.
    * </pre>
    *
@@ -316,7 +316,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * Specifies zero-based index of the disk that is attached to the source
+   * Output only. Specifies zero-based index of the disk that is attached to the source
    * instance.
    * </pre>
    *
@@ -375,7 +375,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -388,7 +388,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -401,7 +401,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#attachedDisk for attached disks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -414,7 +414,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -427,7 +427,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -440,7 +440,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -454,7 +454,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Any valid publicly visible licenses.
+   * Output only. [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
    * <code>repeated string licenses = 337642578;</code>
@@ -549,7 +549,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the disk's snapshot by this
+   * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
    * machine image.
    * </pre>
    *
@@ -563,7 +563,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the disk's snapshot by this
+   * Output only. [Output Only] A size of the storage used by the disk's snapshot by this
    * machine image.
    * </pre>
    *
@@ -577,7 +577,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -595,7 +595,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -613,7 +613,7 @@ public interface SavedAttachedDiskOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,

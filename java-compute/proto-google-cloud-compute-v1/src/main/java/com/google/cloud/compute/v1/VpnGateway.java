@@ -447,7 +447,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -464,7 +464,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -489,7 +489,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -664,7 +664,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -681,7 +681,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -703,7 +703,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
    * VPN gateways.
    * </pre>
    *
@@ -720,7 +720,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
    * VPN gateways.
    * </pre>
    *
@@ -745,7 +745,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnGateway for
+   * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
    * VPN gateways.
    * </pre>
    *
@@ -1138,7 +1138,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1154,7 +1154,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1178,7 +1178,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the VPN gateway resides.
+   * Output only. [Output Only] URL of the region where the VPN gateway resides.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -1207,7 +1207,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1223,7 +1223,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1247,7 +1247,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2223,7 +2223,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2239,7 +2239,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2263,7 +2263,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2287,7 +2287,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2310,7 +2310,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2329,7 +2329,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2625,7 +2625,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2642,7 +2642,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2659,7 +2659,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2680,7 +2680,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2701,7 +2701,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -2717,7 +2717,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -2741,7 +2741,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -2765,7 +2765,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -2788,7 +2788,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -2807,7 +2807,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnGateway for
+     * Output only. [Output Only] Type of resource. Always compute#vpnGateway for
      * VPN gateways.
      * </pre>
      *
@@ -3480,7 +3480,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3495,7 +3495,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3518,7 +3518,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3541,7 +3541,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3563,7 +3563,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3581,7 +3581,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the VPN gateway resides.
+     * Output only. [Output Only] URL of the region where the VPN gateway resides.
      * </pre>
      *
      * <code>optional string region = 138946292;</code>
@@ -3606,7 +3606,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3621,7 +3621,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3644,7 +3644,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3667,7 +3667,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3689,7 +3689,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3707,7 +3707,7 @@ public final class VpnGateway extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

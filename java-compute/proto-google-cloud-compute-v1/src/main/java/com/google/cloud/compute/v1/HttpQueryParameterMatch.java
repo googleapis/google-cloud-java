@@ -276,7 +276,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    * Only one of presentMatch, exactMatch, orregexMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -299,7 +300,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    * Only one of presentMatch, exactMatch, orregexMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -330,7 +332,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
    * Only one of presentMatch, exactMatch, orregexMatch must be set.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -1166,7 +1169,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1188,7 +1192,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1218,7 +1223,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1248,7 +1254,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1277,7 +1284,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>
@@ -1302,7 +1310,8 @@ public final class HttpQueryParameterMatch extends com.google.protobuf.Generated
      * Only one of presentMatch, exactMatch, orregexMatch must be set.
      *
      * Regular expressions can only be used when the loadBalancingScheme is
-     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+     * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+     * (regional scope) or INTERNAL_MANAGED.
      * </pre>
      *
      * <code>optional string regex_match = 107387853;</code>

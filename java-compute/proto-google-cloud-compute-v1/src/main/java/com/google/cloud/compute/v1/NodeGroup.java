@@ -679,7 +679,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -696,7 +696,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -721,7 +721,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -872,7 +872,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -889,7 +889,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -911,7 +911,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -927,7 +927,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -951,7 +951,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1418,7 +1418,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1434,7 +1434,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1458,7 +1458,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1538,7 +1538,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of nodes in the node group.
+   * Output only. [Output Only] The total number of nodes in the node group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1554,7 +1554,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of nodes in the node group.
+   * Output only. [Output Only] The total number of nodes in the node group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1647,7 +1647,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides,
+   * Output only. [Output Only] The name of the zone where the node group resides,
    * such as us-central1-a.
    * </pre>
    *
@@ -1664,7 +1664,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides,
+   * Output only. [Output Only] The name of the zone where the node group resides,
    * such as us-central1-a.
    * </pre>
    *
@@ -1689,7 +1689,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides,
+   * Output only. [Output Only] The name of the zone where the node group resides,
    * such as us-central1-a.
    * </pre>
    *
@@ -2798,7 +2798,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2814,7 +2814,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2838,7 +2838,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2862,7 +2862,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2885,7 +2885,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2904,7 +2904,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3152,7 +3152,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3169,7 +3169,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3186,7 +3186,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3207,7 +3207,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3228,7 +3228,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3243,7 +3243,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3266,7 +3266,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3289,7 +3289,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3311,7 +3311,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3329,7 +3329,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4250,7 +4250,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4265,7 +4265,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4288,7 +4288,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4311,7 +4311,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4333,7 +4333,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4351,7 +4351,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4571,7 +4571,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4587,7 +4587,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4603,7 +4603,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4623,7 +4623,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4775,7 +4775,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *
@@ -4791,7 +4791,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *
@@ -4815,7 +4815,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *
@@ -4839,7 +4839,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *
@@ -4862,7 +4862,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *
@@ -4881,7 +4881,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides,
+     * Output only. [Output Only] The name of the zone where the node group resides,
      * such as us-central1-a.
      * </pre>
      *

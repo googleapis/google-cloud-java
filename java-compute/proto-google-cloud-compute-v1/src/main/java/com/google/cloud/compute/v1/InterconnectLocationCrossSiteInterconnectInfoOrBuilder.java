@@ -28,7 +28,7 @@ public interface InterconnectLocationCrossSiteInterconnectInfoOrBuilder
    *
    *
    * <pre>
-   * The remote location for Cross-Site Interconnect wires. This specifies an
+   * Output only. The remote location for Cross-Site Interconnect wires. This specifies an
    * InterconnectLocation city (metropolitan area designator), which itself
    * may match multiple InterconnectLocations.
    * </pre>
@@ -43,7 +43,7 @@ public interface InterconnectLocationCrossSiteInterconnectInfoOrBuilder
    *
    *
    * <pre>
-   * The remote location for Cross-Site Interconnect wires. This specifies an
+   * Output only. The remote location for Cross-Site Interconnect wires. This specifies an
    * InterconnectLocation city (metropolitan area designator), which itself
    * may match multiple InterconnectLocations.
    * </pre>
@@ -58,7 +58,7 @@ public interface InterconnectLocationCrossSiteInterconnectInfoOrBuilder
    *
    *
    * <pre>
-   * The remote location for Cross-Site Interconnect wires. This specifies an
+   * Output only. The remote location for Cross-Site Interconnect wires. This specifies an
    * InterconnectLocation city (metropolitan area designator), which itself
    * may match multiple InterconnectLocations.
    * </pre>

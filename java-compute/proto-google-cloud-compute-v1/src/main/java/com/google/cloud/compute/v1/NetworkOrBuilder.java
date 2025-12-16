@@ -122,7 +122,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -136,7 +136,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -236,7 +236,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the firewall policy the network is associated with.
+   * Output only. [Output Only] URL of the firewall policy the network is associated with.
    * </pre>
    *
    * <code>optional string firewall_policy = 498173265;</code>
@@ -249,7 +249,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the firewall policy the network is associated with.
+   * Output only. [Output Only] URL of the firewall policy the network is associated with.
    * </pre>
    *
    * <code>optional string firewall_policy = 498173265;</code>
@@ -262,7 +262,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the firewall policy the network is associated with.
+   * Output only. [Output Only] URL of the firewall policy the network is associated with.
    * </pre>
    *
    * <code>optional string firewall_policy = 498173265;</code>
@@ -317,7 +317,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -331,7 +331,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -402,7 +402,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#network for
+   * Output only. [Output Only] Type of the resource. Always compute#network for
    * networks.
    * </pre>
    *
@@ -416,7 +416,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#network for
+   * Output only. [Output Only] Type of the resource. Always compute#network for
    * networks.
    * </pre>
    *
@@ -430,7 +430,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#network for
+   * Output only. [Output Only] Type of the resource. Always compute#network for
    * networks.
    * </pre>
    *
@@ -677,7 +677,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of network peerings for the resource.
+   * Output only. [Output Only] A list of network peerings for the resource.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
@@ -688,7 +688,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of network peerings for the resource.
+   * Output only. [Output Only] A list of network peerings for the resource.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
@@ -699,7 +699,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of network peerings for the resource.
+   * Output only. [Output Only] A list of network peerings for the resource.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
@@ -710,7 +710,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of network peerings for the resource.
+   * Output only. [Output Only] A list of network peerings for the resource.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
@@ -722,7 +722,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A list of network peerings for the resource.
+   * Output only. [Output Only] A list of network peerings for the resource.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NetworkPeering peerings = 69883187;</code>
@@ -812,7 +812,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -825,7 +825,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -838,7 +838,7 @@ public interface NetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>

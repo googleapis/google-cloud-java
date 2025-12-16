@@ -28,7 +28,7 @@ public interface CommitmentResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the end time of customer's eligibility to send
+   * Output only. [Output Only] Indicates the end time of customer's eligibility to send
    * custom term requests in RFC3339 text format. Term extension requests that
    * (not the end time in the request) after this time will be rejected.
    * </pre>
@@ -43,7 +43,7 @@ public interface CommitmentResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the end time of customer's eligibility to send
+   * Output only. [Output Only] Indicates the end time of customer's eligibility to send
    * custom term requests in RFC3339 text format. Term extension requests that
    * (not the end time in the request) after this time will be rejected.
    * </pre>
@@ -58,7 +58,7 @@ public interface CommitmentResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the end time of customer's eligibility to send
+   * Output only. [Output Only] Indicates the end time of customer's eligibility to send
    * custom term requests in RFC3339 text format. Term extension requests that
    * (not the end time in the request) after this time will be rejected.
    * </pre>

@@ -62,6 +62,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.storagebatchoperations.v1.Counters.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TOTAL_OBJECT_COUNT_FIELD_NUMBER = 1;
   private long totalObjectCount_ = 0L;
 
@@ -119,6 +120,43 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     return failedObjectCount_;
   }
 
+  public static final int TOTAL_BYTES_FOUND_FIELD_NUMBER = 4;
+  private long totalBytesFound_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of bytes found from source. This field is only
+   * populated for jobs with a prefix list object configuration.
+   * </pre>
+   *
+   * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the totalBytesFound field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalBytesFound() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of bytes found from source. This field is only
+   * populated for jobs with a prefix list object configuration.
+   * </pre>
+   *
+   * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The totalBytesFound.
+   */
+  @java.lang.Override
+  public long getTotalBytesFound() {
+    return totalBytesFound_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -142,6 +180,9 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     if (failedObjectCount_ != 0L) {
       output.writeInt64(3, failedObjectCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(4, totalBytesFound_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +200,9 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     }
     if (failedObjectCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, failedObjectCount_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, totalBytesFound_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -179,6 +223,10 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     if (getTotalObjectCount() != other.getTotalObjectCount()) return false;
     if (getSucceededObjectCount() != other.getSucceededObjectCount()) return false;
     if (getFailedObjectCount() != other.getFailedObjectCount()) return false;
+    if (hasTotalBytesFound() != other.hasTotalBytesFound()) return false;
+    if (hasTotalBytesFound()) {
+      if (getTotalBytesFound() != other.getTotalBytesFound()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,6 +244,10 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSucceededObjectCount());
     hash = (37 * hash) + FAILED_OBJECT_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFailedObjectCount());
+    if (hasTotalBytesFound()) {
+      hash = (37 * hash) + TOTAL_BYTES_FOUND_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBytesFound());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -339,6 +391,7 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       totalObjectCount_ = 0L;
       succeededObjectCount_ = 0L;
       failedObjectCount_ = 0L;
+      totalBytesFound_ = 0L;
       return this;
     }
 
@@ -384,6 +437,12 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.failedObjectCount_ = failedObjectCount_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.totalBytesFound_ = totalBytesFound_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -441,6 +500,9 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
       if (other.getFailedObjectCount() != 0L) {
         setFailedObjectCount(other.getFailedObjectCount());
       }
+      if (other.hasTotalBytesFound()) {
+        setTotalBytesFound(other.getTotalBytesFound());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -485,6 +547,12 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
+            case 32:
+              {
+                totalBytesFound_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -668,6 +736,86 @@ public final class Counters extends com.google.protobuf.GeneratedMessageV3
     public Builder clearFailedObjectCount() {
       bitField0_ = (bitField0_ & ~0x00000004);
       failedObjectCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalBytesFound_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of bytes found from source. This field is only
+     * populated for jobs with a prefix list object configuration.
+     * </pre>
+     *
+     * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the totalBytesFound field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalBytesFound() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of bytes found from source. This field is only
+     * populated for jobs with a prefix list object configuration.
+     * </pre>
+     *
+     * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalBytesFound.
+     */
+    @java.lang.Override
+    public long getTotalBytesFound() {
+      return totalBytesFound_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of bytes found from source. This field is only
+     * populated for jobs with a prefix list object configuration.
+     * </pre>
+     *
+     * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalBytesFound to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalBytesFound(long value) {
+
+      totalBytesFound_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of bytes found from source. This field is only
+     * populated for jobs with a prefix list object configuration.
+     * </pre>
+     *
+     * <code>optional int64 total_bytes_found = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalBytesFound() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      totalBytesFound_ = 0L;
       onChanged();
       return this;
     }

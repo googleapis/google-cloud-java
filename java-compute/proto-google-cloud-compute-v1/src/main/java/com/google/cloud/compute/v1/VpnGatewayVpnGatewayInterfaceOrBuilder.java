@@ -28,7 +28,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Numeric identifier for this VPN interface associated with
+   * Output only. [Output Only] Numeric identifier for this VPN interface associated with
    * the VPN gateway.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Numeric identifier for this VPN interface associated with
+   * Output only. [Output Only] Numeric identifier for this VPN interface associated with
    * the VPN gateway.
    * </pre>
    *
@@ -107,7 +107,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IP address for this VPN interface associated with the VPN
    * gateway.
    * The IP address could be either a regional external IP address or
    * a regional internal IP address. The two IP addresses for a VPN gateway
@@ -130,7 +130,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IP address for this VPN interface associated with the VPN
    * gateway.
    * The IP address could be either a regional external IP address or
    * a regional internal IP address. The two IP addresses for a VPN gateway
@@ -153,7 +153,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IP address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IP address for this VPN interface associated with the VPN
    * gateway.
    * The IP address could be either a regional external IP address or
    * a regional internal IP address. The two IP addresses for a VPN gateway
@@ -176,7 +176,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IPv6 address for this VPN interface associated with the VPN
    * gateway.
    * The IPv6 address must be a regional external IPv6 address. The format is
    * RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
@@ -192,7 +192,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IPv6 address for this VPN interface associated with the VPN
    * gateway.
    * The IPv6 address must be a regional external IPv6 address. The format is
    * RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).
@@ -208,7 +208,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] IPv6 address for this VPN interface associated with the VPN
+   * Output only. [Output Only] IPv6 address for this VPN interface associated with the VPN
    * gateway.
    * The IPv6 address must be a regional external IPv6 address. The format is
    * RFC 5952 format (e.g. 2001:db8::2d9:51:0:0).

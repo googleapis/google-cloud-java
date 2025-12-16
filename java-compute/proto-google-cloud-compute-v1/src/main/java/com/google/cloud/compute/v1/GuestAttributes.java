@@ -78,7 +78,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -94,7 +94,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -118,7 +118,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -220,7 +220,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -236,7 +236,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -254,7 +254,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value of the requested queried path.
+   * Output only. [Output Only] The value of the requested queried path.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -275,7 +275,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -291,7 +291,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -315,7 +315,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -413,7 +413,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>
@@ -429,7 +429,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>
@@ -453,7 +453,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The value found for the requested key.
+   * Output only. [Output Only] The value found for the requested key.
    * </pre>
    *
    * <code>optional string variable_value = 124582382;</code>
@@ -990,7 +990,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1005,7 +1005,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1028,7 +1028,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1051,7 +1051,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1073,7 +1073,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1091,7 +1091,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#guestAttributes for guest attributes entry.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1259,7 +1259,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1274,7 +1274,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1295,7 +1295,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1318,7 +1318,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1339,7 +1339,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1368,7 +1368,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1388,7 +1388,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1403,7 +1403,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1422,7 +1422,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value of the requested queried path.
+     * Output only. [Output Only] The value of the requested queried path.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.GuestAttributesValue query_value = 157570874;</code>
@@ -1450,7 +1450,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1465,7 +1465,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1488,7 +1488,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1511,7 +1511,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1533,7 +1533,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1551,7 +1551,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1702,7 +1702,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>
@@ -1717,7 +1717,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>
@@ -1740,7 +1740,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>
@@ -1763,7 +1763,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>
@@ -1785,7 +1785,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>
@@ -1803,7 +1803,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The value found for the requested key.
+     * Output only. [Output Only] The value found for the requested key.
      * </pre>
      *
      * <code>optional string variable_value = 124582382;</code>

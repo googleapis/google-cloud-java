@@ -28,7 +28,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
    * to a VM in this region.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Expected round-trip time in milliseconds, from this InterconnectLocation
+   * Output only. Expected round-trip time in milliseconds, from this InterconnectLocation
    * to a VM in this region.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Identifies whether L2 Interconnect Attachments can be created in this
+   * Output only. Identifies whether L2 Interconnect Attachments can be created in this
    * region for interconnects that are in this location.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Identifies whether L2 Interconnect Attachments can be created in this
+   * Output only. Identifies whether L2 Interconnect Attachments can be created in this
    * region for interconnects that are in this location.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * Identifies the network presence of this location.
+   * Output only. Identifies the network presence of this location.
    * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
@@ -126,7 +126,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -139,7 +139,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -152,7 +152,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    *
    *
    * <pre>
-   * URL for the region of this location.
+   * Output only. URL for the region of this location.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>

@@ -91,4 +91,41 @@ public interface DeployConversationModelOperationMetadataOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 3;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 4;</code>
+   *
+   * @return Whether the doneTime field is set.
+   */
+  boolean hasDoneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 4;</code>
+   *
+   * @return The doneTime.
+   */
+  com.google.protobuf.Timestamp getDoneTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * The time when the operation finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp done_time = 4;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getDoneTimeOrBuilder();
 }

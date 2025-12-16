@@ -275,7 +275,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *
@@ -292,7 +292,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
    * services.
    * </pre>
    *
@@ -1387,7 +1387,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *
@@ -1403,7 +1403,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *
@@ -1427,7 +1427,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *
@@ -1451,7 +1451,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *
@@ -1474,7 +1474,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *
@@ -1493,7 +1493,7 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
      * services.
      * </pre>
      *

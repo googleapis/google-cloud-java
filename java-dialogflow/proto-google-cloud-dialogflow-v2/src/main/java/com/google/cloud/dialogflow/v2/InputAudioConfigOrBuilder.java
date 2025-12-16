@@ -79,6 +79,8 @@ public interface InputAudioConfigOrBuilder
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   * If not set, the language is inferred from the
+   * [ConversationProfile.stt_config][google.cloud.dialogflow.v2.ConversationProfile.stt_config].
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,6 +98,8 @@ public interface InputAudioConfigOrBuilder
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes. Note that queries in
    * the same session do not necessarily need to specify the same language.
+   * If not set, the language is inferred from the
+   * [ConversationProfile.stt_config][google.cloud.dialogflow.v2.ConversationProfile.stt_config].
    * </pre>
    *
    * <code>string language_code = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -141,7 +145,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=130
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -166,7 +170,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=130
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -191,7 +195,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=130
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -217,7 +221,7 @@ public interface InputAudioConfigOrBuilder
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2/audio_config.proto;l=128
+   *     google/cloud/dialogflow/v2/audio_config.proto;l=130
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */

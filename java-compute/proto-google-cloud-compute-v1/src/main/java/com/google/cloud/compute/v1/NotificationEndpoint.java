@@ -86,7 +86,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -103,7 +103,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -128,7 +128,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -291,7 +291,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -308,7 +308,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this resource type. The server
+   * Output only. [Output Only] A unique identifier for this resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -330,7 +330,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -346,7 +346,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -370,7 +370,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -486,7 +486,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the notification endpoint resides.
+   * Output only. [Output Only] URL of the region where the notification endpoint resides.
    * This field applies only to the regional resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -505,7 +505,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the notification endpoint resides.
+   * Output only. [Output Only] URL of the region where the notification endpoint resides.
    * This field applies only to the regional resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -532,7 +532,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the notification endpoint resides.
+   * Output only. [Output Only] URL of the region where the notification endpoint resides.
    * This field applies only to the regional resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -564,7 +564,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -580,7 +580,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -604,7 +604,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1210,7 +1210,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1226,7 +1226,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1250,7 +1250,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1274,7 +1274,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1297,7 +1297,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1316,7 +1316,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1702,7 +1702,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -1719,7 +1719,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -1736,7 +1736,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -1757,7 +1757,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A unique identifier for this resource type. The server
+     * Output only. [Output Only] A unique identifier for this resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -1778,7 +1778,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1793,7 +1793,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1816,7 +1816,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1839,7 +1839,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1861,7 +1861,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1879,7 +1879,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2066,7 +2066,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2084,7 +2084,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2110,7 +2110,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2136,7 +2136,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2161,7 +2161,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2182,7 +2182,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the notification endpoint resides.
+     * Output only. [Output Only] URL of the region where the notification endpoint resides.
      * This field applies only to the regional resource. You must specify this
      * field as part of the HTTP request URL. It is not settable as a field in
      * the request body.
@@ -2210,7 +2210,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2225,7 +2225,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2248,7 +2248,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2271,7 +2271,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2293,7 +2293,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2311,7 +2311,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

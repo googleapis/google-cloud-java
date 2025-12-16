@@ -510,7 +510,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -527,7 +527,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -552,7 +552,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -859,7 +859,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -875,7 +875,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -2274,7 +2274,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2290,7 +2290,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2314,7 +2314,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2338,7 +2338,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2361,7 +2361,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2380,7 +2380,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#zone for
+     * Output only. [Output Only] Type of the resource. Always compute#zone for
      * zones.
      * </pre>
      *
@@ -2916,7 +2916,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2932,7 +2932,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2948,7 +2948,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -2968,7 +2968,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>

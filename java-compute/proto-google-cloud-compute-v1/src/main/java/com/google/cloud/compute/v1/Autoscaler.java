@@ -394,7 +394,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -411,7 +411,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -436,7 +436,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -536,7 +536,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -553,7 +553,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -575,7 +575,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler
+   * Output only. [Output Only] Type of the resource. Always compute#autoscaler
    * for autoscalers.
    * </pre>
    *
@@ -592,7 +592,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler
+   * Output only. [Output Only] Type of the resource. Always compute#autoscaler
    * for autoscalers.
    * </pre>
    *
@@ -617,7 +617,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#autoscaler
+   * Output only. [Output Only] Type of the resource. Always compute#autoscaler
    * for autoscalers.
    * </pre>
    *
@@ -732,7 +732,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by
+   * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
    * autoscaler. Autoscaler calculates the recommended MIG size even when the
    * autoscaling policy mode is different from ON. This field is empty when
    * autoscaler is not connected to an existing managed instance group or
@@ -752,7 +752,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by
+   * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
    * autoscaler. Autoscaler calculates the recommended MIG size even when the
    * autoscaling policy mode is different from ON. This field is empty when
    * autoscaler is not connected to an existing managed instance group or
@@ -777,7 +777,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of theregion
+   * Output only. [Output Only] URL of theregion
    * where the instance group resides (for autoscalers living in regional
    * scope).
    * </pre>
@@ -795,7 +795,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of theregion
+   * Output only. [Output Only] URL of theregion
    * where the instance group resides (for autoscalers living in regional
    * scope).
    * </pre>
@@ -821,7 +821,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of theregion
+   * Output only. [Output Only] URL of theregion
    * where the instance group resides (for autoscalers living in regional
    * scope).
    * </pre>
@@ -883,7 +883,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information of existing scaling schedules.
+   * Output only. [Output Only] Status information of existing scaling schedules.
    * </pre>
    *
    * <code>
@@ -910,7 +910,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information of existing scaling schedules.
+   * Output only. [Output Only] Status information of existing scaling schedules.
    * </pre>
    *
    * <code>
@@ -927,7 +927,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information of existing scaling schedules.
+   * Output only. [Output Only] Status information of existing scaling schedules.
    * </pre>
    *
    * <code>
@@ -952,7 +952,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information of existing scaling schedules.
+   * Output only. [Output Only] Status information of existing scaling schedules.
    * </pre>
    *
    * <code>
@@ -1338,7 +1338,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of thezone
+   * Output only. [Output Only] URL of thezone
    * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
@@ -1355,7 +1355,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of thezone
+   * Output only. [Output Only] URL of thezone
    * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
@@ -1380,7 +1380,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of thezone
+   * Output only. [Output Only] URL of thezone
    * where the instance group resides (for autoscalers living in zonal scope).
    * </pre>
    *
@@ -2490,7 +2490,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2506,7 +2506,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2530,7 +2530,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2554,7 +2554,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2577,7 +2577,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2596,7 +2596,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2754,7 +2754,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2771,7 +2771,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2788,7 +2788,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2809,7 +2809,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2830,7 +2830,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -2846,7 +2846,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -2870,7 +2870,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -2894,7 +2894,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -2917,7 +2917,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -2936,7 +2936,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#autoscaler
+     * Output only. [Output Only] Type of the resource. Always compute#autoscaler
      * for autoscalers.
      * </pre>
      *
@@ -3124,7 +3124,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by
+     * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
      * autoscaler. Autoscaler calculates the recommended MIG size even when the
      * autoscaling policy mode is different from ON. This field is empty when
      * autoscaler is not connected to an existing managed instance group or
@@ -3144,7 +3144,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by
+     * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
      * autoscaler. Autoscaler calculates the recommended MIG size even when the
      * autoscaling policy mode is different from ON. This field is empty when
      * autoscaler is not connected to an existing managed instance group or
@@ -3164,7 +3164,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by
+     * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
      * autoscaler. Autoscaler calculates the recommended MIG size even when the
      * autoscaling policy mode is different from ON. This field is empty when
      * autoscaler is not connected to an existing managed instance group or
@@ -3188,7 +3188,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by
+     * Output only. [Output Only] Target recommended MIG size (number of instances) computed by
      * autoscaler. Autoscaler calculates the recommended MIG size even when the
      * autoscaling policy mode is different from ON. This field is empty when
      * autoscaler is not connected to an existing managed instance group or
@@ -3212,7 +3212,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3229,7 +3229,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3254,7 +3254,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3279,7 +3279,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3303,7 +3303,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3323,7 +3323,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of theregion
+     * Output only. [Output Only] URL of theregion
      * where the instance group resides (for autoscalers living in regional
      * scope).
      * </pre>
@@ -3412,7 +3412,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3439,7 +3439,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3456,7 +3456,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3483,7 +3483,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3514,7 +3514,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3541,7 +3541,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3565,7 +3565,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -3589,7 +3589,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information of existing scaling schedules.
+     * Output only. [Output Only] Status information of existing scaling schedules.
      * </pre>
      *
      * <code>
@@ -4549,7 +4549,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
@@ -4565,7 +4565,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
@@ -4589,7 +4589,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
@@ -4613,7 +4613,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
@@ -4636,7 +4636,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *
@@ -4655,7 +4655,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of thezone
+     * Output only. [Output Only] URL of thezone
      * where the instance group resides (for autoscalers living in zonal scope).
      * </pre>
      *

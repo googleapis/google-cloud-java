@@ -103,6 +103,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <pre>
      * An existing conversation has closed. This is fired when a telephone call
      * is terminated, or a conversation is closed via the API.
+     * The event is fired for every CompleteConversation call, even if the
+     * conversation is already closed.
      * </pre>
      *
      * <code>CONVERSATION_FINISHED = 2;</code>
@@ -195,6 +197,8 @@ public final class ConversationEvent extends com.google.protobuf.GeneratedMessag
      * <pre>
      * An existing conversation has closed. This is fired when a telephone call
      * is terminated, or a conversation is closed via the API.
+     * The event is fired for every CompleteConversation call, even if the
+     * conversation is already closed.
      * </pre>
      *
      * <code>CONVERSATION_FINISHED = 2;</code>

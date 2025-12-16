@@ -28,7 +28,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has
+   * Output only. [Output Only] The current action that the managed instance group has
    * scheduled for the instance. Possible values:
    *
    *    - NONE The instance is running, and the managed
@@ -67,7 +67,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has
+   * Output only. [Output Only] The current action that the managed instance group has
    * scheduled for the instance. Possible values:
    *
    *    - NONE The instance is running, and the managed
@@ -106,7 +106,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The current action that the managed instance group has
+   * Output only. [Output Only] The current action that the managed instance group has
    * scheduled for the instance. Possible values:
    *
    *    - NONE The instance is running, and the managed
@@ -145,7 +145,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty
+   * Output only. [Output only] The unique identifier for this resource. This field is empty
    * when instance does not exist.
    * </pre>
    *
@@ -159,7 +159,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output only] The unique identifier for this resource. This field is empty
+   * Output only. [Output only] The unique identifier for this resource. This field is empty
    * when instance does not exist.
    * </pre>
    *
@@ -173,7 +173,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -187,7 +187,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -201,7 +201,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance. The URL can exist even if the
+   * Output only. [Output Only] The URL of the instance. The URL can exist even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -228,7 +228,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -241,7 +241,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -254,7 +254,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -268,7 +268,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Health state of the instance per health-check.
+   * Output only. [Output Only] Health state of the instance per health-check.
    * </pre>
    *
    * <code>
@@ -282,7 +282,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when
+   * Output only. [Output Only] The status of the instance. This field is empty when
    * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
@@ -297,7 +297,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when
+   * Output only. [Output Only] The status of the instance. This field is empty when
    * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
@@ -312,7 +312,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance. This field is empty when
+   * Output only. [Output Only] The status of the instance. This field is empty when
    * the instance does not exist.
    * Check the InstanceStatus enum for the list of possible values.
    * </pre>
@@ -327,7 +327,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete
+   * Output only. [Output Only] Information about the last attempt to create or delete
    * the instance.
    * </pre>
    *
@@ -342,7 +342,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete
+   * Output only. [Output Only] Information about the last attempt to create or delete
    * the instance.
    * </pre>
    *
@@ -357,7 +357,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Information about the last attempt to create or delete
+   * Output only. [Output Only] Information about the last attempt to create or delete
    * the instance.
    * </pre>
    *
@@ -370,7 +370,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -384,7 +384,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -398,7 +398,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the instance. The name always exists even if the
+   * Output only. [Output Only] The name of the instance. The name always exists even if the
    * instance has not yet been created.
    * </pre>
    *
@@ -412,7 +412,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config
+   * Output only. [Output Only] Preserved state applied from per-instance config
    * for this instance.
    * </pre>
    *
@@ -427,7 +427,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config
+   * Output only. [Output Only] Preserved state applied from per-instance config
    * for this instance.
    * </pre>
    *
@@ -442,7 +442,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state applied from per-instance config
+   * Output only. [Output Only] Preserved state applied from per-instance config
    * for this instance.
    * </pre>
    *
@@ -455,7 +455,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy
+   * Output only. [Output Only] Preserved state generated based on stateful policy
    * for this instance.
    * </pre>
    *
@@ -470,7 +470,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy
+   * Output only. [Output Only] Preserved state generated based on stateful policy
    * for this instance.
    * </pre>
    *
@@ -485,7 +485,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Preserved state generated based on stateful policy
+   * Output only. [Output Only] Preserved state generated based on stateful policy
    * for this instance.
    * </pre>
    *
@@ -498,7 +498,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
    * InstanceFlexibilityPolicy.
    * </pre>
    *
@@ -514,7 +514,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
    * InstanceFlexibilityPolicy.
    * </pre>
    *
@@ -531,7 +531,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Instance properties selected for this instance resulting from
+   * Output only. [Output Only] Instance properties selected for this instance resulting from
    * InstanceFlexibilityPolicy.
    * </pre>
    *
@@ -546,7 +546,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -559,7 +559,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
@@ -572,7 +572,7 @@ public interface ManagedInstanceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Intended version of this instance.
+   * Output only. [Output Only] Intended version of this instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>

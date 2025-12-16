@@ -109,7 +109,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The firewall policy ID of the association.
+   * Output only. [Output Only] The firewall policy ID of the association.
    * </pre>
    *
    * <code>optional string firewall_policy_id = 357211849;</code>
@@ -122,7 +122,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The firewall policy ID of the association.
+   * Output only. [Output Only] The firewall policy ID of the association.
    * </pre>
    *
    * <code>optional string firewall_policy_id = 357211849;</code>
@@ -135,7 +135,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The firewall policy ID of the association.
+   * Output only. [Output Only] The firewall policy ID of the association.
    * </pre>
    *
    * <code>optional string firewall_policy_id = 357211849;</code>
@@ -187,7 +187,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy of the association.
+   * Output only. [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -200,7 +200,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy of the association.
+   * Output only. [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -213,7 +213,7 @@ public interface FirewallPolicyAssociationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy of the association.
+   * Output only. [Output Only] The short name of the firewall policy of the association.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>

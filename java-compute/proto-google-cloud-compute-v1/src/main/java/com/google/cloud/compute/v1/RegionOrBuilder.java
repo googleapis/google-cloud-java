@@ -174,7 +174,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for
+   * Output only. [Output Only] Type of the resource. Always compute#region for
    * regions.
    * </pre>
    *
@@ -188,7 +188,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for
+   * Output only. [Output Only] Type of the resource. Always compute#region for
    * regions.
    * </pre>
    *
@@ -202,7 +202,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#region for
+   * Output only. [Output Only] Type of the resource. Always compute#region for
    * regions.
    * </pre>
    *
@@ -255,7 +255,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
    * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
@@ -270,7 +270,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
    * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
@@ -285,7 +285,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Warning of fetching the `quotas` field for this region. This
+   * Output only. [Output Only] Warning of fetching the `quotas` field for this region. This
    * field is populated only if fetching of the `quotas` field fails.
    * </pre>
    *
@@ -434,7 +434,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -447,7 +447,7 @@ public interface RegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>

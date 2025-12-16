@@ -224,7 +224,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -237,7 +237,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -250,7 +250,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
+   * Output only. [Output only] Type of the resource. Returnscompute#firewallPolicyRule for firewall rules andcompute#packetMirroringRule for packet mirroring rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -377,7 +377,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Calculation of the complexity of a single firewall policy
+   * Output only. [Output Only] Calculation of the complexity of a single firewall policy
    * rule.
    * </pre>
    *
@@ -391,7 +391,7 @@ public interface FirewallPolicyRuleOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Calculation of the complexity of a single firewall policy
+   * Output only. [Output Only] Calculation of the complexity of a single firewall policy
    * rule.
    * </pre>
    *

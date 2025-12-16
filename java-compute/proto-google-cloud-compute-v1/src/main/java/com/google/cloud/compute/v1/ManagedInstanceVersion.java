@@ -74,7 +74,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty
+   * Output only. [Output Only] The intended template of the instance. This field is empty
    * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
@@ -91,7 +91,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty
+   * Output only. [Output Only] The intended template of the instance. This field is empty
    * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
@@ -116,7 +116,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty
+   * Output only. [Output Only] The intended template of the instance. This field is empty
    * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
@@ -146,7 +146,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -162,7 +162,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -186,7 +186,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -593,7 +593,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -609,7 +609,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -633,7 +633,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -657,7 +657,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -680,7 +680,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -699,7 +699,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] The intended template of the instance. This field is empty
+     * Output only. [Output Only] The intended template of the instance. This field is empty
      * when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
@@ -725,7 +725,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -740,7 +740,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -763,7 +763,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -786,7 +786,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -808,7 +808,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -826,7 +826,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * [Output Only] Name of the version.
+     * Output only. [Output Only] Name of the version.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>

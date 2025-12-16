@@ -28,7 +28,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project,
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
    * zonal instance settings, and instance-level predefined metadata keys to
    * provide the overridden value for those metadata keys at the instance level.
    * </pre>
@@ -45,7 +45,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project,
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
    * zonal instance settings, and instance-level predefined metadata keys to
    * provide the overridden value for those metadata keys at the instance level.
    * </pre>
@@ -63,7 +63,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Effective metadata is a field that consolidates project,
+   * Output only. [Output Only] Effective metadata is a field that consolidates project,
    * zonal instance settings, and instance-level predefined metadata keys to
    * provide the overridden value for those metadata keys at the instance level.
    * </pre>
@@ -79,7 +79,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data
+   * Output only. [Output Only] The precise location of your instance within the zone's data
    * center, including the block, sub-block, and host. The field is formatted as
    * follows: blockId/subBlockId/hostId.
    * </pre>
@@ -94,7 +94,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data
+   * Output only. [Output Only] The precise location of your instance within the zone's data
    * center, including the block, sub-block, and host. The field is formatted as
    * follows: blockId/subBlockId/hostId.
    * </pre>
@@ -109,7 +109,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The precise location of your instance within the zone's data
+   * Output only. [Output Only] The precise location of your instance within the zone's data
    * center, including the block, sub-block, and host. The field is formatted as
    * follows: blockId/subBlockId/hostId.
    * </pre>
@@ -124,7 +124,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
    * Engine cluster, as well as the ID of the block, sub-block, and host on
    * which the running instance is located.
    * </pre>
@@ -141,7 +141,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
    * Engine cluster, as well as the ID of the block, sub-block, and host on
    * which the running instance is located.
    * </pre>
@@ -158,7 +158,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A series of fields containing the global name of the Compute
+   * Output only. [Output Only] A series of fields containing the global name of the Compute
    * Engine cluster, as well as the ID of the block, sub-block, and host on
    * which the running instance is located.
    * </pre>
@@ -174,7 +174,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reservation information that the instance is consuming from.
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
    * </pre>
    *
    * <code>
@@ -189,7 +189,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reservation information that the instance is consuming from.
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
    * </pre>
    *
    * <code>
@@ -205,7 +205,7 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reservation information that the instance is consuming from.
+   * Output only. [Output Only] Reservation information that the instance is consuming from.
    * </pre>
    *
    * <code>

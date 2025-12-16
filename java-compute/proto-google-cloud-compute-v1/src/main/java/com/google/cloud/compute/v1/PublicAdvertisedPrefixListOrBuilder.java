@@ -123,7 +123,7 @@ public interface PublicAdvertisedPrefixListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -136,7 +136,7 @@ public interface PublicAdvertisedPrefixListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -149,7 +149,7 @@ public interface PublicAdvertisedPrefixListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicAdvertisedPrefix for public advertised prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

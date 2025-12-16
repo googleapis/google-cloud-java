@@ -275,7 +275,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+   * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
    * disks.
    * </pre>
    *
@@ -292,7 +292,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+   * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
    * disks.
    * </pre>
    *
@@ -317,7 +317,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+   * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
    * disks.
    * </pre>
    *
@@ -428,7 +428,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -444,7 +444,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -468,7 +468,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -498,7 +498,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -513,7 +513,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -528,7 +528,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -544,7 +544,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -1561,7 +1561,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1577,7 +1577,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1601,7 +1601,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1625,7 +1625,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1648,7 +1648,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1667,7 +1667,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
+     * Output only. [Output Only] Type of resource. Alwayscompute#diskAggregatedList for aggregated lists of persistent
      * disks.
      * </pre>
      *
@@ -1843,7 +1843,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1858,7 +1858,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1881,7 +1881,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1904,7 +1904,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1926,7 +1926,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1944,7 +1944,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1977,7 +1977,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -1993,7 +1993,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2008,7 +2008,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2024,7 +2024,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2040,7 +2040,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2064,7 +2064,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2087,7 +2087,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2107,7 +2107,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2126,7 +2126,7 @@ public final class DiskAggregatedList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>

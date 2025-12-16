@@ -28,7 +28,7 @@ public interface PreviewFeatureStatusReleaseStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface PreviewFeatureStatusReleaseStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface PreviewFeatureStatusReleaseStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The stage of the feature.
+   * Output only. [Output Only] The stage of the feature.
    * Check the Stage enum for the list of possible values.
    * </pre>
    *

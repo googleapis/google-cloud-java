@@ -44,6 +44,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     role_ = 0;
     sipRecordingMediaLabel_ = "";
     obfuscatedExternalUserId_ = "";
+    agentDesktopSource_ = 0;
   }
 
   @java.lang.Override
@@ -261,6 +262,240 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Participant.Role)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Enumeration of the Agent Desktop Source when using prebuilt Agent
+   * Assist integration modules.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2.Participant.AgentDesktopSource}
+   */
+  public enum AgentDesktopSource implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is not specified.
+     * </pre>
+     *
+     * <code>AGENT_DESKTOP_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    AGENT_DESKTOP_SOURCE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Live Person.
+     * </pre>
+     *
+     * <code>LIVE_PERSON = 1;</code>
+     */
+    LIVE_PERSON(1),
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Genesys Cloud.
+     * </pre>
+     *
+     * <code>GENESYS_CLOUD = 2;</code>
+     */
+    GENESYS_CLOUD(2),
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Twilio.
+     * </pre>
+     *
+     * <code>TWILIO = 3;</code>
+     */
+    TWILIO(3),
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Salesforce.
+     * </pre>
+     *
+     * <code>SALESFORCE = 4;</code>
+     */
+    SALESFORCE(4),
+    /**
+     *
+     *
+     * <pre>
+     * UI Modules are in use but the desktop is either not currently released or
+     * setting this field to the applicable desktop.
+     * </pre>
+     *
+     * <code>OTHER = 8;</code>
+     */
+    OTHER(8),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is not specified.
+     * </pre>
+     *
+     * <code>AGENT_DESKTOP_SOURCE_UNSPECIFIED = 0;</code>
+     */
+    public static final int AGENT_DESKTOP_SOURCE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Live Person.
+     * </pre>
+     *
+     * <code>LIVE_PERSON = 1;</code>
+     */
+    public static final int LIVE_PERSON_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Genesys Cloud.
+     * </pre>
+     *
+     * <code>GENESYS_CLOUD = 2;</code>
+     */
+    public static final int GENESYS_CLOUD_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Twilio.
+     * </pre>
+     *
+     * <code>TWILIO = 3;</code>
+     */
+    public static final int TWILIO_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Agent Desktop Source is Salesforce.
+     * </pre>
+     *
+     * <code>SALESFORCE = 4;</code>
+     */
+    public static final int SALESFORCE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * UI Modules are in use but the desktop is either not currently released or
+     * setting this field to the applicable desktop.
+     * </pre>
+     *
+     * <code>OTHER = 8;</code>
+     */
+    public static final int OTHER_VALUE = 8;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AgentDesktopSource valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AgentDesktopSource forNumber(int value) {
+      switch (value) {
+        case 0:
+          return AGENT_DESKTOP_SOURCE_UNSPECIFIED;
+        case 1:
+          return LIVE_PERSON;
+        case 2:
+          return GENESYS_CLOUD;
+        case 3:
+          return TWILIO;
+        case 4:
+          return SALESFORCE;
+        case 8:
+          return OTHER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AgentDesktopSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AgentDesktopSource>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AgentDesktopSource>() {
+              public AgentDesktopSource findValueByNumber(int number) {
+                return AgentDesktopSource.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.Participant.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final AgentDesktopSource[] VALUES = values();
+
+    public static AgentDesktopSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AgentDesktopSource(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.Participant.AgentDesktopSource)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -721,6 +956,68 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int AGENT_DESKTOP_SOURCE_FIELD_NUMBER = 10;
+  private int agentDesktopSource_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For tracking the utilization of prebuilt Agent Assist integration
+   * modules. This field is only inscope for Integration type that include UI
+   * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+   * for CCaaS and Direct Integration.
+   * For each human agent, prebuilt UI Modules needs to trigger the
+   * UpdateParticipant API to update this field. Both
+   * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   * and
+   * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+   * will be supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for agentDesktopSource.
+   */
+  @java.lang.Override
+  public int getAgentDesktopSourceValue() {
+    return agentDesktopSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. For tracking the utilization of prebuilt Agent Assist integration
+   * modules. This field is only inscope for Integration type that include UI
+   * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+   * for CCaaS and Direct Integration.
+   * For each human agent, prebuilt UI Modules needs to trigger the
+   * UpdateParticipant API to update this field. Both
+   * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+   * and
+   * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+   * will be supported.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentDesktopSource.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource getAgentDesktopSource() {
+    com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource result =
+        com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource.forNumber(
+            agentDesktopSource_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -752,6 +1049,12 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         internalGetDocumentsMetadataFilters(),
         DocumentsMetadataFiltersDefaultEntryHolder.defaultEntry,
         8);
+    if (agentDesktopSource_
+        != com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource
+            .AGENT_DESKTOP_SOURCE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, agentDesktopSource_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -785,6 +1088,12 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, documentsMetadataFilters__);
     }
+    if (agentDesktopSource_
+        != com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource
+            .AGENT_DESKTOP_SOURCE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, agentDesktopSource_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -807,6 +1116,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
     if (!getObfuscatedExternalUserId().equals(other.getObfuscatedExternalUserId())) return false;
     if (!internalGetDocumentsMetadataFilters().equals(other.internalGetDocumentsMetadataFilters()))
       return false;
+    if (agentDesktopSource_ != other.agentDesktopSource_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -830,6 +1140,8 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DOCUMENTS_METADATA_FILTERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetDocumentsMetadataFilters().hashCode();
     }
+    hash = (37 * hash) + AGENT_DESKTOP_SOURCE_FIELD_NUMBER;
+    hash = (53 * hash) + agentDesktopSource_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -997,6 +1309,7 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       sipRecordingMediaLabel_ = "";
       obfuscatedExternalUserId_ = "";
       internalGetMutableDocumentsMetadataFilters().clear();
+      agentDesktopSource_ = 0;
       return this;
     }
 
@@ -1048,6 +1361,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.documentsMetadataFilters_ = internalGetDocumentsMetadataFilters();
         result.documentsMetadataFilters_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.agentDesktopSource_ = agentDesktopSource_;
       }
     }
 
@@ -1117,6 +1433,9 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDocumentsMetadataFilters()
           .mergeFrom(other.internalGetDocumentsMetadataFilters());
       bitField0_ |= 0x00000010;
+      if (other.agentDesktopSource_ != 0) {
+        setAgentDesktopSourceValue(other.getAgentDesktopSourceValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1182,6 +1501,12 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 66
+            case 80:
+              {
+                agentDesktopSource_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2132,6 +2457,160 @@ public final class Participant extends com.google.protobuf.GeneratedMessageV3
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDocumentsMetadataFilters().getMutableMap().putAll(values);
       bitField0_ |= 0x00000010;
+      return this;
+    }
+
+    private int agentDesktopSource_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For tracking the utilization of prebuilt Agent Assist integration
+     * modules. This field is only inscope for Integration type that include UI
+     * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+     * for CCaaS and Direct Integration.
+     * For each human agent, prebuilt UI Modules needs to trigger the
+     * UpdateParticipant API to update this field. Both
+     * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     * and
+     * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+     * will be supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for agentDesktopSource.
+     */
+    @java.lang.Override
+    public int getAgentDesktopSourceValue() {
+      return agentDesktopSource_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For tracking the utilization of prebuilt Agent Assist integration
+     * modules. This field is only inscope for Integration type that include UI
+     * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+     * for CCaaS and Direct Integration.
+     * For each human agent, prebuilt UI Modules needs to trigger the
+     * UpdateParticipant API to update this field. Both
+     * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     * and
+     * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+     * will be supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for agentDesktopSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentDesktopSourceValue(int value) {
+      agentDesktopSource_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For tracking the utilization of prebuilt Agent Assist integration
+     * modules. This field is only inscope for Integration type that include UI
+     * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+     * for CCaaS and Direct Integration.
+     * For each human agent, prebuilt UI Modules needs to trigger the
+     * UpdateParticipant API to update this field. Both
+     * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     * and
+     * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+     * will be supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentDesktopSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource getAgentDesktopSource() {
+      com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource result =
+          com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource.forNumber(
+              agentDesktopSource_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For tracking the utilization of prebuilt Agent Assist integration
+     * modules. This field is only inscope for Integration type that include UI
+     * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+     * for CCaaS and Direct Integration.
+     * For each human agent, prebuilt UI Modules needs to trigger the
+     * UpdateParticipant API to update this field. Both
+     * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     * and
+     * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+     * will be supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The agentDesktopSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentDesktopSource(
+        com.google.cloud.dialogflow.v2.Participant.AgentDesktopSource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      agentDesktopSource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. For tracking the utilization of prebuilt Agent Assist integration
+     * modules. This field is only inscope for Integration type that include UI
+     * Modules, Backend Modules, and Agent Desktop connector, it is out of scope
+     * for CCaaS and Direct Integration.
+     * For each human agent, prebuilt UI Modules needs to trigger the
+     * UpdateParticipant API to update this field. Both
+     * [CreateParticipantRequest][google.cloud.dialogflow.v2.CreateParticipantRequest.participant]
+     * and
+     * [UpdateParticipantRequest][google.cloud.dialogflow.v2.UpdateParticipantRequest.participant]
+     * will be supported.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2.Participant.AgentDesktopSource agent_desktop_source = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAgentDesktopSource() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      agentDesktopSource_ = 0;
+      onChanged();
       return this;
     }
 

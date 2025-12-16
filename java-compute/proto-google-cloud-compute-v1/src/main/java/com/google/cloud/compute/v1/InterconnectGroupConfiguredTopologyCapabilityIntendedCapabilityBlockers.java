@@ -319,7 +319,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -336,7 +336,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -361,7 +361,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -391,7 +391,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -408,7 +408,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -433,7 +433,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -464,7 +464,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail.
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
    * Like physicalStructure.metros.facilities.facility, this is a numeric
    * string like "5467".
    * </pre>
@@ -481,7 +481,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail.
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
    * Like physicalStructure.metros.facilities.facility, this is a numeric
    * string like "5467".
    * </pre>
@@ -498,7 +498,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail.
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
    * Like physicalStructure.metros.facilities.facility, this is a numeric
    * string like "5467".
    * </pre>
@@ -516,7 +516,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Facilities used to explain this blocker in more detail.
+   * Output only. [Output Only] Facilities used to explain this blocker in more detail.
    * Like physicalStructure.metros.facilities.facility, this is a numeric
    * string like "5467".
    * </pre>
@@ -540,7 +540,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
    * detail.
    * </pre>
    *
@@ -556,7 +556,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
    * detail.
    * </pre>
    *
@@ -572,7 +572,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
    * detail.
    * </pre>
    *
@@ -589,7 +589,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Interconnects used to explain this blocker in more
+   * Output only. [Output Only] Interconnects used to explain this blocker in more
    * detail.
    * </pre>
    *
@@ -612,7 +612,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". A blocker like
    * INCOMPATIBLE_METROS will specify the problematic metros in this
    * field.
@@ -630,7 +630,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". A blocker like
    * INCOMPATIBLE_METROS will specify the problematic metros in this
    * field.
@@ -648,7 +648,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". A blocker like
    * INCOMPATIBLE_METROS will specify the problematic metros in this
    * field.
@@ -667,7 +667,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". A blocker like
    * INCOMPATIBLE_METROS will specify the problematic metros in this
    * field.
@@ -692,7 +692,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
@@ -708,7 +708,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
@@ -724,7 +724,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
@@ -741,7 +741,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Zone names are "zone1" and/or "zone2".
    * </pre>
    *
@@ -1520,7 +1520,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1536,7 +1536,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1560,7 +1560,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1584,7 +1584,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1607,7 +1607,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1626,7 +1626,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] The url of Google Cloud public documentation explaining
+     * Output only. [Output Only] The url of Google Cloud public documentation explaining
      * this requirement. This is set for every type of requirement.
      * </pre>
      *
@@ -1652,7 +1652,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1668,7 +1668,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1692,7 +1692,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1716,7 +1716,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1739,7 +1739,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1758,7 +1758,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] A human-readable explanation of this requirement and
+     * Output only. [Output Only] A human-readable explanation of this requirement and
      * why it's not met. This is set for every type of requirement.
      * </pre>
      *
@@ -1792,7 +1792,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1810,7 +1810,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1827,7 +1827,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1845,7 +1845,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1863,7 +1863,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1889,7 +1889,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1914,7 +1914,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1936,7 +1936,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1957,7 +1957,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Facilities used to explain this blocker in more detail.
+     * Output only. [Output Only] Facilities used to explain this blocker in more detail.
      * Like physicalStructure.metros.facilities.facility, this is a numeric
      * string like "5467".
      * </pre>
@@ -1993,7 +1993,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2010,7 +2010,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2026,7 +2026,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2043,7 +2043,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2060,7 +2060,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2085,7 +2085,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2109,7 +2109,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2130,7 +2130,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2150,7 +2150,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Interconnects used to explain this blocker in more
+     * Output only. [Output Only] Interconnects used to explain this blocker in more
      * detail.
      * </pre>
      *
@@ -2185,7 +2185,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2204,7 +2204,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2222,7 +2222,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2241,7 +2241,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2260,7 +2260,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2287,7 +2287,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2313,7 +2313,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2336,7 +2336,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2358,7 +2358,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Metros used to explain this blocker in more detail.
+     * Output only. [Output Only] Metros used to explain this blocker in more detail.
      * These are three-letter lowercase strings like "iad". A blocker like
      * INCOMPATIBLE_METROS will specify the problematic metros in this
      * field.
@@ -2395,7 +2395,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2412,7 +2412,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2428,7 +2428,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2445,7 +2445,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2462,7 +2462,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2487,7 +2487,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2511,7 +2511,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2532,7 +2532,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *
@@ -2552,7 +2552,7 @@ public final class InterconnectGroupConfiguredTopologyCapabilityIntendedCapabili
      *
      *
      * <pre>
-     * [Output Only] Zones used to explain this blocker in more detail.
+     * Output only. [Output Only] Zones used to explain this blocker in more detail.
      * Zone names are "zone1" and/or "zone2".
      * </pre>
      *

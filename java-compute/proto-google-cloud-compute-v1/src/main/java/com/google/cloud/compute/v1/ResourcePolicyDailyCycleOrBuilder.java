@@ -56,7 +56,7 @@ public interface ResourcePolicyDailyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface ResourcePolicyDailyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface ResourcePolicyDailyCycleOrBuilder
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *

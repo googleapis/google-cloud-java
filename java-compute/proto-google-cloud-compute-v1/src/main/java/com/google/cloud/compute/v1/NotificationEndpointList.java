@@ -222,7 +222,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -238,7 +238,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -262,7 +262,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1535,7 +1535,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1550,7 +1550,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1573,7 +1573,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1596,7 +1596,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1618,7 +1618,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1636,7 +1636,7 @@ public final class NotificationEndpointList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

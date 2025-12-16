@@ -421,6 +421,49 @@ public interface BackupOrBuilder
    *
    *
    * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the backup.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. System assigned unique identifier of the backup.
    * </pre>
    *

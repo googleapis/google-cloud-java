@@ -123,7 +123,7 @@ public interface SecurityPolicyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -136,7 +136,7 @@ public interface SecurityPolicyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -149,7 +149,7 @@ public interface SecurityPolicyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#securityPolicyList for listsof securityPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

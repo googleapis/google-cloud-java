@@ -123,7 +123,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -229,7 +229,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -242,7 +242,7 @@ public interface NetworkEndpointGroupListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

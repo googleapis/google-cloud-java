@@ -70,7 +70,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -83,7 +83,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -96,7 +96,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of a region, like "us-central1".
+   * Output only. [Output Only] The name of a region, like "us-central1".
    * </pre>
    *
    * <code>optional string region = 138946292;</code>

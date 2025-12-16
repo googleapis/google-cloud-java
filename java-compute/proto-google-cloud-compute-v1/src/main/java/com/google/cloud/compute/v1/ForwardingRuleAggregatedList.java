@@ -282,7 +282,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+   * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -298,7 +298,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+   * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -322,7 +322,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+   * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -432,7 +432,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -448,7 +448,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -472,7 +472,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -502,7 +502,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -517,7 +517,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -532,7 +532,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -548,7 +548,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -1592,7 +1592,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1607,7 +1607,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1630,7 +1630,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1653,7 +1653,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1675,7 +1675,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1693,7 +1693,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
+     * Output only. [Output Only] Type of resource. Alwayscompute#forwardingRuleAggregatedList for lists of forwarding rules.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1868,7 +1868,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1883,7 +1883,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1906,7 +1906,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1929,7 +1929,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1951,7 +1951,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1969,7 +1969,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2002,7 +2002,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2018,7 +2018,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2033,7 +2033,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2049,7 +2049,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2065,7 +2065,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2089,7 +2089,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2112,7 +2112,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2132,7 +2132,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2151,7 +2151,7 @@ public final class ForwardingRuleAggregatedList extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>

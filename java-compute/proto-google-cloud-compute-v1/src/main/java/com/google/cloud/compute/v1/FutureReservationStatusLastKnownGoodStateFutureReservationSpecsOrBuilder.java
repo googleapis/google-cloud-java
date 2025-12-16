@@ -28,7 +28,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous share settings of the Future Reservation.
+   * Output only. [Output Only] The previous share settings of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -41,7 +41,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous share settings of the Future Reservation.
+   * Output only. [Output Only] The previous share settings of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -54,7 +54,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous share settings of the Future Reservation.
+   * Output only. [Output Only] The previous share settings of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
@@ -65,7 +65,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous instance related properties of the
+   * Output only. [Output Only] The previous instance related properties of the
    * Future Reservation.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous instance related properties of the
+   * Output only. [Output Only] The previous instance related properties of the
    * Future Reservation.
    * </pre>
    *
@@ -97,7 +97,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous instance related properties of the
+   * Output only. [Output Only] The previous instance related properties of the
    * Future Reservation.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous time window of the Future Reservation.
+   * Output only. [Output Only] The previous time window of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationTimeWindow time_window = 422983074;
@@ -126,7 +126,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous time window of the Future Reservation.
+   * Output only. [Output Only] The previous time window of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationTimeWindow time_window = 422983074;
@@ -140,7 +140,7 @@ public interface FutureReservationStatusLastKnownGoodStateFutureReservationSpecs
    *
    *
    * <pre>
-   * [Output Only] The previous time window of the Future Reservation.
+   * Output only. [Output Only] The previous time window of the Future Reservation.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationTimeWindow time_window = 422983074;

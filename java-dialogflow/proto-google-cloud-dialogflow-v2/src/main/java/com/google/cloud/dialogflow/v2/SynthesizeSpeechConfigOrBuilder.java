@@ -179,4 +179,71 @@ public interface SynthesizeSpeechConfigOrBuilder
    * </code>
    */
   com.google.cloud.dialogflow.v2.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CustomPronunciationParams pronunciations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.CustomPronunciationParams> getPronunciationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CustomPronunciationParams pronunciations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CustomPronunciationParams getPronunciations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CustomPronunciationParams pronunciations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getPronunciationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CustomPronunciationParams pronunciations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.CustomPronunciationParamsOrBuilder>
+      getPronunciationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The custom pronunciations for the synthesized audio.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.CustomPronunciationParams pronunciations = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CustomPronunciationParamsOrBuilder getPronunciationsOrBuilder(
+      int index);
 }

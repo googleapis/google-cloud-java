@@ -70,7 +70,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Absolute value of VM instances calculated based on the
+   * Output only. [Output Only] Absolute value of VM instances calculated based on the
    * specific mode.
    *
    *
@@ -98,7 +98,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Absolute value of VM instances calculated based on the
+   * Output only. [Output Only] Absolute value of VM instances calculated based on the
    * specific mode.
    *
    *
@@ -604,7 +604,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Absolute value of VM instances calculated based on the
+     * Output only. [Output Only] Absolute value of VM instances calculated based on the
      * specific mode.
      *
      *
@@ -632,7 +632,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Absolute value of VM instances calculated based on the
+     * Output only. [Output Only] Absolute value of VM instances calculated based on the
      * specific mode.
      *
      *
@@ -660,7 +660,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Absolute value of VM instances calculated based on the
+     * Output only. [Output Only] Absolute value of VM instances calculated based on the
      * specific mode.
      *
      *
@@ -692,7 +692,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Absolute value of VM instances calculated based on the
+     * Output only. [Output Only] Absolute value of VM instances calculated based on the
      * specific mode.
      *
      *

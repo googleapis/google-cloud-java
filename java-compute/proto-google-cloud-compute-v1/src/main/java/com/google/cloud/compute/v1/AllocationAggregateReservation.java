@@ -426,7 +426,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -444,7 +444,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -464,7 +464,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -480,7 +480,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -497,7 +497,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -1307,7 +1307,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1328,7 +1328,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1347,7 +1347,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1367,7 +1367,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1394,7 +1394,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1419,7 +1419,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1445,7 +1445,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1472,7 +1472,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1496,7 +1496,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1521,7 +1521,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1547,7 +1547,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1569,7 +1569,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1591,7 +1591,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1607,7 +1607,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1627,7 +1627,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1650,7 +1650,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1669,7 +1669,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>
@@ -1689,7 +1689,7 @@ public final class AllocationAggregateReservation extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output only] List of resources currently in use.
+     * Output only. [Output only] List of resources currently in use.
      * </pre>
      *
      * <code>

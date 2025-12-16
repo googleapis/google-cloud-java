@@ -301,7 +301,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -318,7 +318,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -343,7 +343,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -482,7 +482,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -498,7 +498,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -522,7 +522,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1829,7 +1829,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1845,7 +1845,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1869,7 +1869,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1893,7 +1893,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1916,7 +1916,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1935,7 +1935,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2169,7 +2169,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2184,7 +2184,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2207,7 +2207,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2230,7 +2230,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2252,7 +2252,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2270,7 +2270,7 @@ public final class TargetSslProxy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

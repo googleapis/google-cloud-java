@@ -223,7 +223,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#packetMirroring
+   * Output only. [Output Only] Type of resource. Always compute#packetMirroring
    * for packetMirrorings.
    * </pre>
    *
@@ -240,7 +240,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#packetMirroring
+   * Output only. [Output Only] Type of resource. Always compute#packetMirroring
    * for packetMirrorings.
    * </pre>
    *
@@ -265,7 +265,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#packetMirroring
+   * Output only. [Output Only] Type of resource. Always compute#packetMirroring
    * for packetMirrorings.
    * </pre>
    *
@@ -376,7 +376,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -392,7 +392,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -416,7 +416,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1538,7 +1538,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1554,7 +1554,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1578,7 +1578,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1602,7 +1602,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1625,7 +1625,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1644,7 +1644,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#packetMirroring
+     * Output only. [Output Only] Type of resource. Always compute#packetMirroring
      * for packetMirrorings.
      * </pre>
      *
@@ -1820,7 +1820,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1835,7 +1835,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1858,7 +1858,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1881,7 +1881,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1903,7 +1903,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1921,7 +1921,7 @@ public final class PacketMirroringList extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

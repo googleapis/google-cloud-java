@@ -174,7 +174,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -190,7 +190,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -214,7 +214,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -299,7 +299,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the resource resides
+   * Output only. [Output Only] URL of the zone where the resource resides
    * You must specify this field as part of the HTTP request URL. It is not
    * settable as a field in the request body.
    * </pre>
@@ -317,7 +317,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the resource resides
+   * Output only. [Output Only] URL of the zone where the resource resides
    * You must specify this field as part of the HTTP request URL. It is not
    * settable as a field in the request body.
    * </pre>
@@ -343,7 +343,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the resource resides
+   * Output only. [Output Only] URL of the zone where the resource resides
    * You must specify this field as part of the HTTP request URL. It is not
    * settable as a field in the request body.
    * </pre>
@@ -1004,7 +1004,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1019,7 +1019,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1042,7 +1042,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1065,7 +1065,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1087,7 +1087,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1105,7 +1105,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#instance_settings for instance settings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1335,7 +1335,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>
@@ -1352,7 +1352,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>
@@ -1377,7 +1377,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>
@@ -1402,7 +1402,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>
@@ -1426,7 +1426,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>
@@ -1446,7 +1446,7 @@ public final class InstanceSettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the resource resides
+     * Output only. [Output Only] URL of the zone where the resource resides
      * You must specify this field as part of the HTTP request URL. It is not
      * settable as a field in the request body.
      * </pre>

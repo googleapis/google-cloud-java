@@ -72,7 +72,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates whether the wire is enabled.
+   * Output only. [Output Only] Indicates whether the wire is enabled.
    * When false, the wire is disabled. When true and when the wire group of
    * the wire is also enabled, the wire is enabled. Defaults to true.
    * </pre>
@@ -90,7 +90,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Indicates whether the wire is enabled.
+   * Output only. [Output Only] Indicates whether the wire is enabled.
    * When false, the wire is disabled. When true and when the wire group of
    * the wire is also enabled, the wire is enabled. Defaults to true.
    * </pre>
@@ -113,7 +113,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wire endpoints are specific Interconnect connections.
+   * Output only. Wire endpoints are specific Interconnect connections.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -127,7 +127,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wire endpoints are specific Interconnect connections.
+   * Output only. Wire endpoints are specific Interconnect connections.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -142,7 +142,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wire endpoints are specific Interconnect connections.
+   * Output only. Wire endpoints are specific Interconnect connections.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -156,7 +156,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wire endpoints are specific Interconnect connections.
+   * Output only. Wire endpoints are specific Interconnect connections.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -170,7 +170,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Wire endpoints are specific Interconnect connections.
+   * Output only. Wire endpoints are specific Interconnect connections.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -189,7 +189,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A label that identifies the wire. The format of this label
+   * Output only. [Output Only] A label that identifies the wire. The format of this label
    * combines the existing labels of the wire group endpoints and Interconnect
    * connections used by this wire in alphabetical order as follows:
    * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -215,7 +215,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A label that identifies the wire. The format of this label
+   * Output only. [Output Only] A label that identifies the wire. The format of this label
    * combines the existing labels of the wire group endpoints and Interconnect
    * connections used by this wire in alphabetical order as follows:
    * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -249,7 +249,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A label that identifies the wire. The format of this label
+   * Output only. [Output Only] A label that identifies the wire. The format of this label
    * combines the existing labels of the wire group endpoints and Interconnect
    * connections used by this wire in alphabetical order as follows:
    * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -286,7 +286,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Properties of the wire.
+   * Output only. [Output Only] Properties of the wire.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -302,7 +302,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Properties of the wire.
+   * Output only. [Output Only] Properties of the wire.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -320,7 +320,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Properties of the wire.
+   * Output only. [Output Only] Properties of the wire.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -829,7 +829,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether the wire is enabled.
+     * Output only. [Output Only] Indicates whether the wire is enabled.
      * When false, the wire is disabled. When true and when the wire group of
      * the wire is also enabled, the wire is enabled. Defaults to true.
      * </pre>
@@ -847,7 +847,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether the wire is enabled.
+     * Output only. [Output Only] Indicates whether the wire is enabled.
      * When false, the wire is disabled. When true and when the wire group of
      * the wire is also enabled, the wire is enabled. Defaults to true.
      * </pre>
@@ -865,7 +865,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether the wire is enabled.
+     * Output only. [Output Only] Indicates whether the wire is enabled.
      * When false, the wire is disabled. When true and when the wire group of
      * the wire is also enabled, the wire is enabled. Defaults to true.
      * </pre>
@@ -887,7 +887,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Indicates whether the wire is enabled.
+     * Output only. [Output Only] Indicates whether the wire is enabled.
      * When false, the wire is disabled. When true and when the wire group of
      * the wire is also enabled, the wire is enabled. Defaults to true.
      * </pre>
@@ -923,7 +923,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -940,7 +940,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -957,7 +957,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -974,7 +974,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -997,7 +997,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1018,7 +1018,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1041,7 +1041,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1064,7 +1064,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1084,7 +1084,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1105,7 +1105,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1126,7 +1126,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1146,7 +1146,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1166,7 +1166,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1179,7 +1179,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1196,7 +1196,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1214,7 +1214,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1228,7 +1228,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1242,7 +1242,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Wire endpoints are specific Interconnect connections.
+     * Output only. Wire endpoints are specific Interconnect connections.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.WireEndpoint endpoints = 287085950;</code>
@@ -1275,7 +1275,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1300,7 +1300,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1333,7 +1333,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1366,7 +1366,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1398,7 +1398,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1426,7 +1426,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A label that identifies the wire. The format of this label
+     * Output only. [Output Only] A label that identifies the wire. The format of this label
      * combines the existing labels of the wire group endpoints and Interconnect
      * connections used by this wire in alphabetical order as follows:
      * `ENDPOINT_A+CONNECTION_A1,ENDPOINT_B+CONNECTION_B1`, where:
@@ -1466,7 +1466,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1481,7 +1481,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1502,7 +1502,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1525,7 +1525,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1546,7 +1546,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1574,7 +1574,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1594,7 +1594,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1609,7 +1609,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>
@@ -1628,7 +1628,7 @@ public final class Wire extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Properties of the wire.
+     * Output only. [Output Only] Properties of the wire.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.WireProperties wire_properties = 303111469;</code>

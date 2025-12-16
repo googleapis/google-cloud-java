@@ -869,7 +869,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Output only. [Output Only] Type of the resource. Always `compute#operation` for
    * Operation resources.
    * </pre>
    *
@@ -886,7 +886,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Output only. [Output Only] Type of the resource. Always `compute#operation` for
    * Operation resources.
    * </pre>
    *
@@ -911,7 +911,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always `compute#operation` for
+   * Output only. [Output Only] Type of the resource. Always `compute#operation` for
    * Operation resources.
    * </pre>
    *
@@ -1010,7 +1010,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a
+   * Output only. [Output Only] An ID that represents a group of operations, such as when a
    * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
@@ -1027,7 +1027,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a
+   * Output only. [Output Only] An ID that represents a group of operations, such as when a
    * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
@@ -1052,7 +1052,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An ID that represents a group of operations, such as when a
+   * Output only. [Output Only] An ID that represents a group of operations, such as when a
    * group of operations results from a `bulkInsert` API request.
    * </pre>
    *
@@ -1337,7 +1337,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
    * this field will contain information on all underlying zonal actions and
    * their state.
    * </pre>
@@ -1357,7 +1357,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
    * this field will contain information on all underlying zonal actions and
    * their state.
    * </pre>
@@ -1381,7 +1381,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+   * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
    * this field will contain information on all underlying zonal actions and
    * their state.
    * </pre>
@@ -4488,7 +4488,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4504,7 +4504,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4528,7 +4528,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4552,7 +4552,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4575,7 +4575,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4594,7 +4594,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always `compute#operation` for
+     * Output only. [Output Only] Type of the resource. Always `compute#operation` for
      * Operation resources.
      * </pre>
      *
@@ -4746,7 +4746,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -4762,7 +4762,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -4786,7 +4786,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -4810,7 +4810,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -4833,7 +4833,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -4852,7 +4852,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An ID that represents a group of operations, such as when a
+     * Output only. [Output Only] An ID that represents a group of operations, such as when a
      * group of operations results from a `bulkInsert` API request.
      * </pre>
      *
@@ -5362,7 +5362,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5381,7 +5381,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5408,7 +5408,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5436,7 +5436,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5462,7 +5462,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5497,7 +5497,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5521,7 +5521,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5541,7 +5541,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>
@@ -5566,7 +5566,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If the operation is for projects.setCommonInstanceMetadata,
+     * Output only. [Output Only] If the operation is for projects.setCommonInstanceMetadata,
      * this field will contain information on all underlying zonal actions and
      * their state.
      * </pre>

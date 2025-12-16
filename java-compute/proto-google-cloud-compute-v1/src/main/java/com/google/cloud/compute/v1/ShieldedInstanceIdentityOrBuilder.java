@@ -168,7 +168,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *
@@ -182,7 +182,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *
@@ -196,7 +196,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *

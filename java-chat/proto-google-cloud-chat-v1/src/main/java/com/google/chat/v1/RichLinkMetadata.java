@@ -112,6 +112,18 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * A Gmail message rich link type. Specifically, a Gmail chip from [Share to
+     * Chat](https://support.google.com/chat?p=chat_gmail). The API only
+     * supports reading messages with GMAIL_MESSAGE rich links.
+     * </pre>
+     *
+     * <code>GMAIL_MESSAGE = 3;</code>
+     */
+    GMAIL_MESSAGE(3),
+    /**
+     *
+     *
+     * <pre>
      * A Meet message rich link type. For example, a Meet chip.
      * </pre>
      *
@@ -168,6 +180,19 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * A Gmail message rich link type. Specifically, a Gmail chip from [Share to
+     * Chat](https://support.google.com/chat?p=chat_gmail). The API only
+     * supports reading messages with GMAIL_MESSAGE rich links.
+     * </pre>
+     *
+     * <code>GMAIL_MESSAGE = 3;</code>
+     */
+    public static final int GMAIL_MESSAGE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
      * A Meet message rich link type. For example, a Meet chip.
      * </pre>
      *
@@ -216,6 +241,8 @@ public final class RichLinkMetadata extends com.google.protobuf.GeneratedMessage
           return DRIVE_FILE;
         case 2:
           return CHAT_SPACE;
+        case 3:
+          return GMAIL_MESSAGE;
         case 4:
           return MEET_SPACE;
         case 5:

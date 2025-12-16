@@ -225,7 +225,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#reservationsList
+   * Output only. [Output Only] Type of resource.Always compute#reservationsList
    * for listsof reservations
    * </pre>
    *
@@ -242,7 +242,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#reservationsList
+   * Output only. [Output Only] Type of resource.Always compute#reservationsList
    * for listsof reservations
    * </pre>
    *
@@ -267,7 +267,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Always compute#reservationsList
+   * Output only. [Output Only] Type of resource.Always compute#reservationsList
    * for listsof reservations
    * </pre>
    *
@@ -378,7 +378,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -394,7 +394,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -418,7 +418,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1542,7 +1542,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1558,7 +1558,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1582,7 +1582,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1606,7 +1606,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1629,7 +1629,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1648,7 +1648,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Always compute#reservationsList
+     * Output only. [Output Only] Type of resource.Always compute#reservationsList
      * for listsof reservations
      * </pre>
      *
@@ -1824,7 +1824,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1839,7 +1839,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1862,7 +1862,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1885,7 +1885,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1907,7 +1907,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1925,7 +1925,7 @@ public final class ReservationList extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

@@ -58,7 +58,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -72,7 +72,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -86,7 +86,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The version of BYOIP API.
+   * Output only. [Output Only] The version of BYOIP API.
    * Check the ByoipApiVersion enum for the list of possible values.
    * </pre>
    *
@@ -100,7 +100,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -114,7 +114,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -128,7 +128,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -179,6 +179,34 @@ public interface PublicDelegatedPrefixOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return Whether the enableEnhancedIpv4Allocation field is set.
+   */
+  boolean hasEnableEnhancedIpv4Allocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return The enableEnhancedIpv4Allocation.
+   */
+  boolean getEnableEnhancedIpv4Allocation();
 
   /**
    *
@@ -244,7 +272,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -258,7 +286,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -314,7 +342,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -329,7 +357,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -344,7 +372,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes.
    * Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -385,7 +413,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -398,7 +426,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -411,7 +439,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -641,7 +669,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -657,7 +685,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -673,7 +701,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the public delegated prefix resides.
+   * Output only. [Output Only] URL of the region where the public delegated prefix resides.
    * This field applies only to the region resource. You must specify this
    * field as part of the HTTP request URL. It is not settable as a field in
    * the request body.
@@ -689,7 +717,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -702,7 +730,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -715,7 +743,7 @@ public interface PublicDelegatedPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

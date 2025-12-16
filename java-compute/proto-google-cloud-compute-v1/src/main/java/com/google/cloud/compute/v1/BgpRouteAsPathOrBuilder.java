@@ -28,7 +28,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
    * ordered.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
    * ordered.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
    * ordered.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. This field is for better
+   * Output only. [Output only] ASNs in the path segment. This field is for better
    * support of 32 bit ASNs as the other asns field suffers from overflow when
    * the ASN is larger. When type is SEQUENCE, these are ordered.
    * </pre>
@@ -86,7 +86,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. This field is for better
+   * Output only. [Output only] ASNs in the path segment. This field is for better
    * support of 32 bit ASNs as the other asns field suffers from overflow when
    * the ASN is larger. When type is SEQUENCE, these are ordered.
    * </pre>
@@ -101,7 +101,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. This field is for better
+   * Output only. [Output only] ASNs in the path segment. This field is for better
    * support of 32 bit ASNs as the other asns field suffers from overflow when
    * the ASN is larger. When type is SEQUENCE, these are ordered.
    * </pre>
@@ -117,7 +117,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -131,7 +131,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -145,7 +145,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *

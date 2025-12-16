@@ -44,6 +44,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
   private GenerateStatelessSuggestionRequest() {
     parent_ = "";
     triggerEvents_ = java.util.Collections.emptyList();
+    securitySettings_ = "";
   }
 
   @java.lang.Override
@@ -647,6 +648,73 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
 
   private int triggerEventsMemoizedSerializedSize;
 
+  public static final int SECURITY_SETTINGS_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object securitySettings_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the CX SecuritySettings which is used to redact generated
+   * response. If this field is empty, try to fetch v2 security_settings, which
+   * is a project level setting. If this field is empty and no v2
+   * security_settings set up in this project, no redaction will be done.
+   *
+   * Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+   * Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The securitySettings.
+   */
+  @java.lang.Override
+  public java.lang.String getSecuritySettings() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      securitySettings_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Name of the CX SecuritySettings which is used to redact generated
+   * response. If this field is empty, try to fetch v2 security_settings, which
+   * is a project level setting. If this field is empty and no v2
+   * security_settings set up in this project, no redaction will be done.
+   *
+   * Format:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+   * Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecuritySettingsBytes() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      securitySettings_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -685,6 +753,9 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
     }
     for (int i = 0; i < triggerEvents_.size(); i++) {
       output.writeEnumNoTag(triggerEvents_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, securitySettings_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -735,6 +806,9 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       triggerEventsMemoizedSerializedSize = dataSize;
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(securitySettings_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, securitySettings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -758,6 +832,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       if (!getConversationContext().equals(other.getConversationContext())) return false;
     }
     if (!triggerEvents_.equals(other.triggerEvents_)) return false;
+    if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (!getGeneratorResourceCase().equals(other.getGeneratorResourceCase())) return false;
     switch (generatorResourceCase_) {
       case 2:
@@ -794,6 +869,8 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       hash = (37 * hash) + TRIGGER_EVENTS_FIELD_NUMBER;
       hash = (53 * hash) + triggerEvents_.hashCode();
     }
+    hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
+    hash = (53 * hash) + getSecuritySettings().hashCode();
     switch (generatorResourceCase_) {
       case 2:
         hash = (37 * hash) + GENERATOR_FIELD_NUMBER;
@@ -993,6 +1070,7 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       }
       triggerEvents_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000020);
+      securitySettings_ = "";
       generatorResourceCase_ = 0;
       generatorResource_ = null;
       return this;
@@ -1058,6 +1136,9 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
                 ? conversationContext_
                 : conversationContextBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.securitySettings_ = securitySettings_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1137,6 +1218,11 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
           ensureTriggerEventsIsMutable();
           triggerEvents_.addAll(other.triggerEvents_);
         }
+        onChanged();
+      }
+      if (!other.getSecuritySettings().isEmpty()) {
+        securitySettings_ = other.securitySettings_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       switch (other.getGeneratorResourceCase()) {
@@ -1243,6 +1329,12 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
                 input.popLimit(oldLimit);
                 break;
               } // case 50
+            case 66:
+              {
+                securitySettings_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2559,6 +2651,152 @@ public final class GenerateStatelessSuggestionRequest extends com.google.protobu
       for (int value : values) {
         triggerEvents_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object securitySettings_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the CX SecuritySettings which is used to redact generated
+     * response. If this field is empty, try to fetch v2 security_settings, which
+     * is a project level setting. If this field is empty and no v2
+     * security_settings set up in this project, no redaction will be done.
+     *
+     * Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+     * Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The securitySettings.
+     */
+    public java.lang.String getSecuritySettings() {
+      java.lang.Object ref = securitySettings_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        securitySettings_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the CX SecuritySettings which is used to redact generated
+     * response. If this field is empty, try to fetch v2 security_settings, which
+     * is a project level setting. If this field is empty and no v2
+     * security_settings set up in this project, no redaction will be done.
+     *
+     * Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+     * Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for securitySettings.
+     */
+    public com.google.protobuf.ByteString getSecuritySettingsBytes() {
+      java.lang.Object ref = securitySettings_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        securitySettings_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the CX SecuritySettings which is used to redact generated
+     * response. If this field is empty, try to fetch v2 security_settings, which
+     * is a project level setting. If this field is empty and no v2
+     * security_settings set up in this project, no redaction will be done.
+     *
+     * Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+     * Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettings(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      securitySettings_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the CX SecuritySettings which is used to redact generated
+     * response. If this field is empty, try to fetch v2 security_settings, which
+     * is a project level setting. If this field is empty and no v2
+     * security_settings set up in this project, no redaction will be done.
+     *
+     * Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+     * Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecuritySettings() {
+      securitySettings_ = getDefaultInstance().getSecuritySettings();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Name of the CX SecuritySettings which is used to redact generated
+     * response. If this field is empty, try to fetch v2 security_settings, which
+     * is a project level setting. If this field is empty and no v2
+     * security_settings set up in this project, no redaction will be done.
+     *
+     * Format:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
+     * Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettingsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      securitySettings_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

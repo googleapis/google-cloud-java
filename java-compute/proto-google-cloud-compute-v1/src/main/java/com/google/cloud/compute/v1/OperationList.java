@@ -226,7 +226,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *
@@ -243,7 +243,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *
@@ -268,7 +268,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operations` for Operations
+   * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
    * resource.
    * </pre>
    *
@@ -1547,7 +1547,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *
@@ -1563,7 +1563,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *
@@ -1587,7 +1587,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *
@@ -1611,7 +1611,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *
@@ -1634,7 +1634,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *
@@ -1653,7 +1653,7 @@ public final class OperationList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always `compute#operations` for Operations
+     * Output only. [Output Only] Type of resource. Always `compute#operations` for Operations
      * resource.
      * </pre>
      *

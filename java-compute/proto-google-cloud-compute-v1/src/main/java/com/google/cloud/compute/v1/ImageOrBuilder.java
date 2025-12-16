@@ -101,7 +101,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -129,7 +129,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The deprecation status associated with this image.
+   * Output only. The deprecation status associated with this image.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -156,7 +156,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The deprecation status associated with this image.
+   * Output only. The deprecation status associated with this image.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -169,7 +169,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * The deprecation status associated with this image.
+   * Output only. The deprecation status associated with this image.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
@@ -248,7 +248,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Whether this image is created from a confidential compute mode disk.
+   * Output only. Whether this image is created from a confidential compute mode disk.
    * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
@@ -262,7 +262,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * Whether this image is created from a confidential compute mode disk.
+   * Output only. Whether this image is created from a confidential compute mode disk.
    * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
@@ -400,7 +400,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -414,7 +414,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -504,7 +504,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for
+   * Output only. [Output Only] Type of the resource. Always compute#image for
    * images.
    * </pre>
    *
@@ -518,7 +518,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for
+   * Output only. [Output Only] Type of the resource. Always compute#image for
    * images.
    * </pre>
    *
@@ -532,7 +532,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#image for
+   * Output only. [Output Only] Type of the resource. Always compute#image for
    * images.
    * </pre>
    *
@@ -931,7 +931,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -944,7 +944,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -957,7 +957,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -970,7 +970,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -983,7 +983,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1173,7 +1173,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the disk used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given disk name.
@@ -1189,7 +1189,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the disk used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given disk name.
@@ -1205,7 +1205,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the disk used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given disk name.
@@ -1351,7 +1351,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the image used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given image name.
@@ -1367,7 +1367,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the image used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given image name.
@@ -1383,7 +1383,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the image used to create this image. This value may be used
    * to determine whether the image was taken from the current or a previous
    * instance of a given image name.
@@ -1530,7 +1530,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the snapshot used to create this image. This value may be
    * used to determine whether the snapshot was taken from the current or a
    * previous instance of a given snapshot name.
@@ -1546,7 +1546,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the snapshot used to create this image. This value may be
    * used to determine whether the snapshot was taken from the current or a
    * previous instance of a given snapshot name.
@@ -1562,7 +1562,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only]
+   * Output only. [Output Only]
    * The ID value of the snapshot used to create this image. This value may be
    * used to determine whether the snapshot was taken from the current or a
    * previous instance of a given snapshot name.
@@ -1623,7 +1623,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other
+   * Output only. [Output Only] The status of the image. An image can be used to create other
    * resources, such as instances, only after the image has been successfully
    * created and the status is set to READY. Possible
    * values are FAILED, PENDING, orREADY.
@@ -1640,7 +1640,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other
+   * Output only. [Output Only] The status of the image. An image can be used to create other
    * resources, such as instances, only after the image has been successfully
    * created and the status is set to READY. Possible
    * values are FAILED, PENDING, orREADY.
@@ -1657,7 +1657,7 @@ public interface ImageOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the image. An image can be used to create other
+   * Output only. [Output Only] The status of the image. An image can be used to create other
    * resources, such as instances, only after the image has been successfully
    * created and the status is set to READY. Possible
    * values are FAILED, PENDING, orREADY.

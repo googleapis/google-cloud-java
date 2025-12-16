@@ -28,7 +28,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -39,7 +39,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -50,7 +50,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -61,7 +61,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -73,7 +73,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] AS-PATH for the route
+   * Output only. [Output only] AS-PATH for the route
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BgpRouteAsPath as_paths = 137568929;</code>
@@ -84,7 +84,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -97,7 +97,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -110,7 +110,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -124,7 +124,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP communities in human-readable A:B format.
+   * Output only. [Output only] BGP communities in human-readable A:B format.
    * </pre>
    *
    * <code>repeated string communities = 188262983;</code>
@@ -138,7 +138,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
    * format
    * </pre>
    *
@@ -154,7 +154,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
    * format
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Destination IP range for the route, in human-readable CIDR
+   * Output only. [Output only] Destination IP range for the route, in human-readable CIDR
    * format
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP multi-exit discriminator
+   * Output only. [Output only] BGP multi-exit discriminator
    * </pre>
    *
    * <code>optional uint32 med = 107980;</code>
@@ -198,7 +198,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP multi-exit discriminator
+   * Output only. [Output only] BGP multi-exit discriminator
    * </pre>
    *
    * <code>optional uint32 med = 107980;</code>
@@ -211,7 +211,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *
@@ -225,7 +225,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *
@@ -239,7 +239,7 @@ public interface BgpRouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] BGP origin (EGP, IGP or INCOMPLETE)
+   * Output only. [Output only] BGP origin (EGP, IGP or INCOMPLETE)
    * Check the Origin enum for the list of possible values.
    * </pre>
    *

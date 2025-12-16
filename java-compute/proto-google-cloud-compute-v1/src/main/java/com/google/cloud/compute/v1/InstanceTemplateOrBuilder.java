@@ -28,7 +28,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * Output only. [Output Only] The creation timestamp for this instance template inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * Output only. [Output Only] The creation timestamp for this instance template inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this instance template inRFC3339
+   * Output only. [Output Only] The creation timestamp for this instance template inRFC3339
    * text format.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance template. The server
+   * Output only. [Output Only] A unique identifier for this instance template. The server
    * defines this identifier.
    * </pre>
    *
@@ -126,7 +126,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this instance template. The server
+   * Output only. [Output Only] A unique identifier for this instance template. The server
    * defines this identifier.
    * </pre>
    *
@@ -140,7 +140,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -153,7 +153,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -166,7 +166,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
+   * Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -273,7 +273,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only
+   * Output only. [Output Only] URL of the region where the instance template resides. Only
    * applicable for regional resources.
    * </pre>
    *
@@ -287,7 +287,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only
+   * Output only. [Output Only] URL of the region where the instance template resides. Only
    * applicable for regional resources.
    * </pre>
    *
@@ -301,7 +301,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the instance template resides. Only
+   * Output only. [Output Only] URL of the region where the instance template resides. Only
    * applicable for regional resources.
    * </pre>
    *
@@ -315,7 +315,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this
+   * Output only. [Output Only] The URL for this instance template. The server defines this
    * URL.
    * </pre>
    *
@@ -329,7 +329,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this
+   * Output only. [Output Only] The URL for this instance template. The server defines this
    * URL.
    * </pre>
    *
@@ -343,7 +343,7 @@ public interface InstanceTemplateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL for this instance template. The server defines this
+   * Output only. [Output Only] The URL for this instance template. The server defines this
    * URL.
    * </pre>
    *

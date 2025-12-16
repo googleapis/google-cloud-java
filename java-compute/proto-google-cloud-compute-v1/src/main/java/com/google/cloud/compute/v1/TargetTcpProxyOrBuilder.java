@@ -28,7 +28,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -140,7 +140,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -153,7 +153,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -166,7 +166,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -330,7 +330,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TCP proxy resides.
+   * Output only. [Output Only] URL of the region where the regional TCP proxy resides.
    * This field is not applicable to global TCP proxy.
    * </pre>
    *
@@ -344,7 +344,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TCP proxy resides.
+   * Output only. [Output Only] URL of the region where the regional TCP proxy resides.
    * This field is not applicable to global TCP proxy.
    * </pre>
    *
@@ -358,7 +358,7 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional TCP proxy resides.
+   * Output only. [Output Only] URL of the region where the regional TCP proxy resides.
    * This field is not applicable to global TCP proxy.
    * </pre>
    *
