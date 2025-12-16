@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.40.0 (2025-12-16)
+
+### ⚠ BREAKING CHANGES
+
+* Added proto3 optional to Network primitive fields
+
+### Bug Fixes
+
+* Added proto3 optional to Network primitive fields ([ecb0b2a](https://github.com/googleapis/google-cloud-java/commit/ecb0b2aa4c83c8da51d0655cfa3811c5f8a4e6a4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.54.2 ([#11819](https://github.com/googleapis/google-cloud-java/issues/11819)) ([f32924a](https://github.com/googleapis/google-cloud-java/commit/f32924af0899a0b34646e88ffa8c527163b3bb24))
+
+
 ## 0.37.0 (2025-10-21)
 
 ### Dependencies
