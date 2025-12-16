@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.9.0 (2025-12-15)
+
+### Features
+
+* Set channelID in call options for downstream interceptors (#225)
+
 ## 1.8.0 (2025-12-12)
 
 ### Features
