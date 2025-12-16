@@ -95,6 +95,13 @@ public class GcpManagedChannel extends ManagedChannel {
   public static final Context.Key<String> AFFINITY_CTX_KEY = Context.key("AffinityKey");
   public static final CallOptions.Key<String> AFFINITY_KEY = CallOptions.Key.create("AffinityKey");
 
+  /**
+   * CallOptions key that will be set by grpc-gcp with the actual channel ID used for the call. This
+   * can be read by downstream interceptors to get the real channel ID after channel selection.
+   */
+  public static final CallOptions.Key<Integer> CHANNEL_ID_KEY =
+      CallOptions.Key.create("GcpChannelId");
+
   @GuardedBy("this")
   private Integer bindingIndex = -1;
 

@@ -233,7 +233,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         MethodDescriptor<ReqT, RespT> methodDescriptor,
         CallOptions callOptions) {
       this.channelRef = channelRef;
-      this.delegateCall = channelRef.getChannel().newCall(methodDescriptor, callOptions);
+      // Set the actual channel ID in callOptions so downstream interceptors can access it.
+      CallOptions callOptionsWithChannelId =
+          callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
+      this.delegateCall =
+          channelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
     }
 
     @Override
