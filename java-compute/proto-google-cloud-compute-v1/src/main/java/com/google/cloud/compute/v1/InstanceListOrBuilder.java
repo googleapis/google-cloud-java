@@ -122,7 +122,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#instanceList
+   * Output only. [Output Only] Type of resource. Always compute#instanceList
    * for lists of Instance resources.
    * </pre>
    *
@@ -136,7 +136,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#instanceList
+   * Output only. [Output Only] Type of resource. Always compute#instanceList
    * for lists of Instance resources.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#instanceList
+   * Output only. [Output Only] Type of resource. Always compute#instanceList
    * for lists of Instance resources.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -228,7 +228,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -241,7 +241,7 @@ public interface InstanceListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

@@ -28,7 +28,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -180,7 +180,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -194,7 +194,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -252,7 +252,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -265,7 +265,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -278,7 +278,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -372,7 +372,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The system status of the resource policy.
+   * Output only. [Output Only] The system status of the resource policy.
    * </pre>
    *
    * <code>
@@ -387,7 +387,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The system status of the resource policy.
+   * Output only. [Output Only] The system status of the resource policy.
    * </pre>
    *
    * <code>
@@ -402,7 +402,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The system status of the resource policy.
+   * Output only. [Output Only] The system status of the resource policy.
    * </pre>
    *
    * <code>
@@ -415,7 +415,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -428,7 +428,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -441,7 +441,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -498,7 +498,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of resource policy creation.
+   * Output only. [Output Only] The status of resource policy creation.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -512,7 +512,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of resource policy creation.
+   * Output only. [Output Only] The status of resource policy creation.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -526,7 +526,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of resource policy creation.
+   * Output only. [Output Only] The status of resource policy creation.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

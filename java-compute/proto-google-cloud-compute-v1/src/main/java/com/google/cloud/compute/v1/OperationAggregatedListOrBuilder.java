@@ -138,7 +138,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operationAggregatedList`
+   * Output only. [Output Only] Type of resource. Always `compute#operationAggregatedList`
    * for aggregated lists of operations.
    * </pre>
    *
@@ -152,7 +152,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operationAggregatedList`
+   * Output only. [Output Only] Type of resource. Always `compute#operationAggregatedList`
    * for aggregated lists of operations.
    * </pre>
    *
@@ -166,7 +166,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always `compute#operationAggregatedList`
+   * Output only. [Output Only] Type of resource. Always `compute#operationAggregatedList`
    * for aggregated lists of operations.
    * </pre>
    *
@@ -273,7 +273,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -286,7 +286,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -299,7 +299,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -313,7 +313,7 @@ public interface OperationAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>

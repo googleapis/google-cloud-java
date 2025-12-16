@@ -28,7 +28,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -69,7 +69,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>
@@ -86,7 +86,7 @@ public interface AllocationAggregateReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of resources currently in use.
+   * Output only. [Output only] List of resources currently in use.
    * </pre>
    *
    * <code>

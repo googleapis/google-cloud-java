@@ -177,7 +177,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -190,7 +190,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -203,7 +203,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#storagePoolType for storage pool types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -478,7 +478,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -491,7 +491,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -504,7 +504,7 @@ public interface StoragePoolTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>

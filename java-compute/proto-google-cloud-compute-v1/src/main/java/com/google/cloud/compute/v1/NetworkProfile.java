@@ -80,7 +80,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -97,7 +97,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -122,7 +122,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -152,7 +152,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional description of this resource.
+   * Output only. [Output Only] An optional description of this resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -168,7 +168,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional description of this resource.
+   * Output only. [Output Only] An optional description of this resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -192,7 +192,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional description of this resource.
+   * Output only. [Output Only] An optional description of this resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -219,7 +219,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Features supported by the network.
+   * Output only. [Output Only] Features supported by the network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -236,7 +236,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Features supported by the network.
+   * Output only. [Output Only] Features supported by the network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -255,7 +255,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Features supported by the network.
+   * Output only. [Output Only] Features supported by the network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -275,7 +275,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -292,7 +292,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -314,7 +314,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -330,7 +330,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -354,7 +354,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -381,7 +381,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Location to which the network is restricted.
+   * Output only. [Output Only] Location to which the network is restricted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -397,7 +397,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Location to which the network is restricted.
+   * Output only. [Output Only] Location to which the network is restricted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -415,7 +415,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Location to which the network is restricted.
+   * Output only. [Output Only] Location to which the network is restricted.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -436,7 +436,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -452,7 +452,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -476,7 +476,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -503,7 +503,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the network profile.
+   * Output only. [Output Only] Type of the network profile.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -520,7 +520,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the network profile.
+   * Output only. [Output Only] Type of the network profile.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -539,7 +539,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the network profile.
+   * Output only. [Output Only] Type of the network profile.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -561,7 +561,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -577,7 +577,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -601,7 +601,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -630,7 +630,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -646,7 +646,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -670,7 +670,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1414,7 +1414,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1430,7 +1430,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1454,7 +1454,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1478,7 +1478,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1501,7 +1501,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1520,7 +1520,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1546,7 +1546,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1561,7 +1561,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1584,7 +1584,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1607,7 +1607,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1629,7 +1629,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1647,7 +1647,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional description of this resource.
+     * Output only. [Output Only] An optional description of this resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1677,7 +1677,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1693,7 +1693,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1715,7 +1715,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1739,7 +1739,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1761,7 +1761,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1791,7 +1791,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1812,7 +1812,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1828,7 +1828,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1849,7 +1849,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Features supported by the network.
+     * Output only. [Output Only] Features supported by the network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileNetworkFeatures features = 246211645;
@@ -1878,7 +1878,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -1895,7 +1895,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -1912,7 +1912,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -1933,7 +1933,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -1954,7 +1954,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1969,7 +1969,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1992,7 +1992,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2015,7 +2015,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2037,7 +2037,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2055,7 +2055,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2085,7 +2085,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2100,7 +2100,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2121,7 +2121,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2144,7 +2144,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2165,7 +2165,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2194,7 +2194,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2214,7 +2214,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2229,7 +2229,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2248,7 +2248,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Location to which the network is restricted.
+     * Output only. [Output Only] Location to which the network is restricted.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileLocation location = 290430901;</code>
@@ -2276,7 +2276,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2291,7 +2291,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2314,7 +2314,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2337,7 +2337,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2359,7 +2359,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2377,7 +2377,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2407,7 +2407,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2423,7 +2423,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2445,7 +2445,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2469,7 +2469,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2491,7 +2491,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2521,7 +2521,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2542,7 +2542,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2558,7 +2558,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2579,7 +2579,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the network profile.
+     * Output only. [Output Only] Type of the network profile.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
@@ -2608,7 +2608,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2623,7 +2623,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2646,7 +2646,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2669,7 +2669,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2691,7 +2691,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2709,7 +2709,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2734,7 +2734,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2749,7 +2749,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2772,7 +2772,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2795,7 +2795,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2817,7 +2817,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -2835,7 +2835,7 @@ public final class NetworkProfile extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>

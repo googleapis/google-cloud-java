@@ -74,7 +74,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ReservationSubBlock.Status}
@@ -267,7 +267,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Slice info for the reservation subBlock.
+   * Output only. [Output Only] Slice info for the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -285,7 +285,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Slice info for the reservation subBlock.
+   * Output only. [Output Only] Slice info for the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -305,7 +305,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Slice info for the reservation subBlock.
+   * Output only. [Output Only] Slice info for the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -327,7 +327,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this
+   * Output only. [Output Only] The number of hosts that are allocated in this
    * reservation subBlock.
    * </pre>
    *
@@ -344,7 +344,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of hosts that are allocated in this
+   * Output only. [Output Only] The number of hosts that are allocated in this
    * reservation subBlock.
    * </pre>
    *
@@ -366,7 +366,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -382,7 +382,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -406,7 +406,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -433,7 +433,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -450,7 +450,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -469,7 +469,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation subBlock.
+   * Output only. [Output Only] Health information for the reservation subBlock.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationSubBlockHealthInfo health_info = 235287729;
@@ -490,7 +490,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -507,7 +507,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -527,7 +527,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this
+   * Output only. [Output Only] The number of instances that are currently in use on this
    * reservation subBlock.
    * </pre>
    *
@@ -544,7 +544,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this
+   * Output only. [Output Only] The number of instances that are currently in use on this
    * reservation subBlock.
    * </pre>
    *
@@ -566,7 +566,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -582,7 +582,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -606,7 +606,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -635,7 +635,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -653,7 +653,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -679,7 +679,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation subBlock generated by Google
+   * Output only. [Output Only] The name of this reservation subBlock generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -708,7 +708,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -726,7 +726,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -746,7 +746,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation subBlock.
+   * Output only. [Output Only] The physical topology of the reservation subBlock.
    * </pre>
    *
    * <code>
@@ -768,7 +768,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -786,7 +786,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -806,7 +806,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Maintenance information for this reservation subBlock.
+   * Output only. Maintenance information for this reservation subBlock.
    * </pre>
    *
    * <code>
@@ -830,7 +830,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -846,7 +846,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -870,7 +870,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -899,7 +899,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -915,7 +915,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -939,7 +939,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -968,7 +968,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -985,7 +985,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1010,7 +1010,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation subBlock.
+   * Output only. [Output Only] Status of the reservation subBlock.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1040,7 +1040,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1056,7 +1056,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1080,7 +1080,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation subBlock resides.
+   * Output only. [Output Only] Zone in which the reservation subBlock resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1887,7 +1887,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -1904,7 +1904,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -1927,7 +1927,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -1953,7 +1953,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -1976,7 +1976,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2008,7 +2008,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2030,7 +2030,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2048,7 +2048,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2070,7 +2070,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Slice info for the reservation subBlock.
+     * Output only. [Output Only] Slice info for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2100,7 +2100,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this
+     * Output only. [Output Only] The number of hosts that are allocated in this
      * reservation subBlock.
      * </pre>
      *
@@ -2117,7 +2117,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this
+     * Output only. [Output Only] The number of hosts that are allocated in this
      * reservation subBlock.
      * </pre>
      *
@@ -2134,7 +2134,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this
+     * Output only. [Output Only] The number of hosts that are allocated in this
      * reservation subBlock.
      * </pre>
      *
@@ -2155,7 +2155,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of hosts that are allocated in this
+     * Output only. [Output Only] The number of hosts that are allocated in this
      * reservation subBlock.
      * </pre>
      *
@@ -2176,7 +2176,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2191,7 +2191,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2214,7 +2214,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2237,7 +2237,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2259,7 +2259,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2277,7 +2277,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2307,7 +2307,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2324,7 +2324,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2347,7 +2347,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2372,7 +2372,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2395,7 +2395,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2427,7 +2427,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2449,7 +2449,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2467,7 +2467,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2489,7 +2489,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation subBlock.
+     * Output only. [Output Only] Health information for the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2519,7 +2519,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2536,7 +2536,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2553,7 +2553,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2574,7 +2574,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2595,7 +2595,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation subBlock.
      * </pre>
      *
@@ -2612,7 +2612,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation subBlock.
      * </pre>
      *
@@ -2629,7 +2629,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation subBlock.
      * </pre>
      *
@@ -2650,7 +2650,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation subBlock.
      * </pre>
      *
@@ -2671,7 +2671,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2686,7 +2686,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2709,7 +2709,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2732,7 +2732,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2754,7 +2754,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2772,7 +2772,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationSubBlock for reservation subBlocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2797,7 +2797,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2814,7 +2814,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2839,7 +2839,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2864,7 +2864,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2888,7 +2888,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2908,7 +2908,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation subBlock generated by Google
+     * Output only. [Output Only] The name of this reservation subBlock generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2940,7 +2940,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2957,7 +2957,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -2980,7 +2980,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3006,7 +3006,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3029,7 +3029,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3062,7 +3062,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3084,7 +3084,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3102,7 +3102,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3124,7 +3124,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation subBlock.
+     * Output only. [Output Only] The physical topology of the reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3159,7 +3159,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3176,7 +3176,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3199,7 +3199,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3225,7 +3225,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3248,7 +3248,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3280,7 +3280,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3302,7 +3302,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3320,7 +3320,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3342,7 +3342,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Maintenance information for this reservation subBlock.
+     * Output only. Maintenance information for this reservation subBlock.
      * </pre>
      *
      * <code>
@@ -3372,7 +3372,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3387,7 +3387,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3410,7 +3410,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3433,7 +3433,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3455,7 +3455,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3473,7 +3473,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3498,7 +3498,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3513,7 +3513,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3536,7 +3536,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3559,7 +3559,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3581,7 +3581,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3599,7 +3599,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3624,7 +3624,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3640,7 +3640,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3664,7 +3664,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3688,7 +3688,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3711,7 +3711,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3730,7 +3730,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation subBlock.
+     * Output only. [Output Only] Status of the reservation subBlock.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3756,7 +3756,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3771,7 +3771,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3794,7 +3794,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3817,7 +3817,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3839,7 +3839,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3857,7 +3857,7 @@ public final class ReservationSubBlock extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation subBlock resides.
+     * Output only. [Output Only] Zone in which the reservation subBlock resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

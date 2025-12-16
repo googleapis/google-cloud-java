@@ -147,7 +147,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
+   * Output only. [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
    * reservations
    * </pre>
    *
@@ -161,7 +161,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
+   * Output only. [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
    * reservations
    * </pre>
    *
@@ -175,7 +175,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
+   * Output only. [Output Only] Type of resource.Alwayscompute#FutureReservationsListResponse for lists of
    * reservations
    * </pre>
    *
@@ -240,7 +240,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -253,7 +253,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -266,7 +266,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -279,7 +279,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -292,7 +292,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -305,7 +305,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -319,7 +319,7 @@ public interface FutureReservationsListResponseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>

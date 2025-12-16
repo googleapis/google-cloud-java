@@ -28,7 +28,7 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
    * delete the instance.
    * </pre>
    *
@@ -43,7 +43,7 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
    * delete the instance.
    * </pre>
    *
@@ -58,7 +58,7 @@ public interface ManagedInstanceLastAttemptOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Encountered errors during the last attempt to create or
+   * Output only. [Output Only] Encountered errors during the last attempt to create or
    * delete the instance.
    * </pre>
    *

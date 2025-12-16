@@ -28,7 +28,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on
+   * Output only. [Output Only] Action that managed instance group was executing on
    * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
@@ -43,7 +43,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on
+   * Output only. [Output Only] Action that managed instance group was executing on
    * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
@@ -58,7 +58,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Action that managed instance group was executing on
+   * Output only. [Output Only] Action that managed instance group was executing on
    * the instance when the error occurred. Possible values:
    * Check the Action enum for the list of possible values.
    * </pre>
@@ -73,7 +73,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
@@ -87,7 +87,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
@@ -101,7 +101,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * The URL can be set even if the instance has not yet been created.
    * </pre>
    *
@@ -115,7 +115,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being
+   * Output only. [Output Only] Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.
@@ -131,7 +131,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being
+   * Output only. [Output Only] Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.
@@ -147,7 +147,7 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Version this instance was created from, or was being
+   * Output only. [Output Only] Version this instance was created from, or was being
    * created from, but the creation failed. Corresponds to one of the versions
    * that were set on the Instance Group Manager resource at the time this
    * instance was being created.

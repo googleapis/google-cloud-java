@@ -1107,6 +1107,2485 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface RaiSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>
+        getCategoryFiltersList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+        getCategoryFilters(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getCategoryFiltersCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                    .CategoryFilterOrBuilder>
+        getCategoryFiltersOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilterOrBuilder
+        getCategoryFiltersOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for Responsible AI.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings}
+   */
+  public static final class RaiSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)
+      RaiSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RaiSettings.newBuilder() to construct.
+    private RaiSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RaiSettings() {
+      categoryFilters_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RaiSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.class,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitivity level for RAI categories.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel}
+     */
+    public enum SafetyFilterLevel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified -- uses default sensitivity levels.
+       * </pre>
+       *
+       * <code>SAFETY_FILTER_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      SAFETY_FILTER_LEVEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Block no text -- effectively disables the category.
+       * </pre>
+       *
+       * <code>BLOCK_NONE = 1;</code>
+       */
+      BLOCK_NONE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Block a few suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_FEW = 2;</code>
+       */
+      BLOCK_FEW(2),
+      /**
+       *
+       *
+       * <pre>
+       * Block some suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_SOME = 3;</code>
+       */
+      BLOCK_SOME(3),
+      /**
+       *
+       *
+       * <pre>
+       * Block most suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_MOST = 4;</code>
+       */
+      BLOCK_MOST(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified -- uses default sensitivity levels.
+       * </pre>
+       *
+       * <code>SAFETY_FILTER_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int SAFETY_FILTER_LEVEL_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Block no text -- effectively disables the category.
+       * </pre>
+       *
+       * <code>BLOCK_NONE = 1;</code>
+       */
+      public static final int BLOCK_NONE_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Block a few suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_FEW = 2;</code>
+       */
+      public static final int BLOCK_FEW_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Block some suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_SOME = 3;</code>
+       */
+      public static final int BLOCK_SOME_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Block most suspicious texts.
+       * </pre>
+       *
+       * <code>BLOCK_MOST = 4;</code>
+       */
+      public static final int BLOCK_MOST_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SafetyFilterLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SafetyFilterLevel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SAFETY_FILTER_LEVEL_UNSPECIFIED;
+          case 1:
+            return BLOCK_NONE;
+          case 2:
+            return BLOCK_FEW;
+          case 3:
+            return BLOCK_SOME;
+          case 4:
+            return BLOCK_MOST;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SafetyFilterLevel>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SafetyFilterLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SafetyFilterLevel>() {
+                public SafetyFilterLevel findValueByNumber(int number) {
+                  return SafetyFilterLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SafetyFilterLevel[] VALUES = values();
+
+      public static SafetyFilterLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SafetyFilterLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * RAI categories to configure.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory}
+     */
+    public enum SafetyCategory implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SAFETY_CATEGORY_UNSPECIFIED = 0;</code>
+       */
+      SAFETY_CATEGORY_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Dangerous content.
+       * </pre>
+       *
+       * <code>DANGEROUS_CONTENT = 1;</code>
+       */
+      DANGEROUS_CONTENT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Hate speech.
+       * </pre>
+       *
+       * <code>HATE_SPEECH = 2;</code>
+       */
+      HATE_SPEECH(2),
+      /**
+       *
+       *
+       * <pre>
+       * Harassment.
+       * </pre>
+       *
+       * <code>HARASSMENT = 3;</code>
+       */
+      HARASSMENT(3),
+      /**
+       *
+       *
+       * <pre>
+       * Sexually explicit content.
+       * </pre>
+       *
+       * <code>SEXUALLY_EXPLICIT_CONTENT = 4;</code>
+       */
+      SEXUALLY_EXPLICIT_CONTENT(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified.
+       * </pre>
+       *
+       * <code>SAFETY_CATEGORY_UNSPECIFIED = 0;</code>
+       */
+      public static final int SAFETY_CATEGORY_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Dangerous content.
+       * </pre>
+       *
+       * <code>DANGEROUS_CONTENT = 1;</code>
+       */
+      public static final int DANGEROUS_CONTENT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Hate speech.
+       * </pre>
+       *
+       * <code>HATE_SPEECH = 2;</code>
+       */
+      public static final int HATE_SPEECH_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Harassment.
+       * </pre>
+       *
+       * <code>HARASSMENT = 3;</code>
+       */
+      public static final int HARASSMENT_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Sexually explicit content.
+       * </pre>
+       *
+       * <code>SEXUALLY_EXPLICIT_CONTENT = 4;</code>
+       */
+      public static final int SEXUALLY_EXPLICIT_CONTENT_VALUE = 4;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SafetyCategory valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SafetyCategory forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SAFETY_CATEGORY_UNSPECIFIED;
+          case 1:
+            return DANGEROUS_CONTENT;
+          case 2:
+            return HATE_SPEECH;
+          case 3:
+            return HARASSMENT;
+          case 4:
+            return SEXUALLY_EXPLICIT_CONTENT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SafetyCategory> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SafetyCategory>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SafetyCategory>() {
+                public SafetyCategory findValueByNumber(int number) {
+                  return SafetyCategory.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final SafetyCategory[] VALUES = values();
+
+      public static SafetyCategory valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SafetyCategory(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory)
+    }
+
+    public interface CategoryFilterOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * RAI category to configure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for category.
+       */
+      int getCategoryValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * RAI category to configure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+       * </code>
+       *
+       * @return The category.
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+          getCategory();
+
+      /**
+       *
+       *
+       * <pre>
+       * Blocking sensitivity level to configure for the RAI category.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for filterLevel.
+       */
+      int getFilterLevelValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Blocking sensitivity level to configure for the RAI category.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+       * </code>
+       *
+       * @return The filterLevel.
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+          getFilterLevel();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration of the sensitivity level for blocking an RAI category.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter}
+     */
+    public static final class CategoryFilter extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+        CategoryFilterOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use CategoryFilter.newBuilder() to construct.
+      private CategoryFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private CategoryFilter() {
+        category_ = 0;
+        filterLevel_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new CategoryFilter();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                    .class,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                    .Builder.class);
+      }
+
+      public static final int CATEGORY_FIELD_NUMBER = 1;
+      private int category_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * RAI category to configure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for category.
+       */
+      @java.lang.Override
+      public int getCategoryValue() {
+        return category_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * RAI category to configure.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+       * </code>
+       *
+       * @return The category.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+          getCategory() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory result =
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                .forNumber(category_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                .UNRECOGNIZED
+            : result;
+      }
+
+      public static final int FILTER_LEVEL_FIELD_NUMBER = 2;
+      private int filterLevel_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Blocking sensitivity level to configure for the RAI category.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for filterLevel.
+       */
+      @java.lang.Override
+      public int getFilterLevelValue() {
+        return filterLevel_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Blocking sensitivity level to configure for the RAI category.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+       * </code>
+       *
+       * @return The filterLevel.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+          getFilterLevel() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel result =
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                .forNumber(filterLevel_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                .UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (category_
+            != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                .SAFETY_CATEGORY_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, category_);
+        }
+        if (filterLevel_
+            != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                .SAFETY_FILTER_LEVEL_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, filterLevel_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (category_
+            != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                .SAFETY_CATEGORY_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, category_);
+        }
+        if (filterLevel_
+            != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                .SAFETY_FILTER_LEVEL_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, filterLevel_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter other =
+            (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter) obj;
+
+        if (category_ != other.category_) return false;
+        if (filterLevel_ != other.filterLevel_) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + category_;
+        hash = (37 * hash) + FILTER_LEVEL_FIELD_NUMBER;
+        hash = (53 * hash) + filterLevel_;
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration of the sensitivity level for blocking an RAI category.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+              .CategoryFilterOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                      .class,
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          category_ = 0;
+          filterLevel_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+              .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_CategoryFilter_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+            getDefaultInstanceForType() {
+          return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+            build() {
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+            buildPartial() {
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter result =
+              new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.category_ = category_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.filterLevel_ = filterLevel_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter) {
+            return mergeFrom(
+                (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                other) {
+          if (other
+              == com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                  .getDefaultInstance()) return this;
+          if (other.category_ != 0) {
+            setCategoryValue(other.getCategoryValue());
+          }
+          if (other.filterLevel_ != 0) {
+            setFilterLevelValue(other.getFilterLevelValue());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    category_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 16:
+                  {
+                    filterLevel_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int category_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * RAI category to configure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for category.
+         */
+        @java.lang.Override
+        public int getCategoryValue() {
+          return category_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * RAI category to configure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for category to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCategoryValue(int value) {
+          category_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * RAI category to configure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+         * </code>
+         *
+         * @return The category.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+            getCategory() {
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory result =
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                  .forNumber(category_);
+          return result == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * RAI category to configure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+         * </code>
+         *
+         * @param value The category to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCategory(
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          category_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * RAI category to configure.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyCategory category = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCategory() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          category_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int filterLevel_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Blocking sensitivity level to configure for the RAI category.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for filterLevel.
+         */
+        @java.lang.Override
+        public int getFilterLevelValue() {
+          return filterLevel_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Blocking sensitivity level to configure for the RAI category.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for filterLevel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilterLevelValue(int value) {
+          filterLevel_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Blocking sensitivity level to configure for the RAI category.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+         * </code>
+         *
+         * @return The filterLevel.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+            getFilterLevel() {
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+              result =
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                      .SafetyFilterLevel.forNumber(filterLevel_);
+          return result == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Blocking sensitivity level to configure for the RAI category.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+         * </code>
+         *
+         * @param value The filterLevel to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFilterLevel(
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          filterLevel_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Blocking sensitivity level to configure for the RAI category.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.SafetyFilterLevel filter_level = 2;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFilterLevel() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          filterLevel_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter)
+      private static final com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+              .CategoryFilter
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter();
+      }
+
+      public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<CategoryFilter> PARSER =
+          new com.google.protobuf.AbstractParser<CategoryFilter>() {
+            @java.lang.Override
+            public CategoryFilter parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<CategoryFilter> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<CategoryFilter> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int CATEGORY_FILTERS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>
+        categoryFilters_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>
+        getCategoryFiltersList() {
+      return categoryFilters_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                    .CategoryFilterOrBuilder>
+        getCategoryFiltersOrBuilderList() {
+      return categoryFilters_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getCategoryFiltersCount() {
+      return categoryFilters_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+        getCategoryFilters(int index) {
+      return categoryFilters_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. RAI blocking configurations.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilterOrBuilder
+        getCategoryFiltersOrBuilder(int index) {
+      return categoryFilters_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < categoryFilters_.size(); i++) {
+        output.writeMessage(3, categoryFilters_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < categoryFilters_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, categoryFilters_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings other =
+          (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings) obj;
+
+      if (!getCategoryFiltersList().equals(other.getCategoryFiltersList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getCategoryFiltersCount() > 0) {
+        hash = (37 * hash) + CATEGORY_FILTERS_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryFiltersList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for Responsible AI.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.class,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (categoryFiltersBuilder_ == null) {
+          categoryFilters_ = java.util.Collections.emptyList();
+        } else {
+          categoryFilters_ = null;
+          categoryFiltersBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_SafetySettings_RaiSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings build() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings result =
+            new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings result) {
+        if (categoryFiltersBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            categoryFilters_ = java.util.Collections.unmodifiableList(categoryFilters_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.categoryFilters_ = categoryFilters_;
+        } else {
+          result.categoryFilters_ = categoryFiltersBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                .getDefaultInstance()) return this;
+        if (categoryFiltersBuilder_ == null) {
+          if (!other.categoryFilters_.isEmpty()) {
+            if (categoryFilters_.isEmpty()) {
+              categoryFilters_ = other.categoryFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureCategoryFiltersIsMutable();
+              categoryFilters_.addAll(other.categoryFilters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.categoryFilters_.isEmpty()) {
+            if (categoryFiltersBuilder_.isEmpty()) {
+              categoryFiltersBuilder_.dispose();
+              categoryFiltersBuilder_ = null;
+              categoryFilters_ = other.categoryFilters_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              categoryFiltersBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getCategoryFiltersFieldBuilder()
+                      : null;
+            } else {
+              categoryFiltersBuilder_.addAllMessages(other.categoryFilters_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26:
+                {
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                      m =
+                          input.readMessage(
+                              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                                  .CategoryFilter.parser(),
+                              extensionRegistry);
+                  if (categoryFiltersBuilder_ == null) {
+                    ensureCategoryFiltersIsMutable();
+                    categoryFilters_.add(m);
+                  } else {
+                    categoryFiltersBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>
+          categoryFilters_ = java.util.Collections.emptyList();
+
+      private void ensureCategoryFiltersIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          categoryFilters_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>(
+                  categoryFilters_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                  .CategoryFilterOrBuilder>
+          categoryFiltersBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter>
+          getCategoryFiltersList() {
+        if (categoryFiltersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(categoryFilters_);
+        } else {
+          return categoryFiltersBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getCategoryFiltersCount() {
+        if (categoryFiltersBuilder_ == null) {
+          return categoryFilters_.size();
+        } else {
+          return categoryFiltersBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+          getCategoryFilters(int index) {
+        if (categoryFiltersBuilder_ == null) {
+          return categoryFilters_.get(index);
+        } else {
+          return categoryFiltersBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCategoryFilters(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter value) {
+        if (categoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.set(index, value);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setCategoryFilters(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter.Builder
+              builderForValue) {
+        if (categoryFiltersBuilder_ == null) {
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addCategoryFilters(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter value) {
+        if (categoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.add(value);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addCategoryFilters(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter value) {
+        if (categoryFiltersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.add(index, value);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addCategoryFilters(
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter.Builder
+              builderForValue) {
+        if (categoryFiltersBuilder_ == null) {
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addCategoryFilters(
+          int index,
+          com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter.Builder
+              builderForValue) {
+        if (categoryFiltersBuilder_ == null) {
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllCategoryFilters(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                          .CategoryFilter>
+              values) {
+        if (categoryFiltersBuilder_ == null) {
+          ensureCategoryFiltersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categoryFilters_);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearCategoryFilters() {
+        if (categoryFiltersBuilder_ == null) {
+          categoryFilters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeCategoryFilters(int index) {
+        if (categoryFiltersBuilder_ == null) {
+          ensureCategoryFiltersIsMutable();
+          categoryFilters_.remove(index);
+          onChanged();
+        } else {
+          categoryFiltersBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+              .Builder
+          getCategoryFiltersBuilder(int index) {
+        return getCategoryFiltersFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+              .CategoryFilterOrBuilder
+          getCategoryFiltersOrBuilder(int index) {
+        if (categoryFiltersBuilder_ == null) {
+          return categoryFilters_.get(index);
+        } else {
+          return categoryFiltersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                      .CategoryFilterOrBuilder>
+          getCategoryFiltersOrBuilderList() {
+        if (categoryFiltersBuilder_ != null) {
+          return categoryFiltersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(categoryFilters_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+              .Builder
+          addCategoryFiltersBuilder() {
+        return getCategoryFiltersFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+              .Builder
+          addCategoryFiltersBuilder(int index) {
+        return getCategoryFiltersFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. RAI blocking configurations.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter category_filters = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                  .Builder>
+          getCategoryFiltersBuilderList() {
+        return getCategoryFiltersFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                  .Builder,
+              com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                  .CategoryFilterOrBuilder>
+          getCategoryFiltersFieldBuilder() {
+        if (categoryFiltersBuilder_ == null) {
+          categoryFiltersBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter,
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.CategoryFilter
+                      .Builder,
+                  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                      .CategoryFilterOrBuilder>(
+                  categoryFilters_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          categoryFilters_ = null;
+        }
+        return categoryFiltersBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RaiSettings> PARSER =
+        new com.google.protobuf.AbstractParser<RaiSettings>() {
+          @java.lang.Override
+          public RaiSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RaiSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RaiSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface PromptSecuritySettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings)
@@ -1812,6 +4291,132 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     return bannedPhrases_.get(index);
   }
 
+  public static final int RAI_SETTINGS_FIELD_NUMBER = 2;
+  private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings raiSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the raiSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasRaiSettings() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The raiSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings getRaiSettings() {
+    return raiSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+        : raiSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+      getRaiSettingsOrBuilder() {
+    return raiSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+        : raiSettings_;
+  }
+
+  public static final int DEFAULT_RAI_SETTINGS_FIELD_NUMBER = 3;
+  private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings defaultRaiSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the defaultRaiSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasDefaultRaiSettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The defaultRaiSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings getDefaultRaiSettings() {
+    return defaultRaiSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+        : defaultRaiSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+      getDefaultRaiSettingsOrBuilder() {
+    return defaultRaiSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+        : defaultRaiSettings_;
+  }
+
   public static final int PROMPT_SECURITY_SETTINGS_FIELD_NUMBER = 8;
   private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
       promptSecuritySettings_;
@@ -1831,7 +4436,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPromptSecuritySettings() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -1893,13 +4498,19 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bannedPhrases_.size(); i++) {
       output.writeMessage(1, bannedPhrases_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getRaiSettings());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getDefaultRaiSettings());
+    }
     if (defaultBannedPhraseMatchStrategy_
         != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
             .PHRASE_MATCH_STRATEGY_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(4, defaultBannedPhraseMatchStrategy_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getPromptSecuritySettings());
     }
     getUnknownFields().writeTo(output);
@@ -1914,6 +4525,12 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < bannedPhrases_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, bannedPhrases_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRaiSettings());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getDefaultRaiSettings());
+    }
     if (defaultBannedPhraseMatchStrategy_
         != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PhraseMatchStrategy
             .PHRASE_MATCH_STRATEGY_UNSPECIFIED
@@ -1922,7 +4539,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               4, defaultBannedPhraseMatchStrategy_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPromptSecuritySettings());
     }
@@ -1944,6 +4561,14 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
 
     if (defaultBannedPhraseMatchStrategy_ != other.defaultBannedPhraseMatchStrategy_) return false;
     if (!getBannedPhrasesList().equals(other.getBannedPhrasesList())) return false;
+    if (hasRaiSettings() != other.hasRaiSettings()) return false;
+    if (hasRaiSettings()) {
+      if (!getRaiSettings().equals(other.getRaiSettings())) return false;
+    }
+    if (hasDefaultRaiSettings() != other.hasDefaultRaiSettings()) return false;
+    if (hasDefaultRaiSettings()) {
+      if (!getDefaultRaiSettings().equals(other.getDefaultRaiSettings())) return false;
+    }
     if (hasPromptSecuritySettings() != other.hasPromptSecuritySettings()) return false;
     if (hasPromptSecuritySettings()) {
       if (!getPromptSecuritySettings().equals(other.getPromptSecuritySettings())) return false;
@@ -1964,6 +4589,14 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     if (getBannedPhrasesCount() > 0) {
       hash = (37 * hash) + BANNED_PHRASES_FIELD_NUMBER;
       hash = (53 * hash) + getBannedPhrasesList().hashCode();
+    }
+    if (hasRaiSettings()) {
+      hash = (37 * hash) + RAI_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getRaiSettings().hashCode();
+    }
+    if (hasDefaultRaiSettings()) {
+      hash = (37 * hash) + DEFAULT_RAI_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultRaiSettings().hashCode();
     }
     if (hasPromptSecuritySettings()) {
       hash = (37 * hash) + PROMPT_SECURITY_SETTINGS_FIELD_NUMBER;
@@ -2112,6 +4745,8 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getBannedPhrasesFieldBuilder();
+        getRaiSettingsFieldBuilder();
+        getDefaultRaiSettingsFieldBuilder();
         getPromptSecuritySettingsFieldBuilder();
       }
     }
@@ -2128,6 +4763,16 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         bannedPhrasesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      raiSettings_ = null;
+      if (raiSettingsBuilder_ != null) {
+        raiSettingsBuilder_.dispose();
+        raiSettingsBuilder_ = null;
+      }
+      defaultRaiSettings_ = null;
+      if (defaultRaiSettingsBuilder_ != null) {
+        defaultRaiSettingsBuilder_.dispose();
+        defaultRaiSettingsBuilder_ = null;
+      }
       promptSecuritySettings_ = null;
       if (promptSecuritySettingsBuilder_ != null) {
         promptSecuritySettingsBuilder_.dispose();
@@ -2188,11 +4833,23 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.raiSettings_ =
+            raiSettingsBuilder_ == null ? raiSettings_ : raiSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.defaultRaiSettings_ =
+            defaultRaiSettingsBuilder_ == null
+                ? defaultRaiSettings_
+                : defaultRaiSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.promptSecuritySettings_ =
             promptSecuritySettingsBuilder_ == null
                 ? promptSecuritySettings_
                 : promptSecuritySettingsBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2273,6 +4930,12 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasRaiSettings()) {
+        mergeRaiSettings(other.getRaiSettings());
+      }
+      if (other.hasDefaultRaiSettings()) {
+        mergeDefaultRaiSettings(other.getDefaultRaiSettings());
+      }
       if (other.hasPromptSecuritySettings()) {
         mergePromptSecuritySettings(other.getPromptSecuritySettings());
       }
@@ -2316,6 +4979,19 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getRaiSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getDefaultRaiSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26
             case 32:
               {
                 defaultBannedPhraseMatchStrategy_ = input.readEnum();
@@ -2326,7 +5002,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getPromptSecuritySettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 66
             default:
@@ -2864,6 +5540,463 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       return bannedPhrasesBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings raiSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>
+        raiSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the raiSettings field is set.
+     */
+    public boolean hasRaiSettings() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The raiSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings getRaiSettings() {
+      if (raiSettingsBuilder_ == null) {
+        return raiSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+            : raiSettings_;
+      } else {
+        return raiSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings value) {
+      if (raiSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        raiSettings_ = value;
+      } else {
+        raiSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder builderForValue) {
+      if (raiSettingsBuilder_ == null) {
+        raiSettings_ = builderForValue.build();
+      } else {
+        raiSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings value) {
+      if (raiSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && raiSettings_ != null
+            && raiSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                    .getDefaultInstance()) {
+          getRaiSettingsBuilder().mergeFrom(value);
+        } else {
+          raiSettings_ = value;
+        }
+      } else {
+        raiSettingsBuilder_.mergeFrom(value);
+      }
+      if (raiSettings_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRaiSettings() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      raiSettings_ = null;
+      if (raiSettingsBuilder_ != null) {
+        raiSettingsBuilder_.dispose();
+        raiSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder
+        getRaiSettingsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getRaiSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+        getRaiSettingsOrBuilder() {
+      if (raiSettingsBuilder_ != null) {
+        return raiSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return raiSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+            : raiSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for Responsible AI checks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>
+        getRaiSettingsFieldBuilder() {
+      if (raiSettingsBuilder_ == null) {
+        raiSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>(
+                getRaiSettings(), getParentForChildren(), isClean());
+        raiSettings_ = null;
+      }
+      return raiSettingsBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings defaultRaiSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>
+        defaultRaiSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the defaultRaiSettings field is set.
+     */
+    public boolean hasDefaultRaiSettings() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The defaultRaiSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+        getDefaultRaiSettings() {
+      if (defaultRaiSettingsBuilder_ == null) {
+        return defaultRaiSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+            : defaultRaiSettings_;
+      } else {
+        return defaultRaiSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDefaultRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings value) {
+      if (defaultRaiSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        defaultRaiSettings_ = value;
+      } else {
+        defaultRaiSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder setDefaultRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder builderForValue) {
+      if (defaultRaiSettingsBuilder_ == null) {
+        defaultRaiSettings_ = builderForValue.build();
+      } else {
+        defaultRaiSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder mergeDefaultRaiSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings value) {
+      if (defaultRaiSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && defaultRaiSettings_ != null
+            && defaultRaiSettings_
+                != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings
+                    .getDefaultInstance()) {
+          getDefaultRaiSettingsBuilder().mergeFrom(value);
+        } else {
+          defaultRaiSettings_ = value;
+        }
+      } else {
+        defaultRaiSettingsBuilder_.mergeFrom(value);
+      }
+      if (defaultRaiSettings_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public Builder clearDefaultRaiSettings() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      defaultRaiSettings_ = null;
+      if (defaultRaiSettingsBuilder_ != null) {
+        defaultRaiSettingsBuilder_.dispose();
+        defaultRaiSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder
+        getDefaultRaiSettingsBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDefaultRaiSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+        getDefaultRaiSettingsOrBuilder() {
+      if (defaultRaiSettingsBuilder_ != null) {
+        return defaultRaiSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return defaultRaiSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.getDefaultInstance()
+            : defaultRaiSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+     * that users will be able to restore their RAI configurations to the default
+     * settings. Read-only field for the API proto only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>
+        getDefaultRaiSettingsFieldBuilder() {
+      if (defaultRaiSettingsBuilder_ == null) {
+        defaultRaiSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder>(
+                getDefaultRaiSettings(), getParentForChildren(), isClean());
+        defaultRaiSettings_ = null;
+      }
+      return defaultRaiSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
         promptSecuritySettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2886,7 +6019,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the promptSecuritySettings field is set.
      */
     public boolean hasPromptSecuritySettings() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2935,7 +6068,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       } else {
         promptSecuritySettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2959,7 +6092,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
       } else {
         promptSecuritySettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2978,7 +6111,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePromptSecuritySettings(
         com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings value) {
       if (promptSecuritySettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && promptSecuritySettings_ != null
             && promptSecuritySettings_
                 != com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings
@@ -2991,7 +6124,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
         promptSecuritySettingsBuilder_.mergeFrom(value);
       }
       if (promptSecuritySettings_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -3009,7 +6142,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPromptSecuritySettings() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       promptSecuritySettings_ = null;
       if (promptSecuritySettingsBuilder_ != null) {
         promptSecuritySettingsBuilder_.dispose();
@@ -3032,7 +6165,7 @@ public final class SafetySettings extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.PromptSecuritySettings.Builder
         getPromptSecuritySettingsBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPromptSecuritySettingsFieldBuilder().getBuilder();
     }

@@ -381,7 +381,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -394,7 +394,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -407,7 +407,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -613,7 +613,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing that backend bucket.
+   * Output only. [Output Only] List of resources referencing that backend bucket.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
@@ -624,7 +624,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing that backend bucket.
+   * Output only. [Output Only] List of resources referencing that backend bucket.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
@@ -635,7 +635,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing that backend bucket.
+   * Output only. [Output Only] List of resources referencing that backend bucket.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
@@ -646,7 +646,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing that backend bucket.
+   * Output only. [Output Only] List of resources referencing that backend bucket.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>
@@ -658,7 +658,7 @@ public interface BackendBucketOrBuilder
    *
    *
    * <pre>
-   * [Output Only] List of resources referencing that backend bucket.
+   * Output only. [Output Only] List of resources referencing that backend bucket.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.BackendBucketUsedBy used_by = 389320729;</code>

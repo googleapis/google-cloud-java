@@ -74,7 +74,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ReservationBlock.Status}
@@ -267,7 +267,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of resources that are allocated in this
+   * Output only. [Output Only] The number of resources that are allocated in this
    * reservation block.
    * </pre>
    *
@@ -284,7 +284,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of resources that are allocated in this
+   * Output only. [Output Only] The number of resources that are allocated in this
    * reservation block.
    * </pre>
    *
@@ -306,7 +306,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -322,7 +322,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -346,7 +346,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339 text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -373,7 +373,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -390,7 +390,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -409,7 +409,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Health information for the reservation block.
+   * Output only. [Output Only] Health information for the reservation block.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -429,7 +429,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -446,7 +446,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -466,7 +466,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this
+   * Output only. [Output Only] The number of instances that are currently in use on this
    * reservation block.
    * </pre>
    *
@@ -483,7 +483,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of instances that are currently in use on this
+   * Output only. [Output Only] The number of instances that are currently in use on this
    * reservation block.
    * </pre>
    *
@@ -505,7 +505,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -521,7 +521,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -545,7 +545,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -574,7 +574,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google
+   * Output only. [Output Only] The name of this reservation block generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -592,7 +592,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google
+   * Output only. [Output Only] The name of this reservation block generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -618,7 +618,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The name of this reservation block generated by Google
+   * Output only. [Output Only] The name of this reservation block generated by Google
    * Compute Engine. The name must be 1-63 characters long, and comply with
    * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
    * </pre>
@@ -647,7 +647,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -665,7 +665,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -685,7 +685,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The physical topology of the reservation block.
+   * Output only. [Output Only] The physical topology of the reservation block.
    * </pre>
    *
    * <code>
@@ -707,7 +707,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -725,7 +725,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -745,7 +745,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Maintenance information for this reservation block.
+   * Output only. [Output Only] Maintenance information for this reservation block.
    * </pre>
    *
    * <code>
@@ -767,7 +767,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of reservation subBlocks associated with this
+   * Output only. [Output Only] The number of reservation subBlocks associated with this
    * reservation block.
    * </pre>
    *
@@ -784,7 +784,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of reservation subBlocks associated with this
+   * Output only. [Output Only] The number of reservation subBlocks associated with this
    * reservation block.
    * </pre>
    *
@@ -804,7 +804,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of in-use reservation subBlocks associated with
+   * Output only. [Output Only] The number of in-use reservation subBlocks associated with
    * this reservation block. If at least one VM is running on a subBlock, it is
    * considered in-use.
    * </pre>
@@ -822,7 +822,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The number of in-use reservation subBlocks associated with
+   * Output only. [Output Only] The number of in-use reservation subBlocks associated with
    * this reservation block. If at least one VM is running on a subBlock, it is
    * considered in-use.
    * </pre>
@@ -845,7 +845,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -861,7 +861,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -885,7 +885,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -914,7 +914,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -930,7 +930,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -954,7 +954,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -983,7 +983,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1000,7 +1000,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1025,7 +1025,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Status of the reservation block.
+   * Output only. [Output Only] Status of the reservation block.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1055,7 +1055,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1071,7 +1071,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1095,7 +1095,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] Zone in which the reservation block resides.
+   * Output only. [Output Only] Zone in which the reservation block resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1915,7 +1915,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of resources that are allocated in this
+     * Output only. [Output Only] The number of resources that are allocated in this
      * reservation block.
      * </pre>
      *
@@ -1932,7 +1932,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of resources that are allocated in this
+     * Output only. [Output Only] The number of resources that are allocated in this
      * reservation block.
      * </pre>
      *
@@ -1949,7 +1949,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of resources that are allocated in this
+     * Output only. [Output Only] The number of resources that are allocated in this
      * reservation block.
      * </pre>
      *
@@ -1970,7 +1970,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of resources that are allocated in this
+     * Output only. [Output Only] The number of resources that are allocated in this
      * reservation block.
      * </pre>
      *
@@ -1991,7 +1991,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2006,7 +2006,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2029,7 +2029,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2052,7 +2052,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2074,7 +2074,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2092,7 +2092,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339 text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2122,7 +2122,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2138,7 +2138,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2160,7 +2160,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2184,7 +2184,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2206,7 +2206,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2236,7 +2236,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2257,7 +2257,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2273,7 +2273,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2294,7 +2294,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Health information for the reservation block.
+     * Output only. [Output Only] Health information for the reservation block.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.ReservationBlockHealthInfo health_info = 235287729;
@@ -2323,7 +2323,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2340,7 +2340,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2357,7 +2357,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2378,7 +2378,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2399,7 +2399,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation block.
      * </pre>
      *
@@ -2416,7 +2416,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation block.
      * </pre>
      *
@@ -2433,7 +2433,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation block.
      * </pre>
      *
@@ -2454,7 +2454,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of instances that are currently in use on this
+     * Output only. [Output Only] The number of instances that are currently in use on this
      * reservation block.
      * </pre>
      *
@@ -2475,7 +2475,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2490,7 +2490,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2513,7 +2513,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2536,7 +2536,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2558,7 +2558,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2576,7 +2576,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#reservationBlock for reservation blocks.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2601,7 +2601,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2618,7 +2618,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2643,7 +2643,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2668,7 +2668,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2692,7 +2692,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2712,7 +2712,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The name of this reservation block generated by Google
+     * Output only. [Output Only] The name of this reservation block generated by Google
      * Compute Engine. The name must be 1-63 characters long, and comply with
      * RFC1035 &#64;pattern [a-z](?:[-a-z0-9]{0,61}[a-z0-9])?
      * </pre>
@@ -2744,7 +2744,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2761,7 +2761,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2784,7 +2784,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2810,7 +2810,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2833,7 +2833,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2866,7 +2866,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2888,7 +2888,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2906,7 +2906,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2928,7 +2928,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The physical topology of the reservation block.
+     * Output only. [Output Only] The physical topology of the reservation block.
      * </pre>
      *
      * <code>
@@ -2963,7 +2963,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -2980,7 +2980,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3003,7 +3003,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3029,7 +3029,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3052,7 +3052,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3084,7 +3084,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3106,7 +3106,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3124,7 +3124,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3146,7 +3146,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Maintenance information for this reservation block.
+     * Output only. [Output Only] Maintenance information for this reservation block.
      * </pre>
      *
      * <code>
@@ -3176,7 +3176,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of reservation subBlocks associated with this
+     * Output only. [Output Only] The number of reservation subBlocks associated with this
      * reservation block.
      * </pre>
      *
@@ -3193,7 +3193,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of reservation subBlocks associated with this
+     * Output only. [Output Only] The number of reservation subBlocks associated with this
      * reservation block.
      * </pre>
      *
@@ -3210,7 +3210,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of reservation subBlocks associated with this
+     * Output only. [Output Only] The number of reservation subBlocks associated with this
      * reservation block.
      * </pre>
      *
@@ -3231,7 +3231,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of reservation subBlocks associated with this
+     * Output only. [Output Only] The number of reservation subBlocks associated with this
      * reservation block.
      * </pre>
      *
@@ -3252,7 +3252,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of in-use reservation subBlocks associated with
+     * Output only. [Output Only] The number of in-use reservation subBlocks associated with
      * this reservation block. If at least one VM is running on a subBlock, it is
      * considered in-use.
      * </pre>
@@ -3270,7 +3270,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of in-use reservation subBlocks associated with
+     * Output only. [Output Only] The number of in-use reservation subBlocks associated with
      * this reservation block. If at least one VM is running on a subBlock, it is
      * considered in-use.
      * </pre>
@@ -3288,7 +3288,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of in-use reservation subBlocks associated with
+     * Output only. [Output Only] The number of in-use reservation subBlocks associated with
      * this reservation block. If at least one VM is running on a subBlock, it is
      * considered in-use.
      * </pre>
@@ -3310,7 +3310,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The number of in-use reservation subBlocks associated with
+     * Output only. [Output Only] The number of in-use reservation subBlocks associated with
      * this reservation block. If at least one VM is running on a subBlock, it is
      * considered in-use.
      * </pre>
@@ -3332,7 +3332,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3347,7 +3347,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3370,7 +3370,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3393,7 +3393,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3415,7 +3415,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3433,7 +3433,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3458,7 +3458,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3473,7 +3473,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3496,7 +3496,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3519,7 +3519,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3541,7 +3541,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3559,7 +3559,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource with the resource id.
+     * Output only. [Output Only] Server-defined URL for this resource with the resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -3584,7 +3584,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3600,7 +3600,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3624,7 +3624,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3648,7 +3648,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3671,7 +3671,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3690,7 +3690,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Status of the reservation block.
+     * Output only. [Output Only] Status of the reservation block.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -3716,7 +3716,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3731,7 +3731,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3754,7 +3754,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3777,7 +3777,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3799,7 +3799,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -3817,7 +3817,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] Zone in which the reservation block resides.
+     * Output only. [Output Only] Zone in which the reservation block resides.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

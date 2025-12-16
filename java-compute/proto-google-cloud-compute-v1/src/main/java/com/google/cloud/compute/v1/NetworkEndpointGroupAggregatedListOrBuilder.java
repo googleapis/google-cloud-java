@@ -142,7 +142,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
    * lists of network endpoint groups.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
    * lists of network endpoint groups.
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupAggregatedList for aggregated
    * lists of network endpoint groups.
    * </pre>
    *
@@ -235,7 +235,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -248,7 +248,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -261,7 +261,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -274,7 +274,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -287,7 +287,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -300,7 +300,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -314,7 +314,7 @@ public interface NetworkEndpointGroupAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>

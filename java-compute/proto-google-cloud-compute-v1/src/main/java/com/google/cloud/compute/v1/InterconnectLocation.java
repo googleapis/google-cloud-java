@@ -821,7 +821,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
    * the address is separated by a newline character.
    * </pre>
    *
@@ -838,7 +838,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
    * the address is separated by a newline character.
    * </pre>
    *
@@ -863,7 +863,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
    * the address is separated by a newline character.
    * </pre>
    *
@@ -1316,7 +1316,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1333,7 +1333,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1358,7 +1358,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1495,7 +1495,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1511,7 +1511,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1535,7 +1535,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -1564,7 +1564,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -1580,7 +1580,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -1604,7 +1604,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -1633,7 +1633,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
    * Ashburn-DC1).
    * </pre>
    *
@@ -1650,7 +1650,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
    * Ashburn-DC1).
    * </pre>
    *
@@ -1675,7 +1675,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
    * Ashburn-DC1).
    * </pre>
    *
@@ -1703,7 +1703,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1720,7 +1720,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1742,7 +1742,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1758,7 +1758,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1782,7 +1782,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1811,7 +1811,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1827,7 +1827,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1851,7 +1851,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1880,7 +1880,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
    * with a netfac type in peeringdb).
    * </pre>
    *
@@ -1897,7 +1897,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
    * with a netfac type in peeringdb).
    * </pre>
    *
@@ -1922,7 +1922,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
    * with a netfac type in peeringdb).
    * </pre>
    *
@@ -1952,7 +1952,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
    * describe parameters pertaining to the relation between this
    * InterconnectLocation and various Google Cloud regions.
    * </pre>
@@ -1971,7 +1971,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
    * describe parameters pertaining to the relation between this
    * InterconnectLocation and various Google Cloud regions.
    * </pre>
@@ -1991,7 +1991,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
    * describe parameters pertaining to the relation between this
    * InterconnectLocation and various Google Cloud regions.
    * </pre>
@@ -2009,7 +2009,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
    * describe parameters pertaining to the relation between this
    * InterconnectLocation and various Google Cloud regions.
    * </pre>
@@ -2027,7 +2027,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+   * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
    * describe parameters pertaining to the relation between this
    * InterconnectLocation and various Google Cloud regions.
    * </pre>
@@ -2051,7 +2051,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2067,7 +2067,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2091,7 +2091,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2121,7 +2121,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URLs of the other locations that can pair up with this
+   * Output only. [Output Only] URLs of the other locations that can pair up with this
    * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
    * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
    * </pre>
@@ -2139,7 +2139,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URLs of the other locations that can pair up with this
+   * Output only. [Output Only] URLs of the other locations that can pair up with this
    * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
    * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
    * </pre>
@@ -2156,7 +2156,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URLs of the other locations that can pair up with this
+   * Output only. [Output Only] URLs of the other locations that can pair up with this
    * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
    * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
    * </pre>
@@ -2174,7 +2174,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] URLs of the other locations that can pair up with this
+   * Output only. [Output Only] URLs of the other locations that can pair up with this
    * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
    * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
    * </pre>
@@ -2286,7 +2286,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -2302,7 +2302,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -3368,7 +3368,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -3384,7 +3384,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -3408,7 +3408,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -3432,7 +3432,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -3455,7 +3455,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -3474,7 +3474,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The postal address of the Point of Presence, each line in
+     * Output only. [Output Only] The postal address of the Point of Presence, each line in
      * the address is separated by a newline character.
      * </pre>
      *
@@ -4415,7 +4415,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4431,7 +4431,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4455,7 +4455,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4479,7 +4479,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4502,7 +4502,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4521,7 +4521,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5037,7 +5037,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5052,7 +5052,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5075,7 +5075,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5098,7 +5098,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5120,7 +5120,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5138,7 +5138,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] An optional description of the resource.
+     * Output only. [Output Only] An optional description of the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -5163,7 +5163,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5178,7 +5178,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5201,7 +5201,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5224,7 +5224,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5246,7 +5246,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5264,7 +5264,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+     * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
      * <code>optional string facility_provider = 533303309;</code>
@@ -5289,7 +5289,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5305,7 +5305,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5329,7 +5329,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5353,7 +5353,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5376,7 +5376,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5395,7 +5395,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A provider-assigned Identifier for this facility (e.g.,
+     * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
      * Ashburn-DC1).
      * </pre>
      *
@@ -5421,7 +5421,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -5438,7 +5438,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -5455,7 +5455,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -5476,7 +5476,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -5497,7 +5497,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5512,7 +5512,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5535,7 +5535,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5558,7 +5558,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5580,7 +5580,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5598,7 +5598,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectLocation for interconnect locations.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -5623,7 +5623,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5638,7 +5638,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5661,7 +5661,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5684,7 +5684,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5706,7 +5706,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5724,7 +5724,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Name of the resource.
+     * Output only. [Output Only] Name of the resource.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -5749,7 +5749,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5765,7 +5765,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5789,7 +5789,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5813,7 +5813,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5836,7 +5836,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5855,7 +5855,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The peeringdb identifier for this facility (corresponding
+     * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
      * with a netfac type in peeringdb).
      * </pre>
      *
@@ -5897,7 +5897,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -5919,7 +5919,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -5940,7 +5940,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -5961,7 +5961,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -5989,7 +5989,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6015,7 +6015,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6043,7 +6043,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6071,7 +6071,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6096,7 +6096,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6122,7 +6122,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6148,7 +6148,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6172,7 +6172,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6196,7 +6196,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6214,7 +6214,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6236,7 +6236,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6259,7 +6259,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6279,7 +6279,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6300,7 +6300,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that
+     * Output only. [Output Only] A list of InterconnectLocation.RegionInfo objects, that
      * describe parameters pertaining to the relation between this
      * InterconnectLocation and various Google Cloud regions.
      * </pre>
@@ -6337,7 +6337,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6352,7 +6352,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6375,7 +6375,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6398,7 +6398,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6420,7 +6420,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6438,7 +6438,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -6473,7 +6473,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6492,7 +6492,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6509,7 +6509,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6527,7 +6527,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6546,7 +6546,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6573,7 +6573,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6598,7 +6598,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6622,7 +6622,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6644,7 +6644,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] URLs of the other locations that can pair up with this
+     * Output only. [Output Only] URLs of the other locations that can pair up with this
      * location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and
      * iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
      * </pre>
@@ -6841,7 +6841,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -6857,7 +6857,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -6873,7 +6873,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>
@@ -6893,7 +6893,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool supports_pzs = 83983214;</code>

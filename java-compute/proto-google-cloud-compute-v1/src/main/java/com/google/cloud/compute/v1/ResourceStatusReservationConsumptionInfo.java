@@ -76,7 +76,7 @@ public final class ResourceStatusReservationConsumptionInfo
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the reservation that this
+   * Output only. [Output Only] The full resource name of the reservation that this
    * instance is consuming from.
    * </pre>
    *
@@ -93,7 +93,7 @@ public final class ResourceStatusReservationConsumptionInfo
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the reservation that this
+   * Output only. [Output Only] The full resource name of the reservation that this
    * instance is consuming from.
    * </pre>
    *
@@ -118,7 +118,7 @@ public final class ResourceStatusReservationConsumptionInfo
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the reservation that this
+   * Output only. [Output Only] The full resource name of the reservation that this
    * instance is consuming from.
    * </pre>
    *
@@ -506,7 +506,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *
@@ -522,7 +522,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *
@@ -546,7 +546,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *
@@ -570,7 +570,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *
@@ -593,7 +593,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *
@@ -612,7 +612,7 @@ public final class ResourceStatusReservationConsumptionInfo
      *
      *
      * <pre>
-     * [Output Only] The full resource name of the reservation that this
+     * Output only. [Output Only] The full resource name of the reservation that this
      * instance is consuming from.
      * </pre>
      *

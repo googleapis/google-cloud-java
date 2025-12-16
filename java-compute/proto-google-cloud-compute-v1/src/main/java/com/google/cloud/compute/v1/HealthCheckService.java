@@ -264,7 +264,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -281,7 +281,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -306,7 +306,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -687,7 +687,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -704,7 +704,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -726,7 +726,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+   * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -742,7 +742,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+   * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -766,7 +766,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+   * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1042,7 +1042,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the health check service
+   * Output only. [Output Only] URL of the region where the health check service
    * resides. This field is not applicable to global health check services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1061,7 +1061,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the health check service
+   * Output only. [Output Only] URL of the region where the health check service
    * resides. This field is not applicable to global health check services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1088,7 +1088,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the health check service
+   * Output only. [Output Only] URL of the region where the health check service
    * resides. This field is not applicable to global health check services.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
@@ -1120,7 +1120,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1136,7 +1136,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1160,7 +1160,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1897,7 +1897,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1913,7 +1913,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1937,7 +1937,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1961,7 +1961,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1984,7 +1984,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2003,7 +2003,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2752,7 +2752,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2769,7 +2769,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2786,7 +2786,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2807,7 +2807,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -2828,7 +2828,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2843,7 +2843,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2866,7 +2866,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2889,7 +2889,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2911,7 +2911,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2929,7 +2929,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
+     * Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3538,7 +3538,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3556,7 +3556,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3582,7 +3582,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3608,7 +3608,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3633,7 +3633,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3654,7 +3654,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] URL of the region where the health check service
+     * Output only. [Output Only] URL of the region where the health check service
      * resides. This field is not applicable to global health check services.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
@@ -3682,7 +3682,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3697,7 +3697,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3720,7 +3720,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3743,7 +3743,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3765,7 +3765,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3783,7 +3783,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

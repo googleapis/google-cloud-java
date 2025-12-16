@@ -75,7 +75,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision.
+   * Output only. [Output Only] Current all-instances configuration revision.
    * This value is in RFC3339 text format.
    * </pre>
    *
@@ -92,7 +92,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision.
+   * Output only. [Output Only] Current all-instances configuration revision.
    * This value is in RFC3339 text format.
    * </pre>
    *
@@ -117,7 +117,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] Current all-instances configuration revision.
+   * Output only. [Output Only] Current all-instances configuration revision.
    * This value is in RFC3339 text format.
    * </pre>
    *
@@ -145,7 +145,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether this configuration has
+   * Output only. [Output Only] A bit indicating whether this configuration has
    * been applied to all managed instances in the group.
    * </pre>
    *
@@ -162,7 +162,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
    *
    *
    * <pre>
-   * [Output Only] A bit indicating whether this configuration has
+   * Output only. [Output Only] A bit indicating whether this configuration has
    * been applied to all managed instances in the group.
    * </pre>
    *
@@ -572,7 +572,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -588,7 +588,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -612,7 +612,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -636,7 +636,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -659,7 +659,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -678,7 +678,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] Current all-instances configuration revision.
+     * Output only. [Output Only] Current all-instances configuration revision.
      * This value is in RFC3339 text format.
      * </pre>
      *
@@ -704,7 +704,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has
+     * Output only. [Output Only] A bit indicating whether this configuration has
      * been applied to all managed instances in the group.
      * </pre>
      *
@@ -721,7 +721,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has
+     * Output only. [Output Only] A bit indicating whether this configuration has
      * been applied to all managed instances in the group.
      * </pre>
      *
@@ -738,7 +738,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has
+     * Output only. [Output Only] A bit indicating whether this configuration has
      * been applied to all managed instances in the group.
      * </pre>
      *
@@ -759,7 +759,7 @@ public final class InstanceGroupManagerStatusAllInstancesConfig
      *
      *
      * <pre>
-     * [Output Only] A bit indicating whether this configuration has
+     * Output only. [Output Only] A bit indicating whether this configuration has
      * been applied to all managed instances in the group.
      * </pre>
      *

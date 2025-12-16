@@ -106,7 +106,19 @@ public final class AcceleratorTopologiesInfoAcceleratorTopologyInfoInfoPerTopolo
      *
      *
      * <pre>
-     * The accelerator topology is running.
+     * The accelerator topology is degraded. The underlying capacity is not in a
+     * healthy state and is not available.
+     * </pre>
+     *
+     * <code>DEGRADED = 396890926;</code>
+     */
+    DEGRADED(396890926),
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator topology is running. If there are both running and
+     * degraded hosts within a topology, DEGRADED state will be returned.
      * </pre>
      *
      * <code>RUNNING = 121282975;</code>
@@ -126,7 +138,7 @@ public final class AcceleratorTopologiesInfoAcceleratorTopologyInfoInfoPerTopolo
      *
      *
      * <pre>
-     * The accelerator topology is unhealthy.
+     * This value has been deprecated and is no longer used.
      * </pre>
      *
      * <code>UNHEALTHY = 462118084;</code>
@@ -161,7 +173,20 @@ public final class AcceleratorTopologiesInfoAcceleratorTopologyInfoInfoPerTopolo
      *
      *
      * <pre>
-     * The accelerator topology is running.
+     * The accelerator topology is degraded. The underlying capacity is not in a
+     * healthy state and is not available.
+     * </pre>
+     *
+     * <code>DEGRADED = 396890926;</code>
+     */
+    public static final int DEGRADED_VALUE = 396890926;
+
+    /**
+     *
+     *
+     * <pre>
+     * The accelerator topology is running. If there are both running and
+     * degraded hosts within a topology, DEGRADED state will be returned.
      * </pre>
      *
      * <code>RUNNING = 121282975;</code>
@@ -183,7 +208,7 @@ public final class AcceleratorTopologiesInfoAcceleratorTopologyInfoInfoPerTopolo
      *
      *
      * <pre>
-     * The accelerator topology is unhealthy.
+     * This value has been deprecated and is no longer used.
      * </pre>
      *
      * <code>UNHEALTHY = 462118084;</code>
@@ -218,6 +243,8 @@ public final class AcceleratorTopologiesInfoAcceleratorTopologyInfoInfoPerTopolo
           return UNDEFINED_STATE;
         case 442079913:
           return AVAILABLE;
+        case 396890926:
+          return DEGRADED;
         case 121282975:
           return RUNNING;
         case 188327545:

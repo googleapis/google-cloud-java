@@ -202,7 +202,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -707,7 +707,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -732,7 +732,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -765,7 +765,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The resource that configures and manages this interface.
+   * Output only. [Output Only] The resource that configures and manages this interface.
    *
    *    - MANAGED_BY_USER is the default value and can be managed directly
    *    by users.
@@ -2334,7 +2334,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.
@@ -2358,7 +2358,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.
@@ -2390,7 +2390,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.
@@ -2422,7 +2422,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.
@@ -2453,7 +2453,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.
@@ -2480,7 +2480,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The resource that configures and manages this interface.
+     * Output only. [Output Only] The resource that configures and manages this interface.
      *
      *    - MANAGED_BY_USER is the default value and can be managed directly
      *    by users.

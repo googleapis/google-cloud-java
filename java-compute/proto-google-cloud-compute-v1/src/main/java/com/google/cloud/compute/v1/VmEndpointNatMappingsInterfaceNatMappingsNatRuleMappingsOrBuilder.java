@@ -28,7 +28,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface
+   * Output only. List of all drain IP:port-range mappings assigned to this interface
    * by this rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -45,7 +45,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface
+   * Output only. List of all drain IP:port-range mappings assigned to this interface
    * by this rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -62,7 +62,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface
+   * Output only. List of all drain IP:port-range mappings assigned to this interface
    * by this rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -80,7 +80,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * List of all drain IP:port-range mappings assigned to this interface
+   * Output only. List of all drain IP:port-range mappings assigned to this interface
    * by this rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -98,7 +98,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface by this
+   * Output only. A list of all IP:port-range mappings assigned to this interface by this
    * rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -115,7 +115,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface by this
+   * Output only. A list of all IP:port-range mappings assigned to this interface by this
    * rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -132,7 +132,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface by this
+   * Output only. A list of all IP:port-range mappings assigned to this interface by this
    * rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -150,7 +150,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * A list of all IP:port-range mappings assigned to this interface by this
+   * Output only. A list of all IP:port-range mappings assigned to this interface by this
    * rule.
    * These ranges are inclusive, that is, both the first and the last
    * ports can be used for NAT. Example: ["2.2.2.2:12345-12355",
@@ -168,7 +168,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Total number of drain ports across all NAT IPs allocated to this
+   * Output only. Total number of drain ports across all NAT IPs allocated to this
    * interface by this rule.
    * It equals the aggregated port number in the field
    * drain_nat_ip_port_ranges.
@@ -184,7 +184,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Total number of drain ports across all NAT IPs allocated to this
+   * Output only. Total number of drain ports across all NAT IPs allocated to this
    * interface by this rule.
    * It equals the aggregated port number in the field
    * drain_nat_ip_port_ranges.
@@ -200,7 +200,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Total number of ports across all NAT IPs allocated to this interface
+   * Output only. Total number of ports across all NAT IPs allocated to this interface
    * by this rule.
    * It equals the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
@@ -215,7 +215,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Total number of ports across all NAT IPs allocated to this interface
+   * Output only. Total number of ports across all NAT IPs allocated to this interface
    * by this rule.
    * It equals the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
@@ -230,7 +230,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Rule number of the NAT Rule.
+   * Output only. Rule number of the NAT Rule.
    * </pre>
    *
    * <code>optional int32 rule_number = 535211500;</code>
@@ -243,7 +243,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsNatRuleMappingsOrBuild
    *
    *
    * <pre>
-   * Rule number of the NAT Rule.
+   * Output only. Rule number of the NAT Rule.
    * </pre>
    *
    * <code>optional int32 rule_number = 535211500;</code>

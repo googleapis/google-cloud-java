@@ -364,7 +364,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -377,7 +377,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -390,7 +390,7 @@ public interface MachineTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

@@ -135,6 +135,34 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return Whether the enableEnhancedIpv4Allocation field is set.
+   */
+  boolean hasEnableEnhancedIpv4Allocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations.
+   * Applicable for IPv4 PDPs only.
+   * </pre>
+   *
+   * <code>optional bool enable_enhanced_ipv4_allocation = 54582253;</code>
+   *
+   * @return The enableEnhancedIpv4Allocation.
+   */
+  boolean getEnableEnhancedIpv4Allocation();
+
+  /**
+   *
+   *
+   * <pre>
    * The IP address range, in CIDR format, represented by this sub public
    * delegated prefix.
    * </pre>
@@ -177,7 +205,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Sub
    * Prefixes. Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -192,7 +220,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Sub
    * Prefixes. Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -207,7 +235,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The internet access type for IPv6 Public Delegated Sub
+   * Output only. [Output Only] The internet access type for IPv6 Public Delegated Sub
    * Prefixes. Inherited from parent prefix.
    * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
@@ -331,7 +359,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is
+   * Output only. [Output Only] The region of the sub public delegated prefix if it is
    * regional. If absent, the sub prefix is global.
    * </pre>
    *
@@ -345,7 +373,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is
+   * Output only. [Output Only] The region of the sub public delegated prefix if it is
    * regional. If absent, the sub prefix is global.
    * </pre>
    *
@@ -359,7 +387,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The region of the sub public delegated prefix if it is
+   * Output only. [Output Only] The region of the sub public delegated prefix if it is
    * regional. If absent, the sub prefix is global.
    * </pre>
    *
@@ -373,7 +401,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the sub public delegated prefix.
+   * Output only. [Output Only] The status of the sub public delegated prefix.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -387,7 +415,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the sub public delegated prefix.
+   * Output only. [Output Only] The status of the sub public delegated prefix.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -401,7 +429,7 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the sub public delegated prefix.
+   * Output only. [Output Only] The status of the sub public delegated prefix.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

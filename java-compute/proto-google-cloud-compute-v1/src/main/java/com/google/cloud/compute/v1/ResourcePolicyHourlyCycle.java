@@ -75,7 +75,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
@@ -92,7 +92,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
@@ -117,7 +117,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
@@ -663,7 +663,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
@@ -679,7 +679,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
@@ -703,7 +703,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
@@ -727,7 +727,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
@@ -750,7 +750,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *
@@ -769,7 +769,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output only] Duration of the time window, automatically chosen to be
+     * Output only. [Output only] Duration of the time window, automatically chosen to be
      * smallest possible in the given scenario.
      * </pre>
      *

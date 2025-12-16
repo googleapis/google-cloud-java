@@ -228,7 +228,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -242,7 +242,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -256,7 +256,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#zone for
+   * Output only. [Output Only] Type of the resource. Always compute#zone for
    * zones.
    * </pre>
    *
@@ -429,7 +429,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>
@@ -442,7 +442,7 @@ public interface ZoneOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool supports_pzs = 83983214;</code>

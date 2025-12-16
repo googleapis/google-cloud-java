@@ -1191,6 +1191,27 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int DRY_RUN_FIELD_NUMBER = 22;
+  private boolean dryRun_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the job will run in dry run mode, returning the total
+   * object count and, if the object configuration is a prefix list, the bytes
+   * found from source. No transformations will be performed.
+   * </pre>
+   *
+   * <code>bool dry_run = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dryRun.
+   */
+  @java.lang.Override
+  public boolean getDryRun() {
+    return dryRun_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1251,6 +1272,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (transformationCase_ == 20) {
       output.writeMessage(
           20, (com.google.cloud.storagebatchoperations.v1.RewriteObject) transformation_);
+    }
+    if (dryRun_ != false) {
+      output.writeBool(22, dryRun_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1314,6 +1338,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20, (com.google.cloud.storagebatchoperations.v1.RewriteObject) transformation_);
     }
+    if (dryRun_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, dryRun_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1354,6 +1381,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getErrorSummariesList().equals(other.getErrorSummariesList())) return false;
     if (state_ != other.state_) return false;
+    if (getDryRun() != other.getDryRun()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 19:
@@ -1420,6 +1448,8 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + DRY_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDryRun());
     switch (sourceCase_) {
       case 19:
         hash = (37 * hash) + BUCKET_LIST_FIELD_NUMBER;
@@ -1652,6 +1682,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00001000);
       state_ = 0;
+      dryRun_ = false;
       sourceCase_ = 0;
       source_ = null;
       transformationCase_ = 0;
@@ -1738,6 +1769,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.dryRun_ = dryRun_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1863,6 +1897,9 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.getDryRun() != false) {
+        setDryRun(other.getDryRun());
       }
       switch (other.getSourceCase()) {
         case BUCKET_LIST:
@@ -2019,6 +2056,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 transformationCase_ = 20;
                 break;
               } // case 162
+            case 176:
+              {
+                dryRun_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5034,6 +5077,68 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00002000);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean dryRun_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the job will run in dry run mode, returning the total
+     * object count and, if the object configuration is a prefix list, the bytes
+     * found from source. No transformations will be performed.
+     * </pre>
+     *
+     * <code>bool dry_run = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dryRun.
+     */
+    @java.lang.Override
+    public boolean getDryRun() {
+      return dryRun_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the job will run in dry run mode, returning the total
+     * object count and, if the object configuration is a prefix list, the bytes
+     * found from source. No transformations will be performed.
+     * </pre>
+     *
+     * <code>bool dry_run = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dryRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDryRun(boolean value) {
+
+      dryRun_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the job will run in dry run mode, returning the total
+     * object count and, if the object configuration is a prefix list, the bytes
+     * found from source. No transformations will be performed.
+     * </pre>
+     *
+     * <code>bool dry_run = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDryRun() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      dryRun_ = false;
       onChanged();
       return this;
     }

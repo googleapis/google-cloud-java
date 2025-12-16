@@ -345,7 +345,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
    * accessed from the Internet. This field is always inherited from its
    * subnetwork.
    *
@@ -363,7 +363,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
    * accessed from the Internet. This field is always inherited from its
    * subnetwork.
    *
@@ -381,7 +381,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
+   * Output only. [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be
    * accessed from the Internet. This field is always inherited from its
    * subnetwork.
    *
@@ -447,7 +447,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -460,7 +460,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -473,7 +473,7 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#networkInterface for network interfaces.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

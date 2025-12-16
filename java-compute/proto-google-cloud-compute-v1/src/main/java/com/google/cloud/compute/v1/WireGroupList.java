@@ -276,7 +276,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -292,7 +292,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -316,7 +316,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -496,7 +496,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -512,7 +512,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -528,7 +528,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -545,7 +545,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * end_interface: MixerListResponseWithEtagBuilder
    * </pre>
    *
@@ -1816,7 +1816,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1831,7 +1831,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1854,7 +1854,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1877,7 +1877,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1899,7 +1899,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1917,7 +1917,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2226,7 +2226,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2243,7 +2243,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2259,7 +2259,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2276,7 +2276,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2293,7 +2293,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2318,7 +2318,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2342,7 +2342,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2363,7 +2363,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *
@@ -2383,7 +2383,7 @@ public final class WireGroupList extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * end_interface: MixerListResponseWithEtagBuilder
      * </pre>
      *

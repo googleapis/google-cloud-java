@@ -340,7 +340,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Additional supported values which may be not listed in the enum directly due to technical reasons:
    * ADD_COST_TO_MED
@@ -789,7 +789,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
    * field.
    * </pre>
    *
@@ -806,7 +806,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_always_compare_med
+   * Output only. [Output Only] Effective value of the bgp_always_compare_med
    * field.
    * </pre>
    *
@@ -828,7 +828,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
@@ -846,7 +846,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
@@ -872,7 +872,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Effective value of the bgp_inter_region_cost
+   * Output only. [Output Only] Effective value of the bgp_inter_region_cost
    * field.
    * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
    * </pre>
@@ -1861,7 +1861,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
      * field.
      * </pre>
      *
@@ -1878,7 +1878,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
      * field.
      * </pre>
      *
@@ -1895,7 +1895,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
      * field.
      * </pre>
      *
@@ -1916,7 +1916,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_always_compare_med
+     * Output only. [Output Only] Effective value of the bgp_always_compare_med
      * field.
      * </pre>
      *
@@ -1937,7 +1937,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
@@ -1954,7 +1954,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
@@ -1979,7 +1979,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
@@ -2004,7 +2004,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
@@ -2028,7 +2028,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>
@@ -2048,7 +2048,7 @@ public final class NetworkRoutingConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Effective value of the bgp_inter_region_cost
+     * Output only. [Output Only] Effective value of the bgp_inter_region_cost
      * field.
      * Check the EffectiveBgpInterRegionCost enum for the list of possible values.
      * </pre>

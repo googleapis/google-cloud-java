@@ -130,7 +130,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -147,7 +147,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -172,7 +172,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -353,7 +353,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -370,7 +370,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource type. The server
+   * Output only. [Output Only] The unique identifier for the resource type. The server
    * generates this identifier.
    * </pre>
    *
@@ -572,7 +572,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -588,7 +588,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -612,7 +612,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#InterconnectGroup
+   * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -770,7 +770,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -786,7 +786,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -810,7 +810,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1697,7 +1697,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1713,7 +1713,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1737,7 +1737,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1761,7 +1761,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1784,7 +1784,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -1803,7 +1803,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2111,7 +2111,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2128,7 +2128,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2145,7 +2145,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2166,7 +2166,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource type. The server
+     * Output only. [Output Only] The unique identifier for the resource type. The server
      * generates this identifier.
      * </pre>
      *
@@ -2635,7 +2635,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2650,7 +2650,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2673,7 +2673,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2696,7 +2696,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2718,7 +2718,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2736,7 +2736,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#InterconnectGroup
+     * Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3088,7 +3088,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3103,7 +3103,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3126,7 +3126,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3149,7 +3149,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3171,7 +3171,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3189,7 +3189,7 @@ public final class InterconnectGroup extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

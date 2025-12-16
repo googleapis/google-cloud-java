@@ -71,7 +71,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Fatal errors encountered during the queueing or
+   * Output only. [Output only] Fatal errors encountered during the queueing or
    * provisioning phases of the ResizeRequest that caused the transition to
    * the FAILED state. Contrary to the last_attempt errors, this field is
    * final and errors are never removed from here, as the ResizeRequest is not
@@ -91,7 +91,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Fatal errors encountered during the queueing or
+   * Output only. [Output only] Fatal errors encountered during the queueing or
    * provisioning phases of the ResizeRequest that caused the transition to
    * the FAILED state. Contrary to the last_attempt errors, this field is
    * final and errors are never removed from here, as the ResizeRequest is not
@@ -111,7 +111,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Fatal errors encountered during the queueing or
+   * Output only. [Output only] Fatal errors encountered during the queueing or
    * provisioning phases of the ResizeRequest that caused the transition to
    * the FAILED state. Contrary to the last_attempt errors, this field is
    * final and errors are never removed from here, as the ResizeRequest is not
@@ -133,7 +133,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Information about the last attempt to fulfill the request.
+   * Output only. [Output only] Information about the last attempt to fulfill the request.
    * The value is temporary since the ResizeRequest can retry, as long as it's
    * still active and the last attempt value can either be cleared or replaced
    * with a different error. Since ResizeRequest retries infrequently, the
@@ -158,7 +158,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Information about the last attempt to fulfill the request.
+   * Output only. [Output only] Information about the last attempt to fulfill the request.
    * The value is temporary since the ResizeRequest can retry, as long as it's
    * still active and the last attempt value can either be cleared or replaced
    * with a different error. Since ResizeRequest retries infrequently, the
@@ -187,7 +187,7 @@ public final class InstanceGroupManagerResizeRequestStatus
    *
    *
    * <pre>
-   * [Output only] Information about the last attempt to fulfill the request.
+   * Output only. [Output only] Information about the last attempt to fulfill the request.
    * The value is temporary since the ResizeRequest can retry, as long as it's
    * still active and the last attempt value can either be cleared or replaced
    * with a different error. Since ResizeRequest retries infrequently, the
@@ -625,7 +625,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -644,7 +644,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -667,7 +667,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -694,7 +694,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -718,7 +718,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -750,7 +750,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -774,7 +774,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -793,7 +793,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -814,7 +814,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Fatal errors encountered during the queueing or
+     * Output only. [Output only] Fatal errors encountered during the queueing or
      * provisioning phases of the ResizeRequest that caused the transition to
      * the FAILED state. Contrary to the last_attempt errors, this field is
      * final and errors are never removed from here, as the ResizeRequest is not
@@ -852,7 +852,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -876,7 +876,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -908,7 +908,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -941,7 +941,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -972,7 +972,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -1012,7 +1012,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -1041,7 +1041,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -1066,7 +1066,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the
@@ -1096,7 +1096,7 @@ public final class InstanceGroupManagerResizeRequestStatus
      *
      *
      * <pre>
-     * [Output only] Information about the last attempt to fulfill the request.
+     * Output only. [Output only] Information about the last attempt to fulfill the request.
      * The value is temporary since the ResizeRequest can retry, as long as it's
      * still active and the last attempt value can either be cleared or replaced
      * with a different error. Since ResizeRequest retries infrequently, the

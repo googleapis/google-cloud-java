@@ -196,7 +196,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -213,7 +213,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -238,7 +238,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -849,7 +849,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -865,7 +865,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -889,7 +889,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -913,7 +913,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -936,7 +936,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *
@@ -955,7 +955,7 @@ public final class InstanceSettingsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#metadata
+     * Output only. [Output Only] Type of the resource. Always compute#metadata
      * for metadata.
      * </pre>
      *

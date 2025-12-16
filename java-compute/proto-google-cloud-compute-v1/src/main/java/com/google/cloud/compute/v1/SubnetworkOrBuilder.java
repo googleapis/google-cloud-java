@@ -28,7 +28,71 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Setting this to true allows this subnetwork's primary and secondary ranges
+   * to overlap with (and contain) static routes that have already been
+   * configured on the corresponding network.
+   *
+   * For example if a static route has range 10.1.0.0/16, a subnet
+   * range 10.0.0.0/8 could only be created if allow_conflicting_routes=true.
+   *
+   * Overlapping is only allowed on subnetwork operations; routes
+   * whose ranges conflict with this subnetwork's ranges won't be allowed unless
+   * route.allow_conflicting_subnetworks is set to true.
+   *
+   * Typically packets destined to IPs within the subnetwork (which may contain
+   * private/sensitive data) are prevented from leaving the virtual network.
+   * Setting this field to true will disable this feature.
+   *
+   * The default value is false and applies to all existing subnetworks and
+   * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
+   * </pre>
+   *
+   * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
+   *
+   * @return Whether the allowSubnetCidrRoutesOverlap field is set.
+   */
+  boolean hasAllowSubnetCidrRoutesOverlap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether this subnetwork's ranges can conflict with existing static routes.
+   * Setting this to true allows this subnetwork's primary and secondary ranges
+   * to overlap with (and contain) static routes that have already been
+   * configured on the corresponding network.
+   *
+   * For example if a static route has range 10.1.0.0/16, a subnet
+   * range 10.0.0.0/8 could only be created if allow_conflicting_routes=true.
+   *
+   * Overlapping is only allowed on subnetwork operations; routes
+   * whose ranges conflict with this subnetwork's ranges won't be allowed unless
+   * route.allow_conflicting_subnetworks is set to true.
+   *
+   * Typically packets destined to IPs within the subnetwork (which may contain
+   * private/sensitive data) are prevented from leaving the virtual network.
+   * Setting this field to true will disable this feature.
+   *
+   * The default value is false and applies to all existing subnetworks and
+   * automatically created subnetworks.
+   *
+   * This field cannot be set to true at resource creation time.
+   * </pre>
+   *
+   * <code>optional bool allow_subnet_cidr_routes_overlap = 67856209;</code>
+   *
+   * @return The allowSubnetCidrRoutesOverlap.
+   */
+  boolean getAllowSubnetCidrRoutesOverlap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +106,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +120,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -248,7 +312,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination
+   * Output only. [Output Only] The gateway address for default routes to reach destination
    * addresses outside this subnetwork.
    * </pre>
    *
@@ -262,7 +326,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination
+   * Output only. [Output Only] The gateway address for default routes to reach destination
    * addresses outside this subnetwork.
    * </pre>
    *
@@ -276,7 +340,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The gateway address for default routes to reach destination
+   * Output only. [Output Only] The gateway address for default routes to reach destination
    * addresses outside this subnetwork.
    * </pre>
    *
@@ -290,7 +354,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -304,7 +368,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -546,7 +610,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -559,7 +623,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -572,7 +636,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This field is for internal use.
+   * Output only. [Output Only] This field is for internal use.
    * </pre>
    *
    * <code>optional string ipv6_cidr_range = 273141258;</code>
@@ -585,7 +649,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
    * following:
    *
    *    - VM_ONLY: The subnetwork can be used for creating instances and
@@ -608,7 +672,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
    * following:
    *
    *    - VM_ONLY: The subnetwork can be used for creating instances and
@@ -631,7 +695,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Possible endpoints of this subnetwork. It can be one of the
+   * Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the
    * following:
    *
    *    - VM_ONLY: The subnetwork can be used for creating instances and
@@ -654,7 +718,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
    * for Subnetwork resources.
    * </pre>
    *
@@ -668,7 +732,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
    * for Subnetwork resources.
    * </pre>
    *
@@ -682,7 +746,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#subnetwork
+   * Output only. [Output Only] Type of the resource. Always compute#subnetwork
    * for Subnetwork resources.
    * </pre>
    *
@@ -1311,7 +1375,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
    * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
    * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
    * connections to the load balancer are being drained. A subnetwork that is
@@ -1329,7 +1393,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
    * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
    * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
    * connections to the load balancer are being drained. A subnetwork that is
@@ -1347,7 +1411,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of the
+   * Output only. [Output Only] The state of the subnetwork, which can be one of the
    * following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the
    * purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that
    * connections to the load balancer are being drained. A subnetwork that is

@@ -28,7 +28,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] URLs of any particular Attachments to explain this
+   * Output only. [Output Only] URLs of any particular Attachments to explain this
    * blocker in more detail.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] URLs of any particular Attachments to explain this
+   * Output only. [Output Only] URLs of any particular Attachments to explain this
    * blocker in more detail.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] URLs of any particular Attachments to explain this
+   * Output only. [Output Only] URLs of any particular Attachments to explain this
    * blocker in more detail.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] URLs of any particular Attachments to explain this
+   * Output only. [Output Only] URLs of any particular Attachments to explain this
    * blocker in more detail.
    * </pre>
    *
@@ -128,7 +128,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -142,7 +142,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] The url of Google Cloud public documentation explaining
+   * Output only. [Output Only] The url of Google Cloud public documentation explaining
    * this requirement. This is set for every type of requirement.
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -184,7 +184,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -198,7 +198,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] A human-readable explanation of this requirement and
+   * Output only. [Output Only] A human-readable explanation of this requirement and
    * why it's not met. This is set for every type of requirement.
    * </pre>
    *
@@ -212,7 +212,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". This will be set
    * for some blockers (like NO_ATTACHMENTS_IN_METRO_AND_ZONE) but does
    * not apply to others.
@@ -228,7 +228,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". This will be set
    * for some blockers (like NO_ATTACHMENTS_IN_METRO_AND_ZONE) but does
    * not apply to others.
@@ -244,7 +244,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". This will be set
    * for some blockers (like NO_ATTACHMENTS_IN_METRO_AND_ZONE) but does
    * not apply to others.
@@ -261,7 +261,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Metros used to explain this blocker in more detail.
+   * Output only. [Output Only] Metros used to explain this blocker in more detail.
    * These are three-letter lowercase strings like "iad". This will be set
    * for some blockers (like NO_ATTACHMENTS_IN_METRO_AND_ZONE) but does
    * not apply to others.
@@ -278,7 +278,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Regions used to explain this blocker in more
+   * Output only. [Output Only] Regions used to explain this blocker in more
    * detail. These are region names formatted like "us-central1". This
    * will be set for some blockers (like INCOMPATIBLE_REGIONS) but does
    * not apply to others.
@@ -294,7 +294,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Regions used to explain this blocker in more
+   * Output only. [Output Only] Regions used to explain this blocker in more
    * detail. These are region names formatted like "us-central1". This
    * will be set for some blockers (like INCOMPATIBLE_REGIONS) but does
    * not apply to others.
@@ -310,7 +310,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Regions used to explain this blocker in more
+   * Output only. [Output Only] Regions used to explain this blocker in more
    * detail. These are region names formatted like "us-central1". This
    * will be set for some blockers (like INCOMPATIBLE_REGIONS) but does
    * not apply to others.
@@ -327,7 +327,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Regions used to explain this blocker in more
+   * Output only. [Output Only] Regions used to explain this blocker in more
    * detail. These are region names formatted like "us-central1". This
    * will be set for some blockers (like INCOMPATIBLE_REGIONS) but does
    * not apply to others.
@@ -344,7 +344,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Format is "zone1" and/or "zone2". This will be set for some blockers
    * (like  MISSING_ZONE) but does not apply to others.
    * </pre>
@@ -359,7 +359,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Format is "zone1" and/or "zone2". This will be set for some blockers
    * (like  MISSING_ZONE) but does not apply to others.
    * </pre>
@@ -374,7 +374,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Format is "zone1" and/or "zone2". This will be set for some blockers
    * (like  MISSING_ZONE) but does not apply to others.
    * </pre>
@@ -390,7 +390,7 @@ public interface InterconnectAttachmentGroupConfiguredAvailabilitySLAIntendedSla
    *
    *
    * <pre>
-   * [Output Only] Zones used to explain this blocker in more detail.
+   * Output only. [Output Only] Zones used to explain this blocker in more detail.
    * Format is "zone1" and/or "zone2". This will be set for some blockers
    * (like  MISSING_ZONE) but does not apply to others.
    * </pre>

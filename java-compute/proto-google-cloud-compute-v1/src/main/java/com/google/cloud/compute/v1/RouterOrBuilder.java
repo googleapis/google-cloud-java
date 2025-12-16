@@ -131,7 +131,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -145,7 +145,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -159,7 +159,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -377,7 +377,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for
+   * Output only. [Output Only] Type of resource. Always compute#router for
    * routers.
    * </pre>
    *
@@ -391,7 +391,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for
+   * Output only. [Output Only] Type of resource. Always compute#router for
    * routers.
    * </pre>
    *
@@ -405,7 +405,7 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#router for
+   * Output only. [Output Only] Type of resource. Always compute#router for
    * routers.
    * </pre>
    *

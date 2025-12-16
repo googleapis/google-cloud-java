@@ -277,7 +277,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+   * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -293,7 +293,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+   * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -317,7 +317,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+   * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -427,7 +427,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -443,7 +443,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -467,7 +467,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1712,7 +1712,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1727,7 +1727,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1750,7 +1750,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1773,7 +1773,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1795,7 +1795,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1813,7 +1813,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
+     * Output only. [Output Only] Type of resource.Alwayscompute#resourcePoliciesList for listsof resourcePolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1988,7 +1988,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2003,7 +2003,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2026,7 +2026,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2049,7 +2049,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2071,7 +2071,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2089,7 +2089,7 @@ public final class ResourcePolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

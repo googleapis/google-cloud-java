@@ -28,7 +28,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT.
+   * Output only. A list of active IPs for NAT.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT.
+   * Output only. A list of active IPs for NAT.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT.
+   * Output only. A list of active IPs for NAT.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of active IPs for NAT.
+   * Output only. A list of active IPs for NAT.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -86,7 +86,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode.
+   * Output only. A list of IPs for NAT that are in drain mode.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -100,7 +100,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode.
+   * Output only. A list of IPs for NAT that are in drain mode.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -114,7 +114,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode.
+   * Output only. A list of IPs for NAT that are in drain mode.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -129,7 +129,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * A list of IPs for NAT that are in drain mode.
+   * Output only. A list of IPs for NAT that are in drain mode.
    * Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
@@ -144,7 +144,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * The number of extra IPs to allocate. This will be greater than 0 only
+   * Output only. The number of extra IPs to allocate. This will be greater than 0 only
    * if the existing IPs in this NAT Rule are NOT enough to allow all
    * configured VMs to use NAT.
    * </pre>
@@ -159,7 +159,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * The number of extra IPs to allocate. This will be greater than 0 only
+   * Output only. The number of extra IPs to allocate. This will be greater than 0 only
    * if the existing IPs in this NAT Rule are NOT enough to allow all
    * configured VMs to use NAT.
    * </pre>
@@ -174,7 +174,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
+   * Output only. Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
    * NAT Rule.
    * </pre>
    *
@@ -188,7 +188,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
+   * Output only. Number of VM endpoints (i.e., NICs) that have NAT Mappings from this
    * NAT Rule.
    * </pre>
    *
@@ -202,7 +202,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Rule number of the rule.
+   * Output only. Rule number of the rule.
    * </pre>
    *
    * <code>optional int32 rule_number = 535211500;</code>
@@ -215,7 +215,7 @@ public interface RouterStatusNatStatusNatRuleStatusOrBuilder
    *
    *
    * <pre>
-   * Rule number of the rule.
+   * Output only. Rule number of the rule.
    * </pre>
    *
    * <code>optional int32 rule_number = 535211500;</code>

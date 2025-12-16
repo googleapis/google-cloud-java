@@ -1666,6 +1666,7 @@ public class ConversationsClient implements BackgroundResource {
    *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
    *           .setConversationContext(ConversationContext.newBuilder().build())
    *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .setSecuritySettings("securitySettings-1062971517")
    *           .build();
    *   GenerateStatelessSuggestionResponse response =
    *       conversationsClient.generateStatelessSuggestion(request);
@@ -1700,6 +1701,7 @@ public class ConversationsClient implements BackgroundResource {
    *           .putAllContextReferences(new HashMap<String, Conversation.ContextReference>())
    *           .setConversationContext(ConversationContext.newBuilder().build())
    *           .addAllTriggerEvents(new ArrayList<TriggerEvent>())
+   *           .setSecuritySettings("securitySettings-1062971517")
    *           .build();
    *   ApiFuture<GenerateStatelessSuggestionResponse> future =
    *       conversationsClient.generateStatelessSuggestionCallable().futureCall(request);

@@ -73,7 +73,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The list ofinstance
+   * Output only. [Output Only] The list ofinstance
    * groups that are contained in this scope.
    * </pre>
    *
@@ -88,7 +88,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The list ofinstance
+   * Output only. [Output Only] The list ofinstance
    * groups that are contained in this scope.
    * </pre>
    *
@@ -104,7 +104,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The list ofinstance
+   * Output only. [Output Only] The list ofinstance
    * groups that are contained in this scope.
    * </pre>
    *
@@ -119,7 +119,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The list ofinstance
+   * Output only. [Output Only] The list ofinstance
    * groups that are contained in this scope.
    * </pre>
    *
@@ -134,7 +134,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The list ofinstance
+   * Output only. [Output Only] The list ofinstance
    * groups that are contained in this scope.
    * </pre>
    *
@@ -152,7 +152,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of
+   * Output only. [Output Only] An informational warning that replaces the list of
    * instance groups when the list is empty.
    * </pre>
    *
@@ -169,7 +169,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of
+   * Output only. [Output Only] An informational warning that replaces the list of
    * instance groups when the list is empty.
    * </pre>
    *
@@ -186,7 +186,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of
+   * Output only. [Output Only] An informational warning that replaces the list of
    * instance groups when the list is empty.
    * </pre>
    *
@@ -654,7 +654,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -672,7 +672,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -690,7 +690,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -708,7 +708,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -732,7 +732,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -754,7 +754,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -778,7 +778,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -802,7 +802,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -824,7 +824,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -846,7 +846,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -868,7 +868,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -889,7 +889,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -910,7 +910,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -924,7 +924,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -943,7 +943,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -962,7 +962,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -977,7 +977,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -992,7 +992,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The list ofinstance
+     * Output only. [Output Only] The list ofinstance
      * groups that are contained in this scope.
      * </pre>
      *
@@ -1034,7 +1034,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1050,7 +1050,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1072,7 +1072,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1096,7 +1096,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1117,7 +1117,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1146,7 +1146,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1167,7 +1167,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1183,7 +1183,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *
@@ -1203,7 +1203,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of
+     * Output only. [Output Only] An informational warning that replaces the list of
      * instance groups when the list is empty.
      * </pre>
      *

@@ -72,7 +72,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -89,7 +89,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -123,7 +123,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -139,7 +139,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * List of VPN connection for this VpnGateway.
+   * Output only. List of VPN connection for this VpnGateway.
    * </pre>
    *
    * <code>
@@ -565,7 +565,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -585,7 +585,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -604,7 +604,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -623,7 +623,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -649,7 +649,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -673,7 +673,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -699,7 +699,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -725,7 +725,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -748,7 +748,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -772,7 +772,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -796,7 +796,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -818,7 +818,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -840,7 +840,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -856,7 +856,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -876,7 +876,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -897,7 +897,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -915,7 +915,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>
@@ -934,7 +934,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * List of VPN connection for this VpnGateway.
+     * Output only. List of VPN connection for this VpnGateway.
      * </pre>
      *
      * <code>

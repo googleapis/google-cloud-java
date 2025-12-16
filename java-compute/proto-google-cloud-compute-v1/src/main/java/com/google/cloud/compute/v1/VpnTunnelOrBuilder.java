@@ -68,7 +68,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -82,7 +82,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -96,7 +96,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -249,7 +249,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *
@@ -263,7 +263,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *
@@ -277,7 +277,7 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *

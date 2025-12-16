@@ -28,7 +28,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -237,7 +237,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetHttpProxy
+   * Output only. [Output Only] Type of resource. Always compute#targetHttpProxy
    * for target HTTP proxies.
    * </pre>
    *
@@ -251,7 +251,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetHttpProxy
+   * Output only. [Output Only] Type of resource. Always compute#targetHttpProxy
    * for target HTTP proxies.
    * </pre>
    *
@@ -265,7 +265,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#targetHttpProxy
+   * Output only. [Output Only] Type of resource. Always compute#targetHttpProxy
    * for target HTTP proxies.
    * </pre>
    *
@@ -382,7 +382,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional Target HTTP Proxy
+   * Output only. [Output Only] URL of the region where the regional Target HTTP Proxy
    * resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
@@ -396,7 +396,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional Target HTTP Proxy
+   * Output only. [Output Only] URL of the region where the regional Target HTTP Proxy
    * resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
@@ -410,7 +410,7 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional Target HTTP Proxy
+   * Output only. [Output Only] URL of the region where the regional Target HTTP Proxy
    * resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *

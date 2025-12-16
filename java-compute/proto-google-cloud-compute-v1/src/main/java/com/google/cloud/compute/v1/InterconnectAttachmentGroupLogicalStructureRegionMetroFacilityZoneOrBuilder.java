@@ -28,7 +28,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given
+   * Output only. [Output Only] URLs of Attachments in the given zone, to the given
    * region, on Interconnects in the given facility and metro. Every
    * Attachment in the AG has such an entry.
    * </pre>
@@ -43,7 +43,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given
+   * Output only. [Output Only] URLs of Attachments in the given zone, to the given
    * region, on Interconnects in the given facility and metro. Every
    * Attachment in the AG has such an entry.
    * </pre>
@@ -58,7 +58,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given
+   * Output only. [Output Only] URLs of Attachments in the given zone, to the given
    * region, on Interconnects in the given facility and metro. Every
    * Attachment in the AG has such an entry.
    * </pre>
@@ -74,7 +74,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] URLs of Attachments in the given zone, to the given
+   * Output only. [Output Only] URLs of Attachments in the given zone, to the given
    * region, on Interconnects in the given facility and metro. Every
    * Attachment in the AG has such an entry.
    * </pre>
@@ -90,7 +90,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] The name of a zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of a zone, either "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -103,7 +103,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] The name of a zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of a zone, either "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -116,7 +116,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroFacilityZ
    *
    *
    * <pre>
-   * [Output Only] The name of a zone, either "zone1" or "zone2".
+   * Output only. [Output Only] The name of a zone, either "zone1" or "zone2".
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

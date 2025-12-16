@@ -109,7 +109,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -123,7 +123,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -193,7 +193,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -207,7 +207,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -216,6 +216,87 @@ public interface AddressOrBuilder
    * @return The id.
    */
   long getId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when reserving an
+   * external IPv4 address using BYOIP.
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *           - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return Whether the ipCollection field is set.
+   */
+  boolean hasIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when reserving an
+   * external IPv4 address using BYOIP.
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *           - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The ipCollection.
+   */
+  java.lang.String getIpCollection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reference to the source of external IPv4 addresses,
+   * like a PublicDelegatedPrefix (PDP) for BYOIP.
+   * The PDP must support enhanced IPv4 allocations.
+   *
+   * Use one of the following formats to specify a PDP when reserving an
+   * external IPv4 address using BYOIP.
+   *
+   *    -
+   *    Full resource URL, as inhttps://www.googleapis.com/compute/v1/projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *    -
+   *    Partial URL, as in
+   *
+   *
+   *           - projects/projectId/regions/region/publicDelegatedPrefixes/pdp-name
+   *           - regions/region/publicDelegatedPrefixes/pdp-name
+   * </pre>
+   *
+   * <code>optional string ip_collection = 176818358;</code>
+   *
+   * @return The bytes for ipCollection.
+   */
+  com.google.protobuf.ByteString getIpCollectionBytes();
 
   /**
    *
@@ -311,7 +392,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#address for
+   * Output only. [Output Only] Type of the resource. Always compute#address for
    * addresses.
    * </pre>
    *
@@ -325,7 +406,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#address for
+   * Output only. [Output Only] Type of the resource. Always compute#address for
    * addresses.
    * </pre>
    *
@@ -339,7 +420,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#address for
+   * Output only. [Output Only] Type of the resource. Always compute#address for
    * addresses.
    * </pre>
    *
@@ -780,7 +861,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides.
+   * Output only. [Output Only] The URL of the region where a regional address resides.
    * For regional addresses, you must specify the region as a path parameter in
    * the HTTP request URL. *This field is not applicable to global
    * addresses.*
@@ -796,7 +877,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides.
+   * Output only. [Output Only] The URL of the region where a regional address resides.
    * For regional addresses, you must specify the region as a path parameter in
    * the HTTP request URL. *This field is not applicable to global
    * addresses.*
@@ -812,7 +893,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the region where a regional address resides.
+   * Output only. [Output Only] The URL of the region where a regional address resides.
    * For regional addresses, you must specify the region as a path parameter in
    * the HTTP request URL. *This field is not applicable to global
    * addresses.*
@@ -867,7 +948,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
+   * Output only. [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
    * An address that is RESERVING is currently in the process of
    * being reserved. A RESERVED address is currently reserved and
    * available to use. An IN_USE address is currently being used
@@ -885,7 +966,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
+   * Output only. [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
    * An address that is RESERVING is currently in the process of
    * being reserved. A RESERVED address is currently reserved and
    * available to use. An IN_USE address is currently being used
@@ -903,7 +984,7 @@ public interface AddressOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
+   * Output only. [Output Only] The status of the address, which can be one ofRESERVING, RESERVED, or IN_USE.
    * An address that is RESERVING is currently in the process of
    * being reserved. A RESERVED address is currently reserved and
    * available to use. An IN_USE address is currently being used

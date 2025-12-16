@@ -282,7 +282,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -298,7 +298,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -322,7 +322,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -432,7 +432,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -448,7 +448,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -472,7 +472,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -502,7 +502,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -517,7 +517,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -532,7 +532,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -548,7 +548,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -1580,7 +1580,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1595,7 +1595,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1618,7 +1618,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1641,7 +1641,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1663,7 +1663,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1681,7 +1681,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Type of resource.
+     * Output only. Type of resource.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1856,7 +1856,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1871,7 +1871,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1894,7 +1894,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1917,7 +1917,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1939,7 +1939,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1957,7 +1957,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1990,7 +1990,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2006,7 +2006,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2021,7 +2021,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2037,7 +2037,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2053,7 +2053,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2077,7 +2077,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2100,7 +2100,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2120,7 +2120,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2139,7 +2139,7 @@ public final class ReservationAggregatedList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>

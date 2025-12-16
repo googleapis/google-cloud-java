@@ -226,7 +226,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
    * interconnect remote locations.
    * </pre>
    *
@@ -243,7 +243,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
    * interconnect remote locations.
    * </pre>
    *
@@ -268,7 +268,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
    * interconnect remote locations.
    * </pre>
    *
@@ -379,7 +379,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -395,7 +395,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -419,7 +419,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1553,7 +1553,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1569,7 +1569,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1593,7 +1593,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1617,7 +1617,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1640,7 +1640,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1659,7 +1659,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectRemoteLocationList for lists of
      * interconnect remote locations.
      * </pre>
      *
@@ -1835,7 +1835,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1850,7 +1850,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1873,7 +1873,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1896,7 +1896,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1918,7 +1918,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1936,7 +1936,7 @@ public final class InterconnectRemoteLocationList extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

@@ -232,7 +232,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+   * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeTemplate.Status}
@@ -552,7 +552,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -569,7 +569,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -594,7 +594,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -730,7 +730,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -747,7 +747,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -769,7 +769,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -785,7 +785,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -809,7 +809,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1168,7 +1168,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the region where the node template resides,
+   * Output only. [Output Only] The name of the region where the node template resides,
    * such as us-central1.
    * </pre>
    *
@@ -1185,7 +1185,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the region where the node template resides,
+   * Output only. [Output Only] The name of the region where the node template resides,
    * such as us-central1.
    * </pre>
    *
@@ -1210,7 +1210,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the region where the node template resides,
+   * Output only. [Output Only] The name of the region where the node template resides,
    * such as us-central1.
    * </pre>
    *
@@ -1240,7 +1240,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1256,7 +1256,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1280,7 +1280,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1395,7 +1395,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+   * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1412,7 +1412,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+   * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1437,7 +1437,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+   * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1467,7 +1467,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -1483,7 +1483,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -1507,7 +1507,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An optional, human-readable explanation of the status.
+   * Output only. [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
    * <code>optional string status_message = 297428154;</code>
@@ -2866,7 +2866,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2882,7 +2882,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2906,7 +2906,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2930,7 +2930,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2953,7 +2953,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2972,7 +2972,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3351,7 +3351,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3368,7 +3368,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3385,7 +3385,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3406,7 +3406,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3427,7 +3427,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3442,7 +3442,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3465,7 +3465,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3488,7 +3488,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3510,7 +3510,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3528,7 +3528,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -4245,7 +4245,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4261,7 +4261,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4285,7 +4285,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4309,7 +4309,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4332,7 +4332,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4351,7 +4351,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the region where the node template resides,
+     * Output only. [Output Only] The name of the region where the node template resides,
      * such as us-central1.
      * </pre>
      *
@@ -4377,7 +4377,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4392,7 +4392,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4415,7 +4415,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4438,7 +4438,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4460,7 +4460,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4478,7 +4478,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4797,7 +4797,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4813,7 +4813,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4837,7 +4837,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4861,7 +4861,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4884,7 +4884,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4903,7 +4903,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
+     * Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -4929,7 +4929,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -4944,7 +4944,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -4967,7 +4967,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -4990,7 +4990,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5012,7 +5012,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>
@@ -5030,7 +5030,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An optional, human-readable explanation of the status.
+     * Output only. [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
      * <code>optional string status_message = 297428154;</code>

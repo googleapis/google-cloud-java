@@ -122,7 +122,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#firewallList
+   * Output only. [Output Only] Type of resource. Always compute#firewallList
    * for lists of firewalls.
    * </pre>
    *
@@ -136,7 +136,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#firewallList
+   * Output only. [Output Only] Type of resource. Always compute#firewallList
    * for lists of firewalls.
    * </pre>
    *
@@ -150,7 +150,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#firewallList
+   * Output only. [Output Only] Type of resource. Always compute#firewallList
    * for lists of firewalls.
    * </pre>
    *
@@ -215,7 +215,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -228,7 +228,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -241,7 +241,7 @@ public interface FirewallListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

@@ -28,7 +28,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] URL of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
+   * Output only. [Output Only] ID of the DiskConsistencyGroupPolicy if replication was
    * started on the disk as a member of a group.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the other disk asynchronously replicated
+   * Output only. [Output Only] The unique ID of the other disk asynchronously replicated
    * to or from the current disk. This value identifies the exact disk that
    * was used to create this replication. For example, if you started
    * replicating the persistent disk from a disk that was later deleted and
@@ -190,7 +190,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the other disk asynchronously replicated
+   * Output only. [Output Only] The unique ID of the other disk asynchronously replicated
    * to or from the current disk. This value identifies the exact disk that
    * was used to create this replication. For example, if you started
    * replicating the persistent disk from a disk that was later deleted and
@@ -208,7 +208,7 @@ public interface DiskAsyncReplicationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the other disk asynchronously replicated
+   * Output only. [Output Only] The unique ID of the other disk asynchronously replicated
    * to or from the current disk. This value identifies the exact disk that
    * was used to create this replication. For example, if you started
    * replicating the persistent disk from a disk that was later deleted and

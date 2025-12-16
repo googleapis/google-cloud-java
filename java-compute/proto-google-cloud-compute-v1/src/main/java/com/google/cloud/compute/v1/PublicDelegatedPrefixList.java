@@ -222,7 +222,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
    * prefixes.
    * </pre>
    *
@@ -239,7 +239,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
    * prefixes.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
    * prefixes.
    * </pre>
    *
@@ -1540,7 +1540,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *
@@ -1556,7 +1556,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *
@@ -1580,7 +1580,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *
@@ -1604,7 +1604,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *
@@ -1627,7 +1627,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *
@@ -1646,7 +1646,7 @@ public final class PublicDelegatedPrefixList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixList for public delegated
      * prefixes.
      * </pre>
      *

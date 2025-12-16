@@ -1240,7 +1240,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork purposes are supported.
+   * Output only. Specifies which subnetwork purposes are supported.
    * Check the SubnetworkPurposes enum for the list of possible values.
    * </pre>
    *
@@ -1254,7 +1254,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork purposes are supported.
+   * Output only. Specifies which subnetwork purposes are supported.
    * Check the SubnetworkPurposes enum for the list of possible values.
    * </pre>
    *
@@ -1268,7 +1268,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork purposes are supported.
+   * Output only. Specifies which subnetwork purposes are supported.
    * Check the SubnetworkPurposes enum for the list of possible values.
    * </pre>
    *
@@ -1283,7 +1283,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork purposes are supported.
+   * Output only. Specifies which subnetwork purposes are supported.
    * Check the SubnetworkPurposes enum for the list of possible values.
    * </pre>
    *
@@ -1298,7 +1298,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork stack types are supported.
+   * Output only. Specifies which subnetwork stack types are supported.
    * Check the SubnetworkStackTypes enum for the list of possible values.
    * </pre>
    *
@@ -1312,7 +1312,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork stack types are supported.
+   * Output only. Specifies which subnetwork stack types are supported.
    * Check the SubnetworkStackTypes enum for the list of possible values.
    * </pre>
    *
@@ -1326,7 +1326,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork stack types are supported.
+   * Output only. Specifies which subnetwork stack types are supported.
    * Check the SubnetworkStackTypes enum for the list of possible values.
    * </pre>
    *
@@ -1341,7 +1341,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    *
    *
    * <pre>
-   * Specifies which subnetwork stack types are supported.
+   * Output only. Specifies which subnetwork stack types are supported.
    * Check the SubnetworkStackTypes enum for the list of possible values.
    * </pre>
    *

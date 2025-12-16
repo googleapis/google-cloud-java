@@ -28,7 +28,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the feature.
+   * Output only. [Output Only] The description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -41,7 +41,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the feature.
+   * Output only. [Output Only] The description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -54,7 +54,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the feature.
+   * Output only. [Output Only] The description of the feature.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -67,7 +67,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link to the public documentation for the feature.
+   * Output only. [Output Only] Link to the public documentation for the feature.
    * </pre>
    *
    * <code>optional string help_link = 223410744;</code>
@@ -80,7 +80,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link to the public documentation for the feature.
+   * Output only. [Output Only] Link to the public documentation for the feature.
    * </pre>
    *
    * <code>optional string help_link = 223410744;</code>
@@ -93,7 +93,7 @@ public interface PreviewFeatureStatusOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link to the public documentation for the feature.
+   * Output only. [Output Only] Link to the public documentation for the feature.
    * </pre>
    *
    * <code>optional string help_link = 223410744;</code>

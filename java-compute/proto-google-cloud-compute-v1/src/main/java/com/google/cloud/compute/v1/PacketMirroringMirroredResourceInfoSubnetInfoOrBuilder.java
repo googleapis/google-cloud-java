@@ -28,7 +28,7 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * Output only. [Output Only] Unique identifier for the subnetwork; defined by the
    * server.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * Output only. [Output Only] Unique identifier for the subnetwork; defined by the
    * server.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unique identifier for the subnetwork; defined by the
+   * Output only. [Output Only] Unique identifier for the subnetwork; defined by the
    * server.
    * </pre>
    *

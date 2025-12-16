@@ -74,7 +74,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] The list ofnetwork
+   * Output only. [Output Only] The list ofnetwork
    * endpoint groups that are contained in this scope.
    * </pre>
    *
@@ -92,7 +92,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] The list ofnetwork
+   * Output only. [Output Only] The list ofnetwork
    * endpoint groups that are contained in this scope.
    * </pre>
    *
@@ -110,7 +110,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] The list ofnetwork
+   * Output only. [Output Only] The list ofnetwork
    * endpoint groups that are contained in this scope.
    * </pre>
    *
@@ -127,7 +127,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] The list ofnetwork
+   * Output only. [Output Only] The list ofnetwork
    * endpoint groups that are contained in this scope.
    * </pre>
    *
@@ -144,7 +144,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] The list ofnetwork
+   * Output only. [Output Only] The list ofnetwork
    * endpoint groups that are contained in this scope.
    * </pre>
    *
@@ -165,7 +165,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of network
+   * Output only. [Output Only] An informational warning that replaces the list of network
    * endpoint groups when the list is empty.
    * </pre>
    *
@@ -182,7 +182,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of network
+   * Output only. [Output Only] An informational warning that replaces the list of network
    * endpoint groups when the list is empty.
    * </pre>
    *
@@ -199,7 +199,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
    *
    *
    * <pre>
-   * [Output Only] An informational warning that replaces the list of network
+   * Output only. [Output Only] An informational warning that replaces the list of network
    * endpoint groups when the list is empty.
    * </pre>
    *
@@ -670,7 +670,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -691,7 +691,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -711,7 +711,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -731,7 +731,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -758,7 +758,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -782,7 +782,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -809,7 +809,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -836,7 +836,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -860,7 +860,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -884,7 +884,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -908,7 +908,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -931,7 +931,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -954,7 +954,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -971,7 +971,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -992,7 +992,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -1013,7 +1013,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -1031,7 +1031,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -1049,7 +1049,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] The list ofnetwork
+     * Output only. [Output Only] The list ofnetwork
      * endpoint groups that are contained in this scope.
      * </pre>
      *
@@ -1093,7 +1093,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1109,7 +1109,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1131,7 +1131,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1155,7 +1155,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1176,7 +1176,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1205,7 +1205,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1226,7 +1226,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1242,7 +1242,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *
@@ -1262,7 +1262,7 @@ public final class NetworkEndpointGroupsScopedList extends com.google.protobuf.G
      *
      *
      * <pre>
-     * [Output Only] An informational warning that replaces the list of network
+     * Output only. [Output Only] An informational warning that replaces the list of network
      * endpoint groups when the list is empty.
      * </pre>
      *

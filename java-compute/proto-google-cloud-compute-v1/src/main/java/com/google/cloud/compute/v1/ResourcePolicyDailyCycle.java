@@ -112,7 +112,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *
@@ -129,7 +129,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *
@@ -154,7 +154,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output only] A predetermined duration for the window, automatically
+   * Output only. [Output only] A predetermined duration for the window, automatically
    * chosen to be the smallest possible in the given scenario.
    * </pre>
    *
@@ -741,7 +741,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *
@@ -757,7 +757,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *
@@ -781,7 +781,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *
@@ -805,7 +805,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *
@@ -828,7 +828,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *
@@ -847,7 +847,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output only] A predetermined duration for the window, automatically
+     * Output only. [Output only] A predetermined duration for the window, automatically
      * chosen to be the smallest possible in the given scenario.
      * </pre>
      *

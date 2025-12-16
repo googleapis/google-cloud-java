@@ -123,7 +123,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * Type of resource. Always compute#targetHttpProxyList for lists
+   * Output only. Type of resource. Always compute#targetHttpProxyList for lists
    * of target HTTP proxies.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * Type of resource. Always compute#targetHttpProxyList for lists
+   * Output only. Type of resource. Always compute#targetHttpProxyList for lists
    * of target HTTP proxies.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * Type of resource. Always compute#targetHttpProxyList for lists
+   * Output only. Type of resource. Always compute#targetHttpProxyList for lists
    * of target HTTP proxies.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -229,7 +229,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -242,7 +242,7 @@ public interface TargetHttpProxyListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

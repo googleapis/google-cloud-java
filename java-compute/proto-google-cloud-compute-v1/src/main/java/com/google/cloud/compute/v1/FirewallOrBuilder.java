@@ -88,7 +88,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -116,7 +116,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -372,7 +372,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -386,7 +386,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -400,7 +400,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#firewall
+   * Output only. [Output Only] Type of the resource. Always compute#firewall
    * for firewall rules.
    * </pre>
    *
@@ -414,7 +414,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#firewall
+   * Output only. [Output Only] Type of the resource. Always compute#firewall
    * for firewall rules.
    * </pre>
    *
@@ -428,7 +428,7 @@ public interface FirewallOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#firewall
+   * Output only. [Output Only] Type of the resource. Always compute#firewall
    * for firewall rules.
    * </pre>
    *

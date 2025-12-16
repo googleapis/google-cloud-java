@@ -76,7 +76,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
@@ -90,7 +90,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *
@@ -104,7 +104,7 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder
    *
    *
    * <pre>
-   * [Output only] Duration of the time window, automatically chosen to be
+   * Output only. [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
    * </pre>
    *

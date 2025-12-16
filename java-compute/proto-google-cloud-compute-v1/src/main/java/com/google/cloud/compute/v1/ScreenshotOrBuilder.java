@@ -67,7 +67,7 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *
@@ -81,7 +81,7 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *
@@ -95,7 +95,7 @@ public interface ScreenshotOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#screenshot
+   * Output only. [Output Only] Type of the resource. Always compute#screenshot
    * for the screenshots.
    * </pre>
    *

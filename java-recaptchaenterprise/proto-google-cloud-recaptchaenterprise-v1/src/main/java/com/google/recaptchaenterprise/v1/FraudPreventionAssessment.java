@@ -39,7 +39,9 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     super(builder);
   }
 
-  private FraudPreventionAssessment() {}
+  private FraudPreventionAssessment() {
+    riskReasons_ = java.util.Collections.emptyList();
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -60,6 +62,920 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         .ensureFieldAccessorsInitialized(
             com.google.recaptchaenterprise.v1.FraudPreventionAssessment.class,
             com.google.recaptchaenterprise.v1.FraudPreventionAssessment.Builder.class);
+  }
+
+  public interface RiskReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    int getReasonValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason getReason();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Risk reasons applicable to the Fraud Prevention assessment.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason}
+   */
+  public static final class RiskReason extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)
+      RiskReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use RiskReason.newBuilder() to construct.
+    private RiskReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RiskReason() {
+      reason_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new RiskReason();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_RiskReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+          .internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_RiskReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.class,
+              com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Risk reasons applicable to the Fraud Prevention assessment. New risk
+     * reasons will be added over time.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason}
+     */
+    public enum Reason implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>REASON_UNSPECIFIED = 0;</code>
+       */
+      REASON_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * A suspiciously high number of recent transactions have used identifiers
+       * present in this transaction.
+       * </pre>
+       *
+       * <code>HIGH_TRANSACTION_VELOCITY = 1;</code>
+       */
+      HIGH_TRANSACTION_VELOCITY(1),
+      /**
+       *
+       *
+       * <pre>
+       * User is cycling through a suspiciously large number of identifiers,
+       * suggesting enumeration or validation attacks within a potential fraud
+       * network.
+       * </pre>
+       *
+       * <code>EXCESSIVE_ENUMERATION_PATTERN = 2;</code>
+       */
+      EXCESSIVE_ENUMERATION_PATTERN(2),
+      /**
+       *
+       *
+       * <pre>
+       * User has a short history or no history in the reCAPTCHA network,
+       * suggesting the possibility of synthetic identity generation.
+       * </pre>
+       *
+       * <code>SHORT_IDENTITY_HISTORY = 3;</code>
+       */
+      SHORT_IDENTITY_HISTORY(3),
+      /**
+       *
+       *
+       * <pre>
+       * Identifiers used in this transaction originate from an unusual or
+       * conflicting set of geolocations.
+       * </pre>
+       *
+       * <code>GEOLOCATION_DISCREPANCY = 4;</code>
+       */
+      GEOLOCATION_DISCREPANCY(4),
+      /**
+       *
+       *
+       * <pre>
+       * This transaction is linked to a cluster of known fraudulent activity.
+       * </pre>
+       *
+       * <code>ASSOCIATED_WITH_FRAUD_CLUSTER = 5;</code>
+       */
+      ASSOCIATED_WITH_FRAUD_CLUSTER(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default unspecified type.
+       * </pre>
+       *
+       * <code>REASON_UNSPECIFIED = 0;</code>
+       */
+      public static final int REASON_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * A suspiciously high number of recent transactions have used identifiers
+       * present in this transaction.
+       * </pre>
+       *
+       * <code>HIGH_TRANSACTION_VELOCITY = 1;</code>
+       */
+      public static final int HIGH_TRANSACTION_VELOCITY_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * User is cycling through a suspiciously large number of identifiers,
+       * suggesting enumeration or validation attacks within a potential fraud
+       * network.
+       * </pre>
+       *
+       * <code>EXCESSIVE_ENUMERATION_PATTERN = 2;</code>
+       */
+      public static final int EXCESSIVE_ENUMERATION_PATTERN_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * User has a short history or no history in the reCAPTCHA network,
+       * suggesting the possibility of synthetic identity generation.
+       * </pre>
+       *
+       * <code>SHORT_IDENTITY_HISTORY = 3;</code>
+       */
+      public static final int SHORT_IDENTITY_HISTORY_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifiers used in this transaction originate from an unusual or
+       * conflicting set of geolocations.
+       * </pre>
+       *
+       * <code>GEOLOCATION_DISCREPANCY = 4;</code>
+       */
+      public static final int GEOLOCATION_DISCREPANCY_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * This transaction is linked to a cluster of known fraudulent activity.
+       * </pre>
+       *
+       * <code>ASSOCIATED_WITH_FRAUD_CLUSTER = 5;</code>
+       */
+      public static final int ASSOCIATED_WITH_FRAUD_CLUSTER_VALUE = 5;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Reason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Reason forNumber(int value) {
+        switch (value) {
+          case 0:
+            return REASON_UNSPECIFIED;
+          case 1:
+            return HIGH_TRANSACTION_VELOCITY;
+          case 2:
+            return EXCESSIVE_ENUMERATION_PATTERN;
+          case 3:
+            return SHORT_IDENTITY_HISTORY;
+          case 4:
+            return GEOLOCATION_DISCREPANCY;
+          case 5:
+            return ASSOCIATED_WITH_FRAUD_CLUSTER;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Reason> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Reason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Reason>() {
+            public Reason findValueByNumber(int number) {
+              return Reason.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Reason[] VALUES = values();
+
+      public static Reason valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Reason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason)
+    }
+
+    public static final int REASON_FIELD_NUMBER = 1;
+    private int reason_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override
+    public int getReasonValue() {
+      return reason_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reason.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+        getReason() {
+      com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason result =
+          com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.forNumber(
+              reason_);
+      return result == null
+          ? com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (reason_
+          != com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+              .REASON_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, reason_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (reason_
+          != com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+              .REASON_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, reason_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)) {
+        return super.equals(obj);
+      }
+      com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason other =
+          (com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason) obj;
+
+      if (reason_ != other.reason_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + REASON_FIELD_NUMBER;
+      hash = (53 * hash) + reason_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Risk reasons applicable to the Fraud Prevention assessment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_RiskReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_RiskReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.class,
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        reason_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.recaptchaenterprise.v1.RecaptchaEnterpriseProto
+            .internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_RiskReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+          getDefaultInstanceForType() {
+        return com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason build() {
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason buildPartial() {
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason result =
+            new com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason) {
+          return mergeFrom(
+              (com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason other) {
+        if (other
+            == com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+                .getDefaultInstance()) return this;
+        if (other.reason_ != 0) {
+          setReasonValue(other.getReasonValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  reason_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int reason_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for reason.
+       */
+      @java.lang.Override
+      public int getReasonValue() {
+        return reason_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReasonValue(int value) {
+        reason_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The reason.
+       */
+      @java.lang.Override
+      public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+          getReason() {
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason result =
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.forNumber(
+                reason_);
+        return result == null
+            ? com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The reason to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReason(
+          com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        reason_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Risk reasons applicable to the Fraud Prevention assessment.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason reason = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReason() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        reason_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason)
+    private static final com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason();
+    }
+
+    public static com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RiskReason> PARSER =
+        new com.google.protobuf.AbstractParser<RiskReason>() {
+          @java.lang.Override
+          public RiskReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RiskReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RiskReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public interface StolenInstrumentVerdictOrBuilder
@@ -1871,6 +2787,102 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     return transactionRisk_;
   }
 
+  public static final int RISK_REASONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+      riskReasons_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+      getRiskReasonsList() {
+    return riskReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>
+      getRiskReasonsOrBuilderList() {
+    return riskReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRiskReasonsCount() {
+    return riskReasons_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason getRiskReasons(
+      int index) {
+    return riskReasons_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reasons why the transaction is probably fraudulent and
+   * received a high transaction risk score.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder
+      getRiskReasonsOrBuilder(int index) {
+    return riskReasons_.get(index);
+  }
+
   public static final int STOLEN_INSTRUMENT_VERDICT_FIELD_NUMBER = 2;
   private com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict
       stolenInstrumentVerdict_;
@@ -2096,6 +3108,9 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getBehavioralTrustVerdict());
     }
+    for (int i = 0; i < riskReasons_.size(); i++) {
+      output.writeMessage(6, riskReasons_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2119,6 +3134,9 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBehavioralTrustVerdict());
     }
+    for (int i = 0; i < riskReasons_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, riskReasons_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2137,6 +3155,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     if (java.lang.Float.floatToIntBits(getTransactionRisk())
         != java.lang.Float.floatToIntBits(other.getTransactionRisk())) return false;
+    if (!getRiskReasonsList().equals(other.getRiskReasonsList())) return false;
     if (hasStolenInstrumentVerdict() != other.hasStolenInstrumentVerdict()) return false;
     if (hasStolenInstrumentVerdict()) {
       if (!getStolenInstrumentVerdict().equals(other.getStolenInstrumentVerdict())) return false;
@@ -2162,6 +3181,10 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + TRANSACTION_RISK_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getTransactionRisk());
+    if (getRiskReasonsCount() > 0) {
+      hash = (37 * hash) + RISK_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRiskReasonsList().hashCode();
+    }
     if (hasStolenInstrumentVerdict()) {
       hash = (37 * hash) + STOLEN_INSTRUMENT_VERDICT_FIELD_NUMBER;
       hash = (53 * hash) + getStolenInstrumentVerdict().hashCode();
@@ -2316,6 +3339,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getRiskReasonsFieldBuilder();
         getStolenInstrumentVerdictFieldBuilder();
         getCardTestingVerdictFieldBuilder();
         getBehavioralTrustVerdictFieldBuilder();
@@ -2327,6 +3351,13 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       super.clear();
       bitField0_ = 0;
       transactionRisk_ = 0F;
+      if (riskReasonsBuilder_ == null) {
+        riskReasons_ = java.util.Collections.emptyList();
+      } else {
+        riskReasons_ = null;
+        riskReasonsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       stolenInstrumentVerdict_ = null;
       if (stolenInstrumentVerdictBuilder_ != null) {
         stolenInstrumentVerdictBuilder_.dispose();
@@ -2369,11 +3400,25 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment buildPartial() {
       com.google.recaptchaenterprise.v1.FraudPreventionAssessment result =
           new com.google.recaptchaenterprise.v1.FraudPreventionAssessment(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment result) {
+      if (riskReasonsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          riskReasons_ = java.util.Collections.unmodifiableList(riskReasons_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.riskReasons_ = riskReasons_;
+      } else {
+        result.riskReasons_ = riskReasonsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.recaptchaenterprise.v1.FraudPreventionAssessment result) {
@@ -2382,21 +3427,21 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         result.transactionRisk_ = transactionRisk_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.stolenInstrumentVerdict_ =
             stolenInstrumentVerdictBuilder_ == null
                 ? stolenInstrumentVerdict_
                 : stolenInstrumentVerdictBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.cardTestingVerdict_ =
             cardTestingVerdictBuilder_ == null
                 ? cardTestingVerdict_
                 : cardTestingVerdictBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.behavioralTrustVerdict_ =
             behavioralTrustVerdictBuilder_ == null
                 ? behavioralTrustVerdict_
@@ -2455,6 +3500,33 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       if (other.getTransactionRisk() != 0F) {
         setTransactionRisk(other.getTransactionRisk());
       }
+      if (riskReasonsBuilder_ == null) {
+        if (!other.riskReasons_.isEmpty()) {
+          if (riskReasons_.isEmpty()) {
+            riskReasons_ = other.riskReasons_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRiskReasonsIsMutable();
+            riskReasons_.addAll(other.riskReasons_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.riskReasons_.isEmpty()) {
+          if (riskReasonsBuilder_.isEmpty()) {
+            riskReasonsBuilder_.dispose();
+            riskReasonsBuilder_ = null;
+            riskReasons_ = other.riskReasons_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            riskReasonsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRiskReasonsFieldBuilder()
+                    : null;
+          } else {
+            riskReasonsBuilder_.addAllMessages(other.riskReasons_);
+          }
+        }
+      }
       if (other.hasStolenInstrumentVerdict()) {
         mergeStolenInstrumentVerdict(other.getStolenInstrumentVerdict());
       }
@@ -2500,23 +3572,38 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
               {
                 input.readMessage(
                     getStolenInstrumentVerdictFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getCardTestingVerdictFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(
                     getBehavioralTrustVerdictFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
+            case 50:
+              {
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason m =
+                    input.readMessage(
+                        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+                            .parser(),
+                        extensionRegistry);
+                if (riskReasonsBuilder_ == null) {
+                  ensureRiskReasonsIsMutable();
+                  riskReasons_.add(m);
+                } else {
+                  riskReasonsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2598,6 +3685,454 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       return this;
     }
 
+    private java.util.List<com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+        riskReasons_ = java.util.Collections.emptyList();
+
+    private void ensureRiskReasonsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        riskReasons_ =
+            new java.util.ArrayList<
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>(
+                riskReasons_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason,
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder,
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>
+        riskReasonsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+        getRiskReasonsList() {
+      if (riskReasonsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(riskReasons_);
+      } else {
+        return riskReasonsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getRiskReasonsCount() {
+      if (riskReasonsBuilder_ == null) {
+        return riskReasons_.size();
+      } else {
+        return riskReasonsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason getRiskReasons(
+        int index) {
+      if (riskReasonsBuilder_ == null) {
+        return riskReasons_.get(index);
+      } else {
+        return riskReasonsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRiskReasons(
+        int index, com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason value) {
+      if (riskReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRiskReasonsIsMutable();
+        riskReasons_.set(index, value);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRiskReasons(
+        int index,
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+            builderForValue) {
+      if (riskReasonsBuilder_ == null) {
+        ensureRiskReasonsIsMutable();
+        riskReasons_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        riskReasonsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRiskReasons(
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason value) {
+      if (riskReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRiskReasonsIsMutable();
+        riskReasons_.add(value);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRiskReasons(
+        int index, com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason value) {
+      if (riskReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRiskReasonsIsMutable();
+        riskReasons_.add(index, value);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRiskReasons(
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+            builderForValue) {
+      if (riskReasonsBuilder_ == null) {
+        ensureRiskReasonsIsMutable();
+        riskReasons_.add(builderForValue.build());
+        onChanged();
+      } else {
+        riskReasonsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRiskReasons(
+        int index,
+        com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+            builderForValue) {
+      if (riskReasonsBuilder_ == null) {
+        ensureRiskReasonsIsMutable();
+        riskReasons_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        riskReasonsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllRiskReasons(
+        java.lang.Iterable<
+                ? extends com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason>
+            values) {
+      if (riskReasonsBuilder_ == null) {
+        ensureRiskReasonsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, riskReasons_);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRiskReasons() {
+      if (riskReasonsBuilder_ == null) {
+        riskReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRiskReasons(int index) {
+      if (riskReasonsBuilder_ == null) {
+        ensureRiskReasonsIsMutable();
+        riskReasons_.remove(index);
+        onChanged();
+      } else {
+        riskReasonsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+        getRiskReasonsBuilder(int index) {
+      return getRiskReasonsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder
+        getRiskReasonsOrBuilder(int index) {
+      if (riskReasonsBuilder_ == null) {
+        return riskReasons_.get(index);
+      } else {
+        return riskReasonsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>
+        getRiskReasonsOrBuilderList() {
+      if (riskReasonsBuilder_ != null) {
+        return riskReasonsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(riskReasons_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+        addRiskReasonsBuilder() {
+      return getRiskReasonsFieldBuilder()
+          .addBuilder(
+              com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder
+        addRiskReasonsBuilder(int index) {
+      return getRiskReasonsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reasons why the transaction is probably fraudulent and
+     * received a high transaction risk score.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason risk_reasons = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder>
+        getRiskReasonsBuilderList() {
+      return getRiskReasonsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason,
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder,
+            com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>
+        getRiskReasonsFieldBuilder() {
+      if (riskReasonsBuilder_ == null) {
+        riskReasonsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason,
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Builder,
+                com.google.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReasonOrBuilder>(
+                riskReasons_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        riskReasons_ = null;
+      }
+      return riskReasonsBuilder_;
+    }
+
     private com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict
         stolenInstrumentVerdict_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2623,7 +4158,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * @return Whether the stolenInstrumentVerdict field is set.
      */
     public boolean hasStolenInstrumentVerdict() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -2674,7 +4209,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         stolenInstrumentVerdictBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2699,7 +4234,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         stolenInstrumentVerdictBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -2719,7 +4254,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public Builder mergeStolenInstrumentVerdict(
         com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict value) {
       if (stolenInstrumentVerdictBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && stolenInstrumentVerdict_ != null
             && stolenInstrumentVerdict_
                 != com.google.recaptchaenterprise.v1.FraudPreventionAssessment
@@ -2732,7 +4267,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         stolenInstrumentVerdictBuilder_.mergeFrom(value);
       }
       if (stolenInstrumentVerdict_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -2751,7 +4286,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearStolenInstrumentVerdict() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       stolenInstrumentVerdict_ = null;
       if (stolenInstrumentVerdictBuilder_ != null) {
         stolenInstrumentVerdictBuilder_.dispose();
@@ -2776,7 +4311,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.StolenInstrumentVerdict
             .Builder
         getStolenInstrumentVerdictBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getStolenInstrumentVerdictFieldBuilder().getBuilder();
     }
@@ -2862,7 +4397,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * @return Whether the cardTestingVerdict field is set.
      */
     public boolean hasCardTestingVerdict() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2913,7 +4448,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         cardTestingVerdictBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2938,7 +4473,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         cardTestingVerdictBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2958,7 +4493,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public Builder mergeCardTestingVerdict(
         com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict value) {
       if (cardTestingVerdictBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && cardTestingVerdict_ != null
             && cardTestingVerdict_
                 != com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict
@@ -2971,7 +4506,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         cardTestingVerdictBuilder_.mergeFrom(value);
       }
       if (cardTestingVerdict_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2990,7 +4525,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearCardTestingVerdict() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       cardTestingVerdict_ = null;
       if (cardTestingVerdictBuilder_ != null) {
         cardTestingVerdictBuilder_.dispose();
@@ -3014,7 +4549,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      */
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdict.Builder
         getCardTestingVerdictBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getCardTestingVerdictFieldBuilder().getBuilder();
     }
@@ -3098,7 +4633,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * @return Whether the behavioralTrustVerdict field is set.
      */
     public boolean hasBehavioralTrustVerdict() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -3147,7 +4682,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         behavioralTrustVerdictBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3171,7 +4706,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
       } else {
         behavioralTrustVerdictBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3190,7 +4725,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public Builder mergeBehavioralTrustVerdict(
         com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict value) {
       if (behavioralTrustVerdictBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && behavioralTrustVerdict_ != null
             && behavioralTrustVerdict_
                 != com.google.recaptchaenterprise.v1.FraudPreventionAssessment
@@ -3203,7 +4738,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
         behavioralTrustVerdictBuilder_.mergeFrom(value);
       }
       if (behavioralTrustVerdict_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -3221,7 +4756,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
      * </code>
      */
     public Builder clearBehavioralTrustVerdict() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       behavioralTrustVerdict_ = null;
       if (behavioralTrustVerdictBuilder_ != null) {
         behavioralTrustVerdictBuilder_.dispose();
@@ -3245,7 +4780,7 @@ public final class FraudPreventionAssessment extends com.google.protobuf.Generat
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict
             .Builder
         getBehavioralTrustVerdictBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getBehavioralTrustVerdictFieldBuilder().getBuilder();
     }

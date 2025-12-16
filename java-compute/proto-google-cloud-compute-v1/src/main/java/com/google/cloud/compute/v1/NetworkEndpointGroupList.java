@@ -222,7 +222,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -239,7 +239,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
    * lists.
    * </pre>
    *
@@ -375,7 +375,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -391,7 +391,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -415,7 +415,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1538,7 +1538,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1554,7 +1554,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1578,7 +1578,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1602,7 +1602,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1625,7 +1625,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1644,7 +1644,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
+     * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupList for network endpoint group
      * lists.
      * </pre>
      *
@@ -1820,7 +1820,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1835,7 +1835,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1858,7 +1858,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1881,7 +1881,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1903,7 +1903,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1921,7 +1921,7 @@ public final class NetworkEndpointGroupList extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

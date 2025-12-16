@@ -258,7 +258,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this future reservation inRFC3339
+   * Output only. [Output Only] The creation timestamp for this future reservation inRFC3339
    * text format.
    * </pre>
    *
@@ -272,7 +272,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this future reservation inRFC3339
+   * Output only. [Output Only] The creation timestamp for this future reservation inRFC3339
    * text format.
    * </pre>
    *
@@ -286,7 +286,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The creation timestamp for this future reservation inRFC3339
+   * Output only. [Output Only] The creation timestamp for this future reservation inRFC3339
    * text format.
    * </pre>
    *
@@ -410,7 +410,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this future reservation. The server
+   * Output only. [Output Only] A unique identifier for this future reservation. The server
    * defines this identifier.
    * </pre>
    *
@@ -424,7 +424,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A unique identifier for this future reservation. The server
+   * Output only. [Output Only] A unique identifier for this future reservation. The server
    * defines this identifier.
    * </pre>
    *
@@ -438,7 +438,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -451,7 +451,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -464,7 +464,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -765,7 +765,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -778,7 +778,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -791,7 +791,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -804,7 +804,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -817,7 +817,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -830,7 +830,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -957,7 +957,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the Future Reservation
+   * Output only. [Output only] Status of the Future Reservation
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
@@ -970,7 +970,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the Future Reservation
+   * Output only. [Output only] Status of the Future Reservation
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
@@ -983,7 +983,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output only] Status of the Future Reservation
+   * Output only. [Output only] Status of the Future Reservation
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
@@ -1034,7 +1034,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the Zone where this future reservation resides.
+   * Output only. [Output Only] URL of the Zone where this future reservation resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1047,7 +1047,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the Zone where this future reservation resides.
+   * Output only. [Output Only] URL of the Zone where this future reservation resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1060,7 +1060,7 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the Zone where this future reservation resides.
+   * Output only. [Output Only] URL of the Zone where this future reservation resides.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

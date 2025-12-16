@@ -28,7 +28,7 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
    * connect to this Interconnect remote location.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
    * connect to this Interconnect remote location.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InterconnectRemoteLocationPermittedConnectionsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of an Interconnect location that is permitted to
+   * Output only. [Output Only] URL of an Interconnect location that is permitted to
    * connect to this Interconnect remote location.
    * </pre>
    *

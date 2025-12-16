@@ -28,7 +28,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran.
+   * Output only. [Output Only] The last time the schedule successfully ran.
    * The timestamp is an RFC3339 string.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran.
+   * Output only. [Output Only] The last time the schedule successfully ran.
    * The timestamp is an RFC3339 string.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran.
+   * Output only. [Output Only] The last time the schedule successfully ran.
    * The timestamp is an RFC3339 string.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run.
+   * Output only. [Output Only] The next time the schedule is planned to run.
    * The actual time might be slightly different.
    * The timestamp is an RFC3339 string.
    * </pre>
@@ -85,7 +85,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run.
+   * Output only. [Output Only] The next time the schedule is planned to run.
    * The actual time might be slightly different.
    * The timestamp is an RFC3339 string.
    * </pre>
@@ -100,7 +100,7 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run.
+   * Output only. [Output Only] The next time the schedule is planned to run.
    * The actual time might be slightly different.
    * The timestamp is an RFC3339 string.
    * </pre>

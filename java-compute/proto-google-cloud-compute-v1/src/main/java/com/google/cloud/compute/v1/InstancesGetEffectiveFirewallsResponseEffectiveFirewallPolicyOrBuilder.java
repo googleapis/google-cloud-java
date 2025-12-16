@@ -28,7 +28,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name
+   * Output only. [Output Only] Deprecated, please use short name instead. The display name
    * of the firewall policy.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name
+   * Output only. [Output Only] Deprecated, please use short name instead. The display name
    * of the firewall policy.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] Deprecated, please use short name instead. The display name
+   * Output only. [Output Only] Deprecated, please use short name instead. The display name
    * of the firewall policy.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -83,7 +83,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -96,7 +96,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The name of the firewall policy.
+   * Output only. [Output Only] The name of the firewall policy.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -109,7 +109,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The packet mirroring rules that apply to the instance.
+   * Output only. [Output Only] The packet mirroring rules that apply to the instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -121,7 +121,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The packet mirroring rules that apply to the instance.
+   * Output only. [Output Only] The packet mirroring rules that apply to the instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -133,7 +133,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The packet mirroring rules that apply to the instance.
+   * Output only. [Output Only] The packet mirroring rules that apply to the instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -145,7 +145,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The packet mirroring rules that apply to the instance.
+   * Output only. [Output Only] The packet mirroring rules that apply to the instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -158,7 +158,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The packet mirroring rules that apply to the instance.
+   * Output only. [Output Only] The packet mirroring rules that apply to the instance.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.FirewallPolicyRule packet_mirroring_rules = 531644356;
@@ -171,7 +171,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for
+   * Output only. [Output only] Priority of firewall policy association. Not applicable for
    * type=HIERARCHY.
    * </pre>
    *
@@ -185,7 +185,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output only] Priority of firewall policy association. Not applicable for
+   * Output only. [Output only] Priority of firewall policy association. Not applicable for
    * type=HIERARCHY.
    * </pre>
    *
@@ -265,7 +265,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy.
+   * Output only. [Output Only] The short name of the firewall policy.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -278,7 +278,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy.
+   * Output only. [Output Only] The short name of the firewall policy.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -291,7 +291,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The short name of the firewall policy.
+   * Output only. [Output Only] The short name of the firewall policy.
    * </pre>
    *
    * <code>optional string short_name = 492051566;</code>
@@ -304,7 +304,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
    * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
@@ -319,7 +319,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
    * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>
@@ -334,7 +334,7 @@ public interface InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicyOr
    *
    *
    * <pre>
-   * [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
+   * Output only. [Output Only] The type of the firewall policy. Can be one of HIERARCHY,
    * NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
    * Check the Type enum for the list of possible values.
    * </pre>

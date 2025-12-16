@@ -96,7 +96,7 @@ public interface InstanceSettingsMetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -110,7 +110,7 @@ public interface InstanceSettingsMetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *
@@ -124,7 +124,7 @@ public interface InstanceSettingsMetadataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#metadata
+   * Output only. [Output Only] Type of the resource. Always compute#metadata
    * for metadata.
    * </pre>
    *

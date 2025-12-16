@@ -28,7 +28,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] AS path.
+   * Output only. [Output Only] AS path.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
@@ -39,7 +39,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] AS path.
+   * Output only. [Output Only] AS path.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
@@ -50,7 +50,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] AS path.
+   * Output only. [Output Only] AS path.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
@@ -61,7 +61,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] AS path.
+   * Output only. [Output Only] AS path.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
@@ -73,7 +73,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] AS path.
+   * Output only. [Output Only] AS path.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
@@ -84,7 +84,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -112,7 +112,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -219,7 +219,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -233,7 +233,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -247,7 +247,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for
+   * Output only. [Output Only] Type of this resource. Always compute#routes for
    * Route resources.
    * </pre>
    *
@@ -261,7 +261,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for
+   * Output only. [Output Only] Type of this resource. Always compute#routes for
    * Route resources.
    * </pre>
    *
@@ -275,7 +275,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of this resource. Always compute#routes for
+   * Output only. [Output Only] Type of this resource. Always compute#routes for
    * Route resources.
    * </pre>
    *
@@ -430,7 +430,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * Output only. [Output Only] The full resource name of the Network Connectivity Center hub
    * that will handle matching packets.
    * </pre>
    *
@@ -444,7 +444,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * Output only. [Output Only] The full resource name of the Network Connectivity Center hub
    * that will handle matching packets.
    * </pre>
    *
@@ -458,7 +458,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The full resource name of the Network Connectivity Center hub
+   * Output only. [Output Only] The full resource name of the Network Connectivity Center hub
    * that will handle matching packets.
    * </pre>
    *
@@ -619,7 +619,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Internal fixed region-to-region cost that Google Cloud
+   * Output only. [Output only] Internal fixed region-to-region cost that Google Cloud
    * calculates based on factors such as network performance, distance, and
    * available bandwidth between regions.
    * </pre>
@@ -634,7 +634,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] Internal fixed region-to-region cost that Google Cloud
+   * Output only. [Output only] Internal fixed region-to-region cost that Google Cloud
    * calculates based on factors such as network performance, distance, and
    * available bandwidth between regions.
    * </pre>
@@ -644,6 +644,57 @@ public interface RouteOrBuilder
    * @return The nextHopInterRegionCost.
    */
   int getNextHopInterRegionCost();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop
+   * for the route.
+   * This field will only be populated for dynamic routes generated by
+   * Cloud Router with a linked interconnectAttachment or the static route
+   * generated by each L2 Interconnect Attachment.
+   * </pre>
+   *
+   * <code>optional string next_hop_interconnect_attachment = 226852914;</code>
+   *
+   * @return Whether the nextHopInterconnectAttachment field is set.
+   */
+  boolean hasNextHopInterconnectAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop
+   * for the route.
+   * This field will only be populated for dynamic routes generated by
+   * Cloud Router with a linked interconnectAttachment or the static route
+   * generated by each L2 Interconnect Attachment.
+   * </pre>
+   *
+   * <code>optional string next_hop_interconnect_attachment = 226852914;</code>
+   *
+   * @return The nextHopInterconnectAttachment.
+   */
+  java.lang.String getNextHopInterconnectAttachment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop
+   * for the route.
+   * This field will only be populated for dynamic routes generated by
+   * Cloud Router with a linked interconnectAttachment or the static route
+   * generated by each L2 Interconnect Attachment.
+   * </pre>
+   *
+   * <code>optional string next_hop_interconnect_attachment = 226852914;</code>
+   *
+   * @return The bytes for nextHopInterconnectAttachment.
+   */
+  com.google.protobuf.ByteString getNextHopInterconnectAttachmentBytes();
 
   /**
    *
@@ -706,7 +757,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+   * Output only. [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
    * the desirability of a particular route in a network.
    * </pre>
    *
@@ -720,7 +771,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
+   * Output only. [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates
    * the desirability of a particular route in a network.
    * </pre>
    *
@@ -773,7 +824,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP
+   * Output only. [Output Only] Indicates the origin of the route. Can be IGP
    * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
    * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
@@ -789,7 +840,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP
+   * Output only. [Output Only] Indicates the origin of the route. Can be IGP
    * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
    * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
@@ -805,7 +856,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the origin of the route. Can be IGP
+   * Output only. [Output Only] Indicates the origin of the route. Can be IGP
    * (Interior Gateway Protocol), EGP (Exterior Gateway Protocol),
    * or INCOMPLETE.
    * Check the NextHopOrigin enum for the list of possible values.
@@ -821,7 +872,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets,
+   * Output only. [Output Only] The network peering name that should handle matching packets,
    * which should conform to RFC1035.
    * </pre>
    *
@@ -835,7 +886,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets,
+   * Output only. [Output Only] The network peering name that should handle matching packets,
    * which should conform to RFC1035.
    * </pre>
    *
@@ -849,7 +900,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The network peering name that should handle matching packets,
+   * Output only. [Output Only] The network peering name that should handle matching packets,
    * which should conform to RFC1035.
    * </pre>
    *
@@ -976,9 +1027,9 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] The status of the route. This status only applies to
-   * dynamic routes learned by Cloud Routers. This status is not applicable
-   * to static routes.
+   * [Output only] The status of the route. This status applies to
+   * dynamic routes learned by Cloud Routers. It is also applicable to routes
+   * undergoing migration.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -992,9 +1043,9 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] The status of the route. This status only applies to
-   * dynamic routes learned by Cloud Routers. This status is not applicable
-   * to static routes.
+   * [Output only] The status of the route. This status applies to
+   * dynamic routes learned by Cloud Routers. It is also applicable to routes
+   * undergoing migration.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -1008,9 +1059,9 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output only] The status of the route. This status only applies to
-   * dynamic routes learned by Cloud Routers. This status is not applicable
-   * to static routes.
+   * [Output only] The status of the route. This status applies to
+   * dynamic routes learned by Cloud Routers. It is also applicable to routes
+   * undergoing migration.
    * Check the RouteStatus enum for the list of possible values.
    * </pre>
    *
@@ -1024,7 +1075,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following
+   * Output only. [Output Only] The type of this route, which can be one of the following
    * values:
    * - 'TRANSIT' for a transit route that this router learned from
    * another Cloud Router and will readvertise to one of its BGP peers
@@ -1044,7 +1095,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following
+   * Output only. [Output Only] The type of this route, which can be one of the following
    * values:
    * - 'TRANSIT' for a transit route that this router learned from
    * another Cloud Router and will readvertise to one of its BGP peers
@@ -1064,7 +1115,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of this route, which can be one of the following
+   * Output only. [Output Only] The type of this route, which can be one of the following
    * values:
    * - 'TRANSIT' for a transit route that this router learned from
    * another Cloud Router and will readvertise to one of its BGP peers
@@ -1177,7 +1228,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * route, this field will be populated with warning messages.
    * </pre>
    *
@@ -1189,7 +1240,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * route, this field will be populated with warning messages.
    * </pre>
    *
@@ -1201,7 +1252,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * route, this field will be populated with warning messages.
    * </pre>
    *
@@ -1213,7 +1264,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * route, this field will be populated with warning messages.
    * </pre>
    *
@@ -1226,7 +1277,7 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * [Output Only] If potential misconfigurations are detected for this
+   * Output only. [Output Only] If potential misconfigurations are detected for this
    * route, this field will be populated with warning messages.
    * </pre>
    *

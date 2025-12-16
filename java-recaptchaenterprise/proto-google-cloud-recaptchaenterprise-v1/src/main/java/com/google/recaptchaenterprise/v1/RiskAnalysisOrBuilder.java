@@ -187,8 +187,8 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-   * keys
+   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+   * keys.
    * </pre>
    *
    * <code>
@@ -203,8 +203,8 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for SCORE_AND_CHALLENGE and INVISIBLE
-   * keys
+   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
+   * keys.
    * </pre>
    *
    * <code>
@@ -214,4 +214,75 @@ public interface RiskAnalysisOrBuilder
    * @return The challenge.
    */
   com.google.recaptchaenterprise.v1.RiskAnalysis.Challenge getChallenge();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.recaptchaenterprise.v1.Bot> getVerifiedBotsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.Bot getVerifiedBots(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getVerifiedBotsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.recaptchaenterprise.v1.BotOrBuilder>
+      getVerifiedBotsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Bots with identities that have been verified by reCAPTCHA and
+   * detected in the event.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.recaptchaenterprise.v1.Bot verified_bots = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.BotOrBuilder getVerifiedBotsOrBuilder(int index);
 }

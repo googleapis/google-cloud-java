@@ -123,7 +123,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
+   * Output only. [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -136,7 +136,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
+   * Output only. [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -149,7 +149,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
+   * Output only. [Output Only] Type of resource. Alwayscompute#acceleratorTypeList for lists of accelerator types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -213,7 +213,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -226,7 +226,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -239,7 +239,7 @@ public interface AcceleratorTypeListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

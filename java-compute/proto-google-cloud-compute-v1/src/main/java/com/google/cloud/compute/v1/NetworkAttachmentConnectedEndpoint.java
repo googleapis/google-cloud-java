@@ -748,7 +748,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
    * IP was allocated from.
    * </pre>
    *
@@ -765,7 +765,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
    * IP was allocated from.
    * </pre>
    *
@@ -790,7 +790,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
    *
    *
    * <pre>
-   * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+   * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
    * IP was allocated from.
    * </pre>
    *
@@ -2206,7 +2206,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *
@@ -2222,7 +2222,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *
@@ -2246,7 +2246,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *
@@ -2270,7 +2270,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *
@@ -2293,7 +2293,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *
@@ -2312,7 +2312,7 @@ public final class NetworkAttachmentConnectedEndpoint extends com.google.protobu
      *
      *
      * <pre>
-     * [Output Only] The CIDR range of the subnet from which the IPv4 internal
+     * Output only. [Output Only] The CIDR range of the subnet from which the IPv4 internal
      * IP was allocated from.
      * </pre>
      *

@@ -221,7 +221,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -237,7 +237,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -261,7 +261,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+   * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1431,7 +1431,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1446,7 +1446,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1469,7 +1469,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1492,7 +1492,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1514,7 +1514,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1532,7 +1532,7 @@ public final class FirewallPolicyList extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
+     * Output only. [Output Only] Type of resource. Alwayscompute#firewallPolicyList for listsof FirewallPolicies
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

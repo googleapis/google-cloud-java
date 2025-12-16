@@ -73,7 +73,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>
@@ -91,7 +91,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>
@@ -117,7 +117,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>
@@ -495,7 +495,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>
@@ -512,7 +512,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>
@@ -537,7 +537,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>
@@ -562,7 +562,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>
@@ -586,7 +586,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>
@@ -606,7 +606,7 @@ public final class BackendServiceUsedBy extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for resources referencing given
+     * Output only. [Output Only] Server-defined URL for resources referencing given
      * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
      * and ForwardingRule.
      * </pre>

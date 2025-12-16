@@ -502,8 +502,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -517,8 +521,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -532,8 +540,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -547,8 +559,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -563,8 +579,12 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. Deprecated: Use the endpoints.connections.psc_auto_connection
-   * or endpoints.connections.psc_connection values instead.
+   * Output only. Deprecated: The discovery_endpoints parameter is deprecated.
+   * As a result, it will not be populated if the connections are created using
+   * endpoints parameter. Instead of this parameter, for discovery, use
+   * endpoints.connections.pscConnection and
+   * endpoints.connections.pscAutoConnection
+   * with connectionType CONNECTION_TYPE_DISCOVERY.
    * </pre>
    *
    * <code>
@@ -1105,15 +1125,48 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the simulateMaintenanceEvent field is set.
+   */
+  boolean hasSimulateMaintenanceEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Simulate a maintenance event.
+   * </pre>
+   *
+   * <code>
+   * optional bool simulate_maintenance_event = 27 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The simulateMaintenanceEvent.
+   */
+  boolean getSimulateMaintenanceEvent();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Input only. Ondemand maintenance for the instance.
    * </pre>
    *
    * <code>
-   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1/memorystore.proto;l=545
    * @return Whether the ondemandMaintenance field is set.
    */
+  @java.lang.Deprecated
   boolean hasOndemandMaintenance();
 
   /**
@@ -1124,12 +1177,75 @@ public interface InstanceOrBuilder
    * </pre>
    *
    * <code>
-   * optional bool ondemand_maintenance = 28 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * optional bool ondemand_maintenance = 28 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
    * </code>
    *
+   * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
+   *     google/cloud/memorystore/v1/memorystore.proto;l=545
    * @return The ondemandMaintenance.
    */
+  @java.lang.Deprecated
   boolean getOndemandMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  boolean hasSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  boolean hasSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>
+   * optional bool satisfies_pzi = 30 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The satisfiesPzi.
+   */
+  boolean getSatisfiesPzi();
 
   /**
    *
@@ -1308,6 +1424,94 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the kmsKey field is set.
+   */
+  boolean hasKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The kmsKey.
+   */
+  java.lang.String getKmsKey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The KMS key used to encrypt the at-rest data of the cluster.
+   * </pre>
+   *
+   * <code>
+   * optional string kms_key = 45 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for kmsKey.
+   */
+  com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the encryptionInfo field is set.
+   */
+  boolean hasEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The encryptionInfo.
+   */
+  com.google.cloud.memorystore.v1.EncryptionInfo getEncryptionInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Encryption information of the data at rest of the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.EncryptionInfo encryption_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The backup collection full resource name. Example:
    * projects/{project}/locations/{location}/backupCollections/{collection}
    * </pre>
@@ -1395,6 +1599,186 @@ public interface InstanceOrBuilder
    */
   com.google.cloud.memorystore.v1.AutomatedBackupConfigOrBuilder
       getAutomatedBackupConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maintenanceVersion field is set.
+   */
+  boolean hasMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maintenanceVersion.
+   */
+  java.lang.String getMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field can be used to trigger self service update to indicate
+   * the desired maintenance version. The input to this field can be determined
+   * by the available_maintenance_versions field.
+   * </pre>
+   *
+   * <code>optional string maintenance_version = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for maintenanceVersion.
+   */
+  com.google.protobuf.ByteString getMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the effectiveMaintenanceVersion field is set.
+   */
+  boolean hasEffectiveMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The effectiveMaintenanceVersion.
+   */
+  java.lang.String getEffectiveMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field represents the actual maintenance version of the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * optional string effective_maintenance_version = 50 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for effectiveMaintenanceVersion.
+   */
+  com.google.protobuf.ByteString getEffectiveMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the availableMaintenanceVersions.
+   */
+  java.util.List<java.lang.String> getAvailableMaintenanceVersionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of availableMaintenanceVersions.
+   */
+  int getAvailableMaintenanceVersionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The availableMaintenanceVersions at the given index.
+   */
+  java.lang.String getAvailableMaintenanceVersions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field is used to determine the available maintenance
+   * versions for the self service update.
+   * </pre>
+   *
+   * <code>
+   * repeated string available_maintenance_versions = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the availableMaintenanceVersions at the given index.
+   */
+  com.google.protobuf.ByteString getAvailableMaintenanceVersionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Deprecated, do not use.
+   * </pre>
+   *
+   * <code>
+   * bool allow_fewer_zones_deployment = 54 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=626
+   * @return The allowFewerZonesDeployment.
+   */
+  @java.lang.Deprecated
+  boolean getAllowFewerZonesDeployment();
 
   com.google.cloud.memorystore.v1.Instance.ImportSourcesCase getImportSourcesCase();
 }

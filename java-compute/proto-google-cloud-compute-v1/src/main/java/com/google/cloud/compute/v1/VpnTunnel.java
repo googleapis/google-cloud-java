@@ -612,7 +612,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -629,7 +629,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -654,7 +654,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -901,7 +901,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *
@@ -918,7 +918,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *
@@ -943,7 +943,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#vpnTunnel for
+   * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
    * VPN tunnels.
    * </pre>
    *
@@ -3750,7 +3750,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3766,7 +3766,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3790,7 +3790,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3814,7 +3814,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3837,7 +3837,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3856,7 +3856,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -4296,7 +4296,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *
@@ -4312,7 +4312,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *
@@ -4336,7 +4336,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *
@@ -4360,7 +4360,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *
@@ -4383,7 +4383,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *
@@ -4402,7 +4402,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#vpnTunnel for
+     * Output only. [Output Only] Type of resource. Always compute#vpnTunnel for
      * VPN tunnels.
      * </pre>
      *

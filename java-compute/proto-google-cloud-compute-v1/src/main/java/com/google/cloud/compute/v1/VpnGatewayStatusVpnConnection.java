@@ -78,7 +78,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
    * in this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -96,7 +96,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
    * in this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -122,7 +122,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer external VPN gateways to which the VPN tunnels
+   * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
    * in this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -153,7 +153,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
    * this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -171,7 +171,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
    * this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -197,7 +197,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * URL reference to the peer side VPN gateways to which the VPN tunnels in
+   * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
    * this VPN connection are connected.
    * This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
@@ -864,7 +864,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -881,7 +881,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -906,7 +906,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -931,7 +931,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -955,7 +955,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -975,7 +975,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer external VPN gateways to which the VPN tunnels
+     * Output only. URL reference to the peer external VPN gateways to which the VPN tunnels
      * in this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1002,7 +1002,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1019,7 +1019,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1044,7 +1044,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1069,7 +1069,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1093,7 +1093,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>
@@ -1113,7 +1113,7 @@ public final class VpnGatewayStatusVpnConnection extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * URL reference to the peer side VPN gateways to which the VPN tunnels in
+     * Output only. URL reference to the peer side VPN gateways to which the VPN tunnels in
      * this VPN connection are connected.
      * This field is mutually exclusive with peer_gcp_gateway.
      * </pre>

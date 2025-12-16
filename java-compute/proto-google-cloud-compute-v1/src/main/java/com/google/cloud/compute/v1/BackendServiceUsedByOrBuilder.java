@@ -28,7 +28,7 @@ public interface BackendServiceUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>
@@ -43,7 +43,7 @@ public interface BackendServiceUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>
@@ -58,7 +58,7 @@ public interface BackendServiceUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for resources referencing given
+   * Output only. [Output Only] Server-defined URL for resources referencing given
    * BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies
    * and ForwardingRule.
    * </pre>

@@ -215,7 +215,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -232,7 +232,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -250,7 +250,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -266,7 +266,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -283,7 +283,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -1028,7 +1028,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1048,7 +1048,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1067,7 +1067,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1087,7 +1087,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1113,7 +1113,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1138,7 +1138,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1164,7 +1164,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1190,7 +1190,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1214,7 +1214,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1239,7 +1239,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1264,7 +1264,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1286,7 +1286,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1308,7 +1308,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1324,7 +1324,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1344,7 +1344,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1365,7 +1365,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1384,7 +1384,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>
@@ -1404,7 +1404,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
      *
      *
      * <pre>
-     * The detailed instances information for a given Block
+     * Output only. The detailed instances information for a given Block
      * </pre>
      *
      * <code>

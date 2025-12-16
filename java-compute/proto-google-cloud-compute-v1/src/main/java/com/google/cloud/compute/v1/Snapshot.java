@@ -106,7 +106,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the snapshot. Valid values are
    * ARM64 or X86_64.
    * </pre>
    *
@@ -416,7 +416,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+   * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Snapshot.Status}
@@ -644,7 +644,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -785,7 +785,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -803,7 +803,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -829,7 +829,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The architecture of the snapshot. Valid values are
+   * Output only. [Output Only] The architecture of the snapshot. Valid values are
    * ARM64 or X86_64.
    * Check the Architecture enum for the list of possible values.
    * </pre>
@@ -858,7 +858,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Set to true if snapshots are automatically created by
+   * Output only. [Output Only] Set to true if snapshots are automatically created by
    * applying resource policy on the target disk.
    * </pre>
    *
@@ -875,7 +875,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Set to true if snapshots are automatically created by
+   * Output only. [Output Only] Set to true if snapshots are automatically created by
    * applying resource policy on the target disk.
    * </pre>
    *
@@ -979,7 +979,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size in bytes of the snapshot at creation time.
+   * Output only. [Output Only] Size in bytes of the snapshot at creation time.
    * </pre>
    *
    * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -995,7 +995,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size in bytes of the snapshot at creation time.
+   * Output only. [Output Only] Size in bytes of the snapshot at creation time.
    * </pre>
    *
    * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -1016,7 +1016,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1033,7 +1033,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1058,7 +1058,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -1158,7 +1158,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the source disk, specified in GB.
+   * Output only. [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
    * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -1174,7 +1174,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Size of the source disk, specified in GB.
+   * Output only. [Output Only] Size of the source disk, specified in GB.
    * </pre>
    *
    * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -1193,7 +1193,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+   * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
    * <code>optional int64 download_bytes = 435054068;</code>
@@ -1209,7 +1209,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+   * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
    * </pre>
    *
    * <code>optional int64 download_bytes = 435054068;</code>
@@ -1228,7 +1228,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether this snapshot is created from a confidential compute mode disk.
+   * Output only. Whether this snapshot is created from a confidential compute mode disk.
    * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
@@ -1245,7 +1245,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Whether this snapshot is created from a confidential compute mode disk.
+   * Output only. Whether this snapshot is created from a confidential compute mode disk.
    * [Output Only]: This field is not set by user, but from source disk.
    * </pre>
    *
@@ -1304,7 +1304,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of features to enable on the guest operating system.
+   * Output only. [Output Only] A list of features to enable on the guest operating system.
    * Applicable only for bootable images. Read
    * Enabling guest operating system features to see a list of available
    * options.
@@ -1321,7 +1321,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of features to enable on the guest operating system.
+   * Output only. [Output Only] A list of features to enable on the guest operating system.
    * Applicable only for bootable images. Read
    * Enabling guest operating system features to see a list of available
    * options.
@@ -1339,7 +1339,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of features to enable on the guest operating system.
+   * Output only. [Output Only] A list of features to enable on the guest operating system.
    * Applicable only for bootable images. Read
    * Enabling guest operating system features to see a list of available
    * options.
@@ -1356,7 +1356,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of features to enable on the guest operating system.
+   * Output only. [Output Only] A list of features to enable on the guest operating system.
    * Applicable only for bootable images. Read
    * Enabling guest operating system features to see a list of available
    * options.
@@ -1373,7 +1373,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of features to enable on the guest operating system.
+   * Output only. [Output Only] A list of features to enable on the guest operating system.
    * Applicable only for bootable images. Read
    * Enabling guest operating system features to see a list of available
    * options.
@@ -1394,7 +1394,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1411,7 +1411,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -1433,7 +1433,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#snapshot
+   * Output only. [Output Only] Type of the resource. Always compute#snapshot
    * for Snapshot resources.
    * </pre>
    *
@@ -1450,7 +1450,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#snapshot
+   * Output only. [Output Only] Type of the resource. Always compute#snapshot
    * for Snapshot resources.
    * </pre>
    *
@@ -1475,7 +1475,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#snapshot
+   * Output only. [Output Only] Type of the resource. Always compute#snapshot
    * for Snapshot resources.
    * </pre>
    *
@@ -1713,7 +1713,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Integer license codes indicating which licenses are attached
+   * Output only. [Output Only] Integer license codes indicating which licenses are attached
    * to this snapshot.
    * </pre>
    *
@@ -1730,7 +1730,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Integer license codes indicating which licenses are attached
+   * Output only. [Output Only] Integer license codes indicating which licenses are attached
    * to this snapshot.
    * </pre>
    *
@@ -1746,7 +1746,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Integer license codes indicating which licenses are attached
+   * Output only. [Output Only] Integer license codes indicating which licenses are attached
    * to this snapshot.
    * </pre>
    *
@@ -1771,7 +1771,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of public visible licenses that apply to this
+   * Output only. [Output Only] A list of public visible licenses that apply to this
    * snapshot. This can be because the original image had licenses attached
    * (such as a Windows image).
    * </pre>
@@ -1788,7 +1788,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of public visible licenses that apply to this
+   * Output only. [Output Only] A list of public visible licenses that apply to this
    * snapshot. This can be because the original image had licenses attached
    * (such as a Windows image).
    * </pre>
@@ -1805,7 +1805,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of public visible licenses that apply to this
+   * Output only. [Output Only] A list of public visible licenses that apply to this
    * snapshot. This can be because the original image had licenses attached
    * (such as a Windows image).
    * </pre>
@@ -1823,7 +1823,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A list of public visible licenses that apply to this
+   * Output only. [Output Only] A list of public visible licenses that apply to this
    * snapshot. This can be because the original image had licenses attached
    * (such as a Windows image).
    * </pre>
@@ -2097,7 +2097,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -2113,7 +2113,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Reserved for future use.
+   * Output only. [Output Only] Reserved for future use.
    * </pre>
    *
    * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -2134,7 +2134,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2150,7 +2150,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2174,7 +2174,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -2581,7 +2581,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this snapshot. This
+   * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
    * value may be used to determine whether the snapshot was taken from the
    * current or a previous instance of a given disk name.
    * </pre>
@@ -2599,7 +2599,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this snapshot. This
+   * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
    * value may be used to determine whether the snapshot was taken from the
    * current or a previous instance of a given disk name.
    * </pre>
@@ -2625,7 +2625,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The ID value of the disk used to create this snapshot. This
+   * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
    * value may be used to determine whether the snapshot was taken from the
    * current or a previous instance of a given disk name.
    * </pre>
@@ -2809,7 +2809,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * snapshot. This value identifies the exact instant snapshot that was used to
    * create this snapshot. For example, if you created the snapshot from an
    * instant snapshot that was later deleted and recreated under the same name,
@@ -2830,7 +2830,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * snapshot. This value identifies the exact instant snapshot that was used to
    * create this snapshot. For example, if you created the snapshot from an
    * instant snapshot that was later deleted and recreated under the same name,
@@ -2859,7 +2859,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique ID of the instant snapshot used to create this
+   * Output only. [Output Only] The unique ID of the instant snapshot used to create this
    * snapshot. This value identifies the exact instant snapshot that was used to
    * create this snapshot. For example, if you created the snapshot from an
    * instant snapshot that was later deleted and recreated under the same name,
@@ -2893,7 +2893,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the resource policy which created this
+   * Output only. [Output Only] URL of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -2910,7 +2910,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the resource policy which created this
+   * Output only. [Output Only] URL of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -2935,7 +2935,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the resource policy which created this
+   * Output only. [Output Only] URL of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -2965,7 +2965,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] ID of the resource policy which created this
+   * Output only. [Output Only] ID of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -2982,7 +2982,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] ID of the resource policy which created this
+   * Output only. [Output Only] ID of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -3007,7 +3007,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] ID of the resource policy which created this
+   * Output only. [Output Only] ID of the resource policy which created this
    * scheduled snapshot.
    * </pre>
    *
@@ -3037,7 +3037,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+   * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3054,7 +3054,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+   * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3079,7 +3079,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+   * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -3107,7 +3107,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the snapshot. As snapshots
+   * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
    * share storage, this number is expected to change with snapshot
    * creation/deletion.
    * </pre>
@@ -3125,7 +3125,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] A size of the storage used by the snapshot. As snapshots
+   * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
    * share storage, this number is expected to change with snapshot
    * creation/deletion.
    * </pre>
@@ -3148,7 +3148,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -3169,7 +3169,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -3198,7 +3198,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
    * reallocation. This status can either be UPDATING, meaning
    * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -4939,7 +4939,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -4956,7 +4956,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -4981,7 +4981,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -5006,7 +5006,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -5030,7 +5030,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -5050,7 +5050,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The architecture of the snapshot. Valid values are
+     * Output only. [Output Only] The architecture of the snapshot. Valid values are
      * ARM64 or X86_64.
      * Check the Architecture enum for the list of possible values.
      * </pre>
@@ -5077,7 +5077,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Set to true if snapshots are automatically created by
+     * Output only. [Output Only] Set to true if snapshots are automatically created by
      * applying resource policy on the target disk.
      * </pre>
      *
@@ -5094,7 +5094,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Set to true if snapshots are automatically created by
+     * Output only. [Output Only] Set to true if snapshots are automatically created by
      * applying resource policy on the target disk.
      * </pre>
      *
@@ -5111,7 +5111,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Set to true if snapshots are automatically created by
+     * Output only. [Output Only] Set to true if snapshots are automatically created by
      * applying resource policy on the target disk.
      * </pre>
      *
@@ -5132,7 +5132,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Set to true if snapshots are automatically created by
+     * Output only. [Output Only] Set to true if snapshots are automatically created by
      * applying resource policy on the target disk.
      * </pre>
      *
@@ -5309,7 +5309,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size in bytes of the snapshot at creation time.
+     * Output only. [Output Only] Size in bytes of the snapshot at creation time.
      * </pre>
      *
      * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -5325,7 +5325,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size in bytes of the snapshot at creation time.
+     * Output only. [Output Only] Size in bytes of the snapshot at creation time.
      * </pre>
      *
      * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -5341,7 +5341,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size in bytes of the snapshot at creation time.
+     * Output only. [Output Only] Size in bytes of the snapshot at creation time.
      * </pre>
      *
      * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -5361,7 +5361,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size in bytes of the snapshot at creation time.
+     * Output only. [Output Only] Size in bytes of the snapshot at creation time.
      * </pre>
      *
      * <code>optional int64 creation_size_bytes = 125400077;</code>
@@ -5381,7 +5381,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5397,7 +5397,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5421,7 +5421,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5445,7 +5445,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5468,7 +5468,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5487,7 +5487,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -5645,7 +5645,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -5661,7 +5661,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -5677,7 +5677,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -5697,7 +5697,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Size of the source disk, specified in GB.
+     * Output only. [Output Only] Size of the source disk, specified in GB.
      * </pre>
      *
      * <code>optional int64 disk_size_gb = 316263735;</code>
@@ -5717,7 +5717,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+     * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
      * <code>optional int64 download_bytes = 435054068;</code>
@@ -5733,7 +5733,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+     * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
      * <code>optional int64 download_bytes = 435054068;</code>
@@ -5749,7 +5749,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+     * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
      * <code>optional int64 download_bytes = 435054068;</code>
@@ -5769,7 +5769,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
+     * Output only. [Output Only] Number of bytes downloaded to restore a snapshot to a disk.
      * </pre>
      *
      * <code>optional int64 download_bytes = 435054068;</code>
@@ -5789,7 +5789,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this snapshot is created from a confidential compute mode disk.
+     * Output only. Whether this snapshot is created from a confidential compute mode disk.
      * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
@@ -5806,7 +5806,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this snapshot is created from a confidential compute mode disk.
+     * Output only. Whether this snapshot is created from a confidential compute mode disk.
      * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
@@ -5823,7 +5823,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this snapshot is created from a confidential compute mode disk.
+     * Output only. Whether this snapshot is created from a confidential compute mode disk.
      * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
@@ -5844,7 +5844,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether this snapshot is created from a confidential compute mode disk.
+     * Output only. Whether this snapshot is created from a confidential compute mode disk.
      * [Output Only]: This field is not set by user, but from source disk.
      * </pre>
      *
@@ -5956,7 +5956,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -5976,7 +5976,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -5996,7 +5996,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6016,7 +6016,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6042,7 +6042,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6066,7 +6066,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6092,7 +6092,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6118,7 +6118,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6142,7 +6142,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6166,7 +6166,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6190,7 +6190,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6213,7 +6213,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6236,7 +6236,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6252,7 +6252,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6273,7 +6273,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6294,7 +6294,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6311,7 +6311,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6328,7 +6328,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of features to enable on the guest operating system.
+     * Output only. [Output Only] A list of features to enable on the guest operating system.
      * Applicable only for bootable images. Read
      * Enabling guest operating system features to see a list of available
      * options.
@@ -6367,7 +6367,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -6384,7 +6384,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -6401,7 +6401,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -6422,7 +6422,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -6443,7 +6443,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6459,7 +6459,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6483,7 +6483,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6507,7 +6507,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6530,7 +6530,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6549,7 +6549,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#snapshot
+     * Output only. [Output Only] Type of the resource. Always compute#snapshot
      * for Snapshot resources.
      * </pre>
      *
@@ -6942,7 +6942,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -6959,7 +6959,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -6975,7 +6975,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -6992,7 +6992,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -7015,7 +7015,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -7037,7 +7037,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -7058,7 +7058,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Integer license codes indicating which licenses are attached
+     * Output only. [Output Only] Integer license codes indicating which licenses are attached
      * to this snapshot.
      * </pre>
      *
@@ -7087,7 +7087,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7105,7 +7105,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7122,7 +7122,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7140,7 +7140,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7158,7 +7158,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7184,7 +7184,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7209,7 +7209,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7231,7 +7231,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7252,7 +7252,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A list of public visible licenses that apply to this
+     * Output only. [Output Only] A list of public visible licenses that apply to this
      * snapshot. This can be because the original image had licenses attached
      * (such as a Windows image).
      * </pre>
@@ -7855,7 +7855,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -7871,7 +7871,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -7887,7 +7887,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -7907,7 +7907,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Reserved for future use.
+     * Output only. [Output Only] Reserved for future use.
      * </pre>
      *
      * <code>optional bool satisfies_pzs = 480964267;</code>
@@ -7927,7 +7927,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -7942,7 +7942,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -7965,7 +7965,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -7988,7 +7988,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -8010,7 +8010,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -8028,7 +8028,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -9014,7 +9014,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9031,7 +9031,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9056,7 +9056,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9081,7 +9081,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9105,7 +9105,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9125,7 +9125,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The ID value of the disk used to create this snapshot. This
+     * Output only. [Output Only] The ID value of the disk used to create this snapshot. This
      * value may be used to determine whether the snapshot was taken from the
      * current or a previous instance of a given disk name.
      * </pre>
@@ -9548,7 +9548,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9568,7 +9568,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9596,7 +9596,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9624,7 +9624,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9651,7 +9651,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9674,7 +9674,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique ID of the instant snapshot used to create this
+     * Output only. [Output Only] The unique ID of the instant snapshot used to create this
      * snapshot. This value identifies the exact instant snapshot that was used to
      * create this snapshot. For example, if you created the snapshot from an
      * instant snapshot that was later deleted and recreated under the same name,
@@ -9704,7 +9704,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9720,7 +9720,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9744,7 +9744,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9768,7 +9768,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9791,7 +9791,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9810,7 +9810,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the resource policy which created this
+     * Output only. [Output Only] URL of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9836,7 +9836,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9852,7 +9852,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9876,7 +9876,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9900,7 +9900,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9923,7 +9923,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9942,7 +9942,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] ID of the resource policy which created this
+     * Output only. [Output Only] ID of the resource policy which created this
      * scheduled snapshot.
      * </pre>
      *
@@ -9968,7 +9968,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -9984,7 +9984,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -10008,7 +10008,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -10032,7 +10032,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -10055,7 +10055,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -10074,7 +10074,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
+     * Output only. [Output Only] The status of the snapshot. This can beCREATING, DELETING, FAILED,READY, or UPLOADING.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -10100,7 +10100,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the snapshot. As snapshots
+     * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
      * share storage, this number is expected to change with snapshot
      * creation/deletion.
      * </pre>
@@ -10118,7 +10118,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the snapshot. As snapshots
+     * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
      * share storage, this number is expected to change with snapshot
      * creation/deletion.
      * </pre>
@@ -10136,7 +10136,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the snapshot. As snapshots
+     * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
      * share storage, this number is expected to change with snapshot
      * creation/deletion.
      * </pre>
@@ -10158,7 +10158,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] A size of the storage used by the snapshot. As snapshots
+     * Output only. [Output Only] A size of the storage used by the snapshot. As snapshots
      * share storage, this number is expected to change with snapshot
      * creation/deletion.
      * </pre>
@@ -10180,7 +10180,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -10200,7 +10200,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -10228,7 +10228,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -10256,7 +10256,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -10283,7 +10283,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,
@@ -10306,7 +10306,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
      * reallocation. This status can either be UPDATING, meaning
      * the size of the snapshot is being updated, or UP_TO_DATE,

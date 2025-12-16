@@ -224,7 +224,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
    * attachments.
    * </pre>
    *
@@ -241,7 +241,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
    * attachments.
    * </pre>
    *
@@ -266,7 +266,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+   * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
    * attachments.
    * </pre>
    *
@@ -377,7 +377,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -393,7 +393,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -417,7 +417,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1546,7 +1546,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1562,7 +1562,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1586,7 +1586,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1610,7 +1610,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1633,7 +1633,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1652,7 +1652,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
+     * Output only. [Output Only] Type of resource. Alwayscompute#interconnectAttachmentList for lists of interconnect
      * attachments.
      * </pre>
      *
@@ -1828,7 +1828,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1843,7 +1843,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1866,7 +1866,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1889,7 +1889,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1911,7 +1911,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1929,7 +1929,7 @@ public final class InterconnectAttachmentList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

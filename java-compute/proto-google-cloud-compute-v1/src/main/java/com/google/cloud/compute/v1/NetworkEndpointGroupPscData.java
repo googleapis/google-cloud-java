@@ -70,7 +70,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NetworkEndpointGroupPscData.PscConnectionStatus}
@@ -322,7 +322,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
    * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
    * L7 PSC-XLB.
    * </pre>
@@ -340,7 +340,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
    * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
    * L7 PSC-XLB.
    * </pre>
@@ -366,7 +366,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
    * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
    * L7 PSC-XLB.
    * </pre>
@@ -434,7 +434,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+   * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
    * Consumer.
    * </pre>
    *
@@ -451,7 +451,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+   * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
    * Consumer.
    * </pre>
    *
@@ -473,7 +473,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *
@@ -490,7 +490,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *
@@ -515,7 +515,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *
@@ -983,7 +983,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1000,7 +1000,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1025,7 +1025,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1050,7 +1050,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1074,7 +1074,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1094,7 +1094,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] Address allocated from given subnetwork for PSC. This IP
+     * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
      * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
      * L7 PSC-XLB.
      * </pre>
@@ -1201,7 +1201,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+     * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
      * Consumer.
      * </pre>
      *
@@ -1218,7 +1218,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+     * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
      * Consumer.
      * </pre>
      *
@@ -1235,7 +1235,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+     * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
      * Consumer.
      * </pre>
      *
@@ -1256,7 +1256,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The PSC connection id of the PSC Network Endpoint Group
+     * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
      * Consumer.
      * </pre>
      *
@@ -1277,7 +1277,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *
@@ -1293,7 +1293,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *
@@ -1317,7 +1317,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *
@@ -1341,7 +1341,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *
@@ -1364,7 +1364,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *
@@ -1383,7 +1383,7 @@ public final class NetworkEndpointGroupPscData extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * [Output Only] The connection status of the PSC Forwarding Rule.
+     * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
      * Check the PscConnectionStatus enum for the list of possible values.
      * </pre>
      *

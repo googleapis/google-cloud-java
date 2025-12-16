@@ -56,7 +56,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in3339
+   * Output only. [Output Only] Creation timestamp in3339
    * text format.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in3339
+   * Output only. [Output Only] Creation timestamp in3339
    * text format.
    * </pre>
    *
@@ -84,7 +84,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in3339
+   * Output only. [Output Only] Creation timestamp in3339
    * text format.
    * </pre>
    *
@@ -294,7 +294,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -307,7 +307,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -320,7 +320,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * Type of the resource.
+   * Output only. Type of the resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -427,7 +427,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides.  Not applicable to
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
    * global health checks.
    * </pre>
    *
@@ -441,7 +441,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides.  Not applicable to
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
    * global health checks.
    * </pre>
    *
@@ -455,7 +455,7 @@ public interface HealthCheckOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Region where the health check resides.  Not applicable to
+   * Output only. [Output Only] Region where the health check resides.  Not applicable to
    * global health checks.
    * </pre>
    *

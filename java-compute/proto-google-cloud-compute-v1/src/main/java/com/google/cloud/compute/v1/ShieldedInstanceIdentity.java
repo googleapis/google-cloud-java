@@ -263,7 +263,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *
@@ -280,7 +280,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *
@@ -305,7 +305,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+   * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
    * identity entry.
    * </pre>
    *
@@ -1578,7 +1578,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *
@@ -1594,7 +1594,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *
@@ -1618,7 +1618,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *
@@ -1642,7 +1642,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *
@@ -1665,7 +1665,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *
@@ -1684,7 +1684,7 @@ public final class ShieldedInstanceIdentity extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
+     * Output only. [Output Only] Type of the resource. Alwayscompute#shieldedInstanceIdentity for shielded Instance
      * identity entry.
      * </pre>
      *

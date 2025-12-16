@@ -161,7 +161,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *
@@ -178,7 +178,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *
@@ -203,7 +203,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
    *
    *
    * <pre>
-   * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+   * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
    * of securityPolicy associations.
    * </pre>
    *
@@ -1075,7 +1075,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *
@@ -1091,7 +1091,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *
@@ -1115,7 +1115,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *
@@ -1139,7 +1139,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *
@@ -1162,7 +1162,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *
@@ -1181,7 +1181,7 @@ public final class OrganizationSecurityPoliciesListAssociationsResponse
      *
      *
      * <pre>
-     * [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
+     * Output only. [Output Only] Type of securityPolicy associations. Alwayscompute#organizationSecurityPoliciesListAssociations for lists
      * of securityPolicy associations.
      * </pre>
      *

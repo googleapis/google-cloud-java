@@ -292,7 +292,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
    * lists of public delegated prefixes.
    * </pre>
    *
@@ -309,7 +309,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
    * lists of public delegated prefixes.
    * </pre>
    *
@@ -334,7 +334,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+   * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
    * lists of public delegated prefixes.
    * </pre>
    *
@@ -515,7 +515,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -530,7 +530,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -545,7 +545,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -561,7 +561,7 @@ public final class PublicDelegatedPrefixAggregatedList
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -1620,7 +1620,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -1636,7 +1636,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -1660,7 +1660,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -1684,7 +1684,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -1707,7 +1707,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -1726,7 +1726,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
+     * Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefixAggregatedList for aggregated
      * lists of public delegated prefixes.
      * </pre>
      *
@@ -2036,7 +2036,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2052,7 +2052,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2067,7 +2067,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2083,7 +2083,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2099,7 +2099,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2123,7 +2123,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2146,7 +2146,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2166,7 +2166,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>
@@ -2185,7 +2185,7 @@ public final class PublicDelegatedPrefixAggregatedList
      *
      *
      * <pre>
-     * [Output Only] Unreachable resources.
+     * Output only. [Output Only] Unreachable resources.
      * </pre>
      *
      * <code>repeated string unreachables = 243372063;</code>

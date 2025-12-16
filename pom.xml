@@ -112,6 +112,7 @@
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
     <module>java-gkehub</module>
+    <module>java-gkerecommender</module>
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
     <module>java-hypercomputecluster</module>

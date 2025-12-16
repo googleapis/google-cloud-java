@@ -28,7 +28,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -202,7 +202,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -215,7 +215,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -228,7 +228,7 @@ public interface TargetVpnGatewayOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
+   * Output only. [Output Only] Type of resource. Alwayscompute#targetVpnGateway for target VPN gateways.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>

@@ -73,7 +73,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
    * string like "iad". This is the first component of the location of an
    * Interconnect.
    * </pre>
@@ -88,7 +88,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
    * string like "iad". This is the first component of the location of an
    * Interconnect.
    * </pre>
@@ -103,7 +103,7 @@ public interface InterconnectAttachmentGroupLogicalStructureRegionMetroOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the metro, as a three-letter lowercase
+   * Output only. [Output Only] The name of the metro, as a three-letter lowercase
    * string like "iad". This is the first component of the location of an
    * Interconnect.
    * </pre>

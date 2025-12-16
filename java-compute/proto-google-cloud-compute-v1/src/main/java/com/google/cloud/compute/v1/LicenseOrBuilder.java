@@ -142,7 +142,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -316,7 +316,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for
+   * Output only. [Output Only] Type of resource. Always compute#license for
    * licenses.
    * </pre>
    *
@@ -330,7 +330,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for
+   * Output only. [Output Only] Type of resource. Always compute#license for
    * licenses.
    * </pre>
    *
@@ -344,7 +344,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#license for
+   * Output only. [Output Only] Type of resource. Always compute#license for
    * licenses.
    * </pre>
    *
@@ -656,7 +656,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -669,7 +669,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -682,7 +682,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -695,7 +695,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -708,7 +708,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -721,7 +721,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -788,7 +788,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp inRFC3339
+   * Output only. [Output Only] Last update timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -802,7 +802,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp inRFC3339
+   * Output only. [Output Only] Last update timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -816,7 +816,7 @@ public interface LicenseOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Last update timestamp inRFC3339
+   * Output only. [Output Only] Last update timestamp inRFC3339
    * text format.
    * </pre>
    *

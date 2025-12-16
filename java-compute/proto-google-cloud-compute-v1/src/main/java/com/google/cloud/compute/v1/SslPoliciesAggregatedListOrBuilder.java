@@ -156,7 +156,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -169,7 +169,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -182,7 +182,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
+   * Output only. [Output Only] Type of resource. Alwayscompute#sslPolicyAggregatedList for lists of SSL Policies.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -246,7 +246,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -259,7 +259,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -272,7 +272,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -285,7 +285,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -298,7 +298,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -311,7 +311,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>
@@ -325,7 +325,7 @@ public interface SslPoliciesAggregatedListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Unreachable resources.
+   * Output only. [Output Only] Unreachable resources.
    * </pre>
    *
    * <code>repeated string unreachables = 243372063;</code>

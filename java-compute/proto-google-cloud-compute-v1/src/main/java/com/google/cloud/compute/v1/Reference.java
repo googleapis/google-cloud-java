@@ -77,7 +77,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *
@@ -94,7 +94,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *
@@ -119,7 +119,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *
@@ -803,7 +803,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *
@@ -819,7 +819,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *
@@ -843,7 +843,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *
@@ -867,7 +867,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *
@@ -890,7 +890,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *
@@ -909,7 +909,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#reference
+     * Output only. [Output Only] Type of the resource. Always compute#reference
      * for references.
      * </pre>
      *

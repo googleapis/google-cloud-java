@@ -128,7 +128,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
    * of network endpoints in the specified network endpoint group.
    * </pre>
    *
@@ -142,7 +142,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
    * of network endpoints in the specified network endpoint group.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface NetworkEndpointGroupsListNetworkEndpointsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
+   * Output only. [Output Only] The resource type, which is alwayscompute#networkEndpointGroupsListNetworkEndpoints for the list
    * of network endpoints in the specified network endpoint group.
    * </pre>
    *

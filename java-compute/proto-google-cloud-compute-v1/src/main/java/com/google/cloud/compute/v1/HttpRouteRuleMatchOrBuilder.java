@@ -345,17 +345,22 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    *
    * <pre>
-   * If specified, the route is a pattern match expression that must match the
-   * :path header once the query string is removed.
+   * If specified, this field defines a path template pattern that must match
+   * the :path header after the query string is removed.
    *
-   *  A pattern match allows you to match
+   * A path template pattern can include variables and wildcards.
+   * Variables are enclosed in curly braces, for example{variable_name}. Wildcards include * that
+   * matches a single path segment, and ** that matches zero or
+   * more path segments. The pattern must follow these rules:
    *
    *
-   *       - The value must be between 1 and 1024 characters
-   *       - The pattern must start with a leading slash ("/")
-   *       - There may be no more than 5 operators in pattern
+   *       - The value must be between 1 and 1024 characters.
+   *       - The pattern must start with a leading slash ("/").
+   *       - No more than 5 operators (variables or wildcards) may appear in
+   *       the pattern.
    *
-   *  Precisely one ofprefix_match, full_path_match,regex_match or path_template_match must be set.
+   * Precisely one ofprefixMatch, fullPathMatch,regexMatch, or pathTemplateMatch must be
+   * set.
    * </pre>
    *
    * <code>optional string path_template_match = 292348186;</code>
@@ -368,17 +373,22 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    *
    * <pre>
-   * If specified, the route is a pattern match expression that must match the
-   * :path header once the query string is removed.
+   * If specified, this field defines a path template pattern that must match
+   * the :path header after the query string is removed.
    *
-   *  A pattern match allows you to match
+   * A path template pattern can include variables and wildcards.
+   * Variables are enclosed in curly braces, for example{variable_name}. Wildcards include * that
+   * matches a single path segment, and ** that matches zero or
+   * more path segments. The pattern must follow these rules:
    *
    *
-   *       - The value must be between 1 and 1024 characters
-   *       - The pattern must start with a leading slash ("/")
-   *       - There may be no more than 5 operators in pattern
+   *       - The value must be between 1 and 1024 characters.
+   *       - The pattern must start with a leading slash ("/").
+   *       - No more than 5 operators (variables or wildcards) may appear in
+   *       the pattern.
    *
-   *  Precisely one ofprefix_match, full_path_match,regex_match or path_template_match must be set.
+   * Precisely one ofprefixMatch, fullPathMatch,regexMatch, or pathTemplateMatch must be
+   * set.
    * </pre>
    *
    * <code>optional string path_template_match = 292348186;</code>
@@ -391,17 +401,22 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    *
    * <pre>
-   * If specified, the route is a pattern match expression that must match the
-   * :path header once the query string is removed.
+   * If specified, this field defines a path template pattern that must match
+   * the :path header after the query string is removed.
    *
-   *  A pattern match allows you to match
+   * A path template pattern can include variables and wildcards.
+   * Variables are enclosed in curly braces, for example{variable_name}. Wildcards include * that
+   * matches a single path segment, and ** that matches zero or
+   * more path segments. The pattern must follow these rules:
    *
    *
-   *       - The value must be between 1 and 1024 characters
-   *       - The pattern must start with a leading slash ("/")
-   *       - There may be no more than 5 operators in pattern
+   *       - The value must be between 1 and 1024 characters.
+   *       - The pattern must start with a leading slash ("/").
+   *       - No more than 5 operators (variables or wildcards) may appear in
+   *       the pattern.
    *
-   *  Precisely one ofprefix_match, full_path_match,regex_match or path_template_match must be set.
+   * Precisely one ofprefixMatch, fullPathMatch,regexMatch, or pathTemplateMatch must be
+   * set.
    * </pre>
    *
    * <code>optional string path_template_match = 292348186;</code>
@@ -419,9 +434,11 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    * The value must be from 1 to 1024 characters.
    *
-   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match must be
-   * specified.
-   * specified.
+   * The * character inside a prefix match is
+   * treated as a literal character, not as a wildcard.
+   *
+   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match can be
+   * used within a matchRule.
    * </pre>
    *
    * <code>optional string prefix_match = 257898968;</code>
@@ -439,9 +456,11 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    * The value must be from 1 to 1024 characters.
    *
-   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match must be
-   * specified.
-   * specified.
+   * The * character inside a prefix match is
+   * treated as a literal character, not as a wildcard.
+   *
+   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match can be
+   * used within a matchRule.
    * </pre>
    *
    * <code>optional string prefix_match = 257898968;</code>
@@ -459,9 +478,11 @@ public interface HttpRouteRuleMatchOrBuilder
    *
    * The value must be from 1 to 1024 characters.
    *
-   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match must be
-   * specified.
-   * specified.
+   * The * character inside a prefix match is
+   * treated as a literal character, not as a wildcard.
+   *
+   * Only one of prefixMatch, fullPathMatch,regexMatch or path_template_match can be
+   * used within a matchRule.
    * </pre>
    *
    * <code>optional string prefix_match = 257898968;</code>
@@ -566,7 +587,8 @@ public interface HttpRouteRuleMatchOrBuilder
    * specified.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -588,7 +610,8 @@ public interface HttpRouteRuleMatchOrBuilder
    * specified.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>
@@ -610,7 +633,8 @@ public interface HttpRouteRuleMatchOrBuilder
    * specified.
    *
    * Regular expressions can only be used when the loadBalancingScheme is
-   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED orINTERNAL_MANAGED.
+   * set to INTERNAL_SELF_MANAGED, EXTERNAL_MANAGED
+   * (regional scope) or INTERNAL_MANAGED.
    * </pre>
    *
    * <code>optional string regex_match = 107387853;</code>

@@ -222,7 +222,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+   * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
    * routes lists.
    * </pre>
    *
@@ -239,7 +239,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+   * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
    * routes lists.
    * </pre>
    *
@@ -264,7 +264,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+   * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
    * routes lists.
    * </pre>
    *
@@ -375,7 +375,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -391,7 +391,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -415,7 +415,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1540,7 +1540,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1556,7 +1556,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1580,7 +1580,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1604,7 +1604,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1627,7 +1627,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1646,7 +1646,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
+     * Output only. [Output Only] Type of resource. Alwayscompute#exchangedPeeringRoutesList for exchanged peering
      * routes lists.
      * </pre>
      *
@@ -1822,7 +1822,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1837,7 +1837,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1860,7 +1860,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1883,7 +1883,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1905,7 +1905,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -1923,7 +1923,7 @@ public final class ExchangedPeeringRoutesList extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource.
+     * Output only. [Output Only] Server-defined URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

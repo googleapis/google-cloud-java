@@ -28,7 +28,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is enabled. This becomes false when the customer
+   * Output only. Whether this Attachment is enabled. This becomes false when the customer
    * drains their Attachment.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is enabled. This becomes false when the customer
+   * Output only. Whether this Attachment is enabled. This becomes false when the customer
    * drains their Attachment.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * The URL of the Attachment being described.
+   * Output only. The URL of the Attachment being described.
    * </pre>
    *
    * <code>optional string attachment = 183982371;</code>
@@ -69,7 +69,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * The URL of the Attachment being described.
+   * Output only. The URL of the Attachment being described.
    * </pre>
    *
    * <code>optional string attachment = 183982371;</code>
@@ -82,7 +82,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * The URL of the Attachment being described.
+   * Output only. The URL of the Attachment being described.
    * </pre>
    *
    * <code>optional string attachment = 183982371;</code>
@@ -95,7 +95,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration.
+   * Output only. Whether this Attachment is participating in the redundant configuration.
    * This will be ACTIVE if and only if the status below is CONNECTION_UP.
    * Any INACTIVE Attachments are excluded from the analysis that generates
    * operational.availabilitySLA.
@@ -112,7 +112,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration.
+   * Output only. Whether this Attachment is participating in the redundant configuration.
    * This will be ACTIVE if and only if the status below is CONNECTION_UP.
    * Any INACTIVE Attachments are excluded from the analysis that generates
    * operational.availabilitySLA.
@@ -129,7 +129,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is participating in the redundant configuration.
+   * Output only. Whether this Attachment is participating in the redundant configuration.
    * This will be ACTIVE if and only if the status below is CONNECTION_UP.
    * Any INACTIVE Attachments are excluded from the analysis that generates
    * operational.availabilitySLA.
@@ -146,7 +146,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up.
+   * Output only. Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -160,7 +160,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up.
+   * Output only. Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -174,7 +174,7 @@ public interface InterconnectAttachmentGroupsOperationalStatusAttachmentStatusOr
    *
    *
    * <pre>
-   * Whether this Attachment is active, and if so, whether BGP is up.
+   * Output only. Whether this Attachment is active, and if so, whether BGP is up.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

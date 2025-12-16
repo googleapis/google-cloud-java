@@ -28,7 +28,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -172,7 +172,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -186,7 +186,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -200,7 +200,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
+   * Output only. [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
    * NetworkEdgeSecurityServices
    * </pre>
    *
@@ -214,7 +214,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
+   * Output only. [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
    * NetworkEdgeSecurityServices
    * </pre>
    *
@@ -228,7 +228,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
+   * Output only. [Output only] Type of the resource. Alwayscompute#networkEdgeSecurityService for
    * NetworkEdgeSecurityServices
    * </pre>
    *
@@ -299,7 +299,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the resource resides. You must
+   * Output only. [Output Only] URL of the region where the resource resides. You must
    * specify this field as part of the HTTP request URL. It is not settable as a
    * field in the request body.
    * </pre>
@@ -314,7 +314,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the resource resides. You must
+   * Output only. [Output Only] URL of the region where the resource resides. You must
    * specify this field as part of the HTTP request URL. It is not settable as a
    * field in the request body.
    * </pre>
@@ -329,7 +329,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the resource resides. You must
+   * Output only. [Output Only] URL of the region where the resource resides. You must
    * specify this field as part of the HTTP request URL. It is not settable as a
    * field in the request body.
    * </pre>
@@ -386,7 +386,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -399,7 +399,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -412,7 +412,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -425,7 +425,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -438,7 +438,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -451,7 +451,7 @@ public interface NetworkEdgeSecurityServiceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource with the resource id.
+   * Output only. [Output Only] Server-defined URL for this resource with the resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>

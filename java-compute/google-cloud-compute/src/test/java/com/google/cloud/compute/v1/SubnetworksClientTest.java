@@ -297,6 +297,7 @@ public class SubnetworksClientTest {
   public void getTest() throws Exception {
     Subnetwork expectedResponse =
         Subnetwork.newBuilder()
+            .setAllowSubnetCidrRoutesOverlap(true)
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEnableFlowLogs(true)

@@ -28,7 +28,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the FutureReservation before an
+   * Output only. [Output Only] The description of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the FutureReservation before an
+   * Output only. [Output Only] The description of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The description of the FutureReservation before an
+   * Output only. [Output Only] The description of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -70,7 +70,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Represents the matching usage for the future
+   * Output only. [Output Only] Represents the matching usage for the future
    * reservation before an amendment was requested.
    * </pre>
    *
@@ -86,7 +86,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Represents the matching usage for the future
+   * Output only. [Output Only] Represents the matching usage for the future
    * reservation before an amendment was requested.
    * </pre>
    *
@@ -103,7 +103,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Represents the matching usage for the future
+   * Output only. [Output Only] Represents the matching usage for the future
    * reservation before an amendment was requested.
    * </pre>
    *
@@ -146,7 +146,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The lock time of the FutureReservation before an
+   * Output only. [Output Only] The lock time of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -160,7 +160,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The lock time of the FutureReservation before an
+   * Output only. [Output Only] The lock time of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -174,7 +174,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The lock time of the FutureReservation before an
+   * Output only. [Output Only] The lock time of the FutureReservation before an
    * amendment was requested.
    * </pre>
    *
@@ -188,7 +188,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name prefix of the Future Reservation before an
+   * Output only. [Output Only] The name prefix of the Future Reservation before an
    * amendment was requested.
    * </pre>
    *
@@ -202,7 +202,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name prefix of the Future Reservation before an
+   * Output only. [Output Only] The name prefix of the Future Reservation before an
    * amendment was requested.
    * </pre>
    *
@@ -216,7 +216,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name prefix of the Future Reservation before an
+   * Output only. [Output Only] The name prefix of the Future Reservation before an
    * amendment was requested.
    * </pre>
    *
@@ -230,7 +230,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the last known good state for the Future
+   * Output only. [Output Only] The status of the last known good state for the Future
    * Reservation.
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>
@@ -245,7 +245,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the last known good state for the Future
+   * Output only. [Output Only] The status of the last known good state for the Future
    * Reservation.
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>
@@ -260,7 +260,7 @@ public interface FutureReservationStatusLastKnownGoodStateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the last known good state for the Future
+   * Output only. [Output Only] The status of the last known good state for the Future
    * Reservation.
    * Check the ProcurementStatus enum for the list of possible values.
    * </pre>

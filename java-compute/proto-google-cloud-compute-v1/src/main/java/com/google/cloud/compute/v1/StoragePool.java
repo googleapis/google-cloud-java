@@ -332,7 +332,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation.
+   * Output only. [Output Only] The status of storage pool creation.
    *
    *
    *      - CREATING: Storage pool is provisioning.
@@ -622,7 +622,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -639,7 +639,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -664,7 +664,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp inRFC3339
+   * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>
    *
@@ -764,7 +764,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -781,7 +781,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
    * defined by the server.
    * </pre>
    *
@@ -803,7 +803,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
    * for storage pools.
    * </pre>
    *
@@ -820,7 +820,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
    * for storage pools.
    * </pre>
    *
@@ -845,7 +845,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#storagePool
+   * Output only. [Output Only] Type of the resource. Always compute#storagePool
    * for storage pools.
    * </pre>
    *
@@ -1350,7 +1350,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1367,7 +1367,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1386,7 +1386,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus resource_status = 249429315;
@@ -1409,7 +1409,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1425,7 +1425,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1449,7 +1449,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined fully-qualified URL for this resource.
+   * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1478,7 +1478,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1494,7 +1494,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1518,7 +1518,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource's resource id.
+   * Output only. [Output Only] Server-defined URL for this resource's resource id.
    * </pre>
    *
    * <code>optional string self_link_with_id = 44520962;</code>
@@ -1547,7 +1547,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation.
+   * Output only. [Output Only] The status of storage pool creation.
    *
    *
    *      - CREATING: Storage pool is provisioning.
@@ -1571,7 +1571,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation.
+   * Output only. [Output Only] The status of storage pool creation.
    *
    *
    *      - CREATING: Storage pool is provisioning.
@@ -1603,7 +1603,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The status of storage pool creation.
+   * Output only. [Output Only] The status of storage pool creation.
    *
    *
    *      - CREATING: Storage pool is provisioning.
@@ -1638,7 +1638,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1654,7 +1654,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1672,7 +1672,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Status information for the storage pool resource.
+   * Output only. [Output Only] Status information for the storage pool resource.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -1762,7 +1762,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1780,7 +1780,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -1806,7 +1806,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL of the zone where the storage pool resides.
+   * Output only. [Output Only] URL of the zone where the storage pool resides.
    * You must specify this field as part of the HTTP request URL. It is
    * not settable as a field in the request body.
    * </pre>
@@ -2905,7 +2905,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2921,7 +2921,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2945,7 +2945,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2969,7 +2969,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -2992,7 +2992,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3011,7 +3011,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp inRFC3339
+     * Output only. [Output Only] Creation timestamp inRFC3339
      * text format.
      * </pre>
      *
@@ -3169,7 +3169,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3186,7 +3186,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3203,7 +3203,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3224,7 +3224,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
      * defined by the server.
      * </pre>
      *
@@ -3245,7 +3245,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -3261,7 +3261,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -3285,7 +3285,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -3309,7 +3309,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -3332,7 +3332,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -3351,7 +3351,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#storagePool
+     * Output only. [Output Only] Type of the resource. Always compute#storagePool
      * for storage pools.
      * </pre>
      *
@@ -4263,7 +4263,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4280,7 +4280,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4303,7 +4303,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4328,7 +4328,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4351,7 +4351,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4383,7 +4383,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4405,7 +4405,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4423,7 +4423,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4445,7 +4445,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>
@@ -4475,7 +4475,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4490,7 +4490,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4513,7 +4513,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4536,7 +4536,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4558,7 +4558,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4576,7 +4576,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined fully-qualified URL for this resource.
+     * Output only. [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4601,7 +4601,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4616,7 +4616,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4639,7 +4639,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4662,7 +4662,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4684,7 +4684,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4702,7 +4702,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for this resource's resource id.
+     * Output only. [Output Only] Server-defined URL for this resource's resource id.
      * </pre>
      *
      * <code>optional string self_link_with_id = 44520962;</code>
@@ -4727,7 +4727,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4750,7 +4750,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4781,7 +4781,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4812,7 +4812,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4842,7 +4842,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4868,7 +4868,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The status of storage pool creation.
+     * Output only. [Output Only] The status of storage pool creation.
      *
      *
      *      - CREATING: Storage pool is provisioning.
@@ -4906,7 +4906,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4921,7 +4921,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4942,7 +4942,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4965,7 +4965,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -4986,7 +4986,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -5015,7 +5015,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -5035,7 +5035,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -5050,7 +5050,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -5069,7 +5069,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Status information for the storage pool resource.
+     * Output only. [Output Only] Status information for the storage pool resource.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.StoragePoolResourceStatus status = 181260274;</code>
@@ -5223,7 +5223,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5240,7 +5240,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5265,7 +5265,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5290,7 +5290,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5314,7 +5314,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>
@@ -5334,7 +5334,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL of the zone where the storage pool resides.
+     * Output only. [Output Only] URL of the zone where the storage pool resides.
      * You must specify this field as part of the HTTP request URL. It is
      * not settable as a field in the request body.
      * </pre>

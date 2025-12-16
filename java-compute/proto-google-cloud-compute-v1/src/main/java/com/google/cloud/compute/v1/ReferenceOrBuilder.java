@@ -28,7 +28,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *
@@ -56,7 +56,7 @@ public interface ReferenceOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#reference
+   * Output only. [Output Only] Type of the resource. Always compute#reference
    * for references.
    * </pre>
    *

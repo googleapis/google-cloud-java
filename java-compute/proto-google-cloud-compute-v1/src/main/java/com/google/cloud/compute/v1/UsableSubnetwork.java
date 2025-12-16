@@ -900,7 +900,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -917,7 +917,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -942,7 +942,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The external IPv6 address range that is assigned to this
+   * Output only. [Output Only] The external IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -972,7 +972,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -989,7 +989,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -1014,7 +1014,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * [Output Only] The internal IPv6 address range that is assigned to this
+   * Output only. [Output Only] The internal IPv6 address range that is assigned to this
    * subnetwork.
    * </pre>
    *
@@ -2326,7 +2326,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2342,7 +2342,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2366,7 +2366,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2390,7 +2390,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2413,7 +2413,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2432,7 +2432,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The external IPv6 address range that is assigned to this
+     * Output only. [Output Only] The external IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2458,7 +2458,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2474,7 +2474,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2498,7 +2498,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2522,7 +2522,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2545,7 +2545,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *
@@ -2564,7 +2564,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * [Output Only] The internal IPv6 address range that is assigned to this
+     * Output only. [Output Only] The internal IPv6 address range that is assigned to this
      * subnetwork.
      * </pre>
      *

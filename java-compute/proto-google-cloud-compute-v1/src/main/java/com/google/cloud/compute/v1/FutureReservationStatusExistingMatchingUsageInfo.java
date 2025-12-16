@@ -76,7 +76,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
    *
    *
    * <pre>
-   * Count to represent min(FR total_count,
+   * Output only. Count to represent min(FR total_count,
    * matching_reserved_capacity+matching_unreserved_instances)
    * </pre>
    *
@@ -93,7 +93,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
    *
    *
    * <pre>
-   * Count to represent min(FR total_count,
+   * Output only. Count to represent min(FR total_count,
    * matching_reserved_capacity+matching_unreserved_instances)
    * </pre>
    *
@@ -115,7 +115,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
    *
    *
    * <pre>
-   * Timestamp when the matching usage was calculated
+   * Output only. Timestamp when the matching usage was calculated
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -131,7 +131,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
    *
    *
    * <pre>
-   * Timestamp when the matching usage was calculated
+   * Output only. Timestamp when the matching usage was calculated
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -155,7 +155,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
    *
    *
    * <pre>
-   * Timestamp when the matching usage was calculated
+   * Output only. Timestamp when the matching usage was calculated
    * </pre>
    *
    * <code>optional string timestamp = 55126294;</code>
@@ -580,7 +580,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Count to represent min(FR total_count,
+     * Output only. Count to represent min(FR total_count,
      * matching_reserved_capacity+matching_unreserved_instances)
      * </pre>
      *
@@ -597,7 +597,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Count to represent min(FR total_count,
+     * Output only. Count to represent min(FR total_count,
      * matching_reserved_capacity+matching_unreserved_instances)
      * </pre>
      *
@@ -614,7 +614,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Count to represent min(FR total_count,
+     * Output only. Count to represent min(FR total_count,
      * matching_reserved_capacity+matching_unreserved_instances)
      * </pre>
      *
@@ -635,7 +635,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Count to represent min(FR total_count,
+     * Output only. Count to represent min(FR total_count,
      * matching_reserved_capacity+matching_unreserved_instances)
      * </pre>
      *
@@ -656,7 +656,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -671,7 +671,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -694,7 +694,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -717,7 +717,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -739,7 +739,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
@@ -757,7 +757,7 @@ public final class FutureReservationStatusExistingMatchingUsageInfo
      *
      *
      * <pre>
-     * Timestamp when the matching usage was calculated
+     * Output only. Timestamp when the matching usage was calculated
      * </pre>
      *
      * <code>optional string timestamp = 55126294;</code>
