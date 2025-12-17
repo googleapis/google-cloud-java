@@ -1476,7 +1476,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>
@@ -1492,7 +1493,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>
@@ -1516,7 +1518,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Owning resource. This is the resource on which this quota is applied.
+   * [Output Only] Owning resource. This is the resource on which this quota
+   * is applied.
    * </pre>
    *
    * <code>optional string owner = 106164915;</code>
@@ -2222,7 +2225,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>
@@ -2237,7 +2241,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>
@@ -2260,7 +2265,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>
@@ -2283,7 +2289,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>
@@ -2305,7 +2312,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>
@@ -2323,7 +2331,8 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Owning resource. This is the resource on which this quota is applied.
+     * [Output Only] Owning resource. This is the resource on which this quota
+     * is applied.
      * </pre>
      *
      * <code>optional string owner = 106164915;</code>

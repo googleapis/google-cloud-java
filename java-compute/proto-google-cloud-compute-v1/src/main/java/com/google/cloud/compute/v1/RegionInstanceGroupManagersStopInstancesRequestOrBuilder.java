@@ -28,7 +28,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * If this flag is set to true, the Instance Group Manager will proceed to stop the instances, skipping initialization on them.
+   * If this flag is set to true, the Instance Group Manager will proceed to
+   * stop the instances, skipping initialization on them.
    * </pre>
    *
    * <code>optional bool force_stop = 134762710;</code>
@@ -41,7 +42,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * If this flag is set to true, the Instance Group Manager will proceed to stop the instances, skipping initialization on them.
+   * If this flag is set to true, the Instance Group Manager will proceed to
+   * stop the instances, skipping initialization on them.
    * </pre>
    *
    * <code>optional bool force_stop = 134762710;</code>
@@ -54,7 +56,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to stop. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to stop. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -67,7 +70,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to stop. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to stop. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -80,7 +84,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to stop. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to stop. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>
@@ -94,7 +99,8 @@ public interface RegionInstanceGroupManagersStopInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * The URLs of one or more instances to stop. This can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
+   * The URLs of one or more instances to stop. This can be a full URL or
+   * a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
    * <code>repeated string instances = 29097598;</code>

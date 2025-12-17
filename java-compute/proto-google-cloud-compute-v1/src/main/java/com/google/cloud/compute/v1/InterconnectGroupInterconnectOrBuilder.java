@@ -28,7 +28,8 @@ public interface InterconnectGroupInterconnectOrBuilder
    *
    *
    * <pre>
-   * The URL of an Interconnect in this group. All Interconnects in the group are unique.
+   * The URL of an Interconnect in this group. All Interconnects in the group
+   * are unique.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -41,7 +42,8 @@ public interface InterconnectGroupInterconnectOrBuilder
    *
    *
    * <pre>
-   * The URL of an Interconnect in this group. All Interconnects in the group are unique.
+   * The URL of an Interconnect in this group. All Interconnects in the group
+   * are unique.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>
@@ -54,7 +56,8 @@ public interface InterconnectGroupInterconnectOrBuilder
    *
    *
    * <pre>
-   * The URL of an Interconnect in this group. All Interconnects in the group are unique.
+   * The URL of an Interconnect in this group. All Interconnects in the group
+   * are unique.
    * </pre>
    *
    * <code>optional string interconnect = 224601230;</code>

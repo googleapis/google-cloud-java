@@ -38,6 +38,7 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -101,6 +102,8 @@ public class GeneratorsClientTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -150,6 +153,8 @@ public class GeneratorsClientTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -199,6 +204,8 @@ public class GeneratorsClientTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -242,6 +249,8 @@ public class GeneratorsClientTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 
@@ -441,6 +450,8 @@ public class GeneratorsClientTest {
             .setTriggerEvent(TriggerEvent.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllTools(new ArrayList<String>())
+            .setSuggestionDedupingConfig(SuggestionDedupingConfig.newBuilder().build())
             .build();
     mockGenerators.addResponse(expectedResponse);
 

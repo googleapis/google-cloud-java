@@ -114,6 +114,11 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
     return ((UserServiceStubSettings) getStubSettings()).listUsersSettings();
   }
 
+  /** Returns the object with the settings used for calls to verifySelf. */
+  public UnaryCallSettings<VerifySelfRequest, User> verifySelfSettings() {
+    return ((UserServiceStubSettings) getStubSettings()).verifySelfSettings();
+  }
+
   public static final UserServiceSettings create(UserServiceStubSettings stub) throws IOException {
     return new UserServiceSettings.Builder(stub.toBuilder()).build();
   }
@@ -249,6 +254,11 @@ public class UserServiceSettings extends ClientSettings<UserServiceSettings> {
     public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
         listUsersSettings() {
       return getStubSettingsBuilder().listUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifySelf. */
+    public UnaryCallSettings.Builder<VerifySelfRequest, User> verifySelfSettings() {
+      return getStubSettingsBuilder().verifySelfSettings();
     }
 
     @Override

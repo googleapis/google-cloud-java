@@ -46,6 +46,9 @@
             "DeleteVersion": {
               "methods": ["deleteVersionAsync", "deleteVersionAsync", "deleteVersionOperationCallable", "deleteVersionCallable"]
             },
+            "ExportArtifact": {
+              "methods": ["exportArtifactAsync", "exportArtifactOperationCallable", "exportArtifactCallable"]
+            },
             "GetAttachment": {
               "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
             },

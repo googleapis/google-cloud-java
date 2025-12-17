@@ -45,6 +45,7 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     orderBy_ = "";
     pageToken_ = "";
     project_ = "";
+    views_ = "";
   }
 
   @java.lang.Override
@@ -68,6 +69,155 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.AggregatedListSubnetworksRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.AggregatedListSubnetworksRequest.Views}
+   */
+  public enum Views implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEWS = 0;</code>
+     */
+    UNDEFINED_VIEWS(0),
+    /** <code>DEFAULT = 115302945;</code> */
+    DEFAULT(115302945),
+    /**
+     *
+     *
+     * <pre>
+     * Utilization data is included in the response.
+     * </pre>
+     *
+     * <code>WITH_UTILIZATION = 504090633;</code>
+     */
+    WITH_UTILIZATION(504090633),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEWS = 0;</code>
+     */
+    public static final int UNDEFINED_VIEWS_VALUE = 0;
+
+    /** <code>DEFAULT = 115302945;</code> */
+    public static final int DEFAULT_VALUE = 115302945;
+
+    /**
+     *
+     *
+     * <pre>
+     * Utilization data is included in the response.
+     * </pre>
+     *
+     * <code>WITH_UTILIZATION = 504090633;</code>
+     */
+    public static final int WITH_UTILIZATION_VALUE = 504090633;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Views valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Views forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_VIEWS;
+        case 115302945:
+          return DEFAULT;
+        case 504090633:
+          return WITH_UTILIZATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Views> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Views> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Views>() {
+          public Views findValueByNumber(int number) {
+            return Views.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.AggregatedListSubnetworksRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Views[] VALUES = values();
+
+    public static Views valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Views(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AggregatedListSubnetworksRequest.Views)
+  }
+
   private int bitField0_;
   public static final int FILTER_FIELD_NUMBER = 336120696;
 
@@ -78,7 +228,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+   * A filter expression that filters resources listed in the response. Most
+   * Compute resources support two types of filter expressions:
+   * expressions that support regular expressions and expressions that follow
+   * API improvement proposal AIP-160.
+   * These two types of filter expressions cannot be mixed in one request.
+   *
+   * If you want to use AIP-160, your expression must specify the field name, an
+   * operator, and the value that you want to use for filtering. The value
+   * must be a string, a number, or a boolean. The operator
+   * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+   *
+   * For example, if you are filtering Compute Engine instances, you can
+   * exclude instances named `example-instance` by specifying
+   * `name != example-instance`.
+   *
+   * The `:*` comparison can be used to test whether a key has been defined.
+   * For example, to find all objects with `owner` label use:
+   * ```
+   * labels.owner:*
+   * ```
+   *
+   * You can also filter nested fields. For example, you could specify
+   * `scheduling.automaticRestart = false` to include instances only
+   * if they are not scheduled for automatic restarts. You can use filtering
+   * on nested fields to filter based onresource labels.
+   *
+   * To filter on multiple expressions, provide each separate expression within
+   * parentheses. For example:
+   * ```
+   * (scheduling.automaticRestart = true)
+   * (cpuPlatform = "Intel Skylake")
+   * ```
+   * By default, each expression is an `AND` expression. However, you
+   * can include `AND` and `OR` expressions explicitly.
+   * For example:
+   * ```
+   * (cpuPlatform = "Intel Skylake") OR
+   * (cpuPlatform = "Intel Broadwell") AND
+   * (scheduling.automaticRestart = true)
+   * ```
+   *
+   * If you want to use a regular expression, use the `eq` (equal) or `ne`
+   * (not equal) operator against a single un-parenthesized expression with or
+   * without quotes or against multiple parenthesized expressions. Examples:
+   *
+   * `fieldname eq unquoted literal`
+   * `fieldname eq 'single quoted literal'`
+   * `fieldname eq "double quoted literal"`
+   * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+   *
+   * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+   * The literal value must match the entire field.
+   *
+   * For example, to filter for instances that do not end with name "instance",
+   * you would use `name ne .*instance`.
+   *
+   * You cannot combine constraints on multiple fields using regular
+   * expressions.
    * </pre>
    *
    * <code>optional string filter = 336120696;</code>
@@ -94,7 +301,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+   * A filter expression that filters resources listed in the response. Most
+   * Compute resources support two types of filter expressions:
+   * expressions that support regular expressions and expressions that follow
+   * API improvement proposal AIP-160.
+   * These two types of filter expressions cannot be mixed in one request.
+   *
+   * If you want to use AIP-160, your expression must specify the field name, an
+   * operator, and the value that you want to use for filtering. The value
+   * must be a string, a number, or a boolean. The operator
+   * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+   *
+   * For example, if you are filtering Compute Engine instances, you can
+   * exclude instances named `example-instance` by specifying
+   * `name != example-instance`.
+   *
+   * The `:*` comparison can be used to test whether a key has been defined.
+   * For example, to find all objects with `owner` label use:
+   * ```
+   * labels.owner:*
+   * ```
+   *
+   * You can also filter nested fields. For example, you could specify
+   * `scheduling.automaticRestart = false` to include instances only
+   * if they are not scheduled for automatic restarts. You can use filtering
+   * on nested fields to filter based onresource labels.
+   *
+   * To filter on multiple expressions, provide each separate expression within
+   * parentheses. For example:
+   * ```
+   * (scheduling.automaticRestart = true)
+   * (cpuPlatform = "Intel Skylake")
+   * ```
+   * By default, each expression is an `AND` expression. However, you
+   * can include `AND` and `OR` expressions explicitly.
+   * For example:
+   * ```
+   * (cpuPlatform = "Intel Skylake") OR
+   * (cpuPlatform = "Intel Broadwell") AND
+   * (scheduling.automaticRestart = true)
+   * ```
+   *
+   * If you want to use a regular expression, use the `eq` (equal) or `ne`
+   * (not equal) operator against a single un-parenthesized expression with or
+   * without quotes or against multiple parenthesized expressions. Examples:
+   *
+   * `fieldname eq unquoted literal`
+   * `fieldname eq 'single quoted literal'`
+   * `fieldname eq "double quoted literal"`
+   * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+   *
+   * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+   * The literal value must match the entire field.
+   *
+   * For example, to filter for instances that do not end with name "instance",
+   * you would use `name ne .*instance`.
+   *
+   * You cannot combine constraints on multiple fields using regular
+   * expressions.
    * </pre>
    *
    * <code>optional string filter = 336120696;</code>
@@ -118,7 +382,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+   * A filter expression that filters resources listed in the response. Most
+   * Compute resources support two types of filter expressions:
+   * expressions that support regular expressions and expressions that follow
+   * API improvement proposal AIP-160.
+   * These two types of filter expressions cannot be mixed in one request.
+   *
+   * If you want to use AIP-160, your expression must specify the field name, an
+   * operator, and the value that you want to use for filtering. The value
+   * must be a string, a number, or a boolean. The operator
+   * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+   *
+   * For example, if you are filtering Compute Engine instances, you can
+   * exclude instances named `example-instance` by specifying
+   * `name != example-instance`.
+   *
+   * The `:*` comparison can be used to test whether a key has been defined.
+   * For example, to find all objects with `owner` label use:
+   * ```
+   * labels.owner:*
+   * ```
+   *
+   * You can also filter nested fields. For example, you could specify
+   * `scheduling.automaticRestart = false` to include instances only
+   * if they are not scheduled for automatic restarts. You can use filtering
+   * on nested fields to filter based onresource labels.
+   *
+   * To filter on multiple expressions, provide each separate expression within
+   * parentheses. For example:
+   * ```
+   * (scheduling.automaticRestart = true)
+   * (cpuPlatform = "Intel Skylake")
+   * ```
+   * By default, each expression is an `AND` expression. However, you
+   * can include `AND` and `OR` expressions explicitly.
+   * For example:
+   * ```
+   * (cpuPlatform = "Intel Skylake") OR
+   * (cpuPlatform = "Intel Broadwell") AND
+   * (scheduling.automaticRestart = true)
+   * ```
+   *
+   * If you want to use a regular expression, use the `eq` (equal) or `ne`
+   * (not equal) operator against a single un-parenthesized expression with or
+   * without quotes or against multiple parenthesized expressions. Examples:
+   *
+   * `fieldname eq unquoted literal`
+   * `fieldname eq 'single quoted literal'`
+   * `fieldname eq "double quoted literal"`
+   * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+   *
+   * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+   * The literal value must match the entire field.
+   *
+   * For example, to filter for instances that do not end with name "instance",
+   * you would use `name ne .*instance`.
+   *
+   * You cannot combine constraints on multiple fields using regular
+   * expressions.
    * </pre>
    *
    * <code>optional string filter = 336120696;</code>
@@ -145,7 +466,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+   * Indicates whether every visible scope for each scope type (zone, region,
+   * global) should be included in the response. For new resource types added
+   * after this field, the flag has no effect as new resource types will always
+   * include every visible scope for each scope type in response. For resource
+   * types which predate this field, if this flag is omitted or false, only
+   * scopes of the scope types where the resource type is expected to be found
+   * will be included.
    * </pre>
    *
    * <code>optional bool include_all_scopes = 391327988;</code>
@@ -161,7 +488,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+   * Indicates whether every visible scope for each scope type (zone, region,
+   * global) should be included in the response. For new resource types added
+   * after this field, the flag has no effect as new resource types will always
+   * include every visible scope for each scope type in response. For resource
+   * types which predate this field, if this flag is omitted or false, only
+   * scopes of the scope types where the resource type is expected to be found
+   * will be included.
    * </pre>
    *
    * <code>optional bool include_all_scopes = 391327988;</code>
@@ -180,7 +513,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+   * The maximum number of results per page that should be returned.
+   * If the number of available results is larger than `maxResults`,
+   * Compute Engine returns a `nextPageToken` that can be used to get
+   * the next page of results in subsequent list requests. Acceptable values are
+   * `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
    * <code>optional uint32 max_results = 54715419;</code>
@@ -196,7 +533,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+   * The maximum number of results per page that should be returned.
+   * If the number of available results is larger than `maxResults`,
+   * Compute Engine returns a `nextPageToken` that can be used to get
+   * the next page of results in subsequent list requests. Acceptable values are
+   * `0` to `500`, inclusive. (Default: `500`)
    * </pre>
    *
    * <code>optional uint32 max_results = 54715419;</code>
@@ -217,7 +558,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results
+   * are returned in alphanumerical order based on the resource name.
+   *
+   * You can also sort results in descending order based on the creation
+   * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+   * results based on the `creationTimestamp` field in
+   * reverse chronological order (newest result first). Use this to sort
+   * resources like operations so that the newest operation is returned first.
+   *
+   * Currently, only sorting by `name` or
+   * `creationTimestamp desc` is supported.
    * </pre>
    *
    * <code>optional string order_by = 160562920;</code>
@@ -233,7 +584,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results
+   * are returned in alphanumerical order based on the resource name.
+   *
+   * You can also sort results in descending order based on the creation
+   * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+   * results based on the `creationTimestamp` field in
+   * reverse chronological order (newest result first). Use this to sort
+   * resources like operations so that the newest operation is returned first.
+   *
+   * Currently, only sorting by `name` or
+   * `creationTimestamp desc` is supported.
    * </pre>
    *
    * <code>optional string order_by = 160562920;</code>
@@ -257,7 +618,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+   * Sorts list results by a certain order. By default, results
+   * are returned in alphanumerical order based on the resource name.
+   *
+   * You can also sort results in descending order based on the creation
+   * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+   * results based on the `creationTimestamp` field in
+   * reverse chronological order (newest result first). Use this to sort
+   * resources like operations so that the newest operation is returned first.
+   *
+   * Currently, only sorting by `name` or
+   * `creationTimestamp desc` is supported.
    * </pre>
    *
    * <code>optional string order_by = 160562920;</code>
@@ -286,7 +657,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+   * Specifies a page token to use. Set `pageToken` to the
+   * `nextPageToken` returned by a previous list request to get
+   * the next page of results.
    * </pre>
    *
    * <code>optional string page_token = 19994697;</code>
@@ -302,7 +675,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+   * Specifies a page token to use. Set `pageToken` to the
+   * `nextPageToken` returned by a previous list request to get
+   * the next page of results.
    * </pre>
    *
    * <code>optional string page_token = 19994697;</code>
@@ -326,7 +701,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+   * Specifies a page token to use. Set `pageToken` to the
+   * `nextPageToken` returned by a previous list request to get
+   * the next page of results.
    * </pre>
    *
    * <code>optional string page_token = 19994697;</code>
@@ -406,7 +783,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+   * Opt-in for partial success behavior which provides partial results in case
+   * of failure. The default value is false.
+   *
+   * For example, when partial success behavior is enabled, aggregatedList for a
+   * single zone scope either returns all resources in the zone or no resources,
+   * with an error code.
    * </pre>
    *
    * <code>optional bool return_partial_success = 517198390;</code>
@@ -422,7 +804,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+   * Opt-in for partial success behavior which provides partial results in case
+   * of failure. The default value is false.
+   *
+   * For example, when partial success behavior is enabled, aggregatedList for a
+   * single zone scope either returns all resources in the zone or no resources,
+   * with an error code.
    * </pre>
    *
    * <code>optional bool return_partial_success = 517198390;</code>
@@ -441,7 +828,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * The Shared VPC service project id or service project number for which
+   * aggregated list request is invoked for subnetworks list-usable api.
    * </pre>
    *
    * <code>optional int64 service_project_number = 316757497;</code>
@@ -457,7 +845,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+   * The Shared VPC service project id or service project number for which
+   * aggregated list request is invoked for subnetworks list-usable api.
    * </pre>
    *
    * <code>optional int64 service_project_number = 316757497;</code>
@@ -467,6 +856,90 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
   @java.lang.Override
   public long getServiceProjectNumber() {
     return serviceProjectNumber_;
+  }
+
+  public static final int VIEWS_FIELD_NUMBER = 112204398;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object views_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return Whether the views field is set.
+   */
+  @java.lang.Override
+  public boolean hasViews() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The views.
+   */
+  @java.lang.Override
+  public java.lang.String getViews() {
+    java.lang.Object ref = views_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      views_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the extra views returned back in the subnetwork resource.
+   * Supported values:
+   *
+   *    - WITH_UTILIZATION: Utilization data is included in the
+   *    response.
+   * Check the Views enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string views = 112204398;</code>
+   *
+   * @return The bytes for views.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getViewsBytes() {
+    java.lang.Object ref = views_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      views_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -488,6 +961,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeUInt32(54715419, maxResults_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 112204398, views_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
@@ -521,6 +997,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(112204398, views_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
@@ -587,6 +1066,10 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     if (hasServiceProjectNumber()) {
       if (getServiceProjectNumber() != other.getServiceProjectNumber()) return false;
     }
+    if (hasViews() != other.hasViews()) return false;
+    if (hasViews()) {
+      if (!getViews().equals(other.getViews())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -627,6 +1110,10 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     if (hasServiceProjectNumber()) {
       hash = (37 * hash) + SERVICE_PROJECT_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getServiceProjectNumber());
+    }
+    if (hasViews()) {
+      hash = (37 * hash) + VIEWS_FIELD_NUMBER;
+      hash = (53 * hash) + getViews().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -777,6 +1264,7 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
       project_ = "";
       returnPartialSuccess_ = false;
       serviceProjectNumber_ = 0L;
+      views_ = "";
       return this;
     }
 
@@ -846,6 +1334,10 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.serviceProjectNumber_ = serviceProjectNumber_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.views_ = views_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -929,6 +1421,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
       if (other.hasServiceProjectNumber()) {
         setServiceProjectNumber(other.getServiceProjectNumber());
       }
+      if (other.hasViews()) {
+        views_ = other.views_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -967,6 +1464,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
                 bitField0_ |= 0x00000004;
                 break;
               } // case 437723352
+            case 897635186:
+              {
+                views_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 897635186
             case 1284503362:
               {
                 orderBy_ = input.readStringRequireUtf8();
@@ -1028,7 +1531,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1043,7 +1603,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1066,7 +1683,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1089,7 +1763,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1111,7 +1842,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1129,7 +1917,64 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * A filter expression that filters resources listed in the response. Most Compute resources support two types of filter expressions: expressions that support regular expressions and expressions that follow API improvement proposal AIP-160. These two types of filter expressions cannot be mixed in one request. If you want to use AIP-160, your expression must specify the field name, an operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The operator must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. The `:*` comparison can be used to test whether a key has been defined. For example, to find all objects with `owner` label use: ``` labels.owner:* ``` You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ``` If you want to use a regular expression, use the `eq` (equal) or `ne` (not equal) operator against a single un-parenthesized expression with or without quotes or against multiple parenthesized expressions. Examples: `fieldname eq unquoted literal` `fieldname eq 'single quoted literal'` `fieldname eq "double quoted literal"` `(fieldname1 eq literal) (fieldname2 ne "literal")` The literal value is interpreted as a regular expression using Google RE2 library syntax. The literal value must match the entire field. For example, to filter for instances that do not end with name "instance", you would use `name ne .*instance`. You cannot combine constraints on multiple fields using regular expressions.
+     * A filter expression that filters resources listed in the response. Most
+     * Compute resources support two types of filter expressions:
+     * expressions that support regular expressions and expressions that follow
+     * API improvement proposal AIP-160.
+     * These two types of filter expressions cannot be mixed in one request.
+     *
+     * If you want to use AIP-160, your expression must specify the field name, an
+     * operator, and the value that you want to use for filtering. The value
+     * must be a string, a number, or a boolean. The operator
+     * must be either `=`, `!=`, `&gt;`, `&lt;`, `&lt;=`, `&gt;=` or `:`.
+     *
+     * For example, if you are filtering Compute Engine instances, you can
+     * exclude instances named `example-instance` by specifying
+     * `name != example-instance`.
+     *
+     * The `:*` comparison can be used to test whether a key has been defined.
+     * For example, to find all objects with `owner` label use:
+     * ```
+     * labels.owner:*
+     * ```
+     *
+     * You can also filter nested fields. For example, you could specify
+     * `scheduling.automaticRestart = false` to include instances only
+     * if they are not scheduled for automatic restarts. You can use filtering
+     * on nested fields to filter based onresource labels.
+     *
+     * To filter on multiple expressions, provide each separate expression within
+     * parentheses. For example:
+     * ```
+     * (scheduling.automaticRestart = true)
+     * (cpuPlatform = "Intel Skylake")
+     * ```
+     * By default, each expression is an `AND` expression. However, you
+     * can include `AND` and `OR` expressions explicitly.
+     * For example:
+     * ```
+     * (cpuPlatform = "Intel Skylake") OR
+     * (cpuPlatform = "Intel Broadwell") AND
+     * (scheduling.automaticRestart = true)
+     * ```
+     *
+     * If you want to use a regular expression, use the `eq` (equal) or `ne`
+     * (not equal) operator against a single un-parenthesized expression with or
+     * without quotes or against multiple parenthesized expressions. Examples:
+     *
+     * `fieldname eq unquoted literal`
+     * `fieldname eq 'single quoted literal'`
+     * `fieldname eq "double quoted literal"`
+     * `(fieldname1 eq literal) (fieldname2 ne "literal")`
+     *
+     * The literal value is interpreted as a regular expression using GoogleRE2 library syntax.
+     * The literal value must match the entire field.
+     *
+     * For example, to filter for instances that do not end with name "instance",
+     * you would use `name ne .*instance`.
+     *
+     * You cannot combine constraints on multiple fields using regular
+     * expressions.
      * </pre>
      *
      * <code>optional string filter = 336120696;</code>
@@ -1154,7 +1999,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+     * Indicates whether every visible scope for each scope type (zone, region,
+     * global) should be included in the response. For new resource types added
+     * after this field, the flag has no effect as new resource types will always
+     * include every visible scope for each scope type in response. For resource
+     * types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found
+     * will be included.
      * </pre>
      *
      * <code>optional bool include_all_scopes = 391327988;</code>
@@ -1170,7 +2021,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+     * Indicates whether every visible scope for each scope type (zone, region,
+     * global) should be included in the response. For new resource types added
+     * after this field, the flag has no effect as new resource types will always
+     * include every visible scope for each scope type in response. For resource
+     * types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found
+     * will be included.
      * </pre>
      *
      * <code>optional bool include_all_scopes = 391327988;</code>
@@ -1186,7 +2043,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+     * Indicates whether every visible scope for each scope type (zone, region,
+     * global) should be included in the response. For new resource types added
+     * after this field, the flag has no effect as new resource types will always
+     * include every visible scope for each scope type in response. For resource
+     * types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found
+     * will be included.
      * </pre>
      *
      * <code>optional bool include_all_scopes = 391327988;</code>
@@ -1206,7 +2069,13 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+     * Indicates whether every visible scope for each scope type (zone, region,
+     * global) should be included in the response. For new resource types added
+     * after this field, the flag has no effect as new resource types will always
+     * include every visible scope for each scope type in response. For resource
+     * types which predate this field, if this flag is omitted or false, only
+     * scopes of the scope types where the resource type is expected to be found
+     * will be included.
      * </pre>
      *
      * <code>optional bool include_all_scopes = 391327988;</code>
@@ -1226,7 +2095,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * The maximum number of results per page that should be returned.
+     * If the number of available results is larger than `maxResults`,
+     * Compute Engine returns a `nextPageToken` that can be used to get
+     * the next page of results in subsequent list requests. Acceptable values are
+     * `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
      * <code>optional uint32 max_results = 54715419;</code>
@@ -1242,7 +2115,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * The maximum number of results per page that should be returned.
+     * If the number of available results is larger than `maxResults`,
+     * Compute Engine returns a `nextPageToken` that can be used to get
+     * the next page of results in subsequent list requests. Acceptable values are
+     * `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
      * <code>optional uint32 max_results = 54715419;</code>
@@ -1258,7 +2135,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * The maximum number of results per page that should be returned.
+     * If the number of available results is larger than `maxResults`,
+     * Compute Engine returns a `nextPageToken` that can be used to get
+     * the next page of results in subsequent list requests. Acceptable values are
+     * `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
      * <code>optional uint32 max_results = 54715419;</code>
@@ -1278,7 +2159,11 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+     * The maximum number of results per page that should be returned.
+     * If the number of available results is larger than `maxResults`,
+     * Compute Engine returns a `nextPageToken` that can be used to get
+     * the next page of results in subsequent list requests. Acceptable values are
+     * `0` to `500`, inclusive. (Default: `500`)
      * </pre>
      *
      * <code>optional uint32 max_results = 54715419;</code>
@@ -1298,7 +2183,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1313,7 +2208,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1336,7 +2241,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1359,7 +2274,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1381,7 +2306,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1399,7 +2334,17 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+     * Sorts list results by a certain order. By default, results
+     * are returned in alphanumerical order based on the resource name.
+     *
+     * You can also sort results in descending order based on the creation
+     * timestamp using `orderBy="creationTimestamp desc"`. This sorts
+     * results based on the `creationTimestamp` field in
+     * reverse chronological order (newest result first). Use this to sort
+     * resources like operations so that the newest operation is returned first.
+     *
+     * Currently, only sorting by `name` or
+     * `creationTimestamp desc` is supported.
      * </pre>
      *
      * <code>optional string order_by = 160562920;</code>
@@ -1424,7 +2369,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1439,7 +2386,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1462,7 +2411,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1485,7 +2436,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1507,7 +2460,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1525,7 +2480,9 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+     * Specifies a page token to use. Set `pageToken` to the
+     * `nextPageToken` returned by a previous list request to get
+     * the next page of results.
      * </pre>
      *
      * <code>optional string page_token = 19994697;</code>
@@ -1661,7 +2618,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+     * Opt-in for partial success behavior which provides partial results in case
+     * of failure. The default value is false.
+     *
+     * For example, when partial success behavior is enabled, aggregatedList for a
+     * single zone scope either returns all resources in the zone or no resources,
+     * with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1677,7 +2639,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+     * Opt-in for partial success behavior which provides partial results in case
+     * of failure. The default value is false.
+     *
+     * For example, when partial success behavior is enabled, aggregatedList for a
+     * single zone scope either returns all resources in the zone or no resources,
+     * with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1693,7 +2660,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+     * Opt-in for partial success behavior which provides partial results in case
+     * of failure. The default value is false.
+     *
+     * For example, when partial success behavior is enabled, aggregatedList for a
+     * single zone scope either returns all resources in the zone or no resources,
+     * with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1713,7 +2685,12 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false. For example, when partial success behavior is enabled, aggregatedList for a single zone scope either returns all resources in the zone or no resources, with an error code.
+     * Opt-in for partial success behavior which provides partial results in case
+     * of failure. The default value is false.
+     *
+     * For example, when partial success behavior is enabled, aggregatedList for a
+     * single zone scope either returns all resources in the zone or no resources,
+     * with an error code.
      * </pre>
      *
      * <code>optional bool return_partial_success = 517198390;</code>
@@ -1733,7 +2710,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * The Shared VPC service project id or service project number for which
+     * aggregated list request is invoked for subnetworks list-usable api.
      * </pre>
      *
      * <code>optional int64 service_project_number = 316757497;</code>
@@ -1749,7 +2727,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * The Shared VPC service project id or service project number for which
+     * aggregated list request is invoked for subnetworks list-usable api.
      * </pre>
      *
      * <code>optional int64 service_project_number = 316757497;</code>
@@ -1765,7 +2744,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * The Shared VPC service project id or service project number for which
+     * aggregated list request is invoked for subnetworks list-usable api.
      * </pre>
      *
      * <code>optional int64 service_project_number = 316757497;</code>
@@ -1785,7 +2765,8 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * The Shared VPC service project id or service project number for which aggregated list request is invoked for subnetworks list-usable api.
+     * The Shared VPC service project id or service project number for which
+     * aggregated list request is invoked for subnetworks list-usable api.
      * </pre>
      *
      * <code>optional int64 service_project_number = 316757497;</code>
@@ -1795,6 +2776,162 @@ public final class AggregatedListSubnetworksRequest extends com.google.protobuf.
     public Builder clearServiceProjectNumber() {
       bitField0_ = (bitField0_ & ~0x00000080);
       serviceProjectNumber_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object views_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return Whether the views field is set.
+     */
+    public boolean hasViews() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return The views.
+     */
+    public java.lang.String getViews() {
+      java.lang.Object ref = views_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        views_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return The bytes for views.
+     */
+    public com.google.protobuf.ByteString getViewsBytes() {
+      java.lang.Object ref = views_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        views_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @param value The views to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViews(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      views_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearViews() {
+      views_ = getDefaultInstance().getViews();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines the extra views returned back in the subnetwork resource.
+     * Supported values:
+     *
+     *    - WITH_UTILIZATION: Utilization data is included in the
+     *    response.
+     * Check the Views enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string views = 112204398;</code>
+     *
+     * @param value The bytes for views to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      views_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

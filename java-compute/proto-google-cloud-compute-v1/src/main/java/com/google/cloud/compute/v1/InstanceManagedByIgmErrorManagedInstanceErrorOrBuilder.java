@@ -28,7 +28,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error code.
+   * Output only. [Output Only] Error code.
    * </pre>
    *
    * <code>optional string code = 3059181;</code>
@@ -41,7 +41,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error code.
+   * Output only. [Output Only] Error code.
    * </pre>
    *
    * <code>optional string code = 3059181;</code>
@@ -54,7 +54,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error code.
+   * Output only. [Output Only] Error code.
    * </pre>
    *
    * <code>optional string code = 3059181;</code>
@@ -67,7 +67,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error message.
+   * Output only. [Output Only] Error message.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>
@@ -80,7 +80,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error message.
+   * Output only. [Output Only] Error message.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>
@@ -93,7 +93,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Error message.
+   * Output only. [Output Only] Error message.
    * </pre>
    *
    * <code>optional string message = 418054151;</code>

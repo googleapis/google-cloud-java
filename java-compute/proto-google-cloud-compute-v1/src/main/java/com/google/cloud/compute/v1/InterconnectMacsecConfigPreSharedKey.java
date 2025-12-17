@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Describes a pre-shared key used to setup MACsec in static connectivity association key (CAK) mode.
+ * Describes a pre-shared key used to setup MACsec in static connectivity
+ * association key (CAK) mode.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey}
@@ -558,7 +559,8 @@ public final class InterconnectMacsecConfigPreSharedKey
    *
    *
    * <pre>
-   * Describes a pre-shared key used to setup MACsec in static connectivity association key (CAK) mode.
+   * Describes a pre-shared key used to setup MACsec in static connectivity
+   * association key (CAK) mode.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectMacsecConfigPreSharedKey}

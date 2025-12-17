@@ -28,7 +28,7 @@ public interface ResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -36,6 +36,7 @@ public interface ResourceRequirementsOrBuilder
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -46,7 +47,7 @@ public interface ResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -54,6 +55,7 @@ public interface ResourceRequirementsOrBuilder
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -68,7 +70,7 @@ public interface ResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -76,6 +78,7 @@ public interface ResourceRequirementsOrBuilder
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -86,7 +89,7 @@ public interface ResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -94,6 +97,7 @@ public interface ResourceRequirementsOrBuilder
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>
@@ -108,7 +112,7 @@ public interface ResourceRequirementsOrBuilder
    *
    *
    * <pre>
-   * Only `memory` and `cpu` keys in the map are supported.
+   * Only `memory`, `cpu` and `nvidia.com/gpu` keys in the map are supported.
    *
    * &lt;p&gt;Notes:
    *  * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4
@@ -116,6 +120,7 @@ public interface ResourceRequirementsOrBuilder
    * https://cloud.google.com/run/docs/configuring/cpu.
    *   * For supported 'memory' values and syntax, go to
    *  https://cloud.google.com/run/docs/configuring/memory-limits
+   *  * The only supported 'nvidia.com/gpu' value is '1'.
    * </pre>
    *
    * <code>map&lt;string, string&gt; limits = 1;</code>

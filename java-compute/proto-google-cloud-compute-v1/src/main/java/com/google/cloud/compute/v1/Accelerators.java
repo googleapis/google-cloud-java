@@ -108,7 +108,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+   * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -124,7 +124,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+   * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -148,7 +148,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+   * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
    * </pre>
    *
    * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -625,7 +625,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -640,7 +640,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -663,7 +663,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -686,7 +686,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -708,7 +708,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>
@@ -726,7 +726,7 @@ public final class Accelerators extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
+     * The accelerator type resource name, not a full URL, e.g.nvidia-tesla-t4.
      * </pre>
      *
      * <code>optional string guest_accelerator_type = 293064725;</code>

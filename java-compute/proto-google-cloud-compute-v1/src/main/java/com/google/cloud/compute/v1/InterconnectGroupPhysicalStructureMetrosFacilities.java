@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The facilities Interconnects in this metro are present in.
+ * [Output Only] The facilities Interconnects in this metro are present
+ * in.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectGroupPhysicalStructureMetrosFacilities}
@@ -78,7 +79,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -94,7 +97,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -118,7 +123,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
    *
    *
    * <pre>
-   * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The ID of this facility, as a numeric string like
+   * "5467". This is the third component of the location of Interconnects
+   * in this facility.
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -393,7 +400,8 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
    *
    *
    * <pre>
-   * [Output Only] The facilities Interconnects in this metro are present in.
+   * [Output Only] The facilities Interconnects in this metro are present
+   * in.
    * </pre>
    *
    * Protobuf type {@code
@@ -658,7 +666,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -673,7 +683,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -696,7 +708,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -719,7 +733,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -741,7 +757,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -759,7 +777,9 @@ public final class InterconnectGroupPhysicalStructureMetrosFacilities
      *
      *
      * <pre>
-     * [Output Only] The ID of this facility, as a numeric string like "5467". This is the third component of the location of Interconnects in this facility.
+     * Output only. [Output Only] The ID of this facility, as a numeric string like
+     * "5467". This is the third component of the location of Interconnects
+     * in this facility.
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>

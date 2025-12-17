@@ -72,7 +72,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Also supported in legacy HTTP health checks for target pools.
+   * The health check supports all backends supported by the backend service
+   * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+   * network endpoint groups, and instance group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for pass-through load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HTTPHealthCheck.PortSpecification}
@@ -92,7 +112,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -112,7 +133,10 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -136,7 +160,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The port number in the health check's port is used for health checking. Applies to network endpoint group and instance group backends.
+     * The port number in the health check's port is used for health
+     * checking. Applies to network endpoint group and instance group backends.
      * </pre>
      *
      * <code>USE_FIXED_PORT = 190235748;</code>
@@ -158,7 +183,10 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * For network endpoint group backends, the health check uses the port number specified on each endpoint in the network endpoint group. For instance group backends, the health check uses the port number specified for the backend service's named port defined in the instance group's named ports.
+     * For network endpoint group backends, the health check uses the port number
+     * specified on each endpoint in the network endpoint group. For instance
+     * group backends, the health check uses the port number specified for the
+     * backend service's named port defined in the instance group's named ports.
      * </pre>
      *
      * <code>USE_SERVING_PORT = 362637516;</code>
@@ -257,7 +285,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.HTTPHealthCheck.ProxyHeader}
@@ -390,7 +420,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+   * The value of the host header in the HTTP health check request. If left
+   * empty (default value), the host header is set to the destination IP address
+   * to which health check packets are sent. The destination IP address depends
+   * on the type of load balancer. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -406,7 +440,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+   * The value of the host header in the HTTP health check request. If left
+   * empty (default value), the host header is set to the destination IP address
+   * to which health check packets are sent. The destination IP address depends
+   * on the type of load balancer. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -430,7 +468,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+   * The value of the host header in the HTTP health check request. If left
+   * empty (default value), the host header is set to the destination IP address
+   * to which health check packets are sent. The destination IP address depends
+   * on the type of load balancer. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -457,7 +499,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The
+   * default value is 80. Valid values are 1 through65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -473,7 +516,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+   * The TCP port number to which the health check prober sends packets. The
+   * default value is 80. Valid values are 1 through65535.
    * </pre>
    *
    * <code>optional int32 port = 3446913;</code>
@@ -563,7 +607,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Also supported in legacy HTTP health checks for target pools.
+   * The health check supports all backends supported by the backend service
+   * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+   * network endpoint groups, and instance group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for pass-through load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -580,7 +644,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Also supported in legacy HTTP health checks for target pools.
+   * The health check supports all backends supported by the backend service
+   * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+   * network endpoint groups, and instance group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for pass-through load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -605,7 +689,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+   * Specifies how a port is selected for health checking. Can be one of the
+   * following values:
+   * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+   * for passthrough load balancers and backend services for proxy load
+   * balancers. Also supported in legacy HTTP health checks for target pools.
+   * The health check supports all backends supported by the backend service
+   * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+   * network endpoint groups, and instance group backends.
+   * USE_NAMED_PORT: Not supported.
+   * USE_SERVING_PORT: Provides an indirect method of specifying
+   * the health check port by referring to the backend service. Only supported
+   * by backend services for proxy load balancers. Not supported by target
+   * pools.  Not supported by backend services for pass-through load balancers.
+   * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+   * backends.
+   *
+   * For GCE_VM_IP_PORT network endpoint group backends, the health
+   * check uses the port number specified for each endpoint in the network
+   * endpoint group.  For instance group backends, the health check uses the
+   * port number determined by looking up the backend service's named port in
+   * the instance group's list of named ports.
    * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
@@ -635,7 +739,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -652,7 +758,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -677,7 +785,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Specifies the type of proxy header to append before sending data to the
+   * backend, either NONE or PROXY_V1. The default
+   * is NONE.
    * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
@@ -707,7 +817,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+   * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
@@ -723,7 +833,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+   * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
@@ -747,7 +857,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+   * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
    * </pre>
    *
    * <code>optional string request_path = 229403605;</code>
@@ -776,7 +886,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+   * Creates a content-based HTTP health check. In addition to the required
+   * HTTP 200 (OK) status code, you can configure the health check to pass only
+   * when the backend sends this specific ASCII response string within the first
+   * 1024 bytes of the HTTP response body. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -792,7 +906,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+   * Creates a content-based HTTP health check. In addition to the required
+   * HTTP 200 (OK) status code, you can configure the health check to pass only
+   * when the backend sends this specific ASCII response string within the first
+   * 1024 bytes of the HTTP response body. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -816,7 +934,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+   * Creates a content-based HTTP health check. In addition to the required
+   * HTTP 200 (OK) status code, you can configure the health check to pass only
+   * when the backend sends this specific ASCII response string within the first
+   * 1024 bytes of the HTTP response body. For details, see:
+   * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
    * </pre>
    *
    * <code>optional string response = 196547649;</code>
@@ -1370,7 +1492,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1385,7 +1511,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1408,7 +1538,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1431,7 +1565,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1453,7 +1591,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1471,7 +1613,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The value of the host header in the HTTP health check request. If left empty (default value), the host header is set to the destination IP address to which health check packets are sent. The destination IP address depends on the type of load balancer. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
+     * The value of the host header in the HTTP health check request. If left
+     * empty (default value), the host header is set to the destination IP address
+     * to which health check packets are sent. The destination IP address depends
+     * on the type of load balancer. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#hc-packet-dest
      * </pre>
      *
      * <code>optional string host = 3208616;</code>
@@ -1496,7 +1642,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1512,7 +1659,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1528,7 +1676,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1548,7 +1697,8 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The TCP port number to which the health check prober sends packets. The default value is 80. Valid values are 1 through 65535.
+     * The TCP port number to which the health check prober sends packets. The
+     * default value is 80. Valid values are 1 through65535.
      * </pre>
      *
      * <code>optional int32 port = 3446913;</code>
@@ -1694,7 +1844,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1710,7 +1880,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1734,7 +1924,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1758,7 +1968,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1781,7 +2011,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1800,7 +2050,27 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies how a port is selected for health checking. Can be one of the following values: USE_FIXED_PORT: Specifies a port number explicitly using the port field in the health check. Supported by backend services for passthrough load balancers and backend services for proxy load balancers. Also supported in legacy HTTP health checks for target pools. The health check supports all backends supported by the backend service provided the backend can be health checked. For example, GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT network endpoint groups, and instance group backends. USE_NAMED_PORT: Not supported. USE_SERVING_PORT: Provides an indirect method of specifying the health check port by referring to the backend service. Only supported by backend services for proxy load balancers. Not supported by target pools. Not supported by backend services for pass-through load balancers. Supports all backends that can be health checked; for example, GCE_VM_IP_PORT network endpoint groups and instance group backends. For GCE_VM_IP_PORT network endpoint group backends, the health check uses the port number specified for each endpoint in the network endpoint group. For instance group backends, the health check uses the port number determined by looking up the backend service's named port in the instance group's list of named ports.
+     * Specifies how a port is selected for health checking. Can be one of the
+     * following values:
+     * USE_FIXED_PORT: Specifies a port number explicitly using theport field  in the health check. Supported by backend services
+     * for passthrough load balancers and backend services for proxy load
+     * balancers. Also supported in legacy HTTP health checks for target pools.
+     * The health check supports all backends supported by the backend service
+     * provided the backend can be health checked. For example,GCE_VM_IP network endpoint groups, GCE_VM_IP_PORT
+     * network endpoint groups, and instance group backends.
+     * USE_NAMED_PORT: Not supported.
+     * USE_SERVING_PORT: Provides an indirect method of specifying
+     * the health check port by referring to the backend service. Only supported
+     * by backend services for proxy load balancers. Not supported by target
+     * pools.  Not supported by backend services for pass-through load balancers.
+     * Supports all backends that can be health checked; for example,GCE_VM_IP_PORT network endpoint groups and instance group
+     * backends.
+     *
+     * For GCE_VM_IP_PORT network endpoint group backends, the health
+     * check uses the port number specified for each endpoint in the network
+     * endpoint group.  For instance group backends, the health check uses the
+     * port number determined by looking up the backend service's named port in
+     * the instance group's list of named ports.
      * Check the PortSpecification enum for the list of possible values.
      * </pre>
      *
@@ -1826,7 +2096,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1842,7 +2114,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1866,7 +2140,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1890,7 +2166,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1913,7 +2191,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1932,7 +2212,9 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Specifies the type of proxy header to append before sending data to the
+     * backend, either NONE or PROXY_V1. The default
+     * is NONE.
      * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
@@ -1958,7 +2240,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -1973,7 +2255,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -1996,7 +2278,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -2019,7 +2301,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -2041,7 +2323,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -2059,7 +2341,7 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The request path of the HTTP health check request. The default value is /. Must comply with RFC3986.
+     * The request path of the HTTP health check request. The default value is/. Must comply withRFC3986.
      * </pre>
      *
      * <code>optional string request_path = 229403605;</code>
@@ -2084,7 +2366,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -2099,7 +2385,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -2122,7 +2412,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -2145,7 +2439,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -2167,7 +2465,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>
@@ -2185,7 +2487,11 @@ public final class HTTPHealthCheck extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Creates a content-based HTTP health check. In addition to the required HTTP 200 (OK) status code, you can configure the health check to pass only when the backend sends this specific ASCII response string within the first 1024 bytes of the HTTP response body. For details, see: https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
+     * Creates a content-based HTTP health check. In addition to the required
+     * HTTP 200 (OK) status code, you can configure the health check to pass only
+     * when the backend sends this specific ASCII response string within the first
+     * 1024 bytes of the HTTP response body. For details, see:
+     * https://cloud.google.com/load-balancing/docs/health-check-concepts#criteria-protocol-http
      * </pre>
      *
      * <code>optional string response = 196547649;</code>

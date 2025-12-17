@@ -381,7 +381,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>
@@ -396,7 +396,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>
@@ -411,7 +411,7 @@ public interface KeyOrBuilder
    *
    *
    * <pre>
-   * Optional. Settings for WAF
+   * Optional. Settings for Web Application Firewall (WAF).
    * </pre>
    *
    * <code>

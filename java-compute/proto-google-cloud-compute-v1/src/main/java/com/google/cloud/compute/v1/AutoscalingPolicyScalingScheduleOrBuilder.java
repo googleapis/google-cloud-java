@@ -67,7 +67,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * A boolean value that specifies whether a scaling schedule can influence autoscaler recommendations. If set to true, then a scaling schedule has no effect. This field is optional, and its value is false by default.
+   * A boolean value that specifies whether a scaling schedule can influence
+   * autoscaler recommendations. If set to true, then a scaling schedule has
+   * no effect. This field is optional, and its value is false by default.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -80,7 +82,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * A boolean value that specifies whether a scaling schedule can influence autoscaler recommendations. If set to true, then a scaling schedule has no effect. This field is optional, and its value is false by default.
+   * A boolean value that specifies whether a scaling schedule can influence
+   * autoscaler recommendations. If set to true, then a scaling schedule has
+   * no effect. This field is optional, and its value is false by default.
    * </pre>
    *
    * <code>optional bool disabled = 270940796;</code>
@@ -93,7 +97,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The duration of time intervals, in seconds, for which this scaling schedule is to run. The minimum allowed value is 300. This field is required.
+   * The duration of time intervals, in seconds, for which this
+   * scaling schedule is to run. The minimum allowed value is 300.
+   * This field is required.
    * </pre>
    *
    * <code>optional int32 duration_sec = 212356902;</code>
@@ -106,7 +112,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The duration of time intervals, in seconds, for which this scaling schedule is to run. The minimum allowed value is 300. This field is required.
+   * The duration of time intervals, in seconds, for which this
+   * scaling schedule is to run. The minimum allowed value is 300.
+   * This field is required.
    * </pre>
    *
    * <code>optional int32 duration_sec = 212356902;</code>
@@ -119,7 +127,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The minimum number of VM instances that the autoscaler will recommend in time intervals starting according to schedule. This field is required.
+   * The minimum number of VM instances that the autoscaler will
+   * recommend in time intervals starting according to schedule. This field is
+   * required.
    * </pre>
    *
    * <code>optional int32 min_required_replicas = 365514414;</code>
@@ -132,7 +142,9 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The minimum number of VM instances that the autoscaler will recommend in time intervals starting according to schedule. This field is required.
+   * The minimum number of VM instances that the autoscaler will
+   * recommend in time intervals starting according to schedule. This field is
+   * required.
    * </pre>
    *
    * <code>optional int32 min_required_replicas = 365514414;</code>
@@ -145,7 +157,14 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The start timestamps of time intervals when this scaling schedule is to provide a scaling signal. This field uses the extended cron format (with an optional year field). The expression can describe a single timestamp if the optional year is set, in which case the scaling schedule runs once. The schedule is interpreted with respect to time_zone. This field is required. Note: These timestamps only describe when autoscaler starts providing the scaling signal. The VMs need additional time to become serving.
+   * The start timestamps of time intervals when this scaling
+   * schedule is to provide a scaling signal. This field uses the extended
+   * cron format (with an optional year field). The expression can describe a
+   * single timestamp if the optional year is set, in which case the scaling
+   * schedule runs once. The schedule is interpreted with respect to
+   * time_zone. This field is required. Note: These timestamps only describe
+   * when autoscaler starts providing the scaling signal. The VMs
+   * need additional time to become serving.
    * </pre>
    *
    * <code>optional string schedule = 375820951;</code>
@@ -158,7 +177,14 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The start timestamps of time intervals when this scaling schedule is to provide a scaling signal. This field uses the extended cron format (with an optional year field). The expression can describe a single timestamp if the optional year is set, in which case the scaling schedule runs once. The schedule is interpreted with respect to time_zone. This field is required. Note: These timestamps only describe when autoscaler starts providing the scaling signal. The VMs need additional time to become serving.
+   * The start timestamps of time intervals when this scaling
+   * schedule is to provide a scaling signal. This field uses the extended
+   * cron format (with an optional year field). The expression can describe a
+   * single timestamp if the optional year is set, in which case the scaling
+   * schedule runs once. The schedule is interpreted with respect to
+   * time_zone. This field is required. Note: These timestamps only describe
+   * when autoscaler starts providing the scaling signal. The VMs
+   * need additional time to become serving.
    * </pre>
    *
    * <code>optional string schedule = 375820951;</code>
@@ -171,7 +197,14 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The start timestamps of time intervals when this scaling schedule is to provide a scaling signal. This field uses the extended cron format (with an optional year field). The expression can describe a single timestamp if the optional year is set, in which case the scaling schedule runs once. The schedule is interpreted with respect to time_zone. This field is required. Note: These timestamps only describe when autoscaler starts providing the scaling signal. The VMs need additional time to become serving.
+   * The start timestamps of time intervals when this scaling
+   * schedule is to provide a scaling signal. This field uses the extended
+   * cron format (with an optional year field). The expression can describe a
+   * single timestamp if the optional year is set, in which case the scaling
+   * schedule runs once. The schedule is interpreted with respect to
+   * time_zone. This field is required. Note: These timestamps only describe
+   * when autoscaler starts providing the scaling signal. The VMs
+   * need additional time to become serving.
    * </pre>
    *
    * <code>optional string schedule = 375820951;</code>
@@ -184,7 +217,10 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
+   * The time zone to use when interpreting the schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://en.wikipedia.org/wiki/Tz_database. This field is assigned a
+   * default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -197,7 +233,10 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
+   * The time zone to use when interpreting the schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://en.wikipedia.org/wiki/Tz_database. This field is assigned a
+   * default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>
@@ -210,7 +249,10 @@ public interface AutoscalingPolicyScalingScheduleOrBuilder
    *
    *
    * <pre>
-   * The time zone to use when interpreting the schedule. The value of this field must be a time zone name from the tz database: https://en.wikipedia.org/wiki/Tz_database. This field is assigned a default value of "UTC" if left empty.
+   * The time zone to use when interpreting the schedule.
+   * The value of this field must be a time zone name from the tz database:
+   * https://en.wikipedia.org/wiki/Tz_database. This field is assigned a
+   * default value of "UTC" if left empty.
    * </pre>
    *
    * <code>optional string time_zone = 36848094;</code>

@@ -67,7 +67,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -80,7 +81,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -93,7 +95,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -182,7 +185,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of virtual CPUs that are available to the node type.
+   * [Output Only] The number of virtual CPUs that are available to the node
+   * type.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -195,7 +199,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The number of virtual CPUs that are available to the node type.
+   * [Output Only] The number of virtual CPUs that are available to the node
+   * type.
    * </pre>
    *
    * <code>optional int32 guest_cpus = 393356754;</code>
@@ -208,7 +213,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -221,7 +227,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -234,7 +241,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -247,7 +254,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -260,7 +267,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeType for node types.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeType for node types.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -299,7 +306,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * Output only. [Output Only] Maximum number of VMs that can be created for this node type.
    * </pre>
    *
    * <code>optional int32 max_vms = 307579713;</code>
@@ -312,7 +319,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Maximum number of VMs that can be created for this node type.
+   * Output only. [Output Only] Maximum number of VMs that can be created for this node type.
    * </pre>
    *
    * <code>optional int32 max_vms = 307579713;</code>
@@ -325,7 +332,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The amount of physical memory available to the node type, defined in MB.
+   * [Output Only] The amount of physical memory available to the node type,
+   * defined in MB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -338,7 +346,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The amount of physical memory available to the node type, defined in MB.
+   * [Output Only] The amount of physical memory available to the node type,
+   * defined in MB.
    * </pre>
    *
    * <code>optional int32 memory_mb = 116001171;</code>
@@ -390,7 +399,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -403,7 +412,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -416,7 +425,7 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -429,7 +438,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -442,7 +452,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -455,7 +466,8 @@ public interface NodeTypeOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node type resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node type resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

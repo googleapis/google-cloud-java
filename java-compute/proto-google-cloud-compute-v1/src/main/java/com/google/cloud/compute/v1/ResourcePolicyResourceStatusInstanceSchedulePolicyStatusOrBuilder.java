@@ -28,7 +28,8 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The last time the schedule successfully ran.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string last_run_start_time = 303069063;</code>
@@ -41,7 +42,8 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The last time the schedule successfully ran.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string last_run_start_time = 303069063;</code>
@@ -54,7 +56,8 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The last time the schedule successfully ran. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The last time the schedule successfully ran.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string last_run_start_time = 303069063;</code>
@@ -67,7 +70,9 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run. The actual time might be slightly different. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The next time the schedule is planned to run.
+   * The actual time might be slightly different.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string next_run_start_time = 318642570;</code>
@@ -80,7 +85,9 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run. The actual time might be slightly different. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The next time the schedule is planned to run.
+   * The actual time might be slightly different.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string next_run_start_time = 318642570;</code>
@@ -93,7 +100,9 @@ public interface ResourcePolicyResourceStatusInstanceSchedulePolicyStatusOrBuild
    *
    *
    * <pre>
-   * [Output Only] The next time the schedule is planned to run. The actual time might be slightly different. The timestamp is an RFC3339 string.
+   * Output only. [Output Only] The next time the schedule is planned to run.
+   * The actual time might be slightly different.
+   * The timestamp is an RFC3339 string.
    * </pre>
    *
    * <code>optional string next_run_start_time = 318642570;</code>

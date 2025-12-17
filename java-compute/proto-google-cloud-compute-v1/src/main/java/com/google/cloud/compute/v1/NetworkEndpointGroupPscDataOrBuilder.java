@@ -28,7 +28,9 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB.
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
+   * L7 PSC-XLB.
    * </pre>
    *
    * <code>optional string consumer_psc_address = 452646572;</code>
@@ -41,7 +43,9 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB.
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
+   * L7 PSC-XLB.
    * </pre>
    *
    * <code>optional string consumer_psc_address = 452646572;</code>
@@ -54,7 +58,9 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB.
+   * Output only. [Output Only] Address allocated from given subnetwork for PSC. This IP
+   * address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in
+   * L7 PSC-XLB.
    * </pre>
    *
    * <code>optional string consumer_psc_address = 452646572;</code>
@@ -67,7 +73,9 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * The psc producer port is used to connect PSC NEG with specific port on
+   * the PSC Producer side; should only be used for the
+   * PRIVATE_SERVICE_CONNECT NEG type
    * </pre>
    *
    * <code>optional int32 producer_port = 410021134;</code>
@@ -80,7 +88,9 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
+   * The psc producer port is used to connect PSC NEG with specific port on
+   * the PSC Producer side; should only be used for the
+   * PRIVATE_SERVICE_CONNECT NEG type
    * </pre>
    *
    * <code>optional int32 producer_port = 410021134;</code>
@@ -93,7 +103,8 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer.
+   * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
+   * Consumer.
    * </pre>
    *
    * <code>optional uint64 psc_connection_id = 292082397;</code>
@@ -106,7 +117,8 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer.
+   * Output only. [Output Only] The PSC connection id of the PSC Network Endpoint Group
+   * Consumer.
    * </pre>
    *
    * <code>optional uint64 psc_connection_id = 292082397;</code>
@@ -119,7 +131,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *
@@ -133,7 +145,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *
@@ -147,7 +159,7 @@ public interface NetworkEndpointGroupPscDataOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The connection status of the PSC Forwarding Rule.
+   * Output only. [Output Only] The connection status of the PSC Forwarding Rule.
    * Check the PscConnectionStatus enum for the list of possible values.
    * </pre>
    *

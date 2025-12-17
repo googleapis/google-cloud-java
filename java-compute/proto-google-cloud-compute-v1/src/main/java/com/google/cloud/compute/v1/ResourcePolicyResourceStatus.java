@@ -23,7 +23,10 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification.
+ * Contains output only fields.
+ * Use this sub-message for all output fields set on ResourcePolicy.
+ * The internal structure of this "status" field should mimic the structure
+ * of ResourcePolicy proto specification.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyResourceStatus}
@@ -71,7 +74,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+   * Output only. [Output Only] Specifies a set of output values reffering to
+   * the instance_schedule_policy system status.
+   * This field should have the same name as corresponding policy field.
    * </pre>
    *
    * <code>
@@ -89,7 +94,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+   * Output only. [Output Only] Specifies a set of output values reffering to
+   * the instance_schedule_policy system status.
+   * This field should have the same name as corresponding policy field.
    * </pre>
    *
    * <code>
@@ -111,7 +118,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+   * Output only. [Output Only] Specifies a set of output values reffering to
+   * the instance_schedule_policy system status.
+   * This field should have the same name as corresponding policy field.
    * </pre>
    *
    * <code>
@@ -300,7 +309,10 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification.
+   * Contains output only fields.
+   * Use this sub-message for all output fields set on ResourcePolicy.
+   * The internal structure of this "status" field should mimic the structure
+   * of ResourcePolicy proto specification.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ResourcePolicyResourceStatus}
@@ -511,7 +523,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -528,7 +542,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -553,7 +569,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -580,7 +598,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -604,7 +624,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -639,7 +661,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -661,7 +685,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -680,7 +706,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>
@@ -704,7 +732,9 @@ public final class ResourcePolicyResourceStatus extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * [Output Only] Specifies a set of output values reffering to the instance_schedule_policy system status. This field should have the same name as corresponding policy field.
+     * Output only. [Output Only] Specifies a set of output values reffering to
+     * the instance_schedule_policy system status.
+     * This field should have the same name as corresponding policy field.
      * </pre>
      *
      * <code>

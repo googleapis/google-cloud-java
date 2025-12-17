@@ -28,7 +28,14 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
+   * Specifies rules for returning error responses.
+   *
+   * In a given policy, if you specify rules for both a range of error codes
+   * as well as rules for specific error codes then rules with specific error
+   * codes have a higher priority. For example, assume that you configure a rule
+   * for 401 (Un-authorized) code, and another for all 4 series
+   * error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied.
+   * However if the backend service returns a 403, the rule for4xx takes effect.
    * </pre>
    *
    * <code>
@@ -42,7 +49,14 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
+   * Specifies rules for returning error responses.
+   *
+   * In a given policy, if you specify rules for both a range of error codes
+   * as well as rules for specific error codes then rules with specific error
+   * codes have a higher priority. For example, assume that you configure a rule
+   * for 401 (Un-authorized) code, and another for all 4 series
+   * error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied.
+   * However if the backend service returns a 403, the rule for4xx takes effect.
    * </pre>
    *
    * <code>
@@ -56,7 +70,14 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
+   * Specifies rules for returning error responses.
+   *
+   * In a given policy, if you specify rules for both a range of error codes
+   * as well as rules for specific error codes then rules with specific error
+   * codes have a higher priority. For example, assume that you configure a rule
+   * for 401 (Un-authorized) code, and another for all 4 series
+   * error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied.
+   * However if the backend service returns a 403, the rule for4xx takes effect.
    * </pre>
    *
    * <code>
@@ -69,7 +90,14 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
+   * Specifies rules for returning error responses.
+   *
+   * In a given policy, if you specify rules for both a range of error codes
+   * as well as rules for specific error codes then rules with specific error
+   * codes have a higher priority. For example, assume that you configure a rule
+   * for 401 (Un-authorized) code, and another for all 4 series
+   * error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied.
+   * However if the backend service returns a 403, the rule for4xx takes effect.
    * </pre>
    *
    * <code>
@@ -85,7 +113,14 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies rules for returning error responses. In a given policy, if you specify rules for both a range of error codes as well as rules for specific error codes then rules with specific error codes have a higher priority. For example, assume that you configure a rule for 401 (Un-authorized) code, and another for all 4 series error codes (4XX). If the backend service returns a 401, then the rule for 401 will be applied. However if the backend service returns a 403, the rule for 4xx takes effect.
+   * Specifies rules for returning error responses.
+   *
+   * In a given policy, if you specify rules for both a range of error codes
+   * as well as rules for specific error codes then rules with specific error
+   * codes have a higher priority. For example, assume that you configure a rule
+   * for 401 (Un-authorized) code, and another for all 4 series
+   * error codes (4XX). If the backend service returns a401, then the rule for 401 will be applied.
+   * However if the backend service returns a 403, the rule for4xx takes effect.
    * </pre>
    *
    * <code>
@@ -99,7 +134,22 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendBucket resource that contains the custom error content. Examples are: - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket - compute/v1/projects/project/global/backendBuckets/myBackendBucket - global/backendBuckets/myBackendBucket If errorService is not specified at lower levels like pathMatcher, pathRule and routeRule, an errorService specified at a higher level in the UrlMap will be used. If UrlMap.defaultCustomErrorResponsePolicy contains one or more errorResponseRules[], it must specify errorService. If load balancer cannot reach the backendBucket, a simple Not Found Error will be returned, with the original response code (or overrideResponseCode if configured). errorService is not supported for internal or regional HTTP/HTTPS load balancers.
+   * The full or partial URL to the BackendBucket resource that
+   * contains the custom error content. Examples are:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - global/backendBuckets/myBackendBucket
+   *
+   * If errorService is not specified at lower levels likepathMatcher, pathRule and routeRule,
+   * an errorService specified at a higher level in theUrlMap will be used. IfUrlMap.defaultCustomErrorResponsePolicy contains one or moreerrorResponseRules[], it must specifyerrorService.
+   *
+   * If load balancer cannot reach
+   * the backendBucket, a simple Not Found Error will
+   * be returned, with the original response code (oroverrideResponseCode if configured).
+   *
+   * errorService is not supported for internal or regionalHTTP/HTTPS load balancers.
    * </pre>
    *
    * <code>optional string error_service = 164214654;</code>
@@ -112,7 +162,22 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendBucket resource that contains the custom error content. Examples are: - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket - compute/v1/projects/project/global/backendBuckets/myBackendBucket - global/backendBuckets/myBackendBucket If errorService is not specified at lower levels like pathMatcher, pathRule and routeRule, an errorService specified at a higher level in the UrlMap will be used. If UrlMap.defaultCustomErrorResponsePolicy contains one or more errorResponseRules[], it must specify errorService. If load balancer cannot reach the backendBucket, a simple Not Found Error will be returned, with the original response code (or overrideResponseCode if configured). errorService is not supported for internal or regional HTTP/HTTPS load balancers.
+   * The full or partial URL to the BackendBucket resource that
+   * contains the custom error content. Examples are:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - global/backendBuckets/myBackendBucket
+   *
+   * If errorService is not specified at lower levels likepathMatcher, pathRule and routeRule,
+   * an errorService specified at a higher level in theUrlMap will be used. IfUrlMap.defaultCustomErrorResponsePolicy contains one or moreerrorResponseRules[], it must specifyerrorService.
+   *
+   * If load balancer cannot reach
+   * the backendBucket, a simple Not Found Error will
+   * be returned, with the original response code (oroverrideResponseCode if configured).
+   *
+   * errorService is not supported for internal or regionalHTTP/HTTPS load balancers.
    * </pre>
    *
    * <code>optional string error_service = 164214654;</code>
@@ -125,7 +190,22 @@ public interface CustomErrorResponsePolicyOrBuilder
    *
    *
    * <pre>
-   * The full or partial URL to the BackendBucket resource that contains the custom error content. Examples are: - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket - compute/v1/projects/project/global/backendBuckets/myBackendBucket - global/backendBuckets/myBackendBucket If errorService is not specified at lower levels like pathMatcher, pathRule and routeRule, an errorService specified at a higher level in the UrlMap will be used. If UrlMap.defaultCustomErrorResponsePolicy contains one or more errorResponseRules[], it must specify errorService. If load balancer cannot reach the backendBucket, a simple Not Found Error will be returned, with the original response code (or overrideResponseCode if configured). errorService is not supported for internal or regional HTTP/HTTPS load balancers.
+   * The full or partial URL to the BackendBucket resource that
+   * contains the custom error content. Examples are:
+   *
+   *
+   *      - https://www.googleapis.com/compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - compute/v1/projects/project/global/backendBuckets/myBackendBucket
+   *      - global/backendBuckets/myBackendBucket
+   *
+   * If errorService is not specified at lower levels likepathMatcher, pathRule and routeRule,
+   * an errorService specified at a higher level in theUrlMap will be used. IfUrlMap.defaultCustomErrorResponsePolicy contains one or moreerrorResponseRules[], it must specifyerrorService.
+   *
+   * If load balancer cannot reach
+   * the backendBucket, a simple Not Found Error will
+   * be returned, with the original response code (oroverrideResponseCode if configured).
+   *
+   * errorService is not supported for internal or regionalHTTP/HTTPS load balancers.
    * </pre>
    *
    * <code>optional string error_service = 164214654;</code>

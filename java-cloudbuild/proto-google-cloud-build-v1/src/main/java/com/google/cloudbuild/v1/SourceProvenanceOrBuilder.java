@@ -158,6 +158,98 @@ public interface SourceProvenanceOrBuilder
    *
    *
    * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resolvedConnectedRepository field is set.
+   */
+  boolean hasResolvedConnectedRepository();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resolvedConnectedRepository.
+   */
+  com.google.cloudbuild.v1.ConnectedRepository getResolvedConnectedRepository();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.connected_repository`, if
+   * exists, with any revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.ConnectedRepository resolved_connected_repository = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.ConnectedRepositoryOrBuilder getResolvedConnectedRepositoryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the resolvedGitSource field is set.
+   */
+  boolean hasResolvedGitSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The resolvedGitSource.
+   */
+  com.google.cloudbuild.v1.GitSource getResolvedGitSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A copy of the build's `source.git_source`, if exists, with any
+   * revisions resolved.
+   * </pre>
+   *
+   * <code>
+   * .google.devtools.cloudbuild.v1.GitSource resolved_git_source = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloudbuild.v1.GitSourceOrBuilder getResolvedGitSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Hash(es) of the build source, which can be used to verify that
    * the original source integrity was maintained in the build. Note that
    * `FileHashes` will only be populated if `BuildOptions` has requested a

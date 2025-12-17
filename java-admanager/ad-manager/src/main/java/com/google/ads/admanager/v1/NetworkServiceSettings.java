@@ -16,6 +16,8 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
+
 import com.google.ads.admanager.v1.stub.NetworkServiceStubSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -24,6 +26,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
@@ -89,7 +92,8 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
   }
 
   /** Returns the object with the settings used for calls to listNetworks. */
-  public UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings() {
+  public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
+      listNetworksSettings() {
     return ((NetworkServiceStubSettings) getStubSettings()).listNetworksSettings();
   }
 
@@ -196,7 +200,8 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
     }
 
     /** Returns the builder for the settings used for calls to listNetworks. */
-    public UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+    public PagedCallSettings.Builder<
+            ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings() {
       return getStubSettingsBuilder().listNetworksSettings();
     }

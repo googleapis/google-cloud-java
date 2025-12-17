@@ -58,13 +58,13 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage object containing the source.
+   * Required. Cloud Storage object containing the source.
    *
    * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
    * containing source to build.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The object.
    */
@@ -74,13 +74,13 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage object containing the source.
+   * Required. Cloud Storage object containing the source.
    *
    * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
    * containing source to build.
    * </pre>
    *
-   * <code>string object = 2;</code>
+   * <code>string object = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for object.
    */
@@ -90,11 +90,11 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage generation for the object. If the generation is
+   * Optional. Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *
-   * <code>int64 generation = 3;</code>
+   * <code>int64 generation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The generation.
    */
@@ -104,7 +104,8 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Option to specify the tool to fetch the source file for the build.
+   * Optional. Option to specify the tool to fetch the source file for the
+   * build.
    * </pre>
    *
    * <code>
@@ -119,7 +120,8 @@ public interface StorageSourceOrBuilder
    *
    *
    * <pre>
-   * Option to specify the tool to fetch the source file for the build.
+   * Optional. Option to specify the tool to fetch the source file for the
+   * build.
    * </pre>
    *
    * <code>

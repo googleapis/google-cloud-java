@@ -28,7 +28,14 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+   * A set of virtual machine instances that are being mirrored.
+   * They must live in zones contained in the same region as this
+   * packetMirroring.
+   *
+   * Note that this config will apply only to those network interfaces of the
+   * Instances that belong to the network specified in this packetMirroring.
+   *
+   * You may specify a maximum of 50 Instances.
    * </pre>
    *
    * <code>
@@ -42,7 +49,14 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+   * A set of virtual machine instances that are being mirrored.
+   * They must live in zones contained in the same region as this
+   * packetMirroring.
+   *
+   * Note that this config will apply only to those network interfaces of the
+   * Instances that belong to the network specified in this packetMirroring.
+   *
+   * You may specify a maximum of 50 Instances.
    * </pre>
    *
    * <code>
@@ -56,7 +70,14 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+   * A set of virtual machine instances that are being mirrored.
+   * They must live in zones contained in the same region as this
+   * packetMirroring.
+   *
+   * Note that this config will apply only to those network interfaces of the
+   * Instances that belong to the network specified in this packetMirroring.
+   *
+   * You may specify a maximum of 50 Instances.
    * </pre>
    *
    * <code>
@@ -69,7 +90,14 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+   * A set of virtual machine instances that are being mirrored.
+   * They must live in zones contained in the same region as this
+   * packetMirroring.
+   *
+   * Note that this config will apply only to those network interfaces of the
+   * Instances that belong to the network specified in this packetMirroring.
+   *
+   * You may specify a maximum of 50 Instances.
    * </pre>
    *
    * <code>
@@ -85,7 +113,14 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of virtual machine instances that are being mirrored. They must live in zones contained in the same region as this packetMirroring. Note that this config will apply only to those network interfaces of the Instances that belong to the network specified in this packetMirroring. You may specify a maximum of 50 Instances.
+   * A set of virtual machine instances that are being mirrored.
+   * They must live in zones contained in the same region as this
+   * packetMirroring.
+   *
+   * Note that this config will apply only to those network interfaces of the
+   * Instances that belong to the network specified in this packetMirroring.
+   *
+   * You may specify a maximum of 50 Instances.
    * </pre>
    *
    * <code>
@@ -99,7 +134,10 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
+   * A set of subnetworks for which traffic from/to all VM instances will be
+   * mirrored. They must live in the same region as this packetMirroring.
+   *
+   * You may specify a maximum of 5 subnetworks.
    * </pre>
    *
    * <code>
@@ -113,7 +151,10 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
+   * A set of subnetworks for which traffic from/to all VM instances will be
+   * mirrored. They must live in the same region as this packetMirroring.
+   *
+   * You may specify a maximum of 5 subnetworks.
    * </pre>
    *
    * <code>
@@ -127,7 +168,10 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
+   * A set of subnetworks for which traffic from/to all VM instances will be
+   * mirrored. They must live in the same region as this packetMirroring.
+   *
+   * You may specify a maximum of 5 subnetworks.
    * </pre>
    *
    * <code>
@@ -140,7 +184,10 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
+   * A set of subnetworks for which traffic from/to all VM instances will be
+   * mirrored. They must live in the same region as this packetMirroring.
+   *
+   * You may specify a maximum of 5 subnetworks.
    * </pre>
    *
    * <code>
@@ -156,7 +203,10 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of subnetworks for which traffic from/to all VM instances will be mirrored. They must live in the same region as this packetMirroring. You may specify a maximum of 5 subnetworks.
+   * A set of subnetworks for which traffic from/to all VM instances will be
+   * mirrored. They must live in the same region as this packetMirroring.
+   *
+   * You may specify a maximum of 5 subnetworks.
    * </pre>
    *
    * <code>
@@ -170,7 +220,8 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
+   * A set of mirrored tags. Traffic from/to all VM instances that have one or
+   * more of these tags will be mirrored.
    * </pre>
    *
    * <code>repeated string tags = 3552281;</code>
@@ -183,7 +234,8 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
+   * A set of mirrored tags. Traffic from/to all VM instances that have one or
+   * more of these tags will be mirrored.
    * </pre>
    *
    * <code>repeated string tags = 3552281;</code>
@@ -196,7 +248,8 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
+   * A set of mirrored tags. Traffic from/to all VM instances that have one or
+   * more of these tags will be mirrored.
    * </pre>
    *
    * <code>repeated string tags = 3552281;</code>
@@ -210,7 +263,8 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    *
    *
    * <pre>
-   * A set of mirrored tags. Traffic from/to all VM instances that have one or more of these tags will be mirrored.
+   * A set of mirrored tags. Traffic from/to all VM instances that have one or
+   * more of these tags will be mirrored.
    * </pre>
    *
    * <code>repeated string tags = 3552281;</code>

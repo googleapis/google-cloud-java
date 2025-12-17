@@ -109,7 +109,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -125,7 +125,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -149,7 +149,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+   * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
    * </pre>
    *
    * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -211,7 +211,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+   * [Output Only] Space used by data stored in disks within the storage pool
+   * (in bytes). This will reflect the total number of bytes written to the
+   * disks in the pool, in contrast to the capacity of those disks.
    * </pre>
    *
    * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -227,7 +229,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+   * [Output Only] Space used by data stored in disks within the storage pool
+   * (in bytes). This will reflect the total number of bytes written to the
+   * disks in the pool, in contrast to the capacity of those disks.
    * </pre>
    *
    * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -246,7 +250,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+   * that is allowed per disk that is not counted towards pool's IOPS
+   * capacity. For more information, see
+   * https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -262,7 +269,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+   * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+   * that is allowed per disk that is not counted towards pool's IOPS
+   * capacity. For more information, see
+   * https://cloud.google.com/compute/docs/disks/storage-pools.
    * </pre>
    *
    * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -316,7 +326,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Amount of data written into the pool, before it is compacted.
+   * [Output Only] Amount of data written into the pool, before it is
+   * compacted.
    * </pre>
    *
    * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -332,7 +343,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Amount of data written into the pool, before it is compacted.
+   * [Output Only] Amount of data written into the pool, before it is
+   * compacted.
    * </pre>
    *
    * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -351,7 +363,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+   * this storage pool. A disk's provisioned capacity is the same as its total
+   * capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -367,7 +381,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+   * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+   * this storage pool. A disk's provisioned capacity is the same as its total
+   * capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -421,7 +437,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+   * minus some amount that is allowed per disk that is not counted towards
+   * pool's throughput capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -437,7 +455,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+   * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+   * minus some amount that is allowed per disk that is not counted towards
+   * pool's throughput capacity.
    * </pre>
    *
    * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1153,7 +1173,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1168,7 +1188,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1191,7 +1211,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1214,7 +1234,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1236,7 +1256,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1254,7 +1274,7 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Timestamp of the last successful resize in RFC3339 text format.
+     * Output only. [Output Only] Timestamp of the last successful resize inRFC3339 text format.
      * </pre>
      *
      * <code>optional string last_resize_timestamp = 500825556;</code>
@@ -1351,7 +1371,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1367,7 +1389,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1383,7 +1407,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1403,7 +1429,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
+     * [Output Only] Space used by data stored in disks within the storage pool
+     * (in bytes). This will reflect the total number of bytes written to the
+     * disks in the pool, in contrast to the capacity of those disks.
      * </pre>
      *
      * <code>optional int64 pool_used_capacity_bytes = 510407877;</code>
@@ -1423,7 +1451,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1439,7 +1470,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1455,7 +1489,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1475,7 +1512,10 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
+     * [Output Only] Sum of all the disks' provisioned IOPS, minus some amount
+     * that is allowed per disk that is not counted towards pool's IOPS
+     * capacity. For more information, see
+     * https://cloud.google.com/compute/docs/disks/storage-pools.
      * </pre>
      *
      * <code>optional int64 pool_used_iops = 99558536;</code>
@@ -1567,7 +1607,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1583,7 +1624,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1599,7 +1641,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1619,7 +1662,8 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Amount of data written into the pool, before it is compacted.
+     * [Output Only] Amount of data written into the pool, before it is
+     * compacted.
      * </pre>
      *
      * <code>optional int64 pool_user_written_bytes = 228964050;</code>
@@ -1639,7 +1683,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1655,7 +1701,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1671,7 +1719,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1691,7 +1741,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in this storage pool. A disk's provisioned capacity is the same as its total capacity.
+     * [Output Only] Sum of all the disks' provisioned capacity (in GiB) in
+     * this storage pool. A disk's provisioned capacity is the same as its total
+     * capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_capacity_gb = 520930980;</code>
@@ -1783,7 +1835,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1799,7 +1853,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1815,7 +1871,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>
@@ -1835,7 +1893,9 @@ public final class StoragePoolResourceStatus extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s, minus some amount that is allowed per disk that is not counted towards pool's throughput capacity.
+     * [Output Only] Sum of all the disks' provisioned throughput in MiB/s,
+     * minus some amount that is allowed per disk that is not counted towards
+     * pool's throughput capacity.
      * </pre>
      *
      * <code>optional int64 total_provisioned_disk_throughput = 447677830;</code>

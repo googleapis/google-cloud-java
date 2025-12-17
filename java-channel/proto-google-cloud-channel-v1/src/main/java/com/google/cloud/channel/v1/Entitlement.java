@@ -47,6 +47,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     purchaseOrderId_ = "";
     parameters_ = java.util.Collections.emptyList();
     billingAccount_ = "";
+    priceReferenceId_ = "";
   }
 
   @java.lang.Override
@@ -1364,6 +1365,63 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PRICE_REFERENCE_ID_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object priceReferenceId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Price reference ID for the offer. Only for offers that require
+   * additional price information. Used to guarantee that the pricing is
+   * consistent between quoting the offer and placing the order.
+   * </pre>
+   *
+   * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The priceReferenceId.
+   */
+  @java.lang.Override
+  public java.lang.String getPriceReferenceId() {
+    java.lang.Object ref = priceReferenceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      priceReferenceId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Price reference ID for the offer. Only for offers that require
+   * additional price information. Used to guarantee that the pricing is
+   * consistent between quoting the offer and placing the order.
+   * </pre>
+   *
+   * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for priceReferenceId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPriceReferenceIdBytes() {
+    java.lang.Object ref = priceReferenceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      priceReferenceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1423,6 +1481,9 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 28, billingAccount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceReferenceId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 29, priceReferenceId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1484,6 +1545,9 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, billingAccount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(priceReferenceId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, priceReferenceId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1530,6 +1594,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getParametersList().equals(other.getParametersList())) return false;
     if (!getBillingAccount().equals(other.getBillingAccount())) return false;
+    if (!getPriceReferenceId().equals(other.getPriceReferenceId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1583,6 +1648,8 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getBillingAccount().hashCode();
+    hash = (37 * hash) + PRICE_REFERENCE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPriceReferenceId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1782,6 +1849,7 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000800);
       billingAccount_ = "";
+      priceReferenceId_ = "";
       return this;
     }
 
@@ -1883,6 +1951,9 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.billingAccount_ = billingAccount_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.priceReferenceId_ = priceReferenceId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2008,6 +2079,11 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       if (!other.getBillingAccount().isEmpty()) {
         billingAccount_ = other.billingAccount_;
         bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getPriceReferenceId().isEmpty()) {
+        priceReferenceId_ = other.priceReferenceId_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2136,6 +2212,12 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 226
+            case 234:
+              {
+                priceReferenceId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 234
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4985,6 +5067,127 @@ public final class Entitlement extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       billingAccount_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object priceReferenceId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Price reference ID for the offer. Only for offers that require
+     * additional price information. Used to guarantee that the pricing is
+     * consistent between quoting the offer and placing the order.
+     * </pre>
+     *
+     * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The priceReferenceId.
+     */
+    public java.lang.String getPriceReferenceId() {
+      java.lang.Object ref = priceReferenceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        priceReferenceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Price reference ID for the offer. Only for offers that require
+     * additional price information. Used to guarantee that the pricing is
+     * consistent between quoting the offer and placing the order.
+     * </pre>
+     *
+     * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for priceReferenceId.
+     */
+    public com.google.protobuf.ByteString getPriceReferenceIdBytes() {
+      java.lang.Object ref = priceReferenceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        priceReferenceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Price reference ID for the offer. Only for offers that require
+     * additional price information. Used to guarantee that the pricing is
+     * consistent between quoting the offer and placing the order.
+     * </pre>
+     *
+     * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The priceReferenceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriceReferenceId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      priceReferenceId_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Price reference ID for the offer. Only for offers that require
+     * additional price information. Used to guarantee that the pricing is
+     * consistent between quoting the offer and placing the order.
+     * </pre>
+     *
+     * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriceReferenceId() {
+      priceReferenceId_ = getDefaultInstance().getPriceReferenceId();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Price reference ID for the offer. Only for offers that require
+     * additional price information. Used to guarantee that the pricing is
+     * consistent between quoting the offer and placing the order.
+     * </pre>
+     *
+     * <code>string price_reference_id = 29 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for priceReferenceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriceReferenceIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      priceReferenceId_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

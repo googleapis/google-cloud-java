@@ -28,7 +28,8 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the given metro, facility, and zone.
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
+   * given metro, facility, and zone.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -41,7 +42,8 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the given metro, facility, and zone.
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
+   * given metro, facility, and zone.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -54,7 +56,8 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the given metro, facility, and zone.
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
+   * given metro, facility, and zone.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -68,7 +71,8 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] URLs of Interconnects in this redundancy group in the given metro, facility, and zone.
+   * Output only. [Output Only] URLs of Interconnects in this redundancy group in the
+   * given metro, facility, and zone.
    * </pre>
    *
    * <code>repeated string interconnects = 520187301;</code>
@@ -82,7 +86,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2". This is the second component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
+   * This is the second component of the location of Interconnects in
+   * this facility.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -95,7 +101,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2". This is the second component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
+   * This is the second component of the location of Interconnects in
+   * this facility.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -108,7 +116,9 @@ public interface InterconnectGroupPhysicalStructureMetrosFacilitiesZonesOrBuilde
    *
    *
    * <pre>
-   * [Output Only] The name of the zone, either "zone1" or "zone2". This is the second component of the location of Interconnects in this facility.
+   * Output only. [Output Only] The name of the zone, either "zone1" or "zone2".
+   * This is the second component of the location of Interconnects in
+   * this facility.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>

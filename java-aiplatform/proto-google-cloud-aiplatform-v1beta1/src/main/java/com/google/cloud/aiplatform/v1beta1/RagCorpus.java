@@ -3048,7 +3048,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
    * @return Whether the ragEmbeddingModelConfig field is set.
    */
   @java.lang.Override
@@ -3069,7 +3069,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+   *     See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
    * @return The ragEmbeddingModelConfig.
    */
   @java.lang.Override
@@ -3115,7 +3115,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
    * @return Whether the ragVectorDbConfig field is set.
    */
   @java.lang.Override
@@ -3136,7 +3136,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
    * @return The ragVectorDbConfig.
    */
   @java.lang.Override
@@ -3338,6 +3338,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Number of RagFiles in the RagCorpus.
+   *
+   * NOTE: This field is not populated in the response of
+   * [VertexRagDataService.ListRagCorpora][google.cloud.aiplatform.v1beta1.VertexRagDataService.ListRagCorpora].
    * </pre>
    *
    * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3477,6 +3480,44 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         : corpusTypeConfig_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 19;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 20;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3532,6 +3573,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(13, getCorpusTypeConfig());
     }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(19, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(20, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3585,6 +3632,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCorpusTypeConfig());
     }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3633,6 +3686,8 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
     if (hasCorpusTypeConfig()) {
       if (!getCorpusTypeConfig().equals(other.getCorpusTypeConfig())) return false;
     }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getBackendConfigCase().equals(other.getBackendConfigCase())) return false;
     switch (backendConfigCase_) {
       case 9:
@@ -3691,6 +3746,10 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CORPUS_TYPE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getCorpusTypeConfig().hashCode();
     }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     switch (backendConfigCase_) {
       case 9:
         hash = (37 * hash) + VECTOR_DB_CONFIG_FIELD_NUMBER;
@@ -3904,6 +3963,8 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         corpusTypeConfigBuilder_.dispose();
         corpusTypeConfigBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       backendConfigCase_ = 0;
       backendConfig_ = null;
       return this;
@@ -3992,6 +4053,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         result.corpusTypeConfig_ =
             corpusTypeConfigBuilder_ == null ? corpusTypeConfig_ : corpusTypeConfigBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4090,6 +4157,12 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasCorpusTypeConfig()) {
         mergeCorpusTypeConfig(other.getCorpusTypeConfig());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       switch (other.getBackendConfigCase()) {
         case VECTOR_DB_CONFIG:
@@ -4215,6 +4288,18 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 152:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 152
+            case 160:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5093,7 +5178,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
      * @return Whether the ragEmbeddingModelConfig field is set.
      */
     @java.lang.Deprecated
@@ -5113,7 +5198,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_embedding_model_config is
-     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=348
+     *     deprecated. See google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=360
      * @return The ragEmbeddingModelConfig.
      */
     @java.lang.Deprecated
@@ -5325,7 +5410,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
      * @return Whether the ragVectorDbConfig field is set.
      */
     @java.lang.Deprecated
@@ -5345,7 +5430,7 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.RagCorpus.rag_vector_db_config is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=355
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=367
      * @return The ragVectorDbConfig.
      */
     @java.lang.Deprecated
@@ -6181,6 +6266,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Number of RagFiles in the RagCorpus.
+     *
+     * NOTE: This field is not populated in the response of
+     * [VertexRagDataService.ListRagCorpora][google.cloud.aiplatform.v1beta1.VertexRagDataService.ListRagCorpora].
      * </pre>
      *
      * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6197,6 +6285,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Number of RagFiles in the RagCorpus.
+     *
+     * NOTE: This field is not populated in the response of
+     * [VertexRagDataService.ListRagCorpora][google.cloud.aiplatform.v1beta1.VertexRagDataService.ListRagCorpora].
      * </pre>
      *
      * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6217,6 +6308,9 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Number of RagFiles in the RagCorpus.
+     *
+     * NOTE: This field is not populated in the response of
+     * [VertexRagDataService.ListRagCorpora][google.cloud.aiplatform.v1beta1.VertexRagDataService.ListRagCorpora].
      * </pre>
      *
      * <code>int32 rag_files_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -6689,6 +6783,118 @@ public final class RagCorpus extends com.google.protobuf.GeneratedMessageV3
         corpusTypeConfig_ = null;
       }
       return corpusTypeConfigBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

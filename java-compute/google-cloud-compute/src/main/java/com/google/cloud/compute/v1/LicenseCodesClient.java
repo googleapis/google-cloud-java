@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Get</td>
- *      <td><p> Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code. &#42;Caution&#42; This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.</td>
+ *      <td><p> Return a specified license code. License codes are mirrored across all projects that have permissions to read the License Code.  &#42;Caution&#42; This resource is intended for use only by third-party partners who are creatingCloud Marketplace images.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -74,7 +74,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> TestIamPermissions</td>
- *      <td><p> Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.  &#42;Caution&#42; This resource is intended for use only by third-party partners who are creatingCloud Marketplace images.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -184,7 +184,7 @@ public class LicenseCodesClient implements BackgroundResource {
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. &#42;Caution&#42; This resource is intended for use only
-   * by third-party partners who are creating Cloud Marketplace images.
+   * by third-party partners who are creatingCloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class LicenseCodesClient implements BackgroundResource {
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. &#42;Caution&#42; This resource is intended for use only
-   * by third-party partners who are creating Cloud Marketplace images.
+   * by third-party partners who are creatingCloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -246,7 +246,7 @@ public class LicenseCodesClient implements BackgroundResource {
   /**
    * Return a specified license code. License codes are mirrored across all projects that have
    * permissions to read the License Code. &#42;Caution&#42; This resource is intended for use only
-   * by third-party partners who are creating Cloud Marketplace images.
+   * by third-party partners who are creatingCloud Marketplace images.
    *
    * <p>Sample code:
    *
@@ -275,7 +275,7 @@ public class LicenseCodesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
-   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * resource is intended for use only by third-party partners who are creatingCloud Marketplace
    * images.
    *
    * <p>Sample code:
@@ -315,7 +315,7 @@ public class LicenseCodesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
-   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * resource is intended for use only by third-party partners who are creatingCloud Marketplace
    * images.
    *
    * <p>Sample code:
@@ -348,7 +348,7 @@ public class LicenseCodesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns permissions that a caller has on the specified resource. &#42;Caution&#42; This
-   * resource is intended for use only by third-party partners who are creating Cloud Marketplace
+   * resource is intended for use only by third-party partners who are creatingCloud Marketplace
    * images.
    *
    * <p>Sample code:

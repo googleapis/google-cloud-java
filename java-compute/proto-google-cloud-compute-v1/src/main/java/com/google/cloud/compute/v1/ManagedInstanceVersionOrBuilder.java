@@ -28,7 +28,8 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+   * Output only. [Output Only] The intended template of the instance. This field is empty
+   * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -41,7 +42,8 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+   * Output only. [Output Only] The intended template of the instance. This field is empty
+   * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -54,7 +56,8 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
+   * Output only. [Output Only] The intended template of the instance. This field is empty
+   * when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
    * <code>optional string instance_template = 309248228;</code>
@@ -67,7 +70,7 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -80,7 +83,7 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -93,7 +96,7 @@ public interface ManagedInstanceVersionOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the version.
+   * Output only. [Output Only] Name of the version.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>

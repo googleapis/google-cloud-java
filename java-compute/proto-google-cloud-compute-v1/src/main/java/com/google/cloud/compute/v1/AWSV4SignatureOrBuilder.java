@@ -28,7 +28,12 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -41,7 +46,12 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -54,7 +64,12 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The access key used for s3 bucket authentication. Required for updating or creating a backend that uses AWS v4 signature authentication, but will not be returned as part of the configuration when queried with a REST API GET request. &#64;InputOnly
+   * The access key used for s3 bucket authentication. Required for updating or
+   * creating a backend that uses AWS v4 signature authentication, but will not
+   * be returned as part of the configuration when queried with a REST API GET
+   * request.
+   *
+   * &#64;InputOnly
    * </pre>
    *
    * <code>optional string access_key = 468922628;</code>
@@ -106,7 +121,8 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -119,7 +135,8 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -132,7 +149,8 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The optional version identifier for the access key. You can use this to keep track of different iterations of your access key.
+   * The optional version identifier for the access key. You can use this to
+   * keep track of different iterations of your access key.
    * </pre>
    *
    * <code>optional string access_key_version = 80261277;</code>
@@ -145,7 +163,9 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>
@@ -158,7 +178,9 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>
@@ -171,7 +193,9 @@ public interface AWSV4SignatureOrBuilder
    *
    *
    * <pre>
-   * The name of the cloud region of your origin. This is a free-form field with the name of the region your cloud uses to host your origin. For example, "us-east-1" for AWS or "us-ashburn-1" for OCI.
+   * The name of the cloud region of your origin. This is a free-form field with
+   * the name of the region your cloud uses to host your origin.  For example,
+   * "us-east-1" for AWS or "us-ashburn-1" for OCI.
    * </pre>
    *
    * <code>optional string origin_region = 265305645;</code>

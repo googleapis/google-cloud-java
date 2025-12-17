@@ -28,7 +28,8 @@ public interface BackendBucketUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
+   * BackendBucket.
    * </pre>
    *
    * <code>optional string reference = 148586315;</code>
@@ -41,7 +42,8 @@ public interface BackendBucketUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
+   * BackendBucket.
    * </pre>
    *
    * <code>optional string reference = 148586315;</code>
@@ -54,7 +56,8 @@ public interface BackendBucketUsedByOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for UrlMaps referencing that BackendBucket.
+   * Output only. [Output Only] Server-defined URL for UrlMaps referencing that
+   * BackendBucket.
    * </pre>
    *
    * <code>optional string reference = 148586315;</code>

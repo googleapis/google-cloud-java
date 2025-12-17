@@ -28,7 +28,13 @@ public interface DiskParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the disk. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -39,7 +45,13 @@ public interface DiskParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the disk. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -54,7 +66,13 @@ public interface DiskParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the disk. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -65,7 +83,13 @@ public interface DiskParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the disk. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>
@@ -80,7 +104,13 @@ public interface DiskParamsOrBuilder
    *
    *
    * <pre>
-   * Resource manager tags to be bound to the disk. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
+   * Resource manager tags to be bound to the disk. Tag keys and values
+   * have the same definition as resource
+   * manager tags. Keys and values can be either in numeric format,
+   * such as `tagKeys/{tag_key_id}` and `tagValues/456` or in namespaced
+   * format such as `{org_id|project_id}/{tag_key_short_name}` and
+   * `{tag_value_short_name}`. The field is ignored (both PUT &amp;
+   * PATCH) when empty.
    * </pre>
    *
    * <code>map&lt;string, string&gt; resource_manager_tags = 377671164;</code>

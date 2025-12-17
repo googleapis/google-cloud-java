@@ -123,6 +123,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -207,6 +208,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -291,6 +293,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -365,6 +368,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -539,6 +543,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -581,6 +586,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -642,6 +648,7 @@ public class WorkerPoolsClientHttpJsonTest {
               .setLatestCreatedRevision(
                   RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
               .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+              .setThreatDetectionEnabled(true)
               .addAllCustomAudiences(new ArrayList<String>())
               .setSatisfiesPzs(true)
               .setReconciling(true)
@@ -684,6 +691,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -726,6 +734,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -788,6 +797,7 @@ public class WorkerPoolsClientHttpJsonTest {
               .setLatestCreatedRevision(
                   RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
               .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+              .setThreatDetectionEnabled(true)
               .addAllCustomAudiences(new ArrayList<String>())
               .setSatisfiesPzs(true)
               .setReconciling(true)
@@ -831,6 +841,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)
@@ -910,6 +921,7 @@ public class WorkerPoolsClientHttpJsonTest {
             .setLatestCreatedRevision(
                 RevisionName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[REVISION]").toString())
             .addAllInstanceSplitStatuses(new ArrayList<InstanceSplitStatus>())
+            .setThreatDetectionEnabled(true)
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
             .setReconciling(true)

@@ -114,7 +114,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -127,7 +129,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>
@@ -140,7 +144,9 @@ public interface AuditConfigOrBuilder
    *
    *
    * <pre>
-   * Specifies a service that will be enabled for audit logging. For example, `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that covers all services.
+   * Specifies a service that will be enabled for audit logging.
+   * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+   * `allServices` is a special value that covers all services.
    * </pre>
    *
    * <code>optional string service = 373540533;</code>

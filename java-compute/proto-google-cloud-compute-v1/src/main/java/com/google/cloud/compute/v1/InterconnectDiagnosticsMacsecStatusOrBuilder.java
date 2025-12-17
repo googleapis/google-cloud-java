@@ -28,7 +28,8 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    *
    *
    * <pre>
-   * Indicates the Connectivity Association Key Name (CKN) currently being used if MACsec is operational.
+   * Indicates the Connectivity Association Key Name (CKN)
+   * currently being used if MACsec is operational.
    * </pre>
    *
    * <code>optional string ckn = 98566;</code>
@@ -41,7 +42,8 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    *
    *
    * <pre>
-   * Indicates the Connectivity Association Key Name (CKN) currently being used if MACsec is operational.
+   * Indicates the Connectivity Association Key Name (CKN)
+   * currently being used if MACsec is operational.
    * </pre>
    *
    * <code>optional string ckn = 98566;</code>
@@ -54,7 +56,8 @@ public interface InterconnectDiagnosticsMacsecStatusOrBuilder
    *
    *
    * <pre>
-   * Indicates the Connectivity Association Key Name (CKN) currently being used if MACsec is operational.
+   * Indicates the Connectivity Association Key Name (CKN)
+   * currently being used if MACsec is operational.
    * </pre>
    *
    * <code>optional string ckn = 98566;</code>

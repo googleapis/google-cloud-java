@@ -166,6 +166,7 @@ public class RoutesClientTest {
             .setNextHopIlb("nextHopIlb-1583648919")
             .setNextHopInstance("nextHopInstance-776074485")
             .setNextHopInterRegionCost(-1586170733)
+            .setNextHopInterconnectAttachment("nextHopInterconnectAttachment-34705337")
             .setNextHopIp("nextHopIp1195840541")
             .setNextHopMed(-1948800118)
             .setNextHopNetwork("nextHopNetwork2077637880")

@@ -106,7 +106,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -120,7 +120,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -133,7 +133,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -146,7 +146,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>
@@ -161,7 +161,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    *
    *
    * <pre>
-   * The detailed instances information for a given Block
+   * Output only. The detailed instances information for a given Block
    * </pre>
    *
    * <code>

@@ -28,7 +28,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -41,7 +41,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -54,7 +54,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The URL of the instance.
+   * Output only. [Output Only] The URL of the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -67,7 +67,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -78,7 +78,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -89,7 +89,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -100,7 +100,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -112,7 +112,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The named ports that belong to this instance group.
+   * Output only. [Output Only] The named ports that belong to this instance group.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
@@ -123,7 +123,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -137,7 +137,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -151,7 +151,7 @@ public interface InstanceWithNamedPortsOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of the instance.
+   * Output only. [Output Only] The status of the instance.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

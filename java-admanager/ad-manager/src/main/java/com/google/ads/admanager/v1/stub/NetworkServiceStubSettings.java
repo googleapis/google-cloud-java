@@ -16,11 +16,14 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
+
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
 import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -29,12 +32,18 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -100,7 +109,60 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings;
-  private final UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings;
+  private final PagedCallSettings<
+          ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
+      listNetworksSettings;
+
+  private static final PagedListDescriptor<ListNetworksRequest, ListNetworksResponse, Network>
+      LIST_NETWORKS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNetworksRequest, ListNetworksResponse, Network>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNetworksRequest injectToken(ListNetworksRequest payload, String token) {
+              return ListNetworksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNetworksRequest injectPageSize(ListNetworksRequest payload, int pageSize) {
+              return ListNetworksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNetworksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNetworksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Network> extractResources(ListNetworksResponse payload) {
+              return payload.getNetworksList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
+      LIST_NETWORKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>() {
+            @Override
+            public ApiFuture<ListNetworksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNetworksRequest, ListNetworksResponse> callable,
+                ListNetworksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNetworksResponse> futureResponse) {
+              PageContext<ListNetworksRequest, ListNetworksResponse, Network> pageContext =
+                  PageContext.create(callable, LIST_NETWORKS_PAGE_STR_DESC, request, context);
+              return ListNetworksPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getNetwork. */
   public UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings() {
@@ -108,7 +170,8 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
   }
 
   /** Returns the object with the settings used for calls to listNetworks. */
-  public UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings() {
+  public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
+      listNetworksSettings() {
     return listNetworksSettings;
   }
 
@@ -202,7 +265,8 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
   public static class Builder extends StubSettings.Builder<NetworkServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetNetworkRequest, Network> getNetworkSettings;
-    private final UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+    private final PagedCallSettings.Builder<
+            ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -232,7 +296,7 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
       super(clientContext);
 
       getNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listNetworksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listNetworksSettings = PagedCallSettings.newBuilder(LIST_NETWORKS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -298,7 +362,8 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
     }
 
     /** Returns the builder for the settings used for calls to listNetworks. */
-    public UnaryCallSettings.Builder<ListNetworksRequest, ListNetworksResponse>
+    public PagedCallSettings.Builder<
+            ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings() {
       return listNetworksSettings;
     }

@@ -28,7 +28,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Resources consumed by the instance.
+   * Output only. Resources consumed by the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumption_info = 146354898;
@@ -42,7 +42,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Resources consumed by the instance.
+   * Output only. Resources consumed by the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumption_info = 146354898;
@@ -56,7 +56,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Resources consumed by the instance.
+   * Output only. Resources consumed by the instance.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.InstanceConsumptionInfo consumption_info = 146354898;
@@ -68,7 +68,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Server-defined URL for the instance.
+   * Output only. Server-defined URL for the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -81,7 +81,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Server-defined URL for the instance.
+   * Output only. Server-defined URL for the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>
@@ -94,7 +94,7 @@ public interface InstanceConsumptionDataOrBuilder
    *
    *
    * <pre>
-   * Server-defined URL for the instance.
+   * Output only. Server-defined URL for the instance.
    * </pre>
    *
    * <code>optional string instance = 18257045;</code>

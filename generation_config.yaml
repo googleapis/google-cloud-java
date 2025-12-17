@@ -1,6 +1,6 @@
-gapic_generator_version: 2.64.1
-googleapis_commitish: ba80e9b5251c974d18c3c25fa905e2d0ae4a0f02
-libraries_bom_version: 26.71.0
+gapic_generator_version: 2.64.2
+googleapis_commitish: b60f5a5783d5ec0e8a8d254f73ad00316b9b646f
+libraries_bom_version: 26.72.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -1209,6 +1209,24 @@ libraries:
   - proto_path: google/cloud/gkehub/policycontroller/v1beta
   - proto_path: google/cloud/gkehub/servicemesh/v1beta
 
+- api_shortname: gkerecommender
+  name_pretty: GKE Recommender API
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
+  api_description: lets you analyze the performance and cost-efficiency of your inference
+    workloads, and make data-driven decisions about resource allocation and model
+    deployment strategies.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-gkerecommender/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-gkerecommender
+  api_id: gkerecommender.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/gkerecommender/v1
+  requires_billing: true
 - api_shortname: containeranalysis
   name_pretty: Grafeas
   product_documentation: https://grafeas.io
@@ -1237,6 +1255,22 @@ libraries:
   - proto_path: google/apps/script/type/sheets
   - proto_path: google/apps/script/type/slides
 
+- api_shortname: hypercomputecluster
+  name_pretty: Cluster Director API
+  product_documentation: 
+    https://cloud.google.com/blog/products/compute/managed-slurm-and-other-cluster-director-enhancements
+  api_description: simplifies cluster management across compute, network, and storage
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-hypercomputecluster/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-hypercomputecluster
+  api_id: hypercomputecluster.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/hypercomputecluster/v1beta
+  requires_billing: true
 - api_shortname: iam
   name_pretty: IAM
   product_documentation: n/a
@@ -1471,6 +1505,7 @@ libraries:
   cloud_api: true
   GAPICs:
   - proto_path: google/cloud/maintenance/api/v1beta
+  - proto_path: google/cloud/maintenance/api/v1
   requires_billing: true
   rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
 - api_shortname: managedidentities

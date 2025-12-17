@@ -28,7 +28,8 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -41,7 +42,8 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -54,7 +56,8 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] ASNs in the path segment. When type is SEQUENCE, these are ordered.
+   * Output only. [Output only] ASNs in the path segment. When type is SEQUENCE, these are
+   * ordered.
    * </pre>
    *
    * <code>repeated int32 asns = 3003767;</code>
@@ -68,7 +71,53 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @return A list containing the asns32.
+   */
+  java.util.List<java.lang.Integer> getAsns32List();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @return The count of asns32.
+   */
+  int getAsns32Count();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] ASNs in the path segment. This field is for better
+   * support of 32 bit ASNs as the other asns field suffers from overflow when
+   * the ASN is larger. When type is SEQUENCE, these are ordered.
+   * </pre>
+   *
+   * <code>repeated uint32 asns32 = 202267158;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The asns32 at the given index.
+   */
+  int getAsns32(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -82,7 +131,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -96,7 +145,7 @@ public interface BgpRouteAsPathOrBuilder
    *
    *
    * <pre>
-   * [Output only] Type of AS-PATH segment (SEQUENCE or SET)
+   * Output only. [Output only] Type of AS-PATH segment (SEQUENCE or SET)
    * Check the Type enum for the list of possible values.
    * </pre>
    *

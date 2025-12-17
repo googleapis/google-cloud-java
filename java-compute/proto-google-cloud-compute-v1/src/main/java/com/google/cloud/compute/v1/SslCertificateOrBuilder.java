@@ -28,7 +28,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A value read into memory from a certificate file. The certificate file must
+   * be in PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -41,7 +43,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A value read into memory from a certificate file. The certificate file must
+   * be in PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -54,7 +58,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
+   * A value read into memory from a certificate file. The certificate file must
+   * be in PEM format. The certificate chain must be no greater than 5 certs
+   * long. The chain must include at least one intermediate cert.
    * </pre>
    *
    * <code>optional string certificate = 341787031;</code>
@@ -67,7 +73,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -80,7 +87,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -93,7 +101,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -106,7 +115,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -119,7 +129,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -132,7 +143,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -145,7 +157,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -158,7 +170,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -171,7 +183,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Expire time of the certificate. RFC3339
+   * Output only. [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
    * <code>optional string expire_time = 440691181;</code>
@@ -184,7 +196,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -197,7 +210,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -210,7 +224,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -223,7 +237,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -236,7 +250,7 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#sslCertificate for SSL certificates.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -292,7 +306,13 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -305,7 +325,13 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -318,7 +344,13 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource. Provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which
+   * cannot be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -331,7 +363,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+   * A value read into memory from a write-only private key file. The private
+   * key file must be in PEM format. For security, only insert
+   * requests include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>
@@ -344,7 +378,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+   * A value read into memory from a write-only private key file. The private
+   * key file must be in PEM format. For security, only insert
+   * requests include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>
@@ -357,7 +393,9 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
+   * A value read into memory from a write-only private key file. The private
+   * key file must be in PEM format. For security, only insert
+   * requests include this field.
    * </pre>
    *
    * <code>optional string private_key = 361331107;</code>
@@ -370,7 +408,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
+   * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -383,7 +422,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
+   * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -396,7 +436,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
+   * Output only. [Output Only] URL of the region where the regional SSL Certificate
+   * resides. This field is not applicable to global SSL Certificate.
    * </pre>
    *
    * <code>optional string region = 138946292;</code>
@@ -492,7 +533,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject Alternative Name.
+   * Output only. [Output Only] Domains associated with the certificate via Subject
+   * Alternative Name.
    * </pre>
    *
    * <code>repeated string subject_alternative_names = 528807907;</code>
@@ -505,7 +547,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject Alternative Name.
+   * Output only. [Output Only] Domains associated with the certificate via Subject
+   * Alternative Name.
    * </pre>
    *
    * <code>repeated string subject_alternative_names = 528807907;</code>
@@ -518,7 +561,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject Alternative Name.
+   * Output only. [Output Only] Domains associated with the certificate via Subject
+   * Alternative Name.
    * </pre>
    *
    * <code>repeated string subject_alternative_names = 528807907;</code>
@@ -532,7 +576,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Domains associated with the certificate via Subject Alternative Name.
+   * Output only. [Output Only] Domains associated with the certificate via Subject
+   * Alternative Name.
    * </pre>
    *
    * <code>repeated string subject_alternative_names = 528807907;</code>
@@ -546,7 +591,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or
+   * "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -560,7 +606,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or
+   * "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -574,7 +621,8 @@ public interface SslCertificateOrBuilder
    *
    *
    * <pre>
-   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or
+   * "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

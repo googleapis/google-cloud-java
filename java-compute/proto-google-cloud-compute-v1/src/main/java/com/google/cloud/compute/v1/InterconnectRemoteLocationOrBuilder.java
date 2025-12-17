@@ -28,7 +28,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -41,7 +42,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -54,7 +56,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
+   * Output only. [Output Only] The postal address of the Point of Presence, each line in
+   * the address is separated by a newline character.
    * </pre>
    *
    * <code>optional string address = 462920692;</code>
@@ -67,7 +70,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Subset of fields from InterconnectAttachment's |configurationConstraints| field that apply to all attachments for this remote location.
+   * Output only. [Output Only] Subset of fields from InterconnectAttachment's
+   * |configurationConstraints| field that apply to all attachments for this
+   * remote location.
    * </pre>
    *
    * <code>
@@ -82,7 +87,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Subset of fields from InterconnectAttachment's |configurationConstraints| field that apply to all attachments for this remote location.
+   * Output only. [Output Only] Subset of fields from InterconnectAttachment's
+   * |configurationConstraints| field that apply to all attachments for this
+   * remote location.
    * </pre>
    *
    * <code>
@@ -98,7 +105,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Subset of fields from InterconnectAttachment's |configurationConstraints| field that apply to all attachments for this remote location.
+   * Output only. [Output Only] Subset of fields from InterconnectAttachment's
+   * |configurationConstraints| field that apply to all attachments for this
+   * remote location.
    * </pre>
    *
    * <code>
@@ -112,7 +121,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * Output only. [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -125,7 +136,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * Output only. [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -138,7 +151,9 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   * Output only. [Output Only] Metropolitan area designator that indicates which city an
+   * interconnect is located.
+   * For example: "Chicago, IL", "Amsterdam, Netherlands".
    * </pre>
    *
    * <code>optional string city = 3053931;</code>
@@ -151,7 +166,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints on the parameters for creating Cross-Cloud Interconnect and associated InterconnectAttachments.
+   * Output only. [Output Only] Constraints on the parameters for creating Cross-Cloud
+   * Interconnect and associated InterconnectAttachments.
    * </pre>
    *
    * <code>
@@ -166,7 +182,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints on the parameters for creating Cross-Cloud Interconnect and associated InterconnectAttachments.
+   * Output only. [Output Only] Constraints on the parameters for creating Cross-Cloud
+   * Interconnect and associated InterconnectAttachments.
    * </pre>
    *
    * <code>
@@ -181,7 +198,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Constraints on the parameters for creating Cross-Cloud Interconnect and associated InterconnectAttachments.
+   * Output only. [Output Only] Constraints on the parameters for creating Cross-Cloud
+   * Interconnect and associated InterconnectAttachments.
    * </pre>
    *
    * <code>
@@ -195,7 +213,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Output only. [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -209,7 +234,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Output only. [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -223,7 +255,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Output only. [Output Only] Continent for this location, which can take one of the
+   * following values:
+   *
+   *    - AFRICA
+   *    - ASIA_PAC
+   *    - EUROPE
+   *    - NORTH_AMERICA
+   *    - SOUTH_AMERICA
    * Check the Continent enum for the list of possible values.
    * </pre>
    *
@@ -237,7 +276,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -250,7 +290,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -263,7 +304,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -276,7 +318,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -289,7 +331,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -302,7 +344,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] An optional description of the resource.
+   * Output only. [Output Only] An optional description of the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -315,7 +357,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -328,7 +370,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -341,7 +383,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
+   * Output only. [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
    * <code>optional string facility_provider = 533303309;</code>
@@ -354,7 +396,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -367,7 +410,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -380,7 +424,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1).
+   * Output only. [Output Only] A provider-assigned Identifier for this facility (e.g.,
+   * Ashburn-DC1).
    * </pre>
    *
    * <code>optional string facility_provider_facility_id = 87269125;</code>
@@ -393,7 +438,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -406,7 +452,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -419,7 +466,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectRemoteLocation for interconnect remote locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectRemoteLocation for interconnect remote
+   * locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -432,7 +480,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectRemoteLocation for interconnect remote locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectRemoteLocation for interconnect remote
+   * locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -445,7 +494,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#interconnectRemoteLocation for interconnect remote locations.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#interconnectRemoteLocation for interconnect remote
+   * locations.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -458,7 +508,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link Aggregation Control Protocol (LACP) constraints, which can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
+   * Output only. [Output Only] Link Aggregation Control Protocol (LACP) constraints, which
+   * can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
    * Check the Lacp enum for the list of possible values.
    * </pre>
    *
@@ -472,7 +523,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link Aggregation Control Protocol (LACP) constraints, which can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
+   * Output only. [Output Only] Link Aggregation Control Protocol (LACP) constraints, which
+   * can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
    * Check the Lacp enum for the list of possible values.
    * </pre>
    *
@@ -486,7 +538,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Link Aggregation Control Protocol (LACP) constraints, which can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
+   * Output only. [Output Only] Link Aggregation Control Protocol (LACP) constraints, which
+   * can take one of the following values: LACP_SUPPORTED, LACP_UNSUPPORTED
    * Check the Lacp enum for the list of possible values.
    * </pre>
    *
@@ -500,7 +553,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 100 Gbps ports supported in a link aggregation group (LAG). When linkType is 100 Gbps, requestedLinkCount cannot exceed max_lag_size_100_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 100 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 100 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_100_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size100_gbps = 245219253;</code>
@@ -513,7 +569,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 100 Gbps ports supported in a link aggregation group (LAG). When linkType is 100 Gbps, requestedLinkCount cannot exceed max_lag_size_100_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 100 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 100 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_100_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size100_gbps = 245219253;</code>
@@ -526,7 +585,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 10 Gbps ports supported in a link aggregation group (LAG). When linkType is 10 Gbps, requestedLinkCount cannot exceed max_lag_size_10_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 10 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 10 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_10_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size10_gbps = 294007573;</code>
@@ -539,7 +601,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 10 Gbps ports supported in a link aggregation group (LAG). When linkType is 10 Gbps, requestedLinkCount cannot exceed max_lag_size_10_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 10 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 10 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_10_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size10_gbps = 294007573;</code>
@@ -552,7 +617,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 400 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_400_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
@@ -565,7 +633,10 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * Output only. [Output Only]
+   * The maximum number of 400 Gbps ports supported in a link aggregation group
+   * (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed
+   * max_lag_size_400_gbps.
    * </pre>
    *
    * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
@@ -578,7 +649,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -591,7 +662,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -604,7 +675,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Name of the resource.
+   * Output only. [Output Only] Name of the resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -617,7 +688,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -630,7 +702,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -643,7 +716,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
+   * Output only. [Output Only] The peeringdb identifier for this facility (corresponding
+   * with a netfac type in peeringdb).
    * </pre>
    *
    * <code>optional string peeringdb_facility_id = 536567094;</code>
@@ -656,7 +730,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Permitted connections.
+   * Output only. [Output Only] Permitted connections.
    * </pre>
    *
    * <code>
@@ -670,7 +744,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Permitted connections.
+   * Output only. [Output Only] Permitted connections.
    * </pre>
    *
    * <code>
@@ -684,7 +758,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Permitted connections.
+   * Output only. [Output Only] Permitted connections.
    * </pre>
    *
    * <code>
@@ -697,7 +771,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Permitted connections.
+   * Output only. [Output Only] Permitted connections.
    * </pre>
    *
    * <code>
@@ -713,7 +787,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Permitted connections.
+   * Output only. [Output Only] Permitted connections.
    * </pre>
    *
    * <code>
@@ -727,7 +801,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the service provider present at the remote location. Example values: "Amazon Web Services", "Microsoft Azure".
+   * Output only. [Output Only] Indicates the service provider present at the remote
+   * location. Example values: "Amazon Web Services", "Microsoft Azure".
    * </pre>
    *
    * <code>optional string remote_service = 391954364;</code>
@@ -740,7 +815,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the service provider present at the remote location. Example values: "Amazon Web Services", "Microsoft Azure".
+   * Output only. [Output Only] Indicates the service provider present at the remote
+   * location. Example values: "Amazon Web Services", "Microsoft Azure".
    * </pre>
    *
    * <code>optional string remote_service = 391954364;</code>
@@ -753,7 +829,8 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Indicates the service provider present at the remote location. Example values: "Amazon Web Services", "Microsoft Azure".
+   * Output only. [Output Only] Indicates the service provider present at the remote
+   * location. Example values: "Amazon Web Services", "Microsoft Azure".
    * </pre>
    *
    * <code>optional string remote_service = 391954364;</code>
@@ -766,7 +843,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -779,7 +856,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -792,7 +869,7 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -805,7 +882,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectRemoteLocation, which can take one of the following values: - CLOSED: The InterconnectRemoteLocation is closed and is unavailable for provisioning new Cross-Cloud Interconnects. - AVAILABLE: The InterconnectRemoteLocation is available for provisioning new Cross-Cloud Interconnects.
+   * Output only. [Output Only] The status of this InterconnectRemoteLocation, which can take
+   * one of the following values:
+   *
+   *    - CLOSED: The InterconnectRemoteLocation is closed and is unavailable
+   *    for provisioning new Cross-Cloud Interconnects.
+   *    - AVAILABLE: The
+   *    InterconnectRemoteLocation is available for provisioning new
+   *    Cross-Cloud Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -819,7 +903,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectRemoteLocation, which can take one of the following values: - CLOSED: The InterconnectRemoteLocation is closed and is unavailable for provisioning new Cross-Cloud Interconnects. - AVAILABLE: The InterconnectRemoteLocation is available for provisioning new Cross-Cloud Interconnects.
+   * Output only. [Output Only] The status of this InterconnectRemoteLocation, which can take
+   * one of the following values:
+   *
+   *    - CLOSED: The InterconnectRemoteLocation is closed and is unavailable
+   *    for provisioning new Cross-Cloud Interconnects.
+   *    - AVAILABLE: The
+   *    InterconnectRemoteLocation is available for provisioning new
+   *    Cross-Cloud Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -833,7 +924,14 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The status of this InterconnectRemoteLocation, which can take one of the following values: - CLOSED: The InterconnectRemoteLocation is closed and is unavailable for provisioning new Cross-Cloud Interconnects. - AVAILABLE: The InterconnectRemoteLocation is available for provisioning new Cross-Cloud Interconnects.
+   * Output only. [Output Only] The status of this InterconnectRemoteLocation, which can take
+   * one of the following values:
+   *
+   *    - CLOSED: The InterconnectRemoteLocation is closed and is unavailable
+   *    for provisioning new Cross-Cloud Interconnects.
+   *    - AVAILABLE: The
+   *    InterconnectRemoteLocation is available for provisioning new
+   *    Cross-Cloud Interconnects.
    * Check the Status enum for the list of possible values.
    * </pre>
    *

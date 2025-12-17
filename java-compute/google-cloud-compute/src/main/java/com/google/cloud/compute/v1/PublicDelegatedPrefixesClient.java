@@ -71,7 +71,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -184,7 +185,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Patches the specified PublicDelegatedPrefix resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
+ *      <td><p> Patches the specified PublicDelegatedPrefix resource with the data included in the request. This method supportsPATCH semantics and usesJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -316,8 +317,10 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -348,8 +351,10 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -389,8 +394,10 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -431,8 +438,10 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes. To
-   * prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.
+   * Lists all PublicDelegatedPrefix resources owned by the specific project across all scopes.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -501,7 +510,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the public delegated prefix is located. It should
+   * @param region The name of theregion where the public delegated prefix is located. It should
    *     comply with RFC1035.
    * @param publicDelegatedPrefix The name of the public delegated prefix. It should comply with
    *     RFC1035.
@@ -1156,7 +1165,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PublicDelegatedPrefix resource with the data included in the request.
-   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * This method supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1204,7 +1213,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PublicDelegatedPrefix resource with the data included in the request.
-   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * This method supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1239,7 +1248,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PublicDelegatedPrefix resource with the data included in the request.
-   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * This method supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1274,7 +1283,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified PublicDelegatedPrefix resource with the data included in the request.
-   * This method supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * This method supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -1328,7 +1337,7 @@ public class PublicDelegatedPrefixesClient implements BackgroundResource {
    * }</pre>
    *
    * @param project Project ID for this request.
-   * @param region The name of the region where the public delegated prefix is located. It should
+   * @param region The name of theregion where the public delegated prefix is located. It should
    *     comply with RFC1035.
    * @param publicDelegatedPrefix The name of the public delegated prefix. It should comply with
    *     RFC1035.

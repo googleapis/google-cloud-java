@@ -28,7 +28,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>
@@ -41,7 +42,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>
@@ -54,7 +56,8 @@ public interface InstancesSetNameRequestOrBuilder
    *
    *
    * <pre>
-   * The current name of this resource, used to prevent conflicts. Provide the latest name when making a request to change name.
+   * The current name of this resource, used to prevent conflicts. Provide the
+   * latest name when making a request to change name.
    * </pre>
    *
    * <code>optional string current_name = 394983825;</code>

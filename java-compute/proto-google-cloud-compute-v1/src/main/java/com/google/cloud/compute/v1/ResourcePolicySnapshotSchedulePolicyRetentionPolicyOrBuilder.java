@@ -54,7 +54,8 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
@@ -68,7 +69,8 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
@@ -82,7 +84,8 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    *
    *
    * <pre>
-   * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Specifies the behavior to apply to scheduled snapshots when
+   * the source disk is deleted.
    * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *

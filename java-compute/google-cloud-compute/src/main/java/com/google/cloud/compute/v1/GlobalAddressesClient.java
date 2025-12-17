@@ -161,7 +161,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SetLabels</td>
- *      <td><p> Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources documentation.</td>
+ *      <td><p> Sets the labels on a GlobalAddress. To learn more about labels, read theLabeling Resources documentation.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -898,7 +898,7 @@ public class GlobalAddressesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a GlobalAddress. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -939,7 +939,7 @@ public class GlobalAddressesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a GlobalAddress. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -971,7 +971,7 @@ public class GlobalAddressesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a GlobalAddress. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:
@@ -1003,7 +1003,7 @@ public class GlobalAddressesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the labels on a GlobalAddress. To learn more about labels, read the Labeling Resources
+   * Sets the labels on a GlobalAddress. To learn more about labels, read theLabeling Resources
    * documentation.
    *
    * <p>Sample code:

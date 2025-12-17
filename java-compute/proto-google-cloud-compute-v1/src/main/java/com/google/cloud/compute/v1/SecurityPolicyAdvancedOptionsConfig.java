@@ -43,6 +43,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
   private SecurityPolicyAdvancedOptionsConfig() {
     jsonParsing_ = "";
     logLevel_ = "";
+    requestBodyInspectionSize_ = "";
     userIpRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -339,7 +340,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -357,7 +359,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -379,7 +382,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+   * Custom configuration to apply the JSON parsing. Only applicable when
+   * json_parsing is set to STANDARD.
    * </pre>
    *
    * <code>
@@ -539,6 +543,81 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
   }
 
+  public static final int REQUEST_BODY_INSPECTION_SIZE_FIELD_NUMBER = 191268607;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestBodyInspectionSize_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return Whether the requestBodyInspectionSize field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestBodyInspectionSize() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return The requestBodyInspectionSize.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestBodyInspectionSize() {
+    java.lang.Object ref = requestBodyInspectionSize_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestBodyInspectionSize_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum request size chosen by the customer with Waf enabled.
+   * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+   * Values are case insensitive.
+   * </pre>
+   *
+   * <code>optional string request_body_inspection_size = 191268607;</code>
+   *
+   * @return The bytes for requestBodyInspectionSize.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestBodyInspectionSizeBytes() {
+    java.lang.Object ref = requestBodyInspectionSize_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestBodyInspectionSize_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int USER_IP_REQUEST_HEADERS_FIELD_NUMBER = 421050290;
 
   @SuppressWarnings("serial")
@@ -549,7 +628,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -564,7 +644,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -579,7 +660,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -595,7 +677,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
    *
    *
    * <pre>
-   * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+   * An optional list of case-insensitive request header names to use for
+   * resolving the callers client IP address.
    * </pre>
    *
    * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -627,6 +710,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 140582601, logLevel_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 191268607, requestBodyInspectionSize_);
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 282493529, jsonParsing_);
     }
@@ -650,6 +737,11 @@ public final class SecurityPolicyAdvancedOptionsConfig
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(140582601, logLevel_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              191268607, requestBodyInspectionSize_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282493529, jsonParsing_);
@@ -690,6 +782,11 @@ public final class SecurityPolicyAdvancedOptionsConfig
     if (hasLogLevel()) {
       if (!getLogLevel().equals(other.getLogLevel())) return false;
     }
+    if (hasRequestBodyInspectionSize() != other.hasRequestBodyInspectionSize()) return false;
+    if (hasRequestBodyInspectionSize()) {
+      if (!getRequestBodyInspectionSize().equals(other.getRequestBodyInspectionSize()))
+        return false;
+    }
     if (!getUserIpRequestHeadersList().equals(other.getUserIpRequestHeadersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -713,6 +810,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
     if (hasLogLevel()) {
       hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLogLevel().hashCode();
+    }
+    if (hasRequestBodyInspectionSize()) {
+      hash = (37 * hash) + REQUEST_BODY_INSPECTION_SIZE_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestBodyInspectionSize().hashCode();
     }
     if (getUserIpRequestHeadersCount() > 0) {
       hash = (37 * hash) + USER_IP_REQUEST_HEADERS_FIELD_NUMBER;
@@ -874,6 +975,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       }
       jsonParsing_ = "";
       logLevel_ = "";
+      requestBodyInspectionSize_ = "";
       userIpRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -928,6 +1030,10 @@ public final class SecurityPolicyAdvancedOptionsConfig
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestBodyInspectionSize_ = requestBodyInspectionSize_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         userIpRequestHeaders_.makeImmutable();
         result.userIpRequestHeaders_ = userIpRequestHeaders_;
       }
@@ -995,10 +1101,15 @@ public final class SecurityPolicyAdvancedOptionsConfig
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasRequestBodyInspectionSize()) {
+        requestBodyInspectionSize_ = other.requestBodyInspectionSize_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (!other.userIpRequestHeaders_.isEmpty()) {
         if (userIpRequestHeaders_.isEmpty()) {
           userIpRequestHeaders_ = other.userIpRequestHeaders_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         } else {
           ensureUserIpRequestHeadersIsMutable();
           userIpRequestHeaders_.addAll(other.userIpRequestHeaders_);
@@ -1044,6 +1155,12 @@ public final class SecurityPolicyAdvancedOptionsConfig
                 bitField0_ |= 0x00000004;
                 break;
               } // case 1124660810
+            case 1530148858:
+              {
+                requestBodyInspectionSize_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1530148858
             case -2035019062:
               {
                 jsonParsing_ = input.readStringRequireUtf8();
@@ -1089,7 +1206,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1106,7 +1224,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1131,7 +1250,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1157,7 +1277,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1181,7 +1302,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1214,7 +1336,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1236,7 +1359,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1254,7 +1378,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1277,7 +1402,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * Custom configuration to apply the JSON parsing. Only applicable when json_parsing is set to STANDARD.
+     * Custom configuration to apply the JSON parsing. Only applicable when
+     * json_parsing is set to STANDARD.
      * </pre>
      *
      * <code>
@@ -1568,6 +1694,144 @@ public final class SecurityPolicyAdvancedOptionsConfig
       return this;
     }
 
+    private java.lang.Object requestBodyInspectionSize_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @return Whether the requestBodyInspectionSize field is set.
+     */
+    public boolean hasRequestBodyInspectionSize() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @return The requestBodyInspectionSize.
+     */
+    public java.lang.String getRequestBodyInspectionSize() {
+      java.lang.Object ref = requestBodyInspectionSize_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestBodyInspectionSize_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @return The bytes for requestBodyInspectionSize.
+     */
+    public com.google.protobuf.ByteString getRequestBodyInspectionSizeBytes() {
+      java.lang.Object ref = requestBodyInspectionSize_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestBodyInspectionSize_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @param value The requestBodyInspectionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestBodyInspectionSize(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestBodyInspectionSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestBodyInspectionSize() {
+      requestBodyInspectionSize_ = getDefaultInstance().getRequestBodyInspectionSize();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum request size chosen by the customer with Waf enabled.
+     * Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB".
+     * Values are case insensitive.
+     * </pre>
+     *
+     * <code>optional string request_body_inspection_size = 191268607;</code>
+     *
+     * @param value The bytes for requestBodyInspectionSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestBodyInspectionSizeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestBodyInspectionSize_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList userIpRequestHeaders_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -1575,14 +1839,15 @@ public final class SecurityPolicyAdvancedOptionsConfig
       if (!userIpRequestHeaders_.isModifiable()) {
         userIpRequestHeaders_ = new com.google.protobuf.LazyStringArrayList(userIpRequestHeaders_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
     }
 
     /**
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1598,7 +1863,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1613,7 +1879,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1629,7 +1896,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1645,7 +1913,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1660,7 +1929,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       }
       ensureUserIpRequestHeadersIsMutable();
       userIpRequestHeaders_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1669,7 +1938,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1683,7 +1953,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       }
       ensureUserIpRequestHeadersIsMutable();
       userIpRequestHeaders_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1692,7 +1962,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1703,7 +1974,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
     public Builder addAllUserIpRequestHeaders(java.lang.Iterable<java.lang.String> values) {
       ensureUserIpRequestHeadersIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, userIpRequestHeaders_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1712,7 +1983,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1721,7 +1993,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
      */
     public Builder clearUserIpRequestHeaders() {
       userIpRequestHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -1731,7 +2003,8 @@ public final class SecurityPolicyAdvancedOptionsConfig
      *
      *
      * <pre>
-     * An optional list of case-insensitive request header names to use for resolving the callers client IP address.
+     * An optional list of case-insensitive request header names to use for
+     * resolving the callers client IP address.
      * </pre>
      *
      * <code>repeated string user_ip_request_headers = 421050290;</code>
@@ -1746,7 +2019,7 @@ public final class SecurityPolicyAdvancedOptionsConfig
       checkByteStringIsUtf8(value);
       ensureUserIpRequestHeadersIsMutable();
       userIpRequestHeaders_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

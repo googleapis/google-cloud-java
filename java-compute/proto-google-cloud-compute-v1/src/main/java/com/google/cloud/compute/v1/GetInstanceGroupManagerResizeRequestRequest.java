@@ -78,7 +78,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+   * The name of the managed instance group.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -103,7 +104,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+   * The name of the managed instance group.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -186,7 +188,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+   * The name of the resize request.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -210,7 +213,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+   * The name of the resize request.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -239,7 +243,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+   * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+   * scoping this request. Name should conform to RFC1035.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -263,7 +268,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
    *
    *
    * <pre>
-   * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+   * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+   * scoping this request. Name should conform to RFC1035.
    * </pre>
    *
    * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,7 +724,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+     * The name of the managed instance group.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -742,7 +749,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+     * The name of the managed instance group.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -766,7 +774,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+     * The name of the managed instance group.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -789,7 +798,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+     * The name of the managed instance group.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -808,7 +818,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the managed instance group. Name should conform to RFC1035 or be a resource ID.
+     * The name of the managed instance group.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string instance_group_manager = 249363395 [(.google.api.field_behavior) = REQUIRED];
@@ -945,7 +956,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+     * The name of the resize request.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -968,7 +980,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+     * The name of the resize request.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -991,7 +1004,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+     * The name of the resize request.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1013,7 +1027,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+     * The name of the resize request.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1031,7 +1046,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * The name of the resize request. Name should conform to RFC1035 or be a resource ID.
+     * The name of the resize request.
+     * Name should conform to RFC1035 or be a resource ID.
      * </pre>
      *
      * <code>string resize_request = 216941060 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1056,7 +1072,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+     * scoping this request. Name should conform to RFC1035.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1079,7 +1096,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+     * scoping this request. Name should conform to RFC1035.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1102,7 +1120,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+     * scoping this request. Name should conform to RFC1035.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1124,7 +1143,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+     * scoping this request. Name should conform to RFC1035.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1142,7 +1162,8 @@ public final class GetInstanceGroupManagerResizeRequestRequest
      *
      *
      * <pre>
-     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone scoping this request. Name should conform to RFC1035.
+     * Name of the href="/compute/docs/regions-zones/#available"&gt;zone
+     * scoping this request. Name should conform to RFC1035.
      * </pre>
      *
      * <code>string zone = 3744684 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -28,7 +28,12 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request. A request with an incorrect fingerprint will fail with error 412 conditionNotMet.
+   * The fingerprint of the named ports information for this instance group.
+   * Use this optional property to prevent conflicts when multiple users change
+   * the named ports settings concurrently. Obtain the fingerprint with theinstanceGroups.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another concurrent request.
+   * A request with an incorrect fingerprint will fail with error412 conditionNotMet.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -41,7 +46,12 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request. A request with an incorrect fingerprint will fail with error 412 conditionNotMet.
+   * The fingerprint of the named ports information for this instance group.
+   * Use this optional property to prevent conflicts when multiple users change
+   * the named ports settings concurrently. Obtain the fingerprint with theinstanceGroups.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another concurrent request.
+   * A request with an incorrect fingerprint will fail with error412 conditionNotMet.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>
@@ -54,7 +64,12 @@ public interface InstanceGroupsSetNamedPortsRequestOrBuilder
    *
    *
    * <pre>
-   * The fingerprint of the named ports information for this instance group. Use this optional property to prevent conflicts when multiple users change the named ports settings concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in your request to ensure that you do not overwrite changes that were applied from another concurrent request. A request with an incorrect fingerprint will fail with error 412 conditionNotMet.
+   * The fingerprint of the named ports information for this instance group.
+   * Use this optional property to prevent conflicts when multiple users change
+   * the named ports settings concurrently. Obtain the fingerprint with theinstanceGroups.get
+   * method. Then, include the fingerprint in your request to ensure that you
+   * do not overwrite changes that were applied from another concurrent request.
+   * A request with an incorrect fingerprint will fail with error412 conditionNotMet.
    * </pre>
    *
    * <code>optional string fingerprint = 234678500;</code>

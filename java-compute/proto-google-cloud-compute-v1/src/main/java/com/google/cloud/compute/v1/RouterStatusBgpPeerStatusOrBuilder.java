@@ -101,7 +101,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Output only. Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -114,7 +115,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv4 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 4.
+   * Output only. Enable IPv4 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 4.
    * </pre>
    *
    * <code>optional bool enable_ipv4 = 181467937;</code>
@@ -127,7 +129,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Output only. Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -140,7 +143,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Enable IPv6 traffic over BGP Peer. It is enabled by default if the peerIpAddress is version 6.
+   * Output only. Enable IPv6 traffic over BGP Peer.
+   * It is enabled by default if the peerIpAddress is version 6.
    * </pre>
    *
    * <code>optional bool enable_ipv6 = 181467939;</code>
@@ -153,7 +157,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the local BGP interface.
+   * Output only. IP address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -166,7 +170,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the local BGP interface.
+   * Output only. IP address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -179,7 +183,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the local BGP interface.
+   * Output only. IP address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ip_address = 406272220;</code>
@@ -192,7 +196,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the local BGP interface.
+   * Output only. IPv4 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv4_nexthop_address = 5703377;</code>
@@ -205,7 +209,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the local BGP interface.
+   * Output only. IPv4 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv4_nexthop_address = 5703377;</code>
@@ -218,7 +222,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the local BGP interface.
+   * Output only. IPv4 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv4_nexthop_address = 5703377;</code>
@@ -231,7 +235,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the local BGP interface.
+   * Output only. IPv6 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv6_nexthop_address = 27968211;</code>
@@ -244,7 +248,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the local BGP interface.
+   * Output only. IPv6 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv6_nexthop_address = 27968211;</code>
@@ -257,7 +261,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the local BGP interface.
+   * Output only. IPv6 address of the local BGP interface.
    * </pre>
    *
    * <code>optional string ipv6_nexthop_address = 27968211;</code>
@@ -270,7 +274,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN tunnel that this BGP peer controls.
+   * Output only. URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -283,7 +287,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN tunnel that this BGP peer controls.
+   * Output only. URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -296,7 +300,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * URL of the VPN tunnel that this BGP peer controls.
+   * Output only. URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
    * <code>optional string linked_vpn_tunnel = 352296953;</code>
@@ -335,7 +339,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Name of this BGP peer. Unique within the Routers resource.
+   * Output only. Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -348,7 +352,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Name of this BGP peer. Unique within the Routers resource.
+   * Output only. Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -361,7 +365,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Name of this BGP peer. Unique within the Routers resource.
+   * Output only. Name of this BGP peer. Unique within the Routers resource.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -374,7 +378,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Number of routes learned from the remote BGP Peer.
+   * Output only. Number of routes learned from the remote BGP Peer.
    * </pre>
    *
    * <code>optional uint32 num_learned_routes = 135457535;</code>
@@ -387,7 +391,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Number of routes learned from the remote BGP Peer.
+   * Output only. Number of routes learned from the remote BGP Peer.
    * </pre>
    *
    * <code>optional uint32 num_learned_routes = 135457535;</code>
@@ -400,7 +404,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the remote BGP interface.
+   * Output only. IP address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -413,7 +417,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the remote BGP interface.
+   * Output only. IP address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -426,7 +430,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IP address of the remote BGP interface.
+   * Output only. IP address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ip_address = 207735769;</code>
@@ -439,7 +443,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the remote BGP interface.
+   * Output only. IPv4 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
@@ -452,7 +456,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the remote BGP interface.
+   * Output only. IPv4 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
@@ -465,7 +469,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv4 address of the remote BGP interface.
+   * Output only. IPv4 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv4_nexthop_address = 469221774;</code>
@@ -478,7 +482,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the remote BGP interface.
+   * Output only. IPv6 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
@@ -491,7 +495,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the remote BGP interface.
+   * Output only. IPv6 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
@@ -504,7 +508,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * IPv6 address of the remote BGP interface.
+   * Output only. IPv6 address of the remote BGP interface.
    * </pre>
    *
    * <code>optional string peer_ipv6_nexthop_address = 491486608;</code>
@@ -517,7 +521,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * Output only. [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -530,7 +537,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * Output only. [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -543,7 +553,10 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
+   * Output only. [Output only] URI of the VM instance that is used as third-party router
+   * appliances such as Next Gen Firewalls, Virtual Routers, or Router
+   * Appliances.
+   * The VM instance is the peer side of the BGP session.
    * </pre>
    *
    * <code>optional string router_appliance_instance = 468312989;</code>
@@ -556,7 +569,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * Output only. The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -569,7 +583,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * Output only. The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -582,7 +597,8 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * The state of the BGP session. For a list of possible values for this field, see BGP session states.
+   * Output only. The state of the BGP session. For a list of possible values for this
+   * field, seeBGP session states.
    * </pre>
    *
    * <code>optional string state = 109757585;</code>
@@ -595,7 +611,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Status of the BGP peer: {UP, DOWN}
+   * Output only. Status of the BGP peer: {UP, DOWN}
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -609,7 +625,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Status of the BGP peer: {UP, DOWN}
+   * Output only. Status of the BGP peer: {UP, DOWN}
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -623,7 +639,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Status of the BGP peer: {UP, DOWN}
+   * Output only. Status of the BGP peer: {UP, DOWN}
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -679,7 +695,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Output only. Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -692,7 +710,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Output only. Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -705,7 +725,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
+   * Output only. Time this session has been up.
+   * Format:
+   *  14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
    * </pre>
    *
    * <code>optional string uptime = 235379688;</code>
@@ -718,7 +740,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Output only. Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -731,7 +755,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Output only. Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>
@@ -744,7 +770,9 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    *
    *
    * <pre>
-   * Time this session has been up, in seconds. Format: 145
+   * Output only. Time this session has been up, in seconds.
+   * Format:
+   *  145
    * </pre>
    *
    * <code>optional string uptime_seconds = 104736040;</code>

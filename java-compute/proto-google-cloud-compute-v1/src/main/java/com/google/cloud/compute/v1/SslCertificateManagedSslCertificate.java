@@ -83,7 +83,7 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status}
@@ -103,7 +103,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The certificate management is working, and a certificate has been provisioned.
+     * The certificate management is working, and a certificate has been
+     * provisioned.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -115,7 +116,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * The certificate management is working. GCP will attempt to provision
+     * the first certificate.
      * </pre>
      *
      * <code>PROVISIONING = 290896621;</code>
@@ -125,7 +127,9 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * Certificate provisioning failed due to an issue with the DNS
+     * or load balancing configuration.
+     * For details of which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>PROVISIONING_FAILED = 76813775;</code>
@@ -135,7 +139,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * Certificate provisioning failed due to an issue with the DNS
+     * or load balancing configuration. It won't be retried. To try again
+     * delete and create a new managed SslCertificate resource.
+     * For details of which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
@@ -145,7 +152,11 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * Renewal of the certificate has failed due to an issue with the DNS
+     * or load balancing configuration. The existing cert is still serving;
+     * however, it will expire shortly. To provision a renewed certificate,
+     * delete and create a new managed SslCertificate resource.
+     * For details on which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>RENEWAL_FAILED = 434659076;</code>
@@ -169,7 +180,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The certificate management is working, and a certificate has been provisioned.
+     * The certificate management is working, and a certificate has been
+     * provisioned.
      * </pre>
      *
      * <code>ACTIVE = 314733318;</code>
@@ -183,7 +195,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The certificate management is working. GCP will attempt to provision the first certificate.
+     * The certificate management is working. GCP will attempt to provision
+     * the first certificate.
      * </pre>
      *
      * <code>PROVISIONING = 290896621;</code>
@@ -194,7 +207,9 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. For details of which domain failed, consult domain_status field.
+     * Certificate provisioning failed due to an issue with the DNS
+     * or load balancing configuration.
+     * For details of which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>PROVISIONING_FAILED = 76813775;</code>
@@ -205,7 +220,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Certificate provisioning failed due to an issue with the DNS or load balancing configuration. It won't be retried. To try again delete and create a new managed SslCertificate resource. For details of which domain failed, consult domain_status field.
+     * Certificate provisioning failed due to an issue with the DNS
+     * or load balancing configuration. It won't be retried. To try again
+     * delete and create a new managed SslCertificate resource.
+     * For details of which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code>
@@ -216,7 +234,11 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * Renewal of the certificate has failed due to an issue with the DNS or load balancing configuration. The existing cert is still serving; however, it will expire shortly. To provision a renewed certificate, delete and create a new managed SslCertificate resource. For details on which domain failed, consult domain_status field.
+     * Renewal of the certificate has failed due to an issue with the DNS
+     * or load balancing configuration. The existing cert is still serving;
+     * however, it will expire shortly. To provision a renewed certificate,
+     * delete and create a new managed SslCertificate resource.
+     * For details on which domain failed, consult domain_status field.
      * </pre>
      *
      * <code>RENEWAL_FAILED = 434659076;</code>
@@ -350,7 +372,8 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -374,7 +397,8 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -388,7 +412,8 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -409,7 +434,8 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+   * Output only. [Output only] Detailed statuses of the domains specified for managed
+   * certificate resource.
    * </pre>
    *
    * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -436,7 +462,10 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -451,7 +480,10 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -466,7 +498,10 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -482,7 +517,10 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+   * The domains for which a managed SSL certificate will be generated. Each
+   * Google-managed SSL certificate supports up to the [maximum number of
+   * domains per Google-managed SSL
+   * certificate](/load-balancing/docs/quotas#ssl_certificates).
    * </pre>
    *
    * <code>repeated string domains = 226935855;</code>
@@ -503,7 +541,7 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -520,7 +558,7 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -545,7 +583,7 @@ public final class SslCertificateManagedSslCertificate
    *
    *
    * <pre>
-   * [Output only] Status of the managed certificate resource.
+   * Output only. [Output only] Status of the managed certificate resource.
    * Check the Status enum for the list of possible values.
    * </pre>
    *
@@ -1051,7 +1089,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1075,7 +1114,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1089,7 +1129,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1110,7 +1151,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1137,7 +1179,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1161,7 +1204,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1182,7 +1226,8 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Detailed statuses of the domains specified for managed certificate resource.
+     * Output only. [Output only] Detailed statuses of the domains specified for managed
+     * certificate resource.
      * </pre>
      *
      * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
@@ -1207,7 +1252,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1223,7 +1271,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1238,7 +1289,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1254,7 +1308,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1270,7 +1327,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1294,7 +1354,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1317,7 +1380,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1337,7 +1403,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1356,7 +1425,10 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * The domains for which a managed SSL certificate will be generated. Each Google-managed SSL certificate supports up to the [maximum number of domains per Google-managed SSL certificate](/load-balancing/docs/quotas#ssl_certificates).
+     * The domains for which a managed SSL certificate will be generated. Each
+     * Google-managed SSL certificate supports up to the [maximum number of
+     * domains per Google-managed SSL
+     * certificate](/load-balancing/docs/quotas#ssl_certificates).
      * </pre>
      *
      * <code>repeated string domains = 226935855;</code>
@@ -1382,7 +1454,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1398,7 +1470,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1422,7 +1494,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1446,7 +1518,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1469,7 +1541,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *
@@ -1488,7 +1560,7 @@ public final class SslCertificateManagedSslCertificate
      *
      *
      * <pre>
-     * [Output only] Status of the managed certificate resource.
+     * Output only. [Output only] Status of the managed certificate resource.
      * Check the Status enum for the list of possible values.
      * </pre>
      *

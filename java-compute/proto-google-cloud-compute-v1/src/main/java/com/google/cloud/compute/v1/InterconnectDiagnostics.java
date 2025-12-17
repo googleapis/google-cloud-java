@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Diagnostics information about the Interconnect connection, which contains detailed and current technical information about Google's side of the connection.
+ * Diagnostics information about the Interconnect connection, which contains
+ * detailed and current technical information about Google's side of the
+ * connection.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectDiagnostics}
@@ -256,7 +258,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If bundleAggregationType is LACP: LACP is not established and/or all links in the bundle have DOWN operational status. If bundleAggregationType is STATIC: one or more links in the bundle has DOWN operational status.
+     * If bundleAggregationType is LACP: LACP is not established and/or all
+     * links in the bundle have DOWN operational status. If
+     * bundleAggregationType is STATIC: one or more links in the bundle has
+     * DOWN operational status.
      * </pre>
      *
      * <code>BUNDLE_OPERATIONAL_STATUS_DOWN = 453842693;</code>
@@ -266,7 +271,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If bundleAggregationType is LACP: LACP is established and at least one link in the bundle has UP operational status. If bundleAggregationType is STATIC: all links in the bundle (typically just one) have UP operational status.
+     * If bundleAggregationType is LACP: LACP is established and at least one
+     * link in the bundle has UP operational status. If bundleAggregationType
+     * is STATIC: all links in the bundle (typically just one) have UP
+     * operational status.
      * </pre>
      *
      * <code>BUNDLE_OPERATIONAL_STATUS_UP = 161366462;</code>
@@ -290,7 +298,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If bundleAggregationType is LACP: LACP is not established and/or all links in the bundle have DOWN operational status. If bundleAggregationType is STATIC: one or more links in the bundle has DOWN operational status.
+     * If bundleAggregationType is LACP: LACP is not established and/or all
+     * links in the bundle have DOWN operational status. If
+     * bundleAggregationType is STATIC: one or more links in the bundle has
+     * DOWN operational status.
      * </pre>
      *
      * <code>BUNDLE_OPERATIONAL_STATUS_DOWN = 453842693;</code>
@@ -301,7 +312,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * If bundleAggregationType is LACP: LACP is established and at least one link in the bundle has UP operational status. If bundleAggregationType is STATIC: all links in the bundle (typically just one) have UP operational status.
+     * If bundleAggregationType is LACP: LACP is established and at least one
+     * link in the bundle has UP operational status. If bundleAggregationType
+     * is STATIC: all links in the bundle (typically just one) have UP
+     * operational status.
      * </pre>
      *
      * <code>BUNDLE_OPERATIONAL_STATUS_UP = 161366462;</code>
@@ -406,7 +420,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -422,7 +439,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -439,7 +459,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -454,7 +477,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -469,7 +495,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+   * A list of InterconnectDiagnostics.ARPEntry objects,
+   * describing individual neighbors currently seen by the Google router in
+   * the ARP cache for the Interconnect.
+   * This will be empty when the Interconnect is not bundled.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
@@ -634,7 +663,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -650,7 +680,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -667,7 +698,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -682,7 +714,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -697,7 +730,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+   * A list of InterconnectDiagnostics.LinkStatus objects,
+   * describing the status for each link on the Interconnect.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -1003,7 +1037,9 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Diagnostics information about the Interconnect connection, which contains detailed and current technical information about Google's side of the connection.
+   * Diagnostics information about the Interconnect connection, which contains
+   * detailed and current technical information about Google's side of the
+   * connection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectDiagnostics}
@@ -1358,7 +1394,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1378,7 +1417,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1397,7 +1439,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1416,7 +1461,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1442,7 +1490,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1466,7 +1517,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1491,7 +1545,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1517,7 +1574,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1540,7 +1600,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1564,7 +1627,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1588,7 +1654,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1610,7 +1679,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1632,7 +1704,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1648,7 +1723,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1668,7 +1746,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1689,7 +1770,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1707,7 +1791,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -1726,7 +1813,10 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+     * A list of InterconnectDiagnostics.ARPEntry objects,
+     * describing individual neighbors currently seen by the Google router in
+     * the ARP cache for the Interconnect.
+     * This will be empty when the Interconnect is not bundled.
      * </pre>
      *
      * <code>
@@ -2041,7 +2131,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2060,7 +2151,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2078,7 +2170,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2096,7 +2189,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2121,7 +2215,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2144,7 +2239,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2168,7 +2264,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2193,7 +2290,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2215,7 +2313,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2238,7 +2337,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2261,7 +2361,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2282,7 +2383,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2303,7 +2405,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2318,7 +2421,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2337,7 +2441,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2357,7 +2462,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2373,7 +2479,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;
@@ -2391,7 +2498,8 @@ public final class InterconnectDiagnostics extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
+     * A list of InterconnectDiagnostics.LinkStatus objects,
+     * describing the status for each link on the Interconnect.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsLinkStatus links = 102977465;

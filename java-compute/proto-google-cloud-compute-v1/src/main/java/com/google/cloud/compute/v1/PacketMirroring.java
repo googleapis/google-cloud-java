@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
+ * Represents a Packet Mirroring resource.
+ *
+ * Packet Mirroring clones the traffic of specified instances in your Virtual
+ * Private Cloud (VPC) network and forwards it to a collector destination,
+ * such as an instance group of an internal TCP/UDP load balancer, for analysis
+ * or examination.
+ * For more information about setting up Packet Mirroring, seeUsing Packet Mirroring.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -74,7 +80,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect.
+   * If set to FALSE, this packet mirroring policy will not be enforced on the
+   * network.
+   *
+   * The default is TRUE.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.PacketMirroring.Enable}
@@ -205,7 +215,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+   * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+   * for mirrored traffic.
+   * The specified forwarding rule must have isMirroringCollector
+   * set to true.
    * </pre>
    *
    * <code>
@@ -223,7 +236,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+   * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+   * for mirrored traffic.
+   * The specified forwarding rule must have isMirroringCollector
+   * set to true.
    * </pre>
    *
    * <code>
@@ -243,7 +259,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+   * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+   * for mirrored traffic.
+   * The specified forwarding rule must have isMirroringCollector
+   * set to true.
    * </pre>
    *
    * <code>
@@ -267,7 +286,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -283,7 +303,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -307,7 +328,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -336,7 +358,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -352,7 +375,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -376,7 +400,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -405,7 +430,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect.
+   * If set to FALSE, this packet mirroring policy will not be enforced on the
+   * network.
+   *
+   * The default is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -422,7 +451,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect.
+   * If set to FALSE, this packet mirroring policy will not be enforced on the
+   * network.
+   *
+   * The default is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -447,7 +480,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Indicates whether or not this packet mirroring takes effect.
+   * If set to FALSE, this packet mirroring policy will not be enforced on the
+   * network.
+   *
+   * The default is TRUE.
    * Check the Enable enum for the list of possible values.
    * </pre>
    *
@@ -528,7 +565,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -544,7 +582,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -565,7 +604,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -581,7 +620,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -605,7 +644,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+   * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -632,7 +671,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+   * PacketMirroring mirroredResourceInfos.
+   * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+   * and/or tags for which traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>
@@ -650,7 +691,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+   * PacketMirroring mirroredResourceInfos.
+   * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+   * and/or tags for which traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>
@@ -670,7 +713,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+   * PacketMirroring mirroredResourceInfos.
+   * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+   * and/or tags for which traffic from/to all VM instances will be mirrored.
    * </pre>
    *
    * <code>
@@ -694,7 +739,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -710,7 +761,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -734,7 +791,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * Name of the resource; provided by the client when the resource is created.
+   * The name must be 1-63 characters long, and comply withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -761,7 +824,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+   * Specifies the mirrored VPC network. Only packets in this network will be
+   * mirrored. All mirrored VMs should have a NIC in the given network.
+   * All mirrored subnetworks should belong to the given network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
@@ -777,7 +842,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+   * Specifies the mirrored VPC network. Only packets in this network will be
+   * mirrored. All mirrored VMs should have a NIC in the given network.
+   * All mirrored subnetworks should belong to the given network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
@@ -795,7 +862,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+   * Specifies the mirrored VPC network. Only packets in this network will be
+   * mirrored. All mirrored VMs should have a NIC in the given network.
+   * All mirrored subnetworks should belong to the given network.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;</code>
@@ -814,7 +883,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties
+   * in cases where there is more than one matching rule. In the case of two
+   * rules that apply for a given Instance, the one with the lowest-numbered
+   * priority value wins.
+   *
+   * Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>optional uint32 priority = 445151652;</code>
@@ -830,7 +904,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+   * The priority of applying this configuration. Priority is used to break ties
+   * in cases where there is more than one matching rule. In the case of two
+   * rules that apply for a given Instance, the one with the lowest-numbered
+   * priority value wins.
+   *
+   * Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
    * <code>optional uint32 priority = 445151652;</code>
@@ -920,7 +999,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -936,7 +1015,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -960,7 +1039,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1321,7 +1400,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Represents a Packet Mirroring resource. Packet Mirroring clones the traffic of specified instances in your Virtual Private Cloud (VPC) network and forwards it to a collector destination, such as an instance group of an internal TCP/UDP load balancer, for analysis or examination. For more information about setting up Packet Mirroring, see Using Packet Mirroring.
+   * Represents a Packet Mirroring resource.
+   *
+   * Packet Mirroring clones the traffic of specified instances in your Virtual
+   * Private Cloud (VPC) network and forwards it to a collector destination,
+   * such as an instance group of an internal TCP/UDP load balancer, for analysis
+   * or examination.
+   * For more information about setting up Packet Mirroring, seeUsing Packet Mirroring.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.PacketMirroring}
@@ -1726,7 +1811,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1743,7 +1831,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1766,7 +1857,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1792,7 +1886,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1815,7 +1912,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1848,7 +1948,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1870,7 +1973,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1888,7 +1994,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1910,7 +2019,10 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
+     * The Forwarding Rule resource of typeloadBalancingScheme=INTERNAL that will be used as collector
+     * for mirrored traffic.
+     * The specified forwarding rule must have isMirroringCollector
+     * set to true.
      * </pre>
      *
      * <code>
@@ -1940,7 +2052,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1955,7 +2068,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1978,7 +2092,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2001,7 +2116,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2023,7 +2139,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2041,7 +2158,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2066,7 +2184,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2081,7 +2200,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2104,7 +2224,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2127,7 +2248,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2149,7 +2271,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2167,7 +2290,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2192,7 +2316,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2208,7 +2336,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2232,7 +2364,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2256,7 +2392,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2279,7 +2419,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2298,7 +2442,11 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Indicates whether or not this packet mirroring takes effect.
+     * If set to FALSE, this packet mirroring policy will not be enforced on the
+     * network.
+     *
+     * The default is TRUE.
      * Check the Enable enum for the list of possible values.
      * </pre>
      *
@@ -2519,7 +2667,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2535,7 +2684,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2551,7 +2701,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2571,7 +2722,8 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -2591,7 +2743,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2606,7 +2758,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2629,7 +2781,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2652,7 +2804,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2674,7 +2826,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2692,7 +2844,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
+     * Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -2722,7 +2874,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2739,7 +2893,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2762,7 +2918,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2788,7 +2946,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2811,7 +2971,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2844,7 +3006,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2866,7 +3030,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2884,7 +3050,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2906,7 +3074,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
+     * PacketMirroring mirroredResourceInfos.
+     * MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks
+     * and/or tags for which traffic from/to all VM instances will be mirrored.
      * </pre>
      *
      * <code>
@@ -2936,7 +3106,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2951,7 +3127,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2974,7 +3156,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2997,7 +3185,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3019,7 +3213,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3037,7 +3237,13 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * Name of the resource; provided by the client when the resource is created.
+     * The name must be 1-63 characters long, and comply withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3067,7 +3273,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3083,7 +3291,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3105,7 +3315,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3129,7 +3341,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3151,7 +3365,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3181,7 +3397,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3202,7 +3420,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3218,7 +3438,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3238,7 +3460,9 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Specifies the mirrored VPC network. Only packets in this network will be mirrored. All mirrored VMs should have a NIC in the given network. All mirrored subnetworks should belong to the given network.
+     * Specifies the mirrored VPC network. Only packets in this network will be
+     * mirrored. All mirrored VMs should have a NIC in the given network.
+     * All mirrored subnetworks should belong to the given network.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.PacketMirroringNetworkInfo network = 232872494;
@@ -3267,7 +3491,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties
+     * in cases where there is more than one matching rule. In the case of two
+     * rules that apply for a given Instance, the one with the lowest-numbered
+     * priority value wins.
+     *
+     * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -3283,7 +3512,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties
+     * in cases where there is more than one matching rule. In the case of two
+     * rules that apply for a given Instance, the one with the lowest-numbered
+     * priority value wins.
+     *
+     * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -3299,7 +3533,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties
+     * in cases where there is more than one matching rule. In the case of two
+     * rules that apply for a given Instance, the one with the lowest-numbered
+     * priority value wins.
+     *
+     * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -3319,7 +3558,12 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
+     * The priority of applying this configuration. Priority is used to break ties
+     * in cases where there is more than one matching rule. In the case of two
+     * rules that apply for a given Instance, the one with the lowest-numbered
+     * priority value wins.
+     *
+     * Default value is 1000. Valid range is 0 through 65535.
      * </pre>
      *
      * <code>optional uint32 priority = 445151652;</code>
@@ -3465,7 +3709,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3480,7 +3724,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3503,7 +3747,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3526,7 +3770,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3548,7 +3792,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -3566,7 +3810,7 @@ public final class PacketMirroring extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>

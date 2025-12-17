@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Describes a single physical circuit between the Customer and Google. CircuitInfo objects are created by Google, so all fields are output only.
+ * Describes a single physical circuit between the Customer and Google.
+ * CircuitInfo objects are created by Google, so all fields are output only.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InterconnectCircuitInfo}
@@ -214,7 +215,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+   * provided by Google to the customer in the LOA.
    * </pre>
    *
    * <code>optional string google_demarc_id = 448196270;</code>
@@ -230,7 +232,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+   * provided by Google to the customer in the LOA.
    * </pre>
    *
    * <code>optional string google_demarc_id = 448196270;</code>
@@ -254,7 +257,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+   * provided by Google to the customer in the LOA.
    * </pre>
    *
    * <code>optional string google_demarc_id = 448196270;</code>
@@ -471,7 +475,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Describes a single physical circuit between the Customer and Google. CircuitInfo objects are created by Google, so all fields are output only.
+   * Describes a single physical circuit between the Customer and Google.
+   * CircuitInfo objects are created by Google, so all fields are output only.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InterconnectCircuitInfo}
@@ -943,7 +948,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>
@@ -958,7 +964,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>
@@ -981,7 +988,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>
@@ -1004,7 +1012,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>
@@ -1026,7 +1035,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>
@@ -1044,7 +1054,8 @@ public final class InterconnectCircuitInfo extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and
+     * provided by Google to the customer in the LOA.
      * </pre>
      *
      * <code>optional string google_demarc_id = 448196270;</code>

@@ -56,7 +56,7 @@ public interface EntitlementEventOrBuilder
    *
    *
    * <pre>
-   * Type of event which happened on the entitlement.
+   * Type of event which happened for the entitlement.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.EntitlementEvent.Type event_type = 2;</code>
@@ -69,7 +69,7 @@ public interface EntitlementEventOrBuilder
    *
    *
    * <pre>
-   * Type of event which happened on the entitlement.
+   * Type of event which happened for the entitlement.
    * </pre>
    *
    * <code>.google.cloud.channel.v1.EntitlementEvent.Type event_type = 2;</code>

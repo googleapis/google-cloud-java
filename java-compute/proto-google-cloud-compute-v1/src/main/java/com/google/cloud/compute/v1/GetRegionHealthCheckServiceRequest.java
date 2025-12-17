@@ -76,7 +76,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+   * Name of the HealthCheckService to update. The name
+   * must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
    * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -100,7 +101,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+   * Name of the HealthCheckService to update. The name
+   * must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
    * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -628,7 +630,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+     * Name of the HealthCheckService to update. The name
+     * must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
      * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
@@ -652,7 +655,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+     * Name of the HealthCheckService to update. The name
+     * must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
      * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
@@ -676,7 +680,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+     * Name of the HealthCheckService to update. The name
+     * must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
      * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
@@ -699,7 +704,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+     * Name of the HealthCheckService to update. The name
+     * must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
      * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
@@ -718,7 +724,8 @@ public final class GetRegionHealthCheckServiceRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
+     * Name of the HealthCheckService to update. The name
+     * must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
      * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];

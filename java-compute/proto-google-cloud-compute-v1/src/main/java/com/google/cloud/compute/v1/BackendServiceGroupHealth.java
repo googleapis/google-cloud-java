@@ -194,7 +194,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+   * Health state of the backend instances or endpoints in requested instance or
+   * network endpoint group, determined based on configured health checks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -208,7 +209,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+   * Health state of the backend instances or endpoints in requested instance or
+   * network endpoint group, determined based on configured health checks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -223,7 +225,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+   * Health state of the backend instances or endpoints in requested instance or
+   * network endpoint group, determined based on configured health checks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -237,7 +240,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+   * Health state of the backend instances or endpoints in requested instance or
+   * network endpoint group, determined based on configured health checks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -251,7 +255,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+   * Health state of the backend instances or endpoints in requested instance or
+   * network endpoint group, determined based on configured health checks.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -270,7 +275,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -286,7 +292,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -310,7 +317,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+   * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+   * services.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -1008,7 +1016,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1025,7 +1034,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1042,7 +1052,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1059,7 +1070,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1082,7 +1094,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1103,7 +1116,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1126,7 +1140,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1149,7 +1164,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1170,7 +1186,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1191,7 +1208,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1212,7 +1230,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1232,7 +1251,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1252,7 +1272,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1265,7 +1286,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1282,7 +1304,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1300,7 +1323,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1314,7 +1338,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1328,7 +1353,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Health state of the backend instances or endpoints in requested instance or network endpoint group, determined based on configured health checks.
+     * Health state of the backend instances or endpoints in requested instance or
+     * network endpoint group, determined based on configured health checks.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.HealthStatus health_status = 380545845;</code>
@@ -1361,7 +1387,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1376,7 +1403,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1399,7 +1427,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1422,7 +1451,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1444,7 +1474,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1462,7 +1493,8 @@ public final class BackendServiceGroupHealth extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#backendServiceGroupHealth for the health of backend services.
+     * Output only. [Output Only] Type of resource. Alwayscompute#backendServiceGroupHealth for the health of backend
+     * services.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>

@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a License Code resource. A License Code is a unique identifier used to represent a license resource. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
+ * Represents a License Code resource.
+ *
+ * A License Code is a unique identifier used to represent alicense
+ * resource.
+ *  *Caution* This resource is intended for
+ * use only by third-party partners who are creatingCloud Marketplace
+ * images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.LicenseCode}
@@ -74,7 +80,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.LicenseCode.State}
@@ -94,7 +100,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Machines are not allowed to attach boot disks with this License Code. Requests to create new resources with this license will be rejected.
+     * Machines are not allowed to attach boot disks with this License Code.
+     * Requests to create new resources with this license will be rejected.
      * </pre>
      *
      * <code>DISABLED = 516696700;</code>
@@ -150,7 +157,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Machines are not allowed to attach boot disks with this License Code. Requests to create new resources with this license will be rejected.
+     * Machines are not allowed to attach boot disks with this License Code.
+     * Requests to create new resources with this license will be rejected.
      * </pre>
      *
      * <code>DISABLED = 516696700;</code>
@@ -292,7 +300,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -308,7 +317,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -332,7 +342,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -361,7 +372,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -377,7 +388,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -401,7 +412,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Description of this License Code.
+   * Output only. [Output Only] Description of this License Code.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -428,7 +439,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -444,7 +456,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -465,7 +478,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -481,7 +495,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -505,7 +520,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+   * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+   * licenses.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -534,7 +550,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -549,7 +566,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -565,7 +583,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -580,7 +599,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -595,7 +615,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] URL and description aliases of Licenses with the same License Code.
+   * [Output Only] URL and description aliases of Licenses with the same
+   * License Code.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -616,7 +637,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -632,7 +654,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -656,7 +679,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+   * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+   * must be a valid 64 bit integer.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -685,7 +709,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -701,7 +725,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -725,7 +749,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -754,7 +778,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -771,7 +795,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -796,7 +820,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Current state of this License Code.
+   * Output only. [Output Only] Current state of this License Code.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -824,7 +848,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+   * Output only. [Output Only] If true, the license will remain attached when creating
+   * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>
@@ -840,7 +865,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+   * Output only. [Output Only] If true, the license will remain attached when creating
+   * images or snapshots from disks. Otherwise, the license is not transferred.
    * </pre>
    *
    * <code>optional bool transferable = 4349893;</code>
@@ -1131,7 +1157,13 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a License Code resource. A License Code is a unique identifier used to represent a license resource. *Caution* This resource is intended for use only by third-party partners who are creating Cloud Marketplace images.
+   * Represents a License Code resource.
+   *
+   * A License Code is a unique identifier used to represent alicense
+   * resource.
+   *  *Caution* This resource is intended for
+   * use only by third-party partners who are creatingCloud Marketplace
+   * images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.LicenseCode}
@@ -1487,7 +1519,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1502,7 +1535,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1525,7 +1559,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1548,7 +1583,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1570,7 +1606,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1588,7 +1625,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -1613,7 +1651,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1628,7 +1666,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1651,7 +1689,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1674,7 +1712,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1696,7 +1734,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1714,7 +1752,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Description of this License Code.
+     * Output only. [Output Only] Description of this License Code.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -1739,7 +1777,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1755,7 +1794,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1771,7 +1811,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1791,7 +1832,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -1811,7 +1853,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1826,7 +1869,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1849,7 +1893,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1872,7 +1917,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1894,7 +1940,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1912,7 +1959,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Type of resource. Always compute#licenseCode for licenses.
+     * Output only. [Output Only] Type of resource. Always compute#licenseCode for
+     * licenses.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -1953,7 +2001,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -1972,7 +2021,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -1990,7 +2040,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2008,7 +2059,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2033,7 +2085,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2055,7 +2108,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2079,7 +2133,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2104,7 +2159,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2126,7 +2182,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2148,7 +2205,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2170,7 +2228,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2191,7 +2250,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2212,7 +2272,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2227,7 +2288,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2246,7 +2308,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2265,7 +2328,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2280,7 +2344,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2297,7 +2362,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] URL and description aliases of Licenses with the same License Code.
+     * [Output Only] URL and description aliases of Licenses with the same
+     * License Code.
      * </pre>
      *
      * <code>repeated .google.cloud.compute.v1.LicenseCodeLicenseAlias license_alias = 43550930;
@@ -2331,7 +2397,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2346,7 +2413,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2369,7 +2437,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2392,7 +2461,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2414,7 +2484,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2432,7 +2503,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
+     * Output only. [Output Only] Name of the resource. The name is 1-20 characters long and
+     * must be a valid 64 bit integer.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -2457,7 +2529,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2472,7 +2544,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2495,7 +2567,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2518,7 +2590,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2540,7 +2612,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2558,7 +2630,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -2583,7 +2655,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2599,7 +2671,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2623,7 +2695,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2647,7 +2719,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2670,7 +2742,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2689,7 +2761,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Current state of this License Code.
+     * Output only. [Output Only] Current state of this License Code.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -2715,7 +2787,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+     * Output only. [Output Only] If true, the license will remain attached when creating
+     * images or snapshots from disks. Otherwise, the license is not transferred.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -2731,7 +2804,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+     * Output only. [Output Only] If true, the license will remain attached when creating
+     * images or snapshots from disks. Otherwise, the license is not transferred.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -2747,7 +2821,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+     * Output only. [Output Only] If true, the license will remain attached when creating
+     * images or snapshots from disks. Otherwise, the license is not transferred.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>
@@ -2767,7 +2842,8 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
+     * Output only. [Output Only] If true, the license will remain attached when creating
+     * images or snapshots from disks. Otherwise, the license is not transferred.
      * </pre>
      *
      * <code>optional bool transferable = 4349893;</code>

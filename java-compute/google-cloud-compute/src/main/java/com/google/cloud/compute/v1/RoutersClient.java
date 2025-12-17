@@ -68,7 +68,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AggregatedList</td>
- *      <td><p> Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
+ *      <td><p> Retrieves an aggregated list of routers.
+ * <p>  To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to `true`.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -292,7 +293,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Patch</td>
- *      <td><p> Patches the specified Router resource with the data included in the request. This method supports PATCH semantics and uses JSON merge patch format and processing rules.</td>
+ *      <td><p> Patches the specified Router resource with the data included in the request. This method supportsPATCH semantics and usesJSON merge patch format and processing rules.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -330,7 +331,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Preview</td>
- *      <td><p> Preview fields auto-generated during router create and update operations. Calling this method does NOT create or update the router.</td>
+ *      <td><p> Preview fields auto-generated during router create andupdate operations. Calling this method does NOT create or update the router.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -348,7 +349,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Update</td>
- *      <td><p> Updates the specified Router resource with the data included in the request. This method conforms to PUT semantics, which requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.</td>
+ *      <td><p> Updates the specified Router resource with the data included in the request.  This method conforms toPUT semantics, which requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -474,8 +475,10 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of routers.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -505,8 +508,10 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of routers.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -544,8 +549,10 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of routers.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -583,8 +590,10 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves an aggregated list of routers. To prevent failure, Google recommends that you set the
-   * `returnPartialSuccess` parameter to `true`.
+   * Retrieves an aggregated list of routers.
+   *
+   * <p>To prevent failure, Google recommends that you set the `returnPartialSuccess` parameter to
+   * `true`.
    *
    * <p>Sample code:
    *
@@ -2051,7 +2060,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -2091,7 +2100,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -2124,7 +2133,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -2158,7 +2167,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches the specified Router resource with the data included in the request. This method
-   * supports PATCH semantics and uses JSON merge patch format and processing rules.
+   * supportsPATCH semantics and usesJSON merge patch format and processing rules.
    *
    * <p>Sample code:
    *
@@ -2326,7 +2335,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method
+   * Preview fields auto-generated during router create andupdate operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
@@ -2367,7 +2376,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method
+   * Preview fields auto-generated during router create andupdate operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
@@ -2399,7 +2408,7 @@ public class RoutersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Preview fields auto-generated during router create and update operations. Calling this method
+   * Preview fields auto-generated during router create andupdate operations. Calling this method
    * does NOT create or update the router.
    *
    * <p>Sample code:
@@ -2432,7 +2441,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
-   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * conforms toPUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
@@ -2473,7 +2482,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
-   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * conforms toPUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
@@ -2507,7 +2516,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
-   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * conforms toPUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:
@@ -2542,7 +2551,7 @@ public class RoutersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified Router resource with the data included in the request. This method
-   * conforms to PUT semantics, which requests that the state of the target resource be created or
+   * conforms toPUT semantics, which requests that the state of the target resource be created or
    * replaced with the state defined by the representation enclosed in the request message payload.
    *
    * <p>Sample code:

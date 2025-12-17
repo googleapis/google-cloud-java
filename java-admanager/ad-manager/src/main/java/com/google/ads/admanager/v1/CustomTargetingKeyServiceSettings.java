@@ -105,6 +105,52 @@ public class CustomTargetingKeyServiceSettings
         .listCustomTargetingKeysSettings();
   }
 
+  /** Returns the object with the settings used for calls to createCustomTargetingKey. */
+  public UnaryCallSettings<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+      createCustomTargetingKeySettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .createCustomTargetingKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+      batchCreateCustomTargetingKeysSettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .batchCreateCustomTargetingKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCustomTargetingKey. */
+  public UnaryCallSettings<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+      updateCustomTargetingKeySettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .updateCustomTargetingKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+      batchUpdateCustomTargetingKeysSettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .batchUpdateCustomTargetingKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+      batchActivateCustomTargetingKeysSettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .batchActivateCustomTargetingKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCustomTargetingKeys. */
+  public UnaryCallSettings<
+          BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+      batchDeactivateCustomTargetingKeysSettings() {
+    return ((CustomTargetingKeyServiceStubSettings) getStubSettings())
+        .batchDeactivateCustomTargetingKeysSettings();
+  }
+
   public static final CustomTargetingKeyServiceSettings create(
       CustomTargetingKeyServiceStubSettings stub) throws IOException {
     return new CustomTargetingKeyServiceSettings.Builder(stub.toBuilder()).build();
@@ -216,6 +262,48 @@ public class CustomTargetingKeyServiceSettings
             ListCustomTargetingKeysPagedResponse>
         listCustomTargetingKeysSettings() {
       return getStubSettingsBuilder().listCustomTargetingKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCustomTargetingKey. */
+    public UnaryCallSettings.Builder<CreateCustomTargetingKeyRequest, CustomTargetingKey>
+        createCustomTargetingKeySettings() {
+      return getStubSettingsBuilder().createCustomTargetingKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchCreateCustomTargetingKeysRequest, BatchCreateCustomTargetingKeysResponse>
+        batchCreateCustomTargetingKeysSettings() {
+      return getStubSettingsBuilder().batchCreateCustomTargetingKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCustomTargetingKey. */
+    public UnaryCallSettings.Builder<UpdateCustomTargetingKeyRequest, CustomTargetingKey>
+        updateCustomTargetingKeySettings() {
+      return getStubSettingsBuilder().updateCustomTargetingKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateCustomTargetingKeysRequest, BatchUpdateCustomTargetingKeysResponse>
+        batchUpdateCustomTargetingKeysSettings() {
+      return getStubSettingsBuilder().batchUpdateCustomTargetingKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCustomTargetingKeys. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCustomTargetingKeysRequest, BatchActivateCustomTargetingKeysResponse>
+        batchActivateCustomTargetingKeysSettings() {
+      return getStubSettingsBuilder().batchActivateCustomTargetingKeysSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to batchDeactivateCustomTargetingKeys.
+     */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCustomTargetingKeysRequest, BatchDeactivateCustomTargetingKeysResponse>
+        batchDeactivateCustomTargetingKeysSettings() {
+      return getStubSettingsBuilder().batchDeactivateCustomTargetingKeysSettings();
     }
 
     @Override

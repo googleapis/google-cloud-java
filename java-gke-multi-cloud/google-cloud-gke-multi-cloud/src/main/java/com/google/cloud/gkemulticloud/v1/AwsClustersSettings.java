@@ -112,138 +112,256 @@ import javax.annotation.Generated;
  *     .setPollingAlgorithm(timedRetryAlgorithm)
  *     .build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@Deprecated
 @Generated("by gapic-generator-java")
 public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
 
-  /** Returns the object with the settings used for calls to createAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to createAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAwsClusterRequest, Operation> createAwsClusterSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).createAwsClusterSettings();
   }
 
-  /** Returns the object with the settings used for calls to createAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to createAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<CreateAwsClusterRequest, AwsCluster, OperationMetadata>
       createAwsClusterOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).createAwsClusterOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAwsClusterRequest, Operation> updateAwsClusterSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).updateAwsClusterSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<UpdateAwsClusterRequest, AwsCluster, OperationMetadata>
       updateAwsClusterOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).updateAwsClusterOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to getAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsClusterRequest, AwsCluster> getAwsClusterSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsClusterSettings();
   }
 
-  /** Returns the object with the settings used for calls to listAwsClusters. */
+  /**
+   * Returns the object with the settings used for calls to listAwsClusters.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAwsClustersRequest, ListAwsClustersResponse, ListAwsClustersPagedResponse>
       listAwsClustersSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).listAwsClustersSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAwsClusterRequest, Operation> deleteAwsClusterSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsClusterSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsCluster. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsCluster.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<DeleteAwsClusterRequest, Empty, OperationMetadata>
       deleteAwsClusterOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsClusterOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to generateAwsClusterAgentToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAwsClusterAgentToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<
           GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
       generateAwsClusterAgentTokenSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).generateAwsClusterAgentTokenSettings();
   }
 
-  /** Returns the object with the settings used for calls to generateAwsAccessToken. */
+  /**
+   * Returns the object with the settings used for calls to generateAwsAccessToken.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
       generateAwsAccessTokenSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).generateAwsAccessTokenSettings();
   }
 
-  /** Returns the object with the settings used for calls to createAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to createAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAwsNodePoolRequest, Operation> createAwsNodePoolSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).createAwsNodePoolSettings();
   }
 
-  /** Returns the object with the settings used for calls to createAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to createAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<CreateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       createAwsNodePoolOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).createAwsNodePoolOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<UpdateAwsNodePoolRequest, Operation> updateAwsNodePoolSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).updateAwsNodePoolSettings();
   }
 
-  /** Returns the object with the settings used for calls to updateAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to updateAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
       updateAwsNodePoolOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).updateAwsNodePoolOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  /**
+   * Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<RollbackAwsNodePoolUpdateRequest, Operation>
       rollbackAwsNodePoolUpdateSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).rollbackAwsNodePoolUpdateSettings();
   }
 
-  /** Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate. */
+  /**
+   * Returns the object with the settings used for calls to rollbackAwsNodePoolUpdate.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
       rollbackAwsNodePoolUpdateOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings())
         .rollbackAwsNodePoolUpdateOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to getAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsNodePoolSettings();
   }
 
-  /** Returns the object with the settings used for calls to listAwsNodePools. */
+  /**
+   * Returns the object with the settings used for calls to listAwsNodePools.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
       listAwsNodePoolsSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).listAwsNodePoolsSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAwsNodePoolRequest, Operation> deleteAwsNodePoolSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsNodePoolSettings();
   }
 
-  /** Returns the object with the settings used for calls to deleteAwsNodePool. */
+  /**
+   * Returns the object with the settings used for calls to deleteAwsNodePool.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public OperationCallSettings<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
       deleteAwsNodePoolOperationSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).deleteAwsNodePoolOperationSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAwsOpenIdConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAwsOpenIdConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
       getAwsOpenIdConfigSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsOpenIdConfigSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAwsJsonWebKeys. */
+  /**
+   * Returns the object with the settings used for calls to getAwsJsonWebKeys.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsJsonWebKeysRequest, AwsJsonWebKeys> getAwsJsonWebKeysSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsJsonWebKeysSettings();
   }
 
-  /** Returns the object with the settings used for calls to getAwsServerConfig. */
+  /**
+   * Returns the object with the settings used for calls to getAwsServerConfig.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAwsServerConfigRequest, AwsServerConfig>
       getAwsServerConfigSettings() {
     return ((AwsClustersStubSettings) getStubSettings()).getAwsServerConfigSettings();
@@ -360,141 +478,256 @@ public class AwsClustersSettings extends ClientSettings<AwsClustersSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to createAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAwsClusterRequest, Operation>
         createAwsClusterSettings() {
       return getStubSettingsBuilder().createAwsClusterSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<CreateAwsClusterRequest, AwsCluster, OperationMetadata>
         createAwsClusterOperationSettings() {
       return getStubSettingsBuilder().createAwsClusterOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAwsClusterRequest, Operation>
         updateAwsClusterSettings() {
       return getStubSettingsBuilder().updateAwsClusterSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<UpdateAwsClusterRequest, AwsCluster, OperationMetadata>
         updateAwsClusterOperationSettings() {
       return getStubSettingsBuilder().updateAwsClusterOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsClusterRequest, AwsCluster> getAwsClusterSettings() {
       return getStubSettingsBuilder().getAwsClusterSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listAwsClusters. */
+    /**
+     * Returns the builder for the settings used for calls to listAwsClusters.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAwsClustersRequest, ListAwsClustersResponse, ListAwsClustersPagedResponse>
         listAwsClustersSettings() {
       return getStubSettingsBuilder().listAwsClustersSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAwsClusterRequest, Operation>
         deleteAwsClusterSettings() {
       return getStubSettingsBuilder().deleteAwsClusterSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsCluster. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsCluster.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<DeleteAwsClusterRequest, Empty, OperationMetadata>
         deleteAwsClusterOperationSettings() {
       return getStubSettingsBuilder().deleteAwsClusterOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to generateAwsClusterAgentToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAwsClusterAgentToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<
             GenerateAwsClusterAgentTokenRequest, GenerateAwsClusterAgentTokenResponse>
         generateAwsClusterAgentTokenSettings() {
       return getStubSettingsBuilder().generateAwsClusterAgentTokenSettings();
     }
 
-    /** Returns the builder for the settings used for calls to generateAwsAccessToken. */
+    /**
+     * Returns the builder for the settings used for calls to generateAwsAccessToken.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GenerateAwsAccessTokenRequest, GenerateAwsAccessTokenResponse>
         generateAwsAccessTokenSettings() {
       return getStubSettingsBuilder().generateAwsAccessTokenSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAwsNodePoolRequest, Operation>
         createAwsNodePoolSettings() {
       return getStubSettingsBuilder().createAwsNodePoolSettings();
     }
 
-    /** Returns the builder for the settings used for calls to createAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to createAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<CreateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         createAwsNodePoolOperationSettings() {
       return getStubSettingsBuilder().createAwsNodePoolOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<UpdateAwsNodePoolRequest, Operation>
         updateAwsNodePoolSettings() {
       return getStubSettingsBuilder().updateAwsNodePoolSettings();
     }
 
-    /** Returns the builder for the settings used for calls to updateAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to updateAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<UpdateAwsNodePoolRequest, AwsNodePool, OperationMetadata>
         updateAwsNodePoolOperationSettings() {
       return getStubSettingsBuilder().updateAwsNodePoolOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    /**
+     * Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<RollbackAwsNodePoolUpdateRequest, Operation>
         rollbackAwsNodePoolUpdateSettings() {
       return getStubSettingsBuilder().rollbackAwsNodePoolUpdateSettings();
     }
 
-    /** Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate. */
+    /**
+     * Returns the builder for the settings used for calls to rollbackAwsNodePoolUpdate.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<
             RollbackAwsNodePoolUpdateRequest, AwsNodePool, OperationMetadata>
         rollbackAwsNodePoolUpdateOperationSettings() {
       return getStubSettingsBuilder().rollbackAwsNodePoolUpdateOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsNodePoolRequest, AwsNodePool> getAwsNodePoolSettings() {
       return getStubSettingsBuilder().getAwsNodePoolSettings();
     }
 
-    /** Returns the builder for the settings used for calls to listAwsNodePools. */
+    /**
+     * Returns the builder for the settings used for calls to listAwsNodePools.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, ListAwsNodePoolsPagedResponse>
         listAwsNodePoolsSettings() {
       return getStubSettingsBuilder().listAwsNodePoolsSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAwsNodePoolRequest, Operation>
         deleteAwsNodePoolSettings() {
       return getStubSettingsBuilder().deleteAwsNodePoolSettings();
     }
 
-    /** Returns the builder for the settings used for calls to deleteAwsNodePool. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAwsNodePool.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public OperationCallSettings.Builder<DeleteAwsNodePoolRequest, Empty, OperationMetadata>
         deleteAwsNodePoolOperationSettings() {
       return getStubSettingsBuilder().deleteAwsNodePoolOperationSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAwsOpenIdConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsOpenIdConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
         getAwsOpenIdConfigSettings() {
       return getStubSettingsBuilder().getAwsOpenIdConfigSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAwsJsonWebKeys. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsJsonWebKeys.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
         getAwsJsonWebKeysSettings() {
       return getStubSettingsBuilder().getAwsJsonWebKeysSettings();
     }
 
-    /** Returns the builder for the settings used for calls to getAwsServerConfig. */
+    /**
+     * Returns the builder for the settings used for calls to getAwsServerConfig.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAwsServerConfigRequest, AwsServerConfig>
         getAwsServerConfigSettings() {
       return getStubSettingsBuilder().getAwsServerConfigSettings();

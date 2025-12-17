@@ -28,7 +28,8 @@ public interface GetReservationSubBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent reservation and parent block. In the format of reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
+   * The name of the parent reservation and parent block. In the format of
+   * reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
    * </pre>
    *
    * <code>string parent_name = 478151936 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +42,8 @@ public interface GetReservationSubBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the parent reservation and parent block. In the format of reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
+   * The name of the parent reservation and parent block. In the format of
+   * reservations/{reservation_name}/reservationBlocks/{reservation_block_name}
    * </pre>
    *
    * <code>string parent_name = 478151936 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +82,8 @@ public interface GetReservationSubBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation subBlock. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation subBlock.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation_sub_block = 22750491 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,7 +96,8 @@ public interface GetReservationSubBlockRequestOrBuilder
    *
    *
    * <pre>
-   * The name of the reservation subBlock. Name should conform to RFC1035 or be a resource ID.
+   * The name of the reservation subBlock.
+   * Name should conform to RFC1035 or be a resource ID.
    * </pre>
    *
    * <code>string reservation_sub_block = 22750491 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,6 +105,48 @@ public interface GetReservationSubBlockRequestOrBuilder
    * @return The bytes for reservationSubBlock.
    */
   com.google.protobuf.ByteString getReservationSubBlockBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the subBlock.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return Whether the view field is set.
+   */
+  boolean hasView();
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the subBlock.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The view.
+   */
+  java.lang.String getView();
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the subBlock.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The bytes for view.
+   */
+  com.google.protobuf.ByteString getViewBytes();
 
   /**
    *

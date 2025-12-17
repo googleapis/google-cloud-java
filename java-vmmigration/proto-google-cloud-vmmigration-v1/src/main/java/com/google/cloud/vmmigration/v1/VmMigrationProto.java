@@ -349,6 +349,10 @@ public final class VmMigrationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDefaults_MetadataEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vmmigration_v1_AdaptationModifier_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_vmmigration_v1_AdaptationModifier_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_fieldAccessorTable;
@@ -1535,7 +1539,7 @@ public final class VmMigrationProto {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\"\371\t\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\350\n\n"
           + "\033ComputeEngineTargetDefaults\022\017\n"
           + "\007vm_name\030\001 \001(\t\022E\n"
           + "\016target_project\030\002 \001(\tB-\372A*\n"
@@ -1569,14 +1573,20 @@ public final class VmMigrationProto {
           + "encryption\030\023"
           + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\006\340A\001\340A\005\022I\n"
           + "\017boot_conversion\030\024 \001(\0162"
-          + "+.google.cloud.vmmigration.v1.BootConversionB\003\340A\001\022\037\n"
-          + "\022disk_replica_zones\030\030 \003(\tB\003\340A\001\032-\n"
+          + "+.google.cloud.vmmigration.v1.BootConversionB\003\340A\001\022R\n"
+          + "\024adaptation_modifiers\030\027 \003(\0132"
+          + "/.google.cloud.vmmigration.v1.AdaptationModifierB\003\340A\001\022\037\n"
+          + "\022disk_replica_zones\030\030 \003(\tB\003\340A\001\022\031\n"
+          + "\014storage_pool\030\031 \001(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032/\n\r"
           + "MetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\256\t\n"
+          + "\005value\030\002 \001(\t:\0028\001\"?\n"
+          + "\022AdaptationModifier\022\025\n"
+          + "\010modifier\030\003 \001(\tB\003\340A\001\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\001\"\235\n\n"
           + "\032ComputeEngineTargetDetails\022\017\n"
           + "\007vm_name\030\001 \001(\t\022\017\n"
           + "\007project\030\002 \001(\t\022\014\n"
@@ -1584,14 +1594,14 @@ public final class VmMigrationProto {
           + "\023machine_type_series\030\004 \001(\t\022\024\n"
           + "\014machine_type\030\005 \001(\t\022\024\n"
           + "\014network_tags\030\006 \003(\t\022I\n"
-          + "\022network_interfaces\030\007 \003(\0132-"
-          + ".google.cloud.vmmigration.v1.NetworkInterface\022\027\n"
+          + "\022network_interfaces\030\007"
+          + " \003(\0132-.google.cloud.vmmigration.v1.NetworkInterface\022\027\n"
           + "\017service_account\030\010 \001(\t\022E\n"
           + "\tdisk_type\030\t \001(\01622.google.cloud.vmmigration.v1.ComputeEngineDiskType\022S\n"
           + "\006labels\030\n"
           + " \003(\0132C.google.cloud.vmmigration.v1.ComputeEngineTargetDetails.LabelsEntry\022K\n"
-          + "\014license_type\030\013"
-          + " \001(\01625.google.cloud.vmmigration.v1.ComputeEngineLicenseType\022D\n"
+          + "\014license_type\030\013 \001(\01625.google.cloud."
+          + "vmmigration.v1.ComputeEngineLicenseType\022D\n"
           + "\017applied_license\030\014"
           + " \001(\0132+.google.cloud.vmmigration.v1.AppliedLicense\022J\n"
           + "\022compute_scheduling\030\r"
@@ -1599,19 +1609,23 @@ public final class VmMigrationProto {
           + "\013secure_boot\030\016 \001(\010\022\030\n"
           + "\013enable_vtpm\030\025 \001(\010B\003\340A\001\022(\n"
           + "\033enable_integrity_monitoring\030\026 \001(\010B\003\340A\001\022I\n"
-          + "\013boot_option\030\017 \001(\0162"
-          + "4.google.cloud.vmmigration.v1.ComputeEngineBootOption\022W\n"
-          + "\010metadata\030\020 \003(\0132E.google"
-          + ".cloud.vmmigration.v1.ComputeEngineTargetDetails.MetadataEntry\022\033\n"
+          + "\013boot_option\030\017"
+          + " \001(\01624.google.cloud.vmmigration.v1.ComputeEngineBootOption\022W\n"
+          + "\010metadata\030\020 \003(\0132E.google.cloud.vmmigration.v1.Co"
+          + "mputeEngineTargetDetails.MetadataEntry\022\033\n"
           + "\023additional_licenses\030\021 \003(\t\022\020\n"
           + "\010hostname\030\022 \001(\t\022@\n\n"
           + "encryption\030\023"
           + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\001\022I\n"
-          + "\017boot_conversion\030\024 \001(\016"
-          + "2+.google.cloud.vmmigration.v1.BootConversionB\003\340A\001\022\037\n"
-          + "\022disk_replica_zones\030\030 \003(\tB\003\340A\001\032-\n"
+          + "\017boot_conversion\030\024"
+          + " \001(\0162+.google.cloud.vmmigration.v1.BootConversionB\003\340A\001\022R\n"
+          + "\024adaptation_modifiers\030\027"
+          + " \003(\0132/.google.cloud.vmmigration.v1.AdaptationModifierB\003\340A\001\022\037\n"
+          + "\022disk_replica_zones\030\030 \003(\tB\003\340A\001\022\031\n"
+          + "\014storage_pool\030\031 \001(\tB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
           + "\005value\030\002 \001(\t:\0028\001\032/\n\r"
           + "MetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -1621,8 +1635,8 @@ public final class VmMigrationProto {
           + "subnetwork\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013internal_ip\030\003 \001(\tB\003\340A\001\022\030\n"
           + "\013external_ip\030\004 \001(\tB\003\340A\001\022P\n"
-          + "\014network_tier\030\005 \001("
-          + "\01625.google.cloud.vmmigration.v1.ComputeEngineNetworkTierB\003\340A\001\"\240\001\n"
+          + "\014network_tier\030\005"
+          + " \001(\01625.google.cloud.vmmigration.v1.ComputeEngineNetworkTierB\003\340A\001\"\240\001\n"
           + "\016AppliedLicense\022>\n"
           + "\004type\030\001"
           + " \001(\01620.google.cloud.vmmigration.v1.AppliedLicense.Type\022\022\n\n"
@@ -1634,20 +1648,20 @@ public final class VmMigrationProto {
           + "\004BYOL\020\003\"\277\001\n"
           + "\026SchedulingNodeAffinity\022\013\n"
           + "\003key\030\001 \001(\t\022N\n"
-          + "\010operator\030\002 \001"
-          + "(\0162<.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator\022\016\n"
+          + "\010operator\030\002"
+          + " \001(\0162<.google.cloud.vmmigration.v1.SchedulingNodeAffinity.Operator\022\016\n"
           + "\006values\030\003 \003(\t\"8\n"
           + "\010Operator\022\030\n"
           + "\024OPERATOR_UNSPECIFIED\020\000\022\006\n"
           + "\002IN\020\001\022\n\n"
           + "\006NOT_IN\020\002\"\335\003\n"
           + "\021ComputeScheduling\022]\n"
-          + "\023on_host_maintenance\030\001 \001(\0162@.google.c"
-          + "loud.vmmigration.v1.ComputeScheduling.OnHostMaintenance\022P\n"
-          + "\014restart_type\030\005 \001(\0162:."
-          + "google.cloud.vmmigration.v1.ComputeScheduling.RestartType\022L\n"
-          + "\017node_affinities\030\003 \003"
-          + "(\01323.google.cloud.vmmigration.v1.SchedulingNodeAffinity\022\025\n\r"
+          + "\023on_host_maintenance\030\001 \001(\0162@.g"
+          + "oogle.cloud.vmmigration.v1.ComputeScheduling.OnHostMaintenance\022P\n"
+          + "\014restart_type\030\005"
+          + " \001(\0162:.google.cloud.vmmigration.v1.ComputeScheduling.RestartType\022L\n"
+          + "\017node_affinities\030\003"
+          + " \003(\01323.google.cloud.vmmigration.v1.SchedulingNodeAffinity\022\025\n\r"
           + "min_node_cpus\030\004 \001(\005\"T\n"
           + "\021OnHostMaintenance\022#\n"
           + "\037ON_HOST_MAINTENANCE_UNSPECIFIED\020\000\022\r\n"
@@ -1659,14 +1673,13 @@ public final class VmMigrationProto {
           + "\024NO_AUTOMATIC_RESTART\020\002\"\222\003\n"
           + " ComputeEngineDisksTargetDefaults\022\016\n"
           + "\004zone\030\002 \001(\tH\000\022_\n"
-          + "\025disks_target_defaults\030\005 \001(\0132>.google.cloud.vm"
-          + "migration.v1.DisksMigrationDisksTargetDefaultsH\001\022Y\n"
-          + "\022vm_target_defaults\030\006 \001(\0132;.g"
-          + "oogle.cloud.vmmigration.v1.DisksMigrationVmTargetDefaultsH\001\022E\n"
+          + "\025disks_target_defaults\030\005 \001(\0132>.google.c"
+          + "loud.vmmigration.v1.DisksMigrationDisksTargetDefaultsH\001\022Y\n"
+          + "\022vm_target_defaults\030\006 "
+          + "\001(\0132;.google.cloud.vmmigration.v1.DisksMigrationVmTargetDefaultsH\001\022E\n"
           + "\016target_project\030\001 \001(\tB-\372A*\n"
           + "(vmmigration.googleapis.com/TargetProject\022B\n"
-          + "\005disks\030\004 \003(\01323.google.cloud.vmmigration.v1.PersistentDiskDefaultsB\n"
-          + "\n"
+          + "\005disks\030\004 \003(\01323.google.cloud.vmmigration.v1.PersistentDiskDefaultsB\n\n"
           + "\010locationB\013\n"
           + "\tvm_target\"\317\003\n"
           + "\026PersistentDiskDefaults\022\037\n"
@@ -1674,12 +1687,12 @@ public final class VmMigrationProto {
           + "\tdisk_name\030\002 \001(\tB\003\340A\001\022E\n"
           + "\tdisk_type\030\003"
           + " \001(\01622.google.cloud.vmmigration.v1.ComputeEngineDiskType\022d\n"
-          + "\021additional_labels\030\004 \003(\0132I.google.cloud.vmmigration.v1.Pers"
-          + "istentDiskDefaults.AdditionalLabelsEntry\022@\n\n"
+          + "\021additional_labels\030\004 \003(\0132I.google.cloud.vmmigration."
+          + "v1.PersistentDiskDefaults.AdditionalLabelsEntry\022@\n\n"
           + "encryption\030\005"
           + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\001\022T\n"
-          + "\025vm_attachment_details\030\006"
-          + " \001(\01320.google.cloud.vmmigration.v1.VmAttachmentDetailsB\003\340A\001\0327\n"
+          + "\025vm_attachment_details\030\006 \001(\01320.google.cloud."
+          + "vmmigration.v1.VmAttachmentDetailsB\003\340A\001\0327\n"
           + "\025AdditionalLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"/\n"
@@ -1691,26 +1704,26 @@ public final class VmMigrationProto {
           + "\023machine_type_series\030\002 \001(\tB\003\340A\001\022\031\n"
           + "\014machine_type\030\003 \001(\tB\003\340A\002\022\031\n"
           + "\014network_tags\030\004 \003(\tB\003\340A\001\022N\n"
-          + "\022network_interfaces\030\005 \003(\0132-.google.cl"
-          + "oud.vmmigration.v1.NetworkInterfaceB\003\340A\001\022\034\n"
+          + "\022network_interfaces\030\005 \003(\0132-.go"
+          + "ogle.cloud.vmmigration.v1.NetworkInterfaceB\003\340A\001\022\034\n"
           + "\017service_account\030\006 \001(\tB\003\340A\001\022O\n"
-          + "\022compute_scheduling\030\007"
-          + " \001(\0132..google.cloud.vmmigration.v1.ComputeSchedulingB\003\340A\001\022\030\n"
+          + "\022compute_scheduling\030\007 \001(\0132..google.cloud"
+          + ".vmmigration.v1.ComputeSchedulingB\003\340A\001\022\030\n"
           + "\013secure_boot\030\010 \001(\010B\003\340A\001\022\030\n"
           + "\013enable_vtpm\030\020 \001(\010B\003\340A\001\022(\n"
           + "\033enable_integrity_monitoring\030\021 \001(\010B\003\340A\001\022`\n"
           + "\010metadata\030\n"
-          + " \003(\0132I.google.cloud.v"
-          + "mmigration.v1.DisksMigrationVmTargetDefaults.MetadataEntryB\003\340A\001\022 \n"
+          + " \003(\0132I.google."
+          + "cloud.vmmigration.v1.DisksMigrationVmTargetDefaults.MetadataEntryB\003\340A\001\022 \n"
           + "\023additional_licenses\030\013 \003(\tB\003\340A\001\022\025\n"
           + "\010hostname\030\014 \001(\tB\003\340A\001\022\\\n"
           + "\006labels\030\r"
-          + " \003(\0132G.google.cloud.vmmigrat"
-          + "ion.v1.DisksMigrationVmTargetDefaults.LabelsEntryB\003\340A\001\022N\n"
-          + "\022boot_disk_defaults\030\016 \001"
-          + "(\0132-.google.cloud.vmmigration.v1.BootDiskDefaultsB\003\340A\001\022@\n\n"
-          + "encryption\030\017 \001(\0132\'.goo"
-          + "gle.cloud.vmmigration.v1.EncryptionB\003\340A\001\032/\n\r"
+          + " \003(\0132G.google.cloud.v"
+          + "mmigration.v1.DisksMigrationVmTargetDefaults.LabelsEntryB\003\340A\001\022N\n"
+          + "\022boot_disk_defaults\030\016"
+          + " \001(\0132-.google.cloud.vmmigration.v1.BootDiskDefaultsB\003\340A\001\022@\n\n"
+          + "encryption\030\017 \001("
+          + "\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\001\032/\n\r"
           + "MetadataEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032-\n"
@@ -1718,23 +1731,23 @@ public final class VmMigrationProto {
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\377\002\n"
           + "\020BootDiskDefaults\022P\n"
-          + "\005image\030\003 \001(\0132?.google.cloud.vmmigration."
-          + "v1.BootDiskDefaults.DiskImageDefaultsH\000\022\026\n"
+          + "\005image\030\003 \001(\0132?.google.cloud.vmmig"
+          + "ration.v1.BootDiskDefaults.DiskImageDefaultsH\000\022\026\n"
           + "\tdisk_name\030\001 \001(\tB\003\340A\001\022J\n"
-          + "\tdisk_type\030\002 \001"
-          + "(\01622.google.cloud.vmmigration.v1.ComputeEngineDiskTypeB\003\340A\001\022\030\n"
+          + "\tdisk_type\030\002"
+          + " \001(\01622.google.cloud.vmmigration.v1.ComputeEngineDiskTypeB\003\340A\001\022\030\n"
           + "\013device_name\030\004 \001(\tB\003\340A\001\022@\n\n"
-          + "encryption\030\005"
-          + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\001\032O\n"
+          + "encryption\030\005 \001(\0132\'.googl"
+          + "e.cloud.vmmigration.v1.EncryptionB\003\340A\001\032O\n"
           + "\021DiskImageDefaults\022:\n"
           + "\014source_image\030\001 \001(\tB$\340A\002\372A\036\n"
           + "\034compute.googleapis.com/ImageB\010\n"
           + "\006source\"\242\002\n"
           + "\037ComputeEngineDisksTargetDetails\022]\n"
-          + "\024disks_target_details\030\005 \001(\0132=.google.cl"
-          + "oud.vmmigration.v1.DisksMigrationDisksTargetDetailsH\000\022W\n"
-          + "\021vm_target_details\030\006 \001(\013"
-          + "2:.google.cloud.vmmigration.v1.DisksMigrationVmTargetDetailsH\000\022:\n"
+          + "\024disks_target_details\030\005 \001(\0132=.go"
+          + "ogle.cloud.vmmigration.v1.DisksMigrationDisksTargetDetailsH\000\022W\n"
+          + "\021vm_target_details\030\006"
+          + " \001(\0132:.google.cloud.vmmigration.v1.DisksMigrationVmTargetDetailsH\000\022:\n"
           + "\005disks\030\001 \003(\0132+.google.cloud.vmmigration.v1.PersistentDiskB\013\n"
           + "\tvm_target\">\n"
           + "\016PersistentDisk\022\032\n"
@@ -1747,8 +1760,8 @@ public final class VmMigrationProto {
           + "idle_duration\030\001 \001(\0132\031.google.protobuf.Duration\022\032\n"
           + "\022skip_os_adaptation\030\002 \001(\010\"\321\001\n"
           + "\030CreateMigratingVmRequest\022>\n"
-          + "\006parent\030\001 \001(\tB.\340A\002\372A(\022&"
-          + "vmmigration.googleapis.com/MigratingVm\022\034\n"
+          + "\006parent\030\001 \001(\tB.\340"
+          + "A\002\372A(\022&vmmigration.googleapis.com/MigratingVm\022\034\n"
           + "\017migrating_vm_id\030\002 \001(\tB\003\340A\002\022C\n"
           + "\014migrating_vm\030\003"
           + " \001(\0132(.google.cloud.vmmigration.v1.MigratingVmB\003\340A\002\022\022\n\n"
@@ -1760,8 +1773,8 @@ public final class VmMigrationProto {
           + "page_token\030\003 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022?\n"
-          + "\004view\030\006 \001(\0162,.g"
-          + "oogle.cloud.vmmigration.v1.MigratingVmViewB\003\340A\001\"\230\001\n"
+          + "\004view\030\006 "
+          + "\001(\0162,.google.cloud.vmmigration.v1.MigratingVmViewB\003\340A\001\"\230\001\n"
           + "\030ListMigratingVmsResponse\022D\n\r"
           + "migrating_vms\030\001"
           + " \003(\0132(.google.cloud.vmmigration.v1.MigratingVmB\003\340A\003\022\034\n"
@@ -1770,8 +1783,8 @@ public final class VmMigrationProto {
           + "\025GetMigratingVmRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&vmmigration.googleapis.com/MigratingVm\022?\n"
-          + "\004view\030\002"
-          + " \001(\0162,.google.cloud.vmmigration.v1.MigratingVmViewB\003\340A\001\"\244\001\n"
+          + "\004view\030\002 \001(\0162,.google"
+          + ".cloud.vmmigration.v1.MigratingVmViewB\003\340A\001\"\244\001\n"
           + "\030UpdateMigratingVmRequest\022/\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMask\022C\n"
           + "\014migrating_vm\030\002"
@@ -1807,34 +1820,34 @@ public final class VmMigrationProto {
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003:v\352As\n"
-          + "(vmmigration.googleapis.com/TargetProject\022Gprojects/{projec"
-          + "t}/locations/{location}/targetProjects/{target_project}\"Y\n"
+          + "(vmmigration.googleapis.com/TargetProject\022Gprojects/"
+          + "{project}/locations/{location}/targetProjects/{target_project}\"Y\n"
           + "\027GetTargetProjectRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(vmmigration.googleapis.com/TargetProject\"\272\001\n"
           + "\031ListTargetProjectsRequest\022@\n"
-          + "\006parent\030\001 \001(\tB0\340A\002\372A*"
-          + "\022(vmmigration.googleapis.com/TargetProject\022\026\n"
+          + "\006parent\030\001 \001(\tB"
+          + "0\340A\002\372A*\022(vmmigration.googleapis.com/TargetProject\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\236\001\n"
           + "\032ListTargetProjectsResponse\022H\n"
-          + "\017target_projects\030\001 \003(\0132*.google"
-          + ".cloud.vmmigration.v1.TargetProjectB\003\340A\003\022\034\n"
+          + "\017target_projects\030\001 \003(\0132*"
+          + ".google.cloud.vmmigration.v1.TargetProjectB\003\340A\003\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"\333\001\n"
           + "\032CreateTargetProjectRequest\022@\n"
-          + "\006parent\030\001 \001("
-          + "\tB0\340A\002\372A*\022(vmmigration.googleapis.com/TargetProject\022\036\n"
+          + "\006parent\030\001 \001(\tB0\340A\002\372A*\022("
+          + "vmmigration.googleapis.com/TargetProject\022\036\n"
           + "\021target_project_id\030\002 \001(\tB\003\340A\002\022G\n"
           + "\016target_project\030\003"
           + " \001(\0132*.google.cloud.vmmigration.v1.TargetProjectB\003\340A\002\022\022\n\n"
           + "request_id\030\004 \001(\t\"\252\001\n"
           + "\032UpdateTargetProjectRequest\022/\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMask\022G\n"
-          + "\016target_project\030\002"
-          + " \001(\0132*.google.cloud.vmmigration.v1.TargetProjectB\003\340A\002\022\022\n\n"
+          + "\016target_project\030\002 \001(\0132*.google.c"
+          + "loud.vmmigration.v1.TargetProjectB\003\340A\002\022\022\n\n"
           + "request_id\030\003 \001(\t\"u\n"
           + "\032DeleteTargetProjectRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
@@ -1847,14 +1860,14 @@ public final class VmMigrationProto {
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\013description\030\004 \001(\t\022\024\n"
           + "\014display_name\030\005 \001(\t\022Z\n"
-          + "\025migration_target_type\030\006 \001(\01626.google.cloud.vmm"
-          + "igration.v1.Group.MigrationTargetTypeB\003\340A\005\"|\n"
+          + "\025migration_target_type\030\006 \001(\01626.google.cl"
+          + "oud.vmmigration.v1.Group.MigrationTargetTypeB\003\340A\005\"|\n"
           + "\023MigrationTargetType\022%\n"
           + "!MIGRATION_TARGET_TYPE_UNSPECIFIED\020\000\022\035\n"
           + "\031MIGRATION_TARGET_TYPE_GCE\020\001\022\037\n"
           + "\033MIGRATION_TARGET_TYPE_DISKS\020\002:]\352AZ\n"
-          + " vmmigration.googleapis.co"
-          + "m/Group\0226projects/{project}/locations/{location}/groups/{group}\"\252\001\n"
+          + " vmmigration.google"
+          + "apis.com/Group\0226projects/{project}/locations/{location}/groups/{group}\"\252\001\n"
           + "\021ListGroupsRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\022"
           + " vmmigration.googleapis.com/Group\022\026\n"
@@ -1863,8 +1876,8 @@ public final class VmMigrationProto {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\205\001\n"
           + "\022ListGroupsResponse\0227\n"
-          + "\006groups\030\001"
-          + " \003(\0132\".google.cloud.vmmigration.v1.GroupB\003\340A\003\022\034\n"
+          + "\006groups\030\001 \003"
+          + "(\0132\".google.cloud.vmmigration.v1.GroupB\003\340A\003\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"I\n"
           + "\017GetGroupRequest\0226\n"
@@ -1879,8 +1892,8 @@ public final class VmMigrationProto {
           + "request_id\030\004 \001(\t\"\221\001\n"
           + "\022UpdateGroupRequest\022/\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMask\0226\n"
-          + "\005group\030\002"
-          + " \001(\0132\".google.cloud.vmmigration.v1.GroupB\003\340A\002\022\022\n\n"
+          + "\005group\030\002 \001("
+          + "\0132\".google.cloud.vmmigration.v1.GroupB\003\340A\002\022\022\n\n"
           + "request_id\030\003 \001(\t\"e\n"
           + "\022DeleteGroupRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
@@ -1902,8 +1915,8 @@ public final class VmMigrationProto {
           + "\006parent\030\001 \001("
           + "\tB-\340A\002\372A\'\022%vmmigration.googleapis.com/CutoverJob\022\033\n"
           + "\016cutover_job_id\030\002 \001(\tB\003\340A\002\022A\n"
-          + "\013cutover_job\030\003"
-          + " \001(\0132\'.google.cloud.vmmigration.v1.CutoverJobB\003\340A\002\022\022\n\n"
+          + "\013cutover_job\030\003 \001(\0132\'.g"
+          + "oogle.cloud.vmmigration.v1.CutoverJobB\003\340A\002\022\022\n\n"
           + "request_id\030\004 \001(\t\"V\n"
           + "\027CancelCutoverJobRequest\022;\n"
           + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
@@ -1926,17 +1939,17 @@ public final class VmMigrationProto {
           + "%vmmigration.googleapis.com/CutoverJob\"\200\002\n"
           + "\021OperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
+          + "\010en",
+      "d_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\003\"\361\004\n"
           + "\016MigrationError\022H\n"
-          + "\004code\030\001 "
-          + "\001(\01625.google.cloud.vmmigration.v1.MigrationError.ErrorCodeB\003\340A\003\0228\n\r"
-          + "error_message",
-      "\030\002 \001(\0132\034.google.rpc.LocalizedMessageB\003\340A\003\0226\n"
+          + "\004code\030\001"
+          + " \001(\01625.google.cloud.vmmigration.v1.MigrationError.ErrorCodeB\003\340A\003\0228\n\r"
+          + "error_message\030\002 \001(\0132\034.google.rpc.LocalizedMessageB\003\340A\003\0226\n"
           + "\013action_item\030\003"
           + " \001(\0132\034.google.rpc.LocalizedMessageB\003\340A\003\022.\n\n"
           + "help_links\030\004 \003(\0132\025.google.rpc.Help.LinkB\003\340A\003\0223\n\n"
@@ -1948,7 +1961,8 @@ public final class VmMigrationProto {
           + "\030SOURCE_REPLICATION_ERROR\020\003\022\034\n"
           + "\030TARGET_REPLICATION_ERROR\020\004\022\027\n"
           + "\023OS_ADAPTATION_ERROR\020\005\022\017\n"
-          + "\013CLONE_ERROR\020\006\022\021\n\r"
+          + "\013CLONE_ERROR\020\006\022\021\n"
+          + "\r"
           + "CUTOVER_ERROR\020\007\022\034\n"
           + "\030UTILIZATION_REPORT_ERROR\020\010\022\033\n"
           + "\027APPLIANCE_UPGRADE_ERROR\020\t\022\026\n"
@@ -1956,8 +1970,8 @@ public final class VmMigrationProto {
           + "\022\030\n"
           + "\024DISK_MIGRATION_ERROR\020\013\"\366\002\n"
           + "\020MigrationWarning\022G\n"
-          + "\004code\030\001 \001(\01629.goog"
-          + "le.cloud.vmmigration.v1.MigrationWarning.WarningCode\022:\n"
+          + "\004code\030\001 \001(\016"
+          + "29.google.cloud.vmmigration.v1.MigrationWarning.WarningCode\022:\n"
           + "\017warning_message\030\002"
           + " \001(\0132\034.google.rpc.LocalizedMessageB\003\340A\003\0226\n"
           + "\013action_item\030\003"
@@ -1968,15 +1982,15 @@ public final class VmMigrationProto {
           + "\030WARNING_CODE_UNSPECIFIED\020\000\022\026\n"
           + "\022ADAPTATION_WARNING\020\001\"\225\004\n"
           + "\025VmwareSourceVmDetails\022R\n"
-          + "\010firmware\030\001 \001(\0162;.google.cloud.vmmig"
-          + "ration.v1.VmwareSourceVmDetails.FirmwareB\003\340A\003\022$\n"
+          + "\010firmware\030\001 \001(\0162;.google.clou"
+          + "d.vmmigration.v1.VmwareSourceVmDetails.FirmwareB\003\340A\003\022$\n"
           + "\027committed_storage_bytes\030\002 \001(\003B\003\340A\003\022X\n"
-          + "\005disks\030\003 \003(\0132D.google.cloud.vmmigr"
-          + "ation.v1.VmwareSourceVmDetails.VmwareDiskDetailsB\003\340A\003\022N\n"
-          + "\024vm_capabilities_info\030\005 "
-          + "\001(\0132+.google.cloud.vmmigration.v1.VmCapabilitiesB\003\340A\003\022F\n"
-          + "\014architecture\030\006 \001(\0162+.go"
-          + "ogle.cloud.vmmigration.v1.VmArchitectureB\003\340A\003\032W\n"
+          + "\005disks\030\003 \003(\0132D.google.cloud"
+          + ".vmmigration.v1.VmwareSourceVmDetails.VmwareDiskDetailsB\003\340A\003\022N\n"
+          + "\024vm_capabilities_info\030\005"
+          + " \001(\0132+.google.cloud.vmmigration.v1.VmCapabilitiesB\003\340A\003\022F\n"
+          + "\014architecture\030\006 \001"
+          + "(\0162+.google.cloud.vmmigration.v1.VmArchitectureB\003\340A\003\032W\n"
           + "\021VmwareDiskDetails\022\030\n"
           + "\013disk_number\030\001 \001(\005B\003\340A\003\022\024\n"
           + "\007size_gb\030\002 \001(\003B\003\340A\003\022\022\n"
@@ -1986,15 +2000,15 @@ public final class VmMigrationProto {
           + "\003EFI\020\001\022\010\n"
           + "\004BIOS\020\002\"\212\004\n"
           + "\022AwsSourceVmDetails\022O\n"
-          + "\010firmware\030\001 \001(\01628.googl"
-          + "e.cloud.vmmigration.v1.AwsSourceVmDetails.FirmwareB\003\340A\003\022$\n"
+          + "\010firmware\030\001 \001(\0162"
+          + "8.google.cloud.vmmigration.v1.AwsSourceVmDetails.FirmwareB\003\340A\003\022$\n"
           + "\027committed_storage_bytes\030\002 \001(\003B\003\340A\003\022R\n"
-          + "\005disks\030\003 \003(\0132>.google.cl"
-          + "oud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsB\003\340A\003\022N\n"
+          + "\005disks\030\003 \003(\0132>.go"
+          + "ogle.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsB\003\340A\003\022N\n"
           + "\024vm_capabilities_info\030\005"
           + " \001(\0132+.google.cloud.vmmigration.v1.VmCapabilitiesB\003\340A\003\022F\n"
-          + "\014architecture\030\006 \001(\0162"
-          + "+.google.cloud.vmmigration.v1.VmArchitectureB\003\340A\003\032X\n"
+          + "\014architecture\030\006"
+          + " \001(\0162+.google.cloud.vmmigration.v1.VmArchitectureB\003\340A\003\032X\n"
           + "\016AwsDiskDetails\022\030\n"
           + "\013disk_number\030\001 \001(\005B\003\340A\003\022\026\n"
           + "\tvolume_id\030\002 \001(\tB\003\340A\003\022\024\n"
@@ -2004,11 +2018,11 @@ public final class VmMigrationProto {
           + "\003EFI\020\001\022\010\n"
           + "\004BIOS\020\002\"\222\004\n"
           + "\024AzureSourceVmDetails\022Q\n"
-          + "\010firmware\030\001 \001(\0162"
-          + ":.google.cloud.vmmigration.v1.AzureSourceVmDetails.FirmwareB\003\340A\003\022$\n"
+          + "\010firmware\030\001"
+          + " \001(\0162:.google.cloud.vmmigration.v1.AzureSourceVmDetails.FirmwareB\003\340A\003\022$\n"
           + "\027committed_storage_bytes\030\002 \001(\003B\003\340A\003\022V\n"
-          + "\005disks\030\003 \003(\0132B."
-          + "google.cloud.vmmigration.v1.AzureSourceVmDetails.AzureDiskDetailsB\003\340A\003\022N\n"
+          + "\005disks\030\003"
+          + " \003(\0132B.google.cloud.vmmigration.v1.AzureSourceVmDetails.AzureDiskDetailsB\003\340A\003\022N\n"
           + "\024vm_capabilities_info\030\005"
           + " \001(\0132+.google.cloud.vmmigration.v1.VmCapabilitiesB\003\340A\003\022F\n"
           + "\014architecture\030\006"
@@ -2022,59 +2036,59 @@ public final class VmMigrationProto {
           + "\003EFI\020\001\022\010\n"
           + "\004BIOS\020\002\"\300\001\n"
           + "\034ListReplicationCyclesRequest\022C\n"
-          + "\006parent\030\001 \001("
-          + "\tB3\340A\002\372A-\022+vmmigration.googleapis.com/ReplicationCycle\022\026\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022+vmmig"
+          + "ration.googleapis.com/ReplicationCycle\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\002\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\247\001\n"
           + "\035ListReplicationCyclesResponse\022N\n"
-          + "\022replication_cycles\030\001 \003(\0132-.google.clou"
-          + "d.vmmigration.v1.ReplicationCycleB\003\340A\003\022\034\n"
+          + "\022replication_cycles\030\001 \003(\0132-.goog"
+          + "le.cloud.vmmigration.v1.ReplicationCycleB\003\340A\003\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"_\n"
           + "\032GetReplicationCycleRequest\022A\n"
           + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
           + "+vmmigration.googleapis.com/ReplicationCycle\"\247\001\n"
           + "\016VmCapabilities\022J\n"
-          + "\017os_capabilities\030\001 \003(\0162).go"
-          + "ogle.cloud.vmmigration.v1.OsCapabilityB\006\340A\003\340A\006\022I\n"
+          + "\017os_capabilities\030\001 \003"
+          + "(\0162).google.cloud.vmmigration.v1.OsCapabilityB\006\340A\003\340A\006\022I\n"
           + " last_os_capabilities_update_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\366\004\n"
           + "\013ImageImport\022 \n"
           + "\021cloud_storage_uri\030\002 \001(\tB\003\340A\005H\000\022^\n"
           + "\032disk_image_target_defaults\030\004"
           + " \001(\01323.google.cloud.vmmigration.v1.DiskImageTargetDetailsB\003\340A\005H\001\022d\n"
-          + "\035machine_image_target_defaults\030\007 \001(\01326.google.clou"
-          + "d.vmmigration.v1.MachineImageTargetDetailsB\003\340A\005H\001\022\021\n"
+          + "\035machine_image_target_defaults\030\007 \001(\01326.goog"
+          + "le.cloud.vmmigration.v1.MachineImageTargetDetailsB\003\340A\005H\001\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\0224\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022R\n"
-          + "\030recent_image_import_jobs\030\005 \003(\0132+.g"
-          + "oogle.cloud.vmmigration.v1.ImageImportJobB\003\340A\003\022@\n\n"
-          + "encryption\030\006"
-          + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\005:\202\001\352A\177\n"
-          + "&vmmigration.googleapis.com/ImageImport\022:projects/{project}/locations/{location}/"
-          + "imageImports/{job}*\014imageImports2\013imageImportB\010\n"
+          + "\030recent_image_import_jobs\030\005 "
+          + "\003(\0132+.google.cloud.vmmigration.v1.ImageImportJobB\003\340A\003\022@\n\n"
+          + "encryption\030\006 \001(\0132\'.goog"
+          + "le.cloud.vmmigration.v1.EncryptionB\003\340A\005:\202\001\352A\177\n"
+          + "&vmmigration.googleapis.com/ImageImport\022:projects/{project}/locations/{loc"
+          + "ation}/imageImports/{job}*\014imageImports2\013imageImportB\010\n"
           + "\006sourceB\021\n"
           + "\017target_defaults\"\302\007\n"
           + "\016ImageImportJob\022 \n"
           + "\021cloud_storage_uri\030\n"
           + " \001(\tB\003\340A\003H\000\022]\n"
-          + "\031disk_image_target_details\030\003 \001"
-          + "(\01323.google.cloud.vmmigration.v1.DiskImageTargetDetailsB\003\340A\003H\001\022c\n"
-          + "\034machine_image_target_details\030\013 \001(\01326.google.cloud.vmmi"
-          + "gration.v1.MachineImageTargetDetailsB\003\340A\003H\001\022\021\n"
+          + "\031disk_image_target_details\030\003"
+          + " \001(\01323.google.cloud.vmmigration.v1.DiskImageTargetDetailsB\003\340A\003H\001\022c\n"
+          + "\034machine_image_target_details\030\013 \001(\01326.google.clo"
+          + "ud.vmmigration.v1.MachineImageTargetDetailsB\003\340A\003H\001\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\036\n"
           + "\021created_resources\030\002 \003(\tB\003\340A\003\022E\n"
-          + "\005state\030\004 \001(\01621.google.c"
-          + "loud.vmmigration.v1.ImageImportJob.StateB\003\340A\003\0224\n"
+          + "\005state\030\004 \001(\01621.g"
+          + "oogle.cloud.vmmigration.v1.ImageImportJob.StateB\003\340A\003\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\'\n"
           + "\006errors\030\007 \003(\0132\022.google.rpc.StatusB\003\340A\003\022D\n"
           + "\010warnings\030\010"
           + " \003(\0132-.google.cloud.vmmigration.v1.MigrationWarningB\003\340A\003\022@\n"
-          + "\005steps\030\t \003(\0132,.g"
-          + "oogle.cloud.vmmigration.v1.ImageImportStepB\003\340A\003\"r\n"
+          + "\005steps\030\t "
+          + "\003(\0132,.google.cloud.vmmigration.v1.ImageImportStepB\003\340A\003\"r\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\013\n"
@@ -2083,20 +2097,20 @@ public final class VmMigrationProto {
           + "\006FAILED\020\004\022\016\n\n"
           + "CANCELLING\020\005\022\r\n"
           + "\tCANCELLED\020\006:\245\001\352A\241\001\n"
-          + ")vmmigration.googleapis.com/ImageImportJob\022Sprojects/{project}/locati"
-          + "ons/{location}/imageImports/{job}/imageI"
-          + "mportJobs/{result}*\017imageImportJobs2\016imageImportJobB\010\n"
+          + ")vmmigration.googleapis.com/ImageImportJob\022Sprojects/{project}"
+          + "/locations/{location}/imageImports/{job}"
+          + "/imageImportJobs/{result}*\017imageImportJobs2\016imageImportJobB\010\n"
           + "\006sourceB\020\n"
           + "\016target_details\"\273\003\n"
           + "\017ImageImportStep\022P\n"
-          + "\014initializing\030\003 \001("
-          + "\01328.google.cloud.vmmigration.v1.InitializingImageImportStepH\000\022X\n"
-          + "\024loading_source_files\030\004"
-          + " \001(\01328.google.cloud.vmmigration.v1.LoadingImageSourceFilesStepH\000\022B\n"
+          + "\014initializing\030\003"
+          + " \001(\01328.google.cloud.vmmigration.v1.InitializingImageImportStepH\000\022X\n"
+          + "\024loading_source_files\030\004 \001(\01328.google.cloud.vmmigr"
+          + "ation.v1.LoadingImageSourceFilesStepH\000\022B\n"
           + "\013adapting_os\030\005"
           + " \001(\0132+.google.cloud.vmmigration.v1.AdaptingOSStepH\000\022H\n"
-          + "\016creating_image\030\006 "
-          + "\001(\0132..google.cloud.vmmigration.v1.CreatingImageStepH\000\0223\n\n"
+          + "\016creating_image\030\006"
+          + " \001(\0132..google.cloud.vmmigration.v1.CreatingImageStepH\000\0223\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\006\n"
           + "\004step\"\035\n"
@@ -2104,8 +2118,8 @@ public final class VmMigrationProto {
           + "\033LoadingImageSourceFilesStep\"\023\n"
           + "\021CreatingImageStep\"\226\005\n"
           + "\026DiskImageTargetDetails\022g\n"
-          + "\030os_adaptation_parameters\030\013 \001(\0132>.google.c"
-          + "loud.vmmigration.v1.ImageImportOsAdaptationParametersB\003\340A\001H\000\022W\n"
+          + "\030os_adaptation_parameters\030\013 \001(\0132>.g"
+          + "oogle.cloud.vmmigration.v1.ImageImportOsAdaptationParametersB\003\340A\001H\000\022W\n"
           + "\026data_disk_image_import\030\014"
           + " \001(\01320.google.cloud.vmmigration.v1.DataDiskImageImportB\003\340A\001H\000\022\027\n\n"
           + "image_name\030\001 \001(\tB\003\340A\002\022H\n"
@@ -2113,8 +2127,9 @@ public final class VmMigrationProto {
           + "(vmmigration.googleapis.com/TargetProject\022\030\n"
           + "\013description\030\005 \001(\tB\003\340A\001\022\030\n"
           + "\013family_name\030\006 \001(\tB\003\340A\001\022T\n"
-          + "\006labels\030\007 \003(\0132?.g"
-          + "oogle.cloud.vmmigration.v1.DiskImageTargetDetails.LabelsEntryB\003\340A\001\022 \n"
+          + "\006labels\030\007 "
+          + "\003(\0132?.google.cloud.vmmigration.v1.DiskImageTargetDetails.LabelsEntryB\003\340A\001\022"
+          + " \n"
           + "\023additional_licenses\030\010 \003(\tB\003\340A\001\022\"\n"
           + "\025single_region_storage\030\t \001(\010B\003\340A\001\022@\n\n"
           + "encryption\030\n"
@@ -2124,25 +2139,25 @@ public final class VmMigrationProto {
           + "\005value\030\002 \001(\t:\0028\001B\026\n"
           + "\024os_adaptation_config\"\374\007\n"
           + "\031MachineImageTargetDetails\022g\n"
-          + "\030os_adaptation_parameters\030\003 \001(\0132>.google.cloud.vmmigra"
-          + "tion.v1.ImageImportOsAdaptationParametersB\003\340A\001H\000\022P\n"
-          + "\022skip_os_adaptation\030\020 \001(\0132-.g"
-          + "oogle.cloud.vmmigration.v1.SkipOsAdaptationB\003\340A\001H\000\022\037\n"
+          + "\030os_adaptation_parameters\030\003 \001(\0132>.google.cloud."
+          + "vmmigration.v1.ImageImportOsAdaptationParametersB\003\340A\001H\000\022P\n"
+          + "\022skip_os_adaptation\030\020 "
+          + "\001(\0132-.google.cloud.vmmigration.v1.SkipOsAdaptationB\003\340A\001H\000\022\037\n"
           + "\022machine_image_name\030\001 \001(\tB\003\340A\002\022H\n"
           + "\016target_project\030\002 \001(\tB0\340A\002\372A*\n"
           + "(vmmigration.googleapis.com/TargetProject\022\030\n"
           + "\013description\030\004 \001(\tB\003\340A\001\022\"\n"
           + "\025single_region_storage\030\005 \001(\010B\003\340A\001\022@\n\n"
-          + "encryption\030\006 \001(\0132"
-          + "\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\005\022m\n"
-          + "\"machine_image_parameters_overrides\030\007"
-          + " \001(\0132<.google.cloud.vmmigration.v1.MachineImageParametersOverridesB\003\340A\001\022I\n"
+          + "encryption\030\006"
+          + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\005\022m\n"
+          + "\"machine_image_parameters_overrides\030\007 \001(\0132<.google.cloud.vmmigrat"
+          + "ion.v1.MachineImageParametersOverridesB\003\340A\001\022I\n"
           + "\017service_account\030\010"
           + " \001(\0132+.google.cloud.vmmigration.v1.ServiceAccountB\003\340A\001\022 \n"
           + "\023additional_licenses\030\t \003(\tB\003\340A\001\022W\n"
           + "\006labels\030\n"
-          + " \003("
-          + "\0132B.google.cloud.vmmigration.v1.MachineImageTargetDetails.LabelsEntryB\003\340A\001\022\021\n"
+          + " \003(\0132B.google.cloud.vmmigration.v1.M"
+          + "achineImageTargetDetails.LabelsEntryB\003\340A\001\022\021\n"
           + "\004tags\030\013 \003(\tB\003\340A\001\022Z\n"
           + "\030shielded_instance_config\030\014"
           + " \001(\01323.google.cloud.vmmigration.v1.ShieldedInstanceConfigB\003\340A\001\022N\n"
@@ -2157,8 +2172,8 @@ public final class VmMigrationProto {
           + "!iam.googleapis.com/ServiceAccount\022\023\n"
           + "\006scopes\030\002 \003(\tB\003\340A\001\"\366\001\n"
           + "\026ShieldedInstanceConfig\022X\n"
-          + "\013secure_boot\030\001 \001("
-          + "\0162>.google.cloud.vmmigration.v1.ShieldedInstanceConfig.SecureBootB\003\340A\001\022\030\n"
+          + "\013secure_boot\030\001"
+          + " \001(\0162>.google.cloud.vmmigration.v1.ShieldedInstanceConfig.SecureBootB\003\340A\001\022\030\n"
           + "\013enable_vtpm\030\002 \001(\010B\003\340A\001\022(\n"
           + "\033enable_integrity_monitoring\030\003 \001(\010B\003\340A\001\">\n\n"
           + "SecureBoot\022\033\n"
@@ -2166,14 +2181,17 @@ public final class VmMigrationProto {
           + "\004TRUE\020\001\022\t\n"
           + "\005FALSE\020\002\"<\n"
           + "\037MachineImageParametersOverrides\022\031\n"
-          + "\014machine_type\030\001 \001(\tB\003\340A\001\"\331\001\n"
+          + "\014machine_type\030\001 \001(\tB\003\340A\001\"\255\002\n"
           + "!ImageImportOsAdaptationParameters\022\027\n\n"
           + "generalize\030\001 \001(\010B\003\340A\001\022P\n"
-          + "\014license_type\030\002 \001(\01625.google.c"
-          + "loud.vmmigration.v1.ComputeEngineLicenseTypeB\003\340A\001\022I\n"
-          + "\017boot_conversion\030\003 \001(\0162+.goo"
-          + "gle.cloud.vmmigration.v1.BootConversionB\003\340A\001\"\025\n"
-          + "\023DataDiskImageImport\"\022\n"
+          + "\014license_type\030\002 \001(\01625.g"
+          + "oogle.cloud.vmmigration.v1.ComputeEngineLicenseTypeB\003\340A\001\022I\n"
+          + "\017boot_conversion\030\003 \001("
+          + "\0162+.google.cloud.vmmigration.v1.BootConversionB\003\340A\001\022R\n"
+          + "\024adaptation_modifiers\030\004 \003("
+          + "\0132/.google.cloud.vmmigration.v1.AdaptationModifierB\003\340A\001\"5\n"
+          + "\023DataDiskImageImport\022\036\n"
+          + "\021guest_os_features\030\001 \003(\tB\003\340A\001\"\022\n"
           + "\020SkipOsAdaptation\"U\n"
           + "\025GetImageImportRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
@@ -2191,8 +2209,8 @@ public final class VmMigrationProto {
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"\326\001\n"
           + "\030CreateImageImportRequest\022>\n"
-          + "\006parent\030\001 \001(\tB"
-          + ".\340A\002\372A(\022&vmmigration.googleapis.com/ImageImport\022\034\n"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&vmmigration.googleapis.com/ImageImport\022\034\n"
           + "\017image_import_id\030\002 \001(\tB\003\340A\002\022C\n"
           + "\014image_import\030\003"
           + " \001(\0132(.google.cloud.vmmigration.v1.ImageImportB\003\340A\002\022\027\n\n"
@@ -2205,15 +2223,15 @@ public final class VmMigrationProto {
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")vmmigration.googleapis.com/ImageImportJob\"\274\001\n"
           + "\032ListImageImportJobsRequest\022A\n"
-          + "\006parent\030\001 \001("
-          + "\tB1\340A\002\372A+\022)vmmigration.googleapis.com/ImageImportJob\022\026\n"
+          + "\006parent\030\001 \001(\tB1\340A\002\372A+\022)v"
+          + "mmigration.googleapis.com/ImageImportJob\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\242\001\n"
           + "\033ListImageImportJobsResponse\022K\n"
-          + "\021image_import_jobs\030\001 \003(\0132+.google.c"
-          + "loud.vmmigration.v1.ImageImportJobB\003\340A\003\022\034\n"
+          + "\021image_import_jobs\030\001 \003(\0132+.googl"
+          + "e.cloud.vmmigration.v1.ImageImportJobB\003\340A\003\022\034\n"
           + "\017next_page_token\030\002 \001(\tB\003\340A\003\022\030\n"
           + "\013unreachable\030\003 \003(\tB\003\340A\003\"^\n"
           + "\033CancelImageImportJobRequest\022?\n"
@@ -2221,18 +2239,18 @@ public final class VmMigrationProto {
           + ")vmmigration.googleapis.com/ImageImportJob\"\036\n"
           + "\034CancelImageImportJobResponse\"\274\006\n"
           + "\020DiskMigrationJob\022T\n"
-          + "\027aws_source_disk_details\030\002 \001(\01321."
-          + "google.cloud.vmmigration.v1.AwsSourceDiskDetailsH\000\022\024\n"
+          + "\027aws_source_disk_details\030\002 \001(\013"
+          + "21.google.cloud.vmmigration.v1.AwsSourceDiskDetailsH\000\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022W\n"
-          + "\016target_details\030\003 \001(\0132:.google.cloud.vmmigrat"
-          + "ion.v1.DiskMigrationJobTargetDetailsB\003\340A\002\0224\n"
+          + "\016target_details\030\003 \001(\0132:.google.cloud.vmmig"
+          + "ration.v1.DiskMigrationJobTargetDetailsB\003\340A\002\0224\n"
           + "\013create_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022G\n"
           + "\005state\030\006"
           + " \001(\01623.google.cloud.vmmigration.v1.DiskMigrationJob.StateB\003\340A\003\022\'\n"
           + "\006errors\030\007 \003(\0132\022.google.rpc.StatusB\003\340A\003\022B\n"
-          + "\005steps\030\010 \003(\0132."
-          + ".google.cloud.vmmigration.v1.DiskMigrationStepB\003\340A\003\"p\n"
+          + "\005steps\030\010 \003("
+          + "\0132..google.cloud.vmmigration.v1.DiskMigrationStepB\003\340A\003\"p\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\t\n"
           + "\005READY\020\001\022\013\n"
@@ -2241,30 +2259,30 @@ public final class VmMigrationProto {
           + "CANCELLING\020\005\022\r\n"
           + "\tCANCELLED\020\006\022\n\n"
           + "\006FAILED\020\007:\267\001\352A\263\001\n"
-          + "+vmmigration.googleapis.com/DiskMigrationJob\022_projects/{project}/lo"
-          + "cations/{location}/sources/{source}/disk"
-          + "MigrationJobs/{disk_migration_job}*\021diskMigrationJobs2\020diskMigrationJobB\025\n"
+          + "+vmmigration.googleapis.com/DiskMigrationJob\022_projects/{project}"
+          + "/locations/{location}/sources/{source}/d"
+          + "iskMigrationJobs/{disk_migration_job}*\021diskMigrationJobs2\020diskMigrationJobB\025\n"
           + "\023source_disk_details\"\225\003\n"
           + "\035DiskMigrationJobTargetDetails\022J\n"
-          + "\013target_disk\030\010 \001(\0132..google.c"
-          + "loud.vmmigration.v1.ComputeEngineDiskB\003\340A\002H\000\022H\n"
+          + "\013target_disk\030\010 \001(\0132..googl"
+          + "e.cloud.vmmigration.v1.ComputeEngineDiskB\003\340A\002H\000\022H\n"
           + "\016target_project\030\002 \001(\tB0\340A\002\372A*\n"
           + "(vmmigration.googleapis.com/TargetProject\022[\n"
-          + "\006labels\030\006 \003(\0132F.google.cloud.vmmigratio"
-          + "n.v1.DiskMigrationJobTargetDetails.LabelsEntryB\003\340A\001\022@\n\n"
-          + "encryption\030\007"
-          + " \001(\0132\'.google.cloud.vmmigration.v1.EncryptionB\003\340A\001\032-\n"
+          + "\006labels\030\006 \003(\0132F.google.cloud.vmmigra"
+          + "tion.v1.DiskMigrationJobTargetDetails.LabelsEntryB\003\340A\001\022@\n\n"
+          + "encryption\030\007 \001(\0132\'.goo"
+          + "gle.cloud.vmmigration.v1.EncryptionB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001B\020\n"
           + "\016target_storage\"\252\003\n"
           + "\021DiskMigrationStep\022d\n"
-          + "\035creating_source_disk_snapshot\030\003 "
-          + "\001(\0132;.google.cloud.vmmigration.v1.CreatingSourceDiskSnapshotStepH\000\022b\n"
-          + "\034copying_source_disk_snapshot\030\004 \001(\0132:.google.cloud."
-          + "vmmigration.v1.CopyingSourceDiskSnapshotStepH\000\022[\n"
-          + "\030provisioning_target_disk\030\005 \001(\013"
-          + "27.google.cloud.vmmigration.v1.ProvisioningTargetDiskStepH\000\0223\n\n"
+          + "\035creating_source_disk_snapshot\030\003"
+          + " \001(\0132;.google.cloud.vmmigration.v1.CreatingSourceDiskSnapshotStepH\000\022b\n"
+          + "\034copying_source_disk_snapshot\030\004 \001(\0132:.google.clo"
+          + "ud.vmmigration.v1.CopyingSourceDiskSnapshotStepH\000\022[\n"
+          + "\030provisioning_target_disk\030\005 "
+          + "\001(\01327.google.cloud.vmmigration.v1.ProvisioningTargetDiskStepH\000\0223\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\006\n"
           + "\004step\" \n"
@@ -2282,10 +2300,10 @@ public final class VmMigrationProto {
           + "\024AwsSourceDiskDetails\022\026\n"
           + "\tvolume_id\030\001 \001(\tB\003\340A\002\022\025\n"
           + "\010size_gib\030\002 \001(\003B\003\340A\003\022Q\n"
-          + "\tdisk_type\030\003 \001"
-          + "(\01626.google.cloud.vmmigration.v1.AwsSourceDiskDetails.TypeB\006\340A\001\340A\003\022Q\n"
-          + "\004tags\030\004 \003(\013"
-          + "2;.google.cloud.vmmigration.v1.AwsSourceDiskDetails.TagsEntryB\006\340A\001\340A\003\032+\n"
+          + "\tdisk_type\030\003"
+          + " \001(\01626.google.cloud.vmmigration.v1.AwsSourceDiskDetails.TypeB\006\340A\001\340A\003\022Q\n"
+          + "\004tags\030\004 "
+          + "\003(\0132;.google.cloud.vmmigration.v1.AwsSourceDiskDetails.TagsEntryB\006\340A\001\340A\003\032+\n"
           + "\tTagsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"`\n"
@@ -2299,22 +2317,22 @@ public final class VmMigrationProto {
           + "\003SC1\020\006\022\014\n"
           + "\010STANDARD\020\007\"\371\001\n"
           + "\035CreateDiskMigrationJobRequest\022C\n"
-          + "\006parent\030\001 \001("
-          + "\tB3\340A\002\372A-\022+vmmigration.googleapis.com/DiskMigrationJob\022\"\n"
+          + "\006parent\030\001 \001(\tB3\340A\002\372A-\022+vmmig"
+          + "ration.googleapis.com/DiskMigrationJob\022\"\n"
           + "\025disk_migration_job_id\030\002 \001(\tB\003\340A\002\022N\n"
           + "\022disk_migration_job\030\003"
           + " \001(\0132-.google.cloud.vmmigration.v1.DiskMigrationJobB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\300\001\n"
           + "\034ListDiskMigrationJobsRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002\372A"
-          + "-\022+vmmigration.googleapis.com/DiskMigrationJob\022\026\n"
+          + "\006parent\030\001 \001(\tB3\340A"
+          + "\002\372A-\022+vmmigration.googleapis.com/DiskMigrationJob\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\321\001\n"
           + "\035ListDiskMigrationJobsResponse\022O\n"
-          + "\023disk_migration_jobs\030\001 \003"
-          + "(\0132-.google.cloud.vmmigration.v1.DiskMigrationJobB\003\340A\003\022\037\n"
+          + "\023disk_migration_jobs\030\001"
+          + " \003(\0132-.google.cloud.vmmigration.v1.DiskMigrationJobB\003\340A\003\022\037\n"
           + "\017next_page_token\030\002 \001(\tB\006\340A\003\340A\001\022>\n"
           + "\013unreachable\030\003 \003(\tB)\340A\003\372A#\n"
           + "!locations.googleapis.com/Location\"_\n"
@@ -2377,370 +2395,372 @@ public final class VmMigrationProto {
           + "\025NETWORK_TIER_STANDARD\020\001\022\030\n"
           + "\024NETWORK_TIER_PREMIUM\020\0022\353p\n"
           + "\013VmMigration\022\256\001\n"
-          + "\013ListSources\022/.google.cloud.vmmigration.v1.Li"
-          + "stSourcesRequest\0320.google.cloud.vmmigrat"
-          + "ion.v1.ListSourcesResponse\"<\332A\006parent\202\323\344"
-          + "\223\002-\022+/v1/{parent=projects/*/locations/*}/sources\022\233\001\n"
-          + "\tGetSource\022-.google.cloud.vmmigration.v1.GetSourceRequest\032#.google.c"
-          + "loud.vmmigration.v1.Source\":\332A\004name\202\323\344\223\002"
-          + "-\022+/v1/{name=projects/*/locations/*/sources/*}\022\324\001\n"
-          + "\014CreateSource\0220.google.cloud.v"
-          + "mmigration.v1.CreateSourceRequest\032\035.google.longrunning.Operation\"s\312A\033\n"
-          + "\006Source\022\021OperationMetadata\332A\027parent,source,source_"
-          + "id\202\323\344\223\0025\"+/v1/{parent=projects/*/locations/*}/sources:\006source\022\326\001\n"
-          + "\014UpdateSource\0220.google.cloud.vmmigration.v1.UpdateSourc"
-          + "eRequest\032\035.google.longrunning.Operation\"u\312A\033\n"
-          + "\006Source\022\021OperationMetadata\332A\022source"
-          + ",update_mask\202\323\344\223\002<22/v1/{source.name=pro"
-          + "jects/*/locations/*/sources/*}:\006source\022\310\001\n"
-          + "\014DeleteSource\0220.google.cloud.vmmigrati"
-          + "on.v1.DeleteSourceRequest\032\035.google.longrunning.Operation\"g\312A*\n"
-          + "\025google.protobuf.E"
-          + "mpty\022\021OperationMetadata\332A\004name\202\323\344\223\002-*+/v"
-          + "1/{name=projects/*/locations/*/sources/*}\022\310\001\n"
-          + "\016FetchInventory\0222.google.cloud.vmmigration.v1.FetchInventoryRequest\0323.googl"
-          + "e.cloud.vmmigration.v1.FetchInventoryRes"
-          + "ponse\"M\332A\006source\202\323\344\223\002>\022</v1/{source=proj"
-          + "ects/*/locations/*/sources/*}:fetchInventory\022\351\001\n"
-          + "\025FetchStorageInventory\0229.google.cloud.vmmigration.v1.FetchStorageInvento"
-          + "ryRequest\032:.google.cloud.vmmigration.v1."
-          + "FetchStorageInventoryResponse\"Y\332A\013source"
-          + ",type\202\323\344\223\002E\022C/v1/{source=projects/*/loca"
-          + "tions/*/sources/*}:fetchStorageInventory\022\344\001\n"
-          + "\026ListUtilizationReports\022:.google.cloud.vmmigration.v1.ListUtilizationReports"
-          + "Request\032;.google.cloud.vmmigration.v1.Li"
-          + "stUtilizationReportsResponse\"Q\332A\006parent\202"
-          + "\323\344\223\002B\022@/v1/{parent=projects/*/locations/*/sources/*}/utilizationReports\022\321\001\n"
-          + "\024GetUtilizationReport\0228.google.cloud.vmmigrat"
-          + "ion.v1.GetUtilizationReportRequest\032..google.cloud.vmmigration.v1.UtilizationRepo"
-          + "rt\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=projects/*/"
-          + "locations/*/sources/*/utilizationReports/*}\022\257\002\n"
-          + "\027CreateUtilizationReport\022;.google.cloud.vmmigration.v1.CreateUtilizationR"
-          + "eportRequest\032\035.google.longrunning.Operation\"\267\001\312A&\n"
-          + "\021UtilizationReport\022\021OperationMetadata\332A/parent,utilization_report,util"
-          + "ization_report_id\202\323\344\223\002V\"@/v1/{parent=pro"
-          + "jects/*/locations/*/sources/*}/utilizati",
-      "onReports:\022utilization_report\022\363\001\n\027Delete"
-          + "UtilizationReport\022;.google.cloud.vmmigra"
-          + "tion.v1.DeleteUtilizationReportRequest\032\035"
-          + ".google.longrunning.Operation\"|\312A*\n\025goog"
-          + "le.protobuf.Empty\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002B*@/v1/{name=projects/*/location"
-          + "s/*/sources/*/utilizationReports/*}\022\354\001\n\030"
-          + "ListDatacenterConnectors\022<.google.cloud."
-          + "vmmigration.v1.ListDatacenterConnectorsR"
-          + "equest\032=.google.cloud.vmmigration.v1.Lis"
-          + "tDatacenterConnectorsResponse\"S\332A\006parent"
-          + "\202\323\344\223\002D\022B/v1/{parent=projects/*/locations"
-          + "/*/sources/*}/datacenterConnectors\022\331\001\n\026G"
-          + "etDatacenterConnector\022:.google.cloud.vmm"
-          + "igration.v1.GetDatacenterConnectorReques"
-          + "t\0320.google.cloud.vmmigration.v1.Datacent"
-          + "erConnector\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=pr"
-          + "ojects/*/locations/*/sources/*/datacente"
-          + "rConnectors/*}\022\275\002\n\031CreateDatacenterConne"
-          + "ctor\022=.google.cloud.vmmigration.v1.Creat"
-          + "eDatacenterConnectorRequest\032\035.google.lon"
-          + "grunning.Operation\"\301\001\312A(\n\023DatacenterConn"
-          + "ector\022\021OperationMetadata\332A3parent,datace"
-          + "nter_connector,datacenter_connector_id\202\323"
-          + "\344\223\002Z\"B/v1/{parent=projects/*/locations/*"
-          + "/sources/*}/datacenterConnectors:\024datace"
-          + "nter_connector\022\371\001\n\031DeleteDatacenterConne"
-          + "ctor\022=.google.cloud.vmmigration.v1.Delet"
-          + "eDatacenterConnectorRequest\032\035.google.lon"
-          + "grunning.Operation\"~\312A*\n\025google.protobuf"
-          + ".Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002D*B"
-          + "/v1/{name=projects/*/locations/*/sources"
-          + "/*/datacenterConnectors/*}\022\210\002\n\020UpgradeAp"
-          + "pliance\0224.google.cloud.vmmigration.v1.Up"
-          + "gradeApplianceRequest\032\035.google.longrunni"
-          + "ng.Operation\"\236\001\312A-\n\030UpgradeApplianceResp"
-          + "onse\022\021OperationMetadata\202\323\344\223\002h\"c/v1/{data"
-          + "center_connector=projects/*/locations/*/"
-          + "sources/*/datacenterConnectors/*}:upgrad"
-          + "eAppliance:\001*\022\205\002\n\021CreateMigratingVm\0225.go"
-          + "ogle.cloud.vmmigration.v1.CreateMigratin"
-          + "gVmRequest\032\035.google.longrunning.Operatio"
-          + "n\"\231\001\312A \n\013MigratingVm\022\021OperationMetadata\332"
-          + "A#parent,migrating_vm,migrating_vm_id\202\323\344"
-          + "\223\002J\":/v1/{parent=projects/*/locations/*/"
-          + "sources/*}/migratingVms:\014migrating_vm\022\314\001"
-          + "\n\020ListMigratingVms\0224.google.cloud.vmmigr"
-          + "ation.v1.ListMigratingVmsRequest\0325.googl"
-          + "e.cloud.vmmigration.v1.ListMigratingVmsR"
-          + "esponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{parent=pr"
-          + "ojects/*/locations/*/sources/*}/migratin"
-          + "gVms\022\271\001\n\016GetMigratingVm\0222.google.cloud.v"
-          + "mmigration.v1.GetMigratingVmRequest\032(.go"
-          + "ogle.cloud.vmmigration.v1.MigratingVm\"I\332"
-          + "A\004name\202\323\344\223\002<\022:/v1/{name=projects/*/locat"
-          + "ions/*/sources/*/migratingVms/*}\022\207\002\n\021Upd"
-          + "ateMigratingVm\0225.google.cloud.vmmigratio"
-          + "n.v1.UpdateMigratingVmRequest\032\035.google.l"
-          + "ongrunning.Operation\"\233\001\312A \n\013MigratingVm\022"
-          + "\021OperationMetadata\332A\030migrating_vm,update"
-          + "_mask\202\323\344\223\002W2G/v1/{migrating_vm.name=proj"
-          + "ects/*/locations/*/sources/*/migratingVm"
-          + "s/*}:\014migrating_vm\022\341\001\n\021DeleteMigratingVm"
-          + "\0225.google.cloud.vmmigration.v1.DeleteMig"
-          + "ratingVmRequest\032\035.google.longrunning.Ope"
-          + "ration\"v\312A*\n\025google.protobuf.Empty\022\021Oper"
-          + "ationMetadata\332A\004name\202\323\344\223\002<*:/v1/{name=pr"
+          + "\013ListSources\022/.google.cloud.vmmigration.v1"
+          + ".ListSourcesRequest\0320.google.cloud.vmmig"
+          + "ration.v1.ListSourcesResponse\"<\332A\006parent"
+          + "\202\323\344\223\002-\022+/v1/{parent=projects/*/locations/*}/sources\022\233\001\n"
+          + "\tGetSource\022-.google.cloud.vmmigration.v1.GetSourceRequest\032#.googl"
+          + "e.cloud.vmmigration.v1.Source\":\332A\004name\202\323"
+          + "\344\223\002-\022+/v1/{name=projects/*/locations/*/sources/*}\022\324\001\n"
+          + "\014CreateSource\0220.google.clou"
+          + "d.vmmigration.v1.CreateSourceRequest\032\035.google.longrunning.Operation\"s\312A\033\n"
+          + "\006Source\022\021OperationMetadata\332A\027parent,source,sour"
+          + "ce_id\202\323\344\223\0025\"+/v1/{parent=projects/*/locations/*}/sources:\006source\022\326\001\n"
+          + "\014UpdateSource\0220.google.cloud.vmmigration.v1.UpdateSo"
+          + "urceRequest\032\035.google.longrunning.Operation\"u\312A\033\n"
+          + "\006Source\022\021OperationMetadata\332A\022sou"
+          + "rce,update_mask\202\323\344\223\002<22/v1/{source.name="
+          + "projects/*/locations/*/sources/*}:\006source\022\310\001\n"
+          + "\014DeleteSource\0220.google.cloud.vmmigr"
+          + "ation.v1.DeleteSourceRequest\032\035.google.longrunning.Operation\"g\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002-*"
+          + "+/v1/{name=projects/*/locations/*/sources/*}\022\310\001\n"
+          + "\016FetchInventory\0222.google.cloud.vmmigration.v1.FetchInventoryRequest\0323.go"
+          + "ogle.cloud.vmmigration.v1.FetchInventory"
+          + "Response\"M\332A\006source\202\323\344\223\002>\022</v1/{source=p"
+          + "rojects/*/locations/*/sources/*}:fetchInventory\022\351\001\n"
+          + "\025FetchStorageInventory\0229.google.cloud.vmmigration.v1.FetchStorageInve"
+          + "ntoryRequest\032:.google.cloud.vmmigration."
+          + "v1.FetchStorageInventoryResponse\"Y\332A\013sou"
+          + "rce,type\202\323\344\223\002E\022C/v1/{source=projects/*/l"
+          + "ocations/*/sources/*}:fetchStorageInventory\022\344\001\n"
+          + "\026ListUtilizationReports\022:.google.cloud.vmmigration.v1.ListUtilizationRepo"
+          + "rtsRequest\032;.google.cloud.vmmigration.v1"
+          + ".ListUtilizationReportsResponse\"Q\332A\006pare"
+          + "nt\202\323\344\223\002B\022@/v1/{parent=projects/*/locations/*/sources/*}/utilizationReports\022\321\001\n"
+          + "\024GetUtilizationReport\0228.google.cloud.vmmig"
+          + "ration.v1.GetUtilizationReportRequest\032..",
+      "google.cloud.vmmigration.v1.UtilizationR"
+          + "eport\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=projects"
+          + "/*/locations/*/sources/*/utilizationRepo"
+          + "rts/*}\022\257\002\n\027CreateUtilizationReport\022;.goo"
+          + "gle.cloud.vmmigration.v1.CreateUtilizati"
+          + "onReportRequest\032\035.google.longrunning.Ope"
+          + "ration\"\267\001\312A&\n\021UtilizationReport\022\021Operati"
+          + "onMetadata\332A/parent,utilization_report,u"
+          + "tilization_report_id\202\323\344\223\002V\"@/v1/{parent="
+          + "projects/*/locations/*/sources/*}/utiliz"
+          + "ationReports:\022utilization_report\022\363\001\n\027Del"
+          + "eteUtilizationReport\022;.google.cloud.vmmi"
+          + "gration.v1.DeleteUtilizationReportReques"
+          + "t\032\035.google.longrunning.Operation\"|\312A*\n\025g"
+          + "oogle.protobuf.Empty\022\021OperationMetadata\332"
+          + "A\004name\202\323\344\223\002B*@/v1/{name=projects/*/locat"
+          + "ions/*/sources/*/utilizationReports/*}\022\354"
+          + "\001\n\030ListDatacenterConnectors\022<.google.clo"
+          + "ud.vmmigration.v1.ListDatacenterConnecto"
+          + "rsRequest\032=.google.cloud.vmmigration.v1."
+          + "ListDatacenterConnectorsResponse\"S\332A\006par"
+          + "ent\202\323\344\223\002D\022B/v1/{parent=projects/*/locati"
+          + "ons/*/sources/*}/datacenterConnectors\022\331\001"
+          + "\n\026GetDatacenterConnector\022:.google.cloud."
+          + "vmmigration.v1.GetDatacenterConnectorReq"
+          + "uest\0320.google.cloud.vmmigration.v1.Datac"
+          + "enterConnector\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name"
+          + "=projects/*/locations/*/sources/*/datace"
+          + "nterConnectors/*}\022\275\002\n\031CreateDatacenterCo"
+          + "nnector\022=.google.cloud.vmmigration.v1.Cr"
+          + "eateDatacenterConnectorRequest\032\035.google."
+          + "longrunning.Operation\"\301\001\312A(\n\023DatacenterC"
+          + "onnector\022\021OperationMetadata\332A3parent,dat"
+          + "acenter_connector,datacenter_connector_i"
+          + "d\202\323\344\223\002Z\"B/v1/{parent=projects/*/location"
+          + "s/*/sources/*}/datacenterConnectors:\024dat"
+          + "acenter_connector\022\371\001\n\031DeleteDatacenterCo"
+          + "nnector\022=.google.cloud.vmmigration.v1.De"
+          + "leteDatacenterConnectorRequest\032\035.google."
+          + "longrunning.Operation\"~\312A*\n\025google.proto"
+          + "buf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
+          + "D*B/v1/{name=projects/*/locations/*/sour"
+          + "ces/*/datacenterConnectors/*}\022\210\002\n\020Upgrad"
+          + "eAppliance\0224.google.cloud.vmmigration.v1"
+          + ".UpgradeApplianceRequest\032\035.google.longru"
+          + "nning.Operation\"\236\001\312A-\n\030UpgradeApplianceR"
+          + "esponse\022\021OperationMetadata\202\323\344\223\002h\"c/v1/{d"
+          + "atacenter_connector=projects/*/locations"
+          + "/*/sources/*/datacenterConnectors/*}:upg"
+          + "radeAppliance:\001*\022\205\002\n\021CreateMigratingVm\0225"
+          + ".google.cloud.vmmigration.v1.CreateMigra"
+          + "tingVmRequest\032\035.google.longrunning.Opera"
+          + "tion\"\231\001\312A \n\013MigratingVm\022\021OperationMetada"
+          + "ta\332A#parent,migrating_vm,migrating_vm_id"
+          + "\202\323\344\223\002J\":/v1/{parent=projects/*/locations"
+          + "/*/sources/*}/migratingVms:\014migrating_vm"
+          + "\022\314\001\n\020ListMigratingVms\0224.google.cloud.vmm"
+          + "igration.v1.ListMigratingVmsRequest\0325.go"
+          + "ogle.cloud.vmmigration.v1.ListMigratingV"
+          + "msResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{parent"
+          + "=projects/*/locations/*/sources/*}/migra"
+          + "tingVms\022\271\001\n\016GetMigratingVm\0222.google.clou"
+          + "d.vmmigration.v1.GetMigratingVmRequest\032("
+          + ".google.cloud.vmmigration.v1.MigratingVm"
+          + "\"I\332A\004name\202\323\344\223\002<\022:/v1/{name=projects/*/lo"
+          + "cations/*/sources/*/migratingVms/*}\022\207\002\n\021"
+          + "UpdateMigratingVm\0225.google.cloud.vmmigra"
+          + "tion.v1.UpdateMigratingVmRequest\032\035.googl"
+          + "e.longrunning.Operation\"\233\001\312A \n\013Migrating"
+          + "Vm\022\021OperationMetadata\332A\030migrating_vm,upd"
+          + "ate_mask\202\323\344\223\002W2G/v1/{migrating_vm.name=p"
+          + "rojects/*/locations/*/sources/*/migratin"
+          + "gVms/*}:\014migrating_vm\022\341\001\n\021DeleteMigratin"
+          + "gVm\0225.google.cloud.vmmigration.v1.Delete"
+          + "MigratingVmRequest\032\035.google.longrunning."
+          + "Operation\"v\312A*\n\025google.protobuf.Empty\022\021O"
+          + "perationMetadata\332A\004name\202\323\344\223\002<*:/v1/{name"
+          + "=projects/*/locations/*/sources/*/migrat"
+          + "ingVms/*}\022\377\001\n\016StartMigration\0222.google.cl"
+          + "oud.vmmigration.v1.StartMigrationRequest"
+          + "\032\035.google.longrunning.Operation\"\231\001\312A+\n\026S"
+          + "tartMigrationResponse\022\021OperationMetadata"
+          + "\332A\014migrating_vm\202\323\344\223\002V\"Q/v1/{migrating_vm"
+          + "=projects/*/locations/*/sources/*/migrat"
+          + "ingVms/*}:startMigration:\001*\022\364\001\n\017ResumeMi"
+          + "gration\0223.google.cloud.vmmigration.v1.Re"
+          + "sumeMigrationRequest\032\035.google.longrunnin"
+          + "g.Operation\"\214\001\312A,\n\027ResumeMigrationRespon"
+          + "se\022\021OperationMetadata\202\323\344\223\002W\"R/v1/{migrat"
+          + "ing_vm=projects/*/locations/*/sources/*/"
+          + "migratingVms/*}:resumeMigration:\001*\022\360\001\n\016P"
+          + "auseMigration\0222.google.cloud.vmmigration"
+          + ".v1.PauseMigrationRequest\032\035.google.longr"
+          + "unning.Operation\"\212\001\312A+\n\026PauseMigrationRe"
+          + "sponse\022\021OperationMetadata\202\323\344\223\002V\"Q/v1/{mi"
+          + "grating_vm=projects/*/locations/*/source"
+          + "s/*/migratingVms/*}:pauseMigration:\001*\022\213\002"
+          + "\n\021FinalizeMigration\0225.google.cloud.vmmig"
+          + "ration.v1.FinalizeMigrationRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\237\001\312A.\n\031Finaliz"
+          + "eMigrationResponse\022\021OperationMetadata\332A\014"
+          + "migrating_vm\202\323\344\223\002Y\"T/v1/{migrating_vm=pr"
           + "ojects/*/locations/*/sources/*/migrating"
-          + "Vms/*}\022\377\001\n\016StartMigration\0222.google.cloud"
-          + ".vmmigration.v1.StartMigrationRequest\032\035."
-          + "google.longrunning.Operation\"\231\001\312A+\n\026Star"
-          + "tMigrationResponse\022\021OperationMetadata\332A\014"
-          + "migrating_vm\202\323\344\223\002V\"Q/v1/{migrating_vm=pr"
-          + "ojects/*/locations/*/sources/*/migrating"
-          + "Vms/*}:startMigration:\001*\022\364\001\n\017ResumeMigra"
-          + "tion\0223.google.cloud.vmmigration.v1.Resum"
-          + "eMigrationRequest\032\035.google.longrunning.O"
-          + "peration\"\214\001\312A,\n\027ResumeMigrationResponse\022"
-          + "\021OperationMetadata\202\323\344\223\002W\"R/v1/{migrating"
-          + "_vm=projects/*/locations/*/sources/*/mig"
-          + "ratingVms/*}:resumeMigration:\001*\022\360\001\n\016Paus"
-          + "eMigration\0222.google.cloud.vmmigration.v1"
-          + ".PauseMigrationRequest\032\035.google.longrunn"
-          + "ing.Operation\"\212\001\312A+\n\026PauseMigrationRespo"
-          + "nse\022\021OperationMetadata\202\323\344\223\002V\"Q/v1/{migra"
-          + "ting_vm=projects/*/locations/*/sources/*"
-          + "/migratingVms/*}:pauseMigration:\001*\022\213\002\n\021F"
-          + "inalizeMigration\0225.google.cloud.vmmigrat"
-          + "ion.v1.FinalizeMigrationRequest\032\035.google"
-          + ".longrunning.Operation\"\237\001\312A.\n\031FinalizeMi"
-          + "grationResponse\022\021OperationMetadata\332A\014mig"
-          + "rating_vm\202\323\344\223\002Y\"T/v1/{migrating_vm=proje"
-          + "cts/*/locations/*/sources/*/migratingVms"
-          + "/*}:finalizeMigration:\001*\022\364\001\n\017ExtendMigra"
-          + "tion\0223.google.cloud.vmmigration.v1.Exten"
-          + "dMigrationRequest\032\035.google.longrunning.O"
-          + "peration\"\214\001\312A,\n\027ExtendMigrationResponse\022"
-          + "\021OperationMetadata\202\323\344\223\002W\"R/v1/{migrating"
-          + "_vm=projects/*/locations/*/sources/*/mig"
-          + "ratingVms/*}:extendMigration:\001*\022\377\001\n\016Crea"
-          + "teCloneJob\0222.google.cloud.vmmigration.v1"
-          + ".CreateCloneJobRequest\032\035.google.longrunn"
-          + "ing.Operation\"\231\001\312A\035\n\010CloneJob\022\021Operation"
-          + "Metadata\332A\035parent,clone_job,clone_job_id"
-          + "\202\323\344\223\002S\"F/v1/{parent=projects/*/locations"
-          + "/*/sources/*/migratingVms/*}/cloneJobs:\t"
-          + "clone_job\022\363\001\n\016CancelCloneJob\0222.google.cl"
-          + "oud.vmmigration.v1.CancelCloneJobRequest"
-          + "\032\035.google.longrunning.Operation\"\215\001\312A+\n\026C"
-          + "ancelCloneJobResponse\022\021OperationMetadata"
-          + "\332A\004name\202\323\344\223\002R\"M/v1/{name=projects/*/loca"
-          + "tions/*/sources/*/migratingVms/*/cloneJo"
-          + "bs/*}:cancel:\001*\022\317\001\n\rListCloneJobs\0221.goog"
-          + "le.cloud.vmmigration.v1.ListCloneJobsReq"
-          + "uest\0322.google.cloud.vmmigration.v1.ListC"
-          + "loneJobsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v1/{"
-          + "parent=projects/*/locations/*/sources/*/"
-          + "migratingVms/*}/cloneJobs\022\274\001\n\013GetCloneJo"
-          + "b\022/.google.cloud.vmmigration.v1.GetClone"
-          + "JobRequest\032%.google.cloud.vmmigration.v1"
-          + ".CloneJob\"U\332A\004name\202\323\344\223\002H\022F/v1/{name=proj"
-          + "ects/*/locations/*/sources/*/migratingVm"
-          + "s/*/cloneJobs/*}\022\215\002\n\020CreateCutoverJob\0224."
-          + "google.cloud.vmmigration.v1.CreateCutove"
-          + "rJobRequest\032\035.google.longrunning.Operati"
-          + "on\"\243\001\312A\037\n\nCutoverJob\022\021OperationMetadata\332"
-          + "A!parent,cutover_job,cutover_job_id\202\323\344\223\002"
-          + "W\"H/v1/{parent=projects/*/locations/*/so"
-          + "urces/*/migratingVms/*}/cutoverJobs:\013cut"
-          + "over_job\022\373\001\n\020CancelCutoverJob\0224.google.c"
-          + "loud.vmmigration.v1.CancelCutoverJobRequ"
-          + "est\032\035.google.longrunning.Operation\"\221\001\312A-"
-          + "\n\030CancelCutoverJobResponse\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\002T\"O/v1/{name=projects/*"
-          + "/locations/*/sources/*/migratingVms/*/cu"
-          + "toverJobs/*}:cancel:\001*\022\327\001\n\017ListCutoverJo"
-          + "bs\0223.google.cloud.vmmigration.v1.ListCut"
-          + "overJobsRequest\0324.google.cloud.vmmigrati"
-          + "on.v1.ListCutoverJobsResponse\"Y\332A\006parent"
-          + "\202\323\344\223\002J\022H/v1/{parent=projects/*/locations"
-          + "/*/sources/*/migratingVms/*}/cutoverJobs"
-          + "\022\304\001\n\rGetCutoverJob\0221.google.cloud.vmmigr"
-          + "ation.v1.GetCutoverJobRequest\032\'.google.c"
-          + "loud.vmmigration.v1.CutoverJob\"W\332A\004name\202"
-          + "\323\344\223\002J\022H/v1/{name=projects/*/locations/*/"
-          + "sources/*/migratingVms/*/cutoverJobs/*}\022"
-          + "\252\001\n\nListGroups\022..google.cloud.vmmigratio"
-          + "n.v1.ListGroupsRequest\032/.google.cloud.vm"
-          + "migration.v1.ListGroupsResponse\";\332A\006pare"
-          + "nt\202\323\344\223\002,\022*/v1/{parent=projects/*/locatio"
-          + "ns/*}/groups\022\227\001\n\010GetGroup\022,.google.cloud"
-          + ".vmmigration.v1.GetGroupRequest\032\".google"
-          + ".cloud.vmmigration.v1.Group\"9\332A\004name\202\323\344\223"
-          + "\002,\022*/v1/{name=projects/*/locations/*/gro"
-          + "ups/*}\022\315\001\n\013CreateGroup\022/.google.cloud.vm"
-          + "migration.v1.CreateGroupRequest\032\035.google"
-          + ".longrunning.Operation\"n\312A\032\n\005Group\022\021Oper"
-          + "ationMetadata\332A\025parent,group,group_id\202\323\344"
-          + "\223\0023\"*/v1/{parent=projects/*/locations/*}"
-          + "/groups:\005group\022\317\001\n\013UpdateGroup\022/.google."
-          + "cloud.vmmigration.v1.UpdateGroupRequest\032"
-          + "\035.google.longrunning.Operation\"p\312A\032\n\005Gro"
-          + "up\022\021OperationMetadata\332A\021group,update_mas"
-          + "k\202\323\344\223\002920/v1/{group.name=projects/*/loca"
-          + "tions/*/groups/*}:\005group\022\305\001\n\013DeleteGroup"
-          + "\022/.google.cloud.vmmigration.v1.DeleteGro"
-          + "upRequest\032\035.google.longrunning.Operation"
-          + "\"f\312A*\n\025google.protobuf.Empty\022\021OperationM"
-          + "etadata\332A\004name\202\323\344\223\002,**/v1/{name=projects"
-          + "/*/locations/*/groups/*}\022\355\001\n\021AddGroupMig"
-          + "ration\0225.google.cloud.vmmigration.v1.Add"
-          + "GroupMigrationRequest\032\035.google.longrunni"
-          + "ng.Operation\"\201\001\312A.\n\031AddGroupMigrationRes"
-          + "ponse\022\021OperationMetadata\332A\005group\202\323\344\223\002B\"="
-          + "/v1/{group=projects/*/locations/*/groups"
-          + "/*}:addGroupMigration:\001*\022\371\001\n\024RemoveGroup"
-          + "Migration\0228.google.cloud.vmmigration.v1."
-          + "RemoveGroupMigrationRequest\032\035.google.lon"
-          + "grunning.Operation\"\207\001\312A1\n\034RemoveGroupMig"
-          + "rationResponse\022\021OperationMetadata\332A\005grou"
-          + "p\202\323\344\223\002E\"@/v1/{group=projects/*/locations"
-          + "/*/groups/*}:removeGroupMigration:\001*\022\312\001\n"
-          + "\022ListTargetProjects\0226.google.cloud.vmmig"
-          + "ration.v1.ListTargetProjectsRequest\0327.go"
-          + "ogle.cloud.vmmigration.v1.ListTargetProj"
-          + "ectsResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{pare"
-          + "nt=projects/*/locations/*}/targetProject"
-          + "s\022\267\001\n\020GetTargetProject\0224.google.cloud.vm"
-          + "migration.v1.GetTargetProjectRequest\032*.g"
-          + "oogle.cloud.vmmigration.v1.TargetProject"
-          + "\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*/lo"
-          + "cations/*/targetProjects/*}\022\211\002\n\023CreateTa"
-          + "rgetProject\0227.google.cloud.vmmigration.v"
-          + "1.CreateTargetProjectRequest\032\035.google.lo"
-          + "ngrunning.Operation\"\231\001\312A\"\n\rTargetProject"
-          + "\022\021OperationMetadata\332A\'parent,target_proj"
-          + "ect,target_project_id\202\323\344\223\002D\"2/v1/{parent"
-          + "=projects/*/locations/*}/targetProjects:"
-          + "\016target_project\022\213\002\n\023UpdateTargetProject\022"
-          + "7.google.cloud.vmmigration.v1.UpdateTarg"
-          + "etProjectRequest\032\035.google.longrunning.Op"
-          + "eration\"\233\001\312A\"\n\rTargetProject\022\021OperationM"
-          + "etadata\332A\032target_project,update_mask\202\323\344\223"
-          + "\002S2A/v1/{target_project.name=projects/*/"
-          + "locations/*/targetProjects/*}:\016target_pr"
-          + "oject\022\335\001\n\023DeleteTargetProject\0227.google.c"
-          + "loud.vmmigration.v1.DeleteTargetProjectR"
-          + "equest\032\035.google.longrunning.Operation\"n\312"
-          + "A*\n\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\0024*2/v1/{name=projects/*/"
-          + "locations/*/targetProjects/*}\022\357\001\n\025ListRe"
-          + "plicationCycles\0229.google.cloud.vmmigrati"
-          + "on.v1.ListReplicationCyclesRequest\032:.goo"
-          + "gle.cloud.vmmigration.v1.ListReplication"
-          + "CyclesResponse\"_\332A\006parent\202\323\344\223\002P\022N/v1/{pa"
-          + "rent=projects/*/locations/*/sources/*/mi"
-          + "gratingVms/*}/replicationCycles\022\334\001\n\023GetR"
-          + "eplicationCycle\0227.google.cloud.vmmigrati"
-          + "on.v1.GetReplicationCycleRequest\032-.googl"
-          + "e.cloud.vmmigration.v1.ReplicationCycle\""
-          + "]\332A\004name\202\323\344\223\002P\022N/v1/{name=projects/*/loc"
-          + "ations/*/sources/*/migratingVms/*/replic"
-          + "ationCycles/*}\022\302\001\n\020ListImageImports\0224.go"
-          + "ogle.cloud.vmmigration.v1.ListImageImpor"
-          + "tsRequest\0325.google.cloud.vmmigration.v1."
-          + "ListImageImportsResponse\"A\332A\006parent\202\323\344\223\002"
-          + "2\0220/v1/{parent=projects/*/locations/*}/i"
-          + "mageImports\022\257\001\n\016GetImageImport\0222.google."
-          + "cloud.vmmigration.v1.GetImageImportReque"
-          + "st\032(.google.cloud.vmmigration.v1.ImageIm"
-          + "port\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/"
-          + "*/locations/*/imageImports/*}\022\373\001\n\021Create"
-          + "ImageImport\0225.google.cloud.vmmigration.v"
-          + "1.CreateImageImportRequest\032\035.google.long"
-          + "running.Operation\"\217\001\312A \n\013ImageImport\022\021Op"
-          + "erationMetadata\332A#parent,image_import,im"
-          + "age_import_id\202\323\344\223\002@\"0/v1/{parent=project"
-          + "s/*/locations/*}/imageImports:\014image_imp"
-          + "ort\022\327\001\n\021DeleteImageImport\0225.google.cloud"
-          + ".vmmigration.v1.DeleteImageImportRequest"
-          + "\032\035.google.longrunning.Operation\"l\312A*\n\025go"
-          + "ogle.protobuf.Empty\022\021OperationMetadata\332A"
-          + "\004name\202\323\344\223\0022*0/v1/{name=projects/*/locati"
-          + "ons/*/imageImports/*}\022\335\001\n\023ListImageImpor"
-          + "tJobs\0227.google.cloud.vmmigration.v1.List"
-          + "ImageImportJobsRequest\0328.google.cloud.vm"
-          + "migration.v1.ListImageImportJobsResponse"
-          + "\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=projects/"
-          + "*/locations/*/imageImports/*}/imageImpor"
-          + "tJobs\022\312\001\n\021GetImageImportJob\0225.google.clo"
-          + "ud.vmmigration.v1.GetImageImportJobReque"
-          + "st\032+.google.cloud.vmmigration.v1.ImageIm"
-          + "portJob\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=projec"
-          + "ts/*/locations/*/imageImports/*/imageImp"
-          + "ortJobs/*}\022\201\002\n\024CancelImageImportJob\0228.go"
-          + "ogle.cloud.vmmigration.v1.CancelImageImp"
-          + "ortJobRequest\032\035.google.longrunning.Opera"
-          + "tion\"\217\001\312A1\n\034CancelImageImportJobResponse"
-          + "\022\021OperationMetadata\332A\004name\202\323\344\223\002N\"I/v1/{n"
-          + "ame=projects/*/locations/*/imageImports/"
-          + "*/imageImportJobs/*}:cancel:\001*\022\253\002\n\026Creat"
-          + "eDiskMigrationJob\022:.google.cloud.vmmigra"
-          + "tion.v1.CreateDiskMigrationJobRequest\032\035."
-          + "google.longrunning.Operation\"\265\001\312A%\n\020Disk"
-          + "MigrationJob\022\021OperationMetadata\332A/parent"
-          + ",disk_migration_job,disk_migration_job_i"
-          + "d\202\323\344\223\002U\"?/v1/{parent=projects/*/location"
-          + "s/*/sources/*}/diskMigrationJobs:\022disk_m"
-          + "igration_job\022\340\001\n\025ListDiskMigrationJobs\0229"
-          + ".google.cloud.vmmigration.v1.ListDiskMig"
-          + "rationJobsRequest\032:.google.cloud.vmmigra"
-          + "tion.v1.ListDiskMigrationJobsResponse\"P\332"
-          + "A\006parent\202\323\344\223\002A\022?/v1/{parent=projects/*/l"
-          + "ocations/*/sources/*}/diskMigrationJobs\022"
-          + "\315\001\n\023GetDiskMigrationJob\0227.google.cloud.v"
-          + "mmigration.v1.GetDiskMigrationJobRequest"
-          + "\032-.google.cloud.vmmigration.v1.DiskMigra"
-          + "tionJob\"N\332A\004name\202\323\344\223\002A\022?/v1/{name=projec"
-          + "ts/*/locations/*/sources/*/diskMigration"
-          + "Jobs/*}\022\255\002\n\026UpdateDiskMigrationJob\022:.goo"
-          + "gle.cloud.vmmigration.v1.UpdateDiskMigra"
-          + "tionJobRequest\032\035.google.longrunning.Oper"
-          + "ation\"\267\001\312A%\n\020DiskMigrationJob\022\021Operation"
-          + "Metadata\332A\036disk_migration_job,update_mas"
-          + "k\202\323\344\223\002h2R/v1/{disk_migration_job.name=pr"
-          + "ojects/*/locations/*/sources/*/diskMigra"
-          + "tionJobs/*}:\022disk_migration_job\022\360\001\n\026Dele"
-          + "teDiskMigrationJob\022:.google.cloud.vmmigr"
-          + "ation.v1.DeleteDiskMigrationJobRequest\032\035"
-          + ".google.longrunning.Operation\"{\312A*\n\025goog"
-          + "le.protobuf.Empty\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002A*?/v1/{name=projects/*/location"
-          + "s/*/sources/*/diskMigrationJobs/*}\022\370\001\n\023R"
-          + "unDiskMigrationJob\0227.google.cloud.vmmigr"
-          + "ation.v1.RunDiskMigrationJobRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\210\001\312A0\n\033RunDis"
-          + "kMigrationJobResponse\022\021OperationMetadata"
-          + "\332A\004name\202\323\344\223\002H\"C/v1/{name=projects/*/loca"
-          + "tions/*/sources/*/diskMigrationJobs/*}:r"
-          + "un:\001*\022\375\001\n\026CancelDiskMigrationJob\022:.googl"
-          + "e.cloud.vmmigration.v1.CancelDiskMigrati"
-          + "onJobRequest\032\035.google.longrunning.Operat"
-          + "ion\"\207\001\312A3\n\036CancelDiskMigrationJobRespons"
-          + "e\022\021OperationMetadata\202\323\344\223\002K\"F/v1/{name=pr"
-          + "ojects/*/locations/*/sources/*/diskMigra"
-          + "tionJobs/*}:cancel:\001*\032N\312A\032vmmigration.go"
-          + "ogleapis.com\322A.https://www.googleapis.co"
-          + "m/auth/cloud-platformB\367\003\n\037com.google.clo"
-          + "ud.vmmigration.v1B\020VmMigrationProtoP\001ZAc"
-          + "loud.google.com/go/vmmigration/apiv1/vmm"
-          + "igrationpb;vmmigrationpb\252\002\033Google.Cloud."
-          + "VMMigration.V1\312\002\033Google\\Cloud\\VMMigratio"
-          + "n\\V1\352\002\036Google::Cloud::VMMigration::V1\352Ax"
-          + "\n!cloudkms.googleapis.com/CryptoKey\022Spro"
-          + "jects/{project}/locations/{location}/key"
-          + "Rings/{key_ring}/cryptoKeys/{crypto_key}"
-          + "\352AY\n!iam.googleapis.com/ServiceAccount\0224"
-          + "projects/{project}/serviceAccounts/{serv"
-          + "ice_account}\352AH\n\034compute.googleapis.com/"
-          + "Image\022(projects/{project}/global/images/"
-          + "{image}b\006proto3"
+          + "Vms/*}:finalizeMigration:\001*\022\364\001\n\017ExtendMi"
+          + "gration\0223.google.cloud.vmmigration.v1.Ex"
+          + "tendMigrationRequest\032\035.google.longrunnin"
+          + "g.Operation\"\214\001\312A,\n\027ExtendMigrationRespon"
+          + "se\022\021OperationMetadata\202\323\344\223\002W\"R/v1/{migrat"
+          + "ing_vm=projects/*/locations/*/sources/*/"
+          + "migratingVms/*}:extendMigration:\001*\022\377\001\n\016C"
+          + "reateCloneJob\0222.google.cloud.vmmigration"
+          + ".v1.CreateCloneJobRequest\032\035.google.longr"
+          + "unning.Operation\"\231\001\312A\035\n\010CloneJob\022\021Operat"
+          + "ionMetadata\332A\035parent,clone_job,clone_job"
+          + "_id\202\323\344\223\002S\"F/v1/{parent=projects/*/locati"
+          + "ons/*/sources/*/migratingVms/*}/cloneJob"
+          + "s:\tclone_job\022\363\001\n\016CancelCloneJob\0222.google"
+          + ".cloud.vmmigration.v1.CancelCloneJobRequ"
+          + "est\032\035.google.longrunning.Operation\"\215\001\312A+"
+          + "\n\026CancelCloneJobResponse\022\021OperationMetad"
+          + "ata\332A\004name\202\323\344\223\002R\"M/v1/{name=projects/*/l"
+          + "ocations/*/sources/*/migratingVms/*/clon"
+          + "eJobs/*}:cancel:\001*\022\317\001\n\rListCloneJobs\0221.g"
+          + "oogle.cloud.vmmigration.v1.ListCloneJobs"
+          + "Request\0322.google.cloud.vmmigration.v1.Li"
+          + "stCloneJobsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v"
+          + "1/{parent=projects/*/locations/*/sources"
+          + "/*/migratingVms/*}/cloneJobs\022\274\001\n\013GetClon"
+          + "eJob\022/.google.cloud.vmmigration.v1.GetCl"
+          + "oneJobRequest\032%.google.cloud.vmmigration"
+          + ".v1.CloneJob\"U\332A\004name\202\323\344\223\002H\022F/v1/{name=p"
+          + "rojects/*/locations/*/sources/*/migratin"
+          + "gVms/*/cloneJobs/*}\022\215\002\n\020CreateCutoverJob"
+          + "\0224.google.cloud.vmmigration.v1.CreateCut"
+          + "overJobRequest\032\035.google.longrunning.Oper"
+          + "ation\"\243\001\312A\037\n\nCutoverJob\022\021OperationMetada"
+          + "ta\332A!parent,cutover_job,cutover_job_id\202\323"
+          + "\344\223\002W\"H/v1/{parent=projects/*/locations/*"
+          + "/sources/*/migratingVms/*}/cutoverJobs:\013"
+          + "cutover_job\022\373\001\n\020CancelCutoverJob\0224.googl"
+          + "e.cloud.vmmigration.v1.CancelCutoverJobR"
+          + "equest\032\035.google.longrunning.Operation\"\221\001"
+          + "\312A-\n\030CancelCutoverJobResponse\022\021Operation"
+          + "Metadata\332A\004name\202\323\344\223\002T\"O/v1/{name=project"
+          + "s/*/locations/*/sources/*/migratingVms/*"
+          + "/cutoverJobs/*}:cancel:\001*\022\327\001\n\017ListCutove"
+          + "rJobs\0223.google.cloud.vmmigration.v1.List"
+          + "CutoverJobsRequest\0324.google.cloud.vmmigr"
+          + "ation.v1.ListCutoverJobsResponse\"Y\332A\006par"
+          + "ent\202\323\344\223\002J\022H/v1/{parent=projects/*/locati"
+          + "ons/*/sources/*/migratingVms/*}/cutoverJ"
+          + "obs\022\304\001\n\rGetCutoverJob\0221.google.cloud.vmm"
+          + "igration.v1.GetCutoverJobRequest\032\'.googl"
+          + "e.cloud.vmmigration.v1.CutoverJob\"W\332A\004na"
+          + "me\202\323\344\223\002J\022H/v1/{name=projects/*/locations"
+          + "/*/sources/*/migratingVms/*/cutoverJobs/"
+          + "*}\022\252\001\n\nListGroups\022..google.cloud.vmmigra"
+          + "tion.v1.ListGroupsRequest\032/.google.cloud"
+          + ".vmmigration.v1.ListGroupsResponse\";\332A\006p"
+          + "arent\202\323\344\223\002,\022*/v1/{parent=projects/*/loca"
+          + "tions/*}/groups\022\227\001\n\010GetGroup\022,.google.cl"
+          + "oud.vmmigration.v1.GetGroupRequest\032\".goo"
+          + "gle.cloud.vmmigration.v1.Group\"9\332A\004name\202"
+          + "\323\344\223\002,\022*/v1/{name=projects/*/locations/*/"
+          + "groups/*}\022\315\001\n\013CreateGroup\022/.google.cloud"
+          + ".vmmigration.v1.CreateGroupRequest\032\035.goo"
+          + "gle.longrunning.Operation\"n\312A\032\n\005Group\022\021O"
+          + "perationMetadata\332A\025parent,group,group_id"
+          + "\202\323\344\223\0023\"*/v1/{parent=projects/*/locations"
+          + "/*}/groups:\005group\022\317\001\n\013UpdateGroup\022/.goog"
+          + "le.cloud.vmmigration.v1.UpdateGroupReque"
+          + "st\032\035.google.longrunning.Operation\"p\312A\032\n\005"
+          + "Group\022\021OperationMetadata\332A\021group,update_"
+          + "mask\202\323\344\223\002920/v1/{group.name=projects/*/l"
+          + "ocations/*/groups/*}:\005group\022\305\001\n\013DeleteGr"
+          + "oup\022/.google.cloud.vmmigration.v1.Delete"
+          + "GroupRequest\032\035.google.longrunning.Operat"
+          + "ion\"f\312A*\n\025google.protobuf.Empty\022\021Operati"
+          + "onMetadata\332A\004name\202\323\344\223\002,**/v1/{name=proje"
+          + "cts/*/locations/*/groups/*}\022\355\001\n\021AddGroup"
+          + "Migration\0225.google.cloud.vmmigration.v1."
+          + "AddGroupMigrationRequest\032\035.google.longru"
+          + "nning.Operation\"\201\001\312A.\n\031AddGroupMigration"
+          + "Response\022\021OperationMetadata\332A\005group\202\323\344\223\002"
+          + "B\"=/v1/{group=projects/*/locations/*/gro"
+          + "ups/*}:addGroupMigration:\001*\022\371\001\n\024RemoveGr"
+          + "oupMigration\0228.google.cloud.vmmigration."
+          + "v1.RemoveGroupMigrationRequest\032\035.google."
+          + "longrunning.Operation\"\207\001\312A1\n\034RemoveGroup"
+          + "MigrationResponse\022\021OperationMetadata\332A\005g"
+          + "roup\202\323\344\223\002E\"@/v1/{group=projects/*/locati"
+          + "ons/*/groups/*}:removeGroupMigration:\001*\022"
+          + "\312\001\n\022ListTargetProjects\0226.google.cloud.vm"
+          + "migration.v1.ListTargetProjectsRequest\0327"
+          + ".google.cloud.vmmigration.v1.ListTargetP"
+          + "rojectsResponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{p"
+          + "arent=projects/*/locations/*}/targetProj"
+          + "ects\022\267\001\n\020GetTargetProject\0224.google.cloud"
+          + ".vmmigration.v1.GetTargetProjectRequest\032"
+          + "*.google.cloud.vmmigration.v1.TargetProj"
+          + "ect\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*"
+          + "/locations/*/targetProjects/*}\022\211\002\n\023Creat"
+          + "eTargetProject\0227.google.cloud.vmmigratio"
+          + "n.v1.CreateTargetProjectRequest\032\035.google"
+          + ".longrunning.Operation\"\231\001\312A\"\n\rTargetProj"
+          + "ect\022\021OperationMetadata\332A\'parent,target_p"
+          + "roject,target_project_id\202\323\344\223\002D\"2/v1/{par"
+          + "ent=projects/*/locations/*}/targetProjec"
+          + "ts:\016target_project\022\213\002\n\023UpdateTargetProje"
+          + "ct\0227.google.cloud.vmmigration.v1.UpdateT"
+          + "argetProjectRequest\032\035.google.longrunning"
+          + ".Operation\"\233\001\312A\"\n\rTargetProject\022\021Operati"
+          + "onMetadata\332A\032target_project,update_mask\202"
+          + "\323\344\223\002S2A/v1/{target_project.name=projects"
+          + "/*/locations/*/targetProjects/*}:\016target"
+          + "_project\022\335\001\n\023DeleteTargetProject\0227.googl"
+          + "e.cloud.vmmigration.v1.DeleteTargetProje"
+          + "ctRequest\032\035.google.longrunning.Operation"
+          + "\"n\312A*\n\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\0024*2/v1/{name=projects"
+          + "/*/locations/*/targetProjects/*}\022\357\001\n\025Lis"
+          + "tReplicationCycles\0229.google.cloud.vmmigr"
+          + "ation.v1.ListReplicationCyclesRequest\032:."
+          + "google.cloud.vmmigration.v1.ListReplicat"
+          + "ionCyclesResponse\"_\332A\006parent\202\323\344\223\002P\022N/v1/"
+          + "{parent=projects/*/locations/*/sources/*"
+          + "/migratingVms/*}/replicationCycles\022\334\001\n\023G"
+          + "etReplicationCycle\0227.google.cloud.vmmigr"
+          + "ation.v1.GetReplicationCycleRequest\032-.go"
+          + "ogle.cloud.vmmigration.v1.ReplicationCyc"
+          + "le\"]\332A\004name\202\323\344\223\002P\022N/v1/{name=projects/*/"
+          + "locations/*/sources/*/migratingVms/*/rep"
+          + "licationCycles/*}\022\302\001\n\020ListImageImports\0224"
+          + ".google.cloud.vmmigration.v1.ListImageIm"
+          + "portsRequest\0325.google.cloud.vmmigration."
+          + "v1.ListImageImportsResponse\"A\332A\006parent\202\323"
+          + "\344\223\0022\0220/v1/{parent=projects/*/locations/*"
+          + "}/imageImports\022\257\001\n\016GetImageImport\0222.goog"
+          + "le.cloud.vmmigration.v1.GetImageImportRe"
+          + "quest\032(.google.cloud.vmmigration.v1.Imag"
+          + "eImport\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=projec"
+          + "ts/*/locations/*/imageImports/*}\022\373\001\n\021Cre"
+          + "ateImageImport\0225.google.cloud.vmmigratio"
+          + "n.v1.CreateImageImportRequest\032\035.google.l"
+          + "ongrunning.Operation\"\217\001\312A \n\013ImageImport\022"
+          + "\021OperationMetadata\332A#parent,image_import"
+          + ",image_import_id\202\323\344\223\002@\"0/v1/{parent=proj"
+          + "ects/*/locations/*}/imageImports:\014image_"
+          + "import\022\327\001\n\021DeleteImageImport\0225.google.cl"
+          + "oud.vmmigration.v1.DeleteImageImportRequ"
+          + "est\032\035.google.longrunning.Operation\"l\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/loc"
+          + "ations/*/imageImports/*}\022\335\001\n\023ListImageIm"
+          + "portJobs\0227.google.cloud.vmmigration.v1.L"
+          + "istImageImportJobsRequest\0328.google.cloud"
+          + ".vmmigration.v1.ListImageImportJobsRespo"
+          + "nse\"S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=projec"
+          + "ts/*/locations/*/imageImports/*}/imageIm"
+          + "portJobs\022\312\001\n\021GetImageImportJob\0225.google."
+          + "cloud.vmmigration.v1.GetImageImportJobRe"
+          + "quest\032+.google.cloud.vmmigration.v1.Imag"
+          + "eImportJob\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=pro"
+          + "jects/*/locations/*/imageImports/*/image"
+          + "ImportJobs/*}\022\201\002\n\024CancelImageImportJob\0228"
+          + ".google.cloud.vmmigration.v1.CancelImage"
+          + "ImportJobRequest\032\035.google.longrunning.Op"
+          + "eration\"\217\001\312A1\n\034CancelImageImportJobRespo"
+          + "nse\022\021OperationMetadata\332A\004name\202\323\344\223\002N\"I/v1"
+          + "/{name=projects/*/locations/*/imageImpor"
+          + "ts/*/imageImportJobs/*}:cancel:\001*\022\253\002\n\026Cr"
+          + "eateDiskMigrationJob\022:.google.cloud.vmmi"
+          + "gration.v1.CreateDiskMigrationJobRequest"
+          + "\032\035.google.longrunning.Operation\"\265\001\312A%\n\020D"
+          + "iskMigrationJob\022\021OperationMetadata\332A/par"
+          + "ent,disk_migration_job,disk_migration_jo"
+          + "b_id\202\323\344\223\002U\"?/v1/{parent=projects/*/locat"
+          + "ions/*/sources/*}/diskMigrationJobs:\022dis"
+          + "k_migration_job\022\340\001\n\025ListDiskMigrationJob"
+          + "s\0229.google.cloud.vmmigration.v1.ListDisk"
+          + "MigrationJobsRequest\032:.google.cloud.vmmi"
+          + "gration.v1.ListDiskMigrationJobsResponse"
+          + "\"P\332A\006parent\202\323\344\223\002A\022?/v1/{parent=projects/"
+          + "*/locations/*/sources/*}/diskMigrationJo"
+          + "bs\022\315\001\n\023GetDiskMigrationJob\0227.google.clou"
+          + "d.vmmigration.v1.GetDiskMigrationJobRequ"
+          + "est\032-.google.cloud.vmmigration.v1.DiskMi"
+          + "grationJob\"N\332A\004name\202\323\344\223\002A\022?/v1/{name=pro"
+          + "jects/*/locations/*/sources/*/diskMigrat"
+          + "ionJobs/*}\022\255\002\n\026UpdateDiskMigrationJob\022:."
+          + "google.cloud.vmmigration.v1.UpdateDiskMi"
+          + "grationJobRequest\032\035.google.longrunning.O"
+          + "peration\"\267\001\312A%\n\020DiskMigrationJob\022\021Operat"
+          + "ionMetadata\332A\036disk_migration_job,update_"
+          + "mask\202\323\344\223\002h2R/v1/{disk_migration_job.name"
+          + "=projects/*/locations/*/sources/*/diskMi"
+          + "grationJobs/*}:\022disk_migration_job\022\360\001\n\026D"
+          + "eleteDiskMigrationJob\022:.google.cloud.vmm"
+          + "igration.v1.DeleteDiskMigrationJobReques"
+          + "t\032\035.google.longrunning.Operation\"{\312A*\n\025g"
+          + "oogle.protobuf.Empty\022\021OperationMetadata\332"
+          + "A\004name\202\323\344\223\002A*?/v1/{name=projects/*/locat"
+          + "ions/*/sources/*/diskMigrationJobs/*}\022\370\001"
+          + "\n\023RunDiskMigrationJob\0227.google.cloud.vmm"
+          + "igration.v1.RunDiskMigrationJobRequest\032\035"
+          + ".google.longrunning.Operation\"\210\001\312A0\n\033Run"
+          + "DiskMigrationJobResponse\022\021OperationMetad"
+          + "ata\332A\004name\202\323\344\223\002H\"C/v1/{name=projects/*/l"
+          + "ocations/*/sources/*/diskMigrationJobs/*"
+          + "}:run:\001*\022\375\001\n\026CancelDiskMigrationJob\022:.go"
+          + "ogle.cloud.vmmigration.v1.CancelDiskMigr"
+          + "ationJobRequest\032\035.google.longrunning.Ope"
+          + "ration\"\207\001\312A3\n\036CancelDiskMigrationJobResp"
+          + "onse\022\021OperationMetadata\202\323\344\223\002K\"F/v1/{name"
+          + "=projects/*/locations/*/sources/*/diskMi"
+          + "grationJobs/*}:cancel:\001*\032N\312A\032vmmigration"
+          + ".googleapis.com\322A.https://www.googleapis"
+          + ".com/auth/cloud-platformB\367\003\n\037com.google."
+          + "cloud.vmmigration.v1B\020VmMigrationProtoP\001"
+          + "ZAcloud.google.com/go/vmmigration/apiv1/"
+          + "vmmigrationpb;vmmigrationpb\252\002\033Google.Clo"
+          + "ud.VMMigration.V1\312\002\033Google\\Cloud\\VMMigra"
+          + "tion\\V1\352\002\036Google::Cloud::VMMigration::V1"
+          + "\352Ax\n!cloudkms.googleapis.com/CryptoKey\022S"
+          + "projects/{project}/locations/{location}/"
+          + "keyRings/{key_ring}/cryptoKeys/{crypto_k"
+          + "ey}\352AY\n!iam.googleapis.com/ServiceAccoun"
+          + "t\0224projects/{project}/serviceAccounts/{s"
+          + "ervice_account}\352AH\n\034compute.googleapis.c"
+          + "om/Image\022(projects/{project}/global/imag"
+          + "es/{image}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -3575,7 +3595,9 @@ public final class VmMigrationProto {
               "Hostname",
               "Encryption",
               "BootConversion",
+              "AdaptationModifiers",
               "DiskReplicaZones",
+              "StoragePool",
             });
     internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDefaults_LabelsEntry_descriptor =
         internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDefaults_descriptor
@@ -3597,8 +3619,16 @@ public final class VmMigrationProto {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_descriptor =
+    internal_static_google_cloud_vmmigration_v1_AdaptationModifier_descriptor =
         getDescriptor().getMessageTypes().get(65);
+    internal_static_google_cloud_vmmigration_v1_AdaptationModifier_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_vmmigration_v1_AdaptationModifier_descriptor,
+            new java.lang.String[] {
+              "Modifier", "Value",
+            });
+    internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_descriptor =
+        getDescriptor().getMessageTypes().get(66);
     internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_descriptor,
@@ -3625,7 +3655,9 @@ public final class VmMigrationProto {
               "Hostname",
               "Encryption",
               "BootConversion",
+              "AdaptationModifiers",
               "DiskReplicaZones",
+              "StoragePool",
             });
     internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_LabelsEntry_descriptor =
         internal_static_google_cloud_vmmigration_v1_ComputeEngineTargetDetails_descriptor
@@ -3648,7 +3680,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_NetworkInterface_descriptor =
-        getDescriptor().getMessageTypes().get(66);
+        getDescriptor().getMessageTypes().get(67);
     internal_static_google_cloud_vmmigration_v1_NetworkInterface_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_NetworkInterface_descriptor,
@@ -3656,7 +3688,7 @@ public final class VmMigrationProto {
               "Network", "Subnetwork", "InternalIp", "ExternalIp", "NetworkTier",
             });
     internal_static_google_cloud_vmmigration_v1_AppliedLicense_descriptor =
-        getDescriptor().getMessageTypes().get(67);
+        getDescriptor().getMessageTypes().get(68);
     internal_static_google_cloud_vmmigration_v1_AppliedLicense_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AppliedLicense_descriptor,
@@ -3664,7 +3696,7 @@ public final class VmMigrationProto {
               "Type", "OsLicense",
             });
     internal_static_google_cloud_vmmigration_v1_SchedulingNodeAffinity_descriptor =
-        getDescriptor().getMessageTypes().get(68);
+        getDescriptor().getMessageTypes().get(69);
     internal_static_google_cloud_vmmigration_v1_SchedulingNodeAffinity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_SchedulingNodeAffinity_descriptor,
@@ -3672,7 +3704,7 @@ public final class VmMigrationProto {
               "Key", "Operator", "Values",
             });
     internal_static_google_cloud_vmmigration_v1_ComputeScheduling_descriptor =
-        getDescriptor().getMessageTypes().get(69);
+        getDescriptor().getMessageTypes().get(70);
     internal_static_google_cloud_vmmigration_v1_ComputeScheduling_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ComputeScheduling_descriptor,
@@ -3680,7 +3712,7 @@ public final class VmMigrationProto {
               "OnHostMaintenance", "RestartType", "NodeAffinities", "MinNodeCpus",
             });
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(70);
+        getDescriptor().getMessageTypes().get(71);
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDefaults_descriptor,
@@ -3694,7 +3726,7 @@ public final class VmMigrationProto {
               "VmTarget",
             });
     internal_static_google_cloud_vmmigration_v1_PersistentDiskDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(71);
+        getDescriptor().getMessageTypes().get(72);
     internal_static_google_cloud_vmmigration_v1_PersistentDiskDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_PersistentDiskDefaults_descriptor,
@@ -3717,7 +3749,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_VmAttachmentDetails_descriptor =
-        getDescriptor().getMessageTypes().get(72);
+        getDescriptor().getMessageTypes().get(73);
     internal_static_google_cloud_vmmigration_v1_VmAttachmentDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_VmAttachmentDetails_descriptor,
@@ -3725,13 +3757,13 @@ public final class VmMigrationProto {
               "DeviceName",
             });
     internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(73);
+        getDescriptor().getMessageTypes().get(74);
     internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDefaults_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(74);
+        getDescriptor().getMessageTypes().get(75);
     internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDefaults_descriptor,
@@ -3774,7 +3806,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_BootDiskDefaults_descriptor =
-        getDescriptor().getMessageTypes().get(75);
+        getDescriptor().getMessageTypes().get(76);
     internal_static_google_cloud_vmmigration_v1_BootDiskDefaults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_BootDiskDefaults_descriptor,
@@ -3792,7 +3824,7 @@ public final class VmMigrationProto {
               "SourceImage",
             });
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(76);
+        getDescriptor().getMessageTypes().get(77);
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ComputeEngineDisksTargetDetails_descriptor,
@@ -3800,7 +3832,7 @@ public final class VmMigrationProto {
               "DisksTargetDetails", "VmTargetDetails", "Disks", "VmTarget",
             });
     internal_static_google_cloud_vmmigration_v1_PersistentDisk_descriptor =
-        getDescriptor().getMessageTypes().get(77);
+        getDescriptor().getMessageTypes().get(78);
     internal_static_google_cloud_vmmigration_v1_PersistentDisk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_PersistentDisk_descriptor,
@@ -3808,13 +3840,13 @@ public final class VmMigrationProto {
               "SourceDiskNumber", "DiskUri",
             });
     internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(78);
+        getDescriptor().getMessageTypes().get(79);
     internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DisksMigrationDisksTargetDetails_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(79);
+        getDescriptor().getMessageTypes().get(80);
     internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DisksMigrationVmTargetDetails_descriptor,
@@ -3822,7 +3854,7 @@ public final class VmMigrationProto {
               "VmUri",
             });
     internal_static_google_cloud_vmmigration_v1_SchedulePolicy_descriptor =
-        getDescriptor().getMessageTypes().get(80);
+        getDescriptor().getMessageTypes().get(81);
     internal_static_google_cloud_vmmigration_v1_SchedulePolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_SchedulePolicy_descriptor,
@@ -3830,7 +3862,7 @@ public final class VmMigrationProto {
               "IdleDuration", "SkipOsAdaptation",
             });
     internal_static_google_cloud_vmmigration_v1_CreateMigratingVmRequest_descriptor =
-        getDescriptor().getMessageTypes().get(81);
+        getDescriptor().getMessageTypes().get(82);
     internal_static_google_cloud_vmmigration_v1_CreateMigratingVmRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateMigratingVmRequest_descriptor,
@@ -3838,7 +3870,7 @@ public final class VmMigrationProto {
               "Parent", "MigratingVmId", "MigratingVm", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_ListMigratingVmsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(82);
+        getDescriptor().getMessageTypes().get(83);
     internal_static_google_cloud_vmmigration_v1_ListMigratingVmsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListMigratingVmsRequest_descriptor,
@@ -3846,7 +3878,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "View",
             });
     internal_static_google_cloud_vmmigration_v1_ListMigratingVmsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(83);
+        getDescriptor().getMessageTypes().get(84);
     internal_static_google_cloud_vmmigration_v1_ListMigratingVmsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListMigratingVmsResponse_descriptor,
@@ -3854,7 +3886,7 @@ public final class VmMigrationProto {
               "MigratingVms", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_GetMigratingVmRequest_descriptor =
-        getDescriptor().getMessageTypes().get(84);
+        getDescriptor().getMessageTypes().get(85);
     internal_static_google_cloud_vmmigration_v1_GetMigratingVmRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetMigratingVmRequest_descriptor,
@@ -3862,7 +3894,7 @@ public final class VmMigrationProto {
               "Name", "View",
             });
     internal_static_google_cloud_vmmigration_v1_UpdateMigratingVmRequest_descriptor =
-        getDescriptor().getMessageTypes().get(85);
+        getDescriptor().getMessageTypes().get(86);
     internal_static_google_cloud_vmmigration_v1_UpdateMigratingVmRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_UpdateMigratingVmRequest_descriptor,
@@ -3870,7 +3902,7 @@ public final class VmMigrationProto {
               "UpdateMask", "MigratingVm", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_DeleteMigratingVmRequest_descriptor =
-        getDescriptor().getMessageTypes().get(86);
+        getDescriptor().getMessageTypes().get(87);
     internal_static_google_cloud_vmmigration_v1_DeleteMigratingVmRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DeleteMigratingVmRequest_descriptor,
@@ -3878,7 +3910,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_StartMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(87);
+        getDescriptor().getMessageTypes().get(88);
     internal_static_google_cloud_vmmigration_v1_StartMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_StartMigrationRequest_descriptor,
@@ -3886,13 +3918,13 @@ public final class VmMigrationProto {
               "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_StartMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(88);
+        getDescriptor().getMessageTypes().get(89);
     internal_static_google_cloud_vmmigration_v1_StartMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_StartMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_PauseMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(89);
+        getDescriptor().getMessageTypes().get(90);
     internal_static_google_cloud_vmmigration_v1_PauseMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_PauseMigrationRequest_descriptor,
@@ -3900,13 +3932,13 @@ public final class VmMigrationProto {
               "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_PauseMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(90);
+        getDescriptor().getMessageTypes().get(91);
     internal_static_google_cloud_vmmigration_v1_PauseMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_PauseMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_ResumeMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(91);
+        getDescriptor().getMessageTypes().get(92);
     internal_static_google_cloud_vmmigration_v1_ResumeMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ResumeMigrationRequest_descriptor,
@@ -3914,13 +3946,13 @@ public final class VmMigrationProto {
               "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_ResumeMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(92);
+        getDescriptor().getMessageTypes().get(93);
     internal_static_google_cloud_vmmigration_v1_ResumeMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ResumeMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_FinalizeMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(93);
+        getDescriptor().getMessageTypes().get(94);
     internal_static_google_cloud_vmmigration_v1_FinalizeMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_FinalizeMigrationRequest_descriptor,
@@ -3928,7 +3960,7 @@ public final class VmMigrationProto {
               "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_ExtendMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(94);
+        getDescriptor().getMessageTypes().get(95);
     internal_static_google_cloud_vmmigration_v1_ExtendMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ExtendMigrationRequest_descriptor,
@@ -3936,19 +3968,19 @@ public final class VmMigrationProto {
               "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_ExtendMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(95);
+        getDescriptor().getMessageTypes().get(96);
     internal_static_google_cloud_vmmigration_v1_ExtendMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ExtendMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_FinalizeMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(96);
+        getDescriptor().getMessageTypes().get(97);
     internal_static_google_cloud_vmmigration_v1_FinalizeMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_FinalizeMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_TargetProject_descriptor =
-        getDescriptor().getMessageTypes().get(97);
+        getDescriptor().getMessageTypes().get(98);
     internal_static_google_cloud_vmmigration_v1_TargetProject_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_TargetProject_descriptor,
@@ -3956,7 +3988,7 @@ public final class VmMigrationProto {
               "Name", "Project", "Description", "CreateTime", "UpdateTime",
             });
     internal_static_google_cloud_vmmigration_v1_GetTargetProjectRequest_descriptor =
-        getDescriptor().getMessageTypes().get(98);
+        getDescriptor().getMessageTypes().get(99);
     internal_static_google_cloud_vmmigration_v1_GetTargetProjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetTargetProjectRequest_descriptor,
@@ -3964,7 +3996,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_ListTargetProjectsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(99);
+        getDescriptor().getMessageTypes().get(100);
     internal_static_google_cloud_vmmigration_v1_ListTargetProjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListTargetProjectsRequest_descriptor,
@@ -3972,7 +4004,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListTargetProjectsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(100);
+        getDescriptor().getMessageTypes().get(101);
     internal_static_google_cloud_vmmigration_v1_ListTargetProjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListTargetProjectsResponse_descriptor,
@@ -3980,7 +4012,7 @@ public final class VmMigrationProto {
               "TargetProjects", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_CreateTargetProjectRequest_descriptor =
-        getDescriptor().getMessageTypes().get(101);
+        getDescriptor().getMessageTypes().get(102);
     internal_static_google_cloud_vmmigration_v1_CreateTargetProjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateTargetProjectRequest_descriptor,
@@ -3988,7 +4020,7 @@ public final class VmMigrationProto {
               "Parent", "TargetProjectId", "TargetProject", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_UpdateTargetProjectRequest_descriptor =
-        getDescriptor().getMessageTypes().get(102);
+        getDescriptor().getMessageTypes().get(103);
     internal_static_google_cloud_vmmigration_v1_UpdateTargetProjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_UpdateTargetProjectRequest_descriptor,
@@ -3996,7 +4028,7 @@ public final class VmMigrationProto {
               "UpdateMask", "TargetProject", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_DeleteTargetProjectRequest_descriptor =
-        getDescriptor().getMessageTypes().get(103);
+        getDescriptor().getMessageTypes().get(104);
     internal_static_google_cloud_vmmigration_v1_DeleteTargetProjectRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DeleteTargetProjectRequest_descriptor,
@@ -4004,7 +4036,7 @@ public final class VmMigrationProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_Group_descriptor =
-        getDescriptor().getMessageTypes().get(104);
+        getDescriptor().getMessageTypes().get(105);
     internal_static_google_cloud_vmmigration_v1_Group_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_Group_descriptor,
@@ -4017,7 +4049,7 @@ public final class VmMigrationProto {
               "MigrationTargetType",
             });
     internal_static_google_cloud_vmmigration_v1_ListGroupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(105);
+        getDescriptor().getMessageTypes().get(106);
     internal_static_google_cloud_vmmigration_v1_ListGroupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListGroupsRequest_descriptor,
@@ -4025,7 +4057,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListGroupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(106);
+        getDescriptor().getMessageTypes().get(107);
     internal_static_google_cloud_vmmigration_v1_ListGroupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListGroupsResponse_descriptor,
@@ -4033,7 +4065,7 @@ public final class VmMigrationProto {
               "Groups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_GetGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(107);
+        getDescriptor().getMessageTypes().get(108);
     internal_static_google_cloud_vmmigration_v1_GetGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetGroupRequest_descriptor,
@@ -4041,7 +4073,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_CreateGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(108);
+        getDescriptor().getMessageTypes().get(109);
     internal_static_google_cloud_vmmigration_v1_CreateGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateGroupRequest_descriptor,
@@ -4049,7 +4081,7 @@ public final class VmMigrationProto {
               "Parent", "GroupId", "Group", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_UpdateGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(109);
+        getDescriptor().getMessageTypes().get(110);
     internal_static_google_cloud_vmmigration_v1_UpdateGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_UpdateGroupRequest_descriptor,
@@ -4057,7 +4089,7 @@ public final class VmMigrationProto {
               "UpdateMask", "Group", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_DeleteGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(110);
+        getDescriptor().getMessageTypes().get(111);
     internal_static_google_cloud_vmmigration_v1_DeleteGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DeleteGroupRequest_descriptor,
@@ -4065,7 +4097,7 @@ public final class VmMigrationProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_AddGroupMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(111);
+        getDescriptor().getMessageTypes().get(112);
     internal_static_google_cloud_vmmigration_v1_AddGroupMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AddGroupMigrationRequest_descriptor,
@@ -4073,13 +4105,13 @@ public final class VmMigrationProto {
               "Group", "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_AddGroupMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(112);
+        getDescriptor().getMessageTypes().get(113);
     internal_static_google_cloud_vmmigration_v1_AddGroupMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AddGroupMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(113);
+        getDescriptor().getMessageTypes().get(114);
     internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationRequest_descriptor,
@@ -4087,13 +4119,13 @@ public final class VmMigrationProto {
               "Group", "MigratingVm",
             });
     internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationResponse_descriptor =
-        getDescriptor().getMessageTypes().get(114);
+        getDescriptor().getMessageTypes().get(115);
     internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_RemoveGroupMigrationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_CreateCutoverJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(115);
+        getDescriptor().getMessageTypes().get(116);
     internal_static_google_cloud_vmmigration_v1_CreateCutoverJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateCutoverJobRequest_descriptor,
@@ -4101,7 +4133,7 @@ public final class VmMigrationProto {
               "Parent", "CutoverJobId", "CutoverJob", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_CancelCutoverJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(116);
+        getDescriptor().getMessageTypes().get(117);
     internal_static_google_cloud_vmmigration_v1_CancelCutoverJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelCutoverJobRequest_descriptor,
@@ -4109,13 +4141,13 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_CancelCutoverJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(117);
+        getDescriptor().getMessageTypes().get(118);
     internal_static_google_cloud_vmmigration_v1_CancelCutoverJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelCutoverJobResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_ListCutoverJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(118);
+        getDescriptor().getMessageTypes().get(119);
     internal_static_google_cloud_vmmigration_v1_ListCutoverJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListCutoverJobsRequest_descriptor,
@@ -4123,7 +4155,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListCutoverJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(119);
+        getDescriptor().getMessageTypes().get(120);
     internal_static_google_cloud_vmmigration_v1_ListCutoverJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListCutoverJobsResponse_descriptor,
@@ -4131,7 +4163,7 @@ public final class VmMigrationProto {
               "CutoverJobs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_GetCutoverJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(120);
+        getDescriptor().getMessageTypes().get(121);
     internal_static_google_cloud_vmmigration_v1_GetCutoverJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetCutoverJobRequest_descriptor,
@@ -4139,7 +4171,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(121);
+        getDescriptor().getMessageTypes().get(122);
     internal_static_google_cloud_vmmigration_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_OperationMetadata_descriptor,
@@ -4153,7 +4185,7 @@ public final class VmMigrationProto {
               "ApiVersion",
             });
     internal_static_google_cloud_vmmigration_v1_MigrationError_descriptor =
-        getDescriptor().getMessageTypes().get(122);
+        getDescriptor().getMessageTypes().get(123);
     internal_static_google_cloud_vmmigration_v1_MigrationError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_MigrationError_descriptor,
@@ -4161,7 +4193,7 @@ public final class VmMigrationProto {
               "Code", "ErrorMessage", "ActionItem", "HelpLinks", "ErrorTime",
             });
     internal_static_google_cloud_vmmigration_v1_MigrationWarning_descriptor =
-        getDescriptor().getMessageTypes().get(123);
+        getDescriptor().getMessageTypes().get(124);
     internal_static_google_cloud_vmmigration_v1_MigrationWarning_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_MigrationWarning_descriptor,
@@ -4169,7 +4201,7 @@ public final class VmMigrationProto {
               "Code", "WarningMessage", "ActionItem", "HelpLinks", "WarningTime",
             });
     internal_static_google_cloud_vmmigration_v1_VmwareSourceVmDetails_descriptor =
-        getDescriptor().getMessageTypes().get(124);
+        getDescriptor().getMessageTypes().get(125);
     internal_static_google_cloud_vmmigration_v1_VmwareSourceVmDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_VmwareSourceVmDetails_descriptor,
@@ -4187,7 +4219,7 @@ public final class VmMigrationProto {
               "DiskNumber", "SizeGb", "Label",
             });
     internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_descriptor =
-        getDescriptor().getMessageTypes().get(125);
+        getDescriptor().getMessageTypes().get(126);
     internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_descriptor,
@@ -4205,7 +4237,7 @@ public final class VmMigrationProto {
               "DiskNumber", "VolumeId", "SizeGb",
             });
     internal_static_google_cloud_vmmigration_v1_AzureSourceVmDetails_descriptor =
-        getDescriptor().getMessageTypes().get(126);
+        getDescriptor().getMessageTypes().get(127);
     internal_static_google_cloud_vmmigration_v1_AzureSourceVmDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AzureSourceVmDetails_descriptor,
@@ -4223,7 +4255,7 @@ public final class VmMigrationProto {
               "DiskNumber", "DiskId", "SizeGb",
             });
     internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(127);
+        getDescriptor().getMessageTypes().get(128);
     internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesRequest_descriptor,
@@ -4231,7 +4263,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(128);
+        getDescriptor().getMessageTypes().get(129);
     internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListReplicationCyclesResponse_descriptor,
@@ -4239,7 +4271,7 @@ public final class VmMigrationProto {
               "ReplicationCycles", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_GetReplicationCycleRequest_descriptor =
-        getDescriptor().getMessageTypes().get(129);
+        getDescriptor().getMessageTypes().get(130);
     internal_static_google_cloud_vmmigration_v1_GetReplicationCycleRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetReplicationCycleRequest_descriptor,
@@ -4247,7 +4279,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_VmCapabilities_descriptor =
-        getDescriptor().getMessageTypes().get(130);
+        getDescriptor().getMessageTypes().get(131);
     internal_static_google_cloud_vmmigration_v1_VmCapabilities_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_VmCapabilities_descriptor,
@@ -4255,7 +4287,7 @@ public final class VmMigrationProto {
               "OsCapabilities", "LastOsCapabilitiesUpdateTime",
             });
     internal_static_google_cloud_vmmigration_v1_ImageImport_descriptor =
-        getDescriptor().getMessageTypes().get(131);
+        getDescriptor().getMessageTypes().get(132);
     internal_static_google_cloud_vmmigration_v1_ImageImport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ImageImport_descriptor,
@@ -4271,7 +4303,7 @@ public final class VmMigrationProto {
               "TargetDefaults",
             });
     internal_static_google_cloud_vmmigration_v1_ImageImportJob_descriptor =
-        getDescriptor().getMessageTypes().get(132);
+        getDescriptor().getMessageTypes().get(133);
     internal_static_google_cloud_vmmigration_v1_ImageImportJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ImageImportJob_descriptor,
@@ -4291,7 +4323,7 @@ public final class VmMigrationProto {
               "TargetDetails",
             });
     internal_static_google_cloud_vmmigration_v1_ImageImportStep_descriptor =
-        getDescriptor().getMessageTypes().get(133);
+        getDescriptor().getMessageTypes().get(134);
     internal_static_google_cloud_vmmigration_v1_ImageImportStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ImageImportStep_descriptor,
@@ -4305,25 +4337,25 @@ public final class VmMigrationProto {
               "Step",
             });
     internal_static_google_cloud_vmmigration_v1_InitializingImageImportStep_descriptor =
-        getDescriptor().getMessageTypes().get(134);
+        getDescriptor().getMessageTypes().get(135);
     internal_static_google_cloud_vmmigration_v1_InitializingImageImportStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_InitializingImageImportStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_LoadingImageSourceFilesStep_descriptor =
-        getDescriptor().getMessageTypes().get(135);
+        getDescriptor().getMessageTypes().get(136);
     internal_static_google_cloud_vmmigration_v1_LoadingImageSourceFilesStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_LoadingImageSourceFilesStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_CreatingImageStep_descriptor =
-        getDescriptor().getMessageTypes().get(136);
+        getDescriptor().getMessageTypes().get(137);
     internal_static_google_cloud_vmmigration_v1_CreatingImageStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreatingImageStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_DiskImageTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(137);
+        getDescriptor().getMessageTypes().get(138);
     internal_static_google_cloud_vmmigration_v1_DiskImageTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DiskImageTargetDetails_descriptor,
@@ -4351,7 +4383,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_MachineImageTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(138);
+        getDescriptor().getMessageTypes().get(139);
     internal_static_google_cloud_vmmigration_v1_MachineImageTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_MachineImageTargetDetails_descriptor,
@@ -4383,7 +4415,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_ServiceAccount_descriptor =
-        getDescriptor().getMessageTypes().get(139);
+        getDescriptor().getMessageTypes().get(140);
     internal_static_google_cloud_vmmigration_v1_ServiceAccount_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ServiceAccount_descriptor,
@@ -4391,7 +4423,7 @@ public final class VmMigrationProto {
               "Email", "Scopes",
             });
     internal_static_google_cloud_vmmigration_v1_ShieldedInstanceConfig_descriptor =
-        getDescriptor().getMessageTypes().get(140);
+        getDescriptor().getMessageTypes().get(141);
     internal_static_google_cloud_vmmigration_v1_ShieldedInstanceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ShieldedInstanceConfig_descriptor,
@@ -4399,7 +4431,7 @@ public final class VmMigrationProto {
               "SecureBoot", "EnableVtpm", "EnableIntegrityMonitoring",
             });
     internal_static_google_cloud_vmmigration_v1_MachineImageParametersOverrides_descriptor =
-        getDescriptor().getMessageTypes().get(141);
+        getDescriptor().getMessageTypes().get(142);
     internal_static_google_cloud_vmmigration_v1_MachineImageParametersOverrides_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_MachineImageParametersOverrides_descriptor,
@@ -4407,27 +4439,29 @@ public final class VmMigrationProto {
               "MachineType",
             });
     internal_static_google_cloud_vmmigration_v1_ImageImportOsAdaptationParameters_descriptor =
-        getDescriptor().getMessageTypes().get(142);
+        getDescriptor().getMessageTypes().get(143);
     internal_static_google_cloud_vmmigration_v1_ImageImportOsAdaptationParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ImageImportOsAdaptationParameters_descriptor,
             new java.lang.String[] {
-              "Generalize", "LicenseType", "BootConversion",
+              "Generalize", "LicenseType", "BootConversion", "AdaptationModifiers",
             });
     internal_static_google_cloud_vmmigration_v1_DataDiskImageImport_descriptor =
-        getDescriptor().getMessageTypes().get(143);
+        getDescriptor().getMessageTypes().get(144);
     internal_static_google_cloud_vmmigration_v1_DataDiskImageImport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DataDiskImageImport_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "GuestOsFeatures",
+            });
     internal_static_google_cloud_vmmigration_v1_SkipOsAdaptation_descriptor =
-        getDescriptor().getMessageTypes().get(144);
+        getDescriptor().getMessageTypes().get(145);
     internal_static_google_cloud_vmmigration_v1_SkipOsAdaptation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_SkipOsAdaptation_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_GetImageImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(145);
+        getDescriptor().getMessageTypes().get(146);
     internal_static_google_cloud_vmmigration_v1_GetImageImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetImageImportRequest_descriptor,
@@ -4435,7 +4469,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_ListImageImportsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(146);
+        getDescriptor().getMessageTypes().get(147);
     internal_static_google_cloud_vmmigration_v1_ListImageImportsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListImageImportsRequest_descriptor,
@@ -4443,7 +4477,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListImageImportsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(147);
+        getDescriptor().getMessageTypes().get(148);
     internal_static_google_cloud_vmmigration_v1_ListImageImportsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListImageImportsResponse_descriptor,
@@ -4451,7 +4485,7 @@ public final class VmMigrationProto {
               "ImageImports", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_CreateImageImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(148);
+        getDescriptor().getMessageTypes().get(149);
     internal_static_google_cloud_vmmigration_v1_CreateImageImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateImageImportRequest_descriptor,
@@ -4459,7 +4493,7 @@ public final class VmMigrationProto {
               "Parent", "ImageImportId", "ImageImport", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_DeleteImageImportRequest_descriptor =
-        getDescriptor().getMessageTypes().get(149);
+        getDescriptor().getMessageTypes().get(150);
     internal_static_google_cloud_vmmigration_v1_DeleteImageImportRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DeleteImageImportRequest_descriptor,
@@ -4467,7 +4501,7 @@ public final class VmMigrationProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_GetImageImportJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(150);
+        getDescriptor().getMessageTypes().get(151);
     internal_static_google_cloud_vmmigration_v1_GetImageImportJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetImageImportJobRequest_descriptor,
@@ -4475,7 +4509,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_ListImageImportJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(151);
+        getDescriptor().getMessageTypes().get(152);
     internal_static_google_cloud_vmmigration_v1_ListImageImportJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListImageImportJobsRequest_descriptor,
@@ -4483,7 +4517,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListImageImportJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(152);
+        getDescriptor().getMessageTypes().get(153);
     internal_static_google_cloud_vmmigration_v1_ListImageImportJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListImageImportJobsResponse_descriptor,
@@ -4491,7 +4525,7 @@ public final class VmMigrationProto {
               "ImageImportJobs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_CancelImageImportJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(153);
+        getDescriptor().getMessageTypes().get(154);
     internal_static_google_cloud_vmmigration_v1_CancelImageImportJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelImageImportJobRequest_descriptor,
@@ -4499,13 +4533,13 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_CancelImageImportJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(154);
+        getDescriptor().getMessageTypes().get(155);
     internal_static_google_cloud_vmmigration_v1_CancelImageImportJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelImageImportJobResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_DiskMigrationJob_descriptor =
-        getDescriptor().getMessageTypes().get(155);
+        getDescriptor().getMessageTypes().get(156);
     internal_static_google_cloud_vmmigration_v1_DiskMigrationJob_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DiskMigrationJob_descriptor,
@@ -4521,7 +4555,7 @@ public final class VmMigrationProto {
               "SourceDiskDetails",
             });
     internal_static_google_cloud_vmmigration_v1_DiskMigrationJobTargetDetails_descriptor =
-        getDescriptor().getMessageTypes().get(156);
+        getDescriptor().getMessageTypes().get(157);
     internal_static_google_cloud_vmmigration_v1_DiskMigrationJobTargetDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DiskMigrationJobTargetDetails_descriptor,
@@ -4539,7 +4573,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_DiskMigrationStep_descriptor =
-        getDescriptor().getMessageTypes().get(157);
+        getDescriptor().getMessageTypes().get(158);
     internal_static_google_cloud_vmmigration_v1_DiskMigrationStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DiskMigrationStep_descriptor,
@@ -4552,25 +4586,25 @@ public final class VmMigrationProto {
               "Step",
             });
     internal_static_google_cloud_vmmigration_v1_CreatingSourceDiskSnapshotStep_descriptor =
-        getDescriptor().getMessageTypes().get(158);
+        getDescriptor().getMessageTypes().get(159);
     internal_static_google_cloud_vmmigration_v1_CreatingSourceDiskSnapshotStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreatingSourceDiskSnapshotStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_CopyingSourceDiskSnapshotStep_descriptor =
-        getDescriptor().getMessageTypes().get(159);
+        getDescriptor().getMessageTypes().get(160);
     internal_static_google_cloud_vmmigration_v1_CopyingSourceDiskSnapshotStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CopyingSourceDiskSnapshotStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_ProvisioningTargetDiskStep_descriptor =
-        getDescriptor().getMessageTypes().get(160);
+        getDescriptor().getMessageTypes().get(161);
     internal_static_google_cloud_vmmigration_v1_ProvisioningTargetDiskStep_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ProvisioningTargetDiskStep_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisk_descriptor =
-        getDescriptor().getMessageTypes().get(161);
+        getDescriptor().getMessageTypes().get(162);
     internal_static_google_cloud_vmmigration_v1_ComputeEngineDisk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ComputeEngineDisk_descriptor,
@@ -4578,7 +4612,7 @@ public final class VmMigrationProto {
               "DiskId", "Zone", "ReplicaZones", "DiskType",
             });
     internal_static_google_cloud_vmmigration_v1_AwsSourceDiskDetails_descriptor =
-        getDescriptor().getMessageTypes().get(162);
+        getDescriptor().getMessageTypes().get(163);
     internal_static_google_cloud_vmmigration_v1_AwsSourceDiskDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_AwsSourceDiskDetails_descriptor,
@@ -4596,7 +4630,7 @@ public final class VmMigrationProto {
               "Key", "Value",
             });
     internal_static_google_cloud_vmmigration_v1_CreateDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(163);
+        getDescriptor().getMessageTypes().get(164);
     internal_static_google_cloud_vmmigration_v1_CreateDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CreateDiskMigrationJobRequest_descriptor,
@@ -4604,7 +4638,7 @@ public final class VmMigrationProto {
               "Parent", "DiskMigrationJobId", "DiskMigrationJob", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(164);
+        getDescriptor().getMessageTypes().get(165);
     internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsRequest_descriptor,
@@ -4612,7 +4646,7 @@ public final class VmMigrationProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(165);
+        getDescriptor().getMessageTypes().get(166);
     internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_ListDiskMigrationJobsResponse_descriptor,
@@ -4620,7 +4654,7 @@ public final class VmMigrationProto {
               "DiskMigrationJobs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_vmmigration_v1_GetDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(166);
+        getDescriptor().getMessageTypes().get(167);
     internal_static_google_cloud_vmmigration_v1_GetDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_GetDiskMigrationJobRequest_descriptor,
@@ -4628,7 +4662,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_UpdateDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(167);
+        getDescriptor().getMessageTypes().get(168);
     internal_static_google_cloud_vmmigration_v1_UpdateDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_UpdateDiskMigrationJobRequest_descriptor,
@@ -4636,7 +4670,7 @@ public final class VmMigrationProto {
               "UpdateMask", "DiskMigrationJob", "RequestId",
             });
     internal_static_google_cloud_vmmigration_v1_DeleteDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(168);
+        getDescriptor().getMessageTypes().get(169);
     internal_static_google_cloud_vmmigration_v1_DeleteDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_DeleteDiskMigrationJobRequest_descriptor,
@@ -4644,7 +4678,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(169);
+        getDescriptor().getMessageTypes().get(170);
     internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobRequest_descriptor,
@@ -4652,13 +4686,13 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(170);
+        getDescriptor().getMessageTypes().get(171);
     internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_RunDiskMigrationJobResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobRequest_descriptor =
-        getDescriptor().getMessageTypes().get(171);
+        getDescriptor().getMessageTypes().get(172);
     internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobRequest_descriptor,
@@ -4666,7 +4700,7 @@ public final class VmMigrationProto {
               "Name",
             });
     internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobResponse_descriptor =
-        getDescriptor().getMessageTypes().get(172);
+        getDescriptor().getMessageTypes().get(173);
     internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_vmmigration_v1_CancelDiskMigrationJobResponse_descriptor,

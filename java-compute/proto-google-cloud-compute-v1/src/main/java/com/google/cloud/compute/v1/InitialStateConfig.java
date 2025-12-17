@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Initial State for shielded instance, these are public keys which are safe to store in public
+ * Initial State for shielded instance,
+ * these are public keys which are safe to store in public
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.InitialStateConfig}
@@ -546,7 +547,8 @@ public final class InitialStateConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Initial State for shielded instance, these are public keys which are safe to store in public
+   * Initial State for shielded instance,
+   * these are public keys which are safe to store in public
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.InitialStateConfig}

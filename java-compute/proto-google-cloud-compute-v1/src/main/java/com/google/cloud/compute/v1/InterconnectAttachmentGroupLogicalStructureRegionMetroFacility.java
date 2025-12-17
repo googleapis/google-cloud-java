@@ -23,7 +23,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] The facilities used for this group's Attachments' Interconnects.
+ * [Output Only] The facilities used for this group's Attachments'
+ * Interconnects.
  * </pre>
  *
  * Protobuf type {@code
@@ -80,7 +81,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -96,7 +97,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -120,7 +121,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The name of a facility, like "iad-1234".
+   * Output only. [Output Only] The name of a facility, like "iad-1234".
    * </pre>
    *
    * <code>optional string facility = 501116579;</code>
@@ -415,7 +416,8 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
    *
    *
    * <pre>
-   * [Output Only] The facilities used for this group's Attachments' Interconnects.
+   * [Output Only] The facilities used for this group's Attachments'
+   * Interconnects.
    * </pre>
    *
    * Protobuf type {@code
@@ -697,7 +699,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -712,7 +714,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -735,7 +737,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -758,7 +760,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -780,7 +782,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>
@@ -798,7 +800,7 @@ public final class InterconnectAttachmentGroupLogicalStructureRegionMetroFacilit
      *
      *
      * <pre>
-     * [Output Only] The name of a facility, like "iad-1234".
+     * Output only. [Output Only] The name of a facility, like "iad-1234".
      * </pre>
      *
      * <code>optional string facility = 501116579;</code>

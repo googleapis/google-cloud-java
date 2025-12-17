@@ -28,7 +28,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * A list of all NAT IPs assigned to this NAT config.
+   * Output only. A list of all NAT IPs assigned to this NAT config.
    * </pre>
    *
    * <code>
@@ -41,7 +41,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * A list of all NAT IPs assigned to this NAT config.
+   * Output only. A list of all NAT IPs assigned to this NAT config.
    * </pre>
    *
    * <code>
@@ -54,7 +54,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * A list of all NAT IPs assigned to this NAT config.
+   * Output only. A list of all NAT IPs assigned to this NAT config.
    * </pre>
    *
    * <code>
@@ -67,7 +67,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * A list of all NAT IPs assigned to this NAT config.
+   * Output only. A list of all NAT IPs assigned to this NAT config.
    * </pre>
    *
    * <code>
@@ -81,7 +81,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * A list of all NAT IPs assigned to this NAT config.
+   * Output only. A list of all NAT IPs assigned to this NAT config.
    * </pre>
    *
    * <code>
@@ -95,7 +95,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * Name of the NAT config which the NAT IP belongs to.
+   * Output only. Name of the NAT config which the NAT IP belongs to.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -108,7 +108,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * Name of the NAT config which the NAT IP belongs to.
+   * Output only. Name of the NAT config which the NAT IP belongs to.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>
@@ -121,7 +121,7 @@ public interface NatIpInfoOrBuilder
    *
    *
    * <pre>
-   * Name of the NAT config which the NAT IP belongs to.
+   * Output only. Name of the NAT config which the NAT IP belongs to.
    * </pre>
    *
    * <code>optional string nat_name = 425596649;</code>

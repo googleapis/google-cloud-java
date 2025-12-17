@@ -77,7 +77,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
    *
    *
    * <pre>
-   * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+   * The list of instance names for which we want to delete per-instance configs
+   * on this managed instance group.
    * </pre>
    *
    * <code>repeated string names = 104585032;</code>
@@ -92,7 +93,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
    *
    *
    * <pre>
-   * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+   * The list of instance names for which we want to delete per-instance configs
+   * on this managed instance group.
    * </pre>
    *
    * <code>repeated string names = 104585032;</code>
@@ -107,7 +109,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
    *
    *
    * <pre>
-   * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+   * The list of instance names for which we want to delete per-instance configs
+   * on this managed instance group.
    * </pre>
    *
    * <code>repeated string names = 104585032;</code>
@@ -123,7 +126,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
    *
    *
    * <pre>
-   * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+   * The list of instance names for which we want to delete per-instance configs
+   * on this managed instance group.
    * </pre>
    *
    * <code>repeated string names = 104585032;</code>
@@ -526,7 +530,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -542,7 +547,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -557,7 +563,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -573,7 +580,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -589,7 +597,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -613,7 +622,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -636,7 +646,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -656,7 +667,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>
@@ -675,7 +687,8 @@ public final class RegionInstanceGroupManagerDeleteInstanceConfigReq
      *
      *
      * <pre>
-     * The list of instance names for which we want to delete per-instance configs on this managed instance group.
+     * The list of instance names for which we want to delete per-instance configs
+     * on this managed instance group.
      * </pre>
      *
      * <code>repeated string names = 104585032;</code>

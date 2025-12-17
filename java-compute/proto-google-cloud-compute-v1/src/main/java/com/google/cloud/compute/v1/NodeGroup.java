@@ -23,7 +23,13 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
+ * Represents a sole-tenant Node Group resource.
+ *
+ * A sole-tenant node is a physical server that is dedicated to
+ * hosting VM instances only for your specific project. Use sole-tenant nodes to
+ * keep your instances physically separated from instances in other projects, or
+ * to group your instances together on the same host hardware. For more
+ * information, readSole-tenant nodes.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -79,7 +85,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroup.MaintenanceInterval}
@@ -99,7 +106,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs are eligible to receive infrastructure and hypervisor updates as they become available. This may result in more maintenance operations (live migrations or terminations) for the VM than the PERIODIC and RECURRENT options.
+     * VMs are eligible to receive infrastructure and hypervisor updates as they
+     * become available.  This may result in more maintenance operations (live
+     * migrations or terminations) for the VM than the PERIODIC andRECURRENT options.
      * </pre>
      *
      * <code>AS_NEEDED = 500724834;</code>
@@ -109,7 +118,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs receive infrastructure and hypervisor updates on a periodic basis, minimizing the number of maintenance operations (live migrations or terminations) on an individual VM. This may mean a VM will take longer to receive an update than if it was configured for AS_NEEDED. Security updates will still be applied as soon as they are available. RECURRENT is used for GEN3 and Slice of Hardware VMs.
+     * VMs receive infrastructure and hypervisor updates on a periodic basis,
+     * minimizing the number of maintenance operations (live migrations or
+     * terminations) on an individual VM.  This may mean a VM will take longer
+     * to receive an update than if it was configured forAS_NEEDED.  Security updates will still be applied as soon
+     * as they are available. RECURRENT is used for GEN3 and Slice
+     * of Hardware VMs.
      * </pre>
      *
      * <code>RECURRENT = 194244550;</code>
@@ -133,7 +147,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs are eligible to receive infrastructure and hypervisor updates as they become available. This may result in more maintenance operations (live migrations or terminations) for the VM than the PERIODIC and RECURRENT options.
+     * VMs are eligible to receive infrastructure and hypervisor updates as they
+     * become available.  This may result in more maintenance operations (live
+     * migrations or terminations) for the VM than the PERIODIC andRECURRENT options.
      * </pre>
      *
      * <code>AS_NEEDED = 500724834;</code>
@@ -144,7 +160,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * VMs receive infrastructure and hypervisor updates on a periodic basis, minimizing the number of maintenance operations (live migrations or terminations) on an individual VM. This may mean a VM will take longer to receive an update than if it was configured for AS_NEEDED. Security updates will still be applied as soon as they are available. RECURRENT is used for GEN3 and Slice of Hardware VMs.
+     * VMs receive infrastructure and hypervisor updates on a periodic basis,
+     * minimizing the number of maintenance operations (live migrations or
+     * terminations) on an individual VM.  This may mean a VM will take longer
+     * to receive an update than if it was configured forAS_NEEDED.  Security updates will still be applied as soon
+     * as they are available. RECURRENT is used for GEN3 and Slice
+     * of Hardware VMs.
      * </pre>
      *
      * <code>RECURRENT = 194244550;</code>
@@ -241,7 +262,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.NodeGroup.MaintenancePolicy}
@@ -261,7 +285,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * Allow the node and corresponding instances to retain default
+     * maintenance behavior.
      * </pre>
      *
      * <code>DEFAULT = 115302945;</code>
@@ -273,7 +298,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * When maintenance must be done on a node, the instances on that node will
+     * be moved to other nodes in the group.
+     * Instances with onHostMaintenance = MIGRATE will live migrate to their
+     * destinations while instances with onHostMaintenance = TERMINATE will
+     * terminate and then restart on their destination nodes if
+     * automaticRestart = true.
      * </pre>
      *
      * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
@@ -283,7 +313,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * Instances in this group will restart on the same node when maintenance
+     * has completed. Instances must have onHostMaintenance = TERMINATE, and
+     * they will only restart if automaticRestart = true.
      * </pre>
      *
      * <code>RESTART_IN_PLACE = 228647325;</code>
@@ -307,7 +339,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Allow the node and corresponding instances to retain default maintenance behavior.
+     * Allow the node and corresponding instances to retain default
+     * maintenance behavior.
      * </pre>
      *
      * <code>DEFAULT = 115302945;</code>
@@ -321,7 +354,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When maintenance must be done on a node, the instances on that node will be moved to other nodes in the group. Instances with onHostMaintenance = MIGRATE will live migrate to their destinations while instances with onHostMaintenance = TERMINATE will terminate and then restart on their destination nodes if automaticRestart = true.
+     * When maintenance must be done on a node, the instances on that node will
+     * be moved to other nodes in the group.
+     * Instances with onHostMaintenance = MIGRATE will live migrate to their
+     * destinations while instances with onHostMaintenance = TERMINATE will
+     * terminate and then restart on their destination nodes if
+     * automaticRestart = true.
      * </pre>
      *
      * <code>MIGRATE_WITHIN_NODE_GROUP = 153483394;</code>
@@ -332,7 +370,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Instances in this group will restart on the same node when maintenance has completed. Instances must have onHostMaintenance = TERMINATE, and they will only restart if automaticRestart = true.
+     * Instances in this group will restart on the same node when maintenance
+     * has completed. Instances must have onHostMaintenance = TERMINATE, and
+     * they will only restart if automaticRestart = true.
      * </pre>
      *
      * <code>RESTART_IN_PLACE = 228647325;</code>
@@ -639,7 +679,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -655,7 +696,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -679,7 +721,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Creation timestamp in RFC3339 text format.
+   * Output only. [Output Only] Creation timestamp inRFC3339
+   * text format.
    * </pre>
    *
    * <code>optional string creation_timestamp = 30525366;</code>
@@ -708,7 +751,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -724,7 +768,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -748,7 +793,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An optional description of this resource. Provide this property when you create the resource.
+   * An optional description of this resource. Provide this property when you
+   * create the resource.
    * </pre>
    *
    * <code>optional string description = 422937596;</code>
@@ -826,7 +872,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -842,7 +889,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * Output only. [Output Only] The unique identifier for the resource. This identifier is
+   * defined by the server.
    * </pre>
    *
    * <code>optional uint64 id = 3355;</code>
@@ -863,7 +911,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -879,7 +927,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -903,7 +951,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+   * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -932,7 +980,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -948,7 +1000,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -972,7 +1028,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+   * An opaque location hint used to place the Node close to other
+   * resources.
+   * This field is for use by internal tools that use the public API.
+   * The location hint here on the NodeGroup overrides any location_hint
+   * present in the NodeTemplate.
    * </pre>
    *
    * <code>optional string location_hint = 350519505;</code>
@@ -1001,7 +1061,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -1018,7 +1079,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -1043,7 +1105,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+   * Specifies the frequency of planned maintenance events. The accepted values
+   * are: `AS_NEEDED` and `RECURRENT`.
    * Check the MaintenanceInterval enum for the list of possible values.
    * </pre>
    *
@@ -1073,7 +1136,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -1090,7 +1156,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -1115,7 +1184,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Specifies how to handle instances when a node in the group undergoes
+   * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+   * The default value is DEFAULT. For more information, see
+   * Maintenance policies.
    * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
@@ -1187,7 +1259,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1203,7 +1282,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1227,7 +1313,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   * The name of the resource, provided by the client when initially creating
+   * the resource. The resource name must be 1-63 characters long, and comply
+   * withRFC1035.
+   * Specifically, the name must be 1-63 characters long and match the regular
+   * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be
+   * a dash, lowercase letter, or digit, except the last character, which cannot
+   * be a dash.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1325,7 +1418,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1341,7 +1434,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1365,7 +1458,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for the resource.
+   * Output only. [Output Only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -1445,7 +1538,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of nodes in the node group.
+   * Output only. [Output Only] The total number of nodes in the node group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1461,7 +1554,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The total number of nodes in the node group.
+   * Output only. [Output Only] The total number of nodes in the node group.
    * </pre>
    *
    * <code>optional int32 size = 3530753;</code>
@@ -1554,7 +1647,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1570,7 +1664,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -1594,7 +1689,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+   * Output only. [Output Only] The name of the zone where the node group resides,
+   * such as us-central1-a.
    * </pre>
    *
    * <code>optional string zone = 3744684;</code>
@@ -2013,7 +2109,13 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a sole-tenant Node Group resource. A sole-tenant node is a physical server that is dedicated to hosting VM instances only for your specific project. Use sole-tenant nodes to keep your instances physically separated from instances in other projects, or to group your instances together on the same host hardware. For more information, read Sole-tenant nodes.
+   * Represents a sole-tenant Node Group resource.
+   *
+   * A sole-tenant node is a physical server that is dedicated to
+   * hosting VM instances only for your specific project. Use sole-tenant nodes to
+   * keep your instances physically separated from instances in other projects, or
+   * to group your instances together on the same host hardware. For more
+   * information, readSole-tenant nodes.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NodeGroup}
@@ -2696,7 +2798,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2711,7 +2814,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2734,7 +2838,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2757,7 +2862,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2779,7 +2885,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2797,7 +2904,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Creation timestamp in RFC3339 text format.
+     * Output only. [Output Only] Creation timestamp inRFC3339
+     * text format.
      * </pre>
      *
      * <code>optional string creation_timestamp = 30525366;</code>
@@ -2822,7 +2930,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2837,7 +2946,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2860,7 +2970,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2883,7 +2994,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2905,7 +3017,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -2923,7 +3036,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An optional description of this resource. Provide this property when you create the resource.
+     * An optional description of this resource. Provide this property when you
+     * create the resource.
      * </pre>
      *
      * <code>optional string description = 422937596;</code>
@@ -3038,7 +3152,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3054,7 +3169,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3070,7 +3186,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3090,7 +3207,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+     * Output only. [Output Only] The unique identifier for the resource. This identifier is
+     * defined by the server.
      * </pre>
      *
      * <code>optional uint64 id = 3355;</code>
@@ -3110,7 +3228,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3125,7 +3243,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3148,7 +3266,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3171,7 +3289,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3193,7 +3311,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3211,7 +3329,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The type of the resource. Always compute#nodeGroup for node group.
+     * Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
      * </pre>
      *
      * <code>optional string kind = 3292052;</code>
@@ -3236,7 +3354,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3251,7 +3373,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3274,7 +3400,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3297,7 +3427,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3319,7 +3453,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3337,7 +3475,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+     * An opaque location hint used to place the Node close to other
+     * resources.
+     * This field is for use by internal tools that use the public API.
+     * The location hint here on the NodeGroup overrides any location_hint
+     * present in the NodeTemplate.
      * </pre>
      *
      * <code>optional string location_hint = 350519505;</code>
@@ -3362,7 +3504,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3378,7 +3521,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3402,7 +3546,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3426,7 +3571,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3449,7 +3595,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3468,7 +3615,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
+     * Specifies the frequency of planned maintenance events. The accepted values
+     * are: `AS_NEEDED` and `RECURRENT`.
      * Check the MaintenanceInterval enum for the list of possible values.
      * </pre>
      *
@@ -3494,7 +3642,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3510,7 +3661,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3534,7 +3688,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3558,7 +3715,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3581,7 +3741,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3600,7 +3763,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Specifies how to handle instances when a node in the group undergoes
+     * maintenance. Set to one of: DEFAULT,RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP.
+     * The default value is DEFAULT. For more information, see
+     * Maintenance policies.
      * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
@@ -3790,7 +3956,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3805,7 +3978,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3828,7 +4008,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3851,7 +4038,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3873,7 +4067,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -3891,7 +4092,14 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     * The name of the resource, provided by the client when initially creating
+     * the resource. The resource name must be 1-63 characters long, and comply
+     * withRFC1035.
+     * Specifically, the name must be 1-63 characters long and match the regular
+     * expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be
+     * a dash, lowercase letter, or digit, except the last character, which cannot
+     * be a dash.
      * </pre>
      *
      * <code>optional string name = 3373707;</code>
@@ -4042,7 +4250,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4057,7 +4265,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4080,7 +4288,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4103,7 +4311,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4125,7 +4333,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4143,7 +4351,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Server-defined URL for the resource.
+     * Output only. [Output Only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>optional string self_link = 456214797;</code>
@@ -4363,7 +4571,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4379,7 +4587,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4395,7 +4603,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4415,7 +4623,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The total number of nodes in the node group.
+     * Output only. [Output Only] The total number of nodes in the node group.
      * </pre>
      *
      * <code>optional int32 size = 3530753;</code>
@@ -4567,7 +4775,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4582,7 +4791,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4605,7 +4815,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4628,7 +4839,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4650,7 +4862,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>
@@ -4668,7 +4881,8 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The name of the zone where the node group resides, such as us-central1-a.
+     * Output only. [Output Only] The name of the zone where the node group resides,
+     * such as us-central1-a.
      * </pre>
      *
      * <code>optional string zone = 3744684;</code>

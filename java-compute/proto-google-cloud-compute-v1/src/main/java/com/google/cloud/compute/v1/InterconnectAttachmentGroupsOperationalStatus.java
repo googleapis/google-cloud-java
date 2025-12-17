@@ -71,7 +71,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * </pre>
    *
    * Protobuf enum {@code
@@ -330,7 +330,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -347,7 +347,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -372,7 +372,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * Summarizes the status of the group.
+   * Output only. Summarizes the status of the group.
    * Check the GroupStatus enum for the list of possible values.
    * </pre>
    *
@@ -439,7 +439,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>
@@ -457,7 +457,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>
@@ -477,7 +477,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
    *
    *
    * <pre>
-   * The operational state of the group, including only active Attachments.
+   * Output only. The operational state of the group, including only active Attachments.
    * </pre>
    *
    * <code>
@@ -1572,7 +1572,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1588,7 +1588,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1612,7 +1612,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1636,7 +1636,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1659,7 +1659,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1678,7 +1678,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * Summarizes the status of the group.
+     * Output only. Summarizes the status of the group.
      * Check the GroupStatus enum for the list of possible values.
      * </pre>
      *
@@ -1864,7 +1864,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -1881,7 +1881,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -1904,7 +1904,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -1930,7 +1930,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -1953,7 +1953,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -1986,7 +1986,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -2008,7 +2008,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -2026,7 +2026,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>
@@ -2048,7 +2048,7 @@ public final class InterconnectAttachmentGroupsOperationalStatus
      *
      *
      * <pre>
-     * The operational state of the group, including only active Attachments.
+     * Output only. The operational state of the group, including only active Attachments.
      * </pre>
      *
      * <code>

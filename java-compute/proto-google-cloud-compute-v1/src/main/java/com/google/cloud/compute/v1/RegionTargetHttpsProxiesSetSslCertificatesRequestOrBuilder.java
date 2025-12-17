@@ -28,7 +28,8 @@ public interface RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -41,7 +42,8 @@ public interface RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -54,7 +56,8 @@ public interface RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>
@@ -68,7 +71,8 @@ public interface RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
    *
    *
    * <pre>
-   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+   * New set of SslCertificate resources to associate
+   * with this TargetHttpsProxy resource.
    * </pre>
    *
    * <code>repeated string ssl_certificates = 366006543;</code>

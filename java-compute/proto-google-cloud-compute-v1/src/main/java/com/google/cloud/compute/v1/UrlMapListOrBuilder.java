@@ -122,7 +122,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -135,7 +135,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -148,7 +148,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * Type of resource.
+   * Output only. Type of resource.
    * </pre>
    *
    * <code>optional string kind = 3292052;</code>
@@ -161,7 +161,11 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -174,7 +178,11 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -187,7 +195,11 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] This token allows you to get the next page of results for list requests. If the number of results is larger than maxResults, use the nextPageToken as a value for the query parameter pageToken in the next list request. Subsequent list requests will have their own nextPageToken to continue paging through the results.
+   * [Output Only] This token allows you to get the next page of results for
+   * list requests. If the number of results is larger thanmaxResults, use the nextPageToken as a value for
+   * the query parameter pageToken in the next list request.
+   * Subsequent list requests will have their own nextPageToken to
+   * continue paging through the results.
    * </pre>
    *
    * <code>optional string next_page_token = 79797525;</code>
@@ -200,7 +212,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -213,7 +225,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>
@@ -226,7 +238,7 @@ public interface UrlMapListOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Server-defined URL for this resource.
+   * Output only. [Output Only] Server-defined URL for this resource.
    * </pre>
    *
    * <code>optional string self_link = 456214797;</code>

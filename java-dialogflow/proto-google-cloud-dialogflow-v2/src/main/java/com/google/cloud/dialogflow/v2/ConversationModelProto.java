@@ -265,12 +265,13 @@ public final class ConversationModelProto {
           + "\006parent\030\001 \001(\tB=\340A\002\372A7\0225dia"
           + "logflow.googleapis.com/ConversationModelEvaluation\022c\n"
           + "\035conversation_model_evaluation\030\002"
-          + " \001(\01327.google.cloud.dialogflow.v2.ConversationModelEvaluationB\003\340A\002\"\307\002\n"
+          + " \001(\01327.google.cloud.dialogflow.v2.ConversationModelEvaluationB\003\340A\002\"\366\002\n"
           + "(CreateConversationModelOperationMetadata\022\032\n"
           + "\022conversation_model\030\001 \001(\t\022Y\n"
           + "\005state\030\002 \001(\0162"
           + "J.google.cloud.dialogflow.v2.CreateConversationModelOperationMetadata.State\022/\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"s\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022-\n"
+          + "\tdone_time\030\007 \001(\0132\032.google.protobuf.Timestamp\"s\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\r\n"
@@ -278,21 +279,24 @@ public final class ConversationModelProto {
           + "\006FAILED\020\003\022\r\n"
           + "\tCANCELLED\020\004\022\016\n\n"
           + "CANCELLING\020\005\022\014\n"
-          + "\010TRAINING\020\006\"w\n"
+          + "\010TRAINING\020\006\"\246\001\n"
           + "(DeployConversationModelOperationMetadata\022\032\n"
           + "\022conversation_model\030\001 \001(\t\022/\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"y\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022-\n"
+          + "\tdone_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\250\001\n"
           + "*UndeployConversationModelOperationMetadata\022\032\n"
           + "\022conversation_model\030\001 \001(\t\022/\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"w\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022-\n"
+          + "\tdone_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\246\001\n"
           + "(DeleteConversationModelOperationMetadata\022\032\n"
           + "\022conversation_model\030\001 \001(\t\022/\n"
-          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"\366\002\n"
+          + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022-\n"
+          + "\tdone_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\366\002\n"
           + "2CreateConversationModelEvaluationOperationMetadata\022%\n"
           + "\035conversation_model_evaluation\030\001 \001(\t\022\032\n"
           + "\022conversation_model\030\004 \001(\t\022c\n"
-          + "\005state\030\002 \001(\0162T.google.cloud.d"
-          + "ialogflow.v2.CreateConversationModelEvaluationOperationMetadata.State\022/\n"
+          + "\005state\030\002 \001(\0162T.google.cloud.dialogflow"
+          + ".v2.CreateConversationModelEvaluationOperationMetadata.State\022/\n"
           + "\013create_time\030\003 \001(\0132\032.google.protobuf.Timestamp\"g\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\020\n"
@@ -302,65 +306,64 @@ public final class ConversationModelProto {
           + "\tSUCCEEDED\020\004\022\n\n"
           + "\006FAILED\020\0052\376\026\n"
           + "\022ConversationModels\022\350\002\n"
-          + "\027CreateConversationModel\022:.google.cloud.dialogflow.v2.CreateConversati"
-          + "onModelRequest\032\035.google.longrunning.Operation\"\361\001\312A=\n"
-          + "\021ConversationModel\022(CreateConversationModelOperationMetadata\332A\031paren"
-          + "t,conversation_model\202\323\344\223\002\216\001\"*/v2/{parent"
-          + "=projects/*}/conversationModels:\022conversation_modelZL\"6/v2/{parent=projects/*/lo"
-          + "cations/*}/conversationModels:\022conversation_model\022\363\001\n"
-          + "\024GetConversationModel\0227.google.cloud.dialogflow.v2.GetConversationM"
-          + "odelRequest\032-.google.cloud.dialogflow.v2"
-          + ".ConversationModel\"s\332A\004name\202\323\344\223\002f\022*/v2/{"
-          + "name=projects/*/conversationModels/*}Z8\022"
-          + "6/v2/{name=projects/*/locations/*/conversationModels/*}\022\206\002\n"
-          + "\026ListConversationModels\0229.google.cloud.dialogflow.v2.ListConv"
-          + "ersationModelsRequest\032:.google.cloud.dialogflow.v2.ListConversationModelsRespons"
-          + "e\"u\332A\006parent\202\323\344\223\002f\022*/v2/{parent=projects"
-          + "/*}/conversationModelsZ8\0226/v2/{parent=pr"
-          + "ojects/*/locations/*}/conversationModels\022\256\002\n"
-          + "\027DeleteConversationModel\022:.google.cloud.dialogflow.v2.DeleteConversationMode"
-          + "lRequest\032\035.google.longrunning.Operation\"\267\001\312AA\n"
-          + "\025google.protobuf.Empty\022(DeleteConv"
-          + "ersationModelOperationMetadata\332A\004name\202\323\344"
-          + "\223\002f**/v2/{name=projects/*/conversationMo"
-          + "dels/*}Z8*6/v2/{name=projects/*/locations/*/conversationModels/*}\022\273\002\n"
-          + "\027DeployConversationModel\022:.google.cloud.dialogflow."
-          + "v2.DeployConversationModelRequest\032\035.google.longrunning.Operation\"\304\001\312AA\n"
-          + "\025google.protobuf.Empty\022(DeployConversationModelOp"
-          + "erationMetadata\202\323\344\223\002z\"1/v2/{name=project"
-          + "s/*/conversationModels/*}:deploy:\001*ZB\"=/"
-          + "v2/{name=projects/*/locations/*/conversationModels/*}:deploy:\001*\022\305\002\n"
-          + "\031UndeployConversationModel\022<.google.cloud.dialogflow."
-          + "v2.UndeployConversationModelRequest\032\035.google.longrunning.Operation\"\312\001\312AC\n"
-          + "\025google.protobuf.Empty\022*UndeployConversationMod"
-          + "elOperationMetadata\202\323\344\223\002~\"3/v2/{name=pro"
-          + "jects/*/conversationModels/*}:undeploy:\001"
-          + "*ZD\"?/v2/{name=projects/*/locations/*/conversationModels/*}:undeploy:\001*\022\257\002\n"
-          + "\036GetConversationModelEvaluation\022A.google.clou"
-          + "d.dialogflow.v2.GetConversationModelEvaluationRequest\0327.google.cloud.dialogflow."
-          + "v2.ConversationModelEvaluation\"\220\001\332A\004name"
-          + "\202\323\344\223\002\202\001\0228/v2/{name=projects/*/conversati"
-          + "onModels/*/evaluations/*}ZF\022D/v2/{name=p"
-          + "rojects/*/locations/*/conversationModels/*/evaluations/*}\022\302\002\n"
-          + " ListConversationModelEvaluations\022C.google.cloud.dialogflow"
-          + ".v2.ListConversationModelEvaluationsRequest\032D.google.cloud.dialogflow.v2.ListCon"
-          + "versationModelEvaluationsResponse\"\222\001\332A\006p"
-          + "arent\202\323\344\223\002\202\001\0228/v2/{parent=projects/*/con"
-          + "versationModels/*}/evaluationsZF\022D/v2/{p"
-          + "arent=projects/*/locations/*/conversationModels/*}/evaluations\022\325\002\n"
-          + "!CreateConversationModelEvaluation\022D.google.cloud.dial"
-          + "ogflow.v2.CreateConversationModelEvaluat"
-          + "ionRequest\032\035.google.longrunning.Operation\"\312\001\312AQ\n"
-          + "\033ConversationModelEvaluation\0222CreateConversationModelEvaluationOperation"
-          + "Metadata\332A$parent,conversation_model_eva"
-          + "luation\202\323\344\223\002I\"D/v2/{parent=projects/*/lo"
-          + "cations/*/conversationModels/*}/evaluati"
-          + "ons:\001*\032x\312A\031dialogflow.googleapis.com\322AYh"
-          + "ttps://www.googleapis.com/auth/cloud-pla"
-          + "tform,https://www.googleapis.com/auth/dialogflowB\234\001\n"
-          + "\036com.google.cloud.dialogflow.v2B\026ConversationModelProtoP\001Z>cloud.goo"
-          + "gle.com/go/dialogflow/apiv2/dialogflowpb"
-          + ";dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "\027CreateConversationModel\022:.google.cloud.dialogflow.v2.CreateConversationModelRe"
+          + "quest\032\035.google.longrunning.Operation\"\361\001\312A=\n"
+          + "\021ConversationModel\022(CreateConversatio"
+          + "nModelOperationMetadata\332A\031parent,convers"
+          + "ation_model\202\323\344\223\002\216\001\"*/v2/{parent=projects"
+          + "/*}/conversationModels:\022conversation_modelZL\"6/v2/{parent=projects/*/locations/*"
+          + "}/conversationModels:\022conversation_model\022\363\001\n"
+          + "\024GetConversationModel\0227.google.cloud.dialogflow.v2.GetConversationModelReque"
+          + "st\032-.google.cloud.dialogflow.v2.Conversa"
+          + "tionModel\"s\332A\004name\202\323\344\223\002f\022*/v2/{name=proj"
+          + "ects/*/conversationModels/*}Z8\0226/v2/{nam"
+          + "e=projects/*/locations/*/conversationModels/*}\022\206\002\n"
+          + "\026ListConversationModels\0229.google.cloud.dialogflow.v2.ListConversationM"
+          + "odelsRequest\032:.google.cloud.dialogflow.v"
+          + "2.ListConversationModelsResponse\"u\332A\006par"
+          + "ent\202\323\344\223\002f\022*/v2/{parent=projects/*}/conve"
+          + "rsationModelsZ8\0226/v2/{parent=projects/*/locations/*}/conversationModels\022\256\002\n"
+          + "\027DeleteConversationModel\022:.google.cloud.dialo"
+          + "gflow.v2.DeleteConversationModelRequest\032\035.google.longrunning.Operation\"\267\001\312AA\n"
+          + "\025google.protobuf.Empty\022(DeleteConversationM"
+          + "odelOperationMetadata\332A\004name\202\323\344\223\002f**/v2/"
+          + "{name=projects/*/conversationModels/*}Z8"
+          + "*6/v2/{name=projects/*/locations/*/conversationModels/*}\022\273\002\n"
+          + "\027DeployConversationModel\022:.google.cloud.dialogflow.v2.Deploy"
+          + "ConversationModelRequest\032\035.google.longrunning.Operation\"\304\001\312AA\n"
+          + "\025google.protobuf.Empty\022(DeployConversationModelOperationMe"
+          + "tadata\202\323\344\223\002z\"1/v2/{name=projects/*/conve"
+          + "rsationModels/*}:deploy:\001*ZB\"=/v2/{name="
+          + "projects/*/locations/*/conversationModels/*}:deploy:\001*\022\305\002\n"
+          + "\031UndeployConversationModel\022<.google.cloud.dialogflow.v2.Undepl"
+          + "oyConversationModelRequest\032\035.google.longrunning.Operation\"\312\001\312AC\n"
+          + "\025google.protobuf.Empty\022*UndeployConversationModelOperati"
+          + "onMetadata\202\323\344\223\002~\"3/v2/{name=projects/*/c"
+          + "onversationModels/*}:undeploy:\001*ZD\"?/v2/"
+          + "{name=projects/*/locations/*/conversationModels/*}:undeploy:\001*\022\257\002\n"
+          + "\036GetConversationModelEvaluation\022A.google.cloud.dialogf"
+          + "low.v2.GetConversationModelEvaluationRequest\0327.google.cloud.dialogflow.v2.Conver"
+          + "sationModelEvaluation\"\220\001\332A\004name\202\323\344\223\002\202\001\0228"
+          + "/v2/{name=projects/*/conversationModels/*/evaluations/*}ZF\022D/v2/{name=projects/*"
+          + "/locations/*/conversationModels/*/evaluations/*}\022\302\002\n"
+          + " ListConversationModelEvaluations\022C.google.cloud.dialogflow.v2.ListC"
+          + "onversationModelEvaluationsRequest\032D.google.cloud.dialogflow.v2.ListConversation"
+          + "ModelEvaluationsResponse\"\222\001\332A\006parent\202\323\344\223"
+          + "\002\202\001\0228/v2/{parent=projects/*/conversation"
+          + "Models/*}/evaluationsZF\022D/v2/{parent=pro"
+          + "jects/*/locations/*/conversationModels/*}/evaluations\022\325\002\n"
+          + "!CreateConversationModelEvaluation\022D.google.cloud.dialogflow.v2"
+          + ".CreateConversationModelEvaluationRequest\032\035.google.longrunning.Operation\"\312\001\312AQ\n"
+          + "\033ConversationModelEvaluation\0222CreateConve"
+          + "rsationModelEvaluationOperationMetadata\332"
+          + "A$parent,conversation_model_evaluation\202\323"
+          + "\344\223\002I\"D/v2/{parent=projects/*/locations/*"
+          + "/conversationModels/*}/evaluations:\001*\032x\312"
+          + "A\031dialogflow.googleapis.com\322AYhttps://www.googleapis.com/auth/cloud-platform,htt"
+          + "ps://www.googleapis.com/auth/dialogflowB\234\001\n"
+          + "\036com.google.cloud.dialogflow.v2B\026ConversationModelProtoP\001Z>cloud.google.com/g"
+          + "o/dialogflow/apiv2/dialogflowpb;dialogfl"
+          + "owpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -570,7 +573,7 @@ public final class ConversationModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_CreateConversationModelOperationMetadata_descriptor,
             new java.lang.String[] {
-              "ConversationModel", "State", "CreateTime",
+              "ConversationModel", "State", "CreateTime", "DoneTime",
             });
     internal_static_google_cloud_dialogflow_v2_DeployConversationModelOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(19);
@@ -578,7 +581,7 @@ public final class ConversationModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_DeployConversationModelOperationMetadata_descriptor,
             new java.lang.String[] {
-              "ConversationModel", "CreateTime",
+              "ConversationModel", "CreateTime", "DoneTime",
             });
     internal_static_google_cloud_dialogflow_v2_UndeployConversationModelOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(20);
@@ -586,7 +589,7 @@ public final class ConversationModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_UndeployConversationModelOperationMetadata_descriptor,
             new java.lang.String[] {
-              "ConversationModel", "CreateTime",
+              "ConversationModel", "CreateTime", "DoneTime",
             });
     internal_static_google_cloud_dialogflow_v2_DeleteConversationModelOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(21);
@@ -594,7 +597,7 @@ public final class ConversationModelProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2_DeleteConversationModelOperationMetadata_descriptor,
             new java.lang.String[] {
-              "ConversationModel", "CreateTime",
+              "ConversationModel", "CreateTime", "DoneTime",
             });
     internal_static_google_cloud_dialogflow_v2_CreateConversationModelEvaluationOperationMetadata_descriptor =
         getDescriptor().getMessageTypes().get(22);

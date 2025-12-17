@@ -23,7 +23,9 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Describes the auto-registration of the forwarding rule to Service Directory. The region and project of the Service Directory resource generated from this registration will be the same as this forwarding rule.
+ * Describes the auto-registration of the forwarding rule to Service Directory.
+ * The region and project of the Service Directory resource generated from
+ * this registration will be the same as this forwarding rule.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration}
@@ -216,7 +218,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding
+   * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+   * All PSC for Google APIs forwarding rules on the same network should use
+   * the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>
@@ -232,7 +237,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding
+   * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+   * All PSC for Google APIs forwarding rules on the same network should use
+   * the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>
@@ -256,7 +264,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
    *
    *
    * <pre>
-   * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+   * [Optional] Service Directory region to register this global forwarding
+   * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+   * All PSC for Google APIs forwarding rules on the same network should use
+   * the same Service Directory region.
    * </pre>
    *
    * <code>optional string service_directory_region = 74030416;</code>
@@ -477,7 +488,9 @@ public final class ForwardingRuleServiceDirectoryRegistration
    *
    *
    * <pre>
-   * Describes the auto-registration of the forwarding rule to Service Directory. The region and project of the Service Directory resource generated from this registration will be the same as this forwarding rule.
+   * Describes the auto-registration of the forwarding rule to Service Directory.
+   * The region and project of the Service Directory resource generated from
+   * this registration will be the same as this forwarding rule.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.ForwardingRuleServiceDirectoryRegistration}
@@ -957,7 +970,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>
@@ -972,7 +988,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>
@@ -995,7 +1014,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>
@@ -1018,7 +1040,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>
@@ -1040,7 +1065,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>
@@ -1058,7 +1086,10 @@ public final class ForwardingRuleServiceDirectoryRegistration
      *
      *
      * <pre>
-     * [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
+     * [Optional] Service Directory region to register this global forwarding
+     * rule under. Default to "us-central1". Only used for PSC for Google APIs.
+     * All PSC for Google APIs forwarding rules on the same network should use
+     * the same Service Directory region.
      * </pre>
      *
      * <code>optional string service_directory_region = 74030416;</code>

@@ -122,6 +122,100 @@ public interface SafetySettingsOrBuilder
    *
    *
    * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the raiSettings field is set.
+   */
+  boolean hasRaiSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The raiSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings getRaiSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for Responsible AI checks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings rai_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+      getRaiSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the defaultRaiSettings field is set.
+   */
+  boolean hasDefaultRaiSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The defaultRaiSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings getDefaultRaiSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Default RAI settings to be annotated on the agent, so
+   * that users will be able to restore their RAI configurations to the default
+   * settings. Read-only field for the API proto only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettings default_rai_settings = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SafetySettings.RaiSettingsOrBuilder
+      getDefaultRaiSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Settings for prompt security checks.
    * </pre>
    *
