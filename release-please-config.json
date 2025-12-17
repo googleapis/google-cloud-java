@@ -6,8 +6,7 @@
   "separate-pull-requests": false,
   "include-component-in-tag": false,
   "group-pull-request-title-pattern": "chore(${branch}): release ${version}",
-  "commit-search-depth": 20,
-  "release-search-depth": 20,
+  "initial-version": "1.76.0-rc1",
   "packages": {
     ".": {}
   }
